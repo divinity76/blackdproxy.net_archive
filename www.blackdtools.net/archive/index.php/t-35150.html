@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, fastexiva, waitx, setmeleekill, setloot, script, dwarf, sayintrade, manas, hunt, 32612,31922,8, mana, inside, caves, kazz, 32625,31920,6, white, backpack, small, cash, case, withdraw, gold, deposit, reestock, 32624,31922,8, potion, 32610,31921,9, loot, 32625,31921,7, 32613,31929,5, 32609,31925,6, 32610,31902,9, 32648,31903,9, saymessage, exura, $hex-tibiastryes$, alarme, dwarven, guard, lower, malmis, work, shield, iron, spider, axes, battle, 32628,31938,11, realy" />
+	<meta name="description" content="Greetings, 
+Yesterday I was looking for a script to work in Kazz caves but I haven't found one good enough for me so I tried to change Malmis Custom Kaz Caves to work with 8.4 and of course I have done some personal changes on the script. 
+ 
+ 
+ 
+Where is the old script? 
+http://www.blackdtools.net/sho...ht=Malmis+Kazz 
+ 
+I have tested it on a mage level 32 with Wand of dragonbreath and plate set, 
+Used exura on 90% and exura gran at 50%, and used a cond to refill the mana when lower then 7%" />
+	
+	<title> Kazz 100% AFK [Dwarfs] - IT DOES EVERYTHING. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Kazz 100% AFK [Dwarfs] - IT DOES EVERYTHING.</div>
+<hr />
+<div class="pda"><a href="t-35150.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?35150-Kazz-100-AFK-Dwarfs-IT-DOES-EVERYTHING">Kazz 100% AFK [Dwarfs] - IT DOES EVERYTHING.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Dede</div><div class="date">01-20-2009, 19:21</div></div><div class="posttext">Greetings,<br />
+Yesterday I was looking for a script to work in Kazz caves but I haven't found one good enough for me so I tried to change Malmis Custom Kaz Caves to work with 8.4 and of course I have done some personal changes on the script.<br />
+<br />
+<br />
+What this script does?<br />
+The script will hunt for a while inside Kazz dwarfs caves, then when your cap is lower then 100 or when you have less then 5 mana potions inside your backpacks It will go to depot. (If you have battle axes or dwarven shields inside your backpack It will sell them for you). Then It will check your mana potions again to see if you realy need to buy them, So it goes to the bank, checks for it and if you realy need the mps it will deposit the gold that you have gather on the hunt and then it will withdraw the cash you need to reestock your manas.<br />
+Then when everything is OK again, it will go back to hunt.<br />
+Oh and It runs away in case of a pk attack you.<br />
+<br />
+Where is the old script?<br />
+http://www.blackdtools.net/sho...ht=Malmis+Kazz<br />
+<br />
+I have tested it on a mage level 32 with Wand of dragonbreath and plate set,<br />
+Used exura on 90% and exura gran at 50%, and used a cond to refill the mana when lower then 7%<br />
+Remember to set you character to eat the food because it loots the white mushs.<br />
+Oh also, in this script unfortunnaly you can easy be killed by dwarf guards so I always have a single HMM backpack open in case one of that bastards get lured.<br />
+<br />
+SMALL TIP, YOUR REFILLER WILL NOT BUG ANYMORE. <br />
+<br />
+http://img170.imageshack.us/img170/1143/baglz7.jpg<br />
+<br />
+Where you see the red balls ( o )are your mana potion backpacks.<br />
+Where you see the black ball ( o ) is your normal backpack.<br />
+Then fullfill the rest of the bag with labels, so It won't be a mess when you buy your mana's.<br />
+<br />
+Credits:<br />
+#Dede for upgrading to 8.4.<br />
+#Waypoints and cauculator done by Malmis.<br />
+#Wiotki for fixing the script. <br />
+#Chain for the manas reestock, the small tip and run in danger.<br />
+<br />
+<br />
+# MP = 0C 01, SMP = ED 00, GMP = EE 00<br />
+fastExiva _manapotionid = 0C 01<br />
+# How many manas do you have?<br />
+fastExiva _manas = 40<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _idcost = 50<br />
+#<br />
+fastExiva _dwarvenshield = 0<br />
+fastExiva _battleaxe = 0<br />
+fastExiva _xbow = 0<br />
+fastExiva _gold = 0<br />
+fastExiva _mushroom = 0<br />
+fastExiva _ore = 0<br />
+fastExiva _ring = 0<br />
+#<br />
+:hunt<br />
+onGMpause<br />
+setFriendly<br />
+#white mushroom<br />
+setLoot 8B 0E<br />
+#gold<br />
+setLoot D7 0B<br />
+#plats<br />
+setLoot DB 0B<br />
+#x-bow 160<br />
+setLoot 15 0D<br />
+#battle axe 80<br />
+setLoot C2 0C<br />
+#axe ring<br />
+setLoot 14 0C<br />
+#dwarven shield 100<br />
+setLoot 61 0D<br />
+#iron ore<br />
+setLoot F8 16<br />
+setPriority dwarf guard:+1<br />
+setMeleeKill bat<br />
+setMeleeKill rotworm<br />
+setMeleeKill rat<br />
+setMeleeKill dwarf<br />
+setMeleeKill spider<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill slime<br />
+setMeleeKill poison spider<br />
+setMeleeKill dwarf guard<br />
+setHmmKill dwarf guard<br />
+onDangerGoto $nlineoflabel:TOCA O ALARME QUE FUDEU!$<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+move 32665,31942,13<br />
+move 32664,31960,13<br />
+move 32663,31979,13<br />
+move 32650,31994,13<br />
+move 32650,31985,13<br />
+move 32664,31970,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+move 32664,31929,13<br />
+move 32663,31926,13<br />
+move 32659,31938,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dps$<br />
+move 32643,31949,13<br />
+move 32628,31940,13<br />
+move 32619,31919,13<br />
+move 32602,31907,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+move 32607,31874,13<br />
+move 32625,31874,13<br />
+move 32597,31888,13<br />
+move 32584,31901,13<br />
+move 32583,31879,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dps$<br />
+move 32564,31878,13<br />
+move 32576,31912,13<br />
+move 32560,31903,13<br />
+move 32554,31921,13<br />
+move 32591,31907,13<br />
+move 32613,31920,13<br />
+move 32647,31937,13<br />
+move 32667,31942,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:dp<br />
+move 32664,31940,13<br />
+move 32667,31940,13<br />
+move 32667,31940,12<br />
+move 32668,31941,11<br />
+move 32667,31940,10<br />
+move 32658,31938,10<br />
+move 32643,31938,10<br />
+move 32633,31934,10<br />
+move 32629,31937,10<br />
+move 32628,31937,11<br />
+move 32622,31938,11<br />
+move 32620,31939,10<br />
+move 32597,31939,10<br />
+move 32619,31949,10<br />
+move 32623,31952,10<br />
+move 32624,31950,9<br />
+move 32648,31936,9<br />
+fastExiva _dwarvenshield = $numericalexp:{$countitems:61 0D$}+{$_dwarvenshield$}$<br />
+fastExiva _battleaxe = $numericalexp:{$countitems:C2 0C$}+{$_battleaxe$}$<br />
+IfTrue ($countitems:61 0D$#number=#0) Goto $nlineoflabel:sba$<br />
+:sds<br />
+move 32653,31887,9<br />
+waitX 1<br />
+move 32653,31887,9<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 06 00 7B 61 0D 00 $numbertohex2:100$ 01<br />
+waitX 1<br />
+sayInTrade bye<br />
+stackItems<br />
+:sba<br />
+IfTrue ($countitems:C2 0C$#number=#0) Goto $nlineoflabel:bank$<br />
+move 32661,31894,9<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 06 00 7B C2 0C 00 $numbertohex2:100$ 01<br />
+waitX 1<br />
+sayInTrade bye<br />
+fastExiva _gold = $numericalexp:{$numericalexp:{$countitems:DB 0B$00}+{$countitems:D7 0B$}$}+{$_gold$}$<br />
+stackItems<br />
+:bank<br />
+move 32654,31923,9<br />
+waitX 1<br />
+move 32654,31923,9<br />
+waitX 1<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:bankmanas$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva _battleaxe = $numericalexp:{$countitems:C2 0C$}+{$_battleaxe$}$<br />
+fastExiva _xbow = $numericalexp:{$countitems:15 0D$}+{$_xbow$}$<br />
+fastExiva _mushroom = $numericalexp:{$countitems:8B 0E$}+{$_mushroom$}$<br />
+fastExiva _ore = $numericalexp:{$countitems:F8 16$}+{$_ore$}$<br />
+fastExiva _ring = $numericalexp:{$countitems:14 0C$}+{$_ring$}$<br />
+:bankmanas<br />
+fastExiva _calcmanas = $numericalexp:{$_manas$}-{$countitems:0C 01$}$<br />
+fastExiva _manacost = $numericalexp:{$_calcmanas$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+move 32648,31903,9<br />
+move 32610,31902,9<br />
+move 32610,31921,9<br />
+move 32612,31922,8<br />
+move 32624,31922,8<br />
+move 32625,31921,7<br />
+move 32625,31920,6<br />
+move 32609,31925,6<br />
+move 32613,31929,5<br />
+:manabuy<br />
+sayMessage exiva &gt; 05 00 A2 67 00 00 40<br />
+waitX 5<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade flask<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva buy:0C 01:{$_calcmanas$}<br />
+IfEnoughItemsGoto 0c 01,$_manas$,$nlineoflabel:deposit loot$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:manabuy$<br />
+:deposit loot<br />
+move 32613,31929,5<br />
+move 32609,31925,6<br />
+move 32625,31920,6<br />
+move 32625,31921,7<br />
+move 32624,31922,8<br />
+move 32612,31922,8<br />
+move 32610,31921,9<br />
+move 32610,31902,9<br />
+move 32648,31903,9<br />
+move 32645,31909,9<br />
+move 32646,31908,8<br />
+putLootOnDepot<br />
+waitX 1<br />
+fastExiva &lt; B4 12 $hex-tibiastr:Played for: {$played$}, looted {$_gold$} pure cash (sold {$_dwarvenshield$} shield and {$_battleaxe$} axes), {$_mushroom$} White mushrooms, {$_ore$} Iron ores, {$_ring$} Axe rings and loot worth {$numericalexp:{$_xbow$}*160$}$} gold.$<br />
+move 32608,31925,5<br />
+move 32607,31926,6<br />
+move 32625,31920,6<br />
+move 32625,31920,7<br />
+move 32623,31921,8<br />
+move 32612,31922,8<br />
+move 32612,31921,9<br />
+move 32605,31921,9<br />
+move 32604,31921,10<br />
+move 32596,31938,10<br />
+move 32620,31937,10<br />
+move 32621,31938,11<br />
+move 32628,31938,11<br />
+move 32629,31935,10<br />
+move 32643,31937,10<br />
+move 32666,31939,10<br />
+move 32668,31940,11<br />
+move 32668,31939,12<br />
+move 32667,31940,13<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:TOCA O ALARME QUE FUDEU!<br />
+waitX 2<br />
+sayMessage STOP RIGHT NOW!<br />
+move 32667,31939,13<br />
+move 32667,31940,12<br />
+move 32666,31939,11<br />
+move 32666,31940,10<br />
+move 32665,31934,10<br />
+move 32640,31937,10<br />
+move 32629,31933,10<br />
+move 32628,31938,11<br />
+move 32621,31939,11<br />
+move 32621,31938,10<br />
+move 32598,31939,10<br />
+move 32605,31921,10<br />
+move 32606,31921,9<br />
+move 32611,31921,9<br />
+move 32612,31922,8<br />
+move 32631,31921,8<br />
+move 32650,31916,8<br />
+waitX 60<br />
+fastExiva close</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Addelitow</div><div class="date">01-20-2009, 21:30</div></div><div class="posttext">Thank you for update the script, I will test it when my moneymaker get atleast level 25 :D<br />
+<br />
+<br />
+<br />
+;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sunmile</div><div class="date">01-21-2009, 00:05</div></div><div class="posttext">Where to start?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Clay</div><div class="date">01-21-2009, 00:16</div></div><div class="posttext">What dwarf caves does it go into?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dede</div><div class="date">01-21-2009, 00:18</div></div><div class="posttext">It's the cave inside Kazz.<br />
+exiva plot 32665,31942,13</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Chain</div><div class="date">01-21-2009, 04:02</div></div><div class="posttext">Very nice!<br />
+<br />
+Muito bom fico mano, eu tinha baixado, mas agora sem os bugs tá melhor</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dede</div><div class="date">01-22-2009, 17:32</div></div><div class="posttext">So I had all this job for nothing.<br />
+Next time I'm not going to share my scripts with this forum.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Stix</div><div class="date">01-23-2009, 07:34</div></div><div class="posttext">Gonna test it on my litle level 25, looks like a nice script, could of been just what i was looking for, thanks :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alleks</div><div class="date">01-26-2009, 23:07</div></div><div class="posttext">Well looked for a script like this but.. unfortunatly (spelling) it doesnt work just runt to a place wher many house are and stand there and says &quot;target lost&quot;<br />
+<br />
+<br />
+EDIT: Read a bit of this script now, and started at the exiva plot, has worked fine still.<br />
+<br />
+22:17 You need 3661 exp<br />
+for level 4x<br />
+Average session speed:<br />
+7892 exp/h<br />
+Estimated time left for level up:<br />
+0h 27m 50s<br />
+Played this session:<br />
+0h 7m 6s<br />
+Gained this session:<br />
+935 exp<br />
+<br />
+Havent got so far to the selling/buying part, so i make an edit when it has done that=) ty for nice script so far=)<br />
+<br />
+EDIT2: Well after a while when i got 6 white mushroms and 40 gold &quot;no manapotion&quot; maybe have to buy before go hunt idk but i didnt cuz im lazy.. it runs and runs to a palce and stands and says &quot;target lost&quot; and reapeat that.. runs withdraw 2k and do that..  im disapointed.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dede</div><div class="date">01-27-2009, 00:01</div></div><div class="posttext">@Alleks<br />
+You must have mana potions inside your backpack to make the script work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alleks</div><div class="date">01-27-2009, 00:47</div></div><div class="posttext">@Alleks<br />
+You must have mana potions inside your backpack to make the script work.<br />
+<br />
+Aha, k i will try it later on.. ile make edit when i tried =)<br />
+<br />
+Edit: Now it worsk great SUPER DUPER SCRIPT!<br />
+00:18 You need 69703 exp<br />
+for level 4x<br />
+Average session speed:<br />
+14061 exp/h<br />
+Estimated time left for level up:<br />
+4h 57m 26s<br />
+Played this session:<br />
+0h 19m 25s<br />
+Gained this session:<br />
+4550 exp<br />
+<br />
+Thats while i play with full atack on a 4x knight with 6x/5x skills plate set, steel helmet wyvern fang and tortoise shield.<br />
+Ile post edit tomorow when i played till ss.. with full defens (need to gain skills:P)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dede</div><div class="date">01-28-2009, 03:25</div></div><div class="posttext">See?<br />
+Works like honey on the bread : )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mimas</div><div class="date">01-28-2009, 03:34</div></div><div class="posttext">i used this script to level my 23 druid to lvl 26, manapotion buyer only works sometimesbecause the npc that sells manas in kaz is a wandering npc and the waypoint cant go exactly to where he is. also the waypoints for when i hunt in the cave are fucked, it will circle one part of the cave three times before it goes to move on out to the other parts of the cave, average exp was 5-6k/h with using lvl 19 wand<br />
+<br />
+EDIT: looks like you modded the script to actually work now, nvm</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dede</div><div class="date">02-03-2009, 20:26</div></div><div class="posttext">I haven't changed the script, probably something uncasual occured with you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">chapulyn</div><div class="date">02-03-2009, 20:31</div></div><div class="posttext">IM GONNA TRY IT...<br />
+<br />
+what is the minimum lvl requirement to use this script totaly afk..?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dede</div><div class="date">02-03-2009, 21:06</div></div><div class="posttext">If you are a knight, I think that should be enough level 25 casting exura's with mp, and a plate set with a basic 40/40 skills.<br />
+But if you are a mage I guess level 30+ without wand (for no waste), should be great.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eddini</div><div class="date">02-04-2009, 02:58</div></div><div class="posttext">Hello;) I don't have map and exiva plot don't gives me to much could someone give ss where it start? :&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Next--&gt;</div><div class="date">02-04-2009, 06:45</div></div><div class="posttext">Sounds like a nice script..<br />
+<br />
+i will stop boting my sorcerer in 5 min and change him there right now..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eddini</div><div class="date">02-08-2009, 21:52</div></div><div class="posttext">I started this script in deep cave then bot come back to city and bought 40 mana potion even i bought it before and done bp like u say... what is wrong ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eddini</div><div class="date">02-09-2009, 00:05</div></div><div class="posttext">And what part i need do delete to delete mana potion buyer... a use only exuras on 65 knight...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ConquerOnline</div><div class="date">03-04-2009, 23:57</div></div><div class="posttext">theres a string which gives your total cash earned and playing time this displays red in your tibia window if I remember from malmis, this may be a theory which can get you banned.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ConquerOnline</div><div class="date">03-04-2009, 23:59</div></div><div class="posttext">started this script on a 90 knight at stairs it went up and target lost standing there so i started it in dp it went to the cave went down the holes and went back up to the target lost place. i had 2 bps of manas open.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">12-28-2009, 17:29</div></div><div class="posttext">Good script, but the bank guy has moved.<br />
+<br />
+&quot;15:56 Tezila: I don't run the bank anymore. Please talk to Lokur in the depot to access your account.&quot;<br />
+<br />
+and I think the mana shop guy have moved a bit aswell :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">10-11-2010, 18:06</div></div><div class="posttext">Bump, Is this gonna be updated anymore? Or do I need to do it myself? :S<br />
+<br />
+Thanks! :)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

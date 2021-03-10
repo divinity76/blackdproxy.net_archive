@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="snowman, depositer, edron, trolls" />
+	<meta name="description" content="Description: desc is pretty much the same as the other ones... u can set at what X of cap u would like to go and deposit, put ammount of gold to deposit... and the best part of this script it's that u can choose if u want to go on to harder floors or not.... 
+Where it should be started: at cave 
+ 
+ 
+########Made by Snowman############## 
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Edron Trolls with depositer script!$ 
+waitX 1 
+fastExiva &lt; B4 19 $hex-tibiastr:Remember to take some" />
+	
+	<title> 43. Edron trolls with depositer - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  43. Edron trolls with depositer - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54447.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54447-43-Edron-trolls-with-depositer-by-Snowman">43. Edron trolls with depositer - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-22-2011, 13:22</div></div><div class="posttext">Description: desc is pretty much the same as the other ones... u can set at what X of cap u would like to go and deposit, put ammount of gold to deposit... and the best part of this script it's that u can choose if u want to go on to harder floors or not....<br />
+Where it should be started: at cave<br />
+<br />
+<br />
+<br />
+########Made by Snowman##############<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Edron Trolls with depositer script!$<br />
+waitX 1<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Remember to take some food!$<br />
+##########################################<br />
+#############CONFIG#######################<br />
+##########################################<br />
+#Put here amount of cap to go deposit:<br />
+fastExiva _captodp = 20<br />
+#Put here amount of gold to go deposit:<br />
+fastExiva _gp = 2500<br />
+#Should script hunt harder floors too? (1= yes     0= no)<br />
+fastExiva _floor = 0<br />
+##########################################<br />
+##########################################<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########################################<br />
+##########################################<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setVeryFriendly<br />
+setLoot D7 0B<br />
+SetMaxAttackTimeMs 40000<br />
+setMeleeKill Troll<br />
+setMeleeKill Troll Champion<br />
+setMeleeKill Bug<br />
+setMeleeKill Snake<br />
+setMeleeKill Wolf<br />
+setMeleeKill Rat<br />
+setPriority Troll Champion:+1<br />
+############################################<br />
+IfTrue ($mycap$#number&lt;=#$_captogodp$) Goto $nlineoflabel:dp$<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+#exp<br />
+move 33117,31775,8<br />
+move 33116,31773,8<br />
+move 33130,31751,8<br />
+move 33105,31758,8<br />
+move 33118,31740,8<br />
+IfTrue ($_floor$#number=#0) Goto $nlineoflabel:nohole1$<br />
+:hole1<br />
+move 33119,31740,9<br />
+move 33112,31741,9<br />
+move 33118,31753,9<br />
+move 33135,31740,9<br />
+move 33128,31729,9<br />
+move 33128,31728,10<br />
+move 33134,31716,10<br />
+move 33128,31728,10<br />
+move 33127,31728,9<br />
+move 33119,31740,9<br />
+move 33119,31741,8<br />
+:nohole1<br />
+move 33118,31741,8<br />
+move 33106,31757,8<br />
+move 33100,31747,8<br />
+move 33085,31738,8<br />
+move 33097,31736,8<br />
+move 33069,31730,8<br />
+move 33081,31741,8<br />
+IfTrue ($_floor$#number=#0) Goto $nlineoflabel:nohole2$<br />
+:hole2<br />
+move 33082,31742,9<br />
+move 33106,31712,9<br />
+move 33072,31728,9<br />
+move 33068,31716,9<br />
+move 33067,31717,10<br />
+move 33068,31717,9<br />
+move 33050,31726,9<br />
+move 33073,31729,9<br />
+move 33063,31753,9<br />
+move 33071,31751,9<br />
+move 33099,31742,9<br />
+move 33101,31741,10<br />
+move 33113,31734,10<br />
+move 33101,31741,10<br />
+move 33099,31741,9<br />
+move 33084,31743,9<br />
+move 33082,31743,10<br />
+move 33083,31743,10<br />
+move 33084,31743,9<br />
+move 33070,31751,9<br />
+:nohole2<br />
+move 33072,31752,8<br />
+move 33082,31763,8<br />
+move 33079,31774,8<br />
+move 33057,31762,8<br />
+move 33063,31778,8<br />
+move 33079,31774,8<br />
+move 33116,31772,8<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+#DP<br />
+move 33117,31775,8<br />
+move 33117,31776,7<br />
+move 33128,31809,7<br />
+move 33128,31810,8<br />
+move 33131,31807,8<br />
+move 33131,31806,9<br />
+move 33130,31808,9<br />
+move 33130,31809,10<br />
+move 33133,31806,10<br />
+move 33133,31805,11<br />
+move 33147,31823,11<br />
+move 33147,31825,10<br />
+move 33151,31821,10<br />
+move 33151,31821,9<br />
+move 33166,31824,9<br />
+move 33168,31824,8<br />
+move 33165,31827,8<br />
+move 33165,31828,7<br />
+move 33166,31812,7<br />
+move 33172,31803,7<br />
+#############################<br />
+#BANK<br />
+sayInTrade hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade deposit all<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade balance<br />
+waitX $randomnumber:2&gt;3$<br />
+sayInTrade bye<br />
+#############################<br />
+move 33166,31813,7<br />
+move 33166,31826,7<br />
+move 33165,31827,8<br />
+move 33169,31825,8<br />
+move 33170,31826,9<br />
+move 33151,31821,9<br />
+move 33151,31820,10<br />
+move 33147,31823,10<br />
+move 33147,31824,11<br />
+move 33133,31806,11<br />
+move 33133,31806,10<br />
+move 33131,31809,10<br />
+move 33130,31810,9<br />
+move 33130,31807,9<br />
+move 33131,31807,8<br />
+move 33129,31810,8<br />
+move 33128,31811,7<br />
+move 33117,31776,7<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Invec</div><div class="date">03-05-2011, 03:24</div></div><div class="posttext">This script completely debugged my client.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Reincarn</div><div class="date">03-05-2011, 06:12</div></div><div class="posttext">It did to mine at first too but I figured out how to fix it. <br />
+Delete the first 4 lines of the script and save it, then run it.<br />
+<br />
+It worked awesome for me after that. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipereall</div><div class="date">03-15-2011, 01:34</div></div><div class="posttext">Well, this script is runing good, just need to delete that lines as Reincarn said, i didnt tested the depositer becouse im using it for my low paladin to get the first skills without need to go dp, so i stoped to loot gold, now i loot spears.<br />
+<br />
+The only &quot;problem&quot; of this script is the pk alarm becouse dont atack bears, frost trolls and the boss Big Boss Trolliver.<br />
+<br />
+Just add it for script:<br />
+<br />
+<br />
+setMeleeKill bear<br />
+setMeleeKill frost troll<br />
+setMeleeKill Big Boss Trolliver<br />
+setPriority Big Boss Trolliver:+2<br />
+<br />
+Its killing bears so its good to put bear paws and honeycombs in loot:<br />
+<br />
+<br />
+#Bear Paw<br />
+setLoot 08 17<br />
+#Honeycomb<br />
+setLoot 0E 17</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Broda</div><div class="date">10-21-2011, 16:26</div></div><div class="posttext">I used another one with the same tittle &quot;edron trolls&quot; and it did not work well. Going to try this one now. <br />
+I send a feedback for other people to know.<br />
+<br />
+Edit: Debug my client, not gonna use it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rafix</div><div class="date">05-01-2012, 20:19</div></div><div class="posttext">looks good</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

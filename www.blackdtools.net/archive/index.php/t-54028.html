@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="refiller, potion, problem, small, time, send, remove, place, moving, talking, spear, buyer, potions, paladin, dwarf, depositor, kazordoons" />
+	<meta name="description" content="Hello , I made 5 lvls there from 18-23 , always afk . 5-8 k/h . 
+ 
+Start in Kazordoons depo , script got spear buyer , potions refiller , gold and lot depositor  . 
+ 
+Set auto refill in the trainer ! 
+ 
+ 
+:By Wiotki 
+fastExiva _manapotionid = 0C 01 
+# How many manas do you have?" />
+	
+	<title> Kazordoons dwarf for Paladin only , with spear buyer , potions refiller and depositor [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Kazordoons dwarf for Paladin only , with spear buyer , potions refiller and depositor</div>
+<hr />
+<div class="pda"><a href="t-54028.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54028-Kazordoons-dwarf-for-Paladin-only-with-spear-buyer-potions-refiller-and-depositor">Kazordoons dwarf for Paladin only , with spear buyer , potions refiller and depositor</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-19-2011, 14:46</div></div><div class="posttext">Hello , I made 5 lvls there from 18-23 , always afk . 5-8 k/h .<br />
+<br />
+Start in Kazordoons depo , script got spear buyer , potions refiller , gold and lot depositor  .<br />
+<br />
+Set auto refill in the trainer !<br />
+<br />
+<br />
+<br />
+:By Wiotki<br />
+fastExiva _manapotionid = 0C 01<br />
+# How many manas do you have?<br />
+fastExiva _manas = 10<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _idcost = 50<br />
+setAny<br />
+setBot OldLootMode=1<br />
+setLootOn<br />
+setChaoticMovesOFF<br />
+setLoot D7 0B<br />
+setLoot 61 0D<br />
+setLoot C3 1C<br />
+setLoot 15 0D<br />
+setLoot 76 0D<br />
+setLoot 8B 0E<br />
+setLoot F8 16<br />
+setPriority dwarf soldier:+1<br />
+setMeleeKill bat<br />
+setMeleeKill rat<br />
+setMeleeKill dwarf<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill rotworm<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32667,31939,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32662,31976,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32654,31989,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32667,31939,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32668,31895,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32665,31940,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32619,31921,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32602,31908,13<br />
+move 32564,31878,13<br />
+move 32579,31883,13<br />
+move 32575,31912,13<br />
+move 32554,31922,13<br />
+move 32563,31904,13<br />
+move 32602,31906,13<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 32622,31876,13<br />
+move 32603,31907,13<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32667,31939,13<br />
+move 32667,31940,12<br />
+move 32668,31941,11<br />
+move 32667,31939,11<br />
+move 32667,31940,10<br />
+move 32628,31936,10<br />
+move 32628,31937,11<br />
+move 32621,31938,11<br />
+move 32621,31939,10<br />
+move 32605,31921,10<br />
+move 32605,31919,9<br />
+move 32612,31921,9<br />
+move 32613,31920,8<br />
+move 32649,31907,8<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32664,31912,8<br />
+putLootOnDepot<br />
+:spears<br />
+move 32648,31907,8<br />
+IfTrue ($countitems:0C 01$#number&lt;=#9) Goto $nlineoflabel:refill$<br />
+sayMessage hi<br />
+waitX 2<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2000$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*9$<br />
+sayInTrade withdraw $_spearcost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32645,31907,8<br />
+move 32645,31907,8<br />
+move 32645,31909,9<br />
+move 32661,31895,9<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A CD 0C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 2<br />
+move 32646,31908,9<br />
+move 32645,31907,8<br />
+move 32613,31922,8<br />
+move 32613,31922,9<br />
+move 32606,31920,9<br />
+move 32605,31921,10<br />
+move 32621,31937,10<br />
+move 32621,31938,11<br />
+move 32628,31937,11<br />
+move 32628,31938,10<br />
+move 32633,31903,10<br />
+move 32645,31941,10<br />
+move 32666,31939,10<br />
+move 32667,31939,11<br />
+move 32668,31940,12<br />
+move 32667,31939,13<br />
+gotoScriptLine 0<br />
+:refill<br />
+move 32649,31907,8<br />
+sayMessage hi<br />
+waitX 2<br />
+fastExiva _manas = 10<br />
+fastExiva _idcost = 50<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32604,31925,8<br />
+move 32603,31924,7<br />
+move 32602,31922,6<br />
+move 32606,31925,6<br />
+move 32607,31924,5<br />
+move 32626,31929,5<br />
+waitX 2<br />
+fastExiva &gt; A2 $hex-idofname:Sigurd$<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+move 32608,31925,5<br />
+move 32607,31926,6<br />
+move 32603,31923,6<br />
+move 32602,31924,7<br />
+move 32603,31926,8<br />
+gotoScriptLine $nlineoflabel:spears$<br />
+<br />
+<br />
+Have funn :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipinhu</div><div class="date">01-24-2011, 16:23</div></div><div class="posttext">could you do a script to knight with depositer?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-24-2011, 21:19</div></div><div class="posttext">ye , but i dont have time now , i will add tomorrow</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-25-2011, 15:34</div></div><div class="posttext">for knights <br />
+<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+:By Wiotki<br />
+setAny<br />
+setBot OldLootMode=1<br />
+setLootOn<br />
+setLoot D7 0B<br />
+setLoot 61 0D<br />
+setLoot C3 1C<br />
+setLoot 15 0D<br />
+setLoot 76 0D<br />
+setLoot 8B 0E<br />
+setLoot F8 16<br />
+setPriority dwarf soldier:+1<br />
+setMeleeKill bat<br />
+setMeleeKill rat<br />
+setMeleeKill dwarf<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill rotworm<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32667,31939,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32662,31976,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32654,31989,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32667,31939,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32668,31895,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32665,31940,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32619,31921,13<br />
+move 32602,31908,13<br />
+move 32564,31878,13<br />
+move 32579,31883,13<br />
+move 32575,31912,13<br />
+move 32554,31922,13<br />
+move 32563,31904,13<br />
+move 32602,31906,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32622,31876,13<br />
+move 32603,31907,13<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32667,31939,13<br />
+move 32667,31940,12<br />
+move 32668,31941,11<br />
+move 32667,31939,11<br />
+move 32667,31940,10<br />
+move 32628,31936,10<br />
+move 32628,31937,11<br />
+move 32621,31938,11<br />
+move 32621,31939,10<br />
+move 32605,31921,10<br />
+move 32605,31919,9<br />
+move 32612,31921,9<br />
+move 32613,31920,8<br />
+move 32649,31907,8<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32664,31912,8<br />
+putLootOnDepot<br />
+move 32613,31922,8<br />
+move 32613,31922,9<br />
+move 32606,31920,9<br />
+move 32605,31921,10<br />
+move 32621,31937,10<br />
+move 32621,31938,11<br />
+move 32628,31937,11<br />
+move 32628,31938,10<br />
+move 32633,31903,10<br />
+move 32645,31941,10<br />
+move 32666,31939,10<br />
+move 32667,31939,11<br />
+move 32668,31940,12<br />
+move 32667,31939,13<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DanielChau</div><div class="date">02-12-2011, 17:37</div></div><div class="posttext">using it on my level 17 paladin. loving it :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nagiler</div><div class="date">02-27-2011, 10:58</div></div><div class="posttext">he withdraws 450gp but he doesn't buy anything, so he withdraws again, and again, and again...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">02-27-2011, 11:47</div></div><div class="posttext">450 gp so i think you are talking about potion refiller , it's a small problem with it because this npc is moving few place ... you should remove potion refiller<br />
+<br />
+Next time send PM</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kird</div><div class="date">10-12-2011, 20:09</div></div><div class="posttext">yep potion refiler is buged</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kird</div><div class="date">10-12-2011, 20:12</div></div><div class="posttext">uppppppppppppppppp</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

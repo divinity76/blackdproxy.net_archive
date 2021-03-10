@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="delay, exori" />
+	<meta name="description" content="Like in tittle, how to do delay in exori flam script? Some1 can help me? Thanks!" />
+	
+	<title> exori flam, delay. How? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  exori flam, delay. How?</div>
+<hr />
+<div class="pda"><a href="t-59873.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59873-exori-flam-delay-How">exori flam, delay. How?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Rostko</div><div class="date">01-03-2013, 11:50</div></div><div class="posttext">Like in tittle, how to do delay in exori flam script? Some1 can help me? Thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-03-2013, 12:57</div></div><div class="posttext">What kind of exori flam script are you using?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rostko</div><div class="date">01-03-2013, 14:11</div></div><div class="posttext">setSpellKill earth elemental,exori flam,3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-03-2013, 15:19</div></div><div class="posttext">Hum, try doing it conditional events instead ... Here's a great script from @Malmis:<br />
+<br />
+http://www.blackdtools.net/showthread.php?57339-Better-Mage-Exori-Exori-Gran<br />
+<br />
+For your case you should edit it like so:<br />
+<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _strike = no<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+earth elemental<br />
+0<br />
+0<br />
+0<br />
+exiva _strike = flam<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = 0<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number&gt;#<br />
+10<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = $numericalexp:{$_live2strike$}+1$<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number&lt;#<br />
+100<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = $numericalexp:{$_live2strike$}+1$<br />
+$_strike$<br />
+#string&lt;&gt;#<br />
+no<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = $numericalexp:{$_live2strike$}+1$<br />
+$_live2strike$<br />
+#number=#<br />
+3<br />
+0<br />
+1000<br />
+0<br />
+exori $_strike$<br />
+<br />
+<br />
+earth elemental = creature name<br />
+flam = spell<br />
+10 = HP of creature, casts spell on it if HP is higher than that amount, useful if you're using a wand.<br />
+<br />
+But please be careful! @Malmis stated in one of his threads that this might spam when out of mana or if creature isn't in Line-Of-Sight.<br />
+<br />
+May spam when out of mana or attacking mobs not in Line-of-Sight, so might be unsafe. Use with caution.<br />
+<br />
+Source: http://www.blackdtools.net/showthread.php?57391-Malmis-Scripts&amp;highlight=exori<br />
+<br />
+Maybe someone else is in possesion of more advanced, safer script? :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rostko</div><div class="date">01-03-2013, 15:37</div></div><div class="posttext">May i have ban for this cond?<br />
+And thanks :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-03-2013, 16:19</div></div><div class="posttext">May spam when out of mana or attacking mobs not in Line-of-Sight, so might be unsafe. Use with caution.<br />
+<br />
+Maybe, I don't know. I don't bot my mages with BlackD anyway, I'm using BlackD for massive money making.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-03-2013, 19:25</div></div><div class="posttext">Aye, It isn't very wise to bot mages with BlackD I have found myself, maybe because it doesn't keep distance (running) mobs well and the spells seem semi broken/busted to me so I tend to stick to botting Knights! Be very cautious about running Cavebot on your main premiums.<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jalomo</div><div class="date">07-17-2013, 23:01</div></div><div class="posttext">if some one can help me i have the same problem with a mage lvl 12 i want to attack rotworms with exori min flam</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

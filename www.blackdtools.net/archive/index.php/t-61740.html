@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="cavebot, rots, rotworms, script, venore, setmeleekill, waitx, sayintrade, gotoscriptline, magic, useitem, 32700,32013,9, 32707,31991,9, 32699,32019,7, level, setloot, 32699,32018,8, rotworm, iftrue, train, weight, spider, deposit, 33019,32053,6, snake, 32862,32125,6, 32720,31998,9, 32862,32127,7, 32720,31998,10, saymessage, setbot, balance, 32715,31992,9, ifenoughitemsgoto, $countitemsdb, potions, ensure, bag/backpack, depositer, dungeon, 32898,32126,6, putlootondepot, favourite, dumpdirt, 32783,32086,7, 32927,32096,6, 32700,32014,8, 32861,32126,7, 32863,32125,6, 32793,32086,7" />
+	<meta name="description" content="Hi im new to the forum, and this is my first post, This script has made me a bunch of gold, and the exp is fantastic. 
+Over 4k per hour!! 
+ 
+Requirements: 
+&gt;Ensure that your bag/backpack is open to your shovel and rope. You will need them. If your bags are not open this will not work, and you will miss out on a lot of gold. 
+&gt;Ensure that you have sufficient potions if you are using a magic type character, and hp and mp conditions set. 
+&gt;Keep in mind that this script will loot lumps of dirt." />
+	
+	<title> Venore West Rots 4k+ EXP per hour + Auto Depositer! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Venore West Rots 4k+ EXP per hour + Auto Depositer!</div>
+<hr />
+<div class="pda"><a href="t-61740.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61740-Venore-West-Rots-4k-EXP-per-hour-Auto-Depositer!">Venore West Rots 4k+ EXP per hour + Auto Depositer!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">06-18-2014, 08:57</div></div><div class="posttext">Hi im new to the forum, and this is my first post, This script has made me a bunch of gold, and the exp is fantastic.<br />
+Over 4k per hour!!<br />
+<br />
+Requirements:<br />
+&gt;Ensure that your bag/backpack is open to your shovel and rope. You will need them. If your bags are not open this will not work, and you will miss out on a lot of gold.<br />
+&gt;Ensure that you have sufficient potions if you are using a magic type character, and hp and mp conditions set.<br />
+&gt;Keep in mind that this script will loot lumps of dirt. They have one of the highest weight to gold ratios of any item in Tibia. But over a long period of time they will add up to a lot of weight (Added Lump of Dirt Depositer), and for magic characters, you need to micro manage every ounce. I recommend putting them in a bag/backpack in your depot when you have a decent amount.<br />
+&gt;Start in any area along the route. Blackd starts its script at a movexyz near you.<br />
+&gt;(Optional) Make sure you are always using your mana, to train your magic level. Use a conditional to cast a spell or two when your mana reaches a certain point. Mana potions also increase your magic level. So if you are swimming in Gold, you can train a magic level rather quickly.<br />
+<br />
+http://i58.tinypic.com/334m4pk.jpg<br />
+<br />
+Set timer from: 300 to 700 ms, to: 300 - 400 ms<br />
+This way you waste little time looting and moving on<br />
+<br />
+<br />
+onGMpause<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+setLootDistance 3<br />
+setFollow<br />
+setBot AutoEatFood=1<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1500) Goto 18<br />
+setMeleeKill rotworm<br />
+move 32702,32002,9<br />
+move 32699,32009,9<br />
+move 32720,31998,9<br />
+move 32720,31998,10<br />
+move 32715,31991,10<br />
+move 32715,31992,9<br />
+move 32707,31991,9<br />
+useItem 32707,31991,9<br />
+move 32702,32003,8<br />
+gotoScriptLine 0<br />
+setBot AutoEatFood=0<br />
+setMeleeKill rotworm<br />
+setMeleeKill snake<br />
+move 32700,32013,9<br />
+useItem 32700,32013,9<br />
+move 32699,32018,8<br />
+move 32699,32019,7<br />
+move 32734,32069,7<br />
+move 32783,32085,7<br />
+move 32793,32085,7<br />
+move 32845,32125,7<br />
+move 32862,32127,7<br />
+move 32862,32125,6<br />
+move 32936,32126,6<br />
+move 32939,32095,6<br />
+move 33012,32053,6<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade balance<br />
+IfEnoughItemsGoto DC 25,250,$nlineoflabel:dumpDirt$<br />
+move 32948,32096,6<br />
+move 32862,32125,6<br />
+move 32862,32127,7<br />
+move 32793,32086,7<br />
+move 32783,32086,7<br />
+move 32733,32064,7<br />
+move 32699,32019,7<br />
+move 32699,32018,8<br />
+move 32700,32014,8<br />
+move 32700,32013,9<br />
+gotoScriptLine 0<br />
+:dumpDirt<br />
+move 33021,32050,7<br />
+putLootOnDepot<br />
+gotoScriptLine 43<br />
+#script for my favourite dungeon<br />
+<br />
+<br />
+This script is geared toward a Knight.<br />
+Ill be adding other Classes soon:D<br />
+<br />
+Alternative script that might work better. some parts omitted<br />
+<br />
+<br />
+<br />
+#setNoFollow<br />
+setMeleeKill elf<br />
+setMeleeKill elf scout<br />
+setPriority elf arcanist:+1<br />
+setMeleeKill elf arcanist<br />
+setMeleeKill hunter<br />
+setMeleeKill cave rat<br />
+setMeleeKill snake<br />
+setMeleeKill spider<br />
+setMeleeKill scorpion<br />
+setMeleeKill poison spider<br />
+setMeleeKill feverish citizen<br />
+setMeleeKill rotworm<br />
+setLoot D7 0B<br />
+useItem 32699,32018,7<br />
+IfEnoughItemsGoto D7 0B,1500,$nlineoflabel:depo$<br />
+IfFewItemsGoto D7 0B,1,$nlineoflabel:return$<br />
+IfTrue ($countitems:DB 0B$#number&gt;=#100) Goto $nlineoflabel:depo$<br />
+:cavestart<br />
+move 32700,32012,9<br />
+move 32700,32006,9<br />
+move 32703,32002,9<br />
+move 32709,32002,9<br />
+move 32711,32006,9<br />
+move 32717,32006,9<br />
+move 32723,32001,9<br />
+move 32720,31998,9<br />
+move 32720,31998,10<br />
+move 32716,31997,10<br />
+move 32714,31992,10<br />
+move 32715,31992,9<br />
+useItem 32707,31991,9<br />
+move 32705,31992,8<br />
+move 32701,31993,8<br />
+move 32702,32001,8<br />
+move 32702,32003,9<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32699,32007,9<br />
+useItem 32700,32013,9<br />
+move 32699,32017,8<br />
+move 32699,32020,7<br />
+move 32729,32061,7<br />
+move 32762,32080,7<br />
+move 32806,32093,7<br />
+move 32837,32116,7<br />
+move 32861,32126,7<br />
+move 32863,32125,6<br />
+move 32898,32126,6<br />
+move 32927,32096,6<br />
+move 32954,32088,6<br />
+move 32988,32073,6<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 2<br />
+:return<br />
+IfTrue ($countitems:DB 0B$#number&gt;#0) Goto $nlineoflabel:cavestart$<br />
+move 33013,32053,6<br />
+move 33006,32063,6<br />
+move 32997,32080,6<br />
+move 32995,32108,6<br />
+move 32958,32119,6<br />
+move 32921,32126,6<br />
+move 32863,32126,6<br />
+move 32861,32127,7<br />
+move 32829,32113,7<br />
+move 32803,32092,7<br />
+move 32768,32081,7<br />
+move 32728,32061,7<br />
+move 32697,32020,7<br />
+move 32699,32019,7<br />
+move 32699,32018,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">06-18-2014, 09:00</div></div><div class="posttext">This script is for a Sorcerer, It auto creates SD runes for you.<br />
+I use a conditional to automatically make a blank rune when i have more than 90 soul, every 120 seconds, so you dont run out of blanks to make SD's with.<br />
+<br />
+Recommended level 18+<br />
+have a couple backpacks open, and make sure your rune pack is open too, so you use the blanks to make SD's<br />
+<br />
+There are a few extra lines in the script for those who want to loot lumps of dirt, but they are commented out. Uncomment them if you<br />
+want to collect them for the extra money.<br />
+<br />
+Bugs:<br />
+Once in a GREAT while  you will get stuck in an unrelated room in the rotworm cave. To avoid this, try using a setspellkill exori vis rotworm after the setmeleekill rotworm line in the cavebot script. This will usually 1hit ko the rots, thus reducing the chance of getting stuck<br />
+<br />
+Keep in mind:<br />
+Rotworms give you 40 exp per kill on RT, so after level 40, your soulpoints will not recharge for killing them anymore, making the runemaking portion of this script obsolete.<br />
+<br />
+<br />
+<br />
+setNoFollow<br />
+setLoot D7 0B<br />
+#setLoot DC 25<br />
+setBot PKwarnings=0<br />
+setLootDistance 3<br />
+setBot AutoEatFood=1<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#4000) Goto $nlineoflabel:dumpGold$<br />
+setMeleeKill rotworm<br />
+move 32702,32002,9<br />
+move 32699,32009,9<br />
+move 32720,31998,9<br />
+move 32720,31998,10<br />
+move 32715,31991,10<br />
+move 32715,31992,9<br />
+move 32707,31991,9<br />
+useItem 32707,31991,9<br />
+move 32702,32003,8<br />
+IfEnoughItemsGoto 4B 0C,1,$nlineoflabel:checkMana$<br />
+gotoScriptLine 0<br />
+:dumpGold<br />
+setBot PKwarnings=0<br />
+setBot AutoEatFood=0<br />
+setMeleeKill rotworm<br />
+setMeleeKill snake<br />
+move 32700,32013,9<br />
+useItem 32700,32013,9<br />
+move 32699,32018,8<br />
+move 32699,32019,7<br />
+move 32734,32069,7<br />
+move 32783,32085,7<br />
+move 32793,32085,7<br />
+move 32845,32125,7<br />
+move 32862,32127,7<br />
+move 32862,32125,6<br />
+move 32936,32126,6<br />
+move 32939,32095,6<br />
+move 33012,32053,6<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade balance<br />
+IfEnoughItemsGoto DC 25,250,$nlineoflabel:dumpDirt$<br />
+move 32948,32096,6<br />
+move 32862,32125,6<br />
+move 32862,32127,7<br />
+move 32793,32086,7<br />
+move 32783,32086,7<br />
+move 32733,32064,7<br />
+move 32699,32019,7<br />
+move 32699,32018,8<br />
+move 32700,32014,8<br />
+move 32700,32013,9<br />
+gotoScriptLine 0<br />
+:dumpDirt<br />
+move 33021,32050,7<br />
+putLootOnDepot<br />
+setLoot 81 0D<br />
+setLoot BB 0B<br />
+gotoScriptLine 43<br />
+:checkMana<br />
+IfTrue ($mymanapercent$#number&gt;=#85) Goto $nlineoflabel:checkSoul$<br />
+gotoScriptLine 0<br />
+:makeSD<br />
+sayMessage adori gran mort<br />
+gotoScriptLine 0<br />
+:checkSoul<br />
+IfTrue ($mysoulpoints$#number&gt;=#10) Goto $nlineoflabel:makeSD$<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">06-18-2014, 09:01</div></div><div class="posttext">Reserved For another future post</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">06-18-2014, 09:01</div></div><div class="posttext">And yet One last post</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">doimumble</div><div class="date">06-27-2014, 08:30</div></div><div class="posttext">Works great, No problems at all.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">legendx</div><div class="date">06-29-2014, 18:03</div></div><div class="posttext">It works great! Could you make more scripts? Maybe one for venore swamp trolls or another rotworm location with higher exp/hr?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">07-02-2014, 03:28</div></div><div class="posttext">It works great! Could you make more scripts? Maybe one for venore swamp trolls or another rotworm location with higher exp/hr?<br />
+<br />
+<br />
+Works great, No problems at all.<br />
+<br />
+Thanks for the feedback guys. Ill be back to rt soon, making more scripts for other areas. Vacation soon!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">legendx</div><div class="date">07-04-2014, 01:31</div></div><div class="posttext">Hmm what other scripts are you intending to make?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">07-05-2014, 09:54</div></div><div class="posttext">Hmm what other scripts are you intending to make?<br />
+<br />
+As of right now i have a very busy personal life, and i work a lot. Ive been playing a lot of OT, Ruining servers economies :D<br />
+I recently posted another thread for dragon, and gs hunting, with an auto depositer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">legendx</div><div class="date">07-05-2014, 15:23</div></div><div class="posttext">Haha i think you are the only active script maker on here. Looking forward to your next script. Currently cant use your dragon script yet, still too low level lol.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">07-08-2014, 21:29</div></div><div class="posttext">i added another script for Sorc's for the second post, with auto SD maker Check it out!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">legendx</div><div class="date">07-12-2014, 02:18</div></div><div class="posttext">Haha currently waiting for blackproxy to be update to 10.5</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">08-05-2015, 05:43</div></div><div class="posttext">Im Back! Thanks for all the support on this thread guys. It means a lot!<br />
+Ill be posting under the pseudo &quot;Saints&quot; as well as this account.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">01-19-2016, 20:07</div></div><div class="posttext">I know i have been away for quite some time. I have been suffering PTSD, and I am no longer the functional member of society I once was. I work from home now, and I get a little more time to play tibia, as long as I have the ambition, I will continue to make posts, and scripts as long as I can.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

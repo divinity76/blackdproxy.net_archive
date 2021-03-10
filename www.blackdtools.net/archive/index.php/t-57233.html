@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="ankrahmun, chor, clipster, lizard, port hope, added, silly, 0cmorning, script, started, today, moved" />
+	<meta name="description" content="Introduction:  
+Chor is mainly botted by knights and paladins as they are able to withstand physical damage better. Their increased cap helps them to carry several more items as well, which will be needed here. Last bot not least they use &quot;setMeleeKill&quot; instead of &quot;setSpellKill&quot;. A knight swings his axe, a paladin throws his spear, while a mage must use alot of mana to kill every lizard. But I bet you are all very aware of why this place is not being botted by mages. As to the point; this" />
+	
+	<title> Ankrahmun - Chor - by Clipster [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Ankrahmun - Chor - by Clipster</div>
+<hr />
+<div class="pda"><a href="t-57233.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57233-Ankrahmun-Chor-by-Clipster">Ankrahmun - Chor - by Clipster</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Clipster</div><div class="date">02-05-2012, 15:19</div></div><div class="posttext">Introduction: <br />
+Chor is mainly botted by knights and paladins as they are able to withstand physical damage better. Their increased cap helps them to carry several more items as well, which will be needed here. Last bot not least they use &quot;setMeleeKill&quot; instead of &quot;setSpellKill&quot;. A knight swings his axe, a paladin throws his spear, while a mage must use alot of mana to kill every lizard. But I bet you are all very aware of why this place is not being botted by mages. As to the point; this script is made for knights and possible for paladins (Not tested but shouldn't be a problem.)<br />
+<br />
+I noticed there isn't alot of bug free/working scripts here at the forum. I see alot of authors promising the script will, for e.g., go deposit at X cap, but (most of) their scripts doesn't actually work. Don't get me wrong, I, as of yet, am unable to make advanced scripts such as depositing gold and stones on X cap perfectly in Edron Goblins. I'm very new to scripting with Black'd and I would definitely not be able to do it any better with my current scripting skills. But any way, I will here release a little script I made for the Ankrahmun/Port Hope Lizard city &quot;Chor&quot;. http://tibia.wikia.com/wiki/Chor <br />
+<br />
+<br />
+IMPORTANT NOTES: <br />
+#1. This script does not as of yet contain any depositer. Why? I really don't think there should be a depositer in use when hunting Chor. It's just not &quot;profitable&quot; using so much time walking back to the city as your cap will rapidly decrease when looting heavy items such as plate armors, halberds and obsidian lances.<br />
+Instead this script uses a &quot;dropLootOnGround&quot;-command. The bot will go one lap through Chor, and at the end of the waypoints it will go drop items [http://tibia.wikia.com/wiki/Mapper?coords=128.238-128.63-7-4-1-1 here]. This location is safe from being cleaned. I will write how the script works and which items the script drops further down.<br />
+<br />
+#2. This script will in no way get the items dropped on the ground inside a backpack, so you will have to manually throw your loot into backpacks and then manually throwing it back to Ankrahmun, or Port hope, your choice. I recommend bringing a backpack filled with backpacks (1 backpack with 20 backpacks inside of it.) as well as using soft boots, they're really really worth it.<br />
+<br />
+#3. This script does not as of yet contain waypoints to go kill the wyverns close to where the loot is being dropped. You may edit the script yourself if you don't want to wait for me to edit it and upload a newer version with wyvern waypoints. Though the loot list contains all the items that you can loot from wyverns, so you don't have to edit that yourself. Just be aware of what you're doing while editing, remember to edit the &quot;gotoScriptLine X&quot; at the end of the script when adding/deleting lines in the script. (gotoScriptLine X should be set for the line just beneath the comment that says &quot;Arriving at Chor&quot;)<br />
+<br />
+#4.There are two different scripts included in this thread. One is called &quot;Ankrahmun - Chor - by Clipster.txt&quot; and loots everything, but the other script called &quot;Ankrahmun - Chor Low Cap - by Clipster.txt&quot; does not loot gold, plate armors, obsidian lances, halberds, templar scytheblades or sentinel shields so that you'll be able to stay there longer, without bothering to throw your loot back when you're leaving.<br />
+<br />
+#5. Not all items are dropped, only items I consider to be of less value/cap. Items such as terra rods, rings, creature products and valuables (e.g. small sapphires) are not dropped as they might be stolen.<br />
+<br />
+<br />
+Here's how it works: <br />
+As I mentioned above, this script goes one lap, then at the end of each lap goes to drop loot at a certain location. But get this; the script drops loot on four (4) different squares, not just a single one.<br />
+[X] [X]<br />
+[X] [X] &lt;- This is how the bot will drop loot.<br />
+<br />
+Question: Which items are dropped on which squares?<br />
+Answer: This is how I've divided everything:<br />
+[X]: Items that can be sold in Ankrahmun shop. (Plate Armors, Steel Helmets and Halberds)<br />
+[X]: Gold.<br />
+[X]: Port hope-sellable items. (Templar Scytheblades and Sentinel Shields)<br />
+[X]: Blue Djinn-sellable items. (Obsidian Lances)<br />
+<br />
+Question: Are these all the items that are looted?<br />
+Answer: Ofcourse not, the script loots everything worth to be looted:<br />
+# Gold<br />
+# Mana Potions<br />
+# Health Potions<br />
+# Lizard Scales<br />
+# Lizard Leathers<br />
+# Centipede Legs<br />
+# Pieces of Crocodile Leather<br />
+# Bat Wings<br />
+# Crocodile Boots<br />
+# Charmer's Tiaras<br />
+# Terra Rods<br />
+# Steel Helmets<br />
+# Obsidian Lances<br />
+# Halberds<br />
+# Plate Armors<br />
+# Sentinel Shields<br />
+# Templar Scytheblades<br />
+# Life Rings<br />
+# Wands of Inferno (Wyvern)<br />
+# Wyvern Fangs (Wyvern)<br />
+# Emerald Bangles (Wyvern)<br />
+# Scarab Coins<br />
+# Small Amethysts (Wyvern)<br />
+# Small Emeralds<br />
+# Small Sapphires<br />
+# Life Crystals<br />
+# Yellow Gems<br />
+# Seeds<br />
+# Tusks<br />
+<br />
+Question: I see Chain Armor and Scale Armor is not included, why?<br />
+Answer: I excluded looting those to items as they are very heavy and not worth alot. I know every little helps when you want to make alot of money, but there might be laps where you find so many Plate Armors, Steel Helmets and Halberds that you won't be able to carry those Chain- and Scale Armors. So why pick those two items up and risking losing something that's more valuable? <br />
+<br />
+Question: Why doesn't this script use a regular condition such as... IfTrue ($mycap$#number&lt;=#100) Goto X?<br />
+Answer: I feel finishing one lap and depositing on the way is far more effective instead of in the middle of a lap running back through everything to drop loot. This will help keeping the spawn relativily cleaned, as this spawn is very crowded, especially in high-populated servers.<br />
+<br />
+I tried to make the script text as simple as I could. I very freely added comments to help players edit and understand the script better. If you have requests of scripts or any other questions, please don't hesitate to contact me at clipsterscripts@gmail.com.<br />
+<br />
+Also, as I'm still very new to Black'D Bot I wouldn't mind more experienced scripters/programmers to get in touch with me. I have different characters for trying scripts and I'm very eager to learn more.<br />
+<br />
+That would be all. Thank you for taking your time to read all this, I hope the scripts will make it all worth it and that it works flawlessly for all of you. Constructive feedback is very welcomed.<br />
+<br />
+<br />
+Happy botting!<br />
+/Clipster</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Poljanec</div><div class="date">08-13-2012, 23:06</div></div><div class="posttext">Hey very nice script. I started using it today with my 49ek im alone and its very nice I just moved gold from drop list because I think its silly not to keep gold =D Thanks!<br />
++oh and maybe ad this D2 0C(morning star) I added it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ajose</div><div class="date">08-30-2012, 00:32</div></div><div class="posttext">What is the recommended level/skills for this script? What exp/h do you get?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Poljanec</div><div class="date">09-04-2012, 23:48</div></div><div class="posttext">I have 53k awarage without bonus and i started around level 50</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Invicta</div><div class="date">11-13-2012, 12:50</div></div><div class="posttext">Where does script start?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TEEEH</div><div class="date">11-26-2012, 02:17</div></div><div class="posttext">Just tried this script out, hunting here manually is a blast for a knight/palladin, didn't really suite my knight (might be a bit to low lvl yet).<br />
+<br />
+Lvl: 55<br />
+Skills: 85/80<br />
+Exp: 43k/h (were alone there the whole time)<br />
+Pots used in 1 run: 50 mana potions (utura (manually) &amp; exura ico)<br />
+Profit?: Aprox +-0<br />
+<br />
+<br />
+Just my 2 cents, so people know when checking post.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ciaffa</div><div class="date">11-26-2012, 18:23</div></div><div class="posttext">NICEEE NO HAVE MOrE SCRIPTS FOR KNIGHT LEVEL 90 FULL SET GOOD SKILLS?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

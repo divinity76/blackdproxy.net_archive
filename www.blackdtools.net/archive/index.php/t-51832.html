@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, waitx, setmeleekill, setloot, saymessage, fastexiva, sayintrade, exiva, sorcerer, cloth, warrior, poison, $hex-tibiastrbye$, 01$number, trade, good, wand, skeleton, $countitems0c, $hex-tibiastryes$, iftrue, 32332,31780,7, putlootondepot, 32334,31778,8, 32332,31782,8, $hex-tibiastrdeposit, 32272,31907,10, 32258,31895,10, 32279,31908,11, 32291,31907,11, 32278,31907,11, 32237,31890,10, 32232,31890,9, $hex-tibiastrhi$, 32221,31862,8, 32216,31874,8, 32221,31888,9, all$, danger, gotoscriptline, 32223,31860,8, 32220,31830,7, 32223,31858,7, 32223,31861,7, 32216,31809,7, 32317,31789,7, 32328,31784,7, close, 32269,31783,7, 32218,31768,7" />
+	<meta name="description" content="Hi all, here 's a good scrip to sorcerer. 
+ 
+You need 
+ 
+*Rope 
+*Shovel 
+*Mana Potions 
+ 
+Requirements:" />
+	
+	<title> Ghostland for Sorcerer [Tibia 8.6] [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Ghostland for Sorcerer [Tibia 8.6]</div>
+<hr />
+<div class="pda"><a href="t-51832.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?51832-Ghostland-for-Sorcerer-Tibia-8-6">Ghostland for Sorcerer [Tibia 8.6]</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">StarRush</div><div class="date">08-05-2010, 21:02</div></div><div class="posttext">Hi all, here 's a good scrip to sorcerer.<br />
+<br />
+You need<br />
+<br />
+*Rope<br />
+*Shovel<br />
+*Mana Potions<br />
+<br />
+Requirements:<br />
+<br />
+*Level 20+<br />
+*Equipament: Plate Set, good shield, Wand of Dragonbreath or Wand of Draconia<br />
+*Vocation: Sorcerer<br />
+<br />
+Creatures:<br />
+<br />
+*Bat<br />
+*Cave Rat<br />
+*Ghoul<br />
+*Rat<br />
+*Scorpion<br />
+*Spider Poison<br />
+*Skeleton<br />
+*Skeleton Warrior<br />
+*Slime<br />
+<br />
+Loot:<br />
+<br />
+*Bat Wing<br />
+*Brown Piece of Cloth<br />
+*Gold Coins<br />
+*Life Ring<br />
+*Pelvis Bone<br />
+*Rotten pieces of cloth<br />
+*ghoul snacks<br />
+<br />
+Experiencie per hour:<br />
+<br />
+*10-12k<br />
+<br />
+Ok here it is:<br />
+<br />
+Location: South-west of Carlin<br />
+<br />
+http://tibia.wikia.com/wiki/Mapper?coords=125.223,124.117,7,3,1,1&amp;mark1=125.218,124.24,7,9&amp;mark2=126.22,124.46,7,18<br />
+<br />
+<br />
+onDangerGoto $nlineoflabel:danger$<br />
+setFriendly<br />
+setChaoticMovesOFF<br />
+setMeleeKill skeleton warrior<br />
+setMeleeKill poison spider<br />
+setMeleeKill bat<br />
+setMeleeKill ghoul<br />
+setMeleeKill slime<br />
+setMeleeKill rat<br />
+setMeleeKill cave rat<br />
+setMeleeKill scorpion<br />
+setMeleeKill skeleton<br />
+setLoot EC 0B<br />
+setLoot 06 17<br />
+setLoot 19 17<br />
+setLoot D7 0B<br />
+setLoot D9 2C<br />
+setLoot CB 2C<br />
+setLoot 33 28<br />
+move 32222,31864,8<br />
+move 32216,31873,9<br />
+move 32234,31868,10<br />
+move 32236,31869,11<br />
+move 32234,31865,11<br />
+move 32236,31870,10<br />
+move 32234,31869,9<br />
+move 32230,31890,9<br />
+move 32235,31889,10<br />
+move 32256,31895,10<br />
+move 32275,31907,10<br />
+move 32278,31907,11<br />
+move 32291,31907,11<br />
+move 32279,31908,11<br />
+move 32272,31907,10<br />
+move 32258,31895,10<br />
+move 32237,31890,10<br />
+move 32232,31890,9<br />
+move 32221,31888,9<br />
+move 32216,31874,8<br />
+move 32221,31862,8<br />
+IfTrue ($countitems:0C 01$#number&lt;#5) Goto $nlineoflabel:carlin$<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:carlin$<br />
+gotoScriptLine 0<br />
+:carlin<br />
+move 32223,31861,7<br />
+move 32216,31809,7<br />
+move 32219,31779,7<br />
+move 32221,31779,8<br />
+move 32218,31768,7<br />
+move 32269,31783,7<br />
+move 32317,31789,7<br />
+move 32327,31782,7<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:bye$<br />
+move 32332,31782,8<br />
+move 32334,31778,8<br />
+putLootOnDepot<br />
+move 32332,31780,7<br />
+IfTrue ($countitems:0C 01$#number&lt;#30) Goto $nlineoflabel:buyManas$<br />
+move 32281,31789,7<br />
+move 32240,31769,7<br />
+move 32220,31766,7<br />
+move 32218,31767,8<br />
+move 32221,31780,7<br />
+move 32220,31830,7<br />
+move 32223,31858,7<br />
+move 32223,31860,8 <br />
+gotoScriptLine 0<br />
+:buyManas<br />
+fastExiva _mananeeded = $numericalexp:30-{$countitems:0C 01$}$<br />
+fastExiva _costmana = $numericalexp:50*{$_mananeeded$}$<br />
+move 32326,31782,7<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+sayInTrade withdraw $_costmana$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:bye$<br />
+move 32345,31827,7<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitx 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mananeeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+move 32298,31790,7<br />
+move 32246,31773,7<br />
+move 32219,31766,7<br />
+move 32218,31767,8<br />
+move 32221,31780,7<br />
+move 32220,31830,7<br />
+move 32223,31858,7<br />
+move 32223,31860,8<br />
+gotoScriptLine 0<br />
+:danger<br />
+sayMessage ?<br />
+waitX 1<br />
+sayMessage -.-<br />
+move 32223,31861,7<br />
+move 32216,31809,7<br />
+move 32219,31779,7<br />
+move 32221,31779,8<br />
+move 32218,31768,7<br />
+move 32269,31783,7<br />
+move 32317,31789,7<br />
+move 32328,31784,7<br />
+waitX 1<br />
+sayMessage exiva close</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">StarRush</div><div class="date">08-07-2010, 20:28</div></div><div class="posttext">Upgrade:<br />
+<br />
+1. Added more waypoints<br />
+2. Added Refiller<br />
+3. Added Danger for pks<br />
+<br />
+Please any problems or bugs post here.<br />
+<br />
+Greetings to all :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-08-2010, 02:28</div></div><div class="posttext">You should have set chaoticoff as the first thing so it doesn't skip it out in its random movement down lol I might have to check this script out. THANKS</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

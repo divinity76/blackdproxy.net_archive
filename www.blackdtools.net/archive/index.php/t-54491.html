@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="goblins, change, running, snowman, depositer, script, edron" />
+	<meta name="description" content="Description: U can set on how many cap u would like the bot to go and deposit, u can also set bot to go dp when u have X ammount of gold..  u can make the bot loot small stones or not ( to train). 
+Where to start: At cave 
+ 
+ 
+########Made by Snowman############## 
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Edron Goblins with depositer script!$ 
+########################################## 
+#############CONFIG####################### 
+########################################## 
+#Put here" />
+	
+	<title> Edron goblins with depositer - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Edron goblins with depositer - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54491.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54491-Edron-goblins-with-depositer-by-Snowman">Edron goblins with depositer - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-24-2011, 14:38</div></div><div class="posttext">Description: U can set on how many cap u would like the bot to go and deposit, u can also set bot to go dp when u have X ammount of gold..  u can make the bot loot small stones or not ( to train).<br />
+Where to start: At cave<br />
+<br />
+<br />
+<br />
+########Made by Snowman##############<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Edron Goblins with depositer script!$<br />
+##########################################<br />
+#############CONFIG#######################<br />
+##########################################<br />
+#Put here amount of cap to go deposit:<br />
+fastExiva _captodp = 20<br />
+#Put here amount of gold to go deposit:<br />
+fastExiva _gp = 2500<br />
+#Should script loot stones too? (1- yes      0- no)<br />
+fastExiva _stones = 1<br />
+##########################################<br />
+##########################################<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########################################<br />
+##########################################<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setVeryFriendly<br />
+setLoot D7 0B<br />
+IfTrue ($_stones$#number=#0) Goto $nlineoflabel:nostones$<br />
+setLoot F5 06<br />
+:nostones<br />
+SetMaxAttackTimeMs 40000<br />
+setMeleeKill bug<br />
+setMeleeKill wasp<br />
+setMeleeKill goblin<br />
+setMeleeKill goblin scavenger<br />
+setMeleeKill goblin assassin <br />
+setMeleeKill wolf<br />
+setMeleeKill Rat<br />
+############################################<br />
+IfTrue ($mycap$#number&lt;=#$_captogodp$) Goto $nlineoflabel:dp$<br />
+#exp<br />
+move 33107,31847,8<br />
+move 33103,31857,8<br />
+move 33110,31868,8<br />
+move 33101,31878,8<br />
+move 33092,31868,8<br />
+move 33075,31865,8<br />
+move 33060,31854,8<br />
+move 33060,31853,9<br />
+move 33063,31848,9<br />
+move 33058,31840,9<br />
+move 33057,31824,9<br />
+move 33063,31822,9<br />
+move 33063,31822,10<br />
+move 33060,31830,10<br />
+move 33076,31824,10<br />
+move 33072,31811,10<br />
+move 33060,31811,10<br />
+move 33051,31814,10<br />
+move 33063,31822,10<br />
+move 33064,31822,9<br />
+move 33079,31818,9<br />
+move 33101,31823,9<br />
+move 33102,31822,10<br />
+move 33114,31816,10<br />
+move 33111,31805,10<br />
+move 33097,31802,10<br />
+move 33092,31823,10<br />
+move 33102,31822,10<br />
+move 33102,31822,9<br />
+move 33100,31831,9<br />
+move 33092,31835,9<br />
+move 33092,31838,8<br />
+move 33055,31832,8<br />
+move 33053,31853,8<br />
+move 33091,31847,8<br />
+move 33106,31848,8<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+#DP<br />
+move 33107,31848,7<br />
+move 33128,31809,7<br />
+move 33128,31810,8<br />
+move 33131,31807,8<br />
+move 33131,31806,9<br />
+move 33130,31808,9<br />
+move 33130,31809,10<br />
+move 33133,31806,10<br />
+move 33133,31805,11<br />
+move 33147,31823,11<br />
+move 33147,31825,10<br />
+move 33151,31821,10<br />
+move 33151,31821,9<br />
+move 33166,31824,9<br />
+move 33168,31824,8<br />
+move 33165,31827,8<br />
+move 33165,31828,7<br />
+move 33166,31812,7<br />
+move 33172,31803,7<br />
+#############################<br />
+#BANK<br />
+sayInTrade hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade deposit all<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade balance<br />
+waitX $randomnumber:2&gt;3$<br />
+sayInTrade bye<br />
+#############################<br />
+move 33169,31811,7<br />
+move 33169,31813,8<br />
+move 33169,31809,8<br />
+move 33169,31809,9<br />
+move 33170,31809,10<br />
+move 33168,31811,10<br />
+putLootOnDepot<br />
+move 33167,31808,10<br />
+move 33166,31807,9<br />
+move 33167,31807,8<br />
+move 33167,31811,8<br />
+move 33167,31811,7<br />
+move 33166,31826,7<br />
+move 33165,31827,8<br />
+move 33169,31825,8<br />
+move 33170,31826,9<br />
+move 33151,31821,9<br />
+move 33151,31820,10<br />
+move 33147,31823,10<br />
+move 33147,31824,11<br />
+move 33133,31806,11<br />
+move 33133,31806,10<br />
+move 33131,31809,10<br />
+move 33130,31810,9<br />
+move 33130,31807,9<br />
+move 33131,31807,8<br />
+move 33129,31810,8<br />
+move 33128,31811,7<br />
+move 33107,31848,7<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Invec</div><div class="date">03-06-2011, 14:27</div></div><div class="posttext">Stop adding retarded headers to all your fucking scripts man. have caused me to debug now about 4 times throughout your scripts..<br />
+Stop posting shit that doesnt work and endangers the rest of the community you tard.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Invec</div><div class="date">03-06-2011, 14:35</div></div><div class="posttext">After deleting your header the script begins to work.. and then switches target when the goblins are almost dead....................................</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">03-06-2011, 15:50</div></div><div class="posttext">Don't use Snowman scripts !!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">suli</div><div class="date">01-16-2012, 13:36</div></div><div class="posttext">hey i need some line to use in this scripts i need line to not loots small stone olny loots (small ston's)put to the arms plx i need this line</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jere4190</div><div class="date">02-22-2012, 20:16</div></div><div class="posttext">Do i have to copy and paste each one of these in to my bloody cave bot?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oliver</div><div class="date">03-02-2012, 18:52</div></div><div class="posttext">Can someone post the script of it after you fix the bugs?! THANK!<br />
+<br />
+<br />
+<br />
+----<br />
+And how can you change this so it will actually kill the goblins! instead of running away when they go low hp</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

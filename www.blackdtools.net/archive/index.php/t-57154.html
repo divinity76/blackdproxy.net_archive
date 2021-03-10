@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="$nlineoflabelfuckingpks$, logout, somtimes, believes, players, bugged, non-skulled, $pksonrelativefloorn$, x,y,z, fuckingpks, fucking, ondangergoto, iftrue, $pksonrelativefloor0$number0, nearby, cavebot, ^goto, safe-zone, looting/killing, monster, resetkill, resetloot, ^disable, closeconnection" />
+	<meta name="description" content="Hi, Im a new player in Tibia using blackdproxy and I dont know how to deal with PKs while using cavebot. Is there any way of disconnecting when some player attacks me? ¿How do you deal with that? I always end up dead in about 30 minutes when I leave the cavebot on his own. 
+ 
+Thanks" />
+	
+	<title> Cavebot + PKs [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  Cavebot + PKs</div>
+<hr />
+<div class="pda"><a href="t-57154.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57154-Cavebot-PKs">Cavebot + PKs</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">griffin</div><div class="date">01-27-2012, 18:47</div></div><div class="posttext">Hi, Im a new player in Tibia using blackdproxy and I dont know how to deal with PKs while using cavebot. Is there any way of disconnecting when some player attacks me? ¿How do you deal with that? I always end up dead in about 30 minutes when I leave the cavebot on his own.<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-27-2012, 22:35</div></div><div class="posttext">in runemaker on danger close connection<br />
+<br />
+You can also atk back dnt remember how tho<br />
+<br />
+or make it run away &quot;on danger goto scriptlinex&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-31-2012, 21:11</div></div><div class="posttext">IfTrue ($pksonrelativefloor:0$#number&lt;&gt;#0) Goto $nlineoflabel:FUCKINGPKS$<br />
+#or<br />
+onDangerGoto $nlineoflabel:FUCKINGPKS$<br />
+#code<br />
+#code<br />
+:FUCKINGPKS<br />
+#omg there is a fucking PK nearby.<br />
+resetKill<br />
+resetLoot<br />
+#^disable monster looting/killing<br />
+Goto X,Y,Z<br />
+#^goto a safe-zone<br />
+closeConnection<br />
+#^ logout.<br />
+<br />
+something like this.<br />
+note that, at least on 7.6, $pksonrelativefloor:N$ is somewhat bugged x.x (somtimes it believes non-skulled players are PKs.)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

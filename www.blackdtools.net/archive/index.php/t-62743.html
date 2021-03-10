@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="directly, https://github.com/blackdtools/blackd-proxy-classic, merge, github, distance, great" />
+	<meta name="description" content="Hello i maked a simple, little bit bugged Keep Distance function in VB6 code. Char goin ~3 sqms before target. 
+ 
+ModCavebot after 
+ 
+Public setFollowTarget() As Boolean 
+ 
+put this: 
+ 
+Public setDistance() As Boolean" />
+	
+	<title> Keep Distance Mod [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Keep Distance Mod</div>
+<hr />
+<div class="pda"><a href="t-62743.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62743-Keep-Distance-Mod">Keep Distance Mod</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">xstojakes</div><div class="date">03-26-2016, 16:43</div></div><div class="posttext">Hello i maked a simple, little bit bugged Keep Distance function in VB6 code. Char goin ~3 sqms before target.<br />
+<br />
+ModCavebot after<br />
+<br />
+<br />
+Public setFollowTarget() As Boolean<br />
+<br />
+put this:<br />
+<br />
+<br />
+Public setDistance() As Boolean<br />
+<br />
+after<br />
+<br />
+<br />
+  Case &quot;setnofollow&quot;<br />
+    setFollowTarget(Sid) = False<br />
+    'exeLine(Sid) = exeLine(Sid) + 1<br />
+    updateExeLine Sid, 1, True<br />
+    fastM = True<br />
+<br />
+put this:<br />
+<br />
+<br />
+      Case &quot;setdistance&quot;<br />
+    setDistance(Sid) = True<br />
+    'exeLine(Sid) = exeLine(Sid) + 1<br />
+    updateExeLine Sid, 1, True<br />
+    fastM = True<br />
+<br />
+ModCavebot after End  if:<br />
+<br />
+  If bestMelee = True Then<br />
+    aRes = MeleeAttack(idConnection, bestID)<br />
+  End If<br />
+  If setFollowTarget(idConnection) = True Then<br />
+    PerformMove idConnection, myX(idConnection) + bestX, myY(idConnection) + bestY, myZ(idConnection)<br />
+  End If<br />
+paste this:<br />
+<br />
+    If setDistance(idConnection) = True Then<br />
+    <br />
+    If myX(idConnection) &lt; bestX &amp; myY(idConnection) &lt; bestY Then<br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX - 4, myY(idConnection) + bestY - 4, myZ(idConnection)<br />
+    End Select<br />
+<br />
+    <br />
+    ElseIf myX(idConnection) &gt; bestX &amp; myY(idConnection) &gt; bestY Then<br />
+    <br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX + 4, myY(idConnection) + bestY + 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) &gt; bestX &amp; myY(idConnection) &lt; bestY Then<br />
+    <br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX + 4, myY(idConnection) + bestY - 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) &lt; bestX &amp; myY(idConnection) &gt; bestY Then<br />
+    <br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX - 4, myY(idConnection) + bestY + 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) &lt;&gt; bestX &amp; myY(idConnection) = bestY Then<br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX, myY(idConnection) + bestY + 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) = bestX &amp; myY(idConnection) &lt;&gt; bestY Then<br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX + 4, myY(idConnection) + bestY, myZ(idConnection)<br />
+  End Select<br />
+  End If<br />
+  <br />
+  End If<br />
+frmMain after<br />
+<br />
+<br />
+    setFollowTarget(i) = False<br />
+<br />
+paste this:<br />
+<br />
+<br />
+    setDistance(i) = True<br />
+<br />
+<br />
+after:<br />
+<br />
+<br />
+  setFollowTarget(index) = False<br />
+<br />
+paste this<br />
+<br />
+<br />
+  setDistance(index) = True<br />
+<br />
+<br />
+after<br />
+<br />
+<br />
+  ReDim setFollowTarget(1 To MAXCLIENTS)<br />
+<br />
+paste it<br />
+<br />
+<br />
+  ReDim setDistance(1 To MAXCLIENTS)<br />
+<br />
+<br />
+frmCavebot after<br />
+<br />
+<br />
+      setFollowTarget(idConnection) = True<br />
+<br />
+put this:<br />
+<br />
+<br />
+      setDistance(idConnection) = False<br />
+<br />
+<br />
+Now when you type line SetDistance in cavebot your character will be run from target.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">03-27-2016, 04:35</div></div><div class="posttext">very nice. i still using blackd on tibia rl</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">03-27-2016, 16:26</div></div><div class="posttext">Oh, that's really nice. Try posting on github to see if Daniel merges it.<br />
+<br />
+If he does, I'll get you some cash on Unitera, if you want.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xstojakes</div><div class="date">03-27-2016, 17:48</div></div><div class="posttext">Nono(I playing on Astera,Rowana,Secura), it is little bit bugged, and i maked this script for my usage too:D.I'll fix it when ill have some more time, i working in this same time at this small freezes when cavebot changing a waypoint, somewhere must be a wait delay configured to doin that. And idk why cavebot dont check some monsters corpse when you using a fluid after killing a mob, it should use fluid-&gt;check a corpse. Bot don't doin that, WHY? I think, when Daniel fix this bugs, we will destroy this capitalistic Xenobot etc, and Blackd will be lightninig on pantheon of best Tibia bots EVER!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">06-11-2016, 14:32</div></div><div class="posttext">good job! sure has been times in the past where i'd need something to keep distance, but never actually wrote any code for it :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">06-14-2016, 16:59</div></div><div class="posttext">Looks really nice. Thank you!<br />
+Now it would be great if someone can test it and post the changes to our github so I can merge it directly.<br />
+https://github.com/blackdtools/Blackd-Proxy-CLASSIC/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">carlaobot</div><div class="date">08-31-2016, 06:19</div></div><div class="posttext">Hello i maked a simple, little bit bugged Keep Distance function in VB6 code. Char goin ~3 sqms before target.<br />
+<br />
+ModCavebot after<br />
+<br />
+<br />
+Public setFollowTarget() As Boolean<br />
+<br />
+put this:<br />
+<br />
+<br />
+Public setDistance() As Boolean<br />
+<br />
+after<br />
+<br />
+<br />
+  Case &quot;setnofollow&quot;<br />
+    setFollowTarget(Sid) = False<br />
+    'exeLine(Sid) = exeLine(Sid) + 1<br />
+    updateExeLine Sid, 1, True<br />
+    fastM = True<br />
+<br />
+put this:<br />
+<br />
+<br />
+      Case &quot;setdistance&quot;<br />
+    setDistance(Sid) = True<br />
+    'exeLine(Sid) = exeLine(Sid) + 1<br />
+    updateExeLine Sid, 1, True<br />
+    fastM = True<br />
+<br />
+ModCavebot after End  if:<br />
+<br />
+  If bestMelee = True Then<br />
+    aRes = MeleeAttack(idConnection, bestID)<br />
+  End If<br />
+  If setFollowTarget(idConnection) = True Then<br />
+    PerformMove idConnection, myX(idConnection) + bestX, myY(idConnection) + bestY, myZ(idConnection)<br />
+  End If<br />
+paste this:<br />
+<br />
+    If setDistance(idConnection) = True Then<br />
+    <br />
+    If myX(idConnection) &lt; bestX &amp; myY(idConnection) &lt; bestY Then<br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX - 4, myY(idConnection) + bestY - 4, myZ(idConnection)<br />
+    End Select<br />
+<br />
+    <br />
+    ElseIf myX(idConnection) &gt; bestX &amp; myY(idConnection) &gt; bestY Then<br />
+    <br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX + 4, myY(idConnection) + bestY + 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) &gt; bestX &amp; myY(idConnection) &lt; bestY Then<br />
+    <br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX + 4, myY(idConnection) + bestY - 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) &lt; bestX &amp; myY(idConnection) &gt; bestY Then<br />
+    <br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX - 4, myY(idConnection) + bestY + 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) &lt;&gt; bestX &amp; myY(idConnection) = bestY Then<br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX, myY(idConnection) + bestY + 4, myZ(idConnection)<br />
+  End Select<br />
+    ElseIf myX(idConnection) = bestX &amp; myY(idConnection) &lt;&gt; bestY Then<br />
+    Select Case CInt(Int((1 * Rnd()) + 1))<br />
+    Case 1<br />
+        PerformMove idConnection, myX(idConnection) + bestX + 4, myY(idConnection) + bestY, myZ(idConnection)<br />
+  End Select<br />
+  End If<br />
+  <br />
+  End If<br />
+frmMain after<br />
+<br />
+<br />
+    setFollowTarget(i) = False<br />
+<br />
+paste this:<br />
+<br />
+<br />
+    setDistance(i) = True<br />
+<br />
+<br />
+after:<br />
+<br />
+<br />
+  setFollowTarget(index) = False<br />
+<br />
+paste this<br />
+<br />
+<br />
+  setDistance(index) = True<br />
+<br />
+<br />
+after<br />
+<br />
+<br />
+  ReDim setFollowTarget(1 To MAXCLIENTS)<br />
+<br />
+paste it<br />
+<br />
+<br />
+  ReDim setDistance(1 To MAXCLIENTS)<br />
+<br />
+<br />
+frmCavebot after<br />
+<br />
+<br />
+      setFollowTarget(idConnection) = True<br />
+<br />
+put this:<br />
+<br />
+<br />
+      setDistance(idConnection) = False<br />
+<br />
+<br />
+Now when you type line SetDistance in cavebot your character will be run from target.<br />
+<br />
+Really nice what u did!<br />
+<br />
+I need to just understand where i should write this codes... suppose to be on CaveBot area?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lucyoro</div><div class="date">05-30-2019, 13:01</div></div><div class="posttext">You have to keep the all mod of distance that have the data among to have some friction on this that was able to good. I have to make report on this so I need to know are essay writing services ethical? (https://essaysoriginreview.com/faq/) This was the details that I need to gat among these fields on this.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

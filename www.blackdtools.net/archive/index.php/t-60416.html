@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="conditional, exiva, number=, cavebot, target, resetkill, attack, coordinates, conditionals, reads, attacking, state, checks, arrives, important, lines, dings, connected, earlier, match, logging, thing, trick, dinging, action, machines, train, order, iftrue, condition, milliseconds, so-many, killed, firstly, testsound, $_myx$,$_myy$,$_myz$, define, measure, string, $myx$,$myy$,$myz$, safely, night, check" />
+	<meta name="description" content="hello. 
+I know that noone will help me but I will try.  
+ 
+How to make a script with 100% safely afk at the night? 
+ 
+Now I've got something like when someone will write my nickname it will close connection. (Event) 
+ 
+ 
+ 
+how to add more events? Because when I going to add 1 more event it's deleting this one.." />
+	
+	<title> safely night afk [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  safely night afk</div>
+<hr />
+<div class="pda"><a href="t-60416.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60416-safely-night-afk">safely night afk</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">DroniC</div><div class="date">05-28-2013, 02:03</div></div><div class="posttext">hello.<br />
+I know that noone will help me but I will try. <br />
+<br />
+How to make a script with 100% safely afk at the night?<br />
+<br />
+Now I've got something like when someone will write my nickname it will close connection. (Event)<br />
+<br />
+<br />
+0<br />
+0100100000000000000:210000<br />
+nick<br />
+exiva close<br />
+<br />
+<br />
+how to add more events? Because when I going to add 1 more event it's deleting this one.. <br />
+<br />
+How to make event like... when someone push me (move my char) it will close connection ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DroniC</div><div class="date">05-28-2013, 02:18</div></div><div class="posttext">also why these options didn't work for me ? http://imageshack.us/photo/my-images/809/60577664.jpg/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DroniC</div><div class="date">05-28-2013, 12:03</div></div><div class="posttext">I was trying to write my own script, but it isn't work.<br />
+<br />
+########################################<br />
+##Put your X from your training spot here:<br />
+fastExiva _myx = 191<br />
+##Put your Y from your training spot here:<br />
+fastExiva _myy = 231<br />
+##Put your Z from your training spot here:<br />
+fastExiva _myz = 6<br />
+########################################<br />
+setMeleeKill Train Machine<br />
+:training<br />
+setMeleeKill Train Machine<br />
+IfTrue ($myx$,$myy$,$myz$#string&lt;&gt;#$_myx$,$_myy$,$_myz$) Goto $nlineoflabel:danger$<br />
+:danger<br />
+sayMessage exiva testsound<br />
+gotoScriptLine :training</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">05-28-2013, 13:22</div></div><div class="posttext">Well there are some options you can use for safety.<br />
+Most of them can be found in the &quot;configuration command&quot; section in cavebot.<br />
+<br />
+Quote from Cavebot for dummies! EVERYTHING you need to know! (http://www.blackdtools.net/showthread.php?21374-Cavebot-for-dummies!-%28EVERYTHING-you-need-to-know!%29) a tutorial made by Webber.<br />
+<br />
+setMeleeKill monstername<br />
+Now most of you know what this does (and i really hope you do) but since this is a thread forr n00bs ill tell you this tells the bot to attack the monster of your choice (default larva altho if its left blank its nothing )<br />
+setHmmKill<br />
+Just like the setSDKill in Special kills group but this time it shoots a hmm at monsters of your choice, I recommend using this for deeper tomb scripts (because of stalkers)<br />
+SetLoot itemID<br />
+just to let you guys know, d7 0b = Gold always enter that one!!! to find different item ids you can goto the tools tutorial! there you will find out how!<br />
+onDangerGoto integer when you are attacked or in any kind of danger it will goto the script line of your choice. this is usually used in more advanced scripts!<br />
+onGMPause DO NOT, I REPEAT, DO NOT make a script WITHOUT this command, this command makes your script look like you kind of know what your doing, if not selected the bot will keep auto hunting when a gm comes = ban!<br />
+onPlayerPause- same thing as the above command but this one does NOT pause healing! it can be a life saver, This is rarely used on scripts, i never use it.<br />
+setVeryFriendly Ok this command makes your bot ONLY attack things that attack YOU when another player is on the screen, simple.<br />
+setRetryAttacksNow I have never used this but lets use some common sense, im going to say it will retry to attack the monster if it couldnt the first try - this is implemented without being put into the script (default)<br />
+setDontRetryAttacks Ok, exact opposite of last one! sorry but detail simply isnt needed, although I would use this on non pvp since people summon what your killing, bot would try to attack it and fail although keep retrying!<br />
+setPriority monstername = integer<br />
+I love this one and I use it alot, expecially for turtles (Get those stupid spamming toads before they do to much damage)<br />
+<br />
+<br />
+You should always use the onGMPause at the start of your script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">qelsik</div><div class="date">05-28-2013, 15:29</div></div><div class="posttext">IfTrue ($myx$,$myy$,$myz$#string&lt;&gt;#$_myx$,$_myy$,$_myz$) Goto $nlineoflabel:danger$<br />
+if its true then bot goes to :danger label, but if it returns FALSE then bot goes to the NEXT line which is also :danger :D<br />
+<br />
+try this:<br />
+<br />
+ ########################################<br />
+##Put your X from your training spot here:<br />
+fastExiva _myx = 191<br />
+##Put your Y from your training spot here:<br />
+fastExiva _myy = 231<br />
+##Put your Z from your training spot here:<br />
+fastExiva _myz = 6<br />
+########################################<br />
+setMeleeKill Train Machine<br />
+:training<br />
+setMeleeKill Train Machine<br />
+IfTrue ($myx$,$myy$,$myz$#string&lt;&gt;#$_myx$,$_myy$,$_myz$) Goto $nlineoflabel:danger$<br />
+gotoScriptLine $nlineoflabel:training$<br />
+:danger<br />
+sayMessage exiva testsound<br />
+waitX 1</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DroniC</div><div class="date">05-28-2013, 19:02</div></div><div class="posttext">It's not working, because when someone push me it just going back to attack train machine. xd no sound ;/<br />
+I need something like stop action, play alarm.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-01-2013, 16:12</div></div><div class="posttext">I think you'll need to make a conditional for this thing to work. The cavebot just reads lines and doesn't measure real time. Conditionals however check a certain condition every so-many milliseconds. So when the cavebot is set on a target, it won't jump to the next line until that target is killed. In this case it should kill all Train Machines in order to get to the IfTrue line. <br />
+<br />
+The conditional would be something like:<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+1<br />
+exiva _myx = 191<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+1<br />
+exiva _myy = 231<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+1<br />
+exiva _myz = 6<br />
+$myx$,$myy$,$myz$<br />
+#string&lt;&gt;#<br />
+$_myx$,$_myy$,$_myz$<br />
+0<br />
+300<br />
+1<br />
+exiva testsound<br />
+<br />
+Firstly it will define _myx, _myy and _myz since 1 is always 1 and therefore true. Then the part that's important to you arrives when it checks your coordinates and dings when it doesn't match your earlier set coordinates. However in this state the conditional won't stop your cavebot from attacking again. It will try to move back and attack again since it's not connected to the conditional in any way. I think this should do the trick: instead of dinging you can also set an action such as logging out or resetKill to make sure it won't attack again. I didn't test the resetKill with conditionals though, you might want to test it out.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

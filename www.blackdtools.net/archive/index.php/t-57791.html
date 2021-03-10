@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="logout, character, create, cavebotting, drops, amount, desired, logoff, iftrue, $mycap$number, script, preferably, label, unable, forums, searching, and/or, mayby, appreciated, lohout, idiot, presume" />
+	<meta name="description" content="Hi, so I've been searching the forums unable to find how to logout when you run low on UHs and/or low cap, mayby I'm a idiot but I really cant find it, help would be appreciated." />
+	
+	<title> Lohout when lou UHs. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-49.html">Conditional Events Miniscripts</a> &gt;  Lohout when lou UHs.</div>
+<hr />
+<div class="pda"><a href="t-57791.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57791-Lohout-when-lou-UHs">Lohout when lou UHs.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Realize</div><div class="date">04-15-2012, 04:17</div></div><div class="posttext">Hi, so I've been searching the forums unable to find how to logout when you run low on UHs and/or low cap, mayby I'm a idiot but I really cant find it, help would be appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-15-2012, 13:24</div></div><div class="posttext">Hi, so I've been searching the forums unable to find how to logout when you run low on UHs and/or low cap, mayby I'm a idiot but I really cant find it, help would be appreciated.<br />
+<br />
+I presume you're cavebotting and when cap drops under desired amount you want character to logout, right?<br />
+<br />
+Create a new label somewhere in the script, preferably at the end~ ... For example :logoff<br />
+<br />
+<br />
+IfTrue ($mycap$#number&lt;=#50) Goto $nlineoflabel:logoff$<br />
+..... &lt;other stuff in script, like wpts and other actions&gt;<br />
+:logoff<br />
+sayMessage exiva close<br />
+<br />
+You might put 'IfTrue ($mcap$#number&lt;=#50) Goto $nlineoflabel:logoff$' several times in your script, like after few waypoints, so it'll log exactly like you wished it would.<br />
+<br />
+EDIT: You can forget about cavebot, I've created a contitional event for your case which is easier to use:<br />
+<br />
+Low UHs:<br />
+<br />
+$countitems:58 0C$<br />
+#number&lt;#<br />
+10<br />
+0<br />
+1000<br />
+0<br />
+exiva close<br />
+<br />
+Low Cap:<br />
+<br />
+$mycap$<br />
+#number&lt;=#<br />
+2000<br />
+0<br />
+1000<br />
+0<br />
+exiva close<br />
+<br />
+Now we combine these two:<br />
+<br />
+$countitems:58 0C$<br />
+#number&lt;#<br />
+10<br />
+0<br />
+1000<br />
+0<br />
+exiva close<br />
+$mycap$<br />
+#number&lt;=#<br />
+2000<br />
+0<br />
+1000<br />
+0<br />
+exiva close<br />
+<br />
+58 0C = ID of UH rune, I've tested this on OT so you wanna check ID of the UH on every different OT you'll be using this, or of course real Tibia.<br />
+<br />
+10 = amount of UHs<br />
+<br />
+1000 = timer (1000ms = 1 second)<br />
+<br />
+exiva close = action to take if conditional is true<br />
+<br />
+2000 = amount of cap (2000 = 20.00 oz., 1000 = 10.00 oz., etc.)<br />
+<br />
+This conditional event will log you off if you have less than 10 UHs left or if you have less than 20 cap left. (I know it says 2000 under the cap section in the script, but it's supposed to be like that)<br />
+<br />
+Of course you can change amounts of UHs and cap to your desired amount, no problem. And instead of 'exiva close' you can put 'exiva testding' at the end of each conditional, so when either of conditionals is true it will ding every second (turn up the speakers :D)<br />
+<br />
+Save this as .txt document in 'conds' folder inside BlackD Proxy folder. Open Conditional events, reload the list and search for the saved script, load it and you're good to go.<br />
+<br />
+I hope I've helped! :D Of course, post back any issues occuring or further questions.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

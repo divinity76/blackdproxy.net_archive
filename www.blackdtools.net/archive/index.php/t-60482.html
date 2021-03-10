@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, spears, submitted, mystery, royal, buyroyalspears, iftrue, $countitemsd7, buying, spear, replenishing, 0b$number, fairly, coordinates, exact, replenishes" />
+	<meta name="description" content="fastExiva &lt; B4 14 $hex-tibiastr:This script was coded by Glaving.$ 
+setFollow 
+onGMpause 
+####Targeting#### 
+setMeleeKill skeleton 
+setMeleeKill poison spider 
+setMeleeKill cave rat 
+setMeleeKill mummy 
+setMeleeKill bonelord 
+setMeleeKill crypt shambler" />
+	
+	<title> Anyone Edit This Script for me? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Anyone Edit This Script for me?</div>
+<hr />
+<div class="pda"><a href="t-60482.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60482-Anyone-Edit-This-Script-for-me">Anyone Edit This Script for me?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">brianbrun</div><div class="date">06-09-2013, 21:03</div></div><div class="posttext">fastExiva &lt; B4 14 $hex-tibiastr:This script was coded by Glaving.$<br />
+setFollow<br />
+onGMpause<br />
+####Targeting####<br />
+setMeleeKill skeleton<br />
+setMeleeKill poison spider<br />
+setMeleeKill cave rat<br />
+setMeleeKill mummy<br />
+setMeleeKill bonelord<br />
+setMeleeKill crypt shambler<br />
+setMeleeKill scorpion<br />
+setMeleeKill ghoul<br />
+setMeleeKill honour gaurd<br />
+setMeleeKill scarab<br />
+setPriority crypt shambler:+4<br />
+setPriority mummy:+3<br />
+setPriority scarab:+2<br />
+setPriority ghoul:+1<br />
+setSpellKill crypt shambler,exori flam,3<br />
+setSpellKill scarab,exori flam,3<br />
+setSpellKill bonelord,exori flam,3<br />
+setSpellKill mummy,exori flam,3<br />
+####Looting####<br />
+setLoot D7 0B<br />
+setLoot D9 0B<br />
+setLoot E2 0B<br />
+setLoot D8 0B<br />
+setLoot 19 17<br />
+setLoot DC 2C<br />
+setLoot A9 25<br />
+setLoot D3 0B<br />
+setLoot EC 0B<br />
+setLoot 1A 17<br />
+setLoot 32 28<br />
+setLoot 0A 17<br />
+setLoot 5A 0D<br />
+setLoot F9 0B<br />
+setLoot D4 0B<br />
+####Hunting####<br />
+waitX 2<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Hunting started!$<br />
+move 33236,32701,11<br />
+move 33199,32690,11<br />
+move 33230,32666,11<br />
+move 33260,32661,11<br />
+move 33247,32709,11<br />
+move 33257,32698,11<br />
+move 33218,32725,11<br />
+move 33196,32716,11<br />
+move 33199,32742,11<br />
+move 33199,32748,11<br />
+move 33188,32734,11<br />
+move 33170,32734,11<br />
+move 33218,32735,11<br />
+move 33240,32726,11<br />
+move 33239,32747,11<br />
+move 33252,32726,11<br />
+move 33258,32736,11<br />
+move 33235,32703,11<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Checking potions and capacity..$<br />
+waitX 2<br />
+IfTrue ($countitems:0C 01$#number&lt;#13) Goto $nlineoflabel:deposit$<br />
+IfTrue ($mycap$#number&lt;=#500) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 1<br />
+:deposit<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Low amount of capacity or mana potions. Going to deposit.$<br />
+move 33234,32701,11<br />
+move 33235,32702,11<br />
+move 33232,32702,10<br />
+move 33232,32704,10<br />
+move 33234,32702,9<br />
+move 33234,32704,9<br />
+move 33232,32702,8<br />
+move 33233,32704,8<br />
+fastexiva &gt; 11 00 83 FF FF 00 00 00 BB 0B 00 D1 81 C0 7F 08 A5 01 00<br />
+move 33231,32711,7<br />
+move 33153,32760,7<br />
+move 33153,32763,6<br />
+move 33153,32765,6<br />
+move 33153,32771,7<br />
+move 33137,32828,7<br />
+move 33135,32823,6<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva _mananeeded = $numericalexp:50-{$countitems:0C 01$}$<br />
+fastExiva _costmana = $numericalexp:45*{$_mananeeded$}$<br />
+waitX 1<br />
+sayInTrade withdraw $_costmana$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33131,32818,6<br />
+move 33128,32811,5<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mananeeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+waitX 1<br />
+move 33130,32819,6<br />
+move 33126,32831,7<br />
+move 33132,32848,7<br />
+waitX 2<br />
+putLootOnDepot<br />
+waitX 2<br />
+move 33153,32770,7<br />
+move 33155,32767,7<br />
+move 33155,32765,6<br />
+move 33154,32763,6<br />
+move 33154,32761,7<br />
+move 33154,32757,7<br />
+move 33188,32728,7<br />
+move 33233,32705,7<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+waitX 1<br />
+fastExiva &gt; 11 00 83 FF FF 00 00 00 81 0D 00 D1 81 C0 7F 07 E7 00 00<br />
+waitX 1<br />
+fastexiva &gt; 65<br />
+waitX 1<br />
+fastexiva &gt; 67<br />
+move 33234,32702,11<br />
+gotoScriptLine 1<br />
+<br />
+<br />
+If someone could Edit this script so it refills Royal spear (Tarpit Tomb) Goes the script. Or something like paladin script that goes to tarpit tomb should be nice if someone did that</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-10-2013, 01:38</div></div><div class="posttext">If you could get the exact coordinates for the tomb I could add it to this script. It's fairly easy to make a script that replenishes spears. I don't like using hex though, since it doesn't show what's going on. So that last part of your submitted script is a mystery to me. I'll show you an example of a script that I use with spear replenishing.<br />
+<br />
+#Buying new Royal Spears.<br />
+:buyroyalspears<br />
+IfTrue ($countitems:D7 0B$#number&lt;#$numericalexp:{$numericalexp:15-{$countitems:D2 1C$}$}*15$) Goto $nlineoflabel:withdrawroyalspears$<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Buying Royal Spears.$<br />
+waitx 1<br />
+move 33210,31819,7<br />
+move 33210,31817,6<br />
+move 33215,31796,6<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva buy:D2 1C:$numericalexp:15-{$countitems:D2 1C$}$<br />
+stackItems<br />
+move 33210,31817,6<br />
+move 33210,31819,7<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:buypotion$<br />
+IfTrue ($countitems:0C 01$#number&lt;#3) Goto $nlineoflabel:buymanapotion$<br />
+gotoScriptLine $nlineoflabel:deposit$<br />
+Ok so this part basically buys the royal spears in Edron. First it will check for gold. If you don't have enough it will jump to a line that will withdraw the right amount of gold from the bank. Then it will move from ground level (floor 7) to the shop (floor 6) and it buys the spears. In this case it will keep an amount of 15 spears. After buying the spears it will leave the shop and reach ground level again from where it will decide the next action (in this example that will be either buying health potions, mana potions or depositing any remaining gold).<br />
+<br />
+#Withdrawing gold for new Royal Spears.<br />
+:withdrawroyalspear<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Withdrawing gold for new Royal Spears.$<br />
+waitx 1<br />
+move 33170,31808,7<br />
+move 33173,31803,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:15-{$countitems:D2 1C$}$}*15$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:buyroyalspears$<br />
+This is the part that withdraws gold for the new spears. It calculates the amount of gold needed to get 15 spears in total again.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

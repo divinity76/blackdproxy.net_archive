@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="[pointer, usefull, collection, pointer, qstring, starter, block, atributes, direction, positionz, positiony, lastwalkeddirection, offsetsquare_argb_8bytes=0x84, percent, positionx, identified, lcasename, yy=last, attacked, [always, start, =selected, [count, total, item], special, items, player, [your, battlelist], block], creature, battlelist, battle, tibia" />
+	<meta name="description" content="Hi. 
+First of all, I want to really thank you for the holy work you are doing. It seems no one is willing to talk about Tibia11 bots on any of the other major botting forums. 
+ 
+I have managed to find some basic info about the battle list in tibia11, which seems to be stored as continuous memory (as far as I noticed). I couldn't find the full path to it, but I can speculate some things about it: 
+It seems the entry size for each cell is E0 (from playerX to the next playerX). I managed to find" />
+	
+	<title> Tibia 11 - The Battle list [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - The Battle list</div>
+<hr />
+<div class="pda"><a href="t-62991.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62991-Tibia-11-The-Battle-list">Tibia 11 - The Battle list</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-08-2016, 12:25</div></div><div class="posttext">Hi.<br />
+First of all, I want to really thank you for the holy work you are doing. It seems no one is willing to talk about Tibia11 bots on any of the other major botting forums.<br />
+<br />
+I have managed to find some basic info about the battle list in tibia11, which seems to be stored as continuous memory (as far as I noticed). I couldn't find the full path to it, but I can speculate some things about it:<br />
+It seems the entry size for each cell is E0 (from playerX to the next playerX). I managed to find the player X,Y,Z, HP in percentage, and direction (facing, and last moved direction).<br />
+For my usage, I really only care about HP (I have a druid auto heal). The issue is, this new structure does not contain the entry's name in it. I tried really hard, but I couldn't find a way to connect a structure and it's name. I did manage to find that names are now stored in unicode (2 byte per character), and I managed to find some name occurrences, but that's as far as I got.<br />
+<br />
+Can anyone with some better reverse-engineering skills try to crack the battlelist structure? Maybe even get the static address to it? I can't even begin to understand how to spot the &quot;start&quot; of the battlelist. How can I tell what character would be loaded into the first slot? The old one contained data about players from all floors, and I cant think of a place where there are no monsters or NPCs at all so I could be sure I am the only entry in the structure.<br />
+<br />
+Thanks again for all the hard work you guys put into this!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-08-2016, 16:15</div></div><div class="posttext">If your final goal is only determining player current hp then you only need to read it here:<br />
+<br />
+adrMyHP=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 8<br />
+<br />
+My full list of addresses so far:<br />
+http://www.blackdtools.net/showthread.php?62965-11-00-Blackd-Tibia-addresses-11-00<br />
+<br />
+However - if you need to obtain a full list of creatures with creature name and hp percent then you really need to investigate that battlelist.<br />
+I didn't have time to look at it yet, however I could bet each battlelist entry have a link to a QString containing creature name -OR- maybe the entry only contains a creature id and in this last case it would require using a dictionary creature id-&gt;creature name. Searching this dictionary in tibia memory would be a big hell, no doubt.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-09-2016, 21:14</div></div><div class="posttext">Happy days!!!! I found the name pointer!!!!<br />
+<br />
+Ok, so, the name pointer in the battle list struct seems to point to some kind of unicode array with a prefix, where the size of the string is at offset 4, and the string starts at offset 16 (both hex).<br />
+This is amazing for me!<br />
+This is a memory picture (with the little data I managed to harvest so far): http://pastebin.com/daZ736JR<br />
+<br />
+The battle list is NOT a continuous memory block. I suppose it is one of those random collections tibia11 now has for a lot of shit. Do you think you could manage to find the collection in question? I will try looking for it with your tutorials, but a professional eye could never hurt :D<br />
+<br />
+On another note: my previous battlelist searching looked through the whole list, for every round (0.3 seconds). I was wondering if I could use the fact that memory entries are cached, and just keep a pointer to an entry. They don't seem to go stale for quite a while, and as long as the name is correct, I could keep using it. What are your thoughts on this subject?<br />
+<br />
+Thanks again!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-10-2016, 13:17</div></div><div class="posttext">Good, so it looks each battlelist entry have a pointer to a QString. I just made a post about QStrings, here: http://www.blackdtools.net/showthread.php?62992-Tibia-11-Understanding-QStrings-in-memory<br />
+<br />
+About collections, if we accept that this is a collection then you should find 3 pointers in each battlelist entry. In your memory capture I think that this entry starts here:<br />
+D7 67 10 68 D7 67 10 EA EB 54 03<br />
+P0=78 D7 67 10<br />
+P1=68 D7 67 10<br />
+P2=EA EB 54 03<br />
+Then we have a place where we can read 01 00, 00 00, or 01 01. This is because QT collections are some kind of red-black tree and this algorithm try to mark the tree with more or less 50% black and 50% red, in order to optimize the balace in each branch.<br />
+In your case, we read 01 00.<br />
+Then there are 2 more bytes, 00 00.<br />
+Then, finally the usefull information of the entry starts: 08 FA 8E 10 40 FA 8E 10 68 1A 7A 01 F4 7D 00 00 71 7E 00 00 09 00 00 00 ...<br />
+<br />
+<br />
+Now, the main question... where the hell this collection start?<br />
+How I would do it:<br />
+1. Go to a surface place (z=7) where there is only 1 npc. Close Tibia completely. Open it again and login.<br />
+2. Find that npc name in memory. It will be inside a QString.<br />
+3. Find what points to the start of that QString.<br />
+4. Find the start of that Battlelist entry.<br />
+5. Follow pointers P0,P1,P2  until you find the starter entry. In this entry, the red-black flags will read 01 01. This entry does not contain information of any creature. Now search in memory what points to this starter entry. There you have the collection start: There you should read the pointer to the starter entry and a counter of total items (total creatures/npc)<br />
+6. Find path to the collection start. Repeat from 1 to filter paths until you only have a bunch of them (around 300 is good)<br />
+7. Choose a path that you can translate to the stable path starting in Qt5Core.dll. Check this translation table:<br />
+&quot;THREADSTACK0&quot;-000000E8 = &quot;Qt5Core.dll&quot; + 004555C8 &gt; 8<br />
+&quot;Qt5Gui.dll&quot; + 00482EE4 &gt; 28 &gt; 0 = &quot;Qt5Core.dll&quot; + 004555C8 &gt; 8<br />
+&quot;Qt5Gui.dll&quot; + 00482EE4 &gt; 20 &gt; C = &quot;Qt5Core.dll&quot; + 004555C8 &gt; 4 &gt; 20 &gt; C<br />
+In case of doubt, always pick the paths with shortest jumps.<br />
+<br />
+8. Share the obtained path to battlelist collection start here. Thank you :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-10-2016, 15:19</div></div><div class="posttext">One thing I don't quite understand- what does the 01 01 stand for? Are those left/right branches from your current node? If so, why would 01 01 mark the root? Any node with 2 leafs should have that marking. And what do p0-2 stand for? Is p0 the father node, and p1-2 the leaf nodes?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-10-2016, 21:34</div></div><div class="posttext">Bad news. The battle list structure does not seem to be a red-black tree, as no pointers within it point to other entries.<br />
+<br />
+I believe this is a complete battlelist entry:<br />
+69 B3 66 46 00 00 00 88[F8 39 7F 01 01 00 00 00 03 00 00 00 00 00 00 00]B0 38 7F 01 C8 AB F0 0E C0 D7 C8 0E B0 D7 C8 0E 4D 54 03 40<br />
+00 00 00 00 28 2A F3 0E 58 2A F3 0E 68 1A 7D 01 F9 7D 00 00 78 7E 00 00 08 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00<br />
+FF FF 00 00 00 00 00 00 00 00 00 00 01 01 00 00 00 00 00 00 4B 00 00 00 15 00 00 00 B0 14 E7 0E A0 14 E7 0E D8 D1 C5 0E 90 87 EB 0E<br />
+00 00 00 00 00 00 00 00 90 E1 B8 0E 80 E1 B8 0E 64 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00<br />
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00<br />
+00 00 00 00<br />
+<br />
+The entry contains 2 pointers (B0 D7 C8 0E, C0 D7 C8 0E) that point to within the entry: they point to the area marked in []. I noticed that the -F8 39 7F 01- prefix appears in every battlelist entry I could find (valid ones, with data in it). It is not constant, as after a client restart, it changed to a different sequence. The first 4 bytes in all entries seem to be somewhat related, being numbers very close to each-other. The F8 39 and B0 38 markers do seem to repeat on client restarts, so they may stand for something of value (not valid entries have 78 CB instead of F8 39). These numbers are so consistent, that if I just log in, and only have myself in the battlelist, a full memory scan would only find 1 occurance of them (my entry), and after filling the battleling, another full scan would only find those valid entries (me and the mobs I saw).<br />
+The thing is, valid entries are pretty far apart, and aside from CE's full memory scan, I can't seem to find any of them by following valid entries, and since I don't really know where a structure starts (in my memory pictures I am assuming I do), I can't pointer scan either.<br />
+<br />
+This is a memory picture of 2 valid entries (which are VERY close together, for some reason) followed by more invalid entries. Maybe you can make something of this bullshit: http://pastebin.com/3segwbAK</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-10-2016, 23:00</div></div><div class="posttext">Case 1: It is a collection...<br />
+I didn't have time to investigate this yet, however I think if you found something that looks like [P0] [P1] [P2] 01 01 then it must be the initial entry of a collection. Just find what points to the start of this entry. There is the real collection start, and 4 bytes later you should be able to read the total count. <br />
+Please remember that the initial entry does not contain any real information.<br />
+Hint: You can already use this initial entry for path finding with Cheat Engine. However, you need to search paths of length 6 in this case, and that will take some time.<br />
+<br />
+Case 2: It is a list...<br />
+And if it works like the char list then it will look like this:<br />
+[4 BYTES] [4 BYTES] [4 BYTES][4 BYTES=TOTAL COUNT] [4 BYTES=ENTRY #0] [4 BYTES=ENTRY #1] [4 BYTES=ENTRY #2] ... [4 BYTES = LAST ENTRY]<br />
+<br />
+Case 3: It is something else, and in this case I guess the weird number is required to find the next item. Maybe this way: Next item= Base address XOR number. However I think the weird numbers are probably simple creature IDs.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-13-2016, 13:29</div></div><div class="posttext">Regarding the collection case:<br />
+First, I did -not- find a 01 01 case. What we had in the first example was a fluke, since in the next examples you can see I have 03 01 in the same offset, so I don't think those were the flags.<br />
+What I still don't understand is the P0 P1 P2 thing. Are those random elements? Are they leafs? What do they represent?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ash</div><div class="date">10-13-2016, 17:16</div></div><div class="posttext">Regarding the collection case:<br />
+First, I did -not- find a 01 01 case. What we had in the first example was a fluke, since in the next examples you can see I have 03 01 in the same offset, so I don't think those were the flags.<br />
+What I still don't understand is the P0 P1 P2 thing. Are those random elements? Are they leafs? What do they represent?<br />
+<br />
+About P0, P1 and P2: http://www.blackdtools.net/showthread.php?62973-Tibia-11-About-the-structure-of-the-SKILLS-in-memory</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-13-2016, 21:43</div></div><div class="posttext">I don't really understand yet how P0,P1 and P2 works, else I would be able to build an optimal function to read full collection a lot faster.<br />
+For now I just follow all the 3 pointers up to &#8730;N times and I know this way I will get all items. N = expected total number of items in the collection.<br />
+You also can save a bit of time stopping the recursive function if it reached starter item.<br />
+<br />
+I am sure 3 pointers allows fast search of a given key through a complex algorithm.<br />
+Somehow, given a key ID, this algorithm knows what pointer should it pick in each iteration in order to obtain the item in the fastest time.<br />
+For more information I guess you can download QT sources and inspect the implementation of collections: https://doc.qt.io/archives/3.3/collection.html</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-18-2016, 18:02</div></div><div class="posttext">Today I played a bit with the battlelist and I found the solution.<br />
+I just had to reach Al Dee door at Rookgard, where I know there will be (after fresh login) only 2 items on the battlelist: Al Dee and me.<br />
+<br />
+This is the solution:<br />
+adrBattlelist_CollectionStart=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; E4 &gt; 8<br />
+// Your player ID can be obtained near:<br />
+adrNum=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; E4 &gt; 10<br />
+// Your last selected creature ID can be obtained near:<br />
+adrNewBlueSquare=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; E4 &gt; 14<br />
+// Your last attacked creature ID can be obtained near:<br />
+adrNewRedSquare=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; E4 &gt; 1C<br />
+// and it is *usually* the first ID in battlelist (NOT ALWAYS):<br />
+adrNum1=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; E4 &gt; 8 &gt; 0 &gt; 14 &gt; 10<br />
+// battlelist, ID of other creature there:<br />
+adrNum2=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; E4 &gt; 8 &gt; 8 &gt; 14 &gt; 10</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-18-2016, 18:12</div></div><div class="posttext">So, it is a collection.<br />
+The collection start will contains something like this:<br />
+E0 64 C9 0E 02 00 00 00 6A CF 02 03 XX XX XX XX<br />
+00 00 00 00 YY YY YY YY<br />
+That is:<br />
+[pointer to the special starter item] [count of total items in battlelist] [your player ID] [XX XX XX XX =selected ID]<br />
+[always 00 00 00 00 ???] [YY YY YY YY=last attacked ID]<br />
+<br />
+The starter item will contain something like this:<br />
+00 96 9F 0E 00 96 9F 0E B0 A5 9E 0E 01 01 <br />
+That is:<br />
+[Pointer 0] [Pointer 1] [Pointer 2] [01 01]<br />
+<br />
+Then each battlelist item will contain something like this:<br />
+<br />
+E0 64 C9 0E 00 96 9F 0E E0 64 C9 0E 00 00 00 00 = [P0] [P1] [P2]<br />
+47 03 00 40 A8 B5 C8 0E 98 B5 C8 0E 00 00 2A 40 = [KEY = CREATURE ID] [POINTER TO USEFULL INFO BLOCK] [??] [??]<br />
+<br />
+And this is how each usefull info block looks:<br />
+0C 7F 48 01 38 B2 BB 0E A8 B5 C8 0E 98 B5 C8 0E<br />
+47 03 00 40 00 00 00 00 78 A6 9E 0E 90 A7 9E 0E<br />
+1C 5C 46 01 3F 7D 00 00 B5 7D 00 00 07 00 00 00<br />
+02 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00<br />
+FF FF 00 00 00 00 00 00 00 00 00 00 02 02 01 00<br />
+00 00 00 00 30 00 00 00 03 00 00 00 80 3A A0 0E<br />
+70 3A A0 0E 28 67 B3 0E 78 DC AB 0E 00 00 00 00<br />
+00 00 00 00 B8 F0 C9 0E A8 F0 C9 0E 64 00 00 00<br />
+01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00<br />
+01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00<br />
+<br />
+The usefull info block have an usefull size of 0xE0<br />
+Some identified atributes:<br />
+Id = 0x10<br />
+lcase(name) = 0x18 (pointer to Qstring)<br />
+name = 0x1C (pointer to Qstring)<br />
+PositionX  = 0x24<br />
+PositionY  = 0x28<br />
+PositionZ = 0x2C<br />
+Direction = 0x4C<br />
+LastWalkedDirection = 0x4D<br />
+HP percent = 0x7C<br />
+offSetSquare_ARGB_8bytes=0x84</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-19-2016, 17:58</div></div><div class="posttext">I spent around 8 hours in total since my last post, blankly staring at memory images, following pointers to nowhere.<br />
+<br />
+I have no idea how you managed to decrypt this, but I can now say for sure that you either had a hand in writing this client, or you are a god.<br />
+<br />
+The ~useful information~ struct is of size E0, from what I managed to find so far. It holds your name, pos, HP (in %), and direction - I listed those in one of my earlier posts (with locations).<br />
+I wonder if we can decude that a tibia collection is a tree, and that P0 is left, P1 is parent, and P2 is right (from your 'skills' image). If so, it will be easier to read, since we can just read until we hit a leaf.<br />
+<br />
+Hp is located at 7C (from the info block start, like pos and name are), if anyone doesn't want to math and shit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ash</div><div class="date">10-19-2016, 19:43</div></div><div class="posttext">I spent around 8 hours in total since my last post, blankly staring at memory images, following pointers to nowhere.<br />
+<br />
+I have no idea how you managed to decrypt this, but I can now say for sure that you either had a hand in writing this client, or you are a god..<br />
+<br />
+Daniel is, in fact, a god. I've also spent a lot of time looking for a battlelist structure without success.<br />
+<br />
+Thank you guys!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-19-2016, 20:57</div></div><div class="posttext">Thank you, <br />
+I guess I improved my skill at reverse engineering lately.<br />
+However I am reaching my limits here and I will need some help with 2 last things:<br />
+<br />
+A: We should investigate the real meaning of P0,P1,P2 and the two 01/00 bytes. Only that way we will be able to optimize the current algorithm to read full collection. I have a feeling that this kind of trees are sorted by key. That is: At each iteration, before choosing between P0,P1,P2 you probably need to analyze: goal key value and key value in current node.<br />
+<br />
+B: We should investigate where is adrXgo and adrYgo (destination X,Y for minimap click movement) They used to be in the battlelist entry of the player. Now they are not there. At least not in an obvious way. I wish someone could help me with this part.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-19-2016, 23:07</div></div><div class="posttext">This is what I made out of the battle list: note that every node has the CID of that node written, then in brackets has the &quot;flags&quot; (0000/0001/0101)<br />
+<br />
+No fucking idea what the actual hell is going on. It seems the tree IS sorted by CIDs, but whats with some elements double pointing back (B for example) and elements crossing branches. Anyhow, I wasted like 2 hours on this, I hope this helps somehow.<br />
+<br />
+linky-link (http://cpettitt.github.io/project/dagre-d3/latest/demo/interactive-demo.html?graph=digraph%20%7B%0A%20%20%20%20A%20%5 Blabel%3D%22root%5B0101%5D%22%5D%3B%0A%20%20%20%20 B%20%5Blabel%3D%2256030737%5B0000%5D%22%5D%3B%0A%2 0%20%20%20C%20%5Blabel%3D%221074154386%5B0001%5D%2 2%5D%3B%0A%20%20%20%20D%20%5Blabel%3D%221074201871 %5B0001%5D%22%5D%3B%0A%20%20%20%20E%20%5Blabel%3D% 221073741884%5B0001%5D%22%5D%3B%0A%20%20%20%20F%20 %5Blabel%3D%221073742123%5B0001%5D%22%5D%3B%0A%20% 20%20%20G%20%5Blabel%3D%221074159815%5B0001%5D%22% 5D%3B%0A%20%20%20%20H%20%5Blabel%3D%221074181788%5 B0000%5D%22%5D%3B%0A%09I%20%5Blabel%3D%22107374188 5%5B0000%5D%22%5D%3B%0A%09J%20%5Blabel%3D%22107374 1920%5B0000%5D%22%5D%3B%0A%09K%20%5Blabel%3D%22107 3742717%5B0000%5D%22%5D%3B%0A%09L%20%5Blabel%3D%22 1074158718%5B0000%5D%22%5D%3B%0A%09M%20%5Blabel%3D %221074160803%5B0001%5D%22%5D%3B%0A%09N%20%5Blabel %3D%221073741998%5B0001%5D%22%5D%3B%0A%09O%20%5Bla bel%3D%221073742314%5B0001%5D%22%5D%3B%0A%09P%20%5 Blabel%3D%221074153284%5B0001%5D%22%5D%3B%0A%09Q%2 0%5Blabel%3D%221074154701%5B0001%5D%22%5D%3B%0A%09 R%20%5Blabel%3D%221074159255%5B0001%5D%22%5D%3B%0A %09S%20%5Blabel%3D%221074164080%5B0000%5D%22%5D%3B %0A%09T%20%5Blabel%3D%221073741964%5B0000%5D%22%5D %3B%0A%09U%20%5Blabel%3D%221073742136%5B0000%5D%22 %5D%3B%0A%09V%20%5Blabel%3D%221073742489%5B0000%5D %22%5D%3B%0A%09W%20%5Blabel%3D%221074153415%5B0000 %5D%22%5D%3B%0A%09X%20%5Blabel%3D%221074154564%5B0 000%5D%22%5D%3B%0A%09Y%20%5Blabel%3D%221074154871% 5B0000%5D%22%5D%3B%0A%0A%20%20%20%20A%20-%3E%20B%20%5Blabel%3D%22p0%22%5D%3B%0A%09A%20-%3E%20C%20%5Blabel%3D%22p1%22%5D%3B%0A%09A%20-%3E%20D%20%5Blabel%3D%22p2%22%5D%3B%0A%09B%20-%3E%20A%20%5Blabel%3D%22p0%22%5D%3B%0A%09B%20-%3E%20E%20%5Blabel%3D%22p1%22%5D%3B%0A%09B%20-%3E%20A%20%5Blabel%3D%22p2%22%5D%3B%0A%09C%20-%3E%20F%20%5Blabel%3D%22p0%22%5D%3B%0A%09C%20-%3E%20G%20%5Blabel%3D%22p2%22%5D%3B%0A%09D%20-%3E%20H%20%5Blabel%3D%22p1%22%5D%3B%0A%09E%20-%3E%20I%20%5Blabel%3D%22p2%22%5D%3B%0A%09F%20-%3E%20J%20%5Blabel%3D%22p0%22%5D%3B%0A%09F%20-%3E%20K%20%5Blabel%3D%22p2%22%5D%3B%0A%09G%20-%3E%20L%20%5Blabel%3D%22p0%22%5D%3B%0A%09G%20-%3E%20H%20%5Blabel%3D%22p2%22%5D%3B%0A%09H%20-%3E%20M%20%5Blabel%3D%22p0%22%5D%3B%0A%09J%20-%3E%20E%20%5Blabel%3D%22p0%22%5D%3B%0A%09J%20-%3E%20N%20%5Blabel%3D%22p2%22%5D%3B%0A%09K%20-%3E%20O%20%5Blabel%3D%22p0%22%5D%3B%0A%09K%20-%3E%20P%20%5Blabel%3D%22p2%22%5D%3B%0A%09L%20-%3E%20Q%20%5Blabel%3D%22p0%22%5D%3B%0A%09L%20-%3E%20R%20%5Blabel%3D%22p2%22%5D%3B%0A%09M%20-%3E%20S%20%5Blabel%3D%22p2%22%5D%3B%0A%09N%20-%3E%20T%20%5Blabel%3D%22p0%22%5D%3B%0A%09O%20-%3E%20U%20%5Blabel%3D%22p0%22%5D%3B%0A%09O%20-%3E%20V%20%5Blabel%3D%22p2%22%5D%3B%0A%09P%20-%3E%20W%20%5Blabel%3D%22p2%22%5D%3B%0A%09Q%20-%3E%20X%20%5Blabel%3D%22p0%22%5D%3B%0A%09Q%20-%3E%20Y%20%5Blabel%3D%22p2%22%5D%3B%0A%09%0A%09%0A %7D)<br />
+<br />
+If you want to make sure I drew it right, here is the raw_data (http://pastebin.com/6RSuwrLb)<br />
+<br />
+UPDATE:<br />
+Sooo I think I got it.<br />
+The starter item has 3 pointers:<br />
+P0- smallest element<br />
+P2- biggest element<br />
+P1- sorted binary tree root<br />
+<br />
+Both the smallest and biggest elements hold a pointer to the next element (second smallest and second biggest) on P1, and the smallest points back to the starter item with both P0 and P2.<br />
+The flags seem to be that red-black thingy you were talking about.<br />
+<br />
+Again, this info was deduced from a very small sample. More research needs to be done.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-20-2016, 00:41</div></div><div class="posttext">On another note - are CIDs permanent?? I seem to get the same CID every time I log in. I did not know those are unique.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-20-2016, 17:14</div></div><div class="posttext">So it looks like you almost have a way to locate a collection item by key (CID in this case).<br />
+<br />
+Yes, I think CID is unique and permanent for all server, at least until server reset.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-20-2016, 20:28</div></div><div class="posttext">I'm pretty sure its a definite way to find an item. Compare it to the min and max, to see if it even exists (smaller than max, bigger than min), and if it does, the binary tree has you set.<br />
+Why is this not a good algorithm?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-20-2016, 21:18</div></div><div class="posttext">I'm pretty sure its a definite way to find an item. Compare it to the min and max, to see if it even exists (smaller than max, bigger than min), and if it does, the binary tree has you set.<br />
+Why is this not a good algorithm?<br />
+<br />
+Sorry, I still had no time to test it.<br />
+If that method works then of course it is much better than my inefficient blind algorithm that collect all items by brute force (it follows the 3 pointers all the time up to some depth)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-20-2016, 21:45</div></div><div class="posttext">Its just that you said &quot;almost&quot; :p<br />
+I didn't test it myself either, but I don't see how this helps COLLECTING elements. Knowing this is a binary search tree only helps when you are looking for a specific item. Collecting everything is still an O(n) scan.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-21-2016, 09:31</div></div><div class="posttext">I am afraid my algorithm is much slower than searching every key, at least for a big collection like this one.<br />
+However we don't know how to enumerate all the keys here so I think we still miss a method to collect everything correctly without that list of keys.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-29-2016, 12:15</div></div><div class="posttext">I finally understood the collections a bit better. I am sharing my optimized functions here (http://www.blackdtools.net/showthread.php?62980-Code-to-read-Tibia-11-collections-(skills-server-info-etc)).<br />
+<br />
+My search full collection function is now O(n)<br />
+My search key function is now O(log n)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oryd</div><div class="date">03-23-2020, 17:40</div></div><div class="posttext">any tips how read battle list?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

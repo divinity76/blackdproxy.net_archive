@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="wondering, confirmed, actions, commands, sharing, refiller, depositer, fortress, script, reading, people, forums, exiva" />
+	<meta name="description" content="Hello there is mine next script for outside orc fortress. 
+ 
+Script will go back to depot when low on mana potions (30 and lower) and withdraw 5k to buy 100mp 
+ 
+Tested with 66kina with 70/70~ was fine , just take good eq. 
+(Dont know real profit and exp per hour always somebody passing or hunting there on my bot-pvp server) 
+ 
+WARNING: the bot will fight dragon when going to depot and backwards. 
+ 
+here's the script:" />
+	
+	<title> outside orc fortress with depositer&amp; mp refiller [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  outside orc fortress with depositer&amp; mp refiller</div>
+<hr />
+<div class="pda"><a href="t-59956.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59956-outside-orc-fortress-with-depositer-amp-mp-refiller">outside orc fortress with depositer&amp; mp refiller</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">czosnex</div><div class="date">01-25-2013, 14:13</div></div><div class="posttext">Hello there is mine next script for outside orc fortress.<br />
+<br />
+Script will go back to depot when low on mana potions (30 and lower) and withdraw 5k to buy 100mp<br />
+<br />
+Tested with 66kina with 70/70~ was fine , just take good eq.<br />
+(Dont know real profit and exp per hour always somebody passing or hunting there on my bot-pvp server)<br />
+<br />
+WARNING: the bot will fight dragon when going to depot and backwards.<br />
+<br />
+here's the script:<br />
+<br />
+<br />
+setAny<br />
+setBot AutoEatFood=1<br />
+setLootOn<br />
+setLoot EE 0B<br />
+setLoot D7 0B<br />
+setLoot D9 25<br />
+setLoot D8 2C<br />
+setLoot 00 0C<br />
+setLoot D6 2C<br />
+setLoot D7 2C<br />
+setLoot D4 27<br />
+setLoot BC 2C<br />
+setLoot BD 2C<br />
+setLoot D5 2C<br />
+setLoot 29 0D<br />
+setLoot 13 0C<br />
+setLoot E5 0C<br />
+setLoot C5 0C<br />
+setLoot E1 0C<br />
+setLoot FA 0C<br />
+setLoot 58 0D<br />
+setLoot FF 0B<br />
+setAvoidFront dragon<br />
+setMeleeKill Dragon<br />
+setMeleeKill Starving Wolf<br />
+setMeleeKill Wolf<br />
+setMeleeKill orc<br />
+setPriority orc spearman:-1<br />
+setMeleeKill orc spearman<br />
+setMeleeKill orc warrior<br />
+setMeleeKill orc shaman<br />
+setPriority orc shaman:-1<br />
+setMeleeKill snake<br />
+setPriority snake:-2<br />
+setMeleeKill orc berserker<br />
+setMeleeKill Orc Leader<br />
+setMeleeKill Orc Warlord<br />
+setMeleeKill Orc Rider<br />
+setMeleeKill Spider<br />
+setMeleeKill Dwarf<br />
+setMeleeKill Dwarf Soldier<br />
+move 32827,31758,7<br />
+move 32826,31739,7<br />
+move 32826,31739,7<br />
+move 32823,31721,7<br />
+move 32834,31739,7<br />
+move 32849,31747,7<br />
+move 32849,31737,7<br />
+move 32849,31738,6<br />
+move 32848,31739,6<br />
+move 32848,31740,5<br />
+move 32848,31739,6<br />
+move 32848,31739,6<br />
+move 32849,31738,6<br />
+move 32849,31737,7<br />
+move 32851,31746,7<br />
+move 32866,31745,7<br />
+move 32876,31741,7<br />
+move 32887,31737,7<br />
+move 32894,31719,7<br />
+move 32912,31728,7<br />
+move 32923,31731,7<br />
+move 32928,31725,7<br />
+move 32932,31717,7<br />
+move 32922,31701,7<br />
+move 32933,31688,7<br />
+move 32946,31693,7<br />
+move 32946,31711,7<br />
+move 32942,31727,7<br />
+move 32929,31729,7<br />
+move 32918,31734,7<br />
+move 32918,31734,7<br />
+move 32911,31740,7<br />
+move 32896,31742,7<br />
+move 32882,31754,7<br />
+move 32862,31758,7<br />
+move 32842,31762,7<br />
+move 32822,31771,7<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:Depot$<br />
+IfFewItemsGoto 0C 01,30,$nlineoflabel:Depot$<br />
+gotoScriptLine 0<br />
+:Depot<br />
+move 32811,31785,7<br />
+move 32798,31815,7<br />
+move 32774,31831,7<br />
+move 32728,31867,7<br />
+move 32695,31895,7<br />
+move 32695,31895,7<br />
+move 32669,31898,7<br />
+move 32655,31898,7<br />
+move 32644,31908,7<br />
+move 32650,31937,7<br />
+move 32651,31937,8<br />
+move 32646,31946,8<br />
+move 32646,31947,7<br />
+move 32631,31962,7<br />
+move 32629,31962,6<br />
+move 32617,31963,6<br />
+move 32623,31974,6<br />
+move 32625,31974,7<br />
+move 32650,32021,7<br />
+move 32665,32024,7<br />
+move 32716,32043,7<br />
+move 32784,32085,7<br />
+move 32786,32085,6<br />
+move 32790,32086,6<br />
+move 32792,32086,7<br />
+move 32838,32116,7<br />
+move 32861,32126,7<br />
+move 32862,32125,6<br />
+move 32953,32125,6<br />
+move 32965,32109,6<br />
+move 32998,32075,6<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 33020,32058,6<br />
+move 33020,32060,7<br />
+move 33017,32050,7<br />
+move 33014,32048,7<br />
+waitX 2<br />
+putLootOnDepot<br />
+move 33019,32059,7<br />
+move 33020,32058,6<br />
+IfFewItemsGoto 0C 01,30,$nlineoflabel:mprefill$<br />
+:gohunt<br />
+move 33012,32053,6<br />
+move 33007,32056,6<br />
+move 32997,32073,6<br />
+move 32963,32109,6<br />
+move 32880,32126,6<br />
+move 32863,32126,6<br />
+move 32863,32126,6<br />
+move 32862,32127,7<br />
+move 32792,32086,7<br />
+move 32790,32086,6<br />
+move 32786,32086,6<br />
+move 32784,32086,7<br />
+move 32773,32084,7<br />
+move 32694,32031,7<br />
+move 32625,31975,7<br />
+move 32625,31974,7<br />
+move 32623,31974,6<br />
+move 32618,31962,6<br />
+move 32629,31962,6<br />
+move 32631,31962,7<br />
+move 32646,31947,7<br />
+move 32646,31946,8<br />
+move 32651,31937,8<br />
+move 32651,31938,7<br />
+move 32651,31929,7<br />
+move 32644,31903,7<br />
+move 32659,31897,7<br />
+move 32678,31898,7<br />
+move 32701,31890,7<br />
+move 32714,31870,7<br />
+move 32733,31869,7<br />
+move 32775,31833,7<br />
+move 32793,31806,7<br />
+move 32793,31806,7<br />
+move 32819,31775,7<br />
+gotoScriptLine 0<br />
+:mprefill<br />
+move 33019,32054,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw 5000<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 33010,32053,6<br />
+move 32995,32053,6<br />
+move 32982,32053,6<br />
+move 32981,32073,6<br />
+move 32976,32079,6<br />
+move 32970,32085,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade flask<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva buy:0C 01:100<br />
+move 32976,32073,6<br />
+move 33007,32072,6<br />
+move 33007,32053,6<br />
+move 33015,32053,6<br />
+IfEnoughItemsGoto 0C 01,100,$nlineoflabel:gohunt$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wowplayer</div><div class="date">01-25-2013, 16:20</div></div><div class="posttext">is the script safe?<br />
+ i've been reading the forums some, and people say that exiva commands are not safe....<br />
+ i've been wondering is there a list of confirmed not safe actions the bot does?<br />
+Thanks for sharing tho :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">czosnex</div><div class="date">01-25-2013, 18:18</div></div><div class="posttext">im botting with my dwarf knight since october/november with exiva buy/sell and im still safe<br />
+This script will only buy mp with exiva ,no exiva pot check and such<br />
+Dont know if its 100% safe or not every bot can be detected as far i know.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

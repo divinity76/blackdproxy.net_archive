@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="sayintrade, fastexiva, waitx, saymessage, withdraw, spears, script, [help], deposit, configuration, trade, waypoints, iftrue, $countitems$_spearid$$number, $numericalexp$numericalexp$numericalexp$mycap$/$_spearweight$00$-1$$_spearprice$$, money, buy$_spearid$$numericalexp$numericalexp$mycap$/$_spearweight$00$-1$, _spearprice, price, start, royal, weight, edited, paladin, _spearid, spear, _spearweight" />
+	<meta name="description" content="I would like to know how to do this: 
+ 
+Loot and use spears (using trainer, yes i already know how to do this), BUUUUT once i run out of spears, instead of running around killing monsters with my fist, switch to serpent sword.  
+ 
+I can't do this manually since im trying to AFK a lot. 
+ 
+Please help! :'(" />
+	
+	<title> Paladin Script [Help] [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Paladin Script [Help]</div>
+<hr />
+<div class="pda"><a href="t-57869.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57869-Paladin-Script-Help">Paladin Script [Help]</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BoogerKid</div><div class="date">04-22-2012, 23:57</div></div><div class="posttext">I would like to know how to do this:<br />
+<br />
+Loot and use spears (using trainer, yes i already know how to do this), BUUUUT once i run out of spears, instead of running around killing monsters with my fist, switch to serpent sword. <br />
+<br />
+I can't do this manually since im trying to AFK a lot.<br />
+<br />
+Please help! :'(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Davulo</div><div class="date">06-18-2012, 08:47</div></div><div class="posttext">bumps.. <br />
+someone should really make a good tutorial... The latest tutorials I have read on how to use cavebot and trainer are from 2008 and have not been updated.. plus blackd proxy is newer and the tutorials are for the old program.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-18-2012, 10:47</div></div><div class="posttext">Configuration, Can be edited to buy royal spear's, put it at the start:<br />
+Code:<br />
+<br />
+<br />
+#ID, price and weight of spear<br />
+fastExiva _spearid = CD 0C<br />
+fastExiva _spearprice = 20<br />
+fastExiva _spearweight = 20<br />
+<br />
+Withdraw money from bank:<br />
+Code:<br />
+<br />
+<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$}*{$_spearprice$}$<br />
+sayInTrade yes<br />
+<br />
+Buy the spears:<br />
+Code:<br />
+<br />
+<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:$_spearid$:$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$<br />
+<br />
+Put this in your waypoint's:<br />
+<br />
+<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:spears$<br />
+<br />
+I think it would be better to add a spear refiller</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BoogerKid</div><div class="date">07-30-2012, 01:47</div></div><div class="posttext">where would i place this in my script so that the bot knows when to refill spears? like, for example, once my capacity is at 10 for example, or my spears are all gone? im kind of confused hehe, sorry.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

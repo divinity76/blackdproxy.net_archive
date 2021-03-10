@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="post, section, cavebot, special, commands, default, kills, command, range, monster, enter, sections, kill, monstername, thread, usefull, offs, reply, buttons, integer, action, purple, basic, definitions, number, boxs, script, avoid, exori, variables, annoying, give, dummies, frequently, keeping, setavoidfront, front, favourites, setexorimort, infront, face, cast, telling, setexorivis, important, choice, applies, diagonal, setsdkill, luired" />
+	<meta name="description" content="Summary 
+ 
+In this thread I will go over EVERYTHING you need to know about BlackD's Cavebot, From MS to spell kills. This thread is more of a &quot;what does this do? answer board&quot; if your looking for detailed scripting guides (for dummies + ) then this is for you: http://www.blackdtools.net/showthread.php?t=8648 
+(creds to malmis for that one ofcourse!) 
+ 
+Defaults:  
+onGmPause is default since version 11.8 or something 
+the default MS is 300. 
+setFollow is defualt 
+setAny is default" />
+	
+	<title> Cavebot for dummies! (EVERYTHING you need to know!) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  Cavebot for dummies! (EVERYTHING you need to know!)</div>
+<hr />
+<div class="pda"><a href="t-21374.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?21374-Cavebot-for-dummies!-(EVERYTHING-you-need-to-know!)">Cavebot for dummies! (EVERYTHING you need to know!)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-31-2008, 02:12</div></div><div class="posttext">Summary<br />
+<br />
+In this thread I will go over EVERYTHING you need to know about BlackD's Cavebot, From MS to spell kills. This thread is more of a &quot;what does this do? answer board&quot; if your looking for detailed scripting guides (for dummies + ) then this is for you: http://www.blackdtools.net/showthread.php?t=8648<br />
+(creds to malmis for that one ofcourse!)<br />
+<br />
+Defaults: <br />
+onGmPause is default since version 11.8 or something<br />
+the default MS is 300.<br />
+setFollow is defualt<br />
+setAny is default<br />
+setRetryAttacks is default<br />
+Priority of setmeleekill is 0<br />
+stackItems, bot will do this by itself, on special occasions will you need to use this<br />
+if you know of more defualts for the cavebot, please let me know in a reply! thanks<br />
+<br />
+definitions:<br />
+Integer a NUMBER that with a range of smaller range<br />
+Long a NUMBER with a larger range then integer<br />
+String usually a sentence/word<br />
+If you need further definitions ask for in reply thanks<br />
+<br />
+This tutorial is broken up into SEVEN sections<br />
+1st post (this one) Special Kills<br />
+2nd post Basic Commands<br />
+3rd Post the on and offs<br />
+4th post action commands<br />
+5th post variables section<br />
+6th post other<br />
+7th post load/script<br />
+Heres a picture of the locations of the sections<br />
+http://img67.imageshack.us/img67/2244/ssiw5.jpg<br />
+Green = script/load (although the mms changer should be apart of other)<br />
+red = basic commands<br />
+orange/yelloey :p = special kills<br />
+pink = the on and offs<br />
+brown = other<br />
+light purple = action commands<br />
+dark purple = variables<br />
+<br />
+Now lets get started!<br />
+<br />
+BlackD cavebot is brocken up into 7 sections (a grouping of buttons if you will) lets work our way through all the buttons then to check box's and option box's to ms and well you will see!<br />
+<br />
+Ok, the first section is the exori vis/mort rune kill section, as its almost useless now because of the setspell kill section but there are STILL some things here wich are very important, lets have a look!<br />
+<br />
+setExoriVis monstername, this will enter a command into the script telling your bot to go infront of the monster, face it and cast exori vis, this also applies to setExoriMort! <br />
+<br />
+setSDKill monstername This will enter a command into the script to tell your bot to SD kill a monster of your choice, this is usually used when you are getting luired on frequently.<br />
+<br />
+setAvoidFront monstername One of my favourites and a VERY usefull one at that. the set avoid front. this will enter a command keeping you diagonal to the monster to avoid fire waves etc (amazing for hunting dragons!)<br />
+<br />
+onGMcloseConnection I cannot recomment this AT ALL, and infact it is now IGNORED by the bot for tibia 8.11 as its almost promising to get you banned by a gm, what this does is if your bot sees a GM pop onto your screen it closes your connection (GMs no longer fall for the excuse of you got kicked, and will ban you)<br />
+<br />
+onTrapGiveAlarm When your bot becomes trapped or stuck between going to different waypoints the bot will give the every so annoying (but lovely) alarm. usefull in non pvp worlds were anti botter people trap you in larva caves (usually) - so annoying :p<br />
+<br />
+Ok lets give this section a name, Ill call it... Special kills group</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-31-2008, 02:29</div></div><div class="posttext">Ok, next group! <br />
+<br />
+this groups define your script. I cant really imagine a good script for hunting without any of these!<br />
+<br />
+setMeleeKill monstername<br />
+Now most of you know what this does (and i really hope you do) but since this is  a  thread forr n00bs ill tell you :) this tells the bot to attack the monster of your choice (default larva altho if its left blank its nothing :))<br />
+setHmmKill<br />
+Just like the setSDKill in Special kills group but this time it shoots a hmm at monsters of your choice, I recommend using this for deeper tomb scripts (because of stalkers)<br />
+SetLoot itemID<br />
+just to let you guys know, d7 0b = Gold always enter that one!!! to find different item ids you can goto the tools tutorial! there you will find out how!<br />
+onDangerGoto integer when you are attacked or in any kind of danger it will goto the script line of your choice. this is usually used in more advanced scripts!<br />
+onGMPause DO NOT, I REPEAT, DO NOT make a script WITHOUT  this command, this command makes your script look like you kind of know what your doing, if not selected the bot will keep auto hunting when a gm comes = ban!<br />
+onPlayerPause- same thing as the above command but this one does NOT pause healing! it can be a life saver, This is rarely used on scripts, i never use it.<br />
+setVeryFriendly Ok this command makes your bot ONLY attack things that attack YOU when another player is on the screen, simple.<br />
+setRetryAttacksNow I have never used this but lets use some common sense, im going to say it will retry to attack the monster if it couldnt the first try - this is implemented without being put into the script (default)<br />
+setDontRetryAttacks Ok, exact opposite of last one! sorry but detail simply isnt needed, although I would use this on non pvp since people summon what your killing, bot would try to attack it and fail although keep retrying!<br />
+setPriority monstername = integer <br />
+I love this one and I use it alot, expecially for turtles (Get those stupid spamming toads before they do to much damage)<br />
+<br />
+Example:<br />
+ALL monsters on setmeleekill have a default priority of 0<br />
+now using this command wiill highten the priority, the higher the priority the more the bot wants to kill <br />
+setpriority necromancer +1<br />
+setpriority toad +2<br />
+setpriority webber +3<br />
+Ok lets imagine you go down a hole and OMG theres like 4 toads! and 2 necromancers and 1 webber (:cool:) the bot will go kill the webber :( kill the toads THEN the necromancer, if its trapped trying to get one of the toads and  your trapped by a necromancer, no worries! bot will kill the necromancer then the toad!<br />
+<br />
+Ok that is done! lets call it... Basic commands</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-31-2008, 02:36</div></div><div class="posttext">Ok now for the next bunch of buttons &lt;3<br />
+<br />
+setAny<br />
+This command tells the bot to kill any creature its toldto (defined by setmeleekill) screw other peoples experience because its mine now!<br />
+setFriendly<br />
+this will attack anything NOT attacking another player while that player is on your screen, recommended, but not default<br />
+setFollow<br />
+follows the monster defined by setmeleekill, it IS defualt<br />
+setLootOn<br />
+Will loot all items it is told to (defined by setLoot)<br />
+setLootOff<br />
+wont even open the bodies, great for wasp hunting before honeycombs were introduced :p<br />
+setNoFollow<br />
+this makes the cavebot kinda similar to ng, using this will make the bot NOT follow the monster (but why?) i dont see the reason, if you know post when i re open the thread! :p<br />
+<br />
+Done with this one, lets call it.... The on and offs</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-31-2008, 02:52</div></div><div class="posttext">the bot calls this one action commands, and i like that name so its going to stick<br />
+<br />
+This group is called, Action commands<br />
+<br />
+move &lt;current x,y,z&gt;<br />
+Thiss command will move you to your current Position, but it gets better, theres a command you can say INGAME for this! no need to toggle in between windows, exiva addmove will add a move line to your script<br />
+useItem &lt;current x,y,z&gt;<br />
+this will use the item in your arrow slot on the current position your in, say you want your bot to cut grass with a machete? first cut the grass, stand where it was and add this line into your bot, not when the bot gets here it will use the machete on the grass!<br />
+fishX integer<br />
+this will fish the amount of times you want to replace 0 with 10~ or 100 it doesnt matter<br />
+closeConnection<br />
+this will close your connection, its good if you want your bot to goto dp change gold or whatever then logout, thats what its mainly used for<br />
+WaitX integer<br />
+when the bot hits this line, it will wait for X seconds then continue after that is done<br />
+stackItems<br />
+this is rarely used, but it will stack all stackable items in your open containers into the least amount of piles possible<br />
+resetLoot<br />
+after your bot reaches this line, it will now define your loot as NOTHING, so if you want to change what your bot loots midway use this, this command is usually used when putting loot into dp, but keeping gold<br />
+<br />
+example:<br />
+setloot d7 0b<br />
+setloot d9 0d &lt;no idea what that is<br />
+resetloot<br />
+setloot d9 0d<br />
+putlooton depot<br />
+resetloot<br />
+d7 0b<br />
+d8 0d<br />
+<br />
+This script will put ONLY item &quot;d9 0d&quot; into your depot then switch back to looting both<br />
+ResetKill<br />
+this will redefine setmelee kill / sethmmkill all back to nothing, use this how you want to, ive never used it<br />
+sayMessage string<br />
+when the bot hits this line it will say a message into defualt channel saying whatever you put into the textbox<br />
+fastExiva string<br />
+sorry but im going to have to be vague on this one!<br />
+this processes a exiva command then instantly jumps to the next line<br />
+putLootOnDepot<br />
+this puts all your loot into your locker, always used in depositer scripts its a great function and is now used more then it ever was!<br />
+dropLootOnGround<br />
+this is great for money maker scripts like tombs, it will drop your loot where you currently are! then continue on, if you leave it going you wont have to run a deposit script (wich will obviously take more time) but be warned theifs love when you run this on your script!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-31-2008, 03:13</div></div><div class="posttext">ok we are about half way threw, now comes the semi difficult stuff!<br />
+<br />
+Im going to call this the variables section<br />
+<br />
+it starts getting a little advanced here<br />
+<br />
+ifTrue( [Variable] [operator] [integer] ) Goto integer<br />
+Oh god, this looks tuff, but lets break this down!<br />
+iftrue, well im not going to bother with that one,<br />
+Variable: in blackd there is MANY integer such as mymana, variables are defined with &quot;$&quot; on either side &quot;$mymana$&quot; for a complete set of variables goto the events section!<br />
+Operator: &quot;&lt;&quot; &quot;&gt;&quot; &quot;=&quot; &quot;&lt;=&quot; &quot;&gt;=&quot; &quot;&lt;&gt;&quot;<br />
+In order, Smaller then, Greater then, equal to, equal or smaller then, Greater or equal to, Not equal to<br />
+integer: a number of the variable (this will make sense in a couple seconds)<br />
+Goto integer: if all is true then goto line number X (number)<br />
+<br />
+example: ifTrue ( $mymana &gt;= 25 )Goto 5<br />
+this will make my bot jump to line 5 if my mana is greater than 25!<br />
+<br />
+Ok dont worry, that was the hardest one!<br />
+<br />
+gotoScriptLine integer<br />
+ this will make your bot goto the chosen script line if this isnt at the end of your script your script will end<br />
+IfEnoughItemsGoto [itemid] [integer] [integer]<br />
+Ok this is simple! if you have so many items or more it will goto the defined scriptline <br />
+<br />
+example: IfEnoughItemsGoto d7 0b 1000 4<br />
+this will make your bot goto scriptline 4 when you get 1000 gold peices (10 piles of gold)<br />
+this used to be used for depositer scripts until the ifTrue command came out!<br />
+<br />
+ifFewitemsgoto [itemid] [integer] [integer]<br />
+also because of ifTrue command, this command is rarely ever used its exactly the same as IfEnoughItems, just opposite, instead of using these 2 options, get used to using the IfTrue command!<br />
+<br />
+Comment (#)<br />
+Not really needed, it is usually used just to let the people using your script know what its doing at that section (advanced scripters will use this for that exact reason)<br />
+<br />
+Label(:)<br />
+Ahh, now heres one i like, we used  to have to find exactly wich line to jump to, but now because of this, we dont! just replace the integer with the label name! (i think, il have to be reassured of this because i dont use this... im old school :) )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-31-2008, 03:44</div></div><div class="posttext">Ill call this section Other<br />
+<br />
+Execute 1 line each [integer] ms change<br />
+the default to this is 300MS 0.3 of a second, wich is fast, if you are having problems talking to friends ingame, try raising this to 500~, i use 550 just because of this reason! (this is located at the top in the middle)<br />
+<br />
+Cavebot global settings (located in the middle to the right)<br />
+<br />
+Change autoheal at pk to %<br />
+Self exlanatory, if you get attacked by something not set as meleekill or on your runemaker list then your cavebot will make you heal at a different %<br />
+HP for exori vis and Runes <br />
+<br />
+I THINK, this will change the minimun health you have to have to make runes/cast exori vis<br />
+Allow reposition at start<br />
+Sorry guys I dont no what this does<br />
+<br />
+Try alternative path/Kill the monsters when you have been blocked more then [long]<br />
+If you are getting blocked by killable monsters (although not defined by setmeleekill) then this will find a different path and use it<br />
+next option will kill the monster when you have been blocked by the monster for a time (in ms 1 second = 1000 ms) default 100 seconds :O<br />
+<br />
+Allow looting when a person is near<br />
+ever since tibia 8.0? was introduced you cannot loot other peoples monsters, so just leave this on, i wont bother explain it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-31-2008, 03:52</div></div><div class="posttext">lets call this one Loading/script<br />
+<br />
+Ok guys were on the home stretch!! and its the easiest part<br />
+<br />
+Char: dropdownlist<br />
+In this you will find your char name on the drop down list so select the character your using before continuing with anything!<br />
+<br />
+Listbox<br />
+<br />
+The great listbox, this shows the script your running/working on! what a life saver this is :)<br />
+<br />
+edit current lime ()<br />
+<br />
+First select a line from the list box, now you can edit it in ANY way :) or even delete it using the command below<br />
+<br />
+File dropdownlist <br />
+<br />
+This will find all text files in your blackd folder (the main folder) this is used to save/load your scripts to make a new one, put a name of it followed by .txt (THAT IS VERY IMPORTANT) and press save/load now you can star working on your script<br />
+<br />
+Update file list<br />
+<br />
+if you have the bot loaded then added more scripts press this to update the list to include all the current files in the blackd file!<br />
+<br />
+Thanks for reading, If you Know more information/want to edit a part of this please post the group name, followed by the command name, followed by your edit, thanks! :cool:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fhs_d_h</div><div class="date">06-19-2008, 15:05</div></div><div class="posttext">ResetKill<br />
+this will redefine setmelee kill / sethmmkill all back to nothing, use this how <br />
+you want to, ive never used it<br />
+<br />
+this could be useful if you wish to pass through a respawn and not waste time killing all monsters<br />
+<br />
+mm example...<br />
+u hunt at OF...in OF u got Bears right?<br />
+now u want ur script to go venore without wasting time kill bears on way <br />
+so u could put ResetKill and then it wouldnt waste time over the bears :p<br />
+<br />
+just an idea how to use this =) its rly useful using depositers</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mr Bocik</div><div class="date">06-23-2008, 22:05</div></div><div class="posttext">hmm i have problem... how i can dig hole to script like tomb+depositer<br />
+:confused:<br />
+<br />
+useItem &lt;current x,y,z&gt; dont work...(i have shovel in arrows slot)<br />
+<br />
+srry for my eng<br />
+<br />
+<br />
+<br />
+EDIT<br />
+fastExiva &gt; 83 FF FF 00 00 00 81 0D 00 XX XX YY YY ZZ E7 00 00<br />
+<br />
+&lt;&lt;dont work too</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nmrk123</div><div class="date">07-11-2008, 01:38</div></div><div class="posttext">i've got a nÓóbie problem...<br />
+I'm hunting manualy and trying to use cavebot to carry gold from bodies, but when i'll enter setLoot D7 0B (....) and goToScriptLine0 when any monster will tough me, blackD is turnin' on the alarm... what's wrong with it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">07-12-2008, 00:47</div></div><div class="posttext">add those monsters to your safelists in runemaker</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xardas00</div><div class="date">07-18-2008, 22:53</div></div><div class="posttext">I have newbie question ;]<br />
+<br />
+How can i add rope, stairs or ladder waypoint?<br />
+<br />
+btw.<br />
+<br />
+nice tutorial ;d gz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raonikct</div><div class="date">07-20-2008, 16:15</div></div><div class="posttext">Thanks mate, i was needing this explanation!! Great job!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xsilv3rx</div><div class="date">07-24-2008, 16:46</div></div><div class="posttext">There is no need for rope or shovel waypoints, just have the supplies in your backpack and blackd is smart enough to do the rest. EZ</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gibsi</div><div class="date">08-03-2008, 07:44</div></div><div class="posttext">thx bro! it help me ALOT!!:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gory</div><div class="date">09-16-2008, 17:59</div></div><div class="posttext">thanks alot..<br />
+<br />
+now how i do to put X item in Y bp and T item in Z bp where i configure that??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Demonic</div><div class="date">09-16-2008, 18:13</div></div><div class="posttext">This should help me if BlackD ever sends me my pass :o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Random-j</div><div class="date">09-17-2008, 09:47</div></div><div class="posttext">Allow reposition at start<br />
+Sorry guys I dont no what this does<br />
+<br />
+This starts the script from the start and doesnt skip lines</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raphimac</div><div class="date">10-05-2008, 22:24</div></div><div class="posttext">do u know how i atk runes ... but dont need open bpS =s</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">10-06-2008, 00:21</div></div><div class="posttext">cheats and put on normal mode</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Colorion</div><div class="date">10-06-2008, 09:49</div></div><div class="posttext">nice job ;)<br />
+<br />
+I hope you'll keep updating ths thread as the cavebot expands, it's really useful</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xala</div><div class="date">12-16-2008, 00:50</div></div><div class="posttext">nice tutorial</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xicohti</div><div class="date">01-28-2009, 13:17</div></div><div class="posttext">So Good!<br />
+Congratulations!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">didinho</div><div class="date">02-23-2009, 17:59</div></div><div class="posttext">hello can you help me I just got my first BLACKD PROXY BOT ... so can you help me where to find script for downloads for blackd proxy cavebot :D PM or post it here</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kacper123</div><div class="date">08-14-2011, 20:36</div></div><div class="posttext">How to set exori spell on knight ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tony</div><div class="date">08-25-2012, 10:40</div></div><div class="posttext">Ok now for the next bunch of buttons &lt;3<br />
+<br />
+setAny<br />
+This command tells the bot to kill any creature its toldto (defined by setmeleekill) screw other peoples experience because its mine now!<br />
+setFriendly<br />
+this will attack anything NOT attacking another player while that player is on your screen, recommended, but not default<br />
+setFollow<br />
+follows the monster defined by setmeleekill, it IS defualt<br />
+setLootOn<br />
+Will loot all items it is told to (defined by setLoot)<br />
+setLootOff<br />
+wont even open the bodies, great for wasp hunting before honeycombs were introduced :p<br />
+setNoFollow<br />
+this makes the cavebot kinda similar to ng, using this will make the bot NOT follow the monster (but why?) i dont see the reason, if you know post when i re open the thread! :p<br />
+<br />
+Done with this one, lets call it.... The on and offs<br />
+<br />
+ I like to hunt, with bot on just to attack monsters and loot for me, its very convenient. When you do that, play by hand with bot on, it follows a lot, and sometimes you want to walk the other way, and it wont let you. So to play by hand yet still use some of the great features you can use setnofollow.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">matheuspl</div><div class="date">12-08-2012, 22:16</div></div><div class="posttext">My &quot;exiva addmove&quot; stopped working now!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fresh Bot</div><div class="date">01-25-2013, 21:54</div></div><div class="posttext">exelent thread, old but very useful, helped me with my first basic script, ^^ rated it as exelent.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

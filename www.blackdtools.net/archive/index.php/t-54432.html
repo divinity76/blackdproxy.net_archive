@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, setmeleekill, 32510,31952,9, setloot, waitx, depo, sayintrade, 32567,31940,7, 32584,31973,9, 32579,31896,9, 32579,31894,8, 32584,31971,10, 32605,31921,10, spider, 32567,31941,6, deposit, 32558,31960,8, 32579,31893,7, 32546,31969,8, 32558,31963,6, 32569,31931,7, 32558,31961,7, 32612,31921,9, fastexiva, 32558,31962,7, 32558,31961,6, 32578,31892,8, gotoscriptline, 32509,31952,8, 32519,31966,7, 32546,31970,7, 32606,31920,9, 32613,31922,9, saymessage, 32651,31906,8, 32613,31920,8, 32605,31919,9, 32613,31922,8, putlootondepot, 32664,31908,8, 32662,31909,8, 32579,31891,8, 32510,31953,8, gold, sword, mace, shovel, recommended, collecting, dwarfs" />
+	<meta name="description" content="What does script do ? hunt rotworms and dwarfs , collecting  mace , sword and gold , and deposit it in the depo . 
+10 lvl and p set are recommended . 
+Put shovel in the arrow slot , start in the Kazordoons depo . 
+ 
+ 
+#By Wiotki 
+setLootOn 
+setFriendly 
+setMeleeKill rotworm 
+setMeleeKill dwarf" />
+	
+	<title> 37. Mines for lov-lvl knights - By Wiokti [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  37. Mines for lov-lvl knights - By Wiokti</div>
+<hr />
+<div class="pda"><a href="t-54432.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54432-37-Mines-for-lov-lvl-knights-By-Wiokti">37. Mines for lov-lvl knights - By Wiokti</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-21-2011, 21:22</div></div><div class="posttext">What does script do ? hunt rotworms and dwarfs , collecting  mace , sword and gold , and deposit it in the depo .<br />
+10 lvl and p set are recommended .<br />
+Put shovel in the arrow slot , start in the Kazordoons depo .<br />
+<br />
+<br />
+<br />
+#By Wiotki<br />
+setLootOn<br />
+setFriendly<br />
+setMeleeKill rotworm<br />
+setMeleeKill dwarf<br />
+setMeleeKill poison spider<br />
+setMeleeKill snake<br />
+setMeleeKill bear<br />
+setMeleeKill wolf<br />
+setMeleeKill spider<br />
+setLoot D6 0C<br />
+setLoot C0 0C<br />
+setLoot D7 0B<br />
+move 32510,31952,9<br />
+move 32483,31926,9<br />
+move 32511,31951,9<br />
+move 32503,31907,9<br />
+move 32512,31952,9<br />
+move 32539,31924,9<br />
+move 32510,31952,9<br />
+move 32510,31953,8<br />
+move 32481,31890,8<br />
+move 32505,31956,8<br />
+move 32517,31966,8<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depo$<br />
+move 32509,31952,8<br />
+move 32510,31952,9<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32519,31966,7<br />
+move 32545,31969,7<br />
+fastExiva &gt; 11 00 83 FF FF 0A 00 00 81 0D 00 22 7F E1 7C 07 52 02 00<br />
+move 32546,31969,8<br />
+move 32558,31960,8<br />
+move 32558,31961,7<br />
+move 32558,31963,6<br />
+move 32567,31941,6<br />
+move 32567,31940,7<br />
+move 32569,31931,7<br />
+move 32579,31893,7<br />
+move 32579,31891,8<br />
+move 32579,31894,8<br />
+move 32579,31896,9<br />
+move 32584,31973,9<br />
+move 32584,31971,10<br />
+move 32605,31921,10<br />
+move 32605,31919,9<br />
+move 32612,31921,9<br />
+move 32613,31920,8<br />
+move 32651,31906,8<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32662,31909,8<br />
+move 32664,31908,8<br />
+waitX 2<br />
+putLootOnDepot<br />
+move 32613,31922,8<br />
+move 32613,31922,9<br />
+move 32606,31920,9<br />
+move 32605,31921,10<br />
+move 32584,31971,10<br />
+move 32584,31973,9<br />
+move 32579,31896,9<br />
+move 32579,31894,8<br />
+move 32578,31892,8<br />
+move 32579,31893,7<br />
+move 32567,31940,7<br />
+move 32567,31941,6<br />
+move 32558,31961,6<br />
+move 32558,31962,7<br />
+fastExiva &gt; 11 00 83 FF FF 0A 00 00 81 0D 00 2E 7F D8 7C 07 51 02 00<br />
+move 32558,31960,8<br />
+move 32546,31969,8<br />
+move 32546,31970,7<br />
+move 32519,31966,7<br />
+move 32509,31952,8<br />
+move 32510,31952,9<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sparky-X</div><div class="date">08-12-2011, 15:25</div></div><div class="posttext">It aint possible to put your shovel in the arrow slot.<br />
+<br />
+:-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ttss45</div><div class="date">08-16-2011, 22:33</div></div><div class="posttext">It starts in dp, walks around.. everything's alright here... Then the bot walks to the entrance of kazz. And says &quot; There is no way&quot;.<br />
+Glad i could help :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Visione</div><div class="date">11-05-2011, 22:16</div></div><div class="posttext">It didn't use rope. How to repair that?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Perdition</div><div class="date">01-17-2012, 08:30</div></div><div class="posttext">umm, how do i paste the script in the program so i can use it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">679alex</div><div class="date">01-18-2012, 18:56</div></div><div class="posttext">umm, how do i paste the script in the program so i can use it?<br />
+<br />
+Create a   .txt   look like other script then copy paste this in the new .txt<br />
+Then you change the name of .txt for the one you want then you put it in the blackdtools bot Folder.<br />
+Then you load it with the bot :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Perdition</div><div class="date">01-20-2012, 15:39</div></div><div class="posttext">wow i forgot i asked that.......i done figured it out like 2 days ago....thanks for replying, and sorry i didnt post that i figured it out already.....</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

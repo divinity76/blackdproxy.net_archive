@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="scripts, print, bridge, character, mistake, http://imageshack.us/scaled/thumb/203/c2t6.jpg, screen, popping, walks, problem, botted, venore, &amp;8203&amp;8203one, error, swamp, trolls, tested, persists" />
+	<meta name="description" content="Hello , I had a problem in these last days where my char are botted ( Venore Swamp Trolls )  
+I tested 3 different scripts, and even made &#8203;&#8203;one too , but the error persists .. :( 
+and all scripts the same mistake, the character from nothing to the bridge and keeps popping up &quot;sorry, not possible&quot;, and the char not walks until I do something or show some mob .. 
+ 
+ 
+Print Screen : http://imageshack.us/scaled/thumb/203/c2t6.jpg" />
+	
+	<title> Bug !! Bug !! Bug !! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  Bug !! Bug !! Bug !!</div>
+<hr />
+<div class="pda"><a href="t-61136.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61136-Bug-!!-Bug-!!-Bug-!!">Bug !! Bug !! Bug !!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Hayashii</div><div class="date">09-20-2013, 03:28</div></div><div class="posttext">Hello , I had a problem in these last days where my char are botted ( Venore Swamp Trolls ) <br />
+I tested 3 different scripts, and even made &#8203;&#8203;one too , but the error persists .. :(<br />
+and all scripts the same mistake, the character from nothing to the bridge and keeps popping up &quot;sorry, not possible&quot;, and the char not walks until I do something or show some mob ..<br />
+<br />
+<br />
+Print Screen : http://imageshack.us/scaled/thumb/203/c2t6.jpg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hayashii</div><div class="date">09-20-2013, 03:31</div></div><div class="posttext">THE CORRECT IMAGE !!! \/ \/<br />
+<br />
+<br />
+http://img203.imageshack.us/img203/8417/c2t6.jpg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oijoi</div><div class="date">09-22-2013, 23:42</div></div><div class="posttext">If it's just this one bridge, you could force it to walk there using conds.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hayashii</div><div class="date">09-23-2013, 04:25</div></div><div class="posttext">If it's just this one bridge, you could force it to walk there using conds.<br />
+<br />
+how i do this ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">09-24-2013, 12:14</div></div><div class="posttext">Well, you can try to make closer waypoints when you're near the stairs to see if it works, but if that doesn't work you could try something like this:<br />
+make a waypoint on the left where your char is standing on the screenshot, then make it turn south, then force walk twice.<br />
+It would be something like:<br />
+<br />
+<br />
+move 12345,67890,8 (the square to the left where your char is on the SS)<br />
+waitX 1 (it will wait 1s before jumping to the next line)<br />
+fastExiva turn2 (it makes your char turn south)<br />
+waitX 1<br />
+fastExiva turbo (it makes your char move a single step to the side he's facing, south in this case)<br />
+waitX 1<br />
+fastExiva turbo <br />
+<br />
+after that, the char will be down the stairs, so you can just continue with the waypoints of the lower floor.<br />
+ I hope that helps</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

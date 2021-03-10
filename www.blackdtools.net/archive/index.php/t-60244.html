@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="boxes, throats, question, cheats, possbile, destroy" />
+	<meta name="description" content="Same question? :D" />
+	
+	<title> is this possbile to make some cheats to destroy throats, boxes etc? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  is this possbile to make some cheats to destroy throats, boxes etc?</div>
+<hr />
+<div class="pda"><a href="t-60244.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60244-is-this-possbile-to-make-some-cheats-to-destroy-throats-boxes-etc">is this possbile to make some cheats to destroy throats, boxes etc?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">maxibott</div><div class="date">04-10-2013, 11:44</div></div><div class="posttext">Same question? :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">04-10-2013, 17:48</div></div><div class="posttext">The short answer is no.<br />
+<br />
+You can record hexes of using your weapon around you and play it constantly. But there is no way of knowing how many attempts it will take. And you will be using your weapon all the time.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mackiiboy</div><div class="date">04-11-2013, 15:10</div></div><div class="posttext">I do not exactly know what you are looking for, but I suppose that you want to destroy troughs, boxes and other objects if you get trapped. I had that issue a lot at Mintwallin, but I never bothered to solve it since I did not hunt there that much. <br />
+<br />
+Things that would be necessary:<br />
+<br />
+1. A conditional event or something else that check your x,y,z pos and calcultate how much time you have spent in a position. If time &gt; x, the script should start a debugging script that will figure out what is wrong. <br />
+<br />
+2. The debugging script could include a lot of different things, but this time we are just interested in what to do if the issue is a common trough/box trap. The script could check your x,y,z position and all 8 spots around you which (I think) are:<br />
+(x+1,y,z), (x-1,y,z), (x,y+1,z), (x,y-1,z), (x+1,y+1,z), (x-1,y-1,z), (x-1,y,z), (x,y-1,z). <br />
+<br />
+3. If the script notice a box or trough in a/several position/s, it should save the positions.<br />
+<br />
+4. I don't know if there are different hex-codes needed for this, you could check it out by yourself by destroying different objects with a weapon. If you need different hex-codes, you need to make the script to use them right. Overall it could be 18+ different cases. Make sure to make them general so it works on all coordinates in the whole tibia, so they're not hard-coded. Different coordinates will probably require different hex-codes when you use your weapon on a object. If you do some experiments, you will figure it out. <br />
+<br />
+5. After using a weapon on a object, the script should check the coordinate once again and check weather the object is destroyed or not. If not, just repeat previous steps. <br />
+<br />
+6. When everything is clear, the script could check all coordinates around you once again just to make sure that all objects are destroyed. If they are, awesome, you can return to your hunting.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TeamSurge</div><div class="date">06-30-2014, 09:17</div></div><div class="posttext">im thinking a cond that checks the area around you and if there should be a trough(only trough) use whatever Wep that is EQed. <br />
+reset cond<br />
+wait 400ms<br />
+start checking agean<br />
+# --<br />
+This way you are not using your wep allthetime and will only take up a small amount of space<br />
+im planning on writing this cond soon but don't really have the time ATM. Will try to remember to post it here.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="waitx, move, fastexiva, potions, sayintrade, darashia, 33214,32454,7, $hex-tibiastryes$, iftrue, 01$number, health, 33214,32456,8, 01$$, $numbertohex1$countitems1d, 33214,32460,8, all$, $hex-tibiastrdeposit, putlootondepot, 33219,32422,7, trade, $countitems0a, $numbertohex2$_healthneeded$$, gotoscriptline, $nlineoflabeltothecave$, $numbertohex2$_mananeeded$$, 33216,32401,7, $hex-tibiastrbye$, saymessage, $hex-tibiastrhi$, $countitems0c, level, full, rotworms, capacity, town, deposit, hunt, rotwors, snowman, description, script, money, refill, start, depot, mana, continue, manas, hunting, 33220,32387,7" />
+	<meta name="description" content="Description: This script will hunt in Darashia Rotworms 
+When full capacity it will go to town to deposit the money, then it will go refill manas and health potions to then continue hunting. It is set to buy 60 mana potions and 20 health potions. 
+Where Should You Start It?: darashia depot level -1 
+ 
+ 
+move 33220,32387,7 
+waitX 1 
+fastExiva &gt; 96 04 $hex-tibiastr:hi$ 
+waitX 2 
+fastExiva &gt; 96 04 $hex-tibiastr:Deposit all$" />
+	
+	<title> 11. Darashia Rotwors - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  11. Darashia Rotwors - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54339.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54339-11-Darashia-Rotwors-by-Snowman">11. Darashia Rotwors - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-16-2011, 01:30</div></div><div class="posttext">Description: This script will hunt in Darashia Rotworms<br />
+When full capacity it will go to town to deposit the money, then it will go refill manas and health potions to then continue hunting. It is set to buy 60 mana potions and 20 health potions.<br />
+Where Should You Start It?: darashia depot level -1<br />
+<br />
+<br />
+<br />
+move 33220,32387,7<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Deposit all$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+move 33219,32422,7<br />
+move 33214,32454,7<br />
+move 33214,32460,8<br />
+putLootOnDepot<br />
+IfTrue ($countitems:0C 01$#number&lt;#60) Goto $nlineoflabel:buyManas$<br />
+IfTrue ($countitems:0A 01$#number&lt;#20) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:tothecave$<br />
+:buyManas<br />
+fastExiva _mananeeded = $numericalexp:60-{$countitems:0C 01$}$<br />
+fastExiva _costmana = $numericalexp:50*{$_mananeeded$}$<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33222,32387,7<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+sayInTrade withdraw $_costmana$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:bye$<br />
+waitX 1<br />
+move 33216,32401,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mananeeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33214,32454,7<br />
+move 33214,32456,8<br />
+IfTrue ($countitems:0A 01$#number&lt;#20) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:tothecave$<br />
+:buyHealth<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33222,32387,7<br />
+fastExiva _healthneeded = $numericalexp:20-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33216,32401,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33214,32454,7<br />
+move 33214,32456,8<br />
+gotoScriptLine $nlineoflabel:tothecave$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">warlockh</div><div class="date">02-16-2011, 02:05</div></div><div class="posttext">The script just goes to and from the Depot &amp; repeatedly buys potions.<br />
+it just cost me a fortune xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shadow1</div><div class="date">02-16-2011, 07:19</div></div><div class="posttext">LOL@UP thats not good XD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dynamickk</div><div class="date">02-18-2011, 16:47</div></div><div class="posttext">The script just goes to and from the Depot &amp; repeatedly buys potions.<br />
+it just cost me a fortune xD<br />
+ <br />
+its happening with me too. o_o can you fix it please?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">02-18-2011, 17:52</div></div><div class="posttext">this script can't work</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

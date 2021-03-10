@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="depositor, hide, refiller, tarantula, task, make, fastexiva, killed, tarantulas, script, version, change, kills, loots, line, fine, load, number, conditional, events, update, hunt, comment, feedback, cave, _caveonetaken, lines, _taskstarted, _counter, character, changing, hunting, started, start, patient, works, welcomed, walks, random, including, ways, reported, file, fixed, errors, post, edit, test, watching, _cavethreetaken" />
+	<meta name="description" content="Greetings!! 
+ 
+This is perhaps one of my best/most complex scripts I've released. I decided to make it public because in the server that I hunt the tarantula spawns are crowded with so many boters (I assume using other programs). Here it is, enjoy! and please comment on it.  
+ 
+This script has been remade for version 8.71 and using the latest BlackdProxy. Please not that when new updates come I will make sure to update and verify that no hex packets have changed to make sure it is safe and I" />
+	
+	<title> 50. Complete Tarantula Tasker (Dep, Seller, Refiller, Hide Killer, + ) - By BldMx [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  50. Complete Tarantula Tasker (Dep, Seller, Refiller, Hide Killer, + ) - By BldMx</div>
+<hr />
+<div class="pda"><a href="t-54435.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54435-50-Complete-Tarantula-Tasker-(Dep-Seller-Refiller-Hide-Killer-)-By-BldMx">50. Complete Tarantula Tasker (Dep, Seller, Refiller, Hide Killer, + ) - By BldMx</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">02-21-2011, 22:12</div></div><div class="posttext">Greetings!!<br />
+<br />
+This is perhaps one of my best/most complex scripts I've released. I decided to make it public because in the server that I hunt the tarantula spawns are crowded with so many boters (I assume using other programs). Here it is, enjoy! and please comment on it. <br />
+<br />
+This script has been remade for version 8.71 and using the latest BlackdProxy. Please not that when new updates come I will make sure to update and verify that no hex packets have changed to make sure it is safe and I will update the version number. Use at your one risk if you are using a newer Tibia version.<br />
+<br />
+What it does?<br />
+Kills Tarantulas, loots eggs, money and steel helmets, deposit loot when no capacity, kills hide when 300 tarantulas are killed and refills mana/health potions when needed. Also you can make it so it avoids a particular tarantula cave if its taken by someone else.<br />
+<br />
+How to use it?<br />
+Download both the script and conditional events. <br />
+Load the script and if you have already started the task change the 0 in this line: <br />
+ fastExiva _taskstarted = 0  to a 1 and put the number of tarantulas that you have already killed in this line: <br />
+<br />
+fastExiva _counter = 0 <br />
+Load the conditional events (do no change them at all).<br />
+Start hunting!<br />
+<br />
+If any cave is taken you change tell your character not to hunt there by changing the 0 to a 1 in any of these lines:<br />
+<br />
+ fastExiva _caveonetaken =0<br />
+fastExiva _cavetwotaken =0<br />
+fastExiva _cavethreetaken =0 <br />
+<br />
+Note: I only killed the Hide once and it ran fine, but since I haven't been able to test it please make sure you are watching the first time you run it. Also please make sure to tell me the IDs of any other of the hide loots since I am not sure if I added them all. If it runs fine let me know so I can edit this post and   this comment. Sometimes it might take random walks, but be patient it works.<br />
+<br />
+Feedback<br />
+All feedback is welcomed, including ways to make it better.<br />
+If any errors, they will be fixed as soon as reported.<br />
+<br />
+The file:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">assie</div><div class="date">02-22-2011, 14:37</div></div><div class="posttext">its doesnt work or im just a retard with this bot/scrip :)<br />
+<br />
+<br />
+ive tried evertyhing. <br />
+<br />
+<br />
+it goes to adams. starts or abort the task for no reason while its already started or aborted, then it goes to tarantulas and then it says refilling etc.. while it dident even attack or see one tarantula..<br />
+<br />
+<br />
+(now hunting tarantulas... 2 seconds later done hunting 1 second later now refilling etc, while it dident do shit)<br />
+<br />
+please fix this or tell me what im doing wrong<br />
+<br />
+kind regards</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">02-22-2011, 17:31</div></div><div class="posttext">Did you open backpacks? <br />
+<br />
+Do you have allowreposition disabled?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dynamickk</div><div class="date">03-10-2011, 12:51</div></div><div class="posttext">its doesnt work or im just a retard with this bot/scrip :)<br />
+<br />
+<br />
+ive tried evertyhing. <br />
+<br />
+<br />
+it goes to adams. starts or abort the task for no reason while its already started or aborted, then it goes to tarantulas and then it says refilling etc.. while it dident even attack or see one tarantula..<br />
+<br />
+<br />
+(now hunting tarantulas... 2 seconds later done hunting 1 second later now refilling etc, while it dident do shit)<br />
+<br />
+please fix this or tell me what im doing wrong<br />
+<br />
+kind regards<br />
+<br />
+<br />
+Its happening with me too. I got all my backpacks opened and I not even know what is allowreposition, so i never changed it. Can you help please ?:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipereall</div><div class="date">03-17-2011, 01:30</div></div><div class="posttext">I'm getting many times de message &quot;there is no way&quot;...<br />
+<br />
+1 ~ The bot was going to kill Hide an get &quot;there is no way&quot;.<br />
+<br />
+2 ~ The other times i cant tell exactly, becouse i was afk and returned with the msg, for me he was going to cave x to cave y.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-17-2011, 06:56</div></div><div class="posttext">Some time it happens, if there is something blocking the way or a creature in the spot it wants to go :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Reincarn</div><div class="date">03-17-2011, 09:21</div></div><div class="posttext">I have a question... <br />
+<br />
+How do you load more than one script? lol.<br />
+<br />
+It says load both of them and I've never had to do that before and I can't figure it out through the bot haha.<br />
+<br />
+Thank you in advance :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">03-17-2011, 20:13</div></div><div class="posttext">second script is a conditional events</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rick121br</div><div class="date">08-21-2011, 00:14</div></div><div class="posttext">it's debugging my tibia, what's wrong? I didn't change anything in script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">krb02</div><div class="date">09-01-2011, 22:14</div></div><div class="posttext">Debugg if some1 can change, my mage is whaiting ;d.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">deividkb</div><div class="date">10-27-2011, 13:55</div></div><div class="posttext">is safe to use in version 9.31 ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dkanon1</div><div class="date">07-23-2012, 08:14</div></div><div class="posttext">is it safe for use in 9.6</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

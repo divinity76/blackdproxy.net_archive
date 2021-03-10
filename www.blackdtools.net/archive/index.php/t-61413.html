@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="afk, depositor, rotworms, trolls, druid, level, charm, works, finally, rots/trolls/carrion, worms, posting, script, gonna, carlin" />
+	<meta name="description" content="Hi all. 
+ 
+This is my second script I've ever made, so please excuse me if it's not too great. You will need a key to open the door to the area, so just make sure the door is opened and unlocked before you start the script. You can get the key here: http://tibia.wikia.com/wiki/Fanfare_Quest/Spoiler 
+ 
+ 
+ 
+Just click where it says &quot;here&quot; to see it's location on the map. It's in the box to the right side of that room. Considering no one closes the door you can leave this on all day long. If" />
+	
+	<title> Carlin Rots/Trolls/Carrion Worms (With Depositor) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Carlin Rots/Trolls/Carrion Worms (With Depositor)</div>
+<hr />
+<div class="pda"><a href="t-61413.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61413-Carlin-Rots-Trolls-Carrion-Worms-(With-Depositor)">Carlin Rots/Trolls/Carrion Worms (With Depositor)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">rawrewree</div><div class="date">01-11-2014, 03:20</div></div><div class="posttext">Hi all.<br />
+<br />
+This is my second script I've ever made, so please excuse me if it's not too great. You will need a key to open the door to the area, so just make sure the door is opened and unlocked before you start the script. You can get the key here: http://tibia.wikia.com/wiki/Fanfare_Quest/Spoiler<br />
+<br />
+<br />
+<br />
+Just click where it says &quot;here&quot; to see it's location on the map. It's in the box to the right side of that room. Considering no one closes the door you can leave this on all day long. If anyone has info on how I can make the bot auto-open and unlock the door, that'd be appreciated. Now, here's the code:<br />
+<br />
+<br />
+setMeleeKill rotworm<br />
+setMeleeKill carrion worm<br />
+setMeleeKill troll<br />
+setLoot D7 0B<br />
+move 32336,31784,7<br />
+move 32341,31784,7<br />
+move 32341,31789,7<br />
+move 32369,31789,7<br />
+move 32387,31785,7<br />
+move 32402,31785,7<br />
+move 32408,31783,7<br />
+move 32404,31789,7<br />
+move 32404,31791,8<br />
+move 32401,31789,8<br />
+move 32399,31789,8<br />
+move 32393,31787,8<br />
+move 32392,31787,9<br />
+move 32393,31800,9<br />
+move 32400,31800,9<br />
+move 32391,31811,9<br />
+move 32391,31809,9<br />
+move 32383,31818,10<br />
+move 32390,31809,10<br />
+move 32377,31818,10<br />
+move 32373,31802,10<br />
+move 32375,31818,10<br />
+move 32370,31834,10<br />
+move 32362,31854,10<br />
+move 32361,31877,10<br />
+move 32364,31878,11<br />
+move 32366,31868,11<br />
+move 32368,31835,11<br />
+move 32379,31830,11<br />
+move 32364,31848,11<br />
+move 32367,31873,11<br />
+move 32362,31880,11<br />
+move 32362,31881,10<br />
+move 32361,31855,10<br />
+move 32375,31825,10<br />
+move 32389,31813,10<br />
+move 32390,31809,10<br />
+move 32390,31810,9<br />
+move 32399,31810,9<br />
+move 32404,31799,9<br />
+move 32409,31788,9<br />
+move 32396,31774,9<br />
+move 32392,31787,9<br />
+IfEnoughItemsGoto D7 0B,1000,49<br />
+gotoScriptLine 16<br />
+move 32392,31787,9<br />
+move 32392,31788,8<br />
+move 32399,31789,8<br />
+move 32401,31789,8<br />
+move 32404,31791,8<br />
+move 32404,31789,7<br />
+move 32401,31777,7<br />
+move 32375,31789,7<br />
+move 32343,31790,7<br />
+move 32336,31781,7<br />
+move 32326,31782,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+gotoScriptLine 0<br />
+<br />
+Start the script in Carlin depot. I reccomend bringing some potions because there is a place with a few carrions and rots at once.<br />
+<br />
+The script should loop around the cave until you have 1k gold then it should finish it's current lap, leave, deposit in Carlin bank, and return.<br />
+<br />
+With one other person in the cave I make 6.5kxp/h and 1k ever 1.75 hours. I know the golds not great but what can you expect from rots/trolls!?<br />
+<br />
+Don't forget to put on auto eat and hp/mana settings!<br />
+<br />
+Thanks, and sorry if the script is a bit weird, as I said it's my second one ever. Any recommendations are welcome!<br />
+<br />
+<br />
+Happy farming.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aggerazor</div><div class="date">01-11-2014, 19:08</div></div><div class="posttext">Finally someone posting a script here! :) gonna try this now!<br />
+<br />
+EDIT: Works like a charm on my level 19 druid, using about 1 mana pots per half an hour!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

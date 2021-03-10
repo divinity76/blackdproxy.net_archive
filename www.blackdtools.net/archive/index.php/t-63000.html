@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="sendmessageutil.handle, spy++, window, constants.wm_keyup, intptr0x3c0001, intptr0x71, intptr0x2a0001, sends, intptr0x10, constants.wm_keydown, s/r/p, understand, necessarily, shows, postmessage, exact, messages, issue, switched, update, focused, http://imgur.com/a/swrwe, winapi, shift, sending, sample, tibia, keystrokes, tibia11, client, shift+f2, actual, presses, event-wise, hotkey, activated" />
+	<meta name="description" content="How do you send keystrokes to the tibia11 client? 
+This is my sample code (shift + F2): 
+ 
+SendMessage(Util.Handle, Constants.WM_KEYDOWN, (IntPtr)0x10, (IntPtr)0x2A0001); 
+SendMessage(Util.Handle, Constants.WM_KEYDOWN, (IntPtr)0x71, (IntPtr)0x3C0001); 
+SendMessage(Util.Handle, Constants.WM_KEYUP, (IntPtr)0x71, (IntPtr)0x3C0001); 
+SendMessage(Util.Handle, Constants.WM_KEYUP, (IntPtr)0x10, (IntPtr)0x2A0001); 
+ 
+But instead of sending shift+F2, it sends just F2 (or at least, thats the hotkey that" />
+	
+	<title> Tibia 11 - Send keys to tibia window [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - Send keys to tibia window</div>
+<hr />
+<div class="pda"><a href="t-63000.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?63000-Tibia-11-Send-keys-to-tibia-window">Tibia 11 - Send keys to tibia window</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-21-2016, 23:24</div></div><div class="posttext">How do you send keystrokes to the tibia11 client?<br />
+This is my sample code (shift + F2):<br />
+<br />
+<br />
+SendMessage(Util.Handle, Constants.WM_KEYDOWN, (IntPtr)0x10, (IntPtr)0x2A0001);<br />
+SendMessage(Util.Handle, Constants.WM_KEYDOWN, (IntPtr)0x71, (IntPtr)0x3C0001);<br />
+SendMessage(Util.Handle, Constants.WM_KEYUP, (IntPtr)0x71, (IntPtr)0x3C0001);<br />
+SendMessage(Util.Handle, Constants.WM_KEYUP, (IntPtr)0x10, (IntPtr)0x2A0001);<br />
+<br />
+But instead of sending shift+F2, it sends just F2 (or at least, thats the hotkey that is activated)<br />
+When I look at spy++, it seems that my fake sends are not the same as actual key presses, key event-wise (pic (http://imgur.com/a/swRwe)).<br />
+<br />
+I don't know spy++ well enough to understand the s/r/p flag, but I wonder if you also use WinAPI to send keys, or do you have another way to send keys to a window that isn't necessarily the focused window.<br />
+<br />
+UPDATE:<br />
+I switched to PostMessage, and spy++ shows the EXACT same messages. Same issue as before.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-21-2016, 23:38</div></div><div class="posttext">I am afraid this Tibia client checks if window is focused or not. A lot of things will be ignored unless it is focused.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-21-2016, 23:49</div></div><div class="posttext">This doesn't change the fact that shift is not sent to the client.<br />
+I delayed the commands so I would be sure tibia is focused while I send the keys, and I STILL get F2 instead of shift+F2.<br />
+<br />
+Do you use a different mechanism for sending keys to the client? Do you even send keys to the client at all?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-22-2016, 00:23</div></div><div class="posttext">I don't really use it in my main bot, however I have a tool that can send keys when a desired pixel of screen changes. It is called Blackd Guardian and it is open source. <br />
+http://blackdtools.com/freedownloads.php</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

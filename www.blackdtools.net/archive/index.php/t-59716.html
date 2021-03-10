@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibia, folder, config.ini, overwritetibiaexepath, variable, cheats, blackd, client, conf-772.int, custom" />
+	<meta name="description" content="They got a custom client, And i want to use blackD on it tell me how to do this 
+I saw blackd dont have the tibia.dat in the 7.72 folder anymore 
+So how to work this out?" />
+	
+	<title> custom ot client 7,72 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  custom ot client 7,72</div>
+<hr />
+<div class="pda"><a href="t-59716.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59716-custom-ot-client-7-72">custom ot client 7,72</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-19-2012, 00:10</div></div><div class="posttext">They got a custom client, And i want to use blackD on it tell me how to do this<br />
+I saw blackd dont have the tibia.dat in the 7.72 folder anymore<br />
+So how to work this out?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-19-2012, 00:43</div></div><div class="posttext">just reinstall latest version of blackd proxy.<br />
+in the first run you will see the config screen of blackd proxy.<br />
+There choose:<br />
+- 7,72 as version<br />
+- the path to your custom tibia client 7,72 folder<br />
+- your ot server address<br />
+<br />
+Finally just run the client and enter your login/password.<br />
+You don't need to do anything else.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-19-2012, 13:13</div></div><div class="posttext">It doesnt work, since you dont need a ip-changer to connect i dont know the ip/port<br />
+could you figure out the ip/port to this server? cuz i cant find it anywhere</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-19-2012, 19:03</div></div><div class="posttext">would be awesome<br />
+<br />
+http://www.antica-server.com/news.php<br />
+<br />
+http://otservlist.org/ots/1396083<br />
+<br />
+it says, 79.136.84.57 port 4139<br />
+but its not the right one (?)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-19-2012, 19:53</div></div><div class="posttext">OK - How to find the ip/port of a Tibia OT server:<br />
+------------------------------------------------<br />
+0. close all browsers, games and anything that might be using a connection. This will make everything easier.<br />
+1. execute CMD <br />
+2. that will open a black window. There type: netstat<br />
+3. login to your ot server just so it display the character list<br />
+4. repeat (1) and (2) , then compare the results. The new line will tell you the ip and port of your ot server.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-19-2012, 20:11</div></div><div class="posttext">OK - How to find the ip/port of a Tibia OT server:<br />
+------------------------------------------------<br />
+0. close all browsers, games and anything that might be using a connection. This will make everything easier.<br />
+1. execute CMD <br />
+2. that will open a black window. There type: netstat<br />
+3. login to your ot server just so it display the character list<br />
+4. repeat (1) and (2) , then compare the results. The new line will tell you the ip and port of your ot server.<br />
+<br />
+Did exactly what you said, and i get the same lines when i got the character list open</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-19-2012, 20:30</div></div><div class="posttext">Any idea what the problem is?<br />
+Or could you try it out?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-19-2012, 21:41</div></div><div class="posttext">power off/on your computer, then do that procedure again. Other way you might not notice the new line in netstat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-20-2012, 15:14</div></div><div class="posttext">Okay, i did what you said<br />
+<br />
+TCP   213.114.115.150:49168   h-84-57:4139   ESTABLISHED<br />
+<br />
+theres the new line, I'd guess h-84-57 is the ip and 4139 is the port<br />
+But it still doesnt work, no clue why<br />
+<br />
+maybe there's something in the Custom Client-folder thats blocking BlackD?<br />
+would be awesome if you could figure this out<br />
+<br />
+I copied Original Tibia 7.72's tibia.dat tibia.cfg tibia.pic tibia.spr into The Custom Client folder and can still login, so there's got to be something with the Tibia.exe that dont respond to BlackD?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-20-2012, 19:46</div></div><div class="posttext">that does not look like the right ip address. Port is usually 7*** and that connection can't display as established because it is only established for less than a second at login, then it gets disconnected. So the connection status should be something else.<br />
+<br />
+Anyways I had a fast look at that client and the exe file looks very modified, so it probably won't work anyways.<br />
+I won't execute it because it is almost sure that it contains a troyan virus as gift. You hardly would notice it.<br />
+Better stick with ot servers using the standard unmodified tibia.exe</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-20-2012, 19:47</div></div><div class="posttext">that does not look like the right ip address. Port is usually 7***<br />
+<br />
+I know, but that was the only extra line i got<br />
+Couldn't you check the ip out? would be very greatful</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-20-2012, 19:50</div></div><div class="posttext">If all this goes smoothly, i could probably pay you something</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-20-2012, 21:23</div></div><div class="posttext">sorry, but I can't check it without running it, and I won't run it in my computer because it looks like a virus. Anyways I am almost sure that blackd proxy won't work there anyways.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-20-2012, 21:30</div></div><div class="posttext">sorry, but I can't check it without running it, and I won't run it in my computer because it looks like a virus. Anyways I am almost sure that blackd proxy won't work there anyways.<br />
+<br />
+Damn, you know any other bot that would work then?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-21-2012, 00:04</div></div><div class="posttext">blackd safe cheats should work there anyways.<br />
+just edit conf-772.int , set variable OverwriteTibiaExePath with the path to your tibia 7.72 folder, then save it and then copy it to config.ini</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-21-2012, 14:52</div></div><div class="posttext">blackd safe cheats should work there anyways.<br />
+just edit conf-772.int , set variable OverwriteTibiaExePath with the path to your tibia 7.72 folder, then save it and then copy it to config.ini<br />
+<br />
+alright, that bot wasnt the bot i was looking for, thx anyways</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-21-2012, 15:29</div></div><div class="posttext">ppl say blackd works there</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-21-2012, 15:41</div></div><div class="posttext">blackd proxy might work if you know the ot server ip and port, but I won't find it for you unless you make some donation.<br />
+And anyways I don't guarantee that blackd proxy will work there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">11-21-2012, 15:56</div></div><div class="posttext">blackd proxy might work if you know the ot server ip and port, but I won't find it for you unless you make some donation.<br />
+And anyways I don't guarantee that blackd proxy will work there.<br />
+<br />
+TCP 213.114.115.150:49168 h-84-57:4139 ESTABLISHED<br />
+                                           ^<br />
+                        h-84-57.a175.priv.bahnhof.se<br />
+<br />
+just found that out, tried connect with port 4139 7171 7172 7272 7271 and so on, but it doesnt work, please help me out</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-21-2012, 18:31</div></div><div class="posttext">please READ again:<br />
+&quot;I won't find it for you unless you make some donation.<br />
+And anyways I don't guarantee that blackd proxy will work there. &quot;<br />
+<br />
+Closing this thread.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="download, finish, tutorials, frame, naked, lolol, sence, scripting, figure, stuff, scripts, trust, depositor, snowman, dwarves, kazordoon, repotioner, holes, ropes, rebuild" />
+	<meta name="description" content="The script will hunt for a while inside Kazz dwarfs caves, then when your cap is lower then 100 or when you have less then 5 mana potions inside your backpacks It will go to depot. (If you have battle axes or dwarven shields inside your backpack It will sell them for you). Then It will check your mana potions again to see if you realy need to buy them, So it goes to the bank, checks for it and if you realy need the mps it will deposit the gold that you have gather on the hunt and then it will" />
+	
+	<title> 18. Kazordoon dwarves 100% afk - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  18. Kazordoon dwarves 100% afk - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54384.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54384-18-Kazordoon-dwarves-100-afk-by-Snowman">18. Kazordoon dwarves 100% afk - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-18-2011, 21:01</div></div><div class="posttext">The script will hunt for a while inside Kazz dwarfs caves, then when your cap is lower then 100 or when you have less then 5 mana potions inside your backpacks It will go to depot. (If you have battle axes or dwarven shields inside your backpack It will sell them for you). Then It will check your mana potions again to see if you realy need to buy them, So it goes to the bank, checks for it and if you realy need the mps it will deposit the gold that you have gather on the hunt and then it will withdraw the cash you need to reestock your manas.<br />
+Then when everything is OK again, it will go back to hunt.<br />
+Oh and It runs away in case of a pk attack you. (it will say &quot;stop right now&quot;)<br />
+Place where it should be started: exiva plot 32665,31942,13<br />
+ <br />
+ <br />
+<br />
+<br />
+# MP = 0C 01, SMP = ED 00, GMP = EE 00<br />
+fastExiva _manapotionid = 0C 01<br />
+# How many manas do you have?<br />
+fastExiva _manas = 40<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _idcost = 50<br />
+#<br />
+fastExiva _dwarvenshield = 0<br />
+fastExiva _battleaxe = 0<br />
+fastExiva _xbow = 0<br />
+fastExiva _gold = 0<br />
+fastExiva _mushroom = 0<br />
+fastExiva _ore = 0<br />
+fastExiva _ring = 0<br />
+#<br />
+:hunt<br />
+onGMpause<br />
+setFriendly<br />
+#white mushroom<br />
+setLoot 8B 0E<br />
+#gold<br />
+setLoot D7 0B<br />
+#plats<br />
+setLoot DB 0B<br />
+#x-bow 160<br />
+setLoot 15 0D<br />
+#battle axe 80<br />
+setLoot C2 0C<br />
+#axe ring<br />
+setLoot 14 0C<br />
+#dwarven shield 100<br />
+setLoot 61 0D<br />
+#iron ore<br />
+setLoot F8 16<br />
+setPriority dwarf guard:+1<br />
+setMeleeKill bat<br />
+setMeleeKill rotworm<br />
+setMeleeKill rat<br />
+setMeleeKill dwarf<br />
+setMeleeKill spider<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill slime<br />
+setMeleeKill poison spider<br />
+setMeleeKill dwarf guard<br />
+setHmmKill dwarf guard<br />
+onDangerGoto $nlineoflabel:playerkilling!$<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+move 32665,31942,13<br />
+move 32664,31960,13<br />
+move 32663,31979,13<br />
+move 32650,31994,13<br />
+move 32650,31985,13<br />
+move 32664,31970,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+move 32664,31929,13<br />
+move 32663,31926,13<br />
+move 32659,31938,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dps$<br />
+move 32643,31949,13<br />
+move 32628,31940,13<br />
+move 32619,31919,13<br />
+move 32602,31907,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+move 32607,31874,13<br />
+move 32625,31874,13<br />
+move 32597,31888,13<br />
+move 32584,31901,13<br />
+move 32583,31879,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dps$<br />
+move 32564,31878,13<br />
+move 32576,31912,13<br />
+move 32560,31903,13<br />
+move 32554,31921,13<br />
+move 32591,31907,13<br />
+move 32613,31920,13<br />
+move 32647,31937,13<br />
+move 32667,31942,13<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:dp$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:dp$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:dp<br />
+move 32664,31940,13<br />
+move 32667,31940,13<br />
+move 32667,31940,12<br />
+move 32668,31941,11<br />
+move 32667,31940,10<br />
+move 32658,31938,10<br />
+move 32643,31938,10<br />
+move 32633,31934,10<br />
+move 32629,31937,10<br />
+move 32628,31937,11<br />
+move 32622,31938,11<br />
+move 32620,31939,10<br />
+move 32597,31939,10<br />
+move 32619,31949,10<br />
+move 32623,31952,10<br />
+move 32624,31950,9<br />
+move 32648,31936,9<br />
+fastExiva _dwarvenshield = $numericalexp:{$countitems:61 0D$}+{$_dwarvenshield$}$<br />
+fastExiva _battleaxe = $numericalexp:{$countitems:C2 0C$}+{$_battleaxe$}$<br />
+IfTrue ($countitems:61 0D$#number=#0) Goto $nlineoflabel:sba$<br />
+:sds<br />
+move 32653,31887,9<br />
+waitX 1<br />
+move 32653,31887,9<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 06 00 7B 61 0D 00 $numbertohex2:100$ 01<br />
+waitX 1<br />
+sayInTrade bye<br />
+stackItems<br />
+:sba<br />
+IfTrue ($countitems:C2 0C$#number=#0) Goto $nlineoflabel:bank$<br />
+move 32661,31894,9<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 06 00 7B C2 0C 00 $numbertohex2:100$ 01<br />
+waitX 1<br />
+sayInTrade bye<br />
+fastExiva _gold = $numericalexp:{$numericalexp:{$countitems:DB 0B$00}+{$countitems:D7 0B$}$}+{$_gold$}$<br />
+stackItems<br />
+:bank<br />
+move 32654,31923,9<br />
+waitX 1<br />
+move 32654,31923,9<br />
+waitX 1<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:bankmanas$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva _battleaxe = $numericalexp:{$countitems:C2 0C$}+{$_battleaxe$}$<br />
+fastExiva _xbow = $numericalexp:{$countitems:15 0D$}+{$_xbow$}$<br />
+fastExiva _mushroom = $numericalexp:{$countitems:8B 0E$}+{$_mushroom$}$<br />
+fastExiva _ore = $numericalexp:{$countitems:F8 16$}+{$_ore$}$<br />
+fastExiva _ring = $numericalexp:{$countitems:14 0C$}+{$_ring$}$<br />
+:bankmanas<br />
+fastExiva _calcmanas = $numericalexp:{$_manas$}-{$countitems:0C 01$}$<br />
+fastExiva _manacost = $numericalexp:{$_calcmanas$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+move 32648,31903,9<br />
+move 32610,31902,9<br />
+move 32610,31921,9<br />
+move 32612,31922,8<br />
+move 32624,31922,8<br />
+move 32625,31921,7<br />
+move 32625,31920,6<br />
+move 32609,31925,6<br />
+move 32613,31929,5<br />
+:manabuy<br />
+sayMessage exiva &gt; 05 00 A2 67 00 00 40<br />
+waitX 5<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade flask<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva buy:0C 01:{$_calcmanas$}<br />
+IfEnoughItemsGoto 0c 01,$_manas$,$nlineoflabel:deposit loot$<br />
+IfFewItemsGoto 0c 01,5,$nlineoflabel:manabuy$<br />
+:deposit loot<br />
+move 32613,31929,5<br />
+move 32609,31925,6<br />
+move 32625,31920,6<br />
+move 32625,31921,7<br />
+move 32624,31922,8<br />
+move 32612,31922,8<br />
+move 32610,31921,9<br />
+move 32610,31902,9<br />
+move 32648,31903,9<br />
+move 32645,31909,9<br />
+move 32646,31908,8<br />
+putLootOnDepot<br />
+waitX 1<br />
+fastExiva &lt; B4 12 $hex-tibiastr:Played for: {$played$}, looted {$_gold$} pure cash (sold {$_dwarvenshield$} shield and {$_battleaxe$} axes), {$_mushroom$} White mushrooms, {$_ore$} Iron ores, {$_ring$} Axe rings and loot worth {$numericalexp:{$_xbow$}*160$}$} gold.$<br />
+move 32608,31925,5<br />
+move 32607,31926,6<br />
+move 32625,31920,6<br />
+move 32625,31920,7<br />
+move 32623,31921,8<br />
+move 32612,31922,8<br />
+move 32612,31921,9<br />
+move 32605,31921,9<br />
+move 32604,31921,10<br />
+move 32596,31938,10<br />
+move 32620,31937,10<br />
+move 32621,31938,11<br />
+move 32628,31938,11<br />
+move 32629,31935,10<br />
+move 32643,31937,10<br />
+move 32666,31939,10<br />
+move 32668,31940,11<br />
+move 32668,31939,12<br />
+move 32667,31940,13<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:playerkilling<br />
+waitX 2<br />
+sayMessage STOP RIGHT NOW!<br />
+move 32667,31939,13<br />
+move 32667,31940,12<br />
+move 32666,31939,11<br />
+move 32666,31940,10<br />
+move 32665,31934,10<br />
+move 32640,31937,10<br />
+move 32629,31933,10<br />
+move 32628,31938,11<br />
+move 32621,31939,11<br />
+move 32621,31938,10<br />
+move 32598,31939,10<br />
+move 32605,31921,10<br />
+move 32606,31921,9<br />
+move 32611,31921,9<br />
+move 32612,31922,8<br />
+move 32631,31921,8<br />
+move 32650,31916,8<br />
+waitX 60<br />
+fastExiva close</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Falkens</div><div class="date">02-18-2011, 22:07</div></div><div class="posttext">What monsters it atack? Guards too?<br />
+Exp/h~?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-18-2011, 22:14</div></div><div class="posttext">My fault, I only copy/pasted half of the script. Now the post display the whole script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Snowman</div><div class="date">02-19-2011, 10:12</div></div><div class="posttext">hope u guys like it !!!<br />
+<br />
+@blackd<br />
+<br />
+just finished  sending some more scripts, check 'em out !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DanielChau</div><div class="date">02-19-2011, 22:08</div></div><div class="posttext">old script? http://www.blackdtools.net/showthread.php?35150-Kazz-100-AFK-Dwarfs-IT-DOES-EVERYTHING.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">saracene</div><div class="date">02-19-2011, 22:41</div></div><div class="posttext">What the... it's the exact same script. i wonder if he did get 50k for it. :mad:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">02-19-2011, 22:51</div></div><div class="posttext">fail ... lol<br />
+<br />
+ban for this guy please</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shadow1</div><div class="date">02-19-2011, 22:56</div></div><div class="posttext">I think a ban seems alil harsh but then again, it seems to fit perfectly for lieing and taking 50k u didnt earn and taking credit for scripts u didnt create.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Perdition</div><div class="date">01-12-2013, 00:34</div></div><div class="posttext">this script works great except for the fact that it doesnt kill drawf guards, doesnt even go any further than the first floor in the main cave. you had said earlier that you only copy/pasted half the script, is it still incomplete? i would really like to bot in the guards since this is about the highest xp rate free account script i can find.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Perdition</div><div class="date">01-12-2013, 03:05</div></div><div class="posttext">trust me i would if i could make with a depositor and repotioner. but i dont know how to go down holes or use ropes in the bot. lol, when it comes to cars i can tear one down and rebuild from the naked frame to show room finish in under a week solo, but this scripting stuff just doesnt make any sence to me...hell it took almost a week to figure out how to use the scripts i can download from this site and thats with the tutorials....lolol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-12-2013, 04:23</div></div><div class="posttext">Four key concepts ; Notepad , Exiva POS , Copy &amp; Paste , Time.<br />
+<br />
+Take a look at others scripts, you dont need all that fancy fastExiva shite, bare bones, setMeleeKill xxxxx, setLoot xx xx, move xxxxx,xxxxx,x ( probably 50-100 times ) at the end, sayinTrade hi,deposit all,yes, and putLootonDepot. Simple as that figure it out its much easier than building and re-building a car, just takes a second to wrap your head around it friend.<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

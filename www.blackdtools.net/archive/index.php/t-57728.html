@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, fastexiva, script, 32091,32179,7, 32091,32204,7, refiller, 32091,32177,6, 32156,32122,7, gotoscriptline, 32091,32169,7, spears, waitx, spider, iffewitemsgoto, spear, 0c,5,30, poison, setloot, 32154,32122,8, 32159,32119,8, 32156,32120,8, 32091,32149,7, 32163,32119,8, 32109,32143,7, 32116,32142,7, 32098,32143,7, 32142,32134,7, 32149,32129,7, 32085,32156,7, buy$_spearid$$numericalexp$numericalexp$mycap$/$_spearweight$00$-1$, trade, sayintrade, 32099,32204,7, 32091,32193,7, 32086,32154,7, 32091,32169,6, 32091,32183,7, saymessage, 32107,32204,7, 32091,32147,7, 32108,32137,7, 32156,32122,8, 32159,32118,8, 32091,32167,6, 32105,32204,7, 32091,32191,7, 32092,32167,6, 32179,32108,8, _spearweight, potions" />
+	<meta name="description" content="Perfect Script to upgrade your distance skill and get some exp. 
+Recommended for 8+ lvl with full Rookgaard set. 
+ 
+Get some: 
+http://www.tibia-wiki.net/images/Platinum_Coin.gif - Cash for spears. 
+http://www.tibia-wiki.net/images/Small_Health_Potion_Nap%C3%B3j.gif - Potions to heal yourself. 
+ 
+You will meet: 
+Wolves 
+Bugs" />
+	
+	<title> Rookstayer Script with Spear Refiller [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Rookstayer Script with Spear Refiller</div>
+<hr />
+<div class="pda"><a href="t-57728.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57728-Rookstayer-Script-with-Spear-Refiller">Rookstayer Script with Spear Refiller</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">eRex</div><div class="date">04-10-2012, 11:43</div></div><div class="posttext">Perfect Script to upgrade your distance skill and get some exp.<br />
+Recommended for 8+ lvl with full Rookgaard set.<br />
+<br />
+Get some:<br />
+http://www.tibia-wiki.net/images/Platinum_Coin.gif - Cash for spears.<br />
+http://www.tibia-wiki.net/images/Small_Health_Potion_Nap%C3%B3j.gif - Potions to heal yourself.<br />
+<br />
+You will meet:<br />
+Wolves<br />
+Bugs<br />
+Spiders<br />
+Snakes<br />
+<br />
+http://www.tibia-wiki.net/images/Spear.gif <br />
+Script will buy spears from Obi and hunt around the city.<br />
+<br />
+Experience:<br />
+1,2k-2,2k/hour<br />
+<br />
+Thanks to Malmis for script refiller.<br />
+<br />
+<br />
+#ID, price and weight of spear<br />
+fastExiva _spearid = CD 0C<br />
+fastExiva _spearprice = 10<br />
+fastExiva _spearweight = 20<br />
+setMeleeKill spider<br />
+setMeleeKill snake<br />
+setMeleeKill wolf<br />
+setMeleeKill bug<br />
+setMeleeKill poison spider<br />
+setLoot D7 0B<br />
+IfFewItemsGoto CD 0C,5,30<br />
+move 32091,32149,7<br />
+move 32098,32143,7<br />
+move 32109,32143,7<br />
+move 32116,32142,7<br />
+move 32142,32134,7<br />
+move 32149,32129,7<br />
+move 32156,32122,7<br />
+move 32154,32122,8<br />
+move 32156,32120,8<br />
+move 32159,32119,8<br />
+move 32163,32119,8<br />
+move 32179,32108,8<br />
+move 32159,32118,8<br />
+move 32156,32122,8<br />
+move 32156,32122,7<br />
+move 32108,32137,7<br />
+move 32091,32147,7<br />
+IfFewItemsGoto CD 0C,5,30<br />
+gotoScriptLine 0<br />
+move 32085,32156,7<br />
+move 32091,32169,7<br />
+move 32091,32167,6<br />
+move 32092,32167,6<br />
+move 32091,32177,6<br />
+move 32091,32179,7<br />
+move 32091,32191,7<br />
+move 32091,32204,7<br />
+move 32105,32204,7<br />
+move 32107,32204,7<br />
+sayMessage Hello, Obi.<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva buy:$_spearid$:$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$<br />
+move 32099,32204,7<br />
+move 32091,32204,7<br />
+move 32091,32193,7<br />
+move 32091,32183,7<br />
+move 32091,32179,7<br />
+move 32091,32177,6<br />
+move 32091,32169,6<br />
+move 32091,32169,7<br />
+move 32086,32154,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Qetkut</div><div class="date">04-15-2012, 01:06</div></div><div class="posttext">can you make one with rats please!!<br />
+<br />
+<br />
+also, it is an awesome script</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

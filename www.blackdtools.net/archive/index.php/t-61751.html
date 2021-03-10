@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="bot, dragon, exp, giant spider, loot, setloot, setspellkill, setmeleekill, setpriority, minotaur, gotoscriptline, frigo,3, spider, mort,3, giant, setsdkill, vis,3, setexorimort, $nlineoflabelbotroute$, waitx, sayintrade, $nlineoflabelstart$, setbot, server, script, great, wyvern, leader, skeleton, shaman,exori, shaman, setavoidfront, skeleton,exori, demon, dragon+2, ghoul,exori, hunter, tarantula,exori, tarantula, berserker,exori, cyclops,exori, returntrip, 32771,32123,7, 32860,32126,7, 32862,32125,6, 32795,32199,7, dumpgold, ifenoughitemsgoto, 0b,5000,$nlineoflabeldumpgold$, 32936,32126,6" />
+	<meta name="description" content="This script was made on an OT server, and on that particular server, i can clear over 5 million EXP per hour no problems. This script is intended for players level 100+ for great looting/gold and great EXP 
+ 
+Requirements: 
+Make sure you have a lot of SD runes and enjoi:P 
+ 
+:start 
+setLoot D3 0B 
+setLoot D7 0B 
+#setLoot FF 0D 
+#dragon ham" />
+	
+	<title> Venore West Dragons, GS, and Wyvern bot! (5,000,000+ EXP/h OT)(also works in RT) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Venore West Dragons, GS, and Wyvern bot! (5,000,000+ EXP/h OT)(also works in RT)</div>
+<hr />
+<div class="pda"><a href="t-61751.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61751-Venore-West-Dragons-GS-and-Wyvern-bot!-(5-000-000-EXP-h-OT)(also-works-in-RT)">Venore West Dragons, GS, and Wyvern bot! (5,000,000+ EXP/h OT)(also works in RT)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">06-30-2014, 20:11</div></div><div class="posttext">This script was made on an OT server, and on that particular server, i can clear over 5 million EXP per hour no problems. This script is intended for players level 100+ for great looting/gold and great EXP<br />
+<br />
+Requirements:<br />
+Make sure you have a lot of SD runes and enjoi:P<br />
+<br />
+<br />
+:start<br />
+setLoot D3 0B<br />
+setLoot D7 0B<br />
+#setLoot FF 0D<br />
+#dragon ham<br />
+setLoot 13 0C<br />
+setLoot 0A 01<br />
+setLoot EC 00<br />
+setLoot FF 0B<br />
+setLoot 06 1D<br />
+setLoot D4 0B<br />
+setLoot 58 0D<br />
+setLoot 2B 0D<br />
+setLoot ED 0B<br />
+setLoot EF 0B<br />
+setLoot EC 0B<br />
+setBot AutoEatFood=1<br />
+setBot PKwarnings=0<br />
+setPriority cyclops:+1<br />
+setPriority snake:-1<br />
+setPriority minotaur mage:+1<br />
+setPriority giant spider:+2<br />
+setPriority wyvern:+3<br />
+setPriority dragon:+2<br />
+setSpellKill demon skeleton,exori vis,3<br />
+setSpellKill ghoul,exori vis,3<br />
+setMeleeKill giant spider<br />
+setSDKill giant spider<br />
+setAvoidFront dragon<br />
+setSDKill dragon<br />
+setSpellKill orc berserker,exori frigo,3<br />
+setMeleeKill tarantula<br />
+setSpellKill tarantula,exori vis,3<br />
+setSpellKill cyclops,exori mort,3<br />
+setMeleeKill minotaur<br />
+setExoriMort orc leader<br />
+setSpellKill orc shaman,exori frigo,3<br />
+setExoriMort orc shaman<br />
+setMeleeKill skeleton<br />
+setSDKill wyvern<br />
+setMeleeKill hunter<br />
+setSpellKill minotaur mage,exori frigo,3<br />
+setSpellKill minotaur archer,exori mort,3<br />
+setSpellKill minotaur guard,exori mort,3<br />
+setMeleeKill orc spearman<br />
+setMeleeKill spider<br />
+IfFewItemsGoto D7 0B,1,$nlineoflabel:returnTrip$<br />
+gotoScriptLine $nlineoflabel:botRoute$<br />
+:returnTrip<br />
+move 33007,32053,6<br />
+move 32963,32109,6<br />
+move 32863,32126,6<br />
+move 32862,32127,7<br />
+move 32774,32123,7<br />
+move 32802,32203,7<br />
+move 32826,32261,7<br />
+gotoScriptLine $nlineoflabel:botRoute$<br />
+:botRoute<br />
+move 32804,32296,7<br />
+move 32847,32290,7<br />
+move 32845,32266,7<br />
+IfEnoughItemsGoto D7 0B,5000,$nlineoflabel:dumpGold$<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dumpGold<br />
+move 32795,32199,7<br />
+move 32771,32123,7<br />
+move 32860,32126,7<br />
+move 32862,32125,6<br />
+move 32936,32126,6<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+gotoScriptLine $nlineoflabel:start$<br />
+<br />
+7896</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">07-02-2014, 03:17</div></div><div class="posttext">If anyone wants to suggest improvements, im open to discussion. Such as a route change, pot buyer, etc. Thank you for all of your feedback :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Valadia</div><div class="date">12-02-2014, 15:02</div></div><div class="posttext">Can I get some extra info?<br />
+Such as where to start, and other requirements (like; mana pots, food etc.)<br />
+<br />
+Thanks in advance!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Scymork</div><div class="date">12-07-2014, 18:30</div></div><div class="posttext">When you look at the script its for a knight 5k go to dp auto eat food and no potion buyer</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">12-08-2014, 17:24</div></div><div class="posttext">When you look at the script its for a knight 5k go to dp auto eat food and no potion buyer<br />
+<br />
+It is not for a knight. <br />
+It uses exori frigo etc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">08-05-2015, 05:39</div></div><div class="posttext">Sorry i have been away for a while, I actually have two accounts on this site because i couldnt remember my password until today. Im back on Official servers, and i will probably not try to update this script, but if someone has a better version of it i would be happy to make the changes, and test it myself, as well as upload the new script to this thread. Thanks in advance.<br />
+<br />
+@valadia it is best to start this particular script somewhere inside the town of venore. make sure you have all your healing stuff that you will need to fight a lot of dragons and dragon lords. I gave you the script, and the location, you should be able to figure out the rest ;P (you can solo this area with the right equips for days on end, and make tons of gold.)<br />
+<br />
+@Scymork This script is obviously for a sorc. You would have to make some heavy modifications to use it with a ek.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

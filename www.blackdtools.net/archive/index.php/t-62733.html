@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="ankrahmun, paladin, refill, royal paladin buy sell, terramites, fastexiva, spears, waypoints, empty, _potprice, _potid, price, target, 33103,32698,8, iftrue, $countitems$_potid$$number, terramite, setmeleekill, _emptypotid, [paladin], start, royal, spear, bring, _pots, itemid" />
+	<meta name="description" content="Start waypoints on ankrahmun terramites cave. 
+ 
+If less than 20 h.p. , go to buy 50 h.p. and refill spears. 
+If less than 8 royal spear, go to refill spears and pots. 
+ 
+---------------------------------------------------------------- 
+ 
+# 
+#How many pots do you want to bring 
+fastExiva _pots = 50" />
+	
+	<title> Terramites Ankrahmun [Paladin] ( refill r.s. and h.p.) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Terramites Ankrahmun [Paladin] ( refill r.s. and h.p.)</div>
+<hr />
+<div class="pda"><a href="t-62733.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62733-Terramites-Ankrahmun-Paladin-(-refill-r-s-and-h-p-)">Terramites Ankrahmun [Paladin] ( refill r.s. and h.p.)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">konikito</div><div class="date">02-27-2016, 20:21</div></div><div class="posttext">Start waypoints on ankrahmun terramites cave.<br />
+<br />
+If less than 20 h.p. , go to buy 50 h.p. and refill spears.<br />
+If less than 8 royal spear, go to refill spears and pots.<br />
+<br />
+----------------------------------------------------------------<br />
+<br />
+#<br />
+#How many pots do you want to bring<br />
+fastExiva _pots = 50<br />
+#ItemID of the pots<br />
+fastExiva _potid = 0A 01<br />
+#Price of pots<br />
+fastExiva _potprice = 45<br />
+#Empty pots ID<br />
+fastExiva _emptypotid = 1D 01<br />
+#<br />
+##Loot<br />
+#<br />
+###Target<br />
+setMeleeKill Terramite<br />
+#<br />
+###Waypoints<br />
+move 33103,32698,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33103,32681,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33095,32686,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33096,32696,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33096,32709,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33080,32706,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33063,32693,8<br />
+move 33061,32693,7<br />
+move 33053,32693,7<br />
+move 33051,32693,8<br />
+move 33032,32692,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33025,32692,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33018,32681,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33010,32683,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33004,32688,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 32998,32689,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33000,32698,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33001,32711,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 32990,32707,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 32980,32697,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 32980,32686,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 32997,32697,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33015,32706,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33021,32707,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33026,32698,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank2$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank2$<br />
+move 33051,32693,8<br />
+move 33053,32693,7<br />
+move 33061,32693,7<br />
+move 33063,32693,8<br />
+move 33081,32693,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33090,32696,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+move 33104,32698,8<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#20) Goto $nlineoflabel:ank1$<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:ank1$<br />
+gotoScriptLine 0<br />
+###<br />
+#<br />
+#<br />
+:ank2<br />
+move 33026,32692,8<br />
+move 33026,32692,8<br />
+move 33051,32693,8<br />
+move 33053,32693,7<br />
+move 33061,32693,7<br />
+move 33063,32693,8<br />
+:ank1<br />
+move 33102,32698,8<br />
+move 33102,32698,8<br />
+move 33102,32698,8<br />
+move 33102,32698,8<br />
+move 33103,32698,8<br />
+move 33103,32698,8<br />
+move 33103,32698,8<br />
+move 33103,32698,8<br />
+move 33103,32698,8<br />
+move 33103,32699,7<br />
+move 33103,32699,7<br />
+move 33153,32760,7<br />
+move 33153,32761,7<br />
+move 33153,32763,6<br />
+move 33153,32765,6<br />
+move 33153,32767,7<br />
+move 33133,32803,7<br />
+move 33133,32804,7<br />
+move 33133,32806,6<br />
+move 33132,32820,6<br />
+move 33132,32820,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade Balance<br />
+sayInTrade Bye<br />
+waitX 1<br />
+move 33132,32820,6<br />
+move 33131,32817,6<br />
+move 33131,32815,5<br />
+move 33132,32813,5<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade vial<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+#Potion buyer<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+sayInTrade Bye<br />
+move 33132,32813,5<br />
+move 33131,32815,5<br />
+move 33131,32817,6<br />
+move 33132,32820,6<br />
+move 33132,32820,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2500$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-3$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*15$<br />
+waitX 1<br />
+sayInTrade withdraw $_spearcost$<br />
+sayInTrade yes<br />
+waitX 1<br />
+move 33132,32820,6<br />
+move 33137,32818,6<br />
+move 33139,32818,7<br />
+move 33144,32811,7<br />
+move 33146,32811,6<br />
+move 33151,32810,6<br />
+move 33151,32808,5<br />
+move 33150,32809,5<br />
+move 33149,32808,4<br />
+move 33153,32809,4<br />
+move 33153,32809,4<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A D2 1C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 1<br />
+move 33153,32809,4<br />
+move 33150,32809,4<br />
+move 33149,32810,5<br />
+move 33151,32810,5<br />
+move 33151,32810,6<br />
+move 33148,32807,6<br />
+move 33148,32805,7<br />
+move 33153,32767,7<br />
+move 33152,32765,6<br />
+move 33151,32762,6<br />
+move 33151,32762,6<br />
+move 33152,32761,7<br />
+move 33153,32761,7<br />
+move 33106,32728,7<br />
+move 33103,32699,7<br />
+move 33103,32699,7<br />
+useItem 33103,32699,7<br />
+move 33103,32698,8<br />
+move 33103,32698,8<br />
+gotoScriptLine 0<br />
+#<br />
+<br />
+<br />
+<br />
+-----------------------------------------------------------------------------------</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="trainer, spear, items, cavebot, problem, blackd, proxy, underneath, a_index, square, controlclick, obsessively, fixed, great, thunderrt6commandbutton%i2%, sleep, thunderrt6commandbutton%i%, extension, whilst, window, starting, administrators, time-out, macro, earlier, ground, computers, installing, dropped, succeed, function, neglects, report, continue, occurs, moves, paladin, write, attacking, creatures, running, neglecting, killed, stops, working, spears, combined, creature, tibia, laying" />
+	<meta name="description" content="Running Blackd Proxy 43.0 with Tibia 7.7 
+When I use the trainer to pick up spears, combined with the cavebot, the bot stops working as soon as there's a spear laying underneath something else, e.g. a dead creature (which I killed with the spear). It doesn't stop entirely, but it keeps on trying to get the spear (&quot;Sorry, not possible&quot;), thereby neglecting other creatures that are attacking him, neither does it still walk through the cave. I already tried changing the timer of the trainer and/or" />
+	
+	<title> Bug report: Paladin obsessively tries to pick up spear that's underneath rotworm [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Bug report: Paladin obsessively tries to pick up spear that's underneath rotworm</div>
+<hr />
+<div class="pda"><a href="t-63345.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?63345-Bug-report-Paladin-obsessively-tries-to-pick-up-spear-that-s-underneath-rotworm">Bug report: Paladin obsessively tries to pick up spear that's underneath rotworm</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">JKJ20</div><div class="date">02-20-2019, 14:51</div></div><div class="posttext">Running Blackd Proxy 43.0 with Tibia 7.7<br />
+When I use the trainer to pick up spears, combined with the cavebot, the bot stops working as soon as there's a spear laying underneath something else, e.g. a dead creature (which I killed with the spear). It doesn't stop entirely, but it keeps on trying to get the spear (&quot;Sorry, not possible&quot;), thereby neglecting other creatures that are attacking him, neither does it still walk through the cave. I already tried changing the timer of the trainer and/or the cavebot. This helps a bit sometimes, but eventually the character will die, without any additional program.<br />
+<br />
+If someone else is experiencing this problem, then this is a workaround:<br />
+Google and Install Autohotkey<br />
+Write a file in notepad with the following text:<br />
+loop,<br />
+{<br />
+  loop, 9<br />
+  {<br />
+    i := A_index + 9<br />
+    i2 := A_index<br />
+    ControlClick, ThunderRT6CommandButton%i%, trainer<br />
+    Sleep, 130<br />
+    ControlClick, ThunderRT6CommandButton%i2%, trainer<br />
+  }<br />
+}<br />
+Give it the extension .ahk<br />
+Run it (in administrator's mode?) after starting the cavebot and the trainer, whilst the trainer window is open.<br />
+<br />
+HOWEVER...<br />
+It would be great if the code of Blackd proxy itself would be fixed sometime, that it either:<br />
+- Neglects items underneath other items<br />
+- Gets a time-out function: if it doesn't succeed the first time, don't try another, but continue to the next square.<br />
+- Moves the items on top to another square, and gets the spear anyway<br />
+<br />
+The same problem occurs with other items, such as gold (dropped on the ground by an earlier macro of mine, but with meat in between sometimes).<br />
+<br />
+Kind regards,<br />
+JKJ<br />
+<br />
+P.S. Already tried installing on different computers and such. It seems to be a problem of Blackd Proxy itself.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="unsigned, __stdcall, packet, keyarray, uboundkey, uboundpacket, dllimport, define, include, building_dll, _dll_h, change, endif, servers, __declspec, dev-c++, dllclass, crackd.dll, blackd, proxy, memory, mybuffersize, gettibiacrcunsigned, private, address, hwndclientwindow, dllexport, olectl.h, deciphertibiaprotectedunsigned, ~dllclassvoid, enciphertibiaprotectedunsigned, enciphertibiaunsigned, deciphertibiaunsigned, virtual, public, deciphertibiaprotectedspunsigned, string.h, class, enciphertibiaprotectedspunsigned, blackdforcewriteint, function, force, required, protected, write, compiled, 4.9.9.2, faster, tibia, future" />
+	<meta name="description" content="I made some changes and I compiled a new crackd.dll with Dev-C++ 4.9.9.2 
+I hope the new dll run faster than before. 
+- Used since Blackd Proxy 26.4 
+ 
+The new dll comes with a new function to force memory write in protected memory, required to change RSA key in Tibia clients. Impossible task with Visual Basic 6 code other way. 
+For now I only change it in ot servers 7.72 but in the future, Blackd Proxy will change that key in all ot servers. 
+ 
+dll.h 
+ 
+#ifndef _DLL_H_" />
+	
+	<title> New crackd.dll code - Made with Dev-C++ [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  New crackd.dll code - Made with Dev-C++</div>
+<hr />
+<div class="pda"><a href="t-59708.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59708-New-crackd-dll-code-Made-with-Dev-C">New crackd.dll code - Made with Dev-C++</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-16-2012, 15:32</div></div><div class="posttext">I made some changes and I compiled a new crackd.dll with Dev-C++ 4.9.9.2<br />
+I hope the new dll run faster than before.<br />
+- Used since Blackd Proxy 26.4<br />
+<br />
+The new dll comes with a new function to force memory write in protected memory, required to change RSA key in Tibia clients. Impossible task with Visual Basic 6 code other way.<br />
+For now I only change it in ot servers 7.72 but in the future, Blackd Proxy will change that key in all ot servers.<br />
+<br />
+dll.h<br />
+<br />
+<br />
+#ifndef _DLL_H_<br />
+#define _DLL_H_<br />
+<br />
+#if BUILDING_DLL<br />
+# define DLLIMPORT __declspec (dllexport)<br />
+#else /* Not BUILDING_DLL */<br />
+# define DLLIMPORT __declspec (dllimport)<br />
+#endif /* Not BUILDING_DLL */<br />
+<br />
+#include &lt;windows.h&gt;<br />
+#include &quot;olectl.h&quot;<br />
+#include &quot;string.h&quot;<br />
+<br />
+class DLLIMPORT DllClass<br />
+{<br />
+  public:<br />
+    DllClass();<br />
+    virtual ~DllClass(void);<br />
+    int __stdcall EncipherTibia(unsigned char* packet, unsigned char* keyarray);<br />
+    int __stdcall DecipherTibia(unsigned char* packet, unsigned char* keyarray);<br />
+    int __stdcall EncipherTibiaProtected(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+    int __stdcall DecipherTibiaProtected(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+    int __stdcall EncipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+    int __stdcall DecipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+    int __stdcall BlackdForceWrite(int address, unsigned char *mybuffer,  int mybuffersize, HWND__* hwndClientWindow);<br />
+    unsigned int  __stdcall GetTibiaCRC(unsigned char *data, unsigned int len);<br />
+<br />
+  private:<br />
+<br />
+};<br />
+<br />
+<br />
+#endif /* _DLL_H_ */</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-16-2012, 15:34</div></div><div class="posttext">dllmain.cpp (1/2)<br />
+<br />
+<br />
+#define BYTES_TO_ULONG(b3, b2, b1, b0) ((b3 &lt;&lt; 24) | (b2 &lt;&lt; 16) | (b1 &lt;&lt; 8) | b0);<br />
+#define MOD_ADLER 65521<br />
+<br />
+#include &quot;dll.h&quot;<br />
+#include &lt;windows.h&gt;<br />
+#include &quot;olectl.h&quot;<br />
+#include &quot;string.h&quot;<br />
+<br />
+ <br />
+extern &quot;C&quot; __declspec(dllexport) int __stdcall EncipherTibia(unsigned char* packet, unsigned char* keyarray);<br />
+extern &quot;C&quot; __declspec(dllexport) int __stdcall DecipherTibia(unsigned char* packet, unsigned char* keyarray);<br />
+extern &quot;C&quot; __declspec(dllexport) int __stdcall EncipherTibiaProtected(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+extern &quot;C&quot; __declspec(dllexport) int __stdcall DecipherTibiaProtected(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+extern &quot;C&quot; __declspec(dllexport) int __stdcall EncipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+extern &quot;C&quot; __declspec(dllexport) int __stdcall DecipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey);<br />
+extern &quot;C&quot; __declspec(dllexport) int __stdcall BlackdForceWrite( int address, unsigned char *mybuffer,  int mybuffersize,  HWND__* hwndClientWindow);<br />
+extern &quot;C&quot; __declspec(dllexport) unsigned int __stdcall GetTibiaCRC(unsigned char *data, unsigned int len);<br />
+DllClass::DllClass()<br />
+{<br />
+<br />
+}<br />
+<br />
+<br />
+DllClass::~DllClass ()<br />
+{<br />
+<br />
+}<br />
+<br />
+<br />
+BOOL APIENTRY DllMain (HINSTANCE hInst     /* Library instance handle. */ ,<br />
+                       DWORD reason        /* Reason this function is being called. */ ,<br />
+                       LPVOID reserved     /* Not used. */ )<br />
+{<br />
+    switch (reason)<br />
+    {<br />
+      case DLL_PROCESS_ATTACH:<br />
+        break;<br />
+<br />
+      case DLL_PROCESS_DETACH:<br />
+        break;<br />
+<br />
+      case DLL_THREAD_ATTACH:<br />
+        break;<br />
+<br />
+      case DLL_THREAD_DETACH:<br />
+        break;<br />
+    }<br />
+<br />
+    /* Returns TRUE on success, FALSE on failure */<br />
+    return TRUE;<br />
+}<br />
+<br />
+DLLIMPORT int __stdcall EncipherTibia(unsigned char* packet, unsigned char* keyarray) {<br />
+  unsigned long amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == (amount%8))<br />
+  {<br />
+    nblocks=amount/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0;<br />
+	  pos1=2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v0 += ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+        sum += delta;<br />
+        v1 += ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}<br />
+<br />
+DLLIMPORT int __stdcall DecipherTibia(unsigned char* packet, unsigned char* keyarray) {<br />
+  unsigned long amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == (amount%8))<br />
+  {<br />
+    nblocks=amount/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0xC6EF3720;<br />
+	  pos1=2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v1 -= ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+        sum -= delta;<br />
+        v0 -= ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}<br />
+<br />
+<br />
+DLLIMPORT int __stdcall EncipherTibiaProtected(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey) {<br />
+  unsigned long amount;<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  int compAmmount;<br />
+  if (uboundpacket&lt;1)<br />
+  {<br />
+	return -4; // this is not a packet<br />
+  }<br />
+  amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  if (uboundkey!=15)<br />
+  {<br />
+	return -2; // wrong size of key<br />
+  }<br />
+  compAmmount=(int) amount;<br />
+  if (compAmmount!=(uboundpacket-1))<br />
+  {<br />
+	return -3; // header of packet doesn't match with real size of the packet<br />
+  }<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == (amount%8))<br />
+  {<br />
+    nblocks=amount/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0;<br />
+	  pos1=2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v0 += ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+        sum += delta;<br />
+        v1 += ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}<br />
+<br />
+DLLIMPORT int __stdcall DecipherTibiaProtected(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey) {<br />
+  unsigned long amount;<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  int compAmmount;<br />
+  if (uboundpacket&lt;3) // at least 4 bytes for a trivial packet in this case<br />
+  {<br />
+	return -4; // this is not a packet<br />
+  }<br />
+  amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  if (uboundkey!=15)<br />
+  {<br />
+	return -2; // wrong size of key<br />
+  }<br />
+  compAmmount=(int) amount;<br />
+  if (compAmmount!=(uboundpacket-1))<br />
+  {<br />
+	return -3; // header of packet doesn't match with real size of the packet<br />
+  }<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == (amount%8))<br />
+  {<br />
+    nblocks=amount/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0xC6EF3720;<br />
+	  pos1=2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v1 -= ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+        sum -= delta;<br />
+        v0 -= ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-16-2012, 15:34</div></div><div class="posttext">dllmain.cpp (2/2)<br />
+<br />
+<br />
+<br />
+DLLIMPORT int __stdcall EncipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey) {<br />
+  unsigned long amount;<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  int compAmmount;<br />
+  if (uboundpacket&lt;1)<br />
+  {<br />
+	return -4; // this is not a packet<br />
+  }<br />
+  amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  if (uboundkey!=15)<br />
+  {<br />
+	return -2; // wrong size of key<br />
+  }<br />
+  compAmmount=(int) amount;<br />
+  if (compAmmount!=(uboundpacket-1))<br />
+  {<br />
+	return -3; // header of packet doesn't match with real size of the packet<br />
+  }<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == ((amount-4)%8))<br />
+  {<br />
+    nblocks=(amount-4)/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0;<br />
+	  pos1=4+2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v0 += ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+        sum += delta;<br />
+        v1 += ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}<br />
+<br />
+DLLIMPORT int __stdcall DecipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey) {<br />
+  unsigned long amount;<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  int compAmmount;<br />
+  if (uboundpacket&lt;3) // at least 4 bytes for a trivial packet in this case<br />
+  {<br />
+	return -4; // this is not a packet<br />
+  }<br />
+  amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  if (uboundkey!=15)<br />
+  {<br />
+	return -2; // wrong size of key<br />
+  }<br />
+  compAmmount=(int) amount;<br />
+  if (compAmmount!=(uboundpacket-1))<br />
+  {<br />
+	return -3; // header of packet doesn't match with real size of the packet<br />
+  }<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == ((amount - 4)%8))<br />
+  {<br />
+    nblocks=(amount - 4)/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0xC6EF3720;<br />
+	  pos1=4+2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v1 -= ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+        sum -= delta;<br />
+        v0 -= ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}<br />
+<br />
+DLLIMPORT unsigned int __stdcall GetTibiaCRC(unsigned char *data, unsigned int len) /* data: Pointer to the data to be summed; len is in bytes */<br />
+{<br />
+    unsigned int a = 1, b = 0;<br />
+<br />
+    while (len &gt; 0)<br />
+    {<br />
+        size_t tlen = len &gt; 5552 ? 5552 : len;<br />
+        len -= tlen;<br />
+        do<br />
+        {<br />
+            a += *data++;<br />
+            b += a;<br />
+        } while (--tlen);<br />
+<br />
+        a %= MOD_ADLER;<br />
+        b %= MOD_ADLER;<br />
+    }<br />
+<br />
+    return (b &lt;&lt; 16) | a;<br />
+<br />
+}<br />
+<br />
+DLLIMPORT int __stdcall BlackdForceWrite(int address, unsigned char *mybuffer,  int mybuffersize,  HWND__* hwndClientWindow)<br />
+{  <br />
+    // get process id<br />
+    DWORD dwProcessId;<br />
+    GetWindowThreadProcessId(hwndClientWindow, &amp;dwProcessId);<br />
+<br />
+    // get process handle<br />
+    HANDLE hProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwProcessId);<br />
+<br />
+    // set memory to read write<br />
+    DWORD dwOldProtection;<br />
+    VirtualProtectEx(hProcessHandle, (LPVOID)address, mybuffersize, PAGE_READWRITE, &amp;dwOldProtection);<br />
+<br />
+    // write <br />
+    WriteProcessMemory(hProcessHandle, (LPVOID)address, mybuffer, mybuffersize, NULL);<br />
+<br />
+    // restore memory protection<br />
+    DWORD dwNewProtection;<br />
+    VirtualProtectEx(hProcessHandle, (LPVOID)address, mybuffersize, dwOldProtection, &amp;dwNewProtection);<br />
+     <br />
+    // close process handle<br />
+    CloseHandle(hProcessHandle);<br />
+     <br />
+     <br />
+     return 0; <br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kitpoka</div><div class="date">12-25-2016, 02:02</div></div><div class="posttext">I'm trying to compile in Dev C++ and is getting this msg error:<br />
+<br />
+1 - In function 'int BlackdForceWrite(int, unsigned char*, int, HWND__*)':<br />
+<br />
+2 - [Warning] cast to pointer from integer of different size [-Wint-to-pointer-cast]<br />
+<br />
+Could u help me? Thx<br />
+<br />
+<br />
+dllmain.cpp (2/2)<br />
+<br />
+<br />
+<br />
+DLLIMPORT int __stdcall EncipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey) {<br />
+  unsigned long amount;<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  int compAmmount;<br />
+  if (uboundpacket&lt;1)<br />
+  {<br />
+	return -4; // this is not a packet<br />
+  }<br />
+  amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  if (uboundkey!=15)<br />
+  {<br />
+	return -2; // wrong size of key<br />
+  }<br />
+  compAmmount=(int) amount;<br />
+  if (compAmmount!=(uboundpacket-1))<br />
+  {<br />
+	return -3; // header of packet doesn't match with real size of the packet<br />
+  }<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == ((amount-4)%8))<br />
+  {<br />
+    nblocks=(amount-4)/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0;<br />
+	  pos1=4+2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v0 += ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+        sum += delta;<br />
+        v1 += ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}<br />
+<br />
+DLLIMPORT int __stdcall DecipherTibiaProtectedSP(unsigned char* packet, unsigned char* keyarray, int uboundpacket, int uboundkey) {<br />
+  unsigned long amount;<br />
+  unsigned long k[4];<br />
+  unsigned long nblocks;<br />
+  unsigned long iblock;<br />
+  unsigned long v0, v1, i, pos1,pos2,pos3,pos4,pos5,pos6,pos7,pos8;<br />
+  unsigned long sum;<br />
+  unsigned long delta=0x9E3779B9;<br />
+  int compAmmount;<br />
+  if (uboundpacket&lt;3) // at least 4 bytes for a trivial packet in this case<br />
+  {<br />
+	return -4; // this is not a packet<br />
+  }<br />
+  amount=BYTES_TO_ULONG(0,0,packet[1],packet[0]);<br />
+  if (uboundkey!=15)<br />
+  {<br />
+	return -2; // wrong size of key<br />
+  }<br />
+  compAmmount=(int) amount;<br />
+  if (compAmmount!=(uboundpacket-1))<br />
+  {<br />
+	return -3; // header of packet doesn't match with real size of the packet<br />
+  }<br />
+  k[0]=BYTES_TO_ULONG(keyarray[3],keyarray[2],keyarray[1],keyarray[0]);<br />
+  k[1]=BYTES_TO_ULONG(keyarray[7],keyarray[6],keyarray[5],keyarray[4]);<br />
+  k[2]=BYTES_TO_ULONG(keyarray[11],keyarray[10],keyarray[9],keyarray[8]);<br />
+  k[3]=BYTES_TO_ULONG(keyarray[15],keyarray[14],keyarray[13],keyarray[12]);<br />
+  if (0 == ((amount - 4)%8))<br />
+  {<br />
+    nblocks=(amount - 4)/8;<br />
+    // printf(&quot;amount = %d ; number of blocks = %d\n&quot;,amount,nblocks);<br />
+    for (iblock = 0 ; iblock &lt; nblocks ; iblock++)<br />
+	{<br />
+      // printf(&quot;Processing block %d ...\n&quot;,iblock);<br />
+	  sum=0xC6EF3720;<br />
+	  pos1=4+2+8*iblock;<br />
+	  pos2=pos1+1;<br />
+      pos3=pos2+1;<br />
+	  pos4=pos3+1;<br />
+	  pos5=pos4+1;<br />
+	  pos6=pos5+1;<br />
+	  pos7=pos6+1;<br />
+	  pos8=pos7+1;<br />
+	  v0=BYTES_TO_ULONG(packet[pos4],packet[pos3],packet[pos2],packet[pos1]);<br />
+	  v1=BYTES_TO_ULONG(packet[pos8],packet[pos7],packet[pos6],packet[pos5]);<br />
+      for(i=0; i&lt;32; i++) {<br />
+        v1 -= ((v0 &lt;&lt; 4 ^ v0 &gt;&gt; 5) + v0) ^ (sum + k[sum&gt;&gt;11 &amp; 3]);<br />
+        sum -= delta;<br />
+        v0 -= ((v1 &lt;&lt; 4 ^ v1 &gt;&gt; 5) + v1) ^ (sum + k[sum &amp; 3]);<br />
+	  }<br />
+      packet[pos1]=(unsigned char) (v0);<br />
+	  packet[pos2]=(unsigned char) (v0&gt;&gt;8);<br />
+	  packet[pos3]=(unsigned char) (v0&gt;&gt;16);<br />
+	  packet[pos4]=(unsigned char) (v0&gt;&gt;24);<br />
+	  packet[pos5]=(unsigned char) (v1);<br />
+	  packet[pos6]=(unsigned char) (v1&gt;&gt;8);<br />
+	  packet[pos7]=(unsigned char) (v1&gt;&gt;16);<br />
+	  packet[pos8]=(unsigned char) (v1&gt;&gt;24);<br />
+	}<br />
+    return 0;<br />
+  }<br />
+  else<br />
+  {<br />
+    // printf(&quot;ERROR: packet header is not multiplier of 8\n&quot;);<br />
+    return -1;<br />
+  }<br />
+}<br />
+<br />
+DLLIMPORT unsigned int __stdcall GetTibiaCRC(unsigned char *data, unsigned int len) /* data: Pointer to the data to be summed; len is in bytes */<br />
+{<br />
+    unsigned int a = 1, b = 0;<br />
+<br />
+    while (len &gt; 0)<br />
+    {<br />
+        size_t tlen = len &gt; 5552 ? 5552 : len;<br />
+        len -= tlen;<br />
+        do<br />
+        {<br />
+            a += *data++;<br />
+            b += a;<br />
+        } while (--tlen);<br />
+<br />
+        a %= MOD_ADLER;<br />
+        b %= MOD_ADLER;<br />
+    }<br />
+<br />
+    return (b &lt;&lt; 16) | a;<br />
+<br />
+}<br />
+<br />
+DLLIMPORT int __stdcall BlackdForceWrite(int address, unsigned char *mybuffer,  int mybuffersize,  HWND__* hwndClientWindow)<br />
+{  <br />
+    // get process id<br />
+    DWORD dwProcessId;<br />
+    GetWindowThreadProcessId(hwndClientWindow, &amp;dwProcessId);<br />
+<br />
+    // get process handle<br />
+    HANDLE hProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwProcessId);<br />
+<br />
+    // set memory to read write<br />
+    DWORD dwOldProtection;<br />
+    VirtualProtectEx(hProcessHandle, (LPVOID)address, mybuffersize, PAGE_READWRITE, &amp;dwOldProtection);<br />
+<br />
+    // write <br />
+    WriteProcessMemory(hProcessHandle, (LPVOID)address, mybuffer, mybuffersize, NULL);<br />
+<br />
+    // restore memory protection<br />
+    DWORD dwNewProtection;<br />
+    VirtualProtectEx(hProcessHandle, (LPVOID)address, mybuffersize, dwOldProtection, &amp;dwNewProtection);<br />
+     <br />
+    // close process handle<br />
+    CloseHandle(hProcessHandle);<br />
+     <br />
+     <br />
+     return 0; <br />
+}</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

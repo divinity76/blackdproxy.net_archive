@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, variables, instantly, move, script, user, waiting, line, proceed, x,y,z, start, _myfirsty=$myy$, $_myfirstx$,$_myfirsty$,$_myfirstz$, _myfirstx=$myx$, saymessage, _myfirstz=$myz$, channel, $hex-tibiastrselling, firesword, thais$, result, packets, trade, send, perform, action, execute, executing, cavebot, waits, intended, time, setting, operations, pauses, basic" />
+	<meta name="description" content="the cavebot usually waits 300 ms after executing a line of the script. 
+  
+However with FastExiva you can perform an action and instantly proceed to execute the next line of the script, without waiting. 
+  
+This is mainly intended for doing operations with user variables without having little pauses in the script. A little basic example would be setting 3 variables at same time at start and instantly proceed to say something. Then later we see how the user variables could be used: 
+ 
+ " />
+	
+	<title> FastExiva &amp; user variables [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  FastExiva &amp; user variables</div>
+<hr />
+<div class="pda"><a href="t-1544.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?1544-FastExiva-amp-user-variables">FastExiva &amp; user variables</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">12-11-2006, 20:07</div></div><div class="posttext">the cavebot usually waits 300 ms after executing a line of the script.<br />
+ <br />
+However with FastExiva you can perform an action and instantly proceed to execute the next line of the script, without waiting.<br />
+ <br />
+This is mainly intended for doing operations with user variables without having little pauses in the script. A little basic example would be setting 3 variables at same time at start and instantly proceed to say something. Then later we see how the user variables could be used:<br />
+<br />
+<br />
+FastExiva _myfirstx=$myx$<br />
+FastExiva _myfirsty=$myy$<br />
+FastExiva _myfirstz=$myz$<br />
+sayMessage something<br />
+....<br />
+move $_myfirstx$,$_myfirsty$,$_myfirstz$<br />
+...<br />
+<br />
+ <br />
+FastExiva can be also used to send packets without waiting for the result, like when you want to say something in trade channel:<br />
+ <br />
+<br />
+<br />
+....<br />
+FastExiva &gt; 96 05 05 00 $hex-tibiastr:selling firesword 5k thais$<br />
+move x,y,z<br />
+...<br />
+ <br />
+This will say it and, instantly after that, it will start to move to x,y,z</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

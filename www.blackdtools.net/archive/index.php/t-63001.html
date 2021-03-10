@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="function, array, imageref, image, atposition, byref, false, error, imagebytesperline, currentline, totalbytes, goterr, imageheight, private, currentpos, withrotation, byval, optional, loadpngintobytearray, desiredrotation, filepath, arrresult, lastline, imagebitsperpixel, imageref1, freeimage, empty, debug.print, input, bytes, imagebytesperpixel, redim, uboundarr, freeimage_unload, boolean, double, return, imagewidth, rotate, rtlmovememory, requires, pixels, deciphered, solution, copying, freeimage_rotateclassicimageref, finally, ready, increase, freeimage_getlineimageref" />
+	<meta name="description" content="This is a function for copying the deciphered pixels of a PNG image into a byte array. 
+Yes, This is an easy task for any modern language, however... 
+This is a very hard task for VB6 (Visual Basic 6) but... I finally managed to find a solution for it. A solution that will work with any Windows version. And I will share it with the world. 
+ 
+It only requires FreeImage, an open source library that lacks documentation for VB6. 
+FreeImage have a function for this task directly but it does not work" />
+	
+	<title> Reading PNG image into a  byte array - VB6 function [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Reading PNG image into a  byte array - VB6 function</div>
+<hr />
+<div class="pda"><a href="t-63001.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?63001-Reading-PNG-image-into-a-byte-array-VB6-function">Reading PNG image into a  byte array - VB6 function</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-22-2016, 21:00</div></div><div class="posttext">This is a function for copying the deciphered pixels of a PNG image into a byte array.<br />
+Yes, This is an easy task for any modern language, however...<br />
+This is a very hard task for VB6 (Visual Basic 6) but... I finally managed to find a solution for it. A solution that will work with any Windows version. And I will share it with the world.<br />
+<br />
+It only requires FreeImage, an open source library that lacks documentation for VB6.<br />
+FreeImage have a function for this task directly but it does not work (alawys crashes) so I found a way to do this task avoiding this bugged function.<br />
+<br />
+Here is my VB6 function:<br />
+<br />
+<br />
+<br />
+Option Explicit<br />
+Private Declare Sub RtlMoveMemory Lib &quot;kernel32&quot; (Dst As Any, Src As Any, ByVal numberOfBytes As Long)<br />
+<br />
+' Powerfull VB6 Function By Blackd<br />
+' Requires FreeImage (MFreeImage.bas and FreeImage.dll)<br />
+'<br />
+' Purpose: This is a function for copying the deciphered pixels of a PNG image into a raw byte array.<br />
+'<br />
+' Paramaters:<br />
+' Input/Output: arr, the byte array. It can be empty or already filled. Function will resize it if required.<br />
+' Optional Input: atPosition. Function will start writing bytes at atPosition<br />
+' Optional Input: withRotation. Function will rotate the image by this angle (in degrees) in first place.<br />
+' Output: imageWidth,imageHeight,imageBytesPerPixel (ByRef)<br />
+'<br />
+' Returns: False if it detects any error. True in other case.<br />
+Private Function LoadPNGIntoByteArray(ByRef filePath As String, ByRef arr() As Byte, _<br />
+ ByRef imageWidth As Long, _<br />
+ ByRef imageHeight As Long, _<br />
+ ByRef imageBytesPerPixel As Long, _<br />
+ Optional ByVal atPosition As Long = 0, _<br />
+ Optional ByVal withRotation As Double = 0) As Boolean<br />
+    On Error GoTo gotErr<br />
+    Dim imageRef As Long<br />
+    Dim pRow As Long<br />
+    Dim currentLine As Long<br />
+    Dim imageBytesPerLine As Long<br />
+    Dim totalBytes As Long<br />
+    Dim currentPos As Long<br />
+    Dim lastLine As Long<br />
+    Dim imageBitsPerPixel As Long<br />
+    Dim imageRef1 As Long<br />
+    ' Ensure our array is not an empty array, else we init it here.<br />
+    ensureMinimumArray arr<br />
+    ' Load the image<br />
+    imageRef = FreeImage_Load(FIF_PNG, filePath, FILO_PNG_DEFAULT)<br />
+    If imageRef = 0 Then<br />
+        ' ERROR: filePath is not PNG, or it does not exist<br />
+        LoadPNGIntoByteArray = False<br />
+        Exit Function<br />
+    End If<br />
+    If Not (withRotation = 0) Then<br />
+        imageRef1 = imageRef<br />
+        imageRef = FreeImage_RotateClassic(imageRef, withRotation)<br />
+        FreeImage_Unload imageRef1<br />
+        If imageRef = 0 Then<br />
+            ' ERROR: unable to rotate this PNG<br />
+            LoadPNGIntoByteArray = False<br />
+            Exit Function<br />
+        End If<br />
+    End If<br />
+    ' Determine some information from the loaded image<br />
+    imageWidth = FreeImage_GetWidth(imageRef)<br />
+    imageHeight = FreeImage_GetHeight(imageRef)<br />
+    imageBitsPerPixel = FreeImage_GetBPP(imageRef)<br />
+    imageBytesPerPixel = imageBitsPerPixel / 8<br />
+    imageBytesPerLine = FreeImage_GetLine(imageRef)<br />
+    totalBytes = imageBytesPerLine * imageHeight<br />
+    ' Is our array ready to hold so many bytes?<br />
+    If ((UBound(arr) - atPosition) &lt; (totalBytes - 1)) Then<br />
+        ' If array is not big enough then we should increase it's size<br />
+        ReDim Preserve arr(atPosition + totalBytes - 1)<br />
+    End If<br />
+    currentPos = atPosition<br />
+    lastLine = imageHeight - 1<br />
+    For currentLine = 0 To lastLine<br />
+        pRow = FreeImage_GetScanline(imageRef, currentLine)<br />
+        If (Not (pRow = 0)) Then<br />
+          RtlMoveMemory arr(currentPos), ByVal pRow, imageBytesPerLine<br />
+        End If<br />
+        currentPos = currentPos + imageBytesPerLine<br />
+    Next currentLine<br />
+    ' Release the image<br />
+    FreeImage_Unload imageRef<br />
+    ' All looks OK. We return True<br />
+    LoadPNGIntoByteArray = True<br />
+    Exit Function<br />
+gotErr:<br />
+    '... else, we return False<br />
+    LoadPNGIntoByteArray = False<br />
+End Function<br />
+<br />
+' If array is empty then init it to an array of 1 byte<br />
+Private Sub ensureMinimumArray(ByRef arr() As Byte)<br />
+    On Error GoTo gotErr<br />
+    Dim test As Long<br />
+    test = UBound(arr)<br />
+    Exit Sub<br />
+gotErr:<br />
+    ReDim arr(0)<br />
+End Sub<br />
+Private Sub btnTest_Click()<br />
+    Dim arrResult() As Byte<br />
+    Dim w As Long<br />
+    Dim h As Long<br />
+    Dim bpp As Long<br />
+    Dim res As Boolean<br />
+    Dim desiredRotation As Double<br />
+    desiredRotation = 90<br />
+    res = LoadPNGIntoByteArray(App.Path &amp; &quot;\test.png&quot;, arrResult, w, h, bpp, 0, desiredRotation)<br />
+    If (res) Then<br />
+        Dim fnum As Integer<br />
+        fnum = FreeFile<br />
+        Open App.Path &amp; &quot;\test.map&quot; For Binary As #fnum<br />
+        Put #fnum, 1, arrResult<br />
+        Close fnum<br />
+        Debug.Print &quot;TEST OK&quot;<br />
+    Else<br />
+        Debug.Print &quot;TEST FAILED&quot;<br />
+    End If<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-22-2016, 21:09</div></div><div class="posttext">This function can be usefull for reading new Tibia 11 maps (png images).<br />
+It also would be a nice start of a tool to export new maps -&gt; old maps</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

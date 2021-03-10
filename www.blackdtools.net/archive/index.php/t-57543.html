@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="change, config, playing, wanna" />
+	<meta name="description" content="Im playing a 7.72 ot and i wanna change the id of food (meat) but there is no way u can do that right? cus there is no ID of food in the config." />
+	
+	<title> Change food id [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  Change food id</div>
+<hr />
+<div class="pda"><a href="t-57543.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57543-Change-food-id">Change food id</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">martin1337</div><div class="date">03-22-2012, 00:18</div></div><div class="posttext">Im playing a 7.72 ot and i wanna change the id of food (meat) but there is no way u can do that right? cus there is no ID of food in the config.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 00:37</div></div><div class="posttext">You can use custom hexes to eat food, if you can use hotkeys.<br />
+Set XX XX to the ID and the blue numbers to between how many seconds you want it to eat. Right now random between 30 and 90 seconds.<br />
+<br />
+$countitems:XX XX$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+$numericalexp:{$randomnumber:30&gt;90$}*1000$<br />
+0<br />
+exiva &gt; 82 FF FF 00 00 00 XX XX 00 00</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">03-22-2012, 06:47</div></div><div class="posttext">playing tibianic? It's easy.. Just edit the config for food start and end ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">martin1337</div><div class="date">03-22-2012, 15:27</div></div><div class="posttext">Yes im playing tibianic and it wont eat food, in the config this is all i can find about food<br />
+<br />
+tileID_firstFoodTileID=F9 0D<br />
+tileID_lastFoodTileID=17 0E<br />
+tileID_firstMushroomTileID=8B 0E<br />
+tileID_lastMushroomTileID=8F 0E</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 15:36</div></div><div class="posttext">Yes im playing tibianic and it wont eat food, in the config this is all i can find about food<br />
+<br />
+tileID_firstFoodTileID=F9 0D<br />
+tileID_lastFoodTileID=17 0E<br />
+tileID_firstMushroomTileID=8B 0E<br />
+tileID_lastMushroomTileID=8F 0E<br />
+<br />
+Look at all food on the server and add the lowest ID'd food at the tileID_firstFoodTileID and the highest at tileID_lastFoodTileID.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">03-22-2012, 17:47</div></div><div class="posttext">And to get the first and last food id, the easiest way to do it is by opening the .dat with a dat editor :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">martin1337</div><div class="date">03-24-2012, 20:51</div></div><div class="posttext">Any idea how I can get mc on tibianic? if i use &quot;gamemaster&quot; and try to login it says I need to have a gm account</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

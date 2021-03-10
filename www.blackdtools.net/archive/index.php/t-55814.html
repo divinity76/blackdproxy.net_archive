@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="base, tibia.exe, address, module, obtain, list, ollydbg, display, make, cheats, patching, open, &amp;h400000, asrl, enabled, anything-, code" />
+	<meta name="description" content="You know that Tibia.exe module always had an base address of &amp;H400000 . However when ASRL is enabled that base can be... -anything- 
+Anyone knows about any VB6 or any C++ code that can obtain that base address? I know Ollydbg can do it. It display it to you in the module list when you open Tibia.exe, so it must be possible. 
+  
+If we can obtain that then we can make cheats without patching tibia.exe" />
+	
+	<title> How would you get Tibia.exe module base address? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  How would you get Tibia.exe module base address?</div>
+<hr />
+<div class="pda"><a href="t-55814.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?55814-How-would-you-get-Tibia-exe-module-base-address">How would you get Tibia.exe module base address?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-08-2011, 13:35</div></div><div class="posttext">You know that Tibia.exe module always had an base address of &amp;H400000 . However when ASRL is enabled that base can be... -anything-<br />
+Anyone knows about any VB6 or any C++ code that can obtain that base address? I know Ollydbg can do it. It display it to you in the module list when you open Tibia.exe, so it must be possible.<br />
+ <br />
+If we can obtain that then we can make cheats without patching tibia.exe</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thenick</div><div class="date">07-09-2011, 08:28</div></div><div class="posttext">Did you tryed pointers?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ormin</div><div class="date">07-11-2011, 21:31</div></div><div class="posttext">Not actually sure if I got you right, but I have a solution to get that memory address from already-started Tibia.exe ( i.e start Tibia.exe and get that Tibia.exe's base address )<br />
+<br />
+If interested, msg me on priv, so we can talk.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">07-11-2011, 22:03</div></div><div class="posttext">Pretty sure this works in C# .NET:<br />
+<br />
+<br />
+//Tibia is a Process object<br />
+int baseAddress = Tibia.MainModule.BaseAddress.ToInt32();</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-13-2011, 00:52</div></div><div class="posttext">nm, I already found a way. It is not so easy as it would be in C# .NET, but it works for me (I use VB6)<br />
+ <br />
+If anyone is curious for the answer just have a look on the code included in my free tools.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

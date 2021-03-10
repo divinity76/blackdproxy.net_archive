@@ -1,0 +1,1006 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="packets, scripts, bldmx, fastexiva, suggest, correct, check, running, patch, record, strings, cents, survived, advice, offering, examples, basically, point, script, insight, wrong, adjust, sending, experimenting, kinds, knight, wanted, waves, updating, constant, changednot, slightly, credit, handing, mafakan, claiming, questioning, safety, premium, waypoints, depositers, blackd, experience, weeks, assuming, re-vamped" />
+	<meta name="description" content="Hey guys Mafakan here, I have been using this &quot;software&quot; program for about 3-4 days after I bought my 1 month premium scroll and I've made some adjustments to BldMx's scripts that have been somewhat outdated. Each script has a potion buyer and depositor. Enjoy! 
+ 
+MADE SPECIFICALLY FOR PREMIUM KNIGHTS! 
+CAN BE ADJUSTED FOR OTHER CLASSES FOR A FEE! 
+ 
+Just Copy and Paste. 
+ 
+Statistics 
+ 
+All have been tested and I have afked for at least 8hrs while I was asleep." />
+	
+	<title> 9.81 Mafakan Scripts [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  9.81 Mafakan Scripts</div>
+<hr />
+<div class="pda"><a href="t-59951.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59951-9-81-Mafakan-Scripts">9.81 Mafakan Scripts</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:11</div></div><div class="posttext">Hey guys Mafakan here, I have been using this &quot;software&quot; program for about 3-4 days after I bought my 1 month premium scroll and I've made some adjustments to BldMx's scripts that have been somewhat outdated. Each script has a potion buyer and depositor. Enjoy!<br />
+<br />
+MADE SPECIFICALLY FOR PREMIUM KNIGHTS!<br />
+CAN BE ADJUSTED FOR OTHER CLASSES FOR A FEE!<br />
+<br />
+Just Copy and Paste.<br />
+<br />
+Statistics<br />
+<br />
+All have been tested and I have afked for at least 8hrs while I was asleep.<br />
+<br />
+North Port Hope:<br />
+1k gold per run<br />
++Medicine Bags<br />
++Crocodile Boots<br />
+and etc... Tons of items to sell<br />
+24k-27k exp per hour<br />
+<br />
+Edron Troll Caves:<br />
+1k gold per run<br />
+5k-8k exp per hour<br />
++Troll Root<br />
++Troll Hair<br />
+<br />
+Venore Orc Caves:<br />
+1k gold per run<br />
+5k-8k exp per hour<br />
++Wand of Decay<br />
++Shaman Headdress<br />
+<br />
+Vandura/Liberty Bay Rotworm Cave:<br />
+1.5k-2k gold per run<br />
+17k-24k exp per hour</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:17</div></div><div class="posttext">North Port Hope <br />
+Recommended Level:30<br />
+<br />
+Start @ Depot with 20 HP potions.<br />
+<br />
+<br />
+onGMpause<br />
+setFriendly<br />
+setMeleeKill slime<br />
+setMeleeKill filth toad<br />
+setMeleeKill bug<br />
+setMeleeKill terror bird<br />
+setMeleeKill cobra<br />
+setMeleeKill crocodile<br />
+setMeleeKill centipede<br />
+setMeleeKill swamp troll<br />
+setMeleeKill cave rat<br />
+setMeleeKill snake<br />
+setMeleeKill smuggler<br />
+setMeleeKill wild warrior<br />
+setPriority terror bird:+1<br />
+setPriority slime:+2<br />
+setLoot D7 0B<br />
+setLoot 4E 0D<br />
+setLoot E4 0D<br />
+setLoot D6 25<br />
+setLoot 87 02<br />
+setLoot FA 2C<br />
+setLoot 3D 28<br />
+setLoot E5 1C<br />
+setLoot A2 25<br />
+setLoot E5 30<br />
+setLoot 9D 0E<br />
+setLoot A8 25<br />
+setLoot 21 28<br />
+setLoot 27 28<br />
+:start<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goDepositandRefill$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:goDepositandRefill$<br />
+move 32599,32708,7<br />
+move 32587,32704,7<br />
+move 32577,32701,7<br />
+move 32574,32687,7<br />
+move 32595,32676,7<br />
+move 32611,32684,7<br />
+move 32639,32652,7<br />
+move 32645,32666,7<br />
+move 32643,32635,7<br />
+move 32627,32617,7<br />
+move 32653,32618,7<br />
+move 32642,32601,7<br />
+move 32674,32609,7<br />
+move 32695,32600,7<br />
+move 32710,32587,7<br />
+move 32704,32618,7<br />
+move 32677,32638,7<br />
+move 32680,32650,7<br />
+move 32680,32654,7<br />
+move 32655,32672,7<br />
+move 32649,32680,7<br />
+gotoScriptLine $nlineoflabel:start$<br />
+#<br />
+:goDepositandRefill<br />
+fastExiva &lt; B4 10 $hex-tibiastr:Going to Deposit and Refill$<br />
+move 32629,32751,7<br />
+move 32629,32748,6<br />
+move 32632,32739,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade balance<br />
+waitX 1<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:goDropLoot$<br />
+:buyHealth<br />
+fastExiva _healthneeded = $numericalexp:20-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+move 32632,32739,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32630,32742,6<br />
+move 32630,32741,5<br />
+move 32624,32740,5<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32630,32741,5<br />
+move 32630,32742,6<br />
+move 32632,32739,6<br />
+:goDropLoot<br />
+fastExiva &lt; B4 10 $hex-tibiastr:Now going to drop off loot$<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+move 32623,32740,7<br />
+resetloot<br />
+setLoot 4E 0D<br />
+setLoot E4 0D<br />
+setLoot A8 25<br />
+setLoot 87 02<br />
+setLoot 9D 0E<br />
+setLoot FA 2C<br />
+setLoot E5 1C<br />
+setLoot 3D 28<br />
+setLoot D6 25<br />
+setLoot E5 30<br />
+setLoot A2 25<br />
+setLoot 21 28<br />
+setLoot 27 28<br />
+putLootOnDepot<br />
+setLoot D7 0B<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:18</div></div><div class="posttext">Edron Troll Caves<br />
+Recommended Level: 10<br />
+<br />
+Start @ Depot<br />
+<br />
+<br />
+onGMpause<br />
+setFriendly<br />
+setLoot D9 25<br />
+setLoot FB 2c<br />
+setLoot EE 0B<br />
+setLoot 08 17<br />
+setLoot 0E 17<br />
+setLoot B0 25<br />
+setLoot D7 0B<br />
+setMeleeKill Troll<br />
+setMeleeKill Troll Champion<br />
+setMeleeKill Bear<br />
+setMeleeKill Rat<br />
+setMeleeKill Frost Troll<br />
+#<br />
+gotoScriptLine $nlineoflabel:StartHunt$<br />
+:HuntEdronTrollCave<br />
+move 33118,31784,7<br />
+move 33117,31778,7<br />
+move 33117,31775,8<br />
+move 33125,31752,8<br />
+move 33117,31770,8<br />
+move 33089,31770,8<br />
+move 33074,31776,8<br />
+move 33066,31762,8<br />
+move 33069,31771,8<br />
+move 33078,31773,8<br />
+move 33081,31762,8<br />
+IfTrue ($countitems:0C 01$#number&lt;#5) Goto $nlineoflabel:Restock$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:Restock$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1000) Goto $nlineoflabel:Restock$<br />
+move 33074,31752,8<br />
+move 33071,31752,9<br />
+move 33073,31728,9<br />
+move 33050,31726,9<br />
+move 33067,31718,9<br />
+move 33067,31716,10<br />
+move 33067,31718,10<br />
+move 33067,31717,9<br />
+move 33072,31729,9<br />
+move 33103,31729,9<br />
+move 33102,31717,9<br />
+move 33096,31704,9<br />
+move 33094,31704,10<br />
+move 33092,31704,10<br />
+move 33094,31705,9<br />
+move 33103,31718,9<br />
+move 33102,31730,9<br />
+move 33088,31729,9<br />
+move 33087,31737,9<br />
+move 33084,31743,10<br />
+move 33082,31743,10<br />
+move 33084,31744,9<br />
+move 33099,31743,9<br />
+move 33099,31740,10<br />
+move 33111,31737,10<br />
+move 33104,31740,10<br />
+move 33099,31741,9<br />
+move 33081,31744,9<br />
+move 33081,31743,8<br />
+IfTrue ($countitems:0C 01$#number&lt;#5) Goto $nlineoflabel:Restock$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:Restock$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1000) Goto $nlineoflabel:Restock$<br />
+move 33073,31734,8<br />
+move 33082,31738,8<br />
+move 33092,31738,8<br />
+move 33085,31739,8<br />
+move 33107,31756,8<br />
+move 33115,31740,8<br />
+move 33119,31740,9<br />
+move 33126,31729,9<br />
+move 33128,31729,10<br />
+move 33134,31729,10<br />
+move 33134,31715,10<br />
+move 33128,31727,10<br />
+move 33128,31730,9<br />
+move 33132,31740,9<br />
+move 33119,31753,9<br />
+move 33119,31742,9<br />
+move 33119,31742,9<br />
+move 33119,31741,8<br />
+move 33115,31754,8<br />
+move 33106,31758,8<br />
+move 33113,31775,8<br />
+move 33117,31776,7<br />
+move 33117,31782,7<br />
+IfTrue ($countitems:0C 01$#number&lt;#5) Goto $nlineoflabel:ToEdron$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:ToEdron$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1000) Goto $nlineoflabel:ToEdron$<br />
+gotoScriptLine $nlineoflabel:HuntEdronTrollCave$<br />
+#<br />
+:StartHunt<br />
+move 33171,31817,7<br />
+IfTrue ($countitems:0C 01$#number&lt;#5) Goto $nlineoflabel:buyMana$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:buyHealthPots$<br />
+move 33171,31816,7<br />
+move 33166,31816,7<br />
+move 33165,31825,7<br />
+move 33165,31827,8<br />
+move 33168,31823,9<br />
+move 33151,31822,9<br />
+move 33151,31824,10<br />
+move 33147,31824,11<br />
+move 33133,31807,11<br />
+move 33133,31806,10<br />
+move 33130,31807,10<br />
+move 33130,31810,9<br />
+move 33131,31810,9<br />
+move 33131,31807,8<br />
+move 33128,31811,7<br />
+gotoScriptLine $nlineoflabel:HuntEdronTrollCave$<br />
+#<br />
+:ToEdron<br />
+move 33128,31807,7<br />
+move 33128,31810,8<br />
+move 33131,31806,9<br />
+move 33130,31809,10<br />
+move 33133,31805,11<br />
+move 33140,31816,11<br />
+move 33147,31825,10<br />
+move 33151,31825,10<br />
+move 33151,31821,9<br />
+move 33168,31824,8<br />
+move 33165,31828,7<br />
+move 33171,31817,7<br />
+gotoScriptLine $nlineoflabel:DepositandRestock$<br />
+#<br />
+:DepositandRestock<br />
+move 33174,31820,7 <br />
+move 33172,31803,7<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+move 33169,31815,7<br />
+move 33169,31813,8<br />
+move 33170,31813,8<br />
+move 33168,31800,8<br />
+resetLoot<br />
+setLoot D9 25<br />
+setLoot FB 2c<br />
+setLoot EE 0B<br />
+setLoot 08 17<br />
+setLoot 0E 17<br />
+setLoot B0 25<br />
+putLootOnDepot<br />
+setLoot D7 0B<br />
+move 33168,31800,8<br />
+move 33168,31805,8<br />
+move 33171,31805,8<br />
+move 33171,31812,8<br />
+move 33169,31811,7<br />
+move 33171,31817,7 <br />
+IfTrue ($countitems:0C 01$#number&lt;#5) Goto $nlineoflabel:buyMana$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:buyHealthPots$<br />
+gotoScriptLine $nlineoflabel:StartHunt$<br />
+#<br />
+:buyMana<br />
+fastExiva _mananeeded = $numericalexp:10-{$countitems:0C 01$}$<br />
+fastExiva _costmana = $numericalexp:50*{$_mananeeded$}$<br />
+move 33172,31803,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costmana$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33244,31841,7<br />
+move 33247,31840,6<br />
+move 33255,31840,6<br />
+move 33255,31839,7<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; A2 $hex-idofname:Sandra$<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mananeeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33255,31837,6<br />
+move 33257,31837,6<br />
+move 33257,31839,6<br />
+move 33247,31840,6<br />
+move 33247,31842,7<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:buyHealthPots$<br />
+gotoScriptLine $nlineoflabel:StartHunt$<br />
+#<br />
+:buyHealthPots<br />
+move 33172,31803,7<br />
+fastExiva _healthneeded = $numericalexp:10-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33244,31841,7<br />
+move 33247,31840,6<br />
+move 33255,31840,6<br />
+move 33255,31839,7<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; A2 $hex-idofname:Sandra$<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33255,31837,6<br />
+move 33257,31837,6<br />
+move 33257,31839,6<br />
+move 33247,31840,6<br />
+move 33247,31842,7<br />
+gotoScriptLine $nlineoflabel:StartHunt$<br />
+:Restock<br />
+move 33106,31758,8<br />
+move 33113,31775,8<br />
+move 33117,31776,7<br />
+move 33117,31782,7<br />
+gotoScriptLine $nlineoflabel:ToEdron$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:20</div></div><div class="posttext">Venore Orc Cave<br />
+Recommended Level: 10<br />
+<br />
+Start @ Depot<br />
+<br />
+<br />
+#How many potions to bring<br />
+fastExiva _pots = 10<br />
+#ItemID of the potion to bring<br />
+fastExiva _potid = 0A 01<br />
+#Price of potion<br />
+fastExiva _potprice = 50<br />
+#Empty potion ID<br />
+fastExiva _emptypotid = 1D 01<br />
+#Leave when potions less than<br />
+fastExiva _leavepots = 2<br />
+#<br />
+#Gold<br />
+setLoot D7 0B<br />
+#Wand of Decay<br />
+setLoot 00 0C<br />
+#Shamanic Hood<br />
+setLoot D6 2C<br />
+#Orc Leather<br />
+setLoot D7 2C<br />
+#Orc Tooth<br />
+setLoot D4 27<br />
+#Broken Shamanic Staff<br />
+setLoot BC 2C<br />
+onGMpause<br />
+setFriendly<br />
+setMeleeKill adventurer<br />
+setMeleeKill orc shaman<br />
+setMeleeKill orc spearman<br />
+setMeleeKill orc<br />
+setMeleeKill snake<br />
+setMeleeKill bat<br />
+setMeleeKill marsh stalker<br />
+setMeleeKill swampling<br />
+setPriority orc shaman:+2<br />
+setPriority orc spearman:+1<br />
+setPriority snake:-1<br />
+#<br />
+move 33050,32032,7<br />
+move 33055,32032,7<br />
+move 33056,32028,6<br />
+move 33059,32028,7<br />
+move 33055,32030,7<br />
+move 33055,32029,8<br />
+move 33058,32044,8<br />
+move 33072,32015,8<br />
+move 33075,32016,9<br />
+move 33084,32025,9<br />
+move 33075,32016,9<br />
+useItem 33075,32016,8<br />
+move 33047,32031,8<br />
+move 33044,32030,9<br />
+move 33049,32026,9<br />
+move 33052,32039,9<br />
+move 33045,32030,9<br />
+useItem 33044,32031,8<br />
+move 33056,32029,8<br />
+useItem 33055,32030,7<br />
+move 33058,32028,7<br />
+useItem 33059,32029,6<br />
+move 33055,32033,6<br />
+move 33055,32032,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:restock$<br />
+IfEnoughItemsGoto D7 0B,1000,64<br />
+gotoScriptLine 0<br />
+:restock<br />
+useItem 33055,32029,8<br />
+useItem 33059,32028,7<br />
+move 33055,32032,6<br />
+move 33050,32035,7<br />
+move 33043,32041,7<br />
+move 33039,32049,7<br />
+move 33025,32058,7<br />
+move 33014,32069,7<br />
+move 33008,32087,7<br />
+move 33004,32114,7<br />
+move 32992,32117,7<br />
+move 32970,32126,7<br />
+move 32966,32144,7<br />
+move 32957,32148,7<br />
+move 32945,32151,7<br />
+move 32938,32159,7<br />
+move 32936,32159,7<br />
+move 32936,32158,6<br />
+move 32936,32097,6<br />
+setChaoticMovesOFF<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+IfTrue ($countitems:{$_potid$}$#number&gt;=#$_pots$) Goto $nlineoflabel:nowithdraw$<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+:nowithdraw<br />
+move 33020,32058,6<br />
+move 33020,32060,7<br />
+move 33018,32057,7<br />
+resetLoot<br />
+setLoot 00 0C<br />
+setLoot D6 2C<br />
+setLoot D7 2C<br />
+setLoot D4 27<br />
+setLoot BC 2C<br />
+putLootOnDepot<br />
+setLoot D7 0B<br />
+move 33019,32059,7<br />
+move 33020,32058,6<br />
+IfTrue ($countitems:{$_potid$}$#number&gt;=#$_pots$) Goto $nlineoflabel:nopots$<br />
+move 32971,32085,6<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+:nopots<br />
+move 32936,32129,6<br />
+move 32936,32157,6<br />
+move 32936,32159,6<br />
+move 32943,32154,7<br />
+move 32963,32148,7<br />
+move 32965,32134,7<br />
+move 32973,32126,7<br />
+move 32987,32120,7<br />
+move 33005,32115,7<br />
+move 33008,32097,7<br />
+move 33011,32078,7<br />
+move 33014,32066,7<br />
+move 33026,32058,7<br />
+move 33041,32047,7<br />
+move 33047,32036,7<br />
+move 33055,32032,7<br />
+useItem 33055,32032,7<br />
+move 33056,32028,6<br />
+move 33059,32028,6<br />
+move 33055,32029,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:22</div></div><div class="posttext">Vandura/Liberty Bay Rotworm Caves.<br />
+<br />
+Reccommended Level: 20<br />
+<br />
+CAUTION: IT GOES THROUGH ALL THREE LEVELS.<br />
+<br />
+<br />
+onGMpause<br />
+setFriendly<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+setLoot 17 0D<br />
+setLoot C0 0C<br />
+setLoot D6 0C<br />
+setLoot 29 28<br />
+setLoot 3D 28<br />
+setLoot 23 28<br />
+setMeleeKill wasp<br />
+setMeleeKill skunk<br />
+setMeleeKill rotworm<br />
+setMeleeKill rat<br />
+setMeleeKill bug<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill carrion worm<br />
+setMeleeKill centipede<br />
+setMeleeKill tarantula<br />
+setMeleeKill rotworm queen<br />
+:goHuntLiberyBay<br />
+onDangerGoto $nlineoflabel:onDangerMain$<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now going to hunt.$<br />
+move 32234,32837,7<br />
+move 32225,32850,7<br />
+move 32225,32849,8<br />
+gotoScriptLine $nlineoflabel:huntLibertyBay$<br />
+:goSellAndDeposit<br />
+onDangerGoto $nlineoflabel:onDangerMain$<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now going to sell, deposit and refill.$<br />
+move 32234,32837,7<br />
+move 32293,32820,7<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva sell:C0 0C:$countitems:C0 0C$<br />
+waitX 1<br />
+sayMessage exiva sell:D6 0C:$countitems:D6 0C$<br />
+waitX 1<br />
+sayMessage exiva sell:17 0D:$numericalexp:{$countitems:17 0D$}-1$<br />
+stackItems<br />
+IfTrue ($countitems:29 28$#number&gt;#0) Goto $nlineoflabel:tarantulaEggsSell$<br />
+IfTrue ($countitems:3D 28$#number&gt;#0) Goto $nlineoflabel:tarantulaEggsSell$<br />
+gotoScriptLine $nlineoflabel:tarantulaEggsSold$<br />
+:tarantulaEggsSell<br />
+move 32346,32810,7<br />
+move 32347,32808,6<br />
+move 32344,32809,6<br />
+move 32344,32807,5<br />
+waitX 2<br />
+fastExiva &gt; A2 $hex-idofname:Malunga$<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva sell:29 28:$countitems:29 28$<br />
+waitX 1<br />
+sayMessage exiva sell:3D 28:$countitems:3D 28$<br />
+waitX 1<br />
+stackItems<br />
+move 32344,32807,5<br />
+move 32344,32809,6<br />
+move 32347,32808,6<br />
+move 32346,32810,7<br />
+:tarantulaEggsSold<br />
+move 32339,32836,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32331,32835,7<br />
+resetLoot<br />
+setLoot DC 25<br />
+setLoot 23 28<br />
+putLootOnDepot<br />
+setLoot D7 0B<br />
+setLoot 17 0D<br />
+setLoot 29 28<br />
+setLoot 3D 28<br />
+IfTrue ($countitems:0A 01$#number&lt;#20) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:goHuntLiberyBay$<br />
+:buyHealth<br />
+move 32339,32836,7<br />
+fastExiva _healthneeded = $numericalexp:20-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32346,32810,7<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; A2 $hex-idofname:Frederik$<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32339,32836,7<br />
+gotoScriptLine $nlineoflabel:goHuntLiberyBay$<br />
+:onDangerMain<br />
+resetKill<br />
+move 32234,32837,7<br />
+move 32339,32836,7<br />
+closeConnection<br />
+:onDangerOne<br />
+resetKill<br />
+move 32225,32849,8<br />
+move 32225,32850,7<br />
+gotoScriptLine $nlineoflabel:onDangerMain$<br />
+:onDangerTwo<br />
+resetKill<br />
+move 32238,32824,9<br />
+move 32238,32825,8<br />
+gotoScriptLine $nlineoflabel:onDangerOne$<br />
+:OnDangerThree<br />
+move 32235,32774,10<br />
+move 32235,32775,9<br />
+resetKill<br />
+gotoScriptLine $nlineoflabel:onDangerTwo$<br />
+:OnDangerFour<br />
+resetKill<br />
+move 32201,32722,8<br />
+move 32201,32723,7<br />
+move 32235,32753,7<br />
+gotoScriptLine $nlineoflabel:onDangerMain$<br />
+:OnDangerFive<br />
+resetKill<br />
+move 32267,32699,8<br />
+move 32267,32700,7<br />
+move 32287,32770,7<br />
+gotoScriptLine $nlineoflabel:onDangerMain$<br />
+:OnDangerSix<br />
+resetKill<br />
+move 32251,32811,10<br />
+move 32251,32812,9<br />
+gotoScriptLine $nlineoflabel:onDangerTwo$<br />
+:OnDangerSix<br />
+resetKill<br />
+move 32251,32811,10<br />
+move 32251,32812,9<br />
+gotoScriptLine $nlineoflabel:onDangerTwo$<br />
+:huntLibertyBay<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now hunting.$<br />
+onDangerGoto $nlineoflabel:onDangerOne$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositOne$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositOne$<br />
+move 32206,32850,8<br />
+move 32221,32809,8<br />
+move 32243,32844,8<br />
+move 32260,32809,8<br />
+move 32238,32825,8<br />
+move 32238,32824,9<br />
+onDangerGoto $nlineoflabel:onDangerTwo$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositThree$<br />
+move 32237,32824,9<br />
+move 32222,32787,9<br />
+move 32230,32767,9<br />
+move 32234,32773,9<br />
+move 32234,32774,9<br />
+move 32235,32774,10<br />
+onDangerGoto $nlineoflabel:onDangerThree$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositThree$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositThree$<br />
+move 32236,32774,10<br />
+move 32277,32771,10<br />
+move 32257,32691,10<br />
+move 32234,32731,10<br />
+onDangerGoto $nlineoflabel:onDangerThree$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositThree$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositThree$<br />
+move 32228,32747,10<br />
+move 32216,32760,10<br />
+move 32205,32760,10<br />
+move 32209,32739,10<br />
+onDangerGoto $nlineoflabel:onDangerThree$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositThree$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositThree$<br />
+move 32186,32728,10<br />
+move 32175,32754,10<br />
+move 32211,32779,10<br />
+move 32246,32801,10<br />
+onDangerGoto $nlineoflabel:onDangerThree$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositThree$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositThree$<br />
+move 32208,32830,10<br />
+move 32224,32797,10<br />
+move 32234,32775,10<br />
+move 32235,32775,10<br />
+move 32235,32775,9<br />
+onDangerGoto $nlineoflabel:onDangerTwo$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+move 32236,32775,9<br />
+move 32257,32791,9<br />
+move 32218,32821,9<br />
+move 32171,32807,9<br />
+move 32166,32794,9<br />
+onDangerGoto $nlineoflabel:onDangerTwo$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+move 32168,32764,9<br />
+move 32183,32747,9<br />
+move 32200,32732,9<br />
+move 32178,32716,9<br />
+move 32184,32731,9<br />
+move 32185,32731,9<br />
+move 32185,32732,8<br />
+onDangerGoto $nlineoflabel:onDangerFour$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositFour$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositFour$<br />
+move 32184,32732,8<br />
+move 32173,32735,8<br />
+move 32169,32710,8<br />
+move 32198,32709,8<br />
+onDangerGoto $nlineoflabel:onDangerFour$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositFour$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositFour$<br />
+move 32198,32752,8<br />
+move 32214,32741,8<br />
+move 32214,32710,8<br />
+move 32214,32711,8<br />
+move 32213,32711,8<br />
+move 32213,32710,9<br />
+onDangerGoto $nlineoflabel:onDangerTwo$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+move 32212,32711,9<br />
+move 32229,32747,9<br />
+move 32239,32720,9<br />
+move 32263,32734,9<br />
+move 32276,32729,9<br />
+move 32276,32730,8<br />
+onDangerGoto $nlineoflabel:onDangerFive$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositFive$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositFive$<br />
+move 32257,32733,8<br />
+move 32231,32724,8<br />
+move 32244,32689,8<br />
+onDangerGoto $nlineoflabel:onDangerFive$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositFive$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositFive$<br />
+move 32279,32714,8<br />
+move 32275,32728,8<br />
+move 32276,32728,8<br />
+move 32276,32729,9<br />
+onDangerGoto $nlineoflabel:onDangerTwo$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+move 32275,32729,9<br />
+move 32273,32751,9<br />
+move 32272,32750,9<br />
+move 32273,32750,10<br />
+onDangerGoto $nlineoflabel:onDangerSix$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositSix$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositSix$<br />
+move 32273,32751,10<br />
+move 32252,32811,10<br />
+move 32251,32811,10<br />
+move 32251,32812,9<br />
+onDangerGoto $nlineoflabel:onDangerTwo$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositTwo$<br />
+move 32250,32812,9<br />
+move 32237,32823,9<br />
+move 32237,32824,9<br />
+move 32238,32825,8<br />
+onDangerGoto $nlineoflabel:onDangerOne$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goSellAndDepositOne$<br />
+IfTrue ($countitems:D7 0B$#number&gt;#1500) Goto $nlineoflabel:goSellAndDepositOne$<br />
+move 32239,32825,8<br />
+gotoScriptLine $nlineoflabel:huntLibertyBay$<br />
+:goSellAndDepositOne<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now Leaving Floor -1.$<br />
+move 32225,32849,8<br />
+move 32225,32850,7<br />
+gotoScriptLine $nlineoflabel:goSellAndDeposit$<br />
+:goSellAndDepositTwo<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now Leaving Floor -2.$<br />
+move 32216,32758,9<br />
+move 32238,32824,9<br />
+move 32238,32825,8<br />
+gotoScriptLine $nlineoflabel:goSellAndDepositOne$<br />
+:goSellAndDepositThree<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now Leaving Floor -3.$<br />
+move 32235,32774,10<br />
+move 32235,32775,9<br />
+gotoScriptLine $nlineoflabel:goSellAndDepositTwo$<br />
+:goSellAndDepositFour<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now Leaving Floor -1.$<br />
+move 32201,32722,8<br />
+move 32201,32723,7<br />
+move 32235,32753,7<br />
+gotoScriptLine $nlineoflabel:goSellAndDeposit$<br />
+:goSellAndDepositFive<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now Leaving Floor -1.$<br />
+move 32267,32699,8<br />
+move 32267,32700,7<br />
+move 32287,32770,7<br />
+gotoScriptLine $nlineoflabel:goSellAndDeposit$<br />
+:goSellAndDepositSix<br />
+fastExiva &lt; B4 14 $hex-tibiastr:Now Leaving Floor -3.$<br />
+move 32251,32811,10<br />
+move 32251,32812,9<br />
+gotoScriptLine $nlineoflabel:goSellAndDepositTwo$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-23-2013, 08:23</div></div><div class="posttext">I would get rid of the fastExiva and setChaoticMovesON commands to be safer.<br />
+Is exiva buy safe? (assuming you don't try to buy more than what you can afford, carry, etc)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:39</div></div><div class="posttext">Why isn't it safe to use fast exiva buy?<br />
+Thank you for the advice!<br />
+<br />
+Edit: Oh, I know what you're asking. From what I have experienced it is safe. It never buys more than you can afford. It always buys the exact number of potions you need or the difference. IE: Say that you want to carry a maximum of 20 pots. If you have 4 Health Pots left the program will buy only what you need which is 16 more Health Pots.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:41</div></div><div class="posttext">Your scripts have helped me mold my Edron Trolls script a lot! took about 2-3 hours to perfect it enough to go afk for 24 hours confidently.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-23-2013, 08:51</div></div><div class="posttext">I am sure people think the fastExiva commands are unsafe but I am not sure about the exiva buy, hence my question.<br />
+<br />
+On a side note, avoid positing to replies to the same thread in a row, I know some mods (if they are still around ;)) don't like it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-23-2013, 08:55</div></div><div class="posttext">I am sure people think the fastExiva commands are unsafe but I am not sure about the exiva buy, hence my question.<br />
+<br />
+On a side note, avoid positing to replies to the same thread in a row, I know some mods (if they are still around ;)) don't like it.<br />
+<br />
+I was unaware of that. Thanks for the heads up mate.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">casas01</div><div class="date">01-24-2013, 07:46</div></div><div class="posttext">thanks for the scripts!, do you know where can i bot knights free lvl 40+? im tired of using the same scripts over and over again, i can make them i just need a suggestion for max gold (i dont really care about exp). i'll test the orcs one tonight!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-24-2013, 16:44</div></div><div class="posttext">I appreciate you handing out credit and not claiming all of these as your own! Scripts like the ones you posted usually need constant updating from patch to patch, I'm certain that sometimes strings of packets are changed(Not always) and I think that is why BldMX is slightly questioning the safety of those scripts. With only a few weeks of experience with BlackD I am assuming you did not check all the fastExiva &gt; strings after to see if those sent out the correct packets accordingly? I would suggest the same as BldMX when it comes to running premium scripts, use mainly waypoints and depositers but only if your certain on how to record and send packets I dont suggest running these scripts until all the old packets have been re-vamped. Just my two cents, not here to be a dick in anyway just offering my advice as I have survived through a few ban waves myself.<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-25-2013, 03:20</div></div><div class="posttext">thanks for the scripts!, do you know where can i bot knights free lvl 40+? im tired of using the same scripts over and over again, i can make them i just need a suggestion for max gold (i dont really care about exp). i'll test the orcs one tonight!<br />
+<br />
+Sorry mate, I don't have experience botting with free accounts. I'm sure BldMX posted a mega post about where to bot though. Just use the search function.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">01-25-2013, 03:22</div></div><div class="posttext">I appreciate you handing out credit and not claiming all of these as your own! Scripts like the ones you posted usually need constant updating from patch to patch, I'm certain that sometimes strings of packets are changed(Not always) and I think that is why BldMX is slightly questioning the safety of those scripts. With only a few weeks of experience with BlackD I am assuming you did not check all the fastExiva &gt; strings after to see if those sent out the correct packets accordingly? I would suggest the same as BldMX when it comes to running premium scripts, use mainly waypoints and depositers but only if your certain on how to record and send packets I dont suggest running these scripts until all the old packets have been re-vamped. Just my two cents, not here to be a dick in anyway just offering my advice as I have survived through a few ban waves myself.<br />
+<br />
+-Lith<br />
+<br />
+I don't even know how to check if they're sending the correct packets. Could you give me some examples? <br />
+<br />
+I have just been experimenting with all kinds of scripts that I wanted to use to bot for my knight. If they didn't work for me I would just adjust the script to the point that it would basically. I had no idea that using fastExiva could send out the wrong packets. I don't even know how to record and send packets or what they are. Give me some insight.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-25-2013, 03:46</div></div><div class="posttext">One problem is when packages change. So say a script that uses &quot;exiva &gt;XX XX XX XX XX&quot; to open a door might work now but with the next update it might change to &quot;exiva &gt;YY YY YY YY&quot; and when your bot tries to send the &quot;exiva &gt;XX XX XX XX XX&quot; Tibia recognizes that and you get banned. <br />
+<br />
+Also, sometimes you force a packet when the client would never do, which also results in a ban. Like for example, buy 150 manas at once, when the client only would send 100 at a time.<br />
+<br />
+That's just some issues with exiva commands.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DiegoTaba</div><div class="date">02-01-2013, 15:46</div></div><div class="posttext">North Porth hope script works great ! Thanks a lot bro !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">taylor999</div><div class="date">02-04-2013, 01:15</div></div><div class="posttext">port hope script seems to work good! my knight (lvl 21) uses too many potions though so im gonna try the liberty bay rots to make money for better equipment first:) i hope it works well!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">taylor999</div><div class="date">02-04-2013, 02:24</div></div><div class="posttext">in the liberty bay rot script i had 18 potions left and it bought 20 more? :( everything else seems to work but this is important haha</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Masterjez</div><div class="date">02-13-2013, 02:38</div></div><div class="posttext">Scripts used North port hope great script i got my knight from lvl 35 to lvl 50 in afew days left to bot over night its a great script lets just hope i dnt get banned from it &quot; fingers crossed :D &quot;<br />
+<br />
+Many thanks to the maker !! <br />
+<br />
+is there any chance you can make me a script for Yalahar cycs id make it myself but i dnt no how to make it go up the stairs and if the commands to make it do that is save if you can do this for me Many thanks !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">C9x</div><div class="date">02-13-2013, 09:25</div></div><div class="posttext">Scripts used North port hope great script i got my knight from lvl 35 to lvl 50 in afew days left to bot over night its a great script lets just hope i dnt get banned from it &quot; fingers crossed :D &quot;<br />
+<br />
+Many thanks to the maker !! <br />
+<br />
+is there any chance you can make me a script for Yalahar cycs id make it myself but i dnt no how to make it go up the stairs and if the commands to make it do that is save if you can do this for me Many thanks !<br />
+<br />
+Set a waypoint at the base or top of the stairs and then set another waypoint on the other level after using the stairs.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafakan</div><div class="date">04-03-2014, 11:24</div></div><div class="posttext">i am back. I will retest these scripts and update them. BldMx, let me know whats up.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

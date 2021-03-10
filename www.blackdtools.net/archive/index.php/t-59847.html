@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, planta, inicial, quieres, punto, añade, seguro, básico, crear, cosas, cavebot, cueva, forma, lotear, menos, principio, vueltas, simplemente, waypoint, cuando, inspecciona, recorrer, veces, tuneles, otras, setloot, también, hotkey, waypoints, luego, tools, deben, activando, juego, saber, habitual, buenos, scripts, información, adicional, izquierda, objeto, recibirás, inspeccionado, incluyendo, abajo, casilla, necesario, sobre, cambiado" />
+	<meta name="description" content="A continuación explico de forma sencilla y detallada como crear un script básico que además será seguro, o al menos todo lo seguro que puede ser un script de cavebot: 
+ 
+1. Hazte un hotkey en Tibia que ponga: 
+exiva addmove 
+2. piensa una ruta que recorra toda la cueva y termine en el punto inicial. Puedes dar todas las vueltas que quieras y pasar a veces por el mismo punto si hace falta, pero debe recorrer toda la cueva y terminar en el punto inicial. 
+3. dirígete al punto inicial que has" />
+	
+	<title> Pregunta frecuente: Cómo crear un script básico (y seguro) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-89.html">Non-english</a> &gt; <a href="f-90.html">Foro español</a> &gt;  Pregunta frecuente: Cómo crear un script básico (y seguro)</div>
+<hr />
+<div class="pda"><a href="t-59847.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59847-Pregunta-frecuente-Cómo-crear-un-script-básico-(y-seguro)">Pregunta frecuente: Cómo crear un script básico (y seguro)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">12-27-2012, 22:16</div></div><div class="posttext">A continuación explico de forma sencilla y detallada como crear un script básico que además será seguro, o al menos todo lo seguro que puede ser un script de cavebot:<br />
+<br />
+1. Hazte un hotkey en Tibia que ponga:<br />
+exiva addmove<br />
+2. piensa una ruta que recorra toda la cueva y termine en el punto inicial. Puedes dar todas las vueltas que quieras y pasar a veces por el mismo punto si hace falta, pero debe recorrer toda la cueva y terminar en el punto inicial.<br />
+3. dirígete al punto inicial que has pensado para tu ruta y comienza a recorrer la ruta. Cada 4-6 pasos pulsa el hotkey. Esto añadirá la posición inicial al cavebot.<br />
+4. cuando estes de nuevo en el punto inicial cierra el script de forma que de vueltas infinitas. Para ello simplemente ve al menu cavebot y añade este comando al final de tu script:<br />
+gotoScriptLine 0<br />
+5. guarda tu script.<br />
+6. edita tu script. Añade al principio los bichos que quieres matar. Cada bicho una línea:<br />
+setMeleeKill nombrebicho<br />
+7. Añade también al principio los ids de las cosas que quieres lotear. D7 0B es el id del gold. Para un script básico vale que solo recoja gold:<br />
+setLoot D7 0B<br />
+8. Si quieres lotear otras cosas, inspecciona el id de la cosa que quieres lotear con el menu Tools, activando la casilla que hay abajo a la izquierda y luego en el juego inspecciona el item de la forma habitual. Recibirás información adicional sobre el objeto inspeccionado, incluyendo el id del item necesario para el setLoot<br />
+<br />
+<br />
+Otras cosas que se deben saber para crear buenos scripts:<br />
+- Para cambiar de planta simplemente añade algún waypoint cerca del sitio donde se cambia de planta, antes de usarlo, y luego otro waypoint tras haber cambiado de planta<br />
+- Para evitar comportamientos extraños también asegúrate de que cuando haya multiples cambios de planta muy rápidos (tuneles verticales*) al menos pon 3 waypoints por cada planta<br />
+* Lo de los tuneles verticales un ejemplo lo tienes en la cueva de ratas del NW de Rookgard. Ahí cambias de piso varias veces en poco tiempo y si no quieres errores debes poner al menos 3 waypoints en cada planta, incluso si la planta es un simple cuadrado 2x2</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ottove</div><div class="date">09-10-2013, 18:28</div></div><div class="posttext">Me registre nada mas para agradecer, no puede ser que el post tenga tanto tiempo y nadie lo haya hecho!!!!<br />
+<br />
+Gracias por tan buen software y gratuito, yo uso casi siempre tu proxy y el vip xD!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

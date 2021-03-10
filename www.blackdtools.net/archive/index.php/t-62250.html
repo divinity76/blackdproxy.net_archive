@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, venore, waitx, script, sayintrade, useitem, rotworm, spider, comment, gotoscriptline, feverish, deposit, return, 32829,32113,7, 0b,250,$nlineoflabeldepo$, ifenoughitemsgoto, 32699,32018,7, 32861,32127,7, iffewitemsgoto, 32700,32012,9, 32711,32006,9, 32717,32006,9, 32709,32002,9, 32703,32002,9, 32700,32006,9, 0b,3,$nlineoflabelreturn$, 32768,32081,7, touch, setnofollow, 32699,32018,8, allowing, snake, 32728,32061,7, 32723,32001,9, 32697,32020,7, setloot, 32699,32019,7, poison, citizen, 32803,32092,7, 32720,31998,10, 32927,32096,6, 32954,32088,6, 32988,32073,6, 32898,32126,6, 32863,32125,6, force, 32837,32116,7, 32861,32126,7, 32995,32108,6" />
+	<meta name="description" content="This script covers all of the mobs from venore including feverish citizens. Currently it is set to return to the venore bank to deposit at 250 gold. and it is only set to loot gold. if you are looking to get other items such as the lumps of dirt from the rots, then you will have to add it to the script. Be sure to have your auto eating on, and take a few mana potions, and utilize your autohealer to stay alive. being attacked by 5 rots at once can be disastrous. I autopot at 10% mana, and use" />
+	
+	<title> Venore Rotworms 8-~ Auto Depositer [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Venore Rotworms 8-~ Auto Depositer</div>
+<hr />
+<div class="pda"><a href="t-62250.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62250-Venore-Rotworms-8-Auto-Depositer">Venore Rotworms 8-~ Auto Depositer</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Saints</div><div class="date">08-04-2015, 04:52</div></div><div class="posttext">This script covers all of the mobs from venore including feverish citizens. Currently it is set to return to the venore bank to deposit at 250 gold. and it is only set to loot gold. if you are looking to get other items such as the lumps of dirt from the rots, then you will have to add it to the script. Be sure to have your auto eating on, and take a few mana potions, and utilize your autohealer to stay alive. being attacked by 5 rots at once can be disastrous. I autopot at 10% mana, and use exura to heal when im damaged to 65%.<br />
+During the lower levels 8-10, keep an eye on your character to ensure you dont get gang banged by the enemy. I will eventually modify it to add an auto repot. Leave a comment if you like!<br />
+(note: dont forget to keep your backpack open with a shovel and rope...)<br />
+<br />
+Start this script in the first big room of the rotworm cave northwest of venore, or at the venore bank with less than 3 gold on hand.<br />
+Remove the comment from the first line if you want to play a little safer. This will make you stand in place and force the rots to come to you, allowing you to get a few more hits before they touch you.<br />
+<br />
+<br />
+<br />
+<br />
+#setNoFollow<br />
+setMeleeKill cave rat<br />
+setMeleeKill snake<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill feverish citizen<br />
+setMeleeKill rotworm<br />
+setLoot D7 0B<br />
+useItem 32699,32018,7<br />
+IfEnoughItemsGoto D7 0B,250,$nlineoflabel:depo$<br />
+IfFewItemsGoto D7 0B,3,$nlineoflabel:return$<br />
+move 32700,32012,9<br />
+move 32700,32006,9<br />
+move 32703,32002,9<br />
+move 32709,32002,9<br />
+move 32711,32006,9<br />
+move 32717,32006,9<br />
+move 32723,32001,9<br />
+move 32720,31998,9<br />
+move 32720,31998,10<br />
+move 32716,31997,10<br />
+move 32714,31992,10<br />
+move 32715,31992,9<br />
+useItem 32707,31991,9<br />
+move 32705,31992,8<br />
+move 32701,31993,8<br />
+move 32702,32001,8<br />
+move 32702,32003,9<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32699,32007,9<br />
+useItem 32700,32013,9<br />
+move 32699,32017,8<br />
+move 32699,32020,7<br />
+move 32729,32061,7<br />
+move 32762,32080,7<br />
+move 32806,32093,7<br />
+move 32837,32116,7<br />
+move 32861,32126,7<br />
+move 32863,32125,6<br />
+move 32898,32126,6<br />
+move 32927,32096,6<br />
+move 32954,32088,6<br />
+move 32988,32073,6<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 2<br />
+:return<br />
+move 33013,32053,6<br />
+move 33006,32063,6<br />
+move 32997,32080,6<br />
+move 32995,32108,6<br />
+move 32958,32119,6<br />
+move 32921,32126,6<br />
+move 32863,32126,6<br />
+move 32861,32127,7<br />
+move 32829,32113,7<br />
+move 32803,32092,7<br />
+move 32768,32081,7<br />
+move 32728,32061,7<br />
+move 32697,32020,7<br />
+move 32699,32019,7<br />
+move 32699,32018,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Saints</div><div class="date">08-04-2015, 05:19</div></div><div class="posttext">Placeholder</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

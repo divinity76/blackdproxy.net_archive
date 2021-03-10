@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="waitx, iftrue, sayintrade, potions, $nlineoflabeldeposit$, $countitems0a, script, saymessage, 01$number2, 33247,31840,6, problem, 33255,31840,6, 33245,31841,7, buying, scripts, deposit, gotoscriptline, 0c$number0, inventory, check, starts, decides, hunting, buy0a, exiva, stackitems, trade, $nlineoflabelsellanddeposit$, blackdtools, trigger, remaining, generate, $nlineoflabelbuypotion2$, sense, depositing, execute, count, higher, executing, working, recognized, mentioned, command, missing, happening, prevents, recognize, start, label, confused" />
+	<meta name="description" content="Does Blackdtools generate logs when you execute your scripts? 
+I am currently working on some scripts and in one of them I found a loop while testing it. However I can't get to the source of the problem. I've checked all lines over and over and now I am not sure if it's the script that has an error in it, or if it's blackdtools that's bugging. So I figured out it would be nice to have some sort of logfile or a scriptdebugger so I can see where it goes wrong. 
+ 
+More detailed information about" />
+	
+	<title> Is there any log when executing your scripts? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Is there any log when executing your scripts?</div>
+<hr />
+<div class="pda"><a href="t-60439.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60439-Is-there-any-log-when-executing-your-scripts">Is there any log when executing your scripts?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">05-31-2013, 13:10</div></div><div class="posttext">Does Blackdtools generate logs when you execute your scripts?<br />
+I am currently working on some scripts and in one of them I found a loop while testing it. However I can't get to the source of the problem. I've checked all lines over and over and now I am not sure if it's the script that has an error in it, or if it's blackdtools that's bugging. So I figured out it would be nice to have some sort of logfile or a scriptdebugger so I can see where it goes wrong.<br />
+<br />
+More detailed information about the problem:<br />
+The script starts by checking your inventory for any loot that can be sold. If there is nothing to sell it will check the amount of potions in your inventory with:<br />
+<br />
+IfTrue ($countitems:0A 01$#number&lt;#3) Goto $nlineoflabel:buyPotion$<br />
+If you have 3 or more health potions (item ID:0A 01) with you it will proceed hunting. After selling any loot it will check for your potions with the same line. If there is need for more potions it will move to the following line where it will check for any leftover loot to sell and if the required amount of money for the 5 potions is present. If not it will withdraw the amount of money from the bank and then buy the potions from the shop (and deposit any empty flasks (1D 01) if present)<br />
+<br />
+:buyPotion<br />
+IfTrue ($countitems:FB 2C$#number&gt;#4) Goto $nlineoflabel:selltrollroot$<br />
+IfTrue ($countitems:23 28$#number&gt;#4) Goto $nlineoflabel:sellfangs$<br />
+IfTrue ($countitems:DC 25$#number&gt;#9) Goto $nlineoflabel:selldirt$<br />
+IfTrue ($countitems:C0 0C$#number&gt;#0) Goto $nlineoflabel:SellAndDeposit$<br />
+IfTrue ($countitems:D6 0C$#number&gt;#0) Goto $nlineoflabel:SellAndDeposit$<br />
+IfTrue ($countitems:0A 01$#number&gt;#2) Goto $nlineoflabel:deposit$<br />
+IfTrue ($countitems:D7 0B$#number&lt;#225) Goto $nlineoflabel:withdrawpotion$<br />
+gotoScriptLine $nlineoflabel:buyPotion2$<br />
+:buyPotion2<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Depositing empty Flasks and buying new Potions.$<br />
+waitx 1<br />
+IfTrue ($countitems:0A 01$#number&gt;#2) Goto $nlineoflabel:deposit$<br />
+move 33245,31841,7<br />
+move 33247,31840,6<br />
+move 33255,31840,6<br />
+move 33255,31841,7<br />
+IfTrue ($countitems:1D 01$#number&gt;#0) Goto $nlineoflabel:depositFlasksBuyPotions$<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva buy:0A 01:5<br />
+waitX 1<br />
+stackItems<br />
+move 33255,31840,6<br />
+move 33247,31840,6<br />
+move 33245,31841,7<br />
+gotoScriptLine $nlineoflabel:deposit$<br />
+:depositFlasksBuyPotions<br />
+IfTrue ($countitems:0A 01$#number&gt;#2) Goto $nlineoflabel:deposit$<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit<br />
+waitx 1<br />
+SayInTrade no<br />
+waitx 1<br />
+SayInTrade yes<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva buy:0A 01:5<br />
+waitX 1<br />
+stackItems<br />
+move 33255,31840,6<br />
+move 33247,31840,6<br />
+move 33245,31841,7<br />
+gotoScriptLine $nlineoflabel:deposit$<br />
+#<br />
+#Withdrawing gold for new potions.<br />
+:withdrawpotion<br />
+IfTrue ($countitems:0A 01$#number&gt;#2) Goto $nlineoflabel:deposit$<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Withdrawing gold for new Potions.$<br />
+waitx 1<br />
+move 33170,31808,7<br />
+move 33173,31803,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw 225<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:buyPotion2$<br />
+After depositing any remaining gold it will go back to the top of the script where it will check for loot and potions again before it starts hunting again. However sometimes it decides to buy new potions over and over while the count is definitely higher than 2. Which should trigger hunting and not buying potions again. I know the script goes back to the top after buying the potions. This didn't make sense to me since I don't see a problem with the line there. Even if it decides to buy potions again, it should jump to the deposit line since I put this line at the start of every label concerning the potions:<br />
+<br />
+IfTrue ($countitems:0A 01$#number&gt;#2) Goto $nlineoflabel:deposit$<br />
+I don't get errors while running the script so there aren't any typo's in it. I am just confused that it doesn't recognize the last mentioned line when it uses the same item ID that does get recognized when buying the potions. Is there some command I am missing here that prevents this from happening?<br />
+<br />
+Help pls!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

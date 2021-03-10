@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="body, 0xff, open, convert.tobytey, packet, opening, nice, found, stackpos, determine, [halp], edit, appreciated, buffer[5], buffer[6], kind, corpse, program, wrong, update, containers, manually, resend, recorded, sending, isolating, converting, bytes, position, split, knowledge, convert, auto, making, programming, packetbuffer[1], 0x01, packetbuffer[0], 0x00, packetbuffer2, longtobytex, packetbuffer[3], 0x82, byte, waypoint, coordinate, 33200, looter" />
+	<meta name="description" content="So we got some nice ppl here with nice knowledge in programming ;) 
+atm, im making an auto looter. 
+When I'm trying to open a body I need to convert the position into bytes, im not really sure how i split for example the x coordinate of a waypoint (lets say 33200) 
+ 
+The packet looks like this, (opening body) 
+ 
+ 
+packetBuffer = 0x01; 
+    packetBuffer = 0x00; 
+    packetBuffer(2) = 0x82;" />
+	
+	<title> Byte converting, isolating? [HaLP] [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Byte converting, isolating? [HaLP]</div>
+<hr />
+<div class="pda"><a href="t-51055.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?51055-Byte-converting-isolating-HaLP">Byte converting, isolating? [HaLP]</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-21-2010, 19:12</div></div><div class="posttext">So we got some nice ppl here with nice knowledge in programming ;)<br />
+atm, im making an auto looter.<br />
+When I'm trying to open a body I need to convert the position into bytes, im not really sure how i split for example the x coordinate of a waypoint (lets say 33200)<br />
+<br />
+The packet looks like this, (opening body)<br />
+<br />
+<br />
+<br />
+packetBuffer[0] = 0x01;<br />
+    packetBuffer[1] = 0x00;<br />
+    packetBuffer(2) = 0x82;<br />
+    packetBuffer[3] = LongToByte(x, 1) //&lt;- is from VB, how to do something similar in C#?<br />
+    packetBuffer[4] = LongToByte(x, 2)<br />
+    packetBuffer[5] = LongToByte(y, 1)<br />
+    packetBuffer[6] = LongToByte(y, 2)<br />
+    packetBuffer[7] = z<br />
+    packetBuffer[8] = LongToByte(CorpseID, 1)<br />
+    packetBuffer[9] = LongToByte(CorpseID, 2)<br />
+    packetBuffer[10] = LongToByte(StackPos, 1) //stack pos<br />
+    packetBuffer[11] = LongToByte(BackPacks, 1) //bp pos<br />
+<br />
+<br />
+<br />
+I tried something like this, but since im not sure exactly how it work, it didnt turn out very well ;&lt;<br />
+<br />
+<br />
+        buffer[3] = Convert.ToByte(x &amp; 0xFF);<br />
+            buffer[4] = Convert.ToByte(x &gt;&gt; 8 &amp; 0xFF);<br />
+            buffer[5] = Convert.ToByte(y &gt;&gt; 16 &amp; 0xFF);<br />
+            buffer[6] = Convert.ToByte(y &gt;&gt; 24 &amp; 0xFF);<br />
+<br />
+<br />
+<br />
+any kind of help appreciated<br />
+<br />
+edit: found out by myself, <br />
+but how do i determine the stackpos of the corpse? ;&lt;<br />
+<br />
+the program is sending the right packet (i recorded it with wpe), but still the body doesnt open! If i resend it manually with wpe its opening.<br />
+What could be wrong?<br />
+do i need to update the containers or something?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">06-22-2010, 02:17</div></div><div class="posttext">Use bitconverter I cant remember how right now, if you don't solve it I can help later.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">06-22-2010, 13:35</div></div><div class="posttext">BitConverter.GetBytes(x)[1] and [2]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raoul</div><div class="date">06-22-2010, 15:42</div></div><div class="posttext">seems nice, going to desing your own bot/marco?:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-22-2010, 17:30</div></div><div class="posttext">@up,<br />
+i was working on my own bot for classictibia, 7.4 ot.<br />
+<br />
+it could:<br />
+follow waypoints,<br />
+attack creatures,<br />
+i never got the looting to work tho.<br />
+<br />
+anyway, now the server shut down after 1 year uptime ;/ so i guess ill close this project.<br />
+might release the sources if anyone is interested<br />
+<br />
+edit:<br />
+before i started making this bot i could only program simple calculators and such ;o<br />
+i've learned a lot from tpforums and on this forum aswell.<br />
+this is not a complete bot but it kinda worked xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">06-22-2010, 17:35</div></div><div class="posttext">Could be interesting to see the source. But 7.4 didn't have encryption, or did it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PlzNoKil</div><div class="date">06-22-2010, 17:40</div></div><div class="posttext">hahahahahhaha, sad to hear that classic is dead Emil, after all time of pg, training and such, even on this bot!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">pater</div><div class="date">06-22-2010, 18:06</div></div><div class="posttext">Could be interesting to see the source. But 7.4 didn't have encryption, or did it?<br />
+<br />
+didn't have encryption</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-22-2010, 18:22</div></div><div class="posttext">I started out by using karelazi's expcounter for classictibia,<br />
+since it already had mc compitability and memory writing/reading functions ready.<br />
+Then i just read a lot on tpforums and thats how it all started.<br />
+<br />
+anyway, dont blame me for sucky code plx, i just tried all different kind of things until it finally worked somehow ;o<br />
+<br />
+please dont say &quot;zomg virus&quot;. it's the packet.dll that i found somewhere on tpforums, im pretty sure the sources are there aswell<br />
+<br />
+note: it's far from complete, but ive ended the project now anyway.<br />
+<br />
+this is how it looks like:<br />
+http://yfrog.com/iybotxqj<br />
+<br />
+Uploaded with ImageShack.us (http://imageshack.us)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">06-25-2010, 14:52</div></div><div class="posttext">have cipsoft taking any action against classic tibia or what?<br />
+<br />
+If yes are all realmap based ots going to dissapear?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">06-26-2010, 14:54</div></div><div class="posttext">i personally doubt cip filed a lawsuit about his map or even server, if they would there are sooooo many other servers that would be worth suing.. classic had pretty much 100-130 players average online and some servers has 800 even<br />
+<br />
+IF their lawsuit was the reason for remere to shut down his server id say it was because of his npc logs, as they were &quot;stolen&quot; or something about 5 years ago and im guessing those are the npc logs he is using for his server. but sine remere doesnt seem to eager to respond to ANY questions conserning his shut down we will probably never know</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">06-26-2010, 20:35</div></div><div class="posttext">are you using packet.dll in C#? I thought using unmanaged DLLs with C# was VERY tedious</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">06-26-2010, 22:05</div></div><div class="posttext">not at all. a simple DllImport declaration with the correct data types is all u need</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

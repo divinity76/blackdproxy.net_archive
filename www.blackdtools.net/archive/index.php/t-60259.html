@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="profit, mintwallin, level, script, potions, depot, piece, leave, minotaur, closed, name], potion, blocked, character, minutes, [hidden, leather, items, manually, unlucky, trapped, hunting-ground, happen, brown, botting-grounds, _leave, exiva, earlier, cloth, helmet, cyclops, trophy, player, logout, dragon, start, armor, skills, hunts, check, health, great, broken, boxes, default, bothered, calculate, knights, works, knight" />
+	<meta name="description" content="This will be my first script that I publish to the public. 
+ 
+About: 
+ 
+The script start at thais depot (bottom floor) and will hunt at Mintwallin until the bot is low on cap or potions. The hunts will loop until a server save or until the player just have 15 hours stamina left (then it will logout). This is great for optimal profit and exp-gain. 
+ 
+The script contains a potion refiller and item depositer and uses mana potions and strong health potions as default.  
+It will also calculate and" />
+	
+	<title> Mintwallin [deposit + refill] [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Mintwallin [deposit + refill]</div>
+<hr />
+<div class="pda"><a href="t-60259.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60259-Mintwallin-deposit-refill">Mintwallin [deposit + refill]</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Mackiiboy</div><div class="date">04-13-2013, 21:27</div></div><div class="posttext">This will be my first script that I publish to the public.<br />
+<br />
+About:<br />
+<br />
+The script start at thais depot (bottom floor) and will hunt at Mintwallin until the bot is low on cap or potions. The hunts will loop until a server save or until the player just have 15 hours stamina left (then it will logout). This is great for optimal profit and exp-gain.<br />
+<br />
+The script contains a potion refiller and item depositer and uses mana potions and strong health potions as default. <br />
+It will also calculate and log all profit from cash and how much exp the bot has gained from a certain round in the players log.txt-file. (I have not bothered to calculate the profit from creature products since I did not bot there that much). Here is an example from my log:<br />
+<br />
+on 10-03-2013 at 05:51:09, [hidden character name] (level 66) got 6039gp profit and 126366 exp from a hunt at mintwallin. the hunt was 222 minutes long.<br />
+on 12-03-2013 at 23:02:07, [hidden character name]  (level 67) got 8879gp profit and 124519 exp from a hunt at mintwallin. the hunt was 243 minutes long.<br />
+on 14-03-2013 at 22:09:58, [hidden character name]  (level 68) got 7584gp profit and 139752 exp from a hunt at mintwallin. the hunt was 230 minutes long.<br />
+<br />
+Total average profit was about 12-17k profit per hunt with 15-45k exp per hour.<br />
+<br />
+It is also possible to make your bot to leave earlier if you write exiva _leave = 1 in the client, a useful feature if you want to leave and logout at the depot but can not be arsed to restart the script manually to force the bot to leave or leave manually. exiva _leave = 0 is on default, which means the bot will continue to loop the hunting. <br />
+<br />
+The bot will pick up items like:<br />
+<br />
+<br />
+Gold Coin<br />
+Poison Spider Shell<br />
+Bat Wing<br />
+Lump of Dirt<br />
+Centipede Leg<br />
+Ghoul Snack<br />
+Brown Piece of Cloth<br />
+Pile of Grave Earth<br />
+Life Ring<br />
+Rotten Piece of Cloth<br />
+Orc Leather<br />
+Orc Tooth<br />
+Skull Belt<br />
+Broken Helmet<br />
+Wand of inferno<br />
+Dragon Hammer<br />
+Serpent Sword<br />
+Dragon Shield<br />
+Dragonbone Staff<br />
+Cyclops Toe<br />
+Cyclops Trophy<br />
+Pelvis Bone<br />
+Minotaur Horn<br />
+Minotaur Leather<br />
+Broken Crossbow<br />
+Piece of Archer Armor<br />
+Piece of Warrior Armor<br />
+Health Potion<br />
+Minotaur Trophy<br />
+Purple Robe<br />
+Wand of Cosmic Energy<br />
+Dwarven Helmet<br />
+<br />
+Recommendations:<br />
+<br />
+It works best for knights and is great to use between level 50-70 if you have bad skills. If your knight have good skills, it will probably be possible to start as early as around level 30 or maybe even earlier.<br />
+<br />
+Benefits:<br />
+<br />
+1. Mintwallin is an awesome ground to hunt at if you want to finish a minotaur task fast. It will just take 1-2 days.<br />
+<br />
+2. Quite good exp and profit per hour to be a free account hunting-ground, at least compared to other hunting-grounds for level ~40-60.<br />
+<br />
+Drawbacks:<br />
+<br />
+1. Mintwallin is not the best place when it comes to the botting-ground. It is possible to get trapped by troughs and boxes and get killed by archers and mages if you are unlucky and meet a player that decides to kill you. It happened 3 times of my 167 hunts that I spent there (many different chars). It is not something that happen every day or week (if you not are an unlucky one), but it will likely happen sooner or later. <br />
+This occurs on other botting-grounds as well and is quite hard to fix. You will either have to create a really advanced cond-event that destroys boxes and object around you if you get trapped, or hunt at botting-grounds without any distance creatures. <br />
+<br />
+2. I have not bothered to add a door opener or a safe checkpoint for potions. If a door is closed in the ancient temple, the bot will wait till' the door is open. If the door is closed in the potion shop or if the shop is blocked, the bot will likely go to the hunting-ground without refilling. Same with the depot. If the depot is blocked, the bot can't deposit items. (All this is easy to fix, you will just have to add some script lines that checks the door coordinate to see if the door is closed, check if you have bought any potions and check if depot is blocked).<br />
+<br />
+The script:<br />
+<br />
+7742<br />
+<br />
+Do not forget to bring brown mushrooms or other food, otherwise will your profit decrease!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">maxibott</div><div class="date">04-22-2013, 21:43</div></div><div class="posttext">Dude, your script is great but in my blackd have a few bugs like<br />
+<br />
+- no attacking mobs<br />
+- no looting <br />
+- no loot for fire devil loot like a guardian shield<br />
+- no attacking dragon hatchlings<br />
+- Idiotic combat dance ( really if u r surrouned by 15 minotaurs ( 5 guards 9 common and one archer ) its idiotic to taking damage while following a archer to kill him. Its just a waste)<br />
+<br />
+i put here my changed script. But don't think that my opinion about this script is bad, its very good script but it needed a some fixes)<br />
+<br />
+<br />
+setLoot D7 0B<br />
+setMeleeKill poison spider<br />
+setLoot DD 2C<br />
+setMeleeKill snake<br />
+setMeleeKill cave rat<br />
+setMeleeKill slime<br />
+setMeleeKill bat<br />
+setLoot 06 17<br />
+setMeleeKill rotworm<br />
+setLoot DC 25<br />
+setMeleeKill centipede<br />
+setLoot 3D 28<br />
+setMeleeKill ghoul<br />
+setLoot CB 2C<br />
+setLoot 19 17<br />
+setLoot DC 2C<br />
+setLoot EC 0B<br />
+setLoot 33 28<br />
+setMeleeKill orc<br />
+setMeleeKill orc spearman<br />
+setMeleeKill orc warrior<br />
+setLoot D7 2C<br />
+setLoot D4 27<br />
+setLoot D8 2C<br />
+setLoot BD 2C<br />
+setMeleeKill dragon<br />
+setAvoidFront dragon<br />
+setLoot FF 0B<br />
+setLoot FA 0C<br />
+setLoot E1 0C<br />
+setLoot 58 0D<br />
+setLoot 06 1D<br />
+setMeleeKill cyclops<br />
+setLoot B9 25<br />
+setLoot E6 1C<br />
+setMeleeKill fire devil<br />
+setLoot 57 0D<br />
+setLoot F9 2C<br />
+setLoot FD 0B<br />
+setMeleeKill skeleton<br />
+setLoot D9 2C<br />
+setMeleeKill minotaur<br />
+setMeleeKill minotaur guard<br />
+setMeleeKill minotaur archer<br />
+setMeleeKill minotaur mage<br />
+setMeleeKill General Murius<br />
+setLoot D0 2C<br />
+setLoot F6 16<br />
+setLoot BB 2C<br />
+setLoot DB 2C<br />
+setLoot DA 2C<br />
+setLoot 0A 01<br />
+setLoot E9 1C<br />
+setLoot D1 2C<br />
+setLoot 01 0C<br />
+setLoot 44 0D<br />
+setPriority General Murius:+4<br />
+setPriority minotaur mage:+3<br />
+setPriority minotaur guard:+1<br />
+:start<br />
+setChaoticMovesON<br />
+setBot PKwarnings=0<br />
+setBot AutoEatFood=1<br />
+fastExiva _leave = 0<br />
+fastExiva _leavecap = 50<br />
+fastExiva _oldexp = $myexp$<br />
+fastExiva _moneyid = D7 0B	<br />
+fastExiva _healthpotions = 30<br />
+fastExiva _healthidcost = 100<br />
+fastExiva _healthpotionid = EC 00<br />
+fastExiva _manapotions = 80<br />
+fastExiva _manaidcost = 50<br />
+fastExiva _manapotionid = 0C 01<br />
+#OnStart<br />
+move 32341,32222,8<br />
+move 32346,32231,8<br />
+move 32347,32230,7<br />
+move 32344,32230,7<br />
+move 32344,32229,7<br />
+#Check supplies<br />
+IfTrue ($countitems:{$_healthpotionid$}$#number&lt;#30) Goto $nlineoflabel:refill$<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#80) Goto $nlineoflabel:refill$<br />
+gotoScriptLine $nlineoflabel:onEnter$<br />
+:refill<br />
+fastExiva _health = $numericalexp:{$_healthpotions$}-{$countitems:{$_healthpotionid$}$}$<br />
+fastExiva _healthcost = $numericalexp:{$_health$}*{$_healthidcost$}$<br />
+fastExiva _mana = $numericalexp:{$_manapotions$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_manaidcost$}$<br />
+waitX $randomnumber:1&gt;2$<br />
+saymessage hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade withdraw $_healthcost$<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes	<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade withdraw $_manacost$<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes	<br />
+move 32349,32215,7<br />
+move 32400,32216,7<br />
+move 32400,32220,7<br />
+sayMessage exiva &gt; 05 00 A2 67 00 00 40<br />
+waitX 5<br />
+sayInTrade hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade flask<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade trade<br />
+waitX $randomnumber:1&gt;2$<br />
+fastExiva buy:EC 00:{$_health$}<br />
+waitX $randomnumber:1&gt;2$<br />
+fastExiva buy:0C 01:{$_mana$}<br />
+waitX $randomnumber:1&gt;2$<br />
+:onEnter<br />
+move 32369,32215,7<br />
+move 32362,32172,7<br />
+move 32357,32170,7<br />
+move 32356,32171,8<br />
+move 32356,32172,8<br />
+move 32356,32174,9<br />
+move 32363,32160,9<br />
+move 32355,32143,9<br />
+move 32354,32139,9<br />
+move 32354,32138,10<br />
+move 32355,32138,11<br />
+move 32379,32153,11<br />
+move 32391,32168,11<br />
+move 32389,32184,11<br />
+move 32392,32202,11<br />
+move 32401,32214,11<br />
+move 32434,32215,11<br />
+move 32464,32215,11<br />
+move 32496,32214,11<br />
+move 32527,32199,11<br />
+move 32535,32215,11<br />
+move 32534,32216,12<br />
+move 32521,32211,12<br />
+move 32520,32211,13<br />
+move 32514,32210,13<br />
+move 32549,32199,13<br />
+move 32572,32179,13<br />
+move 32577,32178,13<br />
+move 32577,32179,14<br />
+move 32576,32158,14<br />
+move 32556,32075,14<br />
+move 32562,32109,14<br />
+move 32552,32154,14<br />
+move 32552,32155,13<br />
+move 32553,32154,13<br />
+move 32553,32155,12<br />
+move 32550,32185,12<br />
+move 32550,32186,13<br />
+move 32551,32186,13<br />
+move 32551,32185,14<br />
+move 32536,32205,14<br />
+move 32504,32160,14<br />
+move 32496,32118,14<br />
+move 32484,32096,14<br />
+move 32485,32101,14<br />
+move 32484,32101,15<br />
+move 32460,32101,15<br />
+move 32431,32100,15<br />
+move 32440,32104,15<br />
+move 32451,32100,15<br />
+fastExiva _starttime = $mystamina$<br />
+:onHunt<br />
+move 32431,32100,15<br />
+move 32389,32101,15<br />
+move 32404,32105,15<br />
+move 32404,32123,15<br />
+move 32405,32136,15<br />
+move 32418,32179,15<br />
+move 32427,32131,15<br />
+move 32418,32142,15<br />
+move 32418,32142,15<br />
+move 32425,32136,15<br />
+move 32425,32134,14<br />
+move 32422,32147,14<br />
+move 32425,32136,14<br />
+move 32425,32136,15<br />
+move 32421,32102,15<br />
+move 32440,32101,15<br />
+move 32440,32104,15<br />
+move 32439,32105,14<br />
+move 32440,32104,15<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:onLeave$<br />
+IfTrue ($countitems:{$_healthpotionid$}$#number&lt;#20) Goto $nlineoflabel:onLeave$<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#40) Goto $nlineoflabel:onLeave$<br />
+IfTrue ($_leave$#number=#1) Goto $nlineoflabel:onLeave$<br />
+fastExiva _mystaminatime = $mystamina$<br />
+IfTrue ($_mystaminatime$#number&lt;=#900) Goto $nlineoflabel:onLeave$<br />
+fastExiva _randomroute = $randomnumber:1&gt;2$<br />
+IfTrue ($_randomroute$#number=#2) Goto $nlineoflabel:random$<br />
+gotoScriptLine $nlineoflabel:onHunt$<br />
+:random<br />
+move 32462,32088,15<br />
+gotoScriptLine $nlineoflabel:onHunt$<br />
+:onLeave<br />
+fastExiva _endtime = $mystamina$<br />
+fastExiva _totaltime = $numericalexp:{$_starttime$}-{$_endtime$}$<br />
+fastExiva _totaltimeh = $numericalexp:{$_totaltime$}/60}$<br />
+fastExiva _starttime = 0<br />
+fastExiva _endtime = 0<br />
+move 32460,32101,15<br />
+move 32484,32101,15<br />
+move 32484,32102,14<br />
+move 32494,32111,14<br />
+move 32497,32153,14<br />
+move 32516,32184,14<br />
+move 32550,32200,14<br />
+move 32551,32185,14<br />
+move 32551,32186,13<br />
+move 32550,32186,13<br />
+move 32550,32187,12<br />
+move 32554,32154,12<br />
+move 32553,32154,13<br />
+move 32552,32154,14<br />
+move 32558,32088,14<br />
+move 32570,32105,14<br />
+move 32580,32141,14<br />
+move 32580,32177,14<br />
+move 32577,32179,14<br />
+move 32577,32180,13<br />
+move 32565,32183,13<br />
+move 32542,32199,13<br />
+move 32506,32210,13<br />
+move 32518,32217,13<br />
+move 32520,32211,13<br />
+move 32520,32212,12<br />
+move 32533,32215,12<br />
+move 32534,32214,11<br />
+move 32524,32198,11<br />
+move 32488,32213,11<br />
+move 32439,32215,11<br />
+move 32399,32214,11<br />
+move 32391,32179,11<br />
+move 32389,32163,11<br />
+move 32359,32153,11<br />
+move 32355,32138,11<br />
+move 32355,32139,10<br />
+move 32354,32138,10<br />
+move 32354,32139,9<br />
+move 32355,32141,9<br />
+move 32355,32163,9<br />
+move 32355,32173,9<br />
+move 32356,32172,8<br />
+move 32356,32171,8<br />
+move 32356,32169,7<br />
+move 32357,32169,7<br />
+move 32369,32176,7<br />
+move 32363,32214,7<br />
+#-- Calculation<br />
+fastExiva _cash = $countitems:D7 0B$<br />
+fastExiva _health = $numericalexp:{$_healthpotions$}-{$countitems:{$_healthpotionid$}$}$<br />
+fastExiva _healthcost = $numericalexp:{$_health$}*{$_healthidcost$}$<br />
+fastExiva _mana = $numericalexp:{$_manapotions$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_manaidcost$}$<br />
+fastExiva _totalcost = $numericalexp:{$_healthcost$}+{$_manacost$}$<br />
+fastExiva _profit = $numericalexp:{$_cash$}-{$_totalcost$}$<br />
+fastExiva &lt; B4 11 $hex-tibiastr:{$_profit$} gp profit during this round.$<br />
+#-------------------------------<br />
+#--Logging Information<br />
+#--------------------------------<br />
+fastExiva _newexp = $myexp$<br />
+fastExiva _roundexp = $numericalexp:{$_newexp$}-{$_oldexp$}$<br />
+fastExiva &lt; B4 11 $hex-tibiastr:{$_roundexp$} exp this round.$<br />
+fastExiva _oldexp = 0<br />
+fastExiva _newexp = 0<br />
+fastExiva _mydate = $date$<br />
+fastExiva _mytime = $time$<br />
+fastExiva _mychar = $charactername$<br />
+fastExiva _mylevel = $mylevel$<br />
+saymessage exiva log On $_mydate$ at $_mytime$, $_mychar$ (level $_mylevel$) got $_profit$gp profit and $_roundexp$ exp from a hunt at Mintwallin. the hunt was $_totaltime$ minutes long.<br />
+#---<br />
+move 32344,32229,7<br />
+#-- Deposit cash<br />
+waitX $randomnumber:1&gt;2$<br />
+saymessage hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade deposit all<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes	<br />
+#-- Deposit loot<br />
+move 32346,32230,7<br />
+move 32347,32232,8<br />
+move 32345,32226,8<br />
+move 32341,32222,8<br />
+putLootOnDepot<br />
+resetLoot<br />
+fastExiva _mystaminatime = $mystamina$<br />
+IfTrue ($_leave$#number=#1) Goto $nlineoflabel:end$<br />
+IfTrue ($_mystaminatime$#number&gt;=#900) gotoScriptLine 0<br />
+closeConnection<br />
+:end</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mackiiboy</div><div class="date">04-24-2013, 12:39</div></div><div class="posttext">Thanks for your improvements! <br />
+<br />
+I have never had any issues with attacking monster nor looting, so I do not see where the problem is. Dragon Hatchlings were added to the Ancient Temple after I created uploaded the script, so it was nothing I could do anything about. Guardian Shield is something I totally missed, thanks for pointing out that.<br />
+<br />
+The priority system is always something that can be discussed. I have not done any deep research or experiments, so you are probably totally right on that point. The optimal thing would be changing the priority settings several times and analyze which one that gives the best output.<br />
+<br />
+Good work!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

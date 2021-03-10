@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="commands, number, condition, cavebot, exana, tutuorials, action, questions, tutorials, leave, explained, check, auto-repeat, script, walkloop, corrections, gotoscriptline, bored, $nlineoflabelwalkloop$, answered, stealthring, section, blackd, tibia, $hex-equiped-itemring_slot$, exiva, $statusbitpoision$, poison, changed, ring_slot, id_of_ring_here, id_of_ring, gotta, remember" />
+	<meta name="description" content="I have few questions about BlackD for 7.6 : 
+ 
+-How to make auto-stealth ring every 10mins 
+-How to make auto 'exana pox' after step on poison field 
+-How to make auto-repeat for mine cave route 
+ 
+??? 
+ 
+ 
+Thanks for help :)" />
+	
+	<title> Some questions about blackd on tibia 7.6 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Some questions about blackd on tibia 7.6</div>
+<hr />
+<div class="pda"><a href="t-56734.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56734-Some-questions-about-blackd-on-tibia-7-6">Some questions about blackd on tibia 7.6</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">achuke</div><div class="date">11-22-2011, 00:37</div></div><div class="posttext">I have few questions about BlackD for 7.6 :<br />
+<br />
+-How to make auto-stealth ring every 10mins<br />
+-How to make auto 'exana pox' after step on poison field<br />
+-How to make auto-repeat for mine cave route<br />
+<br />
+???<br />
+<br />
+<br />
+Thanks for help :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-23-2012, 06:34</div></div><div class="posttext">you probably wont get any help because: these questions should already be answered in the Tutorials section.<br />
+auto stealthring: condition $hex-equiped-item:RING_SLOT$  = 00 00 <br />
+Action: exiva #ID_OF_RING_HERE<br />
+<br />
+something like that, anyway. and i know the RING_SLOT ID, and i dont know the ID_OF_RING, those you gotta find yourself, read the tutuorials.<br />
+<br />
+auto exana pox: condition: $statusbit:POISION$ = 1<br />
+action: exana pox<br />
+<br />
+(and POISON must be changed with a number, and i dont remember what number. again, check the tutorials.)<br />
+<br />
+auto-repeat cavebot: <br />
+add this to your cavebot script<br />
+:walkloop<br />
+(move commands here)<br />
+(move commands here)<br />
+(move commands here)<br />
+(move commands here)<br />
+(more move commands)<br />
+gotoScriptLine $nlineoflabel:walkloop$<br />
+<br />
+something like that. anyway, all this SHOULD be explained in the tutuorials..<br />
+(any bored mods feel free to make corrections to this post btw :p just leave a note if u do)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

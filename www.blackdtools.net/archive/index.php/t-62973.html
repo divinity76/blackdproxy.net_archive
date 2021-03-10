@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="bytes, element, skill, pointer, number, structure, adrskills_axe, current, found, limited, points, paths, progress, tibia, cheat, engine, obtain, initial, follow, address, boolean, weird, start, remaining, minus, select, results, skills, filter, times, repeat, similar, health, stats, basic, reach, adrskills_axe_current, obtained, memory, adrskills_axe_base, adrskills_axe_progress, pointers, p0,p1, guess, internal, including, percent, represeting, bonuses, effective" />
+	<meta name="description" content="Ok, this is the most weird structure I ever saw, but I finally found a way to deal with it. 
+First of all, lets understand an element of this structure: 
+P0 - Pointer - 4 BYTES - Points to other element 
+P1 - Pointer - 4 BYTES - Points to other element 
+P2 - Pointer - 4 BYTES - Points to other element 
+B1 - Boolean - 1 BYTE (limited to only 0 or 1) 
+B2 - Boolean - 1 BYTE (limited to only 0 or 1) 
+I1 - Number - 2 BYTES 
+L1 - Number - 4 BYTES : The internal ID of the skill 
+S0 - Number - 2 BYTES" />
+	
+	<title> Tibia 11 - About the structure of the SKILLS in memory [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - About the structure of the SKILLS in memory</div>
+<hr />
+<div class="pda"><a href="t-62973.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62973-Tibia-11-About-the-structure-of-the-SKILLS-in-memory">Tibia 11 - About the structure of the SKILLS in memory</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-20-2016, 13:55</div></div><div class="posttext">Ok, this is the most weird structure I ever saw, but I finally found a way to deal with it.<br />
+First of all, lets understand an element of this structure:<br />
+P0 - Pointer - 4 BYTES - Points to other element<br />
+P1 - Pointer - 4 BYTES - Points to other element<br />
+P2 - Pointer - 4 BYTES - Points to other element<br />
+B1 - Boolean - 1 BYTE (limited to only 0 or 1)<br />
+B2 - Boolean - 1 BYTE (limited to only 0 or 1)<br />
+I1 - Number - 2 BYTES<br />
+L1 - Number - 4 BYTES : The internal ID of the skill<br />
+S0 - Number - 2 BYTES : Your current effective skill including all skill bonuses<br />
+S1 - Number - 2 BYTES : Your base skill<br />
+PC - Number - 1 BYTE (represeting a progress percent so it is limited to a value from 0 to 99)<br />
+<br />
+Well, I have no idea why they need a 3 pointers structure, and I don't know why they use P0,P1 OR P2 in each case to follow the path to the next skill. I guess the code will look terrible, but this is what we have in Tibia 11 and we need to deal with it so I have investigated it and I found it follows an static pointer map. I attach it below:<br />
+<br />
+https://blackdtools.net/tibia11skillmap.jpg<br />
+<br />
+How to find the initial pointer? <br />
+Well, you only need to find AXE element, by searching in Cheat Engine an array containing 5 bytes:<br />
+b0 b1 : your current axe skill<br />
+b2 b3 : your base axe skill (the same if you are not wearing axe ring)<br />
+b4 : your current axe progress (100 minus your &quot;remaining&quot; % to skil up)<br />
+Having an axe ring will help yo to select the right one in case you obtain several results.<br />
+After you found the address of such bytes then you can see the start of the element 20 bytes before (-14):<br />
+adrSkills_AXE = (obtained address - HEX 14)<br />
+adrSkills_AXE_Current = adrSkills_AXE + HEX 14<br />
+adrSkills_AXE_Base = adrSkills_AXE + HEX 16<br />
+adrSkills_AXE_Progress = adrSkills_AXE + HEX 18<br />
+<br />
+Well, now you that we have adrSkills_AXE, we only need to follow its P1 pointer and we reach the INITIAL element of this weird structure. Then you can use Cheat Engine pointer scan to obtain paths and repeat 1-2 times to filter the paths. The good path should be similar to the paths of the basic stats (health, mana, etc)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-20-2016, 15:36</div></div><div class="posttext">Having this map it is easy to build the paths to each skill:<br />
+<br />
+adrSkills_CollectionStart=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c<br />
+adrSkills_AXE_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 14<br />
+adrSkills_AXE_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 16<br />
+adrSkills_AXE_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 18<br />
+adrSkills_CLUB_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 14<br />
+adrSkills_CLUB_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 16<br />
+adrSkills_CLUB_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 18<br />
+adrSkills_SHIELDING_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 14<br />
+adrSkills_SHIELDING_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 16<br />
+adrSkills_SHIELDING_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 18<br />
+adrSkills_MAGICLEVEL_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 0 &gt; 14<br />
+adrSkills_MAGICLEVEL_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 0 &gt; 16<br />
+adrSkills_MAGICLEVEL_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 0 &gt; 18<br />
+adrSkills_FISHING_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 8 &gt; 0 &gt; 14<br />
+adrSkills_FISHING_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 8 &gt; 0 &gt; 16<br />
+adrSkills_FISHING_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 8 &gt; 0 &gt; 18<br />
+adrSkills_FIST_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 8 &gt; 0 &gt; 0 &gt; 14<br />
+adrSkills_FIST_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 8 &gt; 0 &gt; 0 &gt; 16<br />
+adrSkills_FIST_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 8 &gt; 0 &gt; 0 &gt; 18<br />
+adrSkills_SWORD_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 8 &gt; 14<br />
+adrSkills_SWORD_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 8 &gt; 16<br />
+adrSkills_SWORD_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 8 &gt; 18<br />
+adrSkills_DISTANCE_Current=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 8 &gt; 14<br />
+adrSkills_DISTANCE_Base=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 8 &gt; 16<br />
+adrSkills_DISTANCE_Progress=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 60 &gt; 9c &gt; 4 &gt; 0 &gt; 0 &gt; 8 &gt; 18</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

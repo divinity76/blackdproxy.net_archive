@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="potion, 1c$number, iftrue, waste, pally, makes, pastes, copy-paste, $countitems2, $countitems, messing, script, smieleys, automana50%, takes, manas, bldmx, north, potions, emergency, gran65%, health, exura, royal, spear, works" />
+	<meta name="description" content="Greetings! 
+ 
+This is yet another of my scripts, I've tested it for a while now so it should be fine!  
+ 
+What it does? 
+This script will hunt in the main floor north of Port Hope depot. 
+When full capacity it will go to town deposit the money and refill manas/healths to then continue hunting.  
+It was made for a Knight so it only buys 20 mana potions and 20 health potions. It goes back to depot if at any time it has less than 5 of any. 
+Make sure your character can handle 2-3 slimes at the" />
+	
+	<title> 24. Port Hope North - by BldMx [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  24. Port Hope North - by BldMx</div>
+<hr />
+<div class="pda"><a href="t-54441.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54441-24-Port-Hope-North-by-BldMx">24. Port Hope North - by BldMx</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">02-22-2011, 04:48</div></div><div class="posttext">Greetings!<br />
+<br />
+This is yet another of my scripts, I've tested it for a while now so it should be fine! <br />
+<br />
+What it does?<br />
+This script will hunt in the main floor north of Port Hope depot.<br />
+When full capacity it will go to town deposit the money and refill manas/healths to then continue hunting. <br />
+It was made for a Knight so it only buys 20 mana potions and 20 health potions. It goes back to depot if at any time it has less than 5 of any.<br />
+Make sure your character can handle 2-3 slimes at the same time (hopefully not for long) and terror birds.<br />
+If there is no one in the spawn you should get good exp/h. (Haven't been able to test it alone).<br />
+<br />
+This script has been remade for version 8.71 and using the latest BlackdProxy. Please not that when new updates come I will make sure to update and verify that no hex packets have changed to make sure it is safe and I will update the version number. Use at your one risk if you are using a newer Tibia version.<br />
+<br />
+Feedback<br />
+All feedback is welcomed, including ways to make it better.<br />
+If any errors, they will be fixed as soon as reported.<br />
+<br />
+The file:<br />
+6942</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">assie</div><div class="date">02-23-2011, 16:56</div></div><div class="posttext">Very nice script i love it.<br />
+<br />
+using it on my level 35 knight, getting constant 20k+ exp/h.<br />
+<br />
+its working flawless.<br />
+<br />
+<br />
+id hope u have a paladin version for it, that would be so awesome<br />
+<br />
+Kind regards<br />
+<br />
+assie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipereall</div><div class="date">03-19-2011, 20:41</div></div><div class="posttext">I really liked this script, but i made some modifications to run in my paladin and in my sorcerer.<br />
+<br />
+Modifications just for the sorcerer:<br />
+<br />
+<br />
+Added exori flam for slimes and terrorbirds.<br />
+For sorcerer it buy 100 mana pots.<br />
+<br />
+Modifications just for the paladin:<br />
+<br />
+<br />
+Deposit the itens first (i removed the gold from loot before deposit).<br />
+Added a royal spear refiller.<br />
+Added exori con for slimes and terrorbirds<br />
+For paladin it buy 70 mana pots.<br />
+<br />
+For the paladin i was forced to put the bot to deposit itens before buy royal spears becouse it buy spears based in capacity, so if the char didnt deposit the itens first will have less capacity and buy less royal spears.<br />
+<br />
+Modifications in priority for both:<br />
+<br />
+<br />
+setPriority terror bird:+1<br />
+setPriority slime:+2<br />
+<br />
+Modifications in loot for both:<br />
+<br />
+<br />
+#Cobra Tongue<br />
+setLoot A2 25<br />
+#Piece of Crocodile Leather<br />
+setLoot 27 28<br />
+#Deer Trophy<br />
+setLoot E5 1C<br />
+#Seeds<br />
+setLoot 87 02<br />
+#Centipede Legs<br />
+setLoot 3D 28<br />
+#Gold<br />
+setLoot D7 0B<br />
+#Feather Headdress<br />
+setLoot 4E 0D<br />
+#Crocodile Boots<br />
+setLoot E4 0D<br />
+#Health Potion<br />
+setLoot 0A 01<br />
+<br />
+This itens are can be looted here too, but i dont have the ids, if i get i post them here:<br />
+<br />
+<br />
+#Terrorbird Beak<br />
+#Colourful Feather<br />
+#Swamp Grass<br />
+#Troll Green</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-30-2011, 11:15</div></div><div class="posttext">@ up<br />
+Thanks!! I will make the changes suggested.<br />
+How much exp/hr were u getting?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">corrupt</div><div class="date">05-13-2011, 06:43</div></div><div class="posttext">30~ ek, with shit skills, decent items, was getting around<br />
+exp  - 19-22k an hour.<br />
+gold  - havent had enough time to test yet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">urcoco</div><div class="date">05-16-2011, 18:21</div></div><div class="posttext">It works pretty nice, but theres just one problem i dont know why it doesnt open all the corpses and let a lot of money on the groun, what can i change so it opens all the monsters it kills???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Batutinha</div><div class="date">10-05-2011, 10:40</div></div><div class="posttext">When I run it 2 start says that there is no way ...<br />
+I'm running at PH depot first floor ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Batutinha</div><div class="date">10-05-2011, 10:42</div></div><div class="posttext">Nvm .. Parcel blocking the way :) ty</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alexander</div><div class="date">01-21-2012, 14:06</div></div><div class="posttext">dont know why but it does not refill the mana and health potions ;/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">r0bzt3r</div><div class="date">01-23-2012, 06:04</div></div><div class="posttext">could you add loot medicine pouches from swamp trolls please</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">vacti</div><div class="date">03-17-2012, 03:20</div></div><div class="posttext">Can someone add the paladin modification, please?:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">vacti</div><div class="date">03-17-2012, 16:29</div></div><div class="posttext">I did it for my own, it takes 40 manas and 10 potions (potion for emergency) and buys royal spear, I hope it works fine!<br />
+Heal with exura gran(65%), automana(50%), and on 30% health potion.<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+setVeryFriendly<br />
+setMeleeKill slime<br />
+setMeleeKill filth toad<br />
+setMeleeKill bug<br />
+setMeleeKill terror bird<br />
+setMeleeKill cobra<br />
+setMeleeKill crocodile<br />
+setMeleeKill centipede<br />
+setMeleeKill swamp troll<br />
+setMeleeKill cave rat<br />
+setMeleeKill snake<br />
+setMeleeKill smuggler<br />
+setMeleeKill wild warrior<br />
+setPriority filth toad:+1<br />
+setPriority terror bird:+1<br />
+setPriority slime:+2 <br />
+#Cobra Tongue<br />
+setLoot A2 25<br />
+#Piece of Crocodile Leather<br />
+setLoot 27 28<br />
+#Deer Trophy<br />
+setLoot E5 1C<br />
+#Seeds<br />
+setLoot 87 02<br />
+#Centipede Legs<br />
+setLoot 3D 28<br />
+#Gold<br />
+setLoot D7 0B<br />
+#Feather Headdress<br />
+setLoot 4E 0D<br />
+#Crocodile Boots<br />
+setLoot E4 0D<br />
+setLoot F9 0D<br />
+setLoot 1D 01<br />
+:start<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:goDepositandRefill$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:goDepositandRefill$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goDepositandRefill$<br />
+move 32599,32708,7<br />
+move 32587,32704,7<br />
+move 32577,32701,7<br />
+move 32574,32687,7<br />
+move 32595,32676,7<br />
+move 32611,32684,7<br />
+move 32639,32652,7<br />
+move 32645,32666,7<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:goDepositandRefill$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:goDepositandRefill$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goDepositandRefill$<br />
+move 32643,32635,7<br />
+move 32627,32617,7<br />
+move 32653,32618,7<br />
+move 32642,32601,7<br />
+move 32674,32609,7<br />
+move 32695,32600,7<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:goDepositandRefill$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:goDepositandRefill$<br />
+IfTrue ($countitems:0A 01$#number&lt;#5) Goto $nlineoflabel:goDepositandRefill$<br />
+move 32710,32587,7<br />
+move 32704,32618,7<br />
+move 32677,32638,7<br />
+move 32680,32650,7<br />
+move 32680,32654,7<br />
+move 32655,32672,7<br />
+move 32649,32680,7<br />
+gotoScriptLine $nlineoflabel:start$<br />
+#DEPOSIT AND REFILL<br />
+:goDepositandRefill<br />
+fastExiva &lt; B4 10 $hex-tibiastr:Going to deposit and refill.$<br />
+move 32629,32751,7<br />
+move 32629,32748,6<br />
+move 32632,32739,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade balance<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+gotoScriptLine $nlineoflabel:goDropLoot$<br />
+:buySpear<br />
+fastExiva &lt; B4 10 $hex-tibiastr:Now going to buy spear.$<br />
+move 32632,32739,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2500$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*15$<br />
+sayInTrade withdraw $_spearcost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32632,32746,6<br />
+move 32632,32747,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A D2 1C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 2<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:buyManas<br />
+fastExiva &lt; B4 10 $hex-tibiastr:Now going to buy manas.$<br />
+fastExiva _mananeeded = $numericalexp:40-{$countitems:0C 01$}$<br />
+fastExiva _costmana = $numericalexp:50*{$_mananeeded$}$<br />
+move 32632,32739,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costmana$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+move 32630,32742,6<br />
+move 32630,32741,5<br />
+move 32624,32740,5<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mananeeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32630,32741,5<br />
+move 32630,32742,6<br />
+move 32632,32739,6<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:buySpear$<br />
+:buyHealth<br />
+fastExiva _healthneeded = $numericalexp:10-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+move 32632,32739,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+move 32630,32742,6<br />
+move 32630,32741,5<br />
+move 32624,32740,5<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32630,32741,5<br />
+move 32630,32742,6<br />
+move 32632,32739,6<br />
+gotoScriptLine $nlineoflabel:buySpear$<br />
+:goDropLoot<br />
+fastExiva &lt; B4 10 $hex-tibiastr:Now going to drop loot.$<br />
+move 32623,32740,7<br />
+putLootOnDepot<br />
+move 32629,32751,7<br />
+move 32629,32748,6<br />
+IfTrue ($countitems:0C 01$#number&lt;#40) Goto $nlineoflabel:buyManas$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:buySpear$<br />
+<br />
+It seems to work fine with my 30 pally buy it makes some potion waste, maybe 35 better.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-18-2012, 10:17</div></div><div class="posttext">This doesn't seem to work...Tried starting script but nothing happen's.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sugarhunt</div><div class="date">07-25-2012, 14:35</div></div><div class="posttext">I'm a little late but i'm trying this right now with my lvl 27 NORMAL knight and i have P-Set and crimson sword.<br />
+So far, seems to work, thanks for the awesome script!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cleto24</div><div class="date">08-13-2012, 04:31</div></div><div class="posttext">Using perfectly with ek lvl 49 dsm, boh, zao legs helmet, epee, vampire shield skills 74/68</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">08-13-2012, 05:22</div></div><div class="posttext">Using perfectly with ek lvl 49 dsm, boh, zao legs helmet, epee, vampire shield skills 74/68<br />
+<br />
+what exp/h are you getting?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ponnee</div><div class="date">09-02-2012, 12:04</div></div><div class="posttext">It do not work for me. The bot never start its just want to deposit and refill all the time never start hunting!<br />
+Someone know whats wrong?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cosme</div><div class="date">09-05-2012, 17:19</div></div><div class="posttext">i have the same problem ponnee :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Reynolds9</div><div class="date">10-04-2012, 19:11</div></div><div class="posttext">Hey, Little heads up on the Script to the Author, and Users.<br />
+<br />
+You need to add Filth Toad to SetMeleeKill, or your alarms will go crazy. You also need to add Crocodile Leathers (ID 27 28). They're about 1oz each and fetch for some good money as you get plenty. Medicine Pouches are a good money spinner too, (ID E5 30)<br />
+<br />
+To users..<br />
+Great script, i used it on a 37 knight with 81/74, Golden armor, Knight legs, tower shield, BoH, warrior Helmet, Fire Sword, And P-ammy.<br />
+Using BoH and An easily obtainable Donkey mount, racks up some decent exp/cash.<br />
+<br />
+After 3 hours 57 minutes i was on 32094 Exp/H<br />
+And gained 127233 exp.<br />
+This was with 2 hours of 50% exp added on.<br />
+<br />
+Loot/Waste?<br />
+17:09 Using one of 3979 gold coins...<br />
+17:09 You see 84 pieces of crocodile leather.<br />
+They weigh 87.36 oz.<br />
+Used 17 Mana potions, So pretty good.<br />
+<br />
+I had my Healing at 50% Use Health Potion, at 70% Use Exura Ico, At 30% Mana use Mana potion.<br />
+Also Deleted the Meat from the loot list as its really not needed. I set my Runemaker to Auto Eat food and When no runes use Exura Ico at full mana, This kept me perfectly tuned for running around.<br />
+<br />
+I also only took 3 backpacks, you should be aware that 1 backpack full of gold, is 2000 gold, weighing 200 a pop. That left me with around 50 oz to spare, which is perfect for empty vials, and creature products..<br />
+<br />
+Hopefully this info helps you all as it's the sort of information i seek when looking at scripts. <br />
+<br />
+Thanks and happy botting everyone.<br />
+<br />
+P.S Thanks for adding the Paladin edits, Will be sure to try that out when my paladin has reached 90 Distance. Level 9 ATM so stay tuned.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">moontrix</div><div class="date">10-24-2012, 00:58</div></div><div class="posttext">hey @felipereall can you post this mage script for me? thank you &lt;3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">chillmode</div><div class="date">12-04-2012, 23:33</div></div><div class="posttext">I did it for my own, it takes 40 manas and 10 potions (potion for emergency) and buys royal spear, I hope it works fine!<br />
+Heal with exura gran(65%), automana(50%), and on 30% health potion.<br />
+<br />
+<br />
+<br />
+It seems to work fine with my 30 pally buy it makes some potion waste, maybe 35 better.<br />
+<br />
+<br />
+The smieleys are messing up the script, when u copy-paste it. It pastes: <br />
+IfTrue ($countitems2 1C$#number&lt;=#8) Goto $nlineoflabel:goDepositandRefill$ it should be ---&gt; <br />
+IfTrue ($countitems: D2 1C$#number&lt;=#8) Goto $nlineoflabel:goDepositandRefill$ W/O the space between the : and the D.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

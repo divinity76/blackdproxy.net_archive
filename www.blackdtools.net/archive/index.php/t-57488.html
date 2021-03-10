@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="potions, health, turtle, lootlist, pearl, white, shells, joker, malmis, guard, cormaya, script, change, dwarf" />
+	<meta name="description" content="I test on ek 50 lv 75/75 skills. 25k exp/h 5-7k profit. On 1h collect loot you must get 7 backpacks to loot and 40-70 mf to heal. 
+http://img718.imageshack.us/img718/4197/20755870.jpg 
+We start in Cormaya. You must go in section 4 on the map and enter the underground.  
+When you in cave you can start bot.  
+http://img607.imageshack.us/img607/6103/cormaya.png 
+Drop loot  
+http://img560.imageshack.us/img560/7710/cormayadwarfcave1.png 
+ 
+Code: 
+#Created by Joker" />
+	
+	<title> Dwarf Guard Cormaya [EK] by Joker [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Dwarf Guard Cormaya [EK] by Joker</div>
+<hr />
+<div class="pda"><a href="t-57488.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57488-Dwarf-Guard-Cormaya-EK-by-Joker">Dwarf Guard Cormaya [EK] by Joker</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Joker</div><div class="date">03-12-2012, 22:27</div></div><div class="posttext">I test on ek 50 lv 75/75 skills. 25k exp/h 5-7k profit. On 1h collect loot you must get 7 backpacks to loot and 40-70 mf to heal.<br />
+http://img718.imageshack.us/img718/4197/20755870.jpg<br />
+We start in Cormaya. You must go in section 4 on the map and enter the underground. <br />
+When you in cave you can start bot. <br />
+http://img607.imageshack.us/img607/6103/cormaya.png<br />
+Drop loot <br />
+http://img560.imageshack.us/img560/7710/cormayadwarfcave1.png<br />
+<br />
+Code:<br />
+#Created by Joker<br />
+setMeleeKill dwarf<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf geomancer<br />
+setPriority dwarf:-1<br />
+setPriority dwarf soldier:+1<br />
+setPriority dwarf guard:+2<br />
+setPriority dwarf geomancer:+3<br />
+#gold<br />
+setLoot D7 0B<br />
+#geomancer's robe<br />
+setLoot C2 2C<br />
+#battle shield<br />
+setLoot 55 0D<br />
+#double axe<br />
+setLoot CB 0C<br />
+#hatchet<br />
+setLoot CC 0C<br />
+#scale armor<br />
+setLoot 31 0D<br />
+#battle hammer<br />
+setLoot E9 0C<br />
+#crossbow<br />
+setLoot 15 0D<br />
+#dwarven shield<br />
+setLoot 61 0D<br />
+#axe<br />
+setLoot CA 0C<br />
+#soldier helmet<br />
+setLoot 2F 0D<br />
+#empty vials<br />
+SetLoot 1D 01<br />
+#steel helmet<br />
+SetLoot 17 0D<br />
+#white mushrooms<br />
+SetLoot 8B 0E<br />
+#geomancer's staff<br />
+SetLoot C7 2C<br />
+#Battle axe<br />
+SetLoot C2 0C<br />
+#chain armor<br />
+SetLoot 1E 0D<br />
+#iron ore<br />
+SetLoot F8 16 <br />
+#small saphire<br />
+SetLoot D5 0B <br />
+move 33358,32029,8<br />
+move 33358,32046,8<br />
+move 33358,32061,8<br />
+move 33346,32048,8<br />
+move 33333,32048,8<br />
+move 33323,32045,8<br />
+move 33324,32032,8<br />
+move 33335,32021,8<br />
+move 33323,32028,9<br />
+move 33329,32017,9<br />
+move 33329,32035,9<br />
+move 33317,32040,9<br />
+move 33316,32040,9<br />
+move 33318,32040,10<br />
+move 33323,32033,10<br />
+move 33324,32023,10<br />
+move 33330,32030,10<br />
+move 33335,32028,10<br />
+move 33336,32028,10<br />
+move 33335,32028,11<br />
+move 33334,32027,11<br />
+move 33326,32031,11<br />
+move 33335,32028,11<br />
+move 33336,32028,11<br />
+move 33317,32040,10<br />
+move 33316,32040,10<br />
+move 33329,32039,9<br />
+move 33324,32026,9<br />
+move 33322,32029,9<br />
+move 33322,32030,9<br />
+move 33322,32031,8<br />
+move 33323,32047,8<br />
+move 33308,32047,8<br />
+move 33308,32033,8<br />
+move 33308,32018,8<br />
+move 33310,32048,8<br />
+move 33333,32049,8<br />
+move 33333,32059,8<br />
+move 33311,32066,8<br />
+dropLootOnGround 33310,32065,8<br />
+move 33333,32049,8<br />
+move 33342,32048,8<br />
+move 33357,32047,8<br />
+move 33358,32064,8<br />
+move 33358,32030,8<br />
+gotoScriptLine 44<br />
+Please comment :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-13-2012, 11:59</div></div><div class="posttext">Didn't know that place existed, haha. :p I'll go explore, maybe try your script. But I noticed a few things... sorry. :p<br />
+<br />
+First some lootitems are missing, atleast I'd want to loot them:<br />
+#Terra Boots<br />
+setLoot 2D 03<br />
+#Clerical Mace<br />
+setLoot EF 0C<br />
+#Small Amethyst<br />
+setLoot D9 0B<br />
+#Dwarven Ring<br />
+setLoot 19 0C<br />
+#Axe Ring<br />
+setLoot 14 0C<br />
+<br />
+Also the script drops all loot (including sapphires, gold and iron ore) on the ground. You fix this by using resetLoot, list the items you want to drop, dropLootOnGround, then list the rest of the loot.<br />
+It also drops the vials and loots white mushrooms... Frankly as a knight the cap of empty vials is negliable and you'll only be annoyed the bot drops the vials on all your other loot, as I don't know the cave I couldn't add a seperate vialdrop. And since most people don't loot food then use runemaker too eat it but only eat from corpses you shouldn't add food items to the loot, but maybe you want to save the ones you don't eat or something. :p<br />
+Also you don't really need to put dwarf on &quot;-1&quot; priority since all other monsters in have higher priorities.<br />
+Just some tips.<br />
+<br />
+Here's the script with updated lootdrop and lootitems:<br />
+<br />
+#Created by Joker, extra lootitems and edited drop by Malmis<br />
+setMeleeKill dwarf<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf geomancer<br />
+setPriority dwarf:-1<br />
+setPriority dwarf soldier:+1<br />
+setPriority dwarf guard:+2<br />
+setPriority dwarf geomancer:+3<br />
+#gold<br />
+setLoot D7 0B<br />
+#geomancer's robe<br />
+setLoot C2 2C<br />
+#battle shield<br />
+setLoot 55 0D<br />
+#double axe<br />
+setLoot CB 0C<br />
+#hatchet<br />
+setLoot CC 0C<br />
+#scale armor<br />
+setLoot 31 0D<br />
+#battle hammer<br />
+setLoot E9 0C<br />
+#crossbow<br />
+setLoot 15 0D<br />
+#dwarven shield<br />
+setLoot 61 0D<br />
+#axe<br />
+setLoot CA 0C<br />
+#soldier helmet<br />
+setLoot 2F 0D<br />
+#steel helmet<br />
+SetLoot 17 0D<br />
+#geomancer's staff<br />
+SetLoot C7 2C<br />
+#Battle axe<br />
+SetLoot C2 0C<br />
+#chain armor<br />
+SetLoot 1E 0D<br />
+#iron ore<br />
+SetLoot F8 16 <br />
+#small saphire<br />
+SetLoot D5 0B <br />
+#<br />
+#Added by Malmis<br />
+#<br />
+#Terra Boots<br />
+setLoot 2D 03<br />
+#Clerical Mace<br />
+setLoot EF 0C<br />
+#Small Amethyst<br />
+setLoot D9 0B<br />
+#Dwarven Ring<br />
+setLoot 19 0C<br />
+#Axe Ring<br />
+setLoot 14 0C<br />
+move 33358,32029,8<br />
+move 33358,32046,8<br />
+move 33358,32061,8<br />
+move 33346,32048,8<br />
+move 33333,32048,8<br />
+move 33323,32045,8<br />
+move 33324,32032,8<br />
+move 33335,32021,8<br />
+move 33323,32028,9<br />
+move 33329,32017,9<br />
+move 33329,32035,9<br />
+move 33317,32040,9<br />
+move 33316,32040,9<br />
+move 33318,32040,10<br />
+move 33323,32033,10<br />
+move 33324,32023,10<br />
+move 33330,32030,10<br />
+move 33335,32028,10<br />
+move 33336,32028,10<br />
+move 33335,32028,11<br />
+move 33334,32027,11<br />
+move 33326,32031,11<br />
+move 33335,32028,11<br />
+move 33336,32028,11<br />
+move 33317,32040,10<br />
+move 33316,32040,10<br />
+move 33329,32039,9<br />
+move 33324,32026,9<br />
+move 33322,32029,9<br />
+move 33322,32030,9<br />
+move 33322,32031,8<br />
+move 33323,32047,8<br />
+move 33308,32047,8<br />
+move 33308,32033,8<br />
+move 33308,32018,8<br />
+move 33310,32048,8<br />
+move 33333,32049,8<br />
+move 33333,32059,8<br />
+move 33311,32066,8<br />
+resetLoot<br />
+#battle shield<br />
+setLoot 55 0D<br />
+#double axe<br />
+setLoot CB 0C<br />
+#hatchet<br />
+setLoot CC 0C<br />
+#scale armor<br />
+setLoot 31 0D<br />
+#battle hammer<br />
+setLoot E9 0C<br />
+#crossbow<br />
+setLoot 15 0D<br />
+#dwarven shield<br />
+setLoot 61 0D<br />
+#axe<br />
+setLoot CA 0C<br />
+#soldier helmet<br />
+setLoot 2F 0D<br />
+#steel helmet<br />
+SetLoot 17 0D<br />
+#Battle axe<br />
+SetLoot C2 0C<br />
+#chain armor<br />
+SetLoot 1E 0D<br />
+#Clerical Mace<br />
+setLoot EF 0C<br />
+dropLootOnGround 33310,32065,8<br />
+#gold<br />
+setLoot D7 0B<br />
+#geomancer's robe<br />
+setLoot C2 2C<br />
+#geomancer's staff<br />
+SetLoot C7 2C<br />
+#Terra Boots<br />
+setLoot 2D 03<br />
+#Small Amethyst<br />
+setLoot D9 0B<br />
+#Dwarven Ring<br />
+setLoot 19 0C<br />
+#Axe Ring<br />
+setLoot 14 0C<br />
+#iron ore<br />
+SetLoot F8 16 <br />
+#small saphire<br />
+SetLoot D5 0B <br />
+move 33333,32049,8<br />
+move 33342,32048,8<br />
+move 33357,32047,8<br />
+move 33358,32064,8<br />
+move 33358,32030,8<br />
+gotoScriptLine 0<br />
+<br />
+I sincerely hope you don't mind Joker.<br />
+EDIT: And please post your scripts as attachments or in code-tags, it gets so long. :(</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

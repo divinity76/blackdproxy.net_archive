@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fishx, gotoscriptline, simplescript, saymessage, mushrooms, exiva, excess, trainer, remember, slime, auto-fishing, needed, ham/brown" />
+	<meta name="description" content="I want to auto-fish with following slime trainer. How can I do? 
+ 
+---- 
+ 
+onGMpause 
+SetMaxAttackTimeMs 2000000 
+setFriendly 
+setNoFollow 
+setMeleeKill Slime 
+gotoScriptLine 0" />
+	
+	<title> How can I add auto-fishing to this slime trainer? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  How can I add auto-fishing to this slime trainer?</div>
+<hr />
+<div class="pda"><a href="t-59762.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59762-How-can-I-add-auto-fishing-to-this-slime-trainer">How can I add auto-fishing to this slime trainer?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">lolcp</div><div class="date">11-30-2012, 10:36</div></div><div class="posttext">I want to auto-fish with following slime trainer. How can I do?<br />
+<br />
+----<br />
+<br />
+onGMpause<br />
+SetMaxAttackTimeMs 2000000<br />
+setFriendly<br />
+setNoFollow<br />
+setMeleeKill Slime<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lolcp</div><div class="date">12-01-2012, 10:55</div></div><div class="posttext">onGMpause<br />
+SetMaxAttackTimeMs 2000000<br />
+setFriendly<br />
+setNoFollow<br />
+setMeleeKill Slime<br />
+sayMessage exiva fish<br />
+waitX 5<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+I think this is what you want. If I understansd you correctly.<br />
+<br />
+Yes, I think you do. I initially tried the exact same line &quot;sayMessage exiva fish&quot; but it only fished one time, then didn't :(<br />
+<br />
+EDIT: Is there any conds I can add that will fish whenever they have respawned? Because this script will only fish once. That will eventually result in death.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lolcp</div><div class="date">12-03-2012, 18:03</div></div><div class="posttext">This script should do that. It'll repeat forever.<br />
+<br />
+Yes, I'm sorry to say it does not work. It will only fish once there is only the 'mother slime' hitting me. So if the mother will summon a new slime hitting me, it won't fish.<br />
+<br />
+A solution would be so appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xijura</div><div class="date">12-14-2012, 20:14</div></div><div class="posttext">I needed the same feature and managed to get part of it working, but there's another problem with that solution<br />
+<br />
+The training takes place at a fixed location and eventually all fish that are on screen get caught<br />
+<br />
+Is there a a way to reset the fish counter ? does it reset by itself after x amount of time ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">12-14-2012, 21:57</div></div><div class="posttext">I remember back in the day when I needed to fish because I was too poor to buy excess ham/brown mushrooms I used a simplescript such as ;<br />
+<br />
+fishX 50<br />
+gotoScriptLine 0<br />
+<br />
+Maybe if sayMessage exiva fish doesnt work try my way &quot;fishX XX&quot;<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xijura</div><div class="date">12-15-2012, 03:31</div></div><div class="posttext">Zihinu: how long does it take to &quot;respawn&quot; without walking off screen and coming back ? If I know the timing I can avoid the unnecessary fishing when there's no fish<br />
+<br />
+Lithium: both 'exiva fish' and 'fishX 10' work, my issue is that the application keeps track of the spots where you've gotten a fish and once there's no more spots available it keeps attempting to fish but tells you there's no fish available, I'm hoping to find away to reset that counter after x amount of time so i can start fishing again or if it already resets itself like Zihinu seems to imply then knowing the timing I could stop the fishing while theirs no fish</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">12-15-2012, 09:37</div></div><div class="posttext">Im curious maybe you have to be off screen for the fish to re-set? I doubt zihinu knows the correct re-set for when the fish are done, this seems to be a lot of work instead why not turn on rune-maker with auto-eat food and throw 200-300 brown mushrooms in your backpack while training?<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

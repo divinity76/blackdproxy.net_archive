@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="flag, stack, items, __keypress, proxy, mailbox, means, $nlineoflabelstart$, loop, gotoscriptline, main, start, cavebot, stacking, position, accessed, script, line, program, variable, press, default, playing, solved, special, stackitems, waitx, fastexiva, tutorial, $nlineoflabelstack$, goto, part, stackonkey.txt, time, check, $__keypress$number=1, iftrue, pgdown, make, works, flag==, mail, scipt, made, ciao, status, trough, empty, flag==0, window" />
+	<meta name="description" content="Greets, 
+just made that script cos i was too lasy to stack items by myself while playing ots. 
+ 
+I will give code and instructions for leechers and &quot;how to do things like that&quot; tutorial for more ambitious ppl. 
+ 
+:4leechers: 
+Script which you shoudl save in your proxy folder as stackOnKey.txt: 
+ 
+#stackItemsOnKey cavebot part 
+#~igi" />
+	
+	<title> Stack items on key press. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Stack items on key press.</div>
+<hr />
+<div class="pda"><a href="t-4226.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?4226-Stack-items-on-key-press">Stack items on key press.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Ignatius</div><div class="date">04-20-2007, 15:22</div></div><div class="posttext">Greets,<br />
+just made that script cos i was too lasy to stack items by myself while playing ots.<br />
+<br />
+I will give code and instructions for leechers and &quot;how to do things like that&quot; tutorial for more ambitious ppl.<br />
+<br />
+:4leechers:<br />
+Script which you shoudl save in your proxy folder as stackOnKey.txt:<br />
+<br />
+<br />
+#stackItemsOnKey cavebot part<br />
+#~igi<br />
+:start<br />
+IfTrue ($__keypress$#number=#1) Goto $nlineoflabel:stack$<br />
+waitX 3<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:stack<br />
+stackItems<br />
+fastExiva __keypress = 0<br />
+gotoScriptLine $nlineoflabel:start$<br />
+<br />
+<br />
+Now load stackOnKey.txt to cavebot,<br />
+Make new hotkey (PgDown for me) and set Command/actiontosay field to:<br />
+<br />
+exiva __keypress = 1<br />
+<br />
+voila, proxy should stack items when you press PgDown.<br />
+/:~<br />
+<br />
+:Tutorial:<br />
+You want to make proxy stack items when you want it to do so.<br />
+It means that you have two problems to overcome. First, how to define procedure of stacking items and second, how to tell proxy that you want to stack items right now.<br />
+First problem can be solved using cavebot, second one can be solved using flag accessed from keyboard. If you don't want to read me playing 1337 haxor go to there.<br />
+Flag is a special kind of variable which can be accessed from diffrent parts of program or even multiple programs, which need to cooperate and share some info. Each flag position means something else, just like flag in the oldschool american-style mailbox.<br />
+For example: You are waiting for special letter. Thats why from time to time you check the mailbox status trough the window, hoping to see flag at the mailbox up.<br />
+&quot;Flag is up&quot; (flag== 1) says that you should check your mail (do something), and after doing it you put flag down (you set it to default, flag==0) so you wont go to empty mailbox again.<br />
+THERE<br />
+This scipt works with __keypress variable as a flag. position 0 means that key wasn't pressed. position 1 means that it was.<br />
+It is __keypress instead _keypress so that keypress is a global value and can be accessed from every part of the proxy.<br />
+<br />
+Here will I will comment script line by line.<br />
+<br />
+:start<br />
+// label for start of the main loop.<br />
+IfTrue ($__keypress$#number=#1) Goto $nlineoflabel:stack$<br />
+// checking if flag (__keypress in here) is up and redirecting<br />
+// to action when it is<br />
+waitX 3<br />
+//i don't want this program to lag my sucky comp. you can change<br />
+// 3 to lower value if you don't want such delay with stacking.<br />
+gotoScriptLine $nlineoflabel:start$<br />
+//end of the main loop here<br />
+<br />
+:stack<br />
+stackItems<br />
+//stacking items here ;;<br />
+fastExiva __keypress = 0<br />
+//reseting flag to default to avoid endless stacking loop.<br />
+gotoScriptLine $nlineoflabel:start$<br />
+//going back to main loop.<br />
+<br />
+Thanks for reading that crap,<br />
+Ciao<br />
+/:~</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">04-20-2007, 17:07</div></div><div class="posttext">nice, I had one similar for same purpose but sometimes I get too lazy to share XD.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Adden_</div><div class="date">04-20-2007, 17:56</div></div><div class="posttext">Sweet!, Thanks :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">deer</div><div class="date">04-20-2007, 22:05</div></div><div class="posttext">Thanks :) Really well explained. Waiting for your next realase :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arturpix</div><div class="date">04-24-2010, 17:31</div></div><div class="posttext">can this be made into a conditional event like each crtain time it stck items?<br />
+<br />
+or can i put this for example a black knight script and the waypoints and everything else will work fine or do i have to put this script in cavebot alone?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="wpts, depot, waitx, back, fastexiva, script, number, line, depositing, templates, deposit, cash, waypoints, items, depositer, post, putlootondepot, change, gotoscriptline, reserve, wanted, mentioned, specific, stand, basically, walk, spawn, points, guide, quick, iftrue, desire, $mycap$number, $hex-tibiastrhi$, $hex-tibiastryes$, all$, $hex-tibiastrdeposit, basic, extras, gotta, info, favorite, grab, $hex-tibiastrbye$, beginning, code, lines, startup, file, record" />
+	<meta name="description" content="Ok, so heres some basic templates... All you gotta do is grab your favorite wpts, put in the info I tell you to, and change whatever is in red for your desire. 
+DEPOSITER FIRST 
+Put this line just before your wpts 
+ 
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:deposit$ 
+ 
+This will tell the bot to skip to the line label 'DEPOSIT' when your cap is under 50, obviously change the number to whatever you please. (It's marked in red.) 
+ 
+After your last hunting WPT put this line in:" />
+	
+	<title> TEMPLATES for script extras [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  TEMPLATES for script extras</div>
+<hr />
+<div class="pda"><a href="t-35360.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?35360-TEMPLATES-for-script-extras">TEMPLATES for script extras</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-24-2009, 02:24</div></div><div class="posttext">Ok, so heres some basic templates... All you gotta do is grab your favorite wpts, put in the info I tell you to, and change whatever is in red for your desire.<br />
+DEPOSITER FIRST<br />
+Put this line just before your wpts<br />
+<br />
+<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:deposit$<br />
+<br />
+This will tell the bot to skip to the line label 'DEPOSIT' when your cap is under 50, obviously change the number to whatever you please. (It's marked in red.)<br />
+<br />
+After your last hunting WPT put this line in:<br />
+<br />
+<br />
+gotoscriptline 0<br />
+:deposit<br />
+<br />
+This is the line label 'DEPOSIT'. After this line you should either record your wpts to the NPC via the script editor on the bot, or record them separately and copy paste them.<br />
+<br />
+After the WPT's to the bank, you should put these lines in. These lines will say 'hi' 'deposit all' 'yes' 'bye', in that order, in the NPC channel... Thus depositing your gold. Do not edit the pauses out to avoid the mute function.<br />
+<br />
+<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:bye$<br />
+waitX 3<br />
+<br />
+After this section you should either record or copy paste in your WPT's back to the cave, at the end of which you should put the following code, to tell the script to go back to line number 0 (the beginning) You can change the number 0, if your file has startup lines, to suit your needs.<br />
+<br />
+<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+More in the next post (Please don't post I will reserve.<br />
+<br />
+<br />
+Depositing items<br />
+<br />
+Someone mentioned that they wanted to deposit items into depot, so heres a quick guide to add on to depositing:<br />
+<br />
+Just set up the cash depositer same waypoints, but way points going to depot (don't have to stand near a specific depot box, it will walk to one.<br />
+<br />
+so we have:<br />
+<br />
+<br />
+<br />
+DEPOSIT CASH WPTS AND SCRIPT<br />
+...<br />
+WPTS TO DEPOT<br />
+putLootOnDepot<br />
+WPTS BACK TO SPAWN<br />
+<br />
+<br />
+Basically you put 'putLootOnDepot' in between waypoints TO the depot, and wpts BACK FROM the depot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-24-2009, 02:25</div></div><div class="posttext">Now for buying items<br />
+<br />
+So, you have to get a bit of information for this section.<br />
+<br />
+Mana ID's:<br />
+Mana Potion = 0C 01<br />
+Strong Mana Potion = ED 00<br />
+Great Mana Potion = EE 00<br />
+<br />
+Mana Costs<br />
+Mana Potion = 50<br />
+Strong Mana Potion = 80<br />
+Great Mana Potion = 120<br />
+<br />
+First you will need the item ID's. For this script I will highlight the ID's in red, along side some other variables (optional bits) I will be using strong mana potions for this example. Obviously this works for health potions as well, not sure on Paladin items yet I will experiment and get back to you on that, but heres this for now:<br />
+<br />
+At the start of your script you will put this:<br />
+<br />
+<br />
+<br />
+fastExiva _manapotionid = ED 00<br />
+# How many manas do you have?<br />
+fastExiva _manas = 300<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _idcost = 80<br />
+<br />
+This basically tells the script which mana potion you will use.<br />
+<br />
+This snippet should be just before the first WPT, edit the red number to change the amount of manas you should buy more on. This then counts the manas left, and takes your char to the 'REFILL' line if you need more.<br />
+<br />
+<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#45) Goto $nlineoflabel:refill$<br />
+<br />
+You should then put in this line after your main WPT's.<br />
+<br />
+<br />
+gotoscriptline 0<br />
+:refill<br />
+<br />
+This shows the bot that this line is the 'REFILL' line, where the script fills up manas. After this line you should put in your WPT's to the banker, so you can deposit gold and withdraw enough for your mana potions. You will need to set up the depositer to withdraw a certain amount of gold, as you need it. This line does this for you, and withdraws it.<br />
+<br />
+<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+<br />
+Now, to go buy the manas you will put next the waypoints from the banker to the mana potion shop, then the follow code.<br />
+<br />
+<br />
+saymessage hi<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:vial$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+waitx 1<br />
+<br />
+That just basically buys the manas. It does leave a bit of Gold left, as it sells the vials.<br />
+<br />
+After this just enter your waypoints back to the cave (first waypoint) and put in<br />
+<br />
+<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-24-2009, 02:26</div></div><div class="posttext">Now to sell shit.<br />
+<br />
+Ok, so you wanna sell your shit. First off you'll need the item ID's again, I will use XX XX as the example just to make it easy for you.<br />
+<br />
+So, again you put this at the start of your WPT's. Change the number in red depending on how much cap you want to have left when you go to sell your items. It works it out and takes you to the 'SELL' line.<br />
+<br />
+<br />
+IfTrue ($mycap$#number&lt;=#3000) Goto $nlineoflabel:sell$<br />
+<br />
+Then you're gonna need, again, the 'SELL' line simple, it defines where the waypoints to sell stuff start.<br />
+<br />
+<br />
+gotoscriptline 0<br />
+:sell<br />
+<br />
+Now for your waypoints to the NPC that buys your stuff.<br />
+<br />
+Then you gotta put this line in...<br />
+<br />
+<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 3<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitX 3<br />
+fastExiva &gt; 7B D6 0C 00 $numbertohex1:{$countitems:XX XX$}$<br />
+waitX 3<br />
+fastExiva &gt; 7B D6 0C 00 $numbertohex1:{$countitems:XX XX$}$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:bye$<br />
+<br />
+Put in as many of the following line as you like, but make sure you space them the same way, and change the XX XX to the Item ID you want to sell:<br />
+<br />
+<br />
+waitX 3<br />
+fastExiva &gt; 7B D6 0C 00 $numbertohex1:{$countitems:XX XX$}$<br />
+<br />
+If you then want to go deposit your G's you earned selling shit, put in the WPT's to the Banker then put in this code:<br />
+<br />
+<br />
+waitX 1<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 3<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:balance$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:bye$<br />
+<br />
+If you used this or not next you put in the WPT's back to your cave, to the first hunting WPT in the script, then the following line:<br />
+<br />
+<br />
+goToScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-24-2009, 02:26</div></div><div class="posttext">Travelling<br />
+<br />
+Do you need to travel on a boat or via talking to an NPC? Well heres how to add those bits in.<br />
+<br />
+Wherever it is in the script that you need to go on a boat, put in the following, remember to edit the DESTINATION:<br />
+<br />
+<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:DESTINATION$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 2<br />
+<br />
+That's all for now - Anything else you need? Post here. Also post here if you think this thread should be stickied!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">01-24-2009, 03:14</div></div><div class="posttext">the buying manas thing was taken from my tutorial?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BUg</div><div class="date">01-24-2009, 03:37</div></div><div class="posttext">50 cap would be written as 5000~<br />
+<br />
+just a little tip</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-24-2009, 03:39</div></div><div class="posttext">the buying manas thing was taken from my tutorial?<br />
+<br />
+Nope, taken from an array of scripts that either I've made or downloaded over the years... But most of it I just typed out since it's so simple to remember.<br />
+<br />
+<br />
+50 cap would be written as 5000~<br />
+<br />
+just a little tip<br />
+<br />
+Good point, ty for pointing this out I will change it now.<br />
+<br />
+<br />
+Otherwise good?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Seisuke</div><div class="date">01-24-2009, 05:00</div></div><div class="posttext">Very Nice :D gonna add this to my script.. if i made any more &gt;: D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kweed</div><div class="date">01-24-2009, 05:18</div></div><div class="posttext">nice, 	i will try :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shemsu</div><div class="date">01-24-2009, 11:03</div></div><div class="posttext">Thanks dude, now my scripting will be sooo evul ; d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-24-2009, 11:38</div></div><div class="posttext">No problem, if you have ANY feedback for any of them just post here I'll keep checking up... I'm not sure if the Mana buyer will sort out bp's or not (that's my main concern atm) and I've not had chance to test it... Although the snippets are as they are in my custom scripts so it should be fine.<br />
+<br />
+Thanks for commenting too!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">01-24-2009, 11:55</div></div><div class="posttext">Nope, taken from an array of scripts that either I've made or downloaded over the years... But most of it I just typed out since it's so simple to remember.<br />
+<br />
+the entire code is written by me and Erra, but no worries, you're free to use them however you want :p<br />
+<br />
+anyway, I hope newbs will learn from this and make their own scripts instead of leeching :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">faka</div><div class="date">01-24-2009, 12:44</div></div><div class="posttext">When i'm selling vials and buying potions they are in my main bpswith potions have empty spaces</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Belzebuth</div><div class="date">01-24-2009, 15:27</div></div><div class="posttext">this will help alot of ppl i think :) its usefull to know how to make a script who buy all suplies and sell loot xD so you can have your own script :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-24-2009, 15:42</div></div><div class="posttext">the entire code is written by me and Erra, but no worries, you're free to use them however you want :p<br />
+<br />
+anyway, I hope newbs will learn from this and make their own scripts instead of leeching :)<br />
+<br />
+Dude they aren't from your 'code'. They are mostly written out by hand, stop trying to take credits for shit that I've compiled and mostly written.<br />
+<br />
+<br />
+When i'm selling vials and buying potions they are in my main bpswith potions have empty spaces<br />
+<br />
+Like I mentioned, it's not perfect yet but I will work on it... Maybe you need to have 'Buy With Backpacks' turned on? If you wanted to automatically move the BP's of manas you buy you can do so with a loot filter style script, but I'm not to clued up on those yet.<br />
+<br />
+<br />
+this will help alot of ppl i think :) its usefull to know how to make a script who buy all suplies and sell loot xD so you can have your own script :)<br />
+<br />
+Thank you for your feedback!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mars</div><div class="date">01-25-2009, 02:46</div></div><div class="posttext">Add door opener in Depositer. It's very usefull.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-25-2009, 10:37</div></div><div class="posttext">Add door opener in Depositer. It's very usefull.<br />
+<br />
+http://www.blackdtools.net/showthread.php?t=8748</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fallen16</div><div class="date">01-25-2009, 22:00</div></div><div class="posttext">VERY HELPFUL !<br />
+Thanks you !<br />
+Sticky ? :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Whoop</div><div class="date">01-26-2009, 04:08</div></div><div class="posttext">thanks man i need the pot buyer :}<br />
+i was thinking of making your character sell the flasks, then set loot to brown backpacks (making sure no other backpack you have with you is brown!) and then make it drop loot(empty brown bps) under u<br />
+and then let it buy manas with backpacks<br />
+then u got bps with manas in ur main backpack, that shouldnt be a problem<br />
+<br />
+i have no time to try and script this, ill do it when im out of stamina some time, haha<br />
+or you can try it :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">noob cakes</div><div class="date">01-28-2009, 09:18</div></div><div class="posttext">bro this thread was so helpful. thanks heaps</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-28-2009, 10:40</div></div><div class="posttext">To all: no problem, it was a pleasure XD<br />
+<br />
+<br />
+thanks man i need the pot buyer :}<br />
+i was thinking of making your character sell the flasks, then set loot to brown backpacks (making sure no other backpack you have with you is brown!) and then make it drop loot(empty brown bps) under u<br />
+and then let it buy manas with backpacks<br />
+then u got bps with manas in ur main backpack, that shouldnt be a problem<br />
+<br />
+i have no time to try and script this, ill do it when im out of stamina some time, haha<br />
+or you can try it :)<br />
+<br />
+Now, as for this one... I'd assume we could squeeze in a sort of script like this... This would go AFTER you've deposited your gold, and all other loot items...<br />
+<br />
+PUT THIS IN AFTER WPT'S TO BANK<br />
+<br />
+<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+<br />
+<br />
+THEN PUT WPTS TO DEPOT, AND DEPOSITER:<br />
+<br />
+<br />
+<br />
+move x,y,z<br />
+putLootOnDepot<br />
+move x,y,z<br />
+<br />
+<br />
+THEN PUT THIS SCRIPT AT THE END<br />
+<br />
+<br />
+IfEnoughItemsGoto 0A 01,10,0<br />
+setLoot 26 0B<br />
+move x,y,z<br />
+dropLootOnGround<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+waitX 2<br />
+resetLoot<br />
+goToScriptLine 0<br />
+<br />
+<br />
+WARNING: DON'T USE THIS SCRIPT IF YOU HAVE BROWN BP'S THAT ARE IMPORTANT...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-28-2009, 10:46</div></div><div class="posttext">Can someone test that last script let me know how it goes, use coloured bps for your loot like red or yellow, just don't use brown.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xicohti</div><div class="date">01-28-2009, 15:17</div></div><div class="posttext">Such a good post!<br />
+Very useful.<br />
+Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">01-28-2009, 16:56</div></div><div class="posttext">Dude they aren't from your 'code'. They are mostly written out by hand, stop trying to take credits for shit that I've compiled and mostly written.<br />
+<br />
+<br />
+then how do you explain this? :D<br />
+tutorial written on 20th of December, final script written on 16th of November (script written by me and Erra) (http://blackdtools.net/showthread.php?t=33080)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kacprus</div><div class="date">01-28-2009, 17:12</div></div><div class="posttext">:)  that will help ppls</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-30-2009, 21:27</div></div><div class="posttext">then how do you explain this? :D<br />
+tutorial written on 20th of December, final script written on 16th of November (script written by me and Erra) (http://blackdtools.net/showthread.php?t=33080)<br />
+<br />
+Something to do with me taking parts from bits and bobs of different scripts.<br />
+<br />
+Just gtfo my thread<br />
+<br />
+Oh and btw your script doesn't actually work properly.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">01-31-2009, 05:00</div></div><div class="posttext">works for me, used it like 3 nights in a row successfully :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blade</div><div class="date">02-13-2009, 08:44</div></div><div class="posttext">Even helped me out</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Belarmin</div><div class="date">02-14-2009, 11:22</div></div><div class="posttext">When i'm selling vials and buying potions they are in my main bpswith potions have empty spaces<br />
+<br />
+Try filling all the gaps of your main bp and the bp where all bps of potions are, and then the manas will go where you want :D (worms work great for filling)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kendi</div><div class="date">02-16-2009, 20:20</div></div><div class="posttext">need antylogout script;/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Simon157</div><div class="date">02-17-2009, 05:10</div></div><div class="posttext">It would be great with a tutorial that explains how to drop loot @ dp :P  Thx for the templates, its nice to always check spelling with 'em :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hassi</div><div class="date">02-19-2009, 06:10</div></div><div class="posttext">saymessage hi<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:vial$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+waitx 1<br />
+<br />
+<br />
+Done this exactly this way but cant get it to work, can it have something to do whit that the items isent / with 4?<br />
+Final question, why /4?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">02-19-2009, 06:30</div></div><div class="posttext">Done this exactly this way but cant get it to work, can it have something to do whit that the items isent / with 4?<br />
+Final question, why /4?<br />
+<br />
+I made it that way because I botted with over 300 manas on me, so I had to break it down into 4 since you can't buy more than 99 (or 100?) in a single line<br />
+<br />
+edit: you need to define _manapotionid and _mana before you buy the manas, otherwise it won't work :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">falc0</div><div class="date">02-22-2009, 17:58</div></div><div class="posttext">Thanks for this tutorial :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">03-03-2009, 16:23</div></div><div class="posttext">Done this exactly this way but cant get it to work, can it have something to do whit that the items isent / with 4?<br />
+Final question, why /4?<br />
+<br />
+It takes enough cash to buy a quarter of your potions at a time, until it has 76%+ of the potions you put in there. This way you don't buy so many it floods your bps, nor so few that you don't have the potions to hunt for long enough.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheGuy</div><div class="date">03-13-2009, 02:34</div></div><div class="posttext">Hello!<br />
+<br />
+I used this guide to make a script.<br />
+<br />
+To the question, i've just made a script with a lootseller, but it wont sell loot.<br />
+I want to sell P-Arms, i use the code:<br />
+<br />
+<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitX 2<br />
+fastExiva &gt; 7B D6 0C 00 $numbertohex1:{$countitems:1D 0D$}$<br />
+<br />
+But it sais &quot;item not found&quot; or something like that when trying to sell, 1D 0D = P-arm. I have the p-arms in open bp's.<br />
+<br />
+Can someone tell me why it doesn't work?<br />
+<br />
+/TheGuy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zepy10</div><div class="date">04-28-2009, 07:48</div></div><div class="posttext">nice nice nice</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">08-10-2009, 05:57</div></div><div class="posttext">Coool, man. I've read some but I didn't understand how to deposit items on depot. I'd be grateful if you could explain the depositer item on depot thingy. xd<br />
+Thanks in advance.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">08-24-2009, 13:15</div></div><div class="posttext">thanks to this i can now bot 24h/7.<br />
+Unfortunately my money maker is with final warning.<br />
+Damn antibot system!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rybollo</div><div class="date">11-18-2009, 23:38</div></div><div class="posttext">Hello. How to Use Obsidian Knife with Lizard?? Who can Post a Script To using Obsidian Knife with Lizards??</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

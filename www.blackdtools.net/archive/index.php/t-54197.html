@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, spears, fastexiva, setmeleekill, script, $numbertohex2$numericalexp$_spears$/3$$, $_spearid$, weapon, made, thais, exiva, back, backup, make, waitx, sewers, setchaoticmoveson, setbot, rats, setloot, pally, buys, switches, spider, 32339,32249,7, 32350,32245,6, cave, 32344,32247,7, 32350,32247,7, setfollow, 32338,32243,7, $hex-tibiastrtrade$, $countitems$_spearid$$number, ongmpause, setlootdistance, iftrue, couple, hours, works, haha, hour, fine, 700gp, 15000, setany, replace, conditions.txt, 32338,32227,7, 32339,32226,8, gotoscriptline" />
+	<meta name="description" content="Semi complex script I made. It hunts the sewers under thais for money and eats cheese from rats. 1.5k exp/h on a lvl 11 pally using spears. 
+ 
+The starting point of the script: Go down the sewer grate immediately to the left of Thais depot. 
+ 
+I also made a custom set of conditions that, when you run out of spears, it switches to a specifed weapon until you have more spears, at which time it will switch back to spears. Currently the backup weapon is a Morning Star (D2 0C). 
+ 
+ It buys 6 spears" />
+	
+	<title> Rats in Thais Sewers - Pally script. Deposits gold and buys spears, switches weapons. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Rats in Thais Sewers - Pally script. Deposits gold and buys spears, switches weapons.</div>
+<hr />
+<div class="pda"><a href="t-54197.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54197-Rats-in-Thais-Sewers-Pally-script-Deposits-gold-and-buys-spears-switches-weapons">Rats in Thais Sewers - Pally script. Deposits gold and buys spears, switches weapons.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">huckler</div><div class="date">02-03-2011, 20:26</div></div><div class="posttext">Semi complex script I made. It hunts the sewers under thais for money and eats cheese from rats. 1.5k exp/h on a lvl 11 pally using spears.<br />
+<br />
+The starting point of the script: Go down the sewer grate immediately to the left of Thais depot.<br />
+<br />
+I also made a custom set of conditions that, when you run out of spears, it switches to a specifed weapon until you have more spears, at which time it will switch back to spears. Currently the backup weapon is a Morning Star (D2 0C).<br />
+<br />
+ It buys 6 spears from Galuna and then goes back to hunting. If you change the amount of spears, make sure it is divisible by 3, otherwise the script will be caught in an endless loop.<br />
+<br />
+rats.txt<br />
+<br />
+setChaoticMovesON<br />
+fastExiva _spearid = CD 0C<br />
+# How many spears do you have?<br />
+fastExiva _spears = 6<br />
+# How much does 1 spear cost?<br />
+fastExiva _idcost = 9<br />
+setBot AutoEatFood=1<br />
+setBot OldLootMode=1<br />
+setLoot CD 0C<br />
+setLoot D7 0B<br />
+setAny<br />
+setMeleeKill rat<br />
+setMeleeKill cave rat<br />
+setMeleeKill spider<br />
+setMeleeKill bat<br />
+onGMpause<br />
+setFollow<br />
+setLootDistance 3<br />
+setChaoticMovesON<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;#$_spears$) Goto $nlineoflabel:refill$<br />
+move 32339,32226,8<br />
+move 32329,32215,8<br />
+move 32337,32214,8<br />
+move 32340,32214,8<br />
+move 32349,32214,8<br />
+move 32356,32214,8<br />
+move 32368,32211,8<br />
+move 32368,32195,8<br />
+move 32368,32190,8<br />
+move 32351,32190,8<br />
+move 32338,32189,8<br />
+move 32368,32189,8<br />
+move 32369,32198,8<br />
+move 32368,32213,8<br />
+move 32389,32214,8<br />
+move 32416,32214,8<br />
+move 32422,32220,8<br />
+move 32424,32233,8<br />
+move 32425,32252,8<br />
+move 32405,32256,8<br />
+move 32397,32256,8<br />
+move 32385,32252,8<br />
+move 32378,32252,8<br />
+move 32363,32251,8<br />
+move 32352,32251,8<br />
+move 32339,32250,8<br />
+move 32339,32270,8<br />
+move 32338,32264,8<br />
+move 32336,32248,8<br />
+move 32315,32248,8<br />
+move 32307,32249,8<br />
+move 32302,32255,8<br />
+move 32304,32249,8<br />
+move 32327,32248,8<br />
+move 32337,32248,8<br />
+move 32339,32228,8<br />
+move 32339,32226,8<br />
+gotoScriptLine 0<br />
+:refill<br />
+setChaoticMovesOFF<br />
+fastExiva _spears = $numericalexp:{$_spears$}-{$countitems:{$_spearid$}$}$<br />
+fastExiva _spearcost = $numericalexp:{$_spears$}*{$_idcost$}$<br />
+useItem 32339,32226,8<br />
+move 32339,32229,7<br />
+saymessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitx 1<br />
+sayInTrade withdraw $_spearcost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitx 1<br />
+#IfFewItemsGoto D7 0B,$_spearcost$,$nlineoflabel:huntLoop$<br />
+move 32338,32233,7<br />
+move 32338,32242,7<br />
+move 32342,32248,7<br />
+move 32349,32246,7<br />
+move 32350,32245,6<br />
+move 32345,32245,6<br />
+move 32343,32244,6<br />
+saymessage hi<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva &gt; 07 00 7A $_spearid$ 00 $numbertohex2:{$numericalexp:{$_spears$}/3$}$ 00<br />
+fastExiva &gt; 07 00 7A $_spearid$ 00 $numbertohex2:{$numericalexp:{$_spears$}/3$}$ 00<br />
+fastExiva &gt; 07 00 7A $_spearid$ 00 $numbertohex2:{$numericalexp:{$_spears$}/3$}$ 00<br />
+waitx 1<br />
+move 32350,32245,6<br />
+move 32350,32247,7<br />
+move 32344,32247,7<br />
+move 32339,32249,7<br />
+move 32338,32243,7<br />
+move 32338,32232,7<br />
+move 32338,32227,7<br />
+move 32339,32226,8<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+conditions.txt<br />
+Replace D2 0C with the ID of your backup weapon. Make sure it is in an open backpack.<br />
+<br />
+$countitems:CD 0C$<br />
+#number=#<br />
+0<br />
+200<br />
+5000<br />
+0<br />
+exiva #D2 0C 06<br />
+$myhppercent$<br />
+#number&lt;=#<br />
+60<br />
+200<br />
+5000<br />
+0<br />
+exiva #D2 0C 06<br />
+$myhppercent$<br />
+#number&lt;=#<br />
+60<br />
+200<br />
+5000<br />
+0<br />
+exiva #CD 0C 0A<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+0<br />
+200<br />
+5000<br />
+0<br />
+exiva #CD 0C 06<br />
+$myhppercent$<br />
+#number&gt;#<br />
+60<br />
+200<br />
+15000<br />
+1<br />
+exiva &gt; 0F 00 78 FF FF 0A 00 00 CD 0C 00 FF FF 03 00 00 99<br />
+<br />
+<br />
+I've let it run for a couple hours and it works fine, made around 700gp in an hour. Not too bad for a lvl 11 haha.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">02-03-2011, 21:07</div></div><div class="posttext">looks nice</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">huckler</div><div class="date">02-04-2011, 02:46</div></div><div class="posttext">Thanks. It works great, I let it run overnight and had no problems with it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">doomshout</div><div class="date">12-24-2011, 14:10</div></div><div class="posttext">I have one bug, my character goes to the shop to buy some spears, but goes away without buying any spears.<br />
+Please help!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">doomshout</div><div class="date">12-24-2011, 15:07</div></div><div class="posttext">Nevermind, i fixed it, i put in ''sayintrade trade'' after it have said hi and it work ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">igetgpz</div><div class="date">03-25-2012, 22:39</div></div><div class="posttext">please make one for a knight and deposit gold on 500gp? no spears. ty so much</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

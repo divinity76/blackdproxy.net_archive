@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibiaclient, world, currentid, dist_name, memory_readlongi, debug.print, nametype, namesize, remoteadr, dist_name_size, entry_type, clientselectedcharid, readmemorystringtibiaclient, string, dist_world, charlist_dist, dist_name_type, rememberport, function, address_end, address, 10.11, nick=, server=, reader, idconnection, selectednick, tibia, integer, delphi, update, selected, completed, updatecharlistfrommemory3, getgameserverportworld, addcharserver2, charlist, basic, visual, processididconnection, memory_readlongadrselectedcharindex, updatecharlistfrommemory3idconnection, current, address=&amp;h, public, resetcharlist2, memory_readlongadrcharlistptr, memory_readlongadrcharlistptrend" />
+	<meta name="description" content="Many people is asking me about the new char list of Tibia 9.71, so I have decide to share here the code of a simple function to read the new charlist in Tibia. 
+Code is Delphi 7, and it should be easy to port to any other language. 
+ 
+7598 
+ 
+The important parts: 
+ 
+ 
+// This Delphi 7 procedure can read the new charlist in Tibia 9.71 
+// -Made by Blackd-" />
+	
+	<title> Charlist reader for Tibia 9.71 - made with Delphi 7 + update 10.11 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Charlist reader for Tibia 9.71 - made with Delphi 7 + update 10.11</div>
+<hr />
+<div class="pda"><a href="t-59709.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59709-Charlist-reader-for-Tibia-9-71-made-with-Delphi-7-update-10-11">Charlist reader for Tibia 9.71 - made with Delphi 7 + update 10.11</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-16-2012, 17:25</div></div><div class="posttext">Many people is asking me about the new char list of Tibia 9.71, so I have decide to share here the code of a simple function to read the new charlist in Tibia.<br />
+Code is Delphi 7, and it should be easy to port to any other language.<br />
+<br />
+7598<br />
+<br />
+The important parts:<br />
+<br />
+<br />
+<br />
+// This Delphi 7 procedure can read the new charlist in Tibia 9.71<br />
+// -Made by Blackd-<br />
+procedure TForm3.charlist();<br />
+var<br />
+  i,address,address_end ,lastchar:Cardinal;<br />
+  Nick, World : string;<br />
+  Base_Address, remoteadr: Cardinal;<br />
+  nametype: Cardinal;<br />
+begin<br />
+  // in this simplified function we will think that there is<br />
+  // a single Tibia client running.<br />
+  // (Other way every function should have a ProcessId paramater to<br />
+  // handle multiclient correctly)<br />
+  ProcessID := func.ProcessIDFromAppname32('Tibia.exe');<br />
+  // get base address. One time is enough.<br />
+  Base_Address := Integer(func.GetModuleBaseAddress(ProcessID, 'Tibia.exe'));<br />
+  // get index of selected char<br />
+  ClientSelectedCharId := MemReadInteger(charlist_selected - $400000 + Base_Address);<br />
+<br />
+  StringList.Clear;<br />
+<br />
+  // we must do some maths to know how many chars are loaded<br />
+  address := func.ReadMemInteger(charlist_start - $400000 + Base_Address);<br />
+  address_end := func.ReadMemInteger(charlist_end - $400000 + Base_Address);<br />
+  lastchar := ((address_end - address) div charlist_dist) - 1 ;<br />
+<br />
+  for i:=0 to lastchar do<br />
+  begin<br />
+      // union type: string can be stored here or in other place.<br />
+      // depends on the value of nametype<br />
+      nametype := func.ReadMemInteger(address + dist_name_type);<br />
+      if nametype = 15 then<br />
+        // nametype = hex 0F =&gt; Read name here directly<br />
+        Nick := func.MemReadString(address+dist_name )<br />
+      else<br />
+      begin<br />
+        // nametype = other value =&gt; Read address here<br />
+        remoteadr := func.ReadMemInteger(address+dist_name );<br />
+        // then read name in that address<br />
+        Nick := func.MemReadString(remoteadr);<br />
+      end;<br />
+      // world is always there directly<br />
+      World := func.MemReadString(address+dist_world );<br />
+<br />
+      // check if this char was the current char:<br />
+      if (i=ClientSelectedCharId) then<br />
+      begin<br />
+        ClientSelectedCharName:=Nick;<br />
+        ClientSelectedCharServer:=World;<br />
+      end;<br />
+      // add item to our list<br />
+      StringList.Add(Nick+'|'+World);<br />
+      address := address + charlist_dist;<br />
+  end;<br />
+end;<br />
+<br />
+<br />
+<br />
+<br />
+  StringList := TStringList.Create;<br />
+  charlist_start:=$946CB0;<br />
+  charlist_selected:=$946CFC;<br />
+  charlist_end:=$946CB4;<br />
+  charlist_dist:=72;<br />
+  dist_name:=4;<br />
+  dist_world:=32;<br />
+  dist_name_size:=20;<br />
+  dist_name_type:=24;<br />
+  ClientSelectedCharId:=0;<br />
+  ClientSelectedCharName:='';<br />
+  ClientSelectedCharServer:='';<br />
+<br />
+<br />
+7598</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-24-2013, 11:58</div></div><div class="posttext">For people who is asking me for updated addreses for Tibia 10.11 :<br />
+<br />
+<br />
+<br />
+charlist_start:=$951A48; <br />
+charlist_selected:=$951AB4; <br />
+charlist_end:=$951A4C; <br />
+charlist_dist:=120; <br />
+dist_name:=4; <br />
+dist_world:=32; <br />
+dist_name_size:=20; <br />
+dist_name_type:=24; <br />
+<br />
+<br />
+new function:<br />
+<br />
+<br />
+<br />
+procedure TTibiaMainThread.ClientGetCharList;<br />
+var<br />
+  i,address,address_end:Cardinal;<br />
+  Nick, World : string;<br />
+  entry_type: Cardinal;<br />
+  remoteadr: Cardinal;<br />
+  namesize,nametype: Cardinal;<br />
+<br />
+begin<br />
+  ClientSelectedCharId := func.ReadMemInt(TibiaWndHandle, TibiaAddr.OFFSET_SELECTED_CHAR);<br />
+  PlayerCharList.Clear;<br />
+  address := func.ReadMemInt(TibiaWndHandle, TibiaAddr.POINTER_CHARLIST);<br />
+  address_end := func.ReadMemInt(TibiaWndHandle, TibiaAddr.charlist_end);<br />
+  for i:=0 to address_end do  <br />
+  begin<br />
+    entry_type:=  func.ReadMemInt(TibiaWndHandle, address);<br />
+    namesize:= func.ReadMemInt(TibiaWndHandle, address+ TibiaAddr.dist_name_size);<br />
+    if (namesize=0) or (entry_type=0) then<br />
+      break<br />
+    else<br />
+    begin<br />
+      nametype := func.ReadMemInt(TibiaWndHandle, address + TibiaAddr.dist_name_type);<br />
+      if nametype = 15 then<br />
+        Nick := func.ReadMemStr(TibiaWndHandle, address+TibiaAddr.dist_name)<br />
+      else<br />
+      begin<br />
+        remoteadr := func.ReadMemInt(TibiaWndHandle, address+TibiaAddr.dist_name);<br />
+        Nick := func.ReadMemStr(TibiaWndHandle, remoteadr);<br />
+      end;<br />
+      World := func.ReadMemStr(TibiaWndHandle, address+TibiaAddr.dist_world);<br />
+      if (i=ClientSelectedCharId) then<br />
+        ClientSelectedCharName:=Nick;<br />
+      PlayerCharList.Add(Nick+'|'+World);<br />
+      address := address + TibiaAddr.charlist_dist;<br />
+    end;<br />
+  end;<br />
+end;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-27-2013, 02:03</div></div><div class="posttext">char reader function in Visual Basic 6 , for tibia 10.11:<br />
+<br />
+<br />
+<br />
+Public Function UpdateCharListFromMemory3(idConnection As Integer, maxr As Integer) As Long<br />
+  Dim i As Long<br />
+  Dim address As Long<br />
+  Dim address_end As Long<br />
+  Dim nick As String<br />
+  Dim world As String<br />
+  Dim entry_type As Long<br />
+  Dim remoteadr As Long<br />
+  Dim namesize As Long<br />
+  Dim nametype As Long<br />
+  Dim dist_name_size As Long<br />
+  Dim dist_name_type As Long<br />
+  Dim dist_name As Long<br />
+  Dim dist_world As Long<br />
+  Dim selectedNick As String<br />
+  Dim charlist_dist As Long<br />
+  Dim tibiaclient As Long<br />
+  Dim ClientSelectedCharId As Long<br />
+  Dim currentID As Long<br />
+  Dim rememberPort As Long<br />
+  dist_name_size = 20<br />
+  dist_name_type = 24<br />
+  dist_name = 4<br />
+  dist_world = 32<br />
+  charlist_dist = 120<br />
+  tibiaclient = ProcessID(idConnection)<br />
+  ClientSelectedCharId = Memory_ReadLong(adrSelectedCharIndex, tibiaclient)<br />
+  <br />
+  address = Memory_ReadLong(adrCharListPtr, tibiaclient)<br />
+  address_end = Memory_ReadLong(adrCharListPtrEND, tibiaclient)<br />
+  currentID = 0<br />
+  i = address<br />
+  ResetCharList2 idConnection<br />
+  Do<br />
+    'Debug.Print &quot;current Address=&amp;H&quot; &amp; Hex(i)<br />
+    entry_type = Memory_ReadLong(i, tibiaclient, True)<br />
+    namesize = Memory_ReadLong(i + dist_name_size, tibiaclient, True)<br />
+    If ((namesize = 0) Or (entry_type = 0)) Then<br />
+      Exit Do<br />
+    Else<br />
+      nametype = Memory_ReadLong(i + dist_name_type, tibiaclient, True)<br />
+      If nametype = 15 Then<br />
+        nick = readMemoryString(tibiaclient, i + dist_name, , True)<br />
+      Else<br />
+        remoteadr = Memory_ReadLong(i + dist_name, tibiaclient, True)<br />
+        nick = readMemoryString(tibiaclient, remoteadr, , True)<br />
+      End If<br />
+      world = readMemoryString(tibiaclient, i + dist_world, , True)<br />
+      If (currentID = ClientSelectedCharId) Then<br />
+        selectedNick = nick<br />
+       ' Debug.Print &quot;Nick=&quot; &amp; nick &amp; &quot; ; Server=&quot; &amp; world &amp; &quot; * SELECTED&quot;<br />
+      Else<br />
+      '  Debug.Print &quot;Nick=&quot; &amp; nick &amp; &quot; ; Server=&quot; &amp; world<br />
+      End If<br />
+      rememberPort = GetGameServerPort(world)<br />
+      AddCharServer2 idConnection, nick, world, &quot;127&quot;, &quot;0&quot;, &quot;0&quot;, &quot;1&quot;, rememberPort<br />
+    End If<br />
+    i = i + charlist_dist<br />
+    currentID = currentID + 1<br />
+  Loop Until i &gt;= address_end<br />
+  'Debug.Print &quot;Read completed&quot;<br />
+  UpdateCharListFromMemory3 = 0<br />
+End Function</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

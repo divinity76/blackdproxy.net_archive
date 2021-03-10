@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="carlin, facc, scripts, valkyries, witch, level, valkyres, called, script, figure, simple, spells, stuff, shovel, loots, stuffed, spawn, ground, drops, refillers, tryng, bankers, 77217722, fresh=, working, bring, apples, start, healing, guess, knight, shover, basic, things, valkiryes, depositer, valkyre, spawns, actualy, items, potions, forget, minimum, animal, making, arround, hours" />
+	<meta name="description" content="This are my first 2 scripts very simple and with NO depositer, Im very new to this and still trying to figure out a lot of things. 
+ 
+The one called Basic Carlin Valkyres, I used it in a knight level 19 but i guess since level 16 its safe, you don't need a rope or a shover, it will run both valkyre spawns, I was making 14k exp in this one when no one else was there and in 5 hours gave me arround 5k in gold and animal items (a little more actualy) 
+ 
+for the one called only &quot;Carlin Valkyres&quot; you" />
+	
+	<title> Carlin Valkiryes Very simple script [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Carlin Valkiryes Very simple script</div>
+<hr />
+<div class="pda"><a href="t-59964.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59964-Carlin-Valkiryes-Very-simple-script">Carlin Valkiryes Very simple script</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Fresh Bot</div><div class="date">01-26-2013, 23:10</div></div><div class="posttext">This are my first 2 scripts very simple and with NO depositer, Im very new to this and still trying to figure out a lot of things.<br />
+<br />
+The one called Basic Carlin Valkyres, I used it in a knight level 19 but i guess since level 16 its safe, you don't need a rope or a shover, it will run both valkyre spawns, I was making 14k exp in this one when no one else was there and in 5 hours gave me arround 5k in gold and animal items (a little more actualy)<br />
+<br />
+for the one called only &quot;Carlin Valkyres&quot; you will need a few potions a level 19 or 20 minimum, also dont forget to set your healing spells, you also need a rope and a shovel for this one. It will go from one spawn to another and under the ground, it will even kill the witch and it will loot stuffed toad in case you ever loot one, and all good stuff a witch loots (bag of apples, witch hat etc)<br />
+<br />
+You need to bring the char there for it to start to bot, so dont be too hard on me its only my first script also im still working tryng to figure out the pot refillers, dp drops, and auto bankers :D<br />
+<br />
+Greetings<br />
+<br />
+Fresh=<br />
+<br />
+<br />
+<br />
+77217722</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">conflux</div><div class="date">01-28-2013, 23:44</div></div><div class="posttext">Depot drops is actually pretty easy. if you make your routes circular you can just add a route from the depot to your botting location and allow people to simply start in the depot to get the script going, then at the end of the script where you would put go to line 0 instead put you gotoScriptline *** where ***= the actual number for your first waypoint at the botting location, then after that put your script from that first waypoint back to the depot so you have your return route. Here is a completely made up example<br />
+<br />
+<br />
+setLoot D7 0B<br />
+setMeleeKill giantflyingacornmonsters<br />
+move 1,1,6 &lt;---- 1**(line3)<br />
+move 1,10,6<br />
+move 1,20,6<br />
+move 1,30,6<br />
+move 1,40,6 &lt;--- 2**(line 7)<br />
+move 10,40,6<br />
+move 15,35,6<br />
+move 10,25,6<br />
+move 10,35,6<br />
+move 1,40,6 <br />
+IfEnoughItemsGoto D7 0B,1000,15 &lt;----3**<br />
+gotoScriptLine 7&lt;---4**<br />
+move 1,30,6<br />
+move 1,20,6<br />
+move 1,10,6<br />
+move 1,1,6<br />
+sayInTrade Hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 2<br />
+move 10,1,6<br />
+move 10,5,6<br />
+putLootOnDepot<br />
+move 10,1,6<br />
+move 10,1,6<br />
+move 1,1,6<br />
+gotoScriptLine 3 &lt;--4**<br />
+<br />
+1:Start of route from banker to kill route (for ease of scripting you should set this line beside the banker npc at a spot where it will always be within talking range to pick up your sayInTrade commands<br />
+2: this is the start of your kill route.<br />
+3: This line checks your gold in inventory and if you have the amount or over where head to the bank to deposit it and the way we have this script set will also deposit all the other loot you've acquired into the depot. Doing both at once is very useful so you don't waste time running back and forth if you have it check for particular loot stacks and gold separately. keep in mind that if you have it looting more than just gold you will want to guess what thresh hold to put the gold limit at so you don't run back to town too often or have your bot go over on capacity and have to skip loot before it makes it back to this check point in the script.<br />
+4: This is where we loop back to our kill route if we do not have enough items to hit our mark for depositing.<br />
+<br />
+I really hope this helps you get a basic idea for depot/gold depositing. This isn't really super in depth and hopefully i didn't screw it up but thats basically how i do it.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

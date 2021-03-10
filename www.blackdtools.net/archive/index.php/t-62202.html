@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="help me, potion, refiller, fastexiva, setloot, $numbertohex2$numericalexp$_mana$/4$$, $_manapotionid$, $hex-tibiastryes$, setmeleekill, waitx, script, raider, http://www.blackdtools.net/showthread.php?33080-tutorial-efficient-potionbuying, setavoidfront, con,3, iftrue, $countitems$_manapotionid$$number, 10.77, $hex-tibiastrtrade$, $nlineoflabeltoexp$, edron, gotoscriptline, 33255,31839,7, manapotion, tibia, raider,exori, 33255,31840,6, sandra, carrion, _manas, strongmanapotion, _idcost, setbot, _potionid, buyer, autoeatfood=1, rotworm, setspellkill" />
+	<meta name="description" content="fastExiva _potionid = ED 00 #strongManaPotion 
+fastExiva _manas = 200 
+fastExiva _idcost = 80 
+setBot AutoEatFood=1 
+setLoot D7 0B 
+setLoot C3 25 
+setLoot EF 00 
+setLoot DA 1D 
+setLoot 7F 1F 
+setLoot FE 0D" />
+	
+	<title> Need Help with potion buyer to my script [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Need Help with potion buyer to my script</div>
+<hr />
+<div class="pda"><a href="t-62202.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62202-Need-Help-with-potion-buyer-to-my-script">Need Help with potion buyer to my script</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">badek</div><div class="date">07-30-2015, 00:36</div></div><div class="posttext">fastExiva _potionid = ED 00 #strongManaPotion<br />
+fastExiva _manas = 200<br />
+fastExiva _idcost = 80<br />
+setBot AutoEatFood=1<br />
+setLoot D7 0B<br />
+setLoot C3 25<br />
+setLoot EF 00<br />
+setLoot DA 1D<br />
+setLoot 7F 1F<br />
+setLoot FE 0D<br />
+setLoot F9 0D<br />
+setLoot DB 1D<br />
+setLoot 94 1F<br />
+setMeleeKill carrion worm<br />
+setMeleeKill rotworm<br />
+setMeleeKill bog raider<br />
+setSpellKill bog raider,exori con,3<br />
+setAvoidFront bog raider<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#45) Goto $nlineoflabel:refill$<br />
+:toexp<br />
+move 33203,31842,7<br />
+move 33216,31841,7<br />
+move 33223,31832,7<br />
+move 33238,31823,7<br />
+move 33244,31801,7<br />
+move 33249,31783,7<br />
+move 33277,31780,7<br />
+move 33294,31775,7<br />
+move 33302,31782,7<br />
+move 33305,31784,8<br />
+move 33317,31776,8<br />
+move 33320,31772,8<br />
+move 33323,31770,9<br />
+move 33327,31777,9<br />
+move 33322,31760,9<br />
+move 33320,31762,10<br />
+move 33321,31779,10<br />
+move 33315,31794,10<br />
+move 33320,31804,11<br />
+move 33324,31806,12<br />
+move 33330,31809,12<br />
+:exp<br />
+move 33333,31809,13<br />
+move 33333,31801,13<br />
+move 33331,31795,13<br />
+move 33331,31788,13<br />
+move 33329,31783,13<br />
+move 33326,31777,13<br />
+move 33325,31771,13<br />
+move 33325,31767,13<br />
+move 33330,31765,13<br />
+move 33334,31762,13<br />
+move 33338,31761,13<br />
+move 33352,31756,13<br />
+move 33352,31756,13<br />
+move 33350,31762,13<br />
+move 33352,31755,13<br />
+move 33352,31748,13<br />
+move 33352,31743,13<br />
+move 33356,31740,13<br />
+move 33352,31746,13<br />
+move 33352,31754,13<br />
+move 33352,31761,13<br />
+move 33346,31761,13<br />
+move 33339,31761,13<br />
+move 33334,31762,13<br />
+move 33330,31765,13<br />
+move 33325,31769,13<br />
+move 33325,31776,13<br />
+move 33328,31782,13<br />
+move 33330,31789,13<br />
+move 33330,31794,13<br />
+move 33331,31801,13<br />
+move 33333,31809,13<br />
+sayInTrade exana pox<br />
+move 33329,31809,12<br />
+waitX 10<br />
+fastExiva _manapotionid = ED 00<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#45) Goto $nlineoflabel:refill$<br />
+gotoScriptLine $nlineoflabel:exp$<br />
+:refill<br />
+setLootOff<br />
+move 33324,31807,12<br />
+move 33321,31804,11<br />
+move 33317,31801,10<br />
+move 33315,31789,10<br />
+move 33321,31775,10<br />
+move 33320,31763,10<br />
+move 33319,31761,9<br />
+move 33319,31777,9<br />
+move 33326,31768,9<br />
+move 33318,31776,8<br />
+move 33305,31785,8<br />
+move 33302,31778,7<br />
+move 33282,31779,7<br />
+move 33252,31788,7<br />
+move 33242,31814,7<br />
+move 33255,31839,7<br />
+fastExiva _manas = 200<br />
+fastExiva _idcost = 80<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:vial$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+move 33255,31840,6<br />
+move 33255,31839,7<br />
+gotoScriptLine $nlineoflabel:toexp$<br />
+<br />
+Town Edron NPC Sandra tibia 10.77<br />
+<br />
+http://www.blackdtools.net/showthread.php?33080-Tutorial-Efficient-potionbuying  manapotion script used here</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

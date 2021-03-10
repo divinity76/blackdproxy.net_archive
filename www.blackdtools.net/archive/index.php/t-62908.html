@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="avoid, teleport, bottom, middle, enter/exit, small, 10x10, areas, special" />
+	<meta name="description" content="I play on an 8.6 OT, and I hunt in special areas. Small room, maybe 10x10 sqm. In the middle of the bottom side there is a TP to enter/exit the room. How do I set the bot to AVOID the teleport?" />
+	
+	<title> How to AVOID a teleport? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  How to AVOID a teleport?</div>
+<hr />
+<div class="pda"><a href="t-62908.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62908-How-to-AVOID-a-teleport">How to AVOID a teleport?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">aalqaq2</div><div class="date">07-10-2016, 22:06</div></div><div class="posttext">I play on an 8.6 OT, and I hunt in special areas. Small room, maybe 10x10 sqm. In the middle of the bottom side there is a TP to enter/exit the room. How do I set the bot to AVOID the teleport?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">07-11-2016, 05:21</div></div><div class="posttext">DO you have to move?<br />
+if not; set no follow. problem solved.<br />
+<br />
+You could look into configs and find a wall ID and change it with the teleporter ID. <br />
+But blackd tries to walk into walls constantly anyway so I doubt that would help</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nrated</div><div class="date">07-21-2016, 22:25</div></div><div class="posttext">Well u could also make a condition about your current position<br />
+If your current possition is not in this room then go to X label and enter that room again<br />
+<br />
+$istrue:{$check:{$myx$},#number&lt;#,9999$},{$check:{$myx$},#number&gt;#,9999$},{$myy$},#number&lt;#,9999$},{$check:{$myy$},#number&gt;#,9999$}$<br />
+Thats just and example of simple condition</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

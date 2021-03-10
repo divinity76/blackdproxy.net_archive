@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="blackdproxy.pl tu bylo, blackdtools, depositer, rafeq, tomb, setmeleekill, setloot, setbot, dragon, skeleton, cyclops, ghoul, $mycap$number, oldlootmode=1, autoeatfood=1, setlootdistance, mindelaytoloot=1, warrior, shambler, bonelord, mummy, smith, crypt, iftrue, setavoidfront, enjoy, setany, refill, depositer/potion, ghouls, setfollow, setchaoticmoveson" />
+	<meta name="description" content="Enjoy :3 
+setAny 
+setFollow 
+setLoot D7 0B 
+setLoot D4 0B 
+setLoot 33 28 
+setLoot D3 0B 
+setLoot CA 2C 
+setLoot CB 2C 
+setLoot 0A 17" />
+	
+	<title> &quot;Facc Tomb&quot; (ghoul's &amp; more) + depositer/potion refill By Rafeq [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  &quot;Facc Tomb&quot; (ghoul's &amp; more) + depositer/potion refill By Rafeq</div>
+<hr />
+<div class="pda"><a href="t-56651.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56651-quot-Facc-Tomb-quot-(ghoul-s-amp-more)-depositer-potion-refill-By-Rafeq">&quot;Facc Tomb&quot; (ghoul's &amp; more) + depositer/potion refill By Rafeq</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">rafek1241</div><div class="date">11-02-2011, 05:54</div></div><div class="posttext">Enjoy :3<br />
+<br />
+setAny<br />
+setFollow<br />
+setLoot D7 0B<br />
+setLoot D4 0B<br />
+setLoot 33 28<br />
+setLoot D3 0B<br />
+setLoot CA 2C<br />
+setLoot CB 2C<br />
+setLoot 0A 17<br />
+setLoot F8 2C<br />
+setLoot D9 2C<br />
+setLoot 19 17<br />
+setChaoticMovesON<br />
+setBot AutoEatFood=1<br />
+setLootDistance 99<br />
+setBot OldLootMode=1<br />
+setBot MINDELAYTOLOOT=1<br />
+setMeleeKill ghoul<br />
+setMeleeKill skeleton<br />
+setMeleeKill dragon<br />
+setAvoidFront dragon<br />
+setMeleeKill skeleton warrior<br />
+setMeleeKill Bat<br />
+setMeleeKill cave rat<br />
+setMeleeKill crypt shambler<br />
+setMeleeKill wolf<br />
+setMeleeKill bonelord<br />
+setMeleeKill mummy<br />
+setMeleeKill wolf<br />
+setMeleeKill cyclops<br />
+setMeleeKill cyclops smith<br />
+IfTrue ($mycap$#number&lt;=#20000) Goto $nlineoflabel:deposit$<br />
+IfFewItemsGoto 0A 01,20,$nlineoflabel:deposit$<br />
+move 32416,32025,10<br />
+move 32451,32030,10<br />
+move 32439,32048,10<br />
+move 32402,32062,10<br />
+move 32384,32012,10<br />
+move 32362,32007,10<br />
+move 32361,32007,11<br />
+move 32361,32028,11<br />
+move 32375,32017,11<br />
+move 32392,32021,11<br />
+move 32395,31977,11<br />
+move 32369,31967,11<br />
+move 32361,31962,11<br />
+move 32361,32007,11<br />
+move 32361,32008,10<br />
+move 32375,31985,10<br />
+move 32395,31973,10<br />
+move 32410,31987,10<br />
+move 32409,32008,10<br />
+move 32415,32021,10<br />
+IfTrue ($mycap$#number&lt;=#20000) Goto $nlineoflabel:deposit$<br />
+IfFewItemsGoto 0A 01,20,$nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 32391,32012,10<br />
+move 32405,32033,10<br />
+move 32405,32034,9<br />
+move 32418,32041,9<br />
+move 32418,32042,8<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32105,7<br />
+move 32430,32142,7<br />
+move 32369,32175,7<br />
+move 32346,32214,7<br />
+move 32344,32229,7<br />
+sayMessage hi<br />
+waitX 3<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva _potionid = 0A 01<br />
+fastExiva _manas = 60<br />
+fastExiva _idcost = 45<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_potionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32353,32216,7<br />
+move 32399,32220,7<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade vial<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+SayInTrade good bye<br />
+move 32399,32220,7<br />
+move 32346,32226,7<br />
+move 32364,32214,7<br />
+move 32368,32182,7<br />
+move 32443,32130,7<br />
+move 32449,32105,7<br />
+move 32449,32069,7<br />
+move 32447,32069,8<br />
+move 32428,32064,8<br />
+move 32418,32042,8<br />
+move 32418,32041,9<br />
+move 32405,32034,9<br />
+move 32405,32033,10<br />
+move 32391,32012,10<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">beerisbac</div><div class="date">02-21-2015, 17:45</div></div><div class="posttext">where do i start?why nobody write for who what lvl what eq and skills you need for start</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">carlossp</div><div class="date">05-10-2016, 21:05</div></div><div class="posttext">Starts in Thais dp</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="regsvr32, dx7vb.dll, solution, proxy, blackd, mswinsck.ocx, download, installation, msflxgrd.ocx, windows, admin, install, windowssystem32, search, window, worked, avoid, popup, administrator, cmd.exe, black, execute, solutions, click, vista, installer, options, ultimate, control, panel, level, security, saved, minimum, errors, worth, cblackdproxy, toolsblackd, desktop, folders, special/protected, documents, filesblackd, cprogram, problems, register, notes, default, locations, strange" />
+	<meta name="description" content="SOLUTION 1: 
+1. download &quot;Blackd Proxy Alternative Installer - Zipped MSI file&quot; 
+2. unzip it 
+3. run Blackd Proxy.msi to install it.  
+4. after installation just run blackd proxy (Do NOT run as admin)  
+  
+SOLUTION 2: 
+if you have UAC mode ENABLED 
+1. download &quot;Blackd Proxy Installer - Complete installation&quot; from http://www.blackdtools.com/freedownloads.php 
+2. right click over it and choose &quot;run as admin&quot; (or something like that depending your language) This should install everything." />
+	
+	<title> Possible solutions for errors 429 or 339 (Windows Vista / Windows 7) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Possible solutions for errors 429 or 339 (Windows Vista / Windows 7)</div>
+<hr />
+<div class="pda"><a href="t-16977.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?16977-Possible-solutions-for-errors-429-or-339-(Windows-Vista-Windows-7)">Possible solutions for errors 429 or 339 (Windows Vista / Windows 7)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-27-2008, 14:06</div></div><div class="posttext">SOLUTION 1:<br />
+1. download &quot;Blackd Proxy Alternative Installer - Zipped MSI file&quot;<br />
+2. unzip it<br />
+3. run Blackd Proxy.msi to install it. <br />
+4. after installation just run blackd proxy (Do NOT run as admin) <br />
+ <br />
+SOLUTION 2:<br />
+if you have UAC mode ENABLED<br />
+1. download &quot;Blackd Proxy Installer - Complete installation&quot; from http://www.blackdtools.com/freedownloads.php<br />
+2. right click over it and choose &quot;run as admin&quot; (or something like that depending your language) This should install everything.<br />
+3. after installation, just run blackd proxy (this time you should just run it. Do NOT run it as admin.)<br />
+ <br />
+SOLUTION 3:<br />
+if you have UAC mode DISABLED<br />
+(if solution 2 doesn't work)<br />
+ <br />
+Credits to Elvis Dourado who contacted me by email with his solution:<br />
+ <br />
+1. Download and save in windows\system32\ ... <br />
+dx7vb.dll (http://www.blackdtools.net/directdownload123/dx7vb.dll)<br />
+MSWINSCK.OCX (http://www.blackdtools.net/directdownload123/MSWINSCK.OCX)<br />
+msflxgrd.ocx (http://www.blackdtools.net/directdownload123/msflxgrd.ocx)<br />
+(you can click in the 3 names above to download them directly from my host, or just download them from any other web if you feel more safe that way)<br />
+ <br />
+2. search and execute CMD.EXE as administrator. A black window will popup. There you should type:<br />
+regsvr32 /s mswinsck.ocx<br />
+regsvr32 /s dx7vb.dll<br />
+regsvr32 /u /s msflxgrd.ocx<br />
+regsvr32 /u /s mswinsck.ocx<br />
+regsvr32 /u /s dx7vb.dll<br />
+regsvr32 dx7vb.dll<br />
+ <br />
+(might be redudant, but for me it somehow it worked after executing exactly all that in that order)<br />
+ <br />
+SUCESFULLY TESTED BOTH SOLUTIONS MYSELF, USING VISTA ULTIMATE 32 bits<br />
+ <br />
+ <br />
+ <br />
+SOLUTION 4:<br />
+... MORE OR LESS THE SAME THAN #3 ... BUT WORTH TRYING IF #2 DIDNT WORKED FOR YOU<br />
+ <br />
+1. Download and save in windows\system32\ ...<br />
+dx7vb.dll<br />
+MSWINSCK.OCX<br />
+msflxgrd.ocx<br />
+ <br />
+and saved them<br />
+ <br />
+Then i <br />
+2. search and execute CMD.EXE as administrator. A black window will popup. There you should type:<br />
+regsvr32 mswinsck.ocx<br />
+regsvr32 dx7vb.dll<br />
+regsvr32 msflxgrd.ocx<br />
+regsvr32 mswinsck.ocx<br />
+regsvr32 dx7vb.dll<br />
+regsvr32 dx7vb.dll<br />
+ <br />
+SOLUTION 5: <br />
+if you have windows 7 then go to user options in control panel and drop the security level to minimum. Then all required dlls and ocxs should register at installation without problems<br />
+ <br />
+-----------------<br />
+ <br />
+MISC NOTES:<br />
+ <br />
+- Avoid to install Blackd Proxy in strange locations. The default installation path should be fine ( C:\program files\blackd tools\blackd proxy ) You can also use C:\blackdproxy or anything else, but please AVOID desktop, my documents, temp, windows, or such special/protected folders.<br />
+ <br />
+- UAC mode should be ON</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dakito</div><div class="date">03-08-2008, 00:13</div></div><div class="posttext">@UP <br />
+<br />
+thanks BlackD helped me alot xD ... All the time was thinkin why my blackd don't work at Vista... Now I know :D yeaaah Thx!.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aiolas</div><div class="date">03-14-2008, 10:42</div></div><div class="posttext">Worked for me, thanks<br />
+<br />
+<br />
+Try to reboot your pc after doing these registries, was nescessary for my pc to get it working.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aiolas</div><div class="date">03-14-2008, 13:49</div></div><div class="posttext">Okey, turned out this problem only appears when people have UAC &quot;User account control&quot; turned OFF.<br />
+<br />
+Therefore, you should turn it on instead. I know alot of people dislike the pop-ups that appear while UAC is turned on.<br />
+<br />
+<br />
+Now here download a tweak, install it... and UAC will run in quite mode. Which enables you to use BLACKD tools and not get any UAC messages anymore.<br />
+www.tweak-uac.com<br />
+<br />
+Please let others test this.<br />
+<br />
+//Sav</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">04-01-2008, 21:23</div></div><div class="posttext">Okey, turned out this problem only appears when people have UAC &quot;User account control&quot; turned OFF.<br />
+ <br />
+Therefore, you should turn it on instead. I know alot of people dislike the pop-ups that appear while UAC is turned on.<br />
+ <br />
+ <br />
+Now here download a tweak, install it... and UAC will run in quite mode. Which enables you to use BLACKD tools and not get any UAC messages anymore.<br />
+www.tweak-uac.com (http://www.tweak-uac.com)<br />
+ <br />
+Please let others test this.<br />
+ <br />
+//Sav<br />
+ <br />
+now it is possible to run Blackd Proxy in Windows Vista even if UAC is turned off (just follow solution #2)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">caion.11</div><div class="date">04-02-2008, 06:07</div></div><div class="posttext">YEA! got it!<br />
+Remember my e-mail Daniel?<br />
+Thanks a lot!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">c0r3y</div><div class="date">04-03-2008, 14:00</div></div><div class="posttext">I was beginning to think there was no hope for us Vista users. It worked great! The only thing is, i had to run CMD.exe 2 times. I also have UAC enabled and I did #2 it still works. Thanks for the hard work in finding a solution for us. Two thumbs up!<br />
+<br />
+-Corey</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">&#380;ó&#322;todziub</div><div class="date">04-12-2008, 14:33</div></div><div class="posttext">I do all what is in the solution and i cant use bot.<br />
+i have windows vista ultimate 64 bit, some on have it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Darkstar</div><div class="date">04-15-2008, 14:07</div></div><div class="posttext">Yesss Thankyou So Much I Finally Got It To Work. I Was Running Xp Sp3 And Tried This But It Wasn't Working So I Removed It And Tried Again After Like 3 Months And It Workssss Thxxxxxx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thie</div><div class="date">04-16-2008, 16:13</div></div><div class="posttext">Its still giving me errors somehow :S<br />
+<br />
+Edit: but just once or twice a day :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sasir</div><div class="date">04-21-2008, 18:50</div></div><div class="posttext">Im getting still an error, check this out:<br />
+http://img293.imageshack.us/img293/7524/34423208dp5.jpg<br />
+Help?:mad:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sasir</div><div class="date">04-26-2008, 00:46</div></div><div class="posttext">very nice forum, noone is helping LOL</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Solvyn</div><div class="date">05-03-2008, 10:55</div></div><div class="posttext">Solution 2 works very well thanks blackd</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fejkish</div><div class="date">05-06-2008, 19:50</div></div><div class="posttext">I'm getting this debug, do you have any idea what i could do to fix it?<br />
+<br />
+btw, i did what you wrote in the first post, but still it doesn't seem to work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Yai</div><div class="date">05-11-2008, 21:21</div></div><div class="posttext">Finally I can  use Vista for sth useful, thanks BlackD.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sepho</div><div class="date">05-22-2008, 20:29</div></div><div class="posttext">what if im gitting this error on a non vista comp?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thie</div><div class="date">05-29-2008, 15:47</div></div><div class="posttext">If vista gives an error when you register dx7vb.dll then I got the solution.<br />
+<br />
+I had the same misstake aswell, which gave me an error in solution 2 but you had to do as follow.<br />
+<br />
+<br />
+-Make a shortcut from cmd.exe<br />
+-run cmd.exe as admin<br />
+-then register the file dx7vb.dll<br />
+<br />
+Then it should work. hope blackd can edit his post.<br />
+<br />
+<br />
+Yours,<br />
+Thie</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lilblake</div><div class="date">06-03-2008, 00:38</div></div><div class="posttext">the command prompt worked like a charm</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jakeee</div><div class="date">06-05-2008, 17:00</div></div><div class="posttext">doesn't work for users with 64-bit vista... well not for me. Have successfully register all 3 files both in system32 and sysWOW64. Still getting the error, very strange behavior.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Holman</div><div class="date">06-08-2008, 09:53</div></div><div class="posttext">Last solution worked fine for me :D!<br />
+<br />
+Regards,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">06-20-2008, 17:58</div></div><div class="posttext">Worked for me I cant stand UAC so I had to follow this, so im letting you all no it definetly works :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fct</div><div class="date">06-25-2008, 16:43</div></div><div class="posttext">Its dont work for me at all.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sanello</div><div class="date">06-27-2008, 02:28</div></div><div class="posttext">Run-time error 339 component 'msflxgrd.ocx' or one of its dependencies not correctly registered: a file is missing or invalid<br />
+<br />
+I dont know what to do please msg me</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zamo</div><div class="date">07-02-2008, 17:49</div></div><div class="posttext">It didnt work for me, i did it all.<br />
+<br />
+<br />
+But then while writing this, i made like this, I just got my new computer today.<br />
+<br />
+<br />
+I did the second step,<br />
+1. Download and save in windows\system32\ ...<br />
+dx7vb.dll<br />
+MSWINSCK.OCX<br />
+msflxgrd.ocx<br />
+<br />
+and saved them<br />
+<br />
+Then i <br />
+2. search and execute CMD.EXE as administrator. A black window will popup. There you should type:<br />
+regsvr32 mswinsck.ocx<br />
+regsvr32 dx7vb.dll<br />
+regsvr32 msflxgrd.ocx<br />
+regsvr32 mswinsck.ocx<br />
+regsvr32 dx7vb.dll<br />
+regsvr32 dx7vb.dll<br />
+<br />
+<br />
+Do it like that, might help, works for me now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ryoma</div><div class="date">07-03-2008, 17:05</div></div><div class="posttext">i did all and dont work i can run the blackdproxy but dont load the maps</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mazza</div><div class="date">07-05-2008, 23:01</div></div><div class="posttext">Run-time error 339 component 'msflxgrd.ocx' or one of its dependencies not correctly registered: a file is missing or invalid<br />
+<br />
+I dont know what to do please msg me<br />
+<br />
+<br />
+the same as u<br />
+<br />
+=/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mazza</div><div class="date">07-05-2008, 23:11</div></div><div class="posttext">Im getting still an error, check this out:<br />
+http://img293.imageshack.us/img293/7524/34423208dp5.jpg<br />
+Help?:mad:<br />
+<br />
+2. search and execute CMD.EXE as administrator. A black window will popup. There you should type:<br />
+regsvr32 /s mswinsck.ocx<br />
+regsvr32 /s dx7vb.dll<br />
+regsvr32 /u /s msflxgrd.ocx<br />
+regsvr32 /u /s mswinsck.ocx<br />
+regsvr32 /u /s dx7vb.dll<br />
+regsvr32 dx7vb.dll<br />
+<br />
+i added this thinking it was the solution<br />
+regsvr32 /s msflxgrd.ocx<br />
+<br />
+so it starts giving your critical error<br />
+<br />
+but i still cant use the bot<br />
+=/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinny Rulez</div><div class="date">07-06-2008, 19:18</div></div><div class="posttext">here no have ~&gt; MSWINSCK.OCX &lt;~ what I do ? ? ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nixxor</div><div class="date">07-06-2008, 21:55</div></div><div class="posttext">Why is blackdproxy complete installation for tibia 8.11, when I want it for the newest tibia 8.20, because I cant extract files or use the auto updater which makes it hard for me to update, please make the full version for 8.20. <br />
+<br />
+I am using vista and gets acces denied when trying to extract files.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mazza</div><div class="date">07-06-2008, 22:00</div></div><div class="posttext">Why is blackdproxy complete installation for tibia 8.11, when I want it for the newest tibia 8.20, because I cant extract files or use the auto updater which makes it hard for me to update, please make the full version for 8.20. <br />
+<br />
+I am using vista and gets acces denied when trying to extract files.<br />
+<br />
+try to use as admin</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ezam</div><div class="date">07-09-2008, 07:39</div></div><div class="posttext">I didnt had those problems, but my blackd didnt detect my characters, so i erase it, download it again and still didnt worked, the i made your first solution, and didnt worked and then tried the second one (never did something that weird before) then i executed blackd, and a msg appeared and said something about error 339, and couldnt continue running the program, then i tried clicking in blackd &quot;run as admin&quot; and finally it worked, now it detects my chars ty blackd, i dont care if i have to run it as admin all times.<br />
+<br />
+=') thnx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aioros19</div><div class="date">07-14-2008, 22:26</div></div><div class="posttext">i get the error 429 thing and i tried to do the solutions but i kind of lost =s</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aioros19</div><div class="date">07-15-2008, 00:47</div></div><div class="posttext">i get this error 0x80070005 what should i do?<br />
+it says &quot;the module dx7vb.dll was loaded but the call to DllRegisterServer failed with error code 0x80070005</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tobbes</div><div class="date">07-15-2008, 14:39</div></div><div class="posttext">regsvr32 /s mswinsck.ocx - worked<br />
+ regsvr32 /s dx7vb.dll - worked<br />
+ regsvr32 /u /s msflxgrd.ocx - worked<br />
+ regsvr32 /u /s mswinsck.ocx - worked<br />
+ regsvr32 /u /s dx7vb.dll - worked<br />
+ regsvr32 dx7vb.dll -  - failed<br />
+<br />
+<br />
+i put all the files into the folder you said.. but i get this error:<br />
+<br />
+http://www.blackdtools.net/attachment.php?attachmentid=3195&amp;stc=1&amp;d=1216121956</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">skarabeusz323</div><div class="date">07-15-2008, 18:37</div></div><div class="posttext">i have the same  ;/// ^^^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zoious</div><div class="date">07-15-2008, 20:23</div></div><div class="posttext">Guys ive followed the solution for #1 cause i got uac on so i did all the stuff and im still getting the error (whats wrong????)<br />
+<br />
+I'm getting a little mad because ive tryed both solutions</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aioros19</div><div class="date">07-15-2008, 21:07</div></div><div class="posttext">my blackd now opens but my char doesnt heal as fast as before and also is lags alot and kicks me out of the server (unline.org server) it says something about safe mode on</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zoious</div><div class="date">07-16-2008, 00:23</div></div><div class="posttext">OK, I got it to work, thanks guys</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Phantom</div><div class="date">07-16-2008, 00:27</div></div><div class="posttext">absolutely great :) thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xeamo19</div><div class="date">07-21-2008, 17:49</div></div><div class="posttext">Can you give me update patches?<br />
+Or atleast upload it,<br />
+My auto updater doesnt work that well..<br />
+And i cannot use blackdtools now,<br />
+cause it doesnt show my character &gt;.&gt;<br />
+So i need new update ^^ ;]<br />
+<br />
+Thanks in advance.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BUg</div><div class="date">07-28-2008, 04:45</div></div><div class="posttext">regsvr32 /s mswinsck.ocx - worked<br />
+ regsvr32 /s dx7vb.dll - worked<br />
+ regsvr32 /u /s msflxgrd.ocx - worked<br />
+ regsvr32 /u /s mswinsck.ocx - worked<br />
+ regsvr32 /u /s dx7vb.dll - worked<br />
+ regsvr32 dx7vb.dll -  - failed<br />
+<br />
+<br />
+i put all the files into the folder you said.. but i get this error:<br />
+<br />
+http://www.blackdtools.net/attachment.php?attachmentid=3195&amp;stc=1&amp;d=1216121956<br />
+<br />
+<br />
+<br />
+Got the same problem. Did you manage to fix it yet?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kladden</div><div class="date">07-28-2008, 10:53</div></div><div class="posttext">Hehe, thanks. Works without UAC now :D<br />
+<br />
+Ps. It works, but &quot;regsvr32 dx7vb.dll &quot; doesn't work. :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">morcego007</div><div class="date">07-31-2008, 08:24</div></div><div class="posttext">Hello, im Elvis Dourado, i helped Daniel with this trouble, but some people still getting the &quot;dx7&quot; error.<br />
+<br />
+try:<br />
+start the command prompt (Start -&gt; All Programs -&gt; Accessories -&gt; Command Prompt) as an administrator (right click 'Command Prompt' and choose 'Run As Administrator').<br />
+regsvr32 dx7vb.dll<br />
+<br />
+<br />
+I aways turn UAC off, its sux a lot, with UAC off doesnt need &quot;run as administrator&quot;, but anyway, there are to many Vista versions and works diferent.<br />
+<br />
+i tryed now with UAC off, and works fine.<br />
+<br />
+cheers!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bajsbonge</div><div class="date">08-02-2008, 00:05</div></div><div class="posttext">nvm<br />
+<br />
+anyway this isnt working for vista enterprise</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bajsbonge</div><div class="date">08-02-2008, 02:53</div></div><div class="posttext">its not working for vista 64bits?<br />
+<br />
+regsvr32 dx7vb.dll <br />
+makes it say<br />
+<br />
+http://img208.imageshack.us/img208/285/regsrvmx6.jpg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">majorn</div><div class="date">08-11-2008, 00:12</div></div><div class="posttext">i have the same problem :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vandoos</div><div class="date">08-11-2008, 21:00</div></div><div class="posttext">same problem</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Krippzor</div><div class="date">08-12-2008, 14:34</div></div><div class="posttext">Fuck blackd i have tried with everything all solutions but it still dont work and i had paid for nothingn. Just make a vista version of blackd PLEASE.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sirum</div><div class="date">08-15-2008, 16:13</div></div><div class="posttext">i got exactly the same problem as bajsbonge is there any way to fix it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bajsbonge</div><div class="date">08-16-2008, 17:47</div></div><div class="posttext">its not working for vista 64bits?<br />
+<br />
+regsvr32 dx7vb.dll <br />
+makes it say<br />
+<br />
+http://img208.imageshack.us/img208/285/regsrvmx6.jpg<br />
+<br />
+can we atleast get some feedback on this?<br />
+seems to me it's not only me who experience this<br />
+<br />
+lucky me only bought a month so i dont have to waste a whole year on nothing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">diegopt</div><div class="date">08-19-2008, 09:20</div></div><div class="posttext">MAN I AM REALLY NERVOUS WITH THIS VISA VERSION, since the last update i cant turn on the blacked, i already instalation this like 10 times, desista. many times, update a lot of time, i almost broke my notebook, shot him, haha, i dont know what to do know, the most better thing that i do was work with him in the last update but for the version 8.1 of tibia, i dont understand why this is happeing, he said blackd proxy 12.4 for tibia 8.1 and he still said you are now running the blackd proxy official version, grrrrr i am getting nervous, angry, before open blacked give error 429 but i put yes and he works in that version. SHIT, someone can help me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cruez</div><div class="date">08-22-2008, 23:27</div></div><div class="posttext">Awesome, thanks alot BlackD!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BlackdRox</div><div class="date">08-28-2008, 02:14</div></div><div class="posttext">Hello, im Elvis Dourado, i helped Daniel with this trouble, but some people still getting the &quot;dx7&quot; error.<br />
+<br />
+try:<br />
+start the command prompt (Start -&gt; All Programs -&gt; Accessories -&gt; Command Prompt) as an administrator (right click 'Command Prompt' and choose 'Run As Administrator').<br />
+regsvr32 dx7vb.dll<br />
+<br />
+<br />
+I aways turn UAC off, its sux a lot, with UAC off doesnt need &quot;run as administrator&quot;, but anyway, there are to many Vista versions and works diferent.<br />
+<br />
+i tryed now with UAC off, and works fine.<br />
+<br />
+<br />
+<br />
+<br />
+cheers!<br />
+<br />
+<br />
+Thank you, the &quot;key&quot; is to right click on the command prompt and choose to run as administrator as you indicated here. I hope the people past your post will re read your instructions. it works great.<br />
+<br />
+Signed;<br />
+<br />
+Roxy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xzec</div><div class="date">09-01-2008, 19:18</div></div><div class="posttext">w00t?!<br />
+I could go with solution #1, but solution #2 and #3?<br />
+I mean, wtf?!<br />
+Well, Daniel, it's just to turn off UAC, reboot and HEY! It's ALIVE!<br />
+<br />
+It's not that hard... Just go on your control panel, search for uac, and click &quot;Ok&quot;, reboot your computer and Blackd works all fine!<br />
+<br />
+I got Windows Vista Ultimate 32-bits, and Blackd wouldn't work when I had UAC turned on, but when I turned it off and rebooted my PC, then it worked!<br />
+<br />
+Best regards,<br />
+Nymph.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mike Haw</div><div class="date">09-01-2008, 21:26</div></div><div class="posttext">i have xp.... and im semi new to blackd, i keep getting this program... if i hit cancel 8679685 times it says i can use it without hotkeys or alerts...<br />
+<br />
+<br />
+3622</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mike Haw</div><div class="date">09-07-2008, 21:46</div></div><div class="posttext">can any1 help me??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">morcego007</div><div class="date">09-15-2008, 04:15</div></div><div class="posttext">@mark<br />
+i never saw this error, try download again, if doesnt work, download de .rar version.<br />
+<br />
+<br />
+@vista 64 bits<br />
+some people get a error to register some dlls, but this dlls (dx7...) are for a 32bit system, i searching i couldnt find this old's &quot;dll's&quot; in 64bit version.<br />
+so... i dont think it will work on vista 64.<br />
+<br />
+cya</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cocoras*</div><div class="date">10-01-2008, 23:48</div></div><div class="posttext">I can run blackd, but when I log in with tibia it doesnt find any character.. I tryed the 3 things to do, didnt work. Been trying for like 4 hours now, does anyone got a solution? Payed for my bot, so I want to use it..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">d_kay</div><div class="date">10-02-2008, 12:30</div></div><div class="posttext">can't update with vista, uac turned off</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tomik1993</div><div class="date">10-03-2008, 02:22</div></div><div class="posttext">Hey i don't get mine bot what the hell is happening im using it and whatever im putting MY bot says &quot; GRATZ&quot; and whatever im throwing out of my bp it says &quot;GRATZ&quot; what hell ?:P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aturom</div><div class="date">10-04-2008, 18:36</div></div><div class="posttext">I can run blackd, but when I log in with tibia it doesnt find any character.. I tryed the 3 things to do, didnt work. Been trying for like 4 hours now, does anyone got a solution? Payed for my bot, so I want to use it..<br />
+<br />
+I know the same problem man :S Is it any1 that could tell us what to do?! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SillyMan</div><div class="date">10-05-2008, 01:49</div></div><div class="posttext">After I tried these steps it gave me an error message:<br />
+<br />
+&quot;Component 'richx32.ocx' or one of its dependencies not correctly registered: a file missing or invalid.&quot;<br />
+<br />
+I've read through everything and I'm probably just did something silly and messed up but after reinstalling and reinstalling it still does not work properly.<br />
+<br />
+Sorry if this problem has already been covered I am just tired of things not working right.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">garedgar</div><div class="date">10-09-2008, 04:22</div></div><div class="posttext">omg man thnx so much i didnt know wut i was typing in the command prompt but it WORKED 0.0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">milkmanpr</div><div class="date">10-13-2008, 04:47</div></div><div class="posttext">I'm Getting some kind of Debug once in a while to the tibia since I did what the Solution #2 does, the Debug says something about problems with the graphics with some .cpp programs, Do any body know about it? Please if you know how to Fix it plx help me ASAP<br />
+<br />
+http://img89.imageshack.us/img89/394/debugproblemlt8.jpg (http://imageshack.us)<br />
+http://img89.imageshack.us/img89/debugproblemlt8.jpg/1/w1545.png (http://g.imageshack.us/img89/debugproblemlt8.jpg/1/)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mike Haw</div><div class="date">10-16-2008, 22:25</div></div><div class="posttext">I had the complete installer and it worked fine then it told me to update and i did and this happened....<br />
+4008</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Joaq</div><div class="date">11-06-2008, 20:58</div></div><div class="posttext">If vista gives an error when you register dx7vb.dll then I got the solution.<br />
+<br />
+I had the same misstake aswell, which gave me an error in solution 2 but you had to do as follow.<br />
+<br />
+<br />
+-Make a shortcut from cmd.exe<br />
+-run cmd.exe as admin<br />
+-then register the file dx7vb.dll<br />
+<br />
+Then it should work. hope blackd can edit his post.<br />
+<br />
+<br />
+Yours,<br />
+Thie<br />
+<br />
+How do i make the shorcut? :S</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kirkwood</div><div class="date">11-17-2008, 00:18</div></div><div class="posttext">i use 64bits, how i fix the 429 error?<br />
+:/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">heiyu</div><div class="date">12-08-2008, 00:24</div></div><div class="posttext">hey,<br />
+<br />
+i did everything what you've wrote in steps 1) 2) 3) and that sh1t didn't started... ;/ Error 429, what a hell should i do now??? when im typying &quot;regsvr32 dx7vb.dll&quot; its showing me next error. I have Win Vista 64bits...<br />
+<br />
+<br />
+<br />
+Hey, is there any chance to run blackd, please?????? :( Please message me on pw if u will get any sugesstions. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ezzyo</div><div class="date">12-11-2008, 09:50</div></div><div class="posttext">After I tried these steps it gave me an error message:<br />
+<br />
+&quot;Component 'richx32.ocx' or one of its dependencies not correctly registered: a file missing or invalid.&quot;<br />
+<br />
+I've read through everything and I'm probably just did something silly and messed up but after reinstalling and reinstalling it still does not work properly.<br />
+<br />
+Sorry if this problem has already been covered I am just tired of things not working right.<br />
+<br />
+I am have this problem too =/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zciulany</div><div class="date">12-13-2008, 17:56</div></div><div class="posttext">Solution #2 helped me and i Don't even have a vista. Thank you ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Simon157</div><div class="date">12-13-2008, 19:04</div></div><div class="posttext">Whould be nice with a Win Vista x64 solution too :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hexy</div><div class="date">12-16-2008, 15:56</div></div><div class="posttext">edited by blackd: post another link to an exe file and you will get a permanent ban</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">morcego007</div><div class="date">02-13-2009, 05:20</div></div><div class="posttext">im using windows seven 64 bits, installed herethe 14.3 and run's perfect, dont even register a dll or ocx.<br />
+<br />
+my license finish 2009-02-27 :(<br />
+<br />
+Best Regards</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oaNte</div><div class="date">02-15-2009, 02:33</div></div><div class="posttext">Doesnt work a shit want to throw my comp in my moms ass right now -.-</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oaNte</div><div class="date">02-15-2009, 02:34</div></div><div class="posttext">And btw, It works 14.3 BUT.. it's version 8.31 !!!!!!!!!!!!!!!!!!!!! -.-</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Popper</div><div class="date">03-24-2009, 01:25</div></div><div class="posttext">i dont have vista ii have windows XP and when i tried to open black... says :<br />
+<br />
+<br />
+error 429<br />
+-Some files may not be corrected install<br />
+-Windows visa? you will need to register some files manually (i do not have vista)<br />
+Details<br />
+-error number- 2147024770<br />
+-Error description : automatic error<br />
+the specified module cannot be found<br />
+<br />
+help plx<br />
+i download the complete installation :S so idk what happened</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">miki0304</div><div class="date">04-22-2009, 18:00</div></div><div class="posttext">I've made it on WinXP seconds ago, and it WORKS! - i just clean mine reg before I log in with my main - on tibia 8.42<br />
+<br />
+<br />
+LOL - debug comes when i want run Tibia from BlackD window. I must run it from BlackdMC.exe... I will uninstall all and install back later.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">F_papi</div><div class="date">10-02-2009, 22:41</div></div><div class="posttext">i can run blackd but nothing works the cavebot dont work or anything else<br />
+:( can somone plz help me. peace and love</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zalekow1</div><div class="date">10-20-2009, 18:06</div></div><div class="posttext">When i open blackd its connect to www.blackdtools.net i wait and cant connect.I try again and nothing ;/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">eikon</div><div class="date">11-06-2009, 23:54</div></div><div class="posttext">I can run blackd, but when I log in with tibia it doesnt find any character.. I tryed the 3 things to do, didnt work. Been trying for like 4 hours now, does anyone got a solution? Payed for my bot, so I want to use it..<br />
+<br />
+IDD please some help :'(!<br />
+Tried the Soloutions .. nothing happens just another error when i press the last Enter on cmd.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pchelka</div><div class="date">12-02-2009, 11:34</div></div><div class="posttext">i do solution #2 on windows 7 and i have problem ;/, i can't install solution's. blackd have error 339...<br />
+<br />
+http://img257.imageshack.us/img257/3132/problemblackd.jpg (http://img257.imageshack.us/i/problemblackd.jpg/)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bardux</div><div class="date">12-07-2009, 03:22</div></div><div class="posttext">i do solution #2 on windows 7 and i have problem ;/, i can't install solution's. blackd have error 339.  Help me..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Branden</div><div class="date">02-04-2010, 22:38</div></div><div class="posttext">So does anyone know how to get blackd working on Windows Vista Ultimate x64? I tried all the above solutions; none worked.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hepo</div><div class="date">05-13-2010, 00:57</div></div><div class="posttext">&quot;So does anyone know how to get blackd working on Windows Vista Ultimate x64? I tried all the above solutions; none worked. &quot;<br />
+<br />
+I have too this problem ;( but i have Windows 7 x64</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raoul</div><div class="date">05-27-2010, 18:39</div></div><div class="posttext">i have windows xp and get this, tryed every file/ instalation possibility;/<br />
+<br />
+i didnt pay for this crap:(!<br />
+also updated everything enc:(<br />
+<br />
+http://i49.tinypic.com/f0ubq.png</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Loki</div><div class="date">05-28-2010, 03:21</div></div><div class="posttext">i have windows xp and get this, tryed every file/ instalation possibility;/<br />
+<br />
+i didnt pay for this crap:(!<br />
+also updated everything enc:(<br />
+<br />
+http://i49.tinypic.com/f0ubq.png<br />
+<br />
+solution for windows 7 - 64 bit.... try copying all 3 files ( the 2 ocx + the 1 dll files) into &quot;C:\Program Files (x86)\Blackd Tools\Blackd Proxy&quot; with the bot itself. after i tried this, it loads up just fine.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raoul</div><div class="date">05-28-2010, 10:04</div></div><div class="posttext">Tryed it aint working, and i got xp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raoul</div><div class="date">05-29-2010, 14:36</div></div><div class="posttext">upupupupup</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xelix</div><div class="date">06-22-2010, 09:28</div></div><div class="posttext">I have a two problems, but I do all to tutorial:<br />
+<br />
+1.http://img526.imageshack.us/img526/5585/obrazeky.jpg<br />
+2.http://img20.imageshack.us/img20/340/obrazek1w.jpg<br />
+<br />
+I have a Windows 7, 64 bits</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-22-2010, 20:23</div></div><div class="posttext">if you have windows 7 then go to user options in control panel and drop the security level to minimum. Then all required dlls and ocxs should register at installation without problems</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kajtak</div><div class="date">12-08-2010, 01:07</div></div><div class="posttext">if you have windows 7 then go to user options in control panel and drop the security level to minimum. Then all required dlls and ocxs should register at installation without problems<br />
+ <br />
+I got the same loading problem but my blackd crashes often and says error code 89, so can u describe that loading problem more so i can fix it and help me with error code 89 thx:)<br />
+comon now this carshes will make me ruined, just lost an mpa &quot;/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">JamesWigh</div><div class="date">12-01-2011, 10:28</div></div><div class="posttext">Hello,<br />
+Runtime error 429: &#8220;ActiveX component can&#8217;t create object&#8221;<br />
+Here is a solution to this error:<br />
+    Reinstall Windows Script<br />
+    Repair Windows Script File Information in Registry<br />
+    Reregister Concerning File<br />
+    Reset Internet Explorer Settings<br />
+    Restore your Computer<br />
+    Repair System Files<br />
+i also faced this error many times but  i fixed it, i also got some help from this article  error429 (http://www.error429.com) , hope someone might get help from this article.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

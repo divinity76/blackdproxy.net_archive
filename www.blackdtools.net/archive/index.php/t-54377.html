@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tryed, detection, hight, warning, tutorial, doors, scripters, safer, complete, @advanced" />
+	<meta name="description" content="Blackd Proxy 19.1 : 
+- New command to do game inspect in a square near you: exiva check x,y,z 
+- New variable to check last game inspect result: $lastcheckresult$ 
+  
+This should allow advanced scripters to code safe checks over doors (because it is not a good idea to send a open-door packet against an already-opened door) 
+  
+Safe procedure to deal with a door at position x,y,z: 
+  
+fastExiva check x,y,z 
+waitX 5" />
+	
+	<title> @advanced scripters: How to open doors in safer way [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  @advanced scripters: How to open doors in safer way</div>
+<hr />
+<div class="pda"><a href="t-54377.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54377-advanced-scripters-How-to-open-doors-in-safer-way">@advanced scripters: How to open doors in safer way</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-18-2011, 15:00</div></div><div class="posttext">Blackd Proxy 19.1 :<br />
+- New command to do game inspect in a square near you: exiva check x,y,z<br />
+- New variable to check last game inspect result: $lastcheckresult$<br />
+ <br />
+This should allow advanced scripters to code safe checks over doors (because it is not a good idea to send a open-door packet against an already-opened door)<br />
+ <br />
+Safe procedure to deal with a door at position x,y,z:<br />
+ <br />
+fastExiva check x,y,z<br />
+waitX 5<br />
+IfTrue ($lastcheckresult$#string&lt;&gt;#You see a closed door.) Goto $nlineoflabel:alreadyopened$<br />
+fastExiva &gt; packettoopendoorXYZ<br />
+:alreadyopened<br />
+...<br />
+<br />
+(You will need to inspect the packet that open door at x,y,z to get the custom cheat command)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">02-18-2011, 20:53</div></div><div class="posttext">Thanks so much for listening my suggestion!<br />
+<br />
+How ever this still need to be improved.<br />
+$lastcheckresult$  should not return a string that comes from the server but rather the item ID that is there, that way if someone blocked the door with something or someone you could issue and exiva command to move that item or thing or to react accordingly.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ferigon</div><div class="date">11-09-2011, 23:22</div></div><div class="posttext">Daniel could you please add some command for that? I've been trying to do a 100% safe way to open doors in my script but it takes so much lines and so much work that I stopped to bot in places that require a key to the door, there are MANY variables that could happen when you try to open a door:<br />
+<br />
+You must use the packet to open/close door at same X, Y, Z position, that will require a X,Y,Z pos check and a procedure to reposition if youre not in the right place.<br />
+Its locked by key, so you will need a key to be in a specific square of a Bag/BP, because even the key in a miss square will change the packet.  ( The string check of a door locked by key is &quot;You see a closed door. &lt;new line&gt; Its locked.&quot; the bot cant detect the new line. )<br />
+<br />
+Anyway I dont recommend people to use scripts with doors on the way, theres a big risk of send invalid packets.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">11-10-2011, 14:18</div></div><div class="posttext">Daniel could you please add some command for that? I've been trying to do a 100% safe way to open doors in my script but it takes so much lines and so much work that I stopped to bot in places that require a key to the door, there are MANY variables that could happen when you try to open a door:<br />
+<br />
+You must use the packet to open/close door at same X, Y, Z position, that will require a X,Y,Z pos check and a procedure to reposition if youre not in the right place.<br />
+Its locked by key, so you will need a key to be in a specific square of a Bag/BP, because even the key in a miss square will change the packet.  ( The string check of a door locked by key is &quot;You see a closed door. &lt;new line&gt; Its locked.&quot; the bot cant detect the new line. )<br />
+<br />
+Anyway I dont recommend people to use scripts with doors on the way, theres a big risk of send invalid packets.<br />
+<br />
+With a locked door.<br />
+<br />
+As it is possible to send an open command to one and it be denyed (use a locked door) then just put see door... if its closed use it... if its still closed use key on it.<br />
+<br />
+No bigggy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-21-2012, 23:28</div></div><div class="posttext">With a locked door.<br />
+<br />
+As it is possible to send an open command to one and it be denyed (use a locked door) then just put see door... if its closed use it... if its still closed use key on it.<br />
+<br />
+No bigggy<br />
+&lt;strike&gt;just note: that is something the real tibia client will never do, is incapable of doing, without the help of a  &quot;3rd-party tool&quot;... thus, i consider this risky.. :p&lt;/strike&gt;<br />
+just thinking.. Yes, with lag, and 2 persons, the real tibia client is capable of doing this on its own, so nvm what i said ^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oufo</div><div class="date">09-20-2012, 09:40</div></div><div class="posttext">i wana ask what's the packet 2 open door .. <br />
+i did fastexiva check Xyz of door<br />
+and then wait<br />
+and then lastmsg thing<br />
+then how to find out the pakcet thing ??</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

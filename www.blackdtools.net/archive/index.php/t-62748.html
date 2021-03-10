@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="programming, language, learn, potions, stealthring, autoequips, script, ring+log, stealth" />
+	<meta name="description" content="I need a script that autoequips a stealthring and logs out when I run out of mana potions, how can i do that? I would do it but didnt have time to learn the programming language yet :c" />
+	
+	<title> stealth ring+log out [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  stealth ring+log out</div>
+<hr />
+<div class="pda"><a href="t-62748.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62748-stealth-ring-log-out">stealth ring+log out</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Torozio</div><div class="date">04-02-2016, 02:47</div></div><div class="posttext">I need a script that autoequips a stealthring and logs out when I run out of mana potions, how can i do that? I would do it but didnt have time to learn the programming language yet :c</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">04-02-2016, 03:48</div></div><div class="posttext">This will FORCE logout when you have 5 or less mana potions (you can change the number on 3rd line), even if you're attacking a monster (which might be good in case you need this cond to avoid getting killed by traps).<br />
+<br />
+<br />
+$countitems:0C 01$<br />
+#number&lt;=#<br />
+5<br />
+1000<br />
+1000<br />
+0<br />
+exiva #E9 0B 09<br />
+$hex-equiped-item:09$<br />
+#string=#<br />
+0E 0C<br />
+1000<br />
+1000<br />
+0<br />
+exiva close</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Torozio</div><div class="date">04-02-2016, 16:03</div></div><div class="posttext">wow, thank you so much :o</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

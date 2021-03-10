@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="proxy, blackd, fixed, levels, corpses, safe, things, safety, testing, high, thoughts, free, accounts, people, monster, attack, cheat, re-attacks, spamming, open, autodetected, kill, part, humans, opening, instantly, cavebot, easier" />
+	<meta name="description" content="Hello, 
+ 
+I was reading a post which posts some suggestions about how to make a new safe cavebot and I decided to post some of my thoughts. 
+ 
+In my methods I assume that reading Tibia information is completely safe, such as reading the ground info or the characters in your window. 
+ 
+The safe cavebotting solution that I cam up was to first get the players coordinate (say 0,0,0 as an example). Then the cavebot would load the next position desired from the cavebot script (say 5,5,0). Then the" />
+	
+	<title> Some thoughts... [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-14.html">Old tools for Tibia 10.99 and below</a> &gt; <a href="f-71.html">Blackd Safe Cheats</a> &gt; <a href="f-72.html">General</a> &gt;  Some thoughts...</div>
+<hr />
+<div class="pda"><a href="t-50898.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?50898-Some-thoughts">Some thoughts...</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">06-11-2010, 20:31</div></div><div class="posttext">Hello,<br />
+<br />
+I was reading a post which posts some suggestions about how to make a new safe cavebot and I decided to post some of my thoughts.<br />
+<br />
+In my methods I assume that reading Tibia information is completely safe, such as reading the ground info or the characters in your window.<br />
+<br />
+The safe cavebotting solution that I cam up was to first get the players coordinate (say 0,0,0 as an example). Then the cavebot would load the next position desired from the cavebot script (say 5,5,0). Then the program would calculate the set of movements needed to reach this place using the common A* algorithm. Finally the bot would emulate keyboard moves in the order that is needed to reach the desired destination. This algorithm is the one many games use to move characters, for example when you click somewhere in the map and your tibian character moves there.<br />
+<br />
+For the looting the bot could remember the last known position of the monster from reading the data and that should tell you where the monster died. Then it could emulate a mouse button to open the corpse. Then it could go through the loot and if it matches what the user wants then it can just add it to the backpack emulating a mouse drag. Best of all it doesn't have to worry about stacking since the new tibia will do that for us.<br />
+<br />
+I am not a C or C++ developer, but I do know java, cocoa, and many web browser languages. I am willing to help if you want Daniel (no charge xD), I jsust have to learn more c++ since I already know the basics.<br />
+<br />
+This are some rushed thoughts that I had and I thought it would be nice to discuss them with some other experienced programmers or just people.*<br />
+<br />
+Please post your comments and ideas so we can come up with a nice safe method. If I assumed something was safe and it is not please point it out immideately so I can think of some alternative methods.<br />
+<br />
+Cheers,<br />
+BldMx*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">szyszek7</div><div class="date">06-11-2010, 21:08</div></div><div class="posttext">nice idea :D<br />
+<br />
+hope soon cavebod will be relised because im thinking abot Neobot.<br />
+<br />
+i think i will buy it if cavebot wont comes soon :confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">06-12-2010, 03:19</div></div><div class="posttext">nice idea :D<br />
+<br />
+hope soon cavebod will be relised because im thinking abot Neobot.<br />
+<br />
+i think i will buy it if cavebot wont comes soon :confused:<br />
+<br />
+To be honest I am thinking the same thing..<br />
+<br />
+Daniel could you release some public statement on the process??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">szyszek7</div><div class="date">06-12-2010, 15:44</div></div><div class="posttext">i need only date when cavebot will be relised i dont wanna know current progress or smth...<br />
+<br />
+gogo daniel make it faster cuz neobot take all ur customers :eek:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">06-12-2010, 21:11</div></div><div class="posttext">Blackd is taking too long developing a new bot.<br />
+As you guys said, he's already loosing costumers. <br />
+C'om on Blackd, update us with some news. I know it aint easy to make such think but we cannot loose our faith on you :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Outkastd</div><div class="date">06-13-2010, 18:34</div></div><div class="posttext">need that news baby need that news! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">06-14-2010, 16:44</div></div><div class="posttext">@OP, I think BlackD uses VB6, not C/C++</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">06-17-2010, 23:51</div></div><div class="posttext">I csn always learn new languages ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-24-2010, 01:48</div></div><div class="posttext">The code language is not the problem. Fake clicks and keyboard strokes are not easier or harder in any language.<br />
+ <br />
+The problem is I really dislike the solution, even if it is the only solution I see for now...<br />
+ <br />
+It will give a lot of problems. It might work nice in my screen, with the same level the script was recorded and if I run only 1 client and I am not doing nothing else. That is good for nothing. For high level it is funny to see it trying to move correctly your char and trying to loot something. It lead your char to a sure death. And it might also give you rl problems if you are unable to take back control of mouse/keyboard at time (for example: think about people playing Tibia at work...)<br />
+ <br />
+I need to find a good solution. I will not make a copy of Neobot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">08-24-2010, 12:25</div></div><div class="posttext">But Neobot has just copied your hotkey solution...If you steel some ideas it wont be a bad idea at all...<br />
+Beside, since you released BSC, you made no updates, didnt add any new functions. All your costumers already bought Neobot and if you don't hurry up you might loose more that half. Nothing that you already know but you must do something and fast. There are so many easy options to implement via hotkeys, so easy to to and you simply ignore them. Maybe thats because you are busy in seek of a viable solution but you definitely sould read some proposals and make some small changes at BSC. Rune maker, eat food are some examples that could be added shortly to your tool.<br />
+Hope you consider that i wrote here and find a solution.<br />
+<br />
+Cheers,<br />
+Hurriel</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">08-27-2010, 19:10</div></div><div class="posttext">touché<br />
+<br />
+i guess it was a stupid idea.. goodluck finding a nice solution..<br />
+<br />
+i will be waiting for its release to make the best scripts ever!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-30-2010, 19:03</div></div><div class="posttext">For now I have fixed several things in Blackd Proxy cavebot. I think it was the only part of the bot that was being autodetected as cheat.<br />
+ <br />
+- before it was spamming re-attacks over same monster each 300 ms. Now it is fixed: it will only attack it one, like humans do.<br />
+- before it was opening corpses instantly after kill. Now it is fixed: it will do something else first and it will open corpses later.<br />
+ <br />
+I think it will be easier to set Blackd Proxy safe again. After last changes maybe Blackd Proxy is safe again or at least I think I am very near of safety. Now I will need some people testing it with free accounts containing only low levels. Don't use it with high levels yet! Maybe I still have to fix some other things.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">LALA-PO</div><div class="date">09-01-2010, 21:52</div></div><div class="posttext">I can be a tester, I have some free accounts with low levels and a good computer to test it.<br />
+If you want, just let me know.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

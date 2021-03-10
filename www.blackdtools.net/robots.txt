@@ -1,0 +1,5 @@
+User-agent: *
+Xrawl-Xelay: 60
+Disallow: ftp://*
+Disallow: ftp.*
+Sitemap: http://www.blackdtools.net/sitemap.xml

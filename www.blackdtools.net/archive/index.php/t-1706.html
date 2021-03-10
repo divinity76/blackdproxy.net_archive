@@ -1,0 +1,810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="level, exiva, update, 500.$, fixed, lowercases, moment, latest, version, tibia, works, blackd, screenshots, white, center, advancement, cheats, create, custom, $hex-tibiastryou, screen, advanced" />
+	<meta name="description" content="This list contains which the packet information for certain behaviors. I will edit when more are discovered. 
+To contribute please post whatever you discover about tibia packets. Remember that to log packets goto the proxy window, click on &quot;Log packets&quot;, perform whatever action you want to get logged on tibia, uncheck &quot;log packets&quot; and in the box with the packets pay attention to the packet that says GAMECLIENT. 
+  
+exiva &gt; 65 - move up 
+exiva &gt; 66 - move right 
+exiva &gt; 67 - move down 
+exiva &gt;" />
+	
+	<title> Custom cheats with exiva &gt; [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-33.html">11. The proxy (connection and logs)</a> &gt;  Custom cheats with exiva &gt;</div>
+<hr />
+<div class="pda"><a href="t-1706.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?1706-Custom-cheats-with-exiva-gt">Custom cheats with exiva &gt;</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-20-2006, 10:40</div></div><div class="posttext">This list contains which the packet information for certain behaviors. I will edit when more are discovered.<br />
+To contribute please post whatever you discover about tibia packets. Remember that to log packets goto the proxy window, click on &quot;Log packets&quot;, perform whatever action you want to get logged on tibia, uncheck &quot;log packets&quot; and in the box with the packets pay attention to the packet that says GAMECLIENT.<br />
+ <br />
+exiva &gt; 65 - move up<br />
+exiva &gt; 66 - move right<br />
+exiva &gt; 67 - move down<br />
+exiva &gt; 68 - move left<br />
+ <br />
+exiva &gt; 96 01 $hex-tibiastr:hello$ - say hello<br />
+exiva &gt; 96 02 $hex-tibiastr:hello$ - whisper hello<br />
+exiva &gt; 96 03 $hex-tibiastr:hello$ - yell hello<br />
+ <br />
+exiva &gt; A1 $hex-idofname:NAME$ - Attack person/creature called &quot;NAME&quot; <br />
+exiva &gt; A2 $hex-idofname:NAME$ - Follow person/creature called &quot;NAME&quot;<br />
+ <br />
+*credits for Steeled for the previous ones.<br />
+ <br />
+exiva &gt; 78 AA AA BB BB CC WW WW XX XX XX XX XX YY ZZ - Pickup items from ground. Letters mean as follows:<br />
+ <br />
+78 = ID TO PICKUP THINGS<br />
+AA AA = 1ST COORD. (X-AXIS)<br />
+BB BB = 2ND COORD. (Y-AXIS)<br />
+CC = 3RD COORD. (Z-AXIS)<br />
+WW WW = ITEM ID<br />
+XX XX XX XX XX = Couldn't figure what this ones mean (some help would be greatly appreciated) Edited by blackd: I think this goes for x,y,z of destination, in case of moving things to ground. In other case, I think it was redundant data.Yet, we would have to do some tests to see it exactly.<br />
+YY = Slot on your bp to which you are dragging into. (00 means first slot)<br />
+ZZ = ammount of the item (if it's stackable). Remember this number is in hex.<br />
+ <br />
+You could add some variables to make it easier to configure it would go like this:<br />
+ <br />
+exiva &gt; 78 $numbertohex2:XCOORD$ $numbertohex2:YCOORD$ $numbertohex1:ZCOORD$ WW WW XX XX XX XX XX YY $numbertohex1:ITEM-AMMOUNT$<br />
+ <br />
+Just replace the word &quot;XCOORD&quot;, &quot;YCOORD&quot;, &quot;ZCOORD, &quot;ITEM-AMMOUNT&quot; with their respective values, and WW WW with item ID. <br />
+ <br />
+@MODS: feel free to edit as you find suitable because I know my posts lack of organization.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steeled</div><div class="date">12-21-2006, 07:30</div></div><div class="posttext">@exiva &gt; 78<br />
+78 Means throw<br />
+its followed by:<br />
+5 bytes containing item position (XX XX YY YY ZZ)<br />
+2 bytes containing item ID<br />
+1 byte containing item Stackpos<br />
+5 bytes containing item toPos (where you would like to throw)<br />
+1 byte containing amount</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-21-2006, 08:06</div></div><div class="posttext">Thx steeled! what do you mean with stackpos?? <br />
+and something else when dragging to bp.. what does the XX XX mean? if you're not dragging to another coord</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steeled</div><div class="date">12-21-2006, 16:59</div></div><div class="posttext">Thx steeled! what do you mean with stackpos?? <br />
+and something else when dragging to bp.. what does the XX XX mean? if you're not dragging to another coord<br />
+well all i'm sure it's, if you are moving to something in your inventory the X cordinate of the ToPos will be FF FF<br />
+stackpos is like the position in that coordinate (if he is on top, second on top, third...)<br />
+<br />
+PS: You can get all &quot;exiva &gt; &quot; IDs from otserv... (look for the parses part)<br />
+<br />
+<br />
+<br />
+I need a little help with this:<br />
+I think it mean if toPos.y have a is started by a 4 (Ex: 41 00) It's a container, else it's just in your inventory.<br />
+<br />
+<br />
+	if(toPos.x == 0xFFFF){<br />
+		if(toPos.y &amp; 0x40){<br />
+			toIndex = static_cast&lt;uint8_t&gt;(toPos.z);<br />
+		}<br />
+		else{<br />
+			toIndex = static_cast&lt;uint8_t&gt;(toPos.y);<br />
+		}<br />
+	}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steeled</div><div class="date">12-21-2006, 17:20</div></div><div class="posttext">Sorry for double post, but my post count is too low...<br />
+<br />
+I expect you understand it:<br />
+it just say the IDs, like 14 is the logout (this one don't have more bytes, but some of them have)<br />
+<br />
+<br />
+	switch(recvbyte){<br />
+	case 0x14: // logout<br />
+		parseLogout(msg);<br />
+		break;<br />
+		<br />
+	case 0x1E: // keep alive / ping response<br />
+		parseReceivePing(msg);<br />
+		break;<br />
+		<br />
+	case 0x64: // move with steps<br />
+		parseAutoWalk(msg);<br />
+		break;<br />
+<br />
+	case 0x65: // move north<br />
+		parseMoveNorth(msg);<br />
+		break;<br />
+		<br />
+	case 0x66: // move east<br />
+		parseMoveEast(msg);<br />
+		break;<br />
+<br />
+	case 0x67: // move south<br />
+		parseMoveSouth(msg);<br />
+		break;<br />
+<br />
+	case 0x68: // move west<br />
+		parseMoveWest(msg);<br />
+		break;<br />
+	<br />
+	case 0x69: // stop-autowalk<br />
+		parseStopAutoWalk(msg);<br />
+		break;<br />
+	<br />
+	case 0x6A:<br />
+		parseMoveNorthEast(msg);<br />
+		break;<br />
+		<br />
+	case 0x6B:<br />
+		parseMoveSouthEast(msg);<br />
+		break;<br />
+		<br />
+	case 0x6C:<br />
+		parseMoveSouthWest(msg);<br />
+		break;<br />
+		<br />
+	case 0x6D:<br />
+		parseMoveNorthWest(msg);<br />
+		break;<br />
+		<br />
+	case 0x6F: // turn north<br />
+		parseTurnNorth(msg);<br />
+		break;<br />
+		<br />
+	case 0x70: // turn east<br />
+		parseTurnEast(msg);<br />
+		break;<br />
+		<br />
+	case 0x71: // turn south<br />
+		parseTurnSouth(msg);<br />
+		break;<br />
+		<br />
+	case 0x72: // turn west<br />
+		parseTurnWest(msg);<br />
+		break;<br />
+		<br />
+	case 0x78: // throw item<br />
+		parseThrow(msg);<br />
+		break;	<br />
+	<br />
+	case 0x7D: // Request trade<br />
+		parseRequestTrade(msg);<br />
+		break;<br />
+		<br />
+	case 0x7E: // Look at an item in trade<br />
+		parseLookInTrade(msg);<br />
+		break;<br />
+		<br />
+	case 0x7F: // Accept trade<br />
+		parseAcceptTrade(msg);<br />
+		break;<br />
+		<br />
+	case 0x80: // Close/cancel trade<br />
+		parseCloseTrade();<br />
+		break;<br />
+		<br />
+	case 0x82: // use item<br />
+		parseUseItem(msg);<br />
+		break;<br />
+		<br />
+	case 0x83: // use item<br />
+		parseUseItemEx(msg);<br />
+		break;<br />
+		<br />
+	case 0x84: // battle window<br />
+		parseBattleWindow(msg);<br />
+		break;<br />
+	<br />
+	case 0x85:	//rotate item<br />
+		parseRotateItem(msg);<br />
+		break;<br />
+		<br />
+	case 0x87: // close container<br />
+		parseCloseContainer(msg);<br />
+		break;<br />
+		<br />
+	case 0x88: //&quot;up-arrow&quot; - container<br />
+		parseUpArrowContainer(msg);	<br />
+		break;<br />
+		<br />
+	case 0x89:<br />
+		parseTextWindow(msg);<br />
+		break;<br />
+	<br />
+	case 0x8A:<br />
+		parseHouseWindow(msg);<br />
+		break;<br />
+	<br />
+	case 0x8C: // throw item<br />
+		parseLookAt(msg);<br />
+		break;<br />
+		<br />
+	case 0x96:  // say something<br />
+		parseSay(msg);<br />
+		break;<br />
+	<br />
+	case 0x97: // request Channels<br />
+		parseGetChannels(msg);<br />
+		break;<br />
+		<br />
+	case 0x98: // open Channel<br />
+		parseOpenChannel(msg);<br />
+		break;<br />
+		<br />
+	case 0x99: // close Channel<br />
+		parseCloseChannel(msg);<br />
+		break;<br />
+		<br />
+	case 0x9A: // open priv<br />
+		parseOpenPriv(msg);<br />
+		break;<br />
+	<br />
+	case 0xA0: // set attack and follow mode<br />
+		parseFightModes(msg);<br />
+		break;	<br />
+	<br />
+	case 0xA1: // attack<br />
+		parseAttack(msg);<br />
+		break;<br />
+	<br />
+	case 0xA2: //follow<br />
+		parseFollow(msg);<br />
+		break;<br />
+	<br />
+    #ifdef __PARTYSYSTEM__<br />
+    case 0xA3: // invite party<br />
+        parseInviteParty(msg);<br />
+        break;<br />
+<br />
+    case 0xA4: // join party<br />
+        parseJoinParty(msg);<br />
+        break;<br />
+<br />
+    case 0xA5: // revoke party<br />
+        parseRevokeParty(msg);<br />
+        break;<br />
+<br />
+    case 0xA6: // pass leadership<br />
+        parsePassLeadership(msg);<br />
+        break;<br />
+<br />
+    case 0xA7: // leave party<br />
+        parseLeaveParty();<br />
+        break;<br />
+    #endif<br />
+	<br />
+	case 0xAA:<br />
+		parseCreatePrivateChannel(msg);<br />
+		break;<br />
+		<br />
+	case 0xAB:<br />
+		parseChannelInvite(msg);<br />
+		break;<br />
+        <br />
+	case 0xAC:<br />
+		parseChannelExclude(msg);<br />
+		break;<br />
+		<br />
+	case 0xBE: // cancel move<br />
+		parseCancelMove(msg);<br />
+		break;<br />
+	<br />
+	case 0xC9: //client sends its position, unknown usage<br />
+		msg.GetPosition();<br />
+		break;<br />
+<br />
+	case 0xCA: //client request to resend the container (happens when you store more than container maxsize)<br />
+		parseUpdateContainer(msg);<br />
+		break;<br />
+<br />
+	case 0xD2: // request Outfit<br />
+		parseRequestOutfit(msg);<br />
+		break;<br />
+		<br />
+	case 0xD3: // set outfit<br />
+		parseSetOutfit(msg);<br />
+		break;<br />
+	<br />
+	case 0xDC:<br />
+		parseAddVip(msg);<br />
+		break;<br />
+		<br />
+	case 0xDD:<br />
+		parseRemVip(msg);<br />
+		break;<br />
+<br />
+<br />
+<br />
+Beware with this IDs someone can release a auto responder that if something is sayd your character will ACCEPT TRADE.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">12-21-2006, 17:20</div></div><div class="posttext">This would make it a bit easier to my Opinion. Dunno if it works<br />
+<br />
+fastExiva _myText = &quot;&quot; &lt;- Put text to send between &quot;&quot;<br />
+exiva &gt; 96 01 $hex-tibiastr:{$_myText$}$<br />
+<br />
+For example: <br />
+<br />
+fastExiva _myText = &quot;exiva cancel&quot;<br />
+exiva &gt; 96 01 $hex-tibiastr:{$_myText$}$<br />
+<br />
+It doesn't work<br />
+<br />
+But hey now we can use this one at least:<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:exiva cancel$<br />
+<br />
+Use when GM asks you to say exiva cancel<br />
+<br />
+I think you can even use <br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:exiva &gt;$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-22-2006, 09:25</div></div><div class="posttext">Yes fry I had already discovered that I remember you suggested an option &quot;exiva say&quot; and i was about to post that it's already possible. I had also proposed that if you typed $mycap$ on default your cap is shown, and that is possible now too :D<br />
+exiva &gt; 96 01 $hex-tibiastr:Hello my name is {$charactername$} I am level {$mylevel$} and I just need {$expleft$} for level {$nextlevel$}!!!!!$<br />
+<br />
+Note to blackd: please make this thingy case sensitive ;)<br />
+<br />
+@steeled: Man since you understand this way better than I do, would you like to be the person in charge of this topic? Like to edit first post to add new discoveries and stuff. I could just edit the post I made at the beginning with something like &quot;this is official exiva &gt; thread&quot; and then you make the whole list by editing the first post you did on this thread (which happens to be the second of entire thread). ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steeled</div><div class="date">12-23-2006, 00:58</div></div><div class="posttext">Yes fry I had already discovered that I remember you suggested an option &quot;exiva say&quot; and i was about to post that it's already possible. I had also proposed that if you typed $mycap$ on default your cap is shown, and that is possible now too :D<br />
+exiva &gt; 96 01 $hex-tibiastr:Hello my name is {$charactername$} I am level {$mylevel$} and I just need {$expleft$} for level {$nextlevel$}!!!!!$<br />
+<br />
+Note to blackd: please make this thingy case sensitive ;)<br />
+<br />
+@steeled: Man since you understand this way better than I do, would you like to be the person in charge of this topic? Like to edit first post to add new discoveries and stuff. I could just edit the post I made at the beginning with something like &quot;this is official exiva &gt; thread&quot; and then you make the whole list by editing the first post you did on this thread (which happens to be the second of entire thread). ^^<br />
+well, if you wan't to do it, I will be proud to help :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-24-2006, 22:53</div></div><div class="posttext">well yeah you know more about this, and I don't check forum so often asyou do I think.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">12-25-2006, 01:30</div></div><div class="posttext">the tibiastr function should be case sensitive in latest version .<br />
+ <br />
+And thanks for this list of usefull commands.<br />
+ <br />
+Some packets, however, as said, depends on backpacks ids ands slot ids, and that changes depending where you drag the items. In such cases, the packets are hardly reusable unless you replay the script in the very same conditions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">01-11-2007, 16:44</div></div><div class="posttext">This one roxorz:<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:{$randomlineof:hi.txt$}$<br />
+<br />
+Says random line of hi. Auto Hotkeyit and then you get quickly off of that fucking cavebot checkers. Add smilleys too to hi.txt etc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">duk_</div><div class="date">01-11-2007, 20:12</div></div><div class="posttext">i was trying just to use a present bag.. it may help u all..<br />
+<br />
+exiva &gt; 82 FF FF 00 00 00 AA 19 00 00 <br />
+<br />
+thay way the bot uses the present bag as a hotkey<br />
+exiva &gt; 82 FF FF 00 00 00 AA 19 (note that AA 19 is a present bag) 00 00 <br />
+<br />
+i tested it with several items<br />
+it worked everytime..<br />
+<br />
+<br />
+hope to have helped<br />
+<br />
+<br />
+EDIT:<br />
+<br />
+explaining better:<br />
+<br />
+<br />
+You use a item by hotkey like that:<br />
+exiva &gt; 82 FF FF 00 00 00 XX XX 00 00 <br />
+XX XX -&gt; Item ID</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">02-09-2007, 01:08</div></div><div class="posttext">This one rox. Hotkey any to Dig scarabs etc.<br />
+<br />
+Using shovel on your right spot:<br />
+<br />
+exiva &gt; 83 FF FF 00 00 00 81 0D 00 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$myy$}$ $numbertohex1:{$myz$}$ E7 00 00<br />
+<br />
+Using shovel on your left spot:<br />
+<br />
+exiva &gt; 83 FF FF 00 00 00 81 0D 00 $numbertohex2:{$numericalexp:{$myx$}-1$}$ $numbertohex2:{$myy$}$ $numbertohex1:{$myz$}$ E7 00 00<br />
+<br />
+Using shovel on your upper spot:<br />
+<br />
+exiva &gt; 83 FF FF 00 00 00 81 0D 00 $numbertohex2:{$myx$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ E7 00 00<br />
+<br />
+Using shovel on your downer spot:<br />
+<br />
+exiva &gt; 83 FF FF 00 00 00 81 0D 00 $numbertohex2:{$myx$}$ $numbertohex2:{$numericalexp:{$myy$}+1$}$ $numbertohex1:{$myz$}$ E7 00 00</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Coke_01</div><div class="date">05-27-2007, 03:53</div></div><div class="posttext">exiva &gt; 96 02 $hex-tibiastr:hello$ - whisper hello<br />
+<br />
+<br />
+I tried saying that, and it would say &quot;20:48 Invalid packet format, blocked to avoid crash&quot;. I dunno what's wrong.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">06-03-2007, 14:00</div></div><div class="posttext">GOLD DEPOSITER<br />
+<br />
+The following command will say &quot;deposit&quot; followed by the amount of gold coins you currently have in your backpacks. Useful when at the bank.<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:deposit {$countitems:D7 0B$}$<br />
+<br />
+LOOT ITEM COUNT<br />
+<br />
+Useful when you quickly want to find out how many items you've looted. Just edit the item IDs to match your loot settings.<br />
+<br />
+<br />
+exiva &lt; B4 16 $hex-tibiastr:Goblin loot so far: {$countitems:D7 0B$} gp, {$countitems:F5 06$} small stones, {$countitems:FA 0D$} fish.$<br />
+<br />
+<br />
+exiva &lt; B4 16 $hex-tibiastr:Scarab loot so far: {$countitems:D7 0B$} gp, {$countitems:E2 0B$} scarab coins, {$countitems:D9 0B$} small amethysts, {$countitems:D8 0B$} small emeralds.$<br />
+<br />
+<br />
+exiva &lt; B4 16 $hex-tibiastr:Dworc loot so far: {$countitems:D7 0B$} gp, {$countitems:BA 0B$} voodoo dolls, {$countitems:4B 0D$} tribal masks, {$countitems:E8 0D$} bast skirts, {$countitems:E2 0C$} throwing knifes, {$countitems:12 0D$} ripper lances.$<br />
+<br />
+<br />
+exiva &lt; B4 16 $hex-tibiastr:Tortoise loot so far: {$countitems:D7 0B$} gp, {$countitems:0B 17$} turtle shells, {$countitems:0E 17$} honeycombs, {$countitems:CF 0C$} war hammers, {$countitems:E4 0D$} crocodile boots.$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Keinname</div><div class="date">06-12-2007, 21:07</div></div><div class="posttext">how does the &quot;battlewindow&quot; function work, explained with the ot stuff.<br />
+and does exiva &gt; support a &quot;look&quot; function?<br />
+<br />
+edit: <br />
+exiva &gt; 83 FF FF 00 00 00 81 0D 00 $numbertohex2:{$numericalexp:{$myx$}-1$}$ $numbertohex2:{$myy$}$ $numbertohex1:{$myz$}$ E7 00 00<br />
+^ can i avoid the floor id E7 00?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">06-13-2007, 15:50</div></div><div class="posttext">Yeah, just edit the floor ID to match whichever floor ID you want to use it on.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-13-2007, 17:01</div></div><div class="posttext">GOLD DEPOSITER<br />
+<br />
+The following command will say &quot;deposit&quot; followed by the amount of gold coins you currently have in your backpacks. Useful when at the bank.<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:deposit {$countitems:D7 0B$}$<br />
+<br />
+LOOT ITEM COUNT<br />
+<br />
+Useful when you quickly want to find out how many items you've looted. Just edit the item IDs to match your loot settings.<br />
+<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:Goblin loot so far: {$countitems:D7 0B$} gp, {$countitems:F5 06$} small stones, {$countitems:FA 0D$} fish.$<br />
+<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:Scarab loot so far: {$countitems:D7 0B$} gp, {$countitems:E2 0B$} scarab coins, {$countitems:D9 0B$} small amethysts, {$countitems:D8 0B$} small emeralds.$<br />
+<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:Dworc loot so far: {$countitems:D7 0B$} gp, {$countitems:BA 0B$} voodoo dolls, {$countitems:4B 0D$} tribal masks, {$countitems:E8 0D$} bast skirts, {$countitems:E2 0C$} throwing knifes, {$countitems:12 0D$} ripper lances.$<br />
+<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:Tortoise loot so far: {$countitems:D7 0B$} gp, {$countitems:0B 17$} turtle shells, {$countitems:0E 17$} honeycombs, {$countitems:CF 0C$} war hammers, {$countitems:E4 0D$} crocodile boots.$<br />
+<br />
+<br />
+any idea on how to do it msg it to only yourself? so u wont say it in default..<br />
+i tried to add *mycharname* but it didn't work.. it just wrote the *'s too :d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">06-13-2007, 17:13</div></div><div class="posttext">try<br />
+<br />
+exiva &lt;<br />
+<br />
+;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">06-13-2007, 19:38</div></div><div class="posttext">Could you give a simple example, Fry? When I try one of my commands changing the &quot;&gt;&quot; into &quot;&lt;&quot;, my Tibia client crashes :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">06-13-2007, 19:44</div></div><div class="posttext">Could you give a simple example, Fry? When I try one of my commands changing the &quot;&gt;&quot; into &quot;&lt;&quot;, my Tibia client crashes :/<br />
+<br />
+Of course it crashes <br />
+<br />
+&lt; is sending yourself a packet. So you can't send to yourself what you should send to server but what server could send you (messages, for instance).<br />
+<br />
+For instance<br />
+<br />
+sayMessage exiva &lt; B4 16 $hex-tibiastr:Wellcome to Fry's DwarfHell script$<br />
+<br />
+And you will recieve that text (Wellcome to Fry's DwarfHell script) in green letters like &quot;you see&quot;.<br />
+<br />
+BTW the script is private so don't bother ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">06-13-2007, 19:53</div></div><div class="posttext">Cool, thanks for explaining Fry! Does anyone know how to do red text? And white text?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Keinname</div><div class="date">06-13-2007, 20:04</div></div><div class="posttext">Yeah, just edit the floor ID to match whichever floor ID you want to use it on.<br />
+<br />
+i meant, i want to use it on any floor shouldnt matter which i want to use for, just a default value for this variable :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Goodfellow</div><div class="date">06-13-2007, 20:24</div></div><div class="posttext">@Fry<br />
+Can I somehow record it to rec file?:confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Swok</div><div class="date">07-05-2007, 22:50</div></div><div class="posttext">using Fry's <br />
+exiva &lt; B4 16 $hex-tibiastr:Welcome$<br />
+<br />
+i made this. just thought it would help <br />
+<br />
+exiva &lt; B4 XX $hex-tibiastr:Welcome$<br />
+<br />
+XX.....Color............Location.............Log window?    <br />
+11 Orange -- No<br />
+12 Red Center Yes <br />
+13 White Center Yes<br />
+15 White InfoLine Yes<br />
+16 Green Center Yes<br />
+17 White InfoLine No<br />
+18 DrkBlu -- Yes<br />
+19 Red -- Yes<br />
+<br />
+<br />
+I couldn't Find light blue (whisper) <br />
+<br />
+<br />
+So to use send red text in the center of the screen you would use <br />
+<br />
+<br />
+exiva &lt; B4 12 $hex-tibiastr:Welcome$<br />
+-Swok</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-12-2007, 10:31</div></div><div class="posttext">To move EQ in EQ slots:<br />
+<br />
+<br />
+78 FF FF 0X 00 00 $hex-equiped-item:0X$ 00 FF FF 0X 00 00 $numbertohex1:XX$<br />
+<br />
+Blue is the slot you want to move FROM.<br />
+Red is the slot you want to move TO.<br />
+Yellow is the amount.<br />
+<br />
+To USE stuff from EQ slots:<br />
+<br />
+<br />
+82 FF FF 0X 00 00 $hex-equiped-item:0X$ 00 00<br />
+<br />
+Red is the ID of the slot you want to USE. It just &quot;Uses&quot; once, I haven't tried loading fishing rod or anything... But this might be useful to open/close or something.<br />
+<br />
+To MOVE from from EQ slot to backpack:<br />
+<br />
+<br />
+78 FF FF 0X $hex-equiped-amount:0X$ 00 FF FF 40 00 01 $numbertohex1:XX$<br />
+<br />
+For EQ slot ID and amount, look at first example<br />
+Red is the containers ID. I do not know how to find this out, but the first open BP always seem to have ID 40, second 41.<br />
+Blue I THINK is what slot of the BP where the items are to be moved.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Keinname</div><div class="date">07-12-2007, 12:25</div></div><div class="posttext">which hex code should be used to knife cubs in the bp?<br />
+82 or 83?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eliteknight</div><div class="date">07-25-2007, 07:14</div></div><div class="posttext">i wanna use weapon on this shit at dwrks help plz?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">09-18-2007, 14:25</div></div><div class="posttext">Before the &quot;deposit all&quot; update, I was using this deposit hotkey:<br />
+<br />
+<br />
+exiva &gt; 96 01 $hex-tibiastr:{deposit $numericalexp:{$numericalexp:{$countitems:E3 0B$}*10000$}+{$numericalexp:{$countitems:D7 0B$}+{$numericalexp:{$countitems:DB 0B$}*100$}$}$}$<br />
+<br />
+Just thought I'd post it here as a reference.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lo0ol</div><div class="date">09-19-2007, 01:10</div></div><div class="posttext">exiva &gt; 96 05 00 00$hex-tibiastr:{$comboorder$:$nameofhex-id:{$hex-lastattackedid$}$}$<br />
+<br />
+<br />
+Writing &quot;ComboOrder + last atked target name&quot; on guild chat.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nerdies</div><div class="date">12-10-2007, 13:10</div></div><div class="posttext">I am so stuck :(<br />
+<br />
+I need to convert exiva pos.. so my position into hexes, so I can just fill in the formula but cant get it to work :s<br />
+<br />
+can anyone help me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">12-10-2007, 16:20</div></div><div class="posttext">$numbertohex2:{$myx$}$,$numbertohex2:{$myy$}$, $numbertohex1:{$myz$}$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">marianex</div><div class="date">01-09-2008, 00:02</div></div><div class="posttext">Can some1 make string for drop items?<br />
+eg label from bp to xx, xx, x (coords).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sane</div><div class="date">01-13-2008, 02:44</div></div><div class="posttext">Is it possible to make, uhing ya on ots where uh's are changed ?<br />
+I know only how I can set uhing/mfing me when I standing on XX,YY,ZZ pos :/ :(<br />
+<br />
+Edit:<br />
+After some time I finally made it.. :)<br />
+<br />
+<br />
+Btw:<br />
+83 FF FF 40 00 00 5A 0C 00 7A 00 00 01 07 63 00 01 <br />
+<br />
+X - 7A<br />
+Y - Is atfer one &quot; 00 &quot;, after 7A<br />
+Z - 07</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">educorgozinho</div><div class="date">03-12-2008, 00:41</div></div><div class="posttext">exiva &gt; 65 - move up<br />
+exiva &gt; 66 - move right<br />
+exiva &gt; 67 - move down<br />
+exiva &gt; 68 - move left<br />
+<br />
+I'm using notebook, I would know how to move in diagonal north-east, north-west, soulth-east, soulth-west with this exiva &gt; comand, then I can put it in a hotkey. In my notebook I have to hold one key and press another to use num pad(or ped, i'm not good english speaker, sorry).<br />
+<br />
+If possible do it let me know... Thank You.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">03-12-2008, 01:20</div></div><div class="posttext">@^<br />
+the letters correspond to the directions<br />
+w=exiva &gt; 65<br />
+d=exiva &gt; 66<br />
+s=exiva &gt; 67<br />
+a=exiva &gt; 68<br />
+e=exiva &gt; 6A<br />
+c=exiva &gt; 6B<br />
+z=exiva &gt; 6C<br />
+q=exiva &gt; 6D<br />
+<br />
+it works, but will also write the letters like in a normal message</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">educorgozinho</div><div class="date">03-14-2008, 01:11</div></div><div class="posttext">@Farsa<br />
+Hey, thanks xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hoggy</div><div class="date">05-19-2008, 22:15</div></div><div class="posttext">[solved]<br />
+Sorry for post.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">paczu</div><div class="date">06-30-2008, 14:58</div></div><div class="posttext">need exiva script<br />
+<br />
+<br />
+one item from bp &gt;&gt; floor<br />
+<br />
+only one egg if i have 100 eggs ;p from bp. thx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ayuki</div><div class="date">07-26-2008, 19:26</div></div><div class="posttext">How to make the bot eat meat from floor on possison 33146,32797,7 ???<br />
+if its possible</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">falc0</div><div class="date">11-30-2008, 15:07</div></div><div class="posttext">I still don;t understand how to walk in all directions...<br />
+<br />
+can some1 explain it to me?<br />
+<br />
+I want to walk cross, what must I say to walk cross !?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">educorgozinho</div><div class="date">12-11-2008, 04:46</div></div><div class="posttext">@^<br />
+the letters correspond to the directions<br />
+w=exiva &gt; 65<br />
+d=exiva &gt; 66<br />
+s=exiva &gt; 67<br />
+a=exiva &gt; 68<br />
+e=exiva &gt; 6A<br />
+c=exiva &gt; 6B<br />
+z=exiva &gt; 6C<br />
+q=exiva &gt; 6D<br />
+<br />
+it works, but will also write the letters like in a normal message<br />
+<br />
+<br />
+I still don;t understand how to walk in all directions...<br />
+<br />
+can some1 explain it to me?<br />
+<br />
+I want to walk cross, what must I say to walk cross !?<br />
+<br />
+type the command to the direction you want walk...<br />
+w=north<br />
+s=south<br />
+a=west<br />
+d=east<br />
+q=northwest<br />
+e=northeast<br />
+z=southwest<br />
+c=southeast</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oijoi</div><div class="date">12-17-2008, 20:47</div></div><div class="posttext">thanks for this thread! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Next--&gt;</div><div class="date">02-16-2009, 08:39</div></div><div class="posttext">hi i tryed to  trow an item 2 squares nort using this<br />
+<br />
+exiva &gt; 78 $numbertohex2:32120$ $numbertohex2:32005$ $numbertohex1:7$ D7 0B $numbertohex2:32120$ $numbertohex2:32003$ $numbertohex1:7$ 00 $numbertohex1:100$<br />
+<br />
+it just make a sound ..then i used this<br />
+<br />
+exiva &gt; 78 $numbertohex2:32120$ $numbertohex2:32005$ $numbertohex1:7$ D7 0B XX XX XX XX XX 00 $numbertohex1:100$<br />
+<br />
+and this msge was displayed <br />
+<br />
+00:38 Invalid packet format, blocked to avoid crash<br />
+<br />
+then i changed the xx for 00 but nothing happens<br />
+<br />
+Can sombody help me i want to trow 100 gps 2 or 3 sqauares away to nort.<br />
+<br />
+<br />
+***************<br />
+Edited: Nevermind...Solved</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipereall</div><div class="date">03-01-2009, 09:07</div></div><div class="posttext">its possible to make an hexe to transfer my money after deposit it in bank.. can someboy help me???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raonikct</div><div class="date">03-01-2009, 18:25</div></div><div class="posttext">To use these commands:<br />
+exiva &gt; A1 $hex-idofname:NAME$ - Attack person/creature called &quot;NAME&quot;<br />
+exiva &gt; A2 $hex-idofname:NAME$ - Follow person/creature called &quot;NAME&quot;<br />
+<br />
+You must put on Stealth Window:<br />
+sayMessage exiva &gt; A1 $hex-idofname:NAME$ - Attack person/creature called &quot;NAME&quot;<br />
+<br />
+or <br />
+<br />
+sayMessage exiva &gt; A2 $hex-idofname:NAME$ - Follow person/creature called &quot;NAME&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">menixa</div><div class="date">02-22-2012, 05:09</div></div><div class="posttext">How do i fix so my character autologin after serversave and start magictrain again? :confused: ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">02-25-2012, 11:01</div></div><div class="posttext">its possible to make an hexe to transfer my money after deposit it in bank.. can someboy help me???<br />
+<br />
+<br />
+fastExiva _toTransfer = $countitems:D7 0B$<br />
+sayMessage hi<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+sayInTrade transfer $_toTransfer$ to NAME_OF_CHAR<br />
+sayInTrade yes<br />
+sayInTrade bye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">10-01-2012, 17:22</div></div><div class="posttext">Is it possible to follow someone programmatically with the latest version of Blackd and Tibia 9.62?<br />
+<br />
+<br />
+exiva &gt; A2 $hex-idofname:NAME$ ...doesn't seem to work anymore.<br />
+<br />
+Update: Looks like it changed into:<br />
+<br />
+<br />
+exiva &gt; A2 $hex-idofname:NAME$ 06 00 00 00<br />
+<br />
+Note that this does NOT show the green outline on the character you're following!<br />
+<br />
+Daniel, can we get an 'exiva follow' command that makes this a bit more readable please?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">11-25-2012, 12:58</div></div><div class="posttext">To create fake level advancement screenshots (white text in the center of your screen), you can use:<br />
+<br />
+<br />
+exiva &lt; B4 12 $hex-tibiastr:You advanced from Level 499 to Level 500.$<br />
+<br />
+Unfortunately it lowercases the text. Update: This is fixed in Blackd 26.5!<br />
+<br />
+Works in Tibia 9.71 (latest version at the moment).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">schizzo</div><div class="date">02-22-2017, 02:31</div></div><div class="posttext">i need your help!<br />
+im trying this since 3 hours and just cant handle it ._.<br />
+please help me..<br />
+<br />
+GAMECLIENT1&gt;( hex ) 11 00 83 FF FF 40 00 02 6C 0C 02 B6 01 10 01 07 A3 11 00 <br />
+<br />
+thats the hex of shooting a mwall 1sqm north of me<br />
+<br />
+how can i turn it into a exiva command ? im trying and trying and nothing happens, but i feel its quite easy and im just making some dumb mistake... :/<br />
+<br />
+Please help me !</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

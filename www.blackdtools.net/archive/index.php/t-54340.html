@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, setloot, 32608,31778,8, 32546,31834,5, goblin, 32548,31834,6, 32521,31838,5, 32576,31797,7, useitem, 32602,31782,9, 32513,31839,6, 32511,31839,7, 32602,31783,8, 32608,31779,7, 32602,31781,8, 32602,31781,9, 32600,31782,9, 32595,31776,9, 32607,31778,7, 32595,31761,9, 32565,31794,6, 32527,31818,7, 32550,31821,7, 32519,31838,6, 32524,31843,5, 32547,31849,5, 32572,31809,7, 32568,31801,6, 32595,31791,6, 32595,31792,7, 32569,31784,6, 32563,31789,6, 32593,31782,7, 32605,31782,7, 32560,31820,7, 32547,31852,5, 32529,31845,5, 32531,31854,6, 32556,31849,5, 32552,31841,5, 32545,31820,6, 32553,31824,6, 32552,31833,6, 32553,31856,6, 32567,31856,6, 32617,31794,6, gotoscriptline, 32613,31804,6, 32602,31823,6, 32580,31856,6" />
+	<meta name="description" content="It is a simple script of goblins in Femur Hills, to collect small stones. 
+You only need a rope and a plate set for no waste. I tested it on a character level 25 in 8.71, 
+I was getting 4.5k exp/h and 25 small stones+300 gp/h being 1k gps per hour for a level 25 free account. 
+ 
+ 
+setLootOn 
+setBot OldLootMode=1 
+setLoot D7 0B 
+setLoot 13 2D 
+setLoot F5 06" />
+	
+	<title> 12. Goblins in Femur Hills - by Falkens [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  12. Goblins in Femur Hills - by Falkens</div>
+<hr />
+<div class="pda"><a href="t-54340.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54340-12-Goblins-in-Femur-Hills-by-Falkens">12. Goblins in Femur Hills - by Falkens</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-16-2011, 02:05</div></div><div class="posttext">It is a simple script of goblins in Femur Hills, to collect small stones.<br />
+You only need a rope and a plate set for no waste. I tested it on a character level 25 in 8.71,<br />
+I was getting 4.5k exp/h and 25 small stones+300 gp/h being 1k gps per hour for a level 25 free account.<br />
+<br />
+<br />
+<br />
+setLootOn<br />
+setBot OldLootMode=1<br />
+setLoot D7 0B<br />
+setLoot 13 2D<br />
+setLoot F5 06<br />
+setMeleeKill bug<br />
+setMeleeKill Goblin Assassin<br />
+setPriority goblin assassin:+3<br />
+setMeleeKill Goblin Scavenger<br />
+setPriority goblin scavenger:+2<br />
+setMeleeKill rat<br />
+setMeleeKill Poacher<br />
+setMeleeKill wolf<br />
+setMeleeKill bat<br />
+setMeleeKill goblin<br />
+setPriority goblin:+1<br />
+setMeleeKill pig<br />
+move 32620,31794,6<br />
+move 32615,31783,6<br />
+move 32608,31764,6<br />
+move 32584,31765,6<br />
+move 32566,31767,6<br />
+move 32553,31775,6<br />
+move 32537,31781,6<br />
+move 32538,31796,6<br />
+move 32537,31813,6<br />
+move 32545,31820,6<br />
+move 32553,31824,6<br />
+move 32552,31833,6<br />
+move 32548,31834,6<br />
+move 32546,31834,5<br />
+move 32552,31841,5<br />
+move 32556,31849,5<br />
+move 32547,31852,5<br />
+move 32529,31845,5<br />
+move 32521,31838,5<br />
+move 32531,31854,6<br />
+move 32553,31856,6<br />
+move 32567,31856,6<br />
+move 32580,31856,6<br />
+move 32600,31838,6<br />
+move 32602,31823,6<br />
+move 32613,31804,6<br />
+move 32617,31794,6<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">benoblack</div><div class="date">10-23-2011, 11:00</div></div><div class="posttext">Cool script I use it all the time ;D<br />
+I have added a depositer to Ab depo. It deposit's GP's on bank and loot in deposit box.<br />
+<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setLootOn<br />
+setBot OldLootMode=1<br />
+setLoot D7 0B<br />
+setLoot 13 2D<br />
+setLoot F5 06<br />
+setMeleeKill Starving Wolf<br />
+setMeleeKill bug<br />
+setMeleeKill Goblin Assassin<br />
+setPriority goblin assassin:+3<br />
+setMeleeKill Goblin Scavenger<br />
+setPriority goblin scavenger:+2<br />
+setMeleeKill rat<br />
+setMeleeKill Poacher<br />
+setMeleeKill wolf<br />
+setMeleeKill bat<br />
+setMeleeKill goblin<br />
+setPriority goblin:+1<br />
+setMeleeKill pig<br />
+move 32652,31698,7<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:dp$<br />
+move 32638,31735,7<br />
+move 32625,31788,7<br />
+:hunt<br />
+move 32620,31794,6<br />
+move 32615,31783,6<br />
+move 32608,31764,6<br />
+move 32584,31765,6<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:deposit$<br />
+move 32566,31767,6<br />
+move 32553,31775,6<br />
+move 32537,31781,6<br />
+move 32538,31796,6<br />
+move 32537,31813,6<br />
+move 32545,31820,6<br />
+move 32553,31824,6<br />
+move 32552,31833,6<br />
+move 32548,31834,6<br />
+move 32546,31834,5<br />
+move 32552,31841,5<br />
+move 32556,31849,5<br />
+move 32547,31852,5<br />
+move 32529,31845,5<br />
+move 32521,31838,5<br />
+move 32531,31854,6<br />
+move 32553,31856,6<br />
+move 32567,31856,6<br />
+move 32580,31856,6<br />
+move 32600,31838,6<br />
+move 32602,31823,6<br />
+move 32613,31804,6<br />
+move 32617,31794,6<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:deposit<br />
+move 32620,31790,6<br />
+move 32625,31788,7<br />
+move 32638,31735,7<br />
+move 32681,31686,7<br />
+move 32684,31687,8<br />
+setChaoticMovesON<br />
+sayMessage Hi<br />
+waitX 2<br />
+sayInTrade Deposit all<br />
+waitX 2<br />
+sayInTrade Yes<br />
+putLootOnDepot<br />
+setChaoticMovesOFF<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+move 32681,31686,7<br />
+move 32684,31687,8<br />
+setChaoticMovesON<br />
+sayMessage Hi<br />
+waitX 2<br />
+sayInTrade Deposit all<br />
+waitX 2<br />
+sayInTrade Yes<br />
+putLootOnDepot<br />
+setChaoticMovesOFF<br />
+gotoScriptLine $nlineoflabel:start$<br />
+<br />
+Have fun 100% AFK</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Heman</div><div class="date">03-09-2012, 14:59</div></div><div class="posttext">I merged two of your earlier scripts because it only allowed the character to hunt in a very limited area and kill very few monsters, so now it gains a little more exp. There is no deposit now, but it could be edited. Hopefully it works better for you.<br />
+<br />
+<br />
+setFriendly<br />
+setBot OldLootMode=1<br />
+setMeleeKill wolf<br />
+setMeleeKill bat<br />
+setMeleeKill wild warrior<br />
+setMeleeKill starving wolf<br />
+setMeleeKill snake<br />
+setMeleeKill spider<br />
+setMeleeKill rotworm<br />
+setMeleeKill pig<br />
+setMeleeKill goblin<br />
+setMeleeKill goblin scavenger<br />
+setMeleeKill goblin assassin<br />
+setLoot F5 06<br />
+setLoot 06 17<br />
+setLoot 09 17<br />
+setLoot D7 0B<br />
+move 32620,31790,6<br />
+move 32609,31766,6<br />
+move 32574,31769,6<br />
+move 32537,31795,6<br />
+move 32550,31821,6<br />
+move 32552,31832,6<br />
+move 32548,31834,6<br />
+move 32546,31834,5<br />
+move 32547,31849,5<br />
+move 32524,31843,5<br />
+move 32521,31838,5<br />
+move 32519,31838,6<br />
+move 32513,31839,6<br />
+move 32511,31839,7<br />
+move 32527,31818,7<br />
+move 32550,31821,7<br />
+move 32572,31809,7<br />
+move 32576,31797,7<br />
+useItem 32576,31797,7<br />
+move 32568,31801,6<br />
+move 32565,31794,6<br />
+move 32563,31789,6<br />
+move 32569,31784,6<br />
+move 32595,31791,6<br />
+move 32595,31792,7<br />
+move 32605,31782,7<br />
+move 32607,31778,7<br />
+move 32608,31778,8<br />
+move 32602,31781,8<br />
+move 32602,31782,9<br />
+move 32602,31781,9<br />
+move 32600,31782,9<br />
+move 32595,31776,9<br />
+move 32595,31761,9<br />
+move 32602,31782,9<br />
+move 32602,31783,8<br />
+move 32608,31778,8<br />
+useItem 32608,31778,8<br />
+move 32608,31779,7<br />
+move 32593,31782,7<br />
+move 32593,31783,6<br />
+move 32576,31796,6<br />
+move 32576,31797,7<br />
+move 32576,31796,7<br />
+move 32560,31820,7<br />
+move 32511,31839,7<br />
+move 32513,31839,6<br />
+move 32521,31838,5<br />
+move 32547,31848,5<br />
+move 32546,31834,5<br />
+move 32548,31834,6<br />
+move 32565,31832,6<br />
+move 32564,31833,5<br />
+move 32575,31833,5<br />
+move 32564,31832,6<br />
+move 32573,31826,6<br />
+move 32598,31821,6<br />
+move 32621,31789,6<br />
+move 32615,31783,6<br />
+move 32608,31764,6<br />
+move 32584,31765,6<br />
+move 32566,31767,6<br />
+move 32553,31775,6<br />
+move 32537,31781,6<br />
+move 32538,31796,6<br />
+move 32537,31813,6<br />
+move 32545,31820,6<br />
+move 32553,31824,6<br />
+move 32552,31833,6<br />
+move 32548,31834,6<br />
+move 32546,31834,5<br />
+move 32552,31841,5<br />
+move 32556,31849,5<br />
+move 32547,31852,5<br />
+move 32529,31845,5<br />
+move 32521,31838,5<br />
+move 32531,31854,6<br />
+move 32553,31856,6<br />
+move 32567,31856,6<br />
+move 32580,31856,6<br />
+move 32600,31838,6<br />
+move 32602,31823,6<br />
+move 32613,31804,6<br />
+move 32617,31794,6<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

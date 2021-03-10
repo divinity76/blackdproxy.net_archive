@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibia, function, exelinesid, called, paste, character, private, setrelognextchar, byval, maxclients, redim, public, fastm, updateexeline, buttons, thandle, client, frmhpmana.cmdadd_click, declare, user32, sendkeys, cavebot, button, turning, makin, loginin, turnin, clickin, header, tibiafor, windows, folder, understeand, opened, healer, rules, focused, command, thing, logged, script, frmmain, processattacks, setrelognextcharidconnection, cavebotonplayerpausesid, onplayerpause-, lpwindowname, safecastcheatstring, timermaker1, findwindowvbempty" />
+	<meta name="description" content="IN MODCAVEBOT AFTER(BASIC-3RD LINE) 
+Option Explicit 
+PASTE THIS 
+      Dim THandle As Long 
+ 
+      Private Declare Function BringWindowToTop Lib &quot;user32&quot; (ByVal _ 
+         hwnd As Long) As Long 
+ 
+      Private Declare Function FindWindow Lib &quot;user32&quot; Alias _ 
+         &quot;FindWindowA&quot; (ByVal lpClassName As Any, ByVal lpWindowName _" />
+	
+	<title> Relog to next character [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Relog to next character</div>
+<hr />
+<div class="pda"><a href="t-62936.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62936-Relog-to-next-character">Relog to next character</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">xstojakes</div><div class="date">07-29-2016, 12:16</div></div><div class="posttext">IN MODCAVEBOT AFTER(BASIC-3RD LINE)<br />
+<br />
+Option Explicit<br />
+PASTE THIS<br />
+<br />
+      Dim THandle As Long<br />
+<br />
+      Private Declare Function BringWindowToTop Lib &quot;user32&quot; (ByVal _<br />
+         hwnd As Long) As Long<br />
+<br />
+      Private Declare Function FindWindow Lib &quot;user32&quot; Alias _<br />
+         &quot;FindWindowA&quot; (ByVal lpClassName As Any, ByVal lpWindowName _<br />
+         As Any) As Long<br />
+AFTER<br />
+<br />
+  Case &quot;onplayerpause-&quot;<br />
+    cavebotOnPLAYERpause(Sid) = True<br />
+    'exeLine(Sid) = exeLine(Sid) + 1<br />
+    updateExeLine Sid, 1, True<br />
+    fastM = True<br />
+PASTE THIS CODE<br />
+<br />
+  Case &quot;setrelognextchar&quot;<br />
+    setRelogNextChar (Sid)<br />
+   ' exeLine(Sid) = exeLine(Sid) + 1<br />
+    updateExeLine Sid, 1, True<br />
+    fastM = True<br />
+AFTER END FUNCTION CALLED PROCESSATTACKS<br />
+<br />
+End Function<br />
+PASTE THIS<br />
+<br />
+  Public Sub setRelogNextChar(idConnection)<br />
+<br />
+         SafeCastCheatString &quot;TimerMaker1&quot;, idConnection, 14<br />
+         wait 2000<br />
+         THandle = FindWindow(vbEmpty, &quot;Tibia&quot;)<br />
+         Dim iret As Long<br />
+         iret = BringWindowToTop(THandle)<br />
+         wait 1000<br />
+         SendKeys &quot;{DOWN}&quot;<br />
+         wait 1000<br />
+         SendKeys &quot;{ENTER}&quot;<br />
+         wait 5000<br />
+         Call frmCavebot.cmdLoadScript_Click<br />
+         wait 1000 <br />
+         frmCavebot.chkEnabled.Value = 1<br />
+         wait 1000<br />
+         frmHPmana.HPopt5.Value = True<br />
+         Call frmHPmana.cmdAdd_Click<br />
+         frmHPmana.HPopt8.Value = True<br />
+         Call frmHPmana.cmdAdd_Click<br />
+         <br />
+  End Sub<br />
+<br />
+frmMain<br />
+<br />
+AFTER<br />
+<br />
+  ReDim setFollowTarget(1 To MAXCLIENTS)<br />
+PASTE<br />
+<br />
+  ReDim setRelogNextChar(1 To MAXCLIENTS)<br />
+<br />
+AND ATENTION! U NEED TO CHANGE PREMMISIONS IN frmCavebot BUTTONS CALLED <br />
+cmdLoadScript_Click AND <br />
+chkEnabled, AND IN frmHPmana BUTTONS CALLED <br />
+HPopt5 ,<br />
+HPopt8 AND <br />
+cmdAddFROM PRIVATE TO PUBLIC<br />
+<br />
+<br />
+What this code mod made? After execute of command &quot;setRelogNextChar bot log out character, turning a Tibia client on the top, and makin one step down on the character list and loginin in this char, after that clickin in button &quot;Load&quot; in cavebot, turnin on the script, and add two rules into the Healer, focused on the new logged character.<br />
+One thing more, is that u cannot have opened other windows with header &quot;Tibia&quot;(for example Tibia folder called &quot;Tibia&quot;) cause bot will understeand it like the Tibia client</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

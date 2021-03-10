@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="planta, evitar, waypoint, mejor, scripts, también, hotkey, comandos, tienes, waypoints, menos, tuneles, comportamientos, lotee, añadir, donde, quieres, simplemente, extraños, lotear, pasos, exiva, script, todos, seguro, tibia, sitio, cambia, cerca, algún, añade, antes, luego, varias, usarlo, aproximadamente, automático, veces, tiempo, deben, incluso, simple, cuadrado, poner, saber, cambiar, errores, debes, buenos, crear" />
+	<meta name="description" content="Hola! 
+ 
+Me gustaría adentrarme un poquito más en esto de los scripts, ya que veo que poca gente se dedica a crearlos, al menos en la sección de los nuevos y me gustaría saber que diferencias hay entre los old y los new. Como se hace un script que sea realmente seguro, me gustaría empezar a crear mis propios scripts, de hecho ya lo hago aunque aun no me queda muy claro, y tengo algunos problemas como que a veces se me queda parado el char y me dice &quot;There is no way&quot; o algo así, pero luego sigue" />
+	
+	<title> Pregunta frecuente: ¿Cómo hacer un script de cavebot más seguro? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-89.html">Non-english</a> &gt; <a href="f-90.html">Foro español</a> &gt;  Pregunta frecuente: ¿Cómo hacer un script de cavebot más seguro?</div>
+<hr />
+<div class="pda"><a href="t-57948.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57948-Pregunta-frecuente-¿Cómo-hacer-un-script-de-cavebot-más-seguro">Pregunta frecuente: ¿Cómo hacer un script de cavebot más seguro?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Near</div><div class="date">05-05-2012, 16:57</div></div><div class="posttext">Hola!<br />
+<br />
+Me gustaría adentrarme un poquito más en esto de los scripts, ya que veo que poca gente se dedica a crearlos, al menos en la sección de los nuevos y me gustaría saber que diferencias hay entre los old y los new. Como se hace un script que sea realmente seguro, me gustaría empezar a crear mis propios scripts, de hecho ya lo hago aunque aun no me queda muy claro, y tengo algunos problemas como que a veces se me queda parado el char y me dice &quot;There is no way&quot; o algo así, pero luego sigue al rato.. Espero poder ir mejorando y cuando aprenda poder compartir mis scripts con vosotros!<br />
+<br />
+Gracias de antemano por resolverme las dudas, saludos!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">05-09-2012, 12:51</div></div><div class="posttext">aunque creo que ya te lo escribi por email, voy a compartir con todos mis respuestas para que sean de ayuda al que quiera hacer scripts más seguros:<br />
+<br />
+Lo que hace un script  mucho más seguro es crearlo con el mapa actual de tibia (que todos los waypoint sean puntos actualmente caminables) y evitar mandar paquetes de datos personalizados mediante comandos exiva &gt; ya que el formato de los bytes podría variar en versiones posteriores de Tibia y entonces los antiguos podrían ser detectados por el sistema de autodeletion.<br />
+<br />
+También, de momento, es mejor evitar los comandos de drooplootonground y drooplootondepot ya que requieren una revisión tras varios informes que indican que son detectables.<br />
+<br />
+Respecto a la nueva opción de lotear todo no es que sea más seguro. Es simplemente para lotear todo. Lo cual esta bien, pero lo normal es añadir excepciones para que no lotee las bolsas ni los backpacks, con setLoot XX XX , donde XX XX es el id del objeto que no quieres que lotee.<br />
+<br />
+Otras cosas que se deben saber para crear buenos scripts:<br />
+-	Para cambiar de planta simplemente añade algún waypoint cerca del sitio donde se cambia de planta, antes de usarlo, y luego otro waypoint tras haber cambiado de planta<br />
+-	Para evitar comportamientos extraños lo mejor es añadir 1 waypoint cada 4-5 pasos. Lo mejor es ir añadiéndolos* automáticamente al script con una hotkey de exiva addmove<br />
+-	Para evitar comportamientos extraños también asegúrate de que cuando haya multiples cambios de planta muy rápidos (tuneles verticales**) al menos pon 3 waypoints por cada planta<br />
+* Lo de la hotkey no es automático, tienes que darle tu aproximadamente 1 vez cada 4-6 pasos. <br />
+** Lo de los tuneles verticales un ejemplo lo tienes en la cueva de ratas del NW de Rookgard. Ahí cambias de piso varias veces en poco tiempo y si no quieres errores debes poner al menos 3 waypoints en cada planta, incluso si la planta es un simple cuadrado 2x2</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

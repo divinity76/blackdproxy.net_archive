@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibianic rune maker, completed, runemaker, backpack, usefull, script, stuck, blanks, tibianic, multiple" />
+	<meta name="description" content="Hello everybody I have a problem with tibia nic custom client (it is 7.72) 
+http://tibianic-hr.org/download/   (third one) 
+ 
+I have just lunched blackd under that client (exchanged tibia.dat ofc) but here is the problem rune maker doesn't work I have just changed  
+to  
+tileID_Blank=D4 08 
+(because the .dat file is from 7.4) 
+15:23 You see tile ID D4 08  with info  + pickupable=TRUE 
+ 
+but still it doesn't works" />
+	
+	<title> Tibianic runemaker [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibianic runemaker</div>
+<hr />
+<div class="pda"><a href="t-57636.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57636-Tibianic-runemaker">Tibianic runemaker</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Krasier</div><div class="date">04-03-2012, 16:26</div></div><div class="posttext">Hello everybody I have a problem with tibia nic custom client (it is 7.72)<br />
+http://tibianic-hr.org/download/   (third one)<br />
+<br />
+I have just lunched blackd under that client (exchanged tibia.dat ofc) but here is the problem rune maker doesn't work I have just changed <br />
+to <br />
+tileID_Blank=D4 08<br />
+(because the .dat file is from 7.4)<br />
+15:23 You see tile ID D4 08  with info  + pickupable=TRUE<br />
+<br />
+but still it doesn't works <br />
+I have changed soulpoints to 0 and I have clicked auto logout if out of runes or soul ... and it logged me out .^<br />
+<br />
+edit: now sometimes not always in tibia I see :<br />
+16:09 BlackdProxy: Out of blank runes</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">04-03-2012, 18:33</div></div><div class="posttext">http://www.blackdtools.net/showthread.php?55535-Runemaker-not-working</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Krasier</div><div class="date">04-03-2012, 18:41</div></div><div class="posttext">just like tony said <br />
+<br />
+EDIT: Damn.. Doesn't work when having multiple bp's of blanks.. It gets &quot;stuck&quot; after one backpack is completed. Any way to fix it? <br />
+<br />
+so that script is not really usefull</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">04-04-2012, 20:12</div></div><div class="posttext">try latest version. I think it might fix that problem, else contact me by email and send me a screenshot of your runemaker so I can see the options you have there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Krasier</div><div class="date">04-05-2012, 01:45</div></div><div class="posttext">Nah still doesn't works sent you screen to email.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-24-2012, 17:45</div></div><div class="posttext">just tested this cond and it works. Just remove 1 rune from the backpack with blanks.. else it wont have space to change the rune for the item in the hand.<br />
+DD 09 = dwarven shield id for tibianic, change it for your needs.<br />
+05 left hand, 06 right hand<br />
+<br />
+<br />
+<br />
+<br />
+$mymanapercent$<br />
+#number&gt;=#<br />
+90<br />
+0<br />
+1000<br />
+0<br />
+exiva #D4 08 05<br />
+$mymanapercent$<br />
+#number&gt;=#<br />
+90<br />
+300<br />
+1000<br />
+0<br />
+adori gran<br />
+$mymanapercent$<br />
+#number&lt;=#<br />
+89<br />
+0<br />
+1000<br />
+0<br />
+exiva #DD 09 05</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

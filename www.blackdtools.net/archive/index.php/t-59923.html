@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="server, client, protocol, tibianic, https://i.imgur.com/yeqqad9.png, source, encryption, realots.net, codes, attached" />
+	<meta name="description" content="Hey guys, i have been trying to figure out how to get this bot working, but i cannot seem to find the Ip and port so i can connect on a normal 7.72 
+ 
+Could anybody who is good at HEX help me out? 
+ 
+http://realots.net/home/ 
+ 
+ 
+Best regards, 
+ 
+Walla" />
+	
+	<title> realots.net  - need help! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  realots.net  - need help!</div>
+<hr />
+<div class="pda"><a href="t-59923.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59923-realots-net-need-help!">realots.net  - need help!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">walla</div><div class="date">01-17-2013, 18:14</div></div><div class="posttext">Hey guys, i have been trying to figure out how to get this bot working, but i cannot seem to find the Ip and port so i can connect on a normal 7.72<br />
+<br />
+Could anybody who is good at HEX help me out?<br />
+<br />
+http://realots.net/home/<br />
+<br />
+<br />
+Best regards,<br />
+<br />
+Walla</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">inzejjn</div><div class="date">01-28-2013, 14:51</div></div><div class="posttext">I also need help with that, did you get it to work yet walla?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Silk</div><div class="date">01-29-2013, 01:36</div></div><div class="posttext">Realots is dependent on it's custom client, if you have the IP address and port for realots and try to log in it will say your password is invalid, (it used to say please update your client).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">inzejjn</div><div class="date">01-29-2013, 02:00</div></div><div class="posttext">Realots is dependent on it's custom client, if you have the IP address and port for realots and try to log in it will say your password is invalid, (it used to say please update your client).<br />
+<br />
+Hmm, there must be something you can do to make it work i hope.. i hope blackD can help!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aero34</div><div class="date">01-31-2013, 04:36</div></div><div class="posttext">Hello, I explored the realots files (tibia. exe, tibia.dll, tibia.dat) with an HEX editor and found the following things:<br />
+- The .dll file communicates to the following site: http://realots.net/autoupdate/versions.txt, which checks if the 32-bit CRC checksum (sort of a &quot;file version&quot;) of the client you're using matches with the unmodified one, if you hex edit the client or dll file your 'file version' changes and it will return a &quot;Validation of Tibia.exe / Tibia.dll failed&quot; message respectively.<br />
+- Using an hex editor to edit the client or the .dll file in ANY way will return an error when you open the client.<br />
+- It has some kind of feature to detect if you're using the classicbotter bot (probably that's the reason some people reported getting  auto-banned if you used  it on tibianic-hr) as I found the following strings inside the .dll file: [waypoints scripts alert.wav], I don't know how it checks if you got such archives, but those are the names of the folders and alarm file used by classicbotter.<br />
+- Tibia.dat is the exact same as the original 7.72 one.<br />
+<br />
+My goal is to be able to establish a connection with the unmodified 7.72 client (compatible with BlackD) to the server, so I tried the following things:<br />
+* First of all, I tried connecting to the server with the unmodified client and blackd, but returned an error upon trying to login.<br />
+* I then tried modifying the .dll file but then the client wanted to autoupdate everytime I ran it to replace my modified .dll file with the original, so I figured it was communicating in some way with the site, so upon checking the dll file I found out what I mentioned previously (the versions.txt file)<br />
+* What I did was replacing http://realots.net/autoupdate/versions.txt with http://allez1.atspace.cc/aaaaaaaaaaaaa.txt (just a blank .txt file I created with the same number of characters in the URL).<br />
+* This allowed me to bypass the DLL file check, so now I could modify it freely.<br />
+* Next step was to modifying the REALOTS version of tibia.exe to add simple things such as light hack and MC, (which requiere modifying only a few HEX addresses)so I modified it, but found out that this or any form of modification of the .exe file renders the client un-usable, as it returns a &quot;Validation of Tibia.exe failed&quot; message, even after altering the .dll file. I tried opening the client offline, but it still returns the same message immediately, so this means that it validates the file INTERNALLY (and not by connecting to the realots site), via the .dll file probably.<br />
+* I compared the original 7.72 exe VS Realots exe and found only a few differences, the only relevant one being 4 hex values, E9 7C 2D 08 at offset 0x000D77F0 (68 AA 4F 55 in the original) which make the client read the .dll file.  Upon modifying this value on the original file to march with the one in REALOTS client, it becomes just like REALOTS, which is unusable by BlackD.<br />
+* If you modify every HEX value of the original exe to the ones in the realots exe BUT the one which makes it read the .dll file (mentioned in the previous point), it's openable by blackd and all, but will return an error upon trying to log-in ('your version is incompatible', or something like that)<br />
+<br />
+My conclusion are:<br />
+- It's impossible to connect to realots with the unmodified client, you need to use the .dll file to connect (which makes it uncompatible with BlackD).<br />
+<br />
+Something I really wanted to try is to use the 'bypass login server' option in BlackD, but unfortunately it's disabled and wasn't able to enable it in any way. Maybe if the server checks your version during the login procces, you could get past it by bypassing the log-in server altogether? If someone discovers something please PM me :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aero34</div><div class="date">01-31-2013, 04:47</div></div><div class="posttext">Btw, address is 'realots.net' and port is '7272'</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Demon Boo</div><div class="date">02-01-2013, 00:06</div></div><div class="posttext">but unfortunately it's disabled a<br />
+Yeah idk why it's disabled, I ran into the same problem.<br />
+<br />
+Add me on MSN- cwoyto123@gmail.com</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Silk</div><div class="date">02-01-2013, 00:23</div></div><div class="posttext">Btw, address is 'realots.net' and port is '7272'<br />
+<br />
+How are you sure the is not 7778?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipe93</div><div class="date">11-03-2017, 09:38</div></div><div class="posttext">they use an Xor encryption via server side and the dll you'll need add some codes into bot source<br />
+also attached to XOR they use a fake protocol 6.2<br />
+they use the old tibianic client i have it i can put a server on if you want to test :p<br />
+<br />
+https://i.imgur.com/YEqqAd9.png</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

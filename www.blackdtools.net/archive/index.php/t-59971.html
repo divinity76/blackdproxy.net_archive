@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="error, connection, connected, internal, default, blackd, proxy, version, found, crackd.dll, domainlooplogin, 48file, deleted, microsoft, install, uninstalling, tools, messing, latest, androxiic, updated, antivirus, security, essentials, times, attempt, connect, login, retry, folder, reinstalling, cblackdproxy, installing, today, forwarding, 127.0.0.1, login01.tibia.com7171, server1, client1, server, tibia, 200002, config.ini, [playing, servers], 014536, persons, logging, [30-01-2013, settings" />
+	<meta name="description" content="We have improved the core of all our Tibia tools and bots. They should now work for more persons. If they didn't work for you before please try them again now. 
+ 
+ 
+For curious persons and programmers - this is the new code of the function that was updated, the one that searches the base of the main tibia module in Tibia.exe (In latest versions of Tibia that module can be stored in a random part of the memory so you need to search where it starts, else you can't apply any cheat at all.) 
+ 
+" />
+	
+	<title> All our tools have been updated today - they should now work for more persons [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  All our tools have been updated today - they should now work for more persons</div>
+<hr />
+<div class="pda"><a href="t-59971.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59971-All-our-tools-have-been-updated-today-they-should-now-work-for-more-persons">All our tools have been updated today - they should now work for more persons</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-28-2013, 11:51</div></div><div class="posttext">We have improved the core of all our Tibia tools and bots. They should now work for more persons. If they didn't work for you before please try them again now.<br />
+<br />
+<br />
+For curious persons and programmers - this is the new code of the function that was updated, the one that searches the base of the main tibia module in Tibia.exe (In latest versions of Tibia that module can be stored in a random part of the memory so you need to search where it starts, else you can't apply any cheat at all.)<br />
+<br />
+<br />
+<br />
+Public Function getProcessBase(ByVal hProcess As Long, ByVal expectedRegionSize As Long, Optional PIDinsteadHp As Boolean = False) As Long<br />
+    On Error GoTo goterr<br />
+    ' expectedRegionSize is used again<br />
+    Dim lpMem As Long, ret As Long, lLenMBI As Long<br />
+    Dim lWritten As Long, CalcAddress As Long, lPos As Long<br />
+    Dim sBuffer As String<br />
+    Dim sSearchString As String, sReplaceString As String<br />
+    Dim si As SYSTEM_INFO<br />
+    Dim mbi As MEMORY_BASIC_INFORMATION<br />
+    Dim realH As Long<br />
+    Dim pid As Long<br />
+    Dim res As Long<br />
+    If PIDinsteadHp = True Then<br />
+        res = GetWindowThreadProcessId(hProcess, pid)<br />
+        realH = OpenProcess(PROCESS_READ_WRITE_QUERY, False, pid)<br />
+        hProcess = realH<br />
+    End If<br />
+    Call GetSystemInfo(si)<br />
+    lpMem = si.lpMinimumApplicationAddress<br />
+    lLenMBI = Len(mbi)<br />
+    ' Scan memory<br />
+    Do While lpMem &lt; si.lpMaximumApplicationAddress<br />
+        mbi.RegionSize = 0<br />
+        ret = VirtualQueryEx(hProcess, ByVal lpMem, mbi, lLenMBI)<br />
+        If ret = lLenMBI Then<br />
+           If (mbi.State = MEM_COMMIT) Then<br />
+                If mbi.AllocationProtect = &amp;H80 Then<br />
+                If mbi.BaseAddress - mbi.AllocationBase = &amp;H1000 Then<br />
+                If mbi.Protect = &amp;H20 Then<br />
+                If (mbi.RegionSize = expectedRegionSize) Then<br />
+                    res = mbi.AllocationBase<br />
+                    'Debug.Print &quot;The new result is &quot; &amp; CStr(res)<br />
+                    If PIDinsteadHp = True Then<br />
+                      CloseHandle hProcess<br />
+                    End If<br />
+                    getProcessBase = res<br />
+                    Exit Function<br />
+                End If<br />
+                End If<br />
+                End If<br />
+                End If<br />
+           End If<br />
+           lpMem = mbi.BaseAddress + mbi.RegionSize<br />
+        Else<br />
+           Exit Do<br />
+        End If<br />
+    Loop<br />
+    If PIDinsteadHp = True Then<br />
+       CloseHandle hProcess<br />
+    End If<br />
+goterr:<br />
+    getProcessBase = 0<br />
+End Function<br />
+<br />
+<br />
+I am almost sure that this new function should now work for everybody. Or at least it should work for more persons than before.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rcedrick</div><div class="date">01-29-2013, 07:34</div></div><div class="posttext">Nothing works anymore.. not even healer :|<br />
+using window XP tibia 9.80-81<br />
+but when i logins it says the red msg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-29-2013, 10:50</div></div><div class="posttext">Nothing works anymore.. not even healer :|<br />
+using window XP tibia 9.80-81<br />
+but when i logins it says the red msg<br />
+<br />
+that is really strange. if you get the red welcome msg it means it was able to read/write memory correctly so it can't be a problem with the latest change.<br />
+<br />
+Your cheats probably got paused because a command or because one of your scripts or because a debug. if you got a debug please send me the file errors.txt to my email: daniel@blackdtools.com</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rcedrick</div><div class="date">01-29-2013, 11:43</div></div><div class="posttext">that is really strange. if you get the red welcome msg it means it was able to read/write memory correctly so it can't be a problem with the latest change.<br />
+<br />
+Your cheats probably got paused because a command or because one of your scripts or because a debug. if you got a debug please send me the file errors.txt to my email: daniel@blackdtools.com<br />
+<br />
+<br />
+<br />
+<br />
+loll yeah thanks .. i did'nt knew it was on pause.. i havnt used it in a while coz i been on rl tib.. thanks tho =D everything works fine :]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Androxiic</div><div class="date">01-30-2013, 03:11</div></div><div class="posttext">I cant logging on the game. i got dc and in the error it says following; error 200002 or something like that, but i can logg the real tibia server..<br />
+<br />
+#client1 connected (IP 127.0.0.1) , forwarding to login01.tibia.com:7171 #<br />
+#server1 connected#<br />
+# internal ID 1 lost connection at DoMainLoopLogin, line 23 with error #48:File not found: crackd.dll<br />
+[30-01-2013 01:45:36 using version 28.1 , with config.ini v981 ] [Playing real servers] # internal ID 1 lost connection at DoMainLoopLogin, line 23 with error #48:File not found: crackd.dll<br />
+<br />
+and i use the default settings what should i do? and i have the latest version 28.1..<br />
+<br />
+Best regards Androxiic</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-30-2013, 12:10</div></div><div class="posttext">I cant logging on the game. i got dc and in the error it says following; error 200002 or something like that, but i can logg the real tibia server..<br />
+<br />
+#client1 connected (IP 127.0.0.1) , forwarding to login01.tibia.com:7171 #<br />
+#server1 connected#<br />
+# internal ID 1 lost connection at DoMainLoopLogin, line 23 with error #48:File not found: crackd.dll<br />
+[30-01-2013 01:45:36 using version 28.1 , with config.ini v981 ] [Playing real servers] # internal ID 1 lost connection at DoMainLoopLogin, line 23 with error #48:File not found: crackd.dll<br />
+<br />
+and i use the default settings what should i do? and i have the latest version 28.1..<br />
+<br />
+Best regards Androxiic<br />
+<br />
+your antivirus is probably messing with blackd proxy. It probably deleted part of it. try uninstalling it. Install Microsoft Security Essentials instead.<br />
+<br />
+Anyways try reinstalling blackd proxy in default folder. if it does not work then try installing it in C:\blackdproxy<br />
+<br />
+and retry login a few times, just in case. it usually does not connect at first attempt.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Androxiic</div><div class="date">01-30-2013, 21:50</div></div><div class="posttext">I fixed it in some wierd way! <br />
+<br />
+But thanks for ur answer and nice bot! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-31-2013, 00:08</div></div><div class="posttext">Daniel Id like to say Thanks for all your hard work and your quick feed back to people in such need even when this program you give us is completely FREE. Well done man, enough said.<br />
+<br />
+-Lith<br />
+<br />
+Ps ; Great work with the main page bro, Looks like your ready to start rolling in the bank, keep up the good work D.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="nice, great, exp/h, loot, requirements, manapots, soft, boots, 45-50, mlvl, 30-35k, counter, profit, treasure, island, lootdropper, [improved], script" />
+	<meta name="description" content="Hello!  
+I've been using this script from 50 to 65~ and I get like 30-35k exp/h. The loot is great and it's nice exp. 
+ 
+Requirements: 
+Lvl 45-50? 
+Mlvl 45+ 
+1-2 bp manapots. 
+Soft boots &lt;- CRITICAL FOR PROFIT 
+Food - Brown mushrooms is great 
+Good melee weapon. I use noble axe." />
+	
+	<title> [IMPROVED] Treasure Island + Lootdropper + Profit Counter! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt; <a href="f-46.html">Scripts for exori vis bot!</a> &gt;  [IMPROVED] Treasure Island + Lootdropper + Profit Counter!</div>
+<hr />
+<div class="pda"><a href="t-35451.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?35451-IMPROVED-Treasure-Island-Lootdropper-Profit-Counter!">[IMPROVED] Treasure Island + Lootdropper + Profit Counter!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">01-25-2009, 16:07</div></div><div class="posttext">Hello! <br />
+I've been using this script from 50 to 65~ and I get like 30-35k exp/h. The loot is great and it's nice exp.<br />
+<br />
+Requirements:<br />
+Lvl 45-50?<br />
+Mlvl 45+<br />
+1-2 bp manapots.<br />
+Soft boots &lt;- CRITICAL FOR PROFIT<br />
+Food - Brown mushrooms is great<br />
+Good melee weapon. I use noble axe.<br />
+Desent eq. Better with more def than mlvl+!<br />
+Treasure maps - Take 3 with you before you go. One to get down, one to get up the loot and one to have if you die ;D<br />
+<br />
+It loots following things:<br />
+# Morning Star<br />
+# Viking Helmet<br />
+#Gold<br />
+#Red Robe<br />
+#Spike Sword<br />
+#Stealth Ring<br />
+#White Piece of Cloth<br />
+#Brown Piece of Cloth<br />
+#Ancient Shield<br />
+#Life Ring<br />
+<br />
+The loot dropper:<br />
+It drops all loot found. You get all the info before you drop the loot.<br />
+<br />
+Roundprofit = How much the loot you got this round is worth,<br />
+Totalprofit = How much you've earned in total.<br />
+Total red robes = Tells you how many red robes you've looted! and<br />
+Total time played.<br />
+<br />
+Credits to scriptmaker(?), pro-tibia and Tony32!<br />
+<br />
+<br />
+<br />
+#Credits to scriptmaker(?), pro-tibia and Tony32<br />
+#############<br />
+onGMpause<br />
+SetMaxAttackTimeMs 40000<br />
+setMeleeKill ghoul<br />
+setMeleeKill pirate skeleton<br />
+setMeleeKill ghost<br />
+setMeleeKill skeleton<br />
+setMeleeKill pirate ghost<br />
+setSpellKill pirate ghost,exori flam,3<br />
+setSpellKill pirate skeleton,exori vis,2<br />
+setSpellKill ghost,exori vis,2<br />
+setPriority skeleton:-1<br />
+setPriority ghost:+1<br />
+setPriority pirate ghost:+2<br />
+setAvoidFront pirate ghost<br />
+# Brass Helmet<br />
+# Morning Star<br />
+setLoot D2 0C<br />
+# Viking Helmet<br />
+setLoot 27 0D<br />
+#Gold<br />
+setLoot D7 0B<br />
+#Red Robe<br />
+setLoot EE 0D<br />
+#Spike Sword<br />
+setLoot C7 0C<br />
+#Stealth Ring<br />
+setLoot E9 0B<br />
+#White Piece of Cloth<br />
+setLoot 15 17<br />
+#Brown Piece of Cloth<br />
+setLoot 19 17<br />
+#Ancient Shield<br />
+setLoot 68 0D<br />
+#Life Ring<br />
+setLoot EC 0B<br />
+move 32090,32962,10<br />
+move 32084,32967,10<br />
+move 32092,32968,10<br />
+move 32097,32979,10<br />
+move 32111,32981,10<br />
+move 32090,32957,10<br />
+move 32096,32948,10<br />
+move 32121,32960,10<br />
+move 32132,32958,10<br />
+move 32139,32976,10<br />
+move 32150,32957,10<br />
+move 32164,32948,10<br />
+move 32162,32930,10<br />
+move 32180,32929,10<br />
+move 32187,32956,10<br />
+move 32180,32916,10<br />
+move 32189,32917,9<br />
+move 32169,32912,9<br />
+move 32178,32915,9<br />
+move 32168,32912,10<br />
+move 32151,32913,10<br />
+move 32146,32932,10<br />
+move 32141,32942,10<br />
+move 32140,32914,10<br />
+move 32128,32910,10<br />
+move 32122,32908,10<br />
+move 32134,32922,10<br />
+move 32118,32934,10<br />
+move 32110,32921,10<br />
+move 32099,32914,10<br />
+move 32094,32931,10<br />
+move 32082,32932,10<br />
+move 32080,32926,10<br />
+move 32095,32943,10<br />
+move 32090,32960,10<br />
+move 32093,32962,9<br />
+move 32090,32962,9<br />
+move 32089,32961,10<br />
+resetLoot<br />
+setLoot EC 0B<br />
+setLoot 19 17<br />
+setLoot 15 17<br />
+setLoot E9 0B<br />
+setLoot EE 0D<br />
+setLoot D2 0C<br />
+setLoot 27 0D<br />
+setLoot D7 0B<br />
+setLoot C7 0C<br />
+setLoot 68 0D<br />
+fastExiva &lt; B4 12 $hex-tibiastr:Dropping loot!$<br />
+#fastExiva testding<br />
+#-------------------------------------------------------------LOOTPART<br />
+fastExiva _robes = $countitems:EE 0D$<br />
+fastExiva _1 = $countitems:D7 0B$<br />
+fastExiva _2 = $numericalexp:{$countitems:D2 0C$}*90$<br />
+fastExiva _3 = $numericalexp:{$countitems:27 0D$}*66$<br />
+fastExiva _4 = $numericalexp:{$countitems:EE 0D$}*2000$<br />
+fastExiva _5 = $numericalexp:{$countitems:C7 0C$}*1000$<br />
+fastExiva _6 = $numericalexp:{$countitems:E9 0B$}*1000$<br />
+fastExiva _7 = $numericalexp:{$countitems:15 17$}*150$<br />
+fastExiva _8 = $numericalexp:{$countitems:19 17$}*120$<br />
+fastExiva _9 = $numericalexp:{$countitems:68 0D$}*900$<br />
+fastExiva _10 = $numericalexp:{$countitems:EC 0B$}*600$<br />
+fastExiva _11 = $numericalexp:{$countitems:1A 0D$}*30$<br />
+#Counting the round profit!<br />
+fastexiva _p1 = $numericalexp:{$numericalexp:{$numericalexp:{$nume ricalexp:{$_1$}+{$_2$}$}+{$_3$}$}+{$_4$}$}+{$_5$}$<br />
+fastexiva _p2 = $numericalexp:{$numericalexp:{$numericalexp:{$nume ricalexp:{$numericalexp:{$_6$}+{$_7$}$}+{$_8$}$}+{ $_9$}$}+{$_10$}$+{$_11$}$<br />
+#Total<br />
+fastexiva _roundprofit = $numericalexp:{$_p1$}+{$_p2$}$<br />
+fastexiva _totalprofit = $numericalexp:{$_totalprofit$}+{$_roundprofit$}$<br />
+fastexiva _totalrobes = $numericalexp:{$_totalrobes$}+{$_robes$}$<br />
+sayMessage Exiva &lt; B4 12 $hex-tibiastr:Your profit this round: {$_roundprofit$}.$<br />
+sayMessage Exiva &lt; B4 12 $hex-tibiastr:Your total profit: {$_totalprofit$}.$<br />
+sayMessage Exiva &lt; B4 12 $hex-tibiastr:Total Red Robes: {$_totalrobes$}.$<br />
+sayMessage Exiva &lt; B4 12 $hex-tibiastr:Played for {$played$}.$<br />
+#-------------------------------------------------------------LOOTPART END<br />
+#message to server<br />
+dropLootOnGround 32093,32961,10<br />
+gotoScriptLine 0<br />
+<br />
+If you use this script as it is and have the eq requierd. You will 100% go profit.<br />
+<br />
+Tip: Bring many empty backpacks with you!<br />
+<br />
+Enjoy and please comment!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-25-2009, 16:11</div></div><div class="posttext">Great job !<br />
+<br />
+I was hunting there few days ago on my 5x ms , and I get 35-40k/h with PROFIT , without soft boots . ROX :D<br />
+<br />
+I'll test this script today .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">01-26-2009, 09:28</div></div><div class="posttext">Nice :) Post a comment when you've tested it ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-26-2009, 19:46</div></div><div class="posttext">5X MS<br />
+<br />
+<br />
+<br />
+Average session speed:<br />
+34270 exp/h<br />
+Played this session:<br />
+1h 17m 53s<br />
+<br />
+<br />
+Lotek<br />
+<br />
+<br />
+<br />
+Dropping loot!<br />
+Your profit this round: 903.<br />
+Your total profit: 4591.<br />
+Played for 1h 14m 3s.<br />
+<br />
+<br />
+Buy I was using smp so , profit counter is showing bad profit ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">curry</div><div class="date">02-07-2009, 16:09</div></div><div class="posttext">what rod/wand you using?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">02-07-2009, 16:21</div></div><div class="posttext">Fire Sword :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lukecake</div><div class="date">02-08-2009, 20:26</div></div><div class="posttext">how do you get to treasure island and where do you get the maps :&lt;?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lumin</div><div class="date">02-08-2009, 20:56</div></div><div class="posttext">how do you get to treasure island and where do you get the maps :&lt;?<br />
+<br />
+Buy them from players or hunt pirates yourself :P Its Pirate treasure maps you need.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Banned</div><div class="date">02-08-2009, 21:07</div></div><div class="posttext">can I still bot here without soft boots?<br />
+<br />
+softies on my servers is like 450-500k -.^<br />
+<br />
+im lvl 54</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Stix</div><div class="date">02-10-2009, 08:58</div></div><div class="posttext">Yeah you can, you might not profit as much but I guess you will still profit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Colorion</div><div class="date">02-10-2009, 14:42</div></div><div class="posttext">I'm glad to see my lines at work :D You made a good job</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">falc0</div><div class="date">02-10-2009, 19:41</div></div><div class="posttext">Does anyone knows how I have to put the healings settings and how many manas I have to bring?<br />
+<br />
+Is it better to use weapon or is wand better?<br />
+<br />
+anyway good script :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">02-14-2009, 01:23</div></div><div class="posttext">Anyone can share me this script with depositer?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">The Real Dirty Dog</div><div class="date">02-18-2009, 09:21</div></div><div class="posttext">Anyone can share me this script with depositer?<br />
+<br />
+Bump! (Too Short)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ziemniaq</div><div class="date">02-18-2009, 17:01</div></div><div class="posttext">Hello! I have just one question about Treasure Island.<br />
+When I use the map, does it dissapear? Can I use it again?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">02-18-2009, 17:30</div></div><div class="posttext">Yes, it will dissapear.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">03-24-2009, 00:26</div></div><div class="posttext">I'm glad to see my lines at work :D You made a good job<br />
+<br />
+Thanks! But I'd never done it without the counter that you made ^^<br />
+<br />
+And for those who wonders, I use Melee. I think it's less waste, and it works really well. <br />
+<br />
+Also, I have never tried to bot there without softies. So I don't know if it's profit or no. Some people say yes, some no. But I can asure that Soft boots will give profit ^^<br />
+<br />
+Thanks for good comments aswell!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jaann93</div><div class="date">03-24-2009, 18:58</div></div><div class="posttext">its still working on 8.41?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lokator</div><div class="date">03-24-2009, 22:50</div></div><div class="posttext">Hello i want ask u about <br />
+ he is comming to monster or runing away ?? :P<br />
+<br />
+thanks i will look soon here</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">goldace</div><div class="date">04-05-2009, 21:23</div></div><div class="posttext">I'm wondering why do you drop like morning starts etc, because how do you get it to dp later ? do you throw it if you do where do you throw it and does it floorreset after server save?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raphimac</div><div class="date">04-05-2009, 21:58</div></div><div class="posttext">WORK VERRY WELL<br />
+THANKS<br />
+it s a amezing script<br />
+=p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zimel</div><div class="date">04-12-2009, 16:38</div></div><div class="posttext">i'll give it a try as soon as i made 30+ on my mage :))</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RicoBarca7</div><div class="date">04-16-2009, 13:56</div></div><div class="posttext">Aight works great, thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pacific</div><div class="date">04-27-2009, 11:36</div></div><div class="posttext">Awesome! Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Devoto</div><div class="date">09-07-2009, 18:47</div></div><div class="posttext">I got ona place with zombies lol.<br />
+<br />
+Is this the right place or could someone pm me the link with the right place to use the shovel?<br />
+<br />
+Thnks, Devo</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BadBob</div><div class="date">09-07-2009, 19:12</div></div><div class="posttext">I got ona place with zombies lol.<br />
+<br />
+Is this the right place or could someone pm me the link with the right place to use the shovel?<br />
+<br />
+Thnks, Devo<br />
+<br />
+I think cip changed the place and now is full of zombies... :S</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kyku_x</div><div class="date">09-10-2009, 17:37</div></div><div class="posttext">Are there still ppl using blackd proxy? lool</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Theer</div><div class="date">09-03-2010, 23:54</div></div><div class="posttext">i can bot with mage lvl 40 full set now ?????</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

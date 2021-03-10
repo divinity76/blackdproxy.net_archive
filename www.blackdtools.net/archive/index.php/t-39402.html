@@ -1,0 +1,1281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="dark, fastexiva, setloot, script, level, apprentice, scientist, setspellkill, setpriority, setmeleekill, mort,3, food, magician, buying, mana, potatoes, cost, waste, higher, hailestrom, potion, talon, plague, iftrue, $countitems$_kmana$$number, 32861,31134,7, manas, wand, hunt, move, _xmana, scientist,exori, magician,exori, _kfood, setchaoticmovesoff, apprentice,exori, ongmpause, gold, _cpotion, saphire, enchated, coins, _cfood, _xfood, made, profit, scipt, banned, high, rate" />
+	<meta name="description" content="FIRST SCRIPT 
+SECOND SCRIPT FOR LEVEL 40 AND HIGHER WITH A HIGHER EXP/RATE Click Here 
+ 
+I used this script on my mage that got banned. This scipt isn't made for profit but for high experience rate at a low level so if you don't have money for waste I don't recommend this script since its WASTE  
+ 
+Requirements : 
+Level : 30 
+Magic Level : 30 
+EQ : Any EQ" />
+	
+	<title> Ultimate Magician Tower [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt; <a href="f-46.html">Scripts for exori vis bot!</a> &gt;  Ultimate Magician Tower</div>
+<hr />
+<div class="pda"><a href="t-39402.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?39402-Ultimate-Magician-Tower">Ultimate Magician Tower</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-09-2009, 18:18</div></div><div class="posttext">FIRST SCRIPT<br />
+SECOND SCRIPT FOR LEVEL 40 AND HIGHER WITH A HIGHER EXP/RATE Click Here (http://www.blackdtools.net/showthread.php?t=39402&amp;page=1&amp;p=310858&amp;postcount=5)<br />
+<br />
+I used this script on my mage that got banned. This scipt isn't made for profit but for high experience rate at a low level so if you don't have money for waste I don't recommend this script since its WASTE <br />
+<br />
+Requirements :<br />
+Level : 30<br />
+Magic Level : 30<br />
+EQ : Any EQ<br />
+<br />
+Info about the hunting ground:<br />
+Hunts Dark Magicians, Mad Scientist and Dark Apprentice<br />
+Depositing cash/items, buying mana potions and buying food<br />
+EXP/H : 28-35k/h<br />
+GPs : 2k gps/hour<br />
+<br />
+<br />
+#Script created by Dach.$<br />
+#Mana<br />
+# MP = 0C 01, SMP = ED 00, GMP = EE 00<br />
+fastExiva _kmana = 0C 01<br />
+# How many manas do you have?<br />
+fastExiva _xmana = 100<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _cpotion = 50<br />
+#Food<br />
+# How much potatoes do you have?<br />
+fastExiva _xfood = 40<br />
+# How much potatoes cost?<br />
+fastExiva _cfood = 3<br />
+# ID of food?<br />
+fastExiva _kfood = 0D 0E<br />
+################################################## ################<br />
+setChaoticMovesOFF<br />
+onGMpause<br />
+setMeleeKill dark apprentice<br />
+setMeleeKill mad scientist<br />
+setMeleeKill dark magician<br />
+setPriority mad scientist: +3<br />
+setPriority dark magician: +2<br />
+setPriority dark apprentice: +1<br />
+setSpellKill dark apprentice,exori mort,3<br />
+setSpellKill mad scientist,exori mort,3<br />
+setSpellKill dark magician,exori mort,3<br />
+#Gold Coins<br />
+setLoot D7 0B<br />
+#Enchated Saphire<br />
+setLoot A6 02<br />
+#Wand of Plague<br />
+setLoot 00 0C<br />
+#Talon<br />
+setLoot DA 0B<br />
+#Hailestrom Rod<br />
+setLoot FB 0B<br />
+:Hunt<br />
+move 32861,31134,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32851,31137,7<br />
+move 32849,31137,6<br />
+move 32847,31137,5<br />
+move 32845,31137,4<br />
+move 32845,31135,3<br />
+move 32848,31130,3<br />
+move 32849,31131,4<br />
+move 32848,31132,4<br />
+move 32848,31132,5<br />
+move 32848,31130,4<br />
+move 32849,31129,3<br />
+move 32845,31135,3<br />
+move 32845,31137,4<br />
+move 32847,31137,5<br />
+move 32849,31137,6<br />
+move 32851,31137,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32859,31149,7<br />
+move 32857,31149,6<br />
+move 32855,31149,5<br />
+move 32853,31149,4<br />
+move 32853,31147,3<br />
+move 32855,31144,3<br />
+move 32855,31144,4<br />
+move 32856,31144,4<br />
+move 32856,31144,5<br />
+move 32855,31144,5<br />
+move 32855,31144,6<br />
+move 32856,31144,6<br />
+move 32856,31144,7<br />
+move 32855,31143,7<br />
+move 32857,31144,7<br />
+move 32856,31142,6<br />
+move 32855,31142,5<br />
+move 32856,31142,4<br />
+move 32855,31142,3<br />
+move 32853,31147,3<br />
+move 32853,31149,4<br />
+move 32855,31149,5<br />
+move 32857,31149,6<br />
+move 32859,31149,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32865,31151,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32874,31158,7<br />
+move 32874,31156,6<br />
+move 32874,31154,5<br />
+move 32874,31152,4<br />
+move 32874,31150,3<br />
+move 32869,31155,3<br />
+move 32874,31150,3<br />
+move 32874,31152,4<br />
+move 32874,31154,5<br />
+move 32874,31156,6<br />
+move 32874,31158,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32862,31145,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32859,31137,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+gotoScriptLine $nlineoflabel:Hunt$<br />
+:Depositer<br />
+:Stairs<br />
+move 32861,31134,7<br />
+waitX 1<br />
+sayMessage exiva &gt; 65<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:Stairs$<br />
+sayMessage exiva &gt; 65<br />
+move 32861,31129,7<br />
+move 32834,31142,7<br />
+move 32834,31142,7<br />
+move 32834,31144,6<br />
+move 32834,31144,6<br />
+move 32834,31146,5<br />
+move 32834,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32834,31156,7<br />
+:TalkBank<br />
+move 32824,31250,7<br />
+sayMessage Hi<br />
+waitX 1<br />
+sayInTrade Deposit All<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+#Calculations##################################### ######################<br />
+#Mana<br />
+fastExiva _mana1 = $countitems:{$_kmana$}$<br />
+fastExiva _manapotion = $numericalexp:{$_xmana$}-{$_mana1$}$<br />
+fastExiva _manapotionmoney = $numericalexp:{$_manapotion$}*{$_cpotion$}$<br />
+#Food<br />
+fastExiva _food1 = $countitems:{$_kfood$}$<br />
+fastExiva _food = $numericalexp:{$_xfood$}-{$_food1$}$<br />
+fastExiva _foodmoney = $numericalexp:{$_food$}*{$_cfood$}$<br />
+fastExiva _allcost = $numericalexp:{$_foodmoney$}+{$_manapotionmoney$}$<br />
+sayInTrade Withdraw $_allcost$<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+sayInTrade Balance<br />
+waitX 1<br />
+:TalkFood<br />
+move 32854,31209,7<br />
+sayMessage Hi<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Trade$<br />
+waitX 1<br />
+fastExiva buy:0D 0E:{$_food$}<br />
+waitX 2<br />
+stackItems<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#10) Goto $nlineoflabel:TalkFood$<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+:TalkMana<br />
+move 32789,31238,5<br />
+sayMessage Hi<br />
+waitX 2<br />
+sayInTrade Flask<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Trade$<br />
+waitX 1<br />
+fastExiva buy:0C 01:{$_manapotion$}<br />
+waitX 1<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#50) Goto $nlineoflabel:TalkMana$<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32800,31247,7<br />
+move 32788,31246,7<br />
+putLootOnDepot<br />
+move 32788,31246,7<br />
+move 32800,31247,7<br />
+move 32826,31192,7<br />
+move 32826,31192,7<br />
+move 32834,31156,7<br />
+move 32834,31156,7<br />
+move 32834,31154,6<br />
+move 32834,31154,6<br />
+move 32834,31152,5<br />
+move 32834,31152,5<br />
+move 32835,31146,5<br />
+move 32835,31146,5<br />
+move 32835,31144,6<br />
+move 32835,31144,6<br />
+move 32835,31142,7<br />
+:Stair<br />
+move 32835,31142,7<br />
+move 32861,31129,7<br />
+waitX 1<br />
+sayMessage exiva &gt; 67<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:Stair$<br />
+sayMessage exiva &gt; 67<br />
+move 32861,31134,7<br />
+gotoScriptLine $nlineoflabel:Hunt$<br />
+<br />
+IMPORTANT! If you want to switch mana potions to strong mana potions change 0C 01 to the potion ID you want, I always had a bug with this when I used a variable, don't know why, here is the line:<br />
+<br />
+<br />
+fastExiva buy:0C 01:{$_manapotion$}<br />
+<br />
+Working for 8.41<br />
+<br />
+Please Comment!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kripton</div><div class="date">04-10-2009, 00:03</div></div><div class="posttext">Looks great, I'll test it with my ED 40+</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cavalorm</div><div class="date">04-10-2009, 03:14</div></div><div class="posttext">nice , same as i did a few days ago. gona try it out now and post if its better :D<br />
+<br />
+<br />
+ok i tried it for 3 rounds, that was like 25 min but only the hunt part . 1st i deleted this chaosmovesOFF i mean changed it into ON ,feel safer with it :) the first 2 towers are great!! with my script i got stuck sometimes near the stairs for some secs but Ur script work perfectly there. but the 3rd tower is a mess, duno if its coz of the chaosmoves or wtf but i made 3 rounds there and it worked only once good. It killed only the highest floor where U leave the stairs and then went down the stairs back. dno why but thats why i got a lil less exp/h with Ur one<br />
+<br />
+BTW to all users 65 lvl/ 50ml / mystic blade - and its NOT waste but the profit is like 1k :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-10-2009, 05:46</div></div><div class="posttext">nice , same as i did a few days ago. gona try it out now and post if its better :D<br />
+<br />
+<br />
+ok i tried it for 3 rounds, that was like 25 min but only the hunt part . 1st i deleted this chaosmovesOFF i mean changed it into ON ,feel safer with it :) the first 2 towers are great!! with my script i got stuck sometimes near the stairs for some secs but Ur script work perfectly there. but the 3rd tower is a mess, duno if its coz of the chaosmoves or wtf but i made 3 rounds there and it worked only once good. It killed only the highest floor where U leave the stairs and then went down the stairs back. dno why but thats why i got a lil less exp/h with Ur one<br />
+<br />
+BTW to all users 65 lvl/ 50ml / mystic blade - and its NOT waste but the profit is like 1k :/<br />
+<br />
+Oh I forgot that if you have setChaoticMoves ON then sometimes the depositer won't work 100% since I am using exiva commands to move from the stairs, I still added a Iftrue myz...<br />
+<br />
+I just checked the waypoints and I realized that it isn't the script that I used for level 40 and over, I use the script on the first page when I was level 30, so just look at the post below this one, thats the script that you probably want!! Clears all towers, the first one only 2 towers and top floor of the the third one.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-10-2009, 06:25</div></div><div class="posttext">SECOND SCRIPT<br />
+<br />
+Requirements :<br />
+Level : 40<br />
+Magic Level : 40<br />
+EQ : Any EQ<br />
+<br />
+Info about the hunting ground:<br />
+Hunts Dark Magicians, Priestess, Mad Scientist and Dark Apprentice<br />
+Depositing cash/items, buying mana potions and buying food<br />
+EXP/H : 40-50k/h<br />
+GPs : 2.5k gps/hour<br />
+<br />
+Here is the second script for Level 40 and higher :<br />
+<br />
+<br />
+#Script created by Dach.$<br />
+#Mana<br />
+# MP = 0C 01, SMP = ED 00, GMP = EE 00<br />
+fastExiva _kmana = ED 00<br />
+# How many manas do you have?<br />
+fastExiva _xmana = 100<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _cpotion = 80<br />
+#Food<br />
+# How much potatoes do you have?<br />
+fastExiva _xfood = 40<br />
+# How much potatoes cost?<br />
+fastExiva _cfood = 3<br />
+# ID of food?<br />
+fastExiva _kfood = 0D 0E<br />
+################################################## ################<br />
+setChaoticMovesOFF<br />
+onGMpause<br />
+setMeleeKill dark apprentice<br />
+setMeleeKill mad scientist<br />
+setMeleeKill ghoul<br />
+setMeleeKill dark magician<br />
+setMeleeKill slime<br />
+setMeleeKill vampire<br />
+setMeleeKill Centipede<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Bug<br />
+setMeleeKill Spider<br />
+setMeleeKill Cave Rat<br />
+setPriority mad scientist: +3<br />
+setPriority dark magician: +2<br />
+setPriority dark apprentice: +1<br />
+setPriority priestess: +1<br />
+setSpellKill dark apprentice,exori mort,3<br />
+setSpellKill mad scientist,exori mort,3<br />
+setSpellKill dark magician,exori mort,3<br />
+setSpellKill priestess,exori frigo,3<br />
+#Gold Coins<br />
+setLoot D7 0B<br />
+#Enchated Saphire<br />
+setLoot A6 02<br />
+#Wand of Plague<br />
+setLoot 00 0C<br />
+#Talon<br />
+setLoot DA 0B<br />
+#Hailestrom Rod<br />
+setLoot FB 0B<br />
+#Talon<br />
+setLoot B3 0B<br />
+#Life Crystal<br />
+setLoot F5 0B<br />
+#Mastermind Potion<br />
+setloot 10 1D<br />
+:Hunt<br />
+move 32861,31134,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32861,31134,7<br />
+move 32851,31137,7<br />
+move 32849,31137,6<br />
+move 32847,31137,5<br />
+move 32845,31137,4<br />
+move 32849,31132,3<br />
+move 32848,31130,3<br />
+move 32849,31131,4<br />
+move 32848,31132,5<br />
+move 32847,31132,6<br />
+move 32848,31130,6<br />
+move 32848,31133,7<br />
+move 32848,31133,7<br />
+move 32848,31130,6<br />
+move 32847,31130,5<br />
+move 32848,31130,4<br />
+move 32847,31132,3<br />
+move 32845,31135,3<br />
+move 32845,31137,4<br />
+move 32847,31137,5<br />
+move 32849,31137,6<br />
+move 32851,31137,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32847,31142,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32852,31150,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32859,31149,7<br />
+move 32857,31149,6<br />
+move 32855,31149,5<br />
+move 32853,31149,4<br />
+move 32854,31146,3<br />
+move 32856,31144,3<br />
+move 32856,31144,4<br />
+move 32855,31142,5<br />
+move 32855,31144,6<br />
+move 32855,31142,6<br />
+move 32855,31143,7<br />
+move 32855,31143,7<br />
+move 32855,31142,6<br />
+move 32856,31142,5<br />
+move 32855,31142,4<br />
+Move 32853,31147,3<br />
+move 32854,31145,3<br />
+Move 32853,31147,3<br />
+move 32853,31149,4<br />
+move 32855,31149,5<br />
+move 32857,31149,6<br />
+move 32859,31149,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#40) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32871,31153,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#40) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32875,31158,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#40) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32873,31160,7<br />
+move 32874,31156,6<br />
+move 32874,31154,5<br />
+move 32874,31152,4<br />
+move 32874,31150,3<br />
+move 32867,31150,3<br />
+move 32867,31148,4<br />
+move 32869,31151,4<br />
+move 32869,31157,4<br />
+move 32869,31159,4<br />
+move 32868,31160,5<br />
+move 32866,31155,5<br />
+move 32866,31149,5<br />
+move 32867,31146,5<br />
+move 32867,31148,6<br />
+move 32869,31148,7<br />
+move 32869,31146,6<br />
+move 32867,31152,6<br />
+move 32867,31156,6<br />
+move 32868,31158,7<br />
+move 32868,31155,6<br />
+move 32868,31149,6<br />
+move 32867,31148,6<br />
+move 32867,31146,5<br />
+move 32866,31150,5<br />
+move 32866,31155,5<br />
+move 32868,31157,5<br />
+move 32868,31158,4<br />
+move 32869,31151,4<br />
+move 32867,31148,4<br />
+move 32867,31146,3<br />
+move 32874,31150,3<br />
+move 32874,31150,3<br />
+move 32874,31152,4<br />
+move 32874,31154,5<br />
+move 32874,31156,6<br />
+move 32874,31158,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32875,31154,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32870,31152,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32864,31152,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32862,31148,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32862,31140,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#4) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+gotoScriptLine $nlineoflabel:Hunt$<br />
+:Depositer<br />
+:Stairs<br />
+move 32861,31134,7<br />
+waitX 1<br />
+sayMessage exiva &gt; 65<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:Stairs$<br />
+sayMessage exiva &gt; 65<br />
+move 32861,31129,7<br />
+move 32834,31142,7<br />
+move 32834,31142,7<br />
+move 32834,31144,6<br />
+move 32834,31144,6<br />
+move 32834,31146,5<br />
+move 32834,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32834,31156,7<br />
+:TalkBank<br />
+move 32824,31250,7<br />
+sayMessage Hi<br />
+waitX 1<br />
+sayInTrade Deposit All<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+#Calculations##################################### ######################<br />
+#Mana<br />
+fastExiva _mana1 = $countitems:{$_kmana$}$<br />
+fastExiva _manapotion = $numericalexp:{$_xmana$}-{$_mana1$}$<br />
+fastExiva _manapotionmoney = $numericalexp:{$_manapotion$}*{$_cpotion$}$<br />
+#Food<br />
+fastExiva _food1 = $countitems:{$_kfood$}$<br />
+fastExiva _food = $numericalexp:{$_xfood$}-{$_food1$}$<br />
+fastExiva _foodmoney = $numericalexp:{$_food$}*{$_cfood$}$<br />
+fastExiva _allcost = $numericalexp:{$_foodmoney$}+{$_manapotionmoney$}$<br />
+sayInTrade Withdraw $_allcost$<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+sayInTrade Balance<br />
+waitX 1<br />
+:TalkFood<br />
+move 32854,31209,7<br />
+sayMessage Hi<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Trade$<br />
+waitX 1<br />
+fastExiva buy:0D 0E:{$_food$}<br />
+waitX 2<br />
+stackItems<br />
+IfTrue ($countitems:0D 0E$#number&lt;=#10) Goto $nlineoflabel:TalkFood$<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+:TalkMana<br />
+move 32789,31238,5<br />
+sayMessage Hi<br />
+waitX 2<br />
+sayInTrade Flask<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Trade$<br />
+waitX 1<br />
+fastExiva buy:$_kmana$:$_manapotion$<br />
+waitX 1<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#50) Goto $nlineoflabel:TalkMana$<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32800,31247,7<br />
+move 32788,31246,7<br />
+putLootOnDepot<br />
+move 32788,31246,7<br />
+move 32800,31247,7<br />
+move 32826,31192,7<br />
+move 32826,31192,7<br />
+move 32834,31156,7<br />
+move 32834,31156,7<br />
+move 32834,31154,6<br />
+move 32834,31154,6<br />
+move 32834,31152,5<br />
+move 32834,31152,5<br />
+move 32835,31146,5<br />
+move 32835,31146,5<br />
+move 32835,31144,6<br />
+move 32835,31144,6<br />
+move 32835,31142,7<br />
+move 32835,31142,7<br />
+:Stair<br />
+move 32861,31129,7<br />
+waitX 1<br />
+sayMessage exiva &gt; 67<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:Stair$<br />
+sayMessage exiva &gt; 67<br />
+move 32861,31134,7<br />
+gotoScriptLine $nlineoflabel:Hunt$<br />
+<br />
+Working for 8.41<br />
+<br />
+Please Comment!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cavalorm</div><div class="date">04-10-2009, 15:47</div></div><div class="posttext">the 2nd works rly great. with bright sword i got like 48-50 k/h with 61 ed on low populated pvp. think  with voodoo rod or like this poi staff its possible to get like 60 k/h <br />
+<br />
+btw this script does not pick up mana potions, so make sure U got a high percent to drink mana potions on Ur mage if U use strongs/ greats</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aurum</div><div class="date">04-11-2009, 07:48</div></div><div class="posttext">suxx i tested it in my ed 43 and when i active cavebot it just go to deposit and  refill manas idk why</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">frysie</div><div class="date">04-11-2009, 08:00</div></div><div class="posttext">can you make this for a pally as well include RS refiller?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-11-2009, 17:51</div></div><div class="posttext">@Up<br />
+I don't really bot now so I can't really change it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-11-2009, 17:52</div></div><div class="posttext">suxx i tested it in my ed 43 and when i active cavebot it just go to deposit and  refill manas idk why<br />
+<br />
+It refills and than goes hunting, try changing allow reposition at start or something. It worked perfectly for me..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jaann93</div><div class="date">04-14-2009, 10:48</div></div><div class="posttext">have same problem with this supplies buyer &gt;.&lt;,  i have supplies but it buying it anyway</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jaann93</div><div class="date">04-14-2009, 11:36</div></div><div class="posttext">It going shop with potions, but it dont wanna buy any pots and just writing trade. If i buy pots by myselft and go exping its just going back to city &gt;.&lt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lukecake</div><div class="date">04-14-2009, 19:46</div></div><div class="posttext">works fine for me, but it bought corncobs(rly heavy) even though it says potatoes in the script. i changed the ID to potatoes and it worked well. the only thing im kinda worried about is that it doesnt eat the potatoes &lt;.&lt;<br />
+<br />
+other than that - perfect script, works excellently<br />
+<br />
+p.s: pm me if you got any clue. thx in advance</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Banned</div><div class="date">04-14-2009, 20:17</div></div><div class="posttext">thanks for sharing</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shahz</div><div class="date">04-14-2009, 22:14</div></div><div class="posttext">Thanks buddy for releasing, gonna try on my mage. As your other script, hoping this will be good too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-14-2009, 23:58</div></div><div class="posttext">works fine for me, but it bought corncobs(rly heavy) even though it says potatoes in the script. i changed the ID to potatoes and it worked well. the only thing im kinda worried about is that it doesnt eat the potatoes &lt;.&lt;<br />
+<br />
+other than that - perfect script, works excellently<br />
+<br />
+p.s: pm me if you got any clue. thx in advance<br />
+<br />
+Yeah, i had potates before but than blackd didn't realize that it was a food so I just said corncop randomly, you could put the ID of white mushrooms it light but a bit expensive.<br />
+<br />
+About the people that say that it buys mana potions even if it has already, is your BP OPEN?!? Always have your backpack OPEN BEFORE you start the script!! The calclations are made when it is at the bank, so if you are at the bank and the bot doesn't see that you have mana potions in any open backpack than it going to withdraw the money for the potions and after the bank it goes the the mana shop(if you open BPs after the bank than its too late, the bot will think that it doesn't have enough mana potion and will buy), I use the same variables in the calculations in the bank and mana potions shop so its going to buy even if you have the BP open at the mana potions shop.<br />
+<br />
+SO OPEN YOUR BACKPACK BEFORE THE SCRIPT STARTS!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cojelon</div><div class="date">04-22-2009, 01:51</div></div><div class="posttext">it just keep saying hi in the mana pot npc dunno why i already have pots...and i open all my bps before</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-22-2009, 06:15</div></div><div class="posttext">it just keep saying hi in the mana pot npc dunno why i already have pots...and i open all my bps before<br />
+<br />
+Are you using the first script or second? If you are using the first one the download the script again, I changed a variable that I forgot to change that might cause that problem. If you are using the second one, than I don't know why its doing that. But my guess you are using the first one, so download it again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Remondo</div><div class="date">04-24-2009, 10:08</div></div><div class="posttext">Does it work for 8.42?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-24-2009, 23:45</div></div><div class="posttext">Does it work for 8.42?<br />
+<br />
+It should, there wasn't any new map update.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cojelon</div><div class="date">04-25-2009, 22:01</div></div><div class="posttext">now its working perfect im getting 40k/h in a lvl 50 ms it goes depositing buy manas and all :D NICE SCRIPT</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cojelon</div><div class="date">04-25-2009, 22:32</div></div><div class="posttext">i only got one question<br />
+can i make the script go depositing when i have 10 strong because it goes when i still have a lot and im going depositing like every 45 minutes and it lowx mi exp rate...<br />
+if there is anyway to do this please tell me how</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-26-2009, 00:16</div></div><div class="posttext">i only got one question<br />
+can i make the script go depositing when i have 10 strong because it goes when i still have a lot and im going depositing like every 45 minutes and it lowx mi exp rate...<br />
+if there is anyway to do this please tell me how<br />
+<br />
+Yeah, just change this:<br />
+<br />
+<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#30) Goto $nlineoflabel:Depositer$<br />
+<br />
+To:<br />
+<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#10) Goto $nlineoflabel:Depositer$<br />
+<br />
+<br />
+Everywhere on the script and its going to go deposit at 10.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pacific</div><div class="date">04-26-2009, 18:41</div></div><div class="posttext">Gonna test it soon, ill make a result post later.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cojelon</div><div class="date">04-27-2009, 17:58</div></div><div class="posttext">now its working 100% the only problem is i fucking waste a lot but i lvl up fast i went from 48 to 55 in 2 days so its ok wasting 60k :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-27-2009, 21:12</div></div><div class="posttext">now its working 100% the only problem is i fucking waste a lot but i lvl up fast i went from 48 to 55 in 2 days so its ok wasting 60k :D<br />
+<br />
+Yeah, I MCed 3 moneymakers when I botted thereon my main, so waste for me didn't really mater, because in the end it was profit. :p<br />
+<br />
+I might release a other script later, witch is more profit than magician tower and a bit more exp, but you need to be level 50 atleast.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Simon157</div><div class="date">05-10-2009, 01:51</div></div><div class="posttext">Yeah, I MCed 3 moneymakers when I botted thereon my main, so waste for me didn't really mater, because in the end it was profit. :p<br />
+<br />
+I might release a other script later, witch is more profit than magician tower and a bit more exp, but you need to be level 50 atleast.<br />
+<br />
+<br />
+Waiting for that one, I'd love you if you release it :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">05-11-2009, 23:40</div></div><div class="posttext">Waiting for that one, I'd love you if you release it :)<br />
+<br />
+http://www.blackdtools.net/showthread.php?t=40330 <br />
+<br />
+Here it is.<br />
+It's only good if you are on high populated server, than you get like 60k/hour. And it was almost always free so non-pvp place to bot all day.<br />
+If you are in low or mid populated server than you will get like 40k/hour, profit for sure.<br />
+<br />
+You can change the waypoints a bit and make it go to more towers.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">demoon</div><div class="date">06-01-2009, 16:12</div></div><div class="posttext">can you just give me the hunt waypoints of the first script please?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Simon157</div><div class="date">06-08-2009, 16:02</div></div><div class="posttext">http://www.blackdtools.net/showthread.php?t=40330 <br />
+<br />
+Here it is.<br />
+It's only good if you are on high populated server, than you get like 60k/hour. And it was almost always free so non-pvp place to bot all day.<br />
+If you are in low or mid populated server than you will get like 40k/hour, profit for sure.<br />
+<br />
+You can change the waypoints a bit and make it go to more towers.<br />
+<br />
+<br />
+Thx    :) &lt;3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bmx</div><div class="date">06-17-2009, 13:15</div></div><div class="posttext">how to make without food buyer ?<br />
+i have own brown mushroom and dont wanna food buyer :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ciurlik</div><div class="date">06-22-2009, 19:46</div></div><div class="posttext">Where have I start?<br />
+What items?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luxbartek</div><div class="date">06-25-2009, 15:20</div></div><div class="posttext">Second Script (+40)<br />
+<br />
+On 38 MS mlv 36:<br />
+30-40k exp/h<br />
+1BP MP/5minutes!!!! ;D ;D ;D<br />
+<br />
+World: ~400ppl<br />
+<br />
+Incredible waste but nice ;p ;p ;p<br />
+<br />
+Edit:<br />
+Sometimes even 27k exp/h so... Too much waste if not 35k exp ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">06-27-2009, 00:28</div></div><div class="posttext">Second Script (+40)<br />
+<br />
+On 38 MS mlv 36:<br />
+30-40k exp/h<br />
+1BP MP/5minutes!!!! ;D ;D ;D<br />
+<br />
+World: ~400ppl<br />
+<br />
+Incredible waste but nice ;p ;p ;p<br />
+<br />
+Edit:<br />
+Sometimes even 27k exp/h so... Too much waste if not 35k exp ;p<br />
+<br />
+Your ML is to low that's why :p<br />
+If your world would of have 950 players, you would easily get 45k/hour. I had 4 moneymakers hunting while I was hunting there so for me always profit. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luxbartek</div><div class="date">06-27-2009, 14:29</div></div><div class="posttext">Ye, You right ;p<br />
+<br />
+You need 57460 exp<br />
+for level 44<br />
+Average session speed:<br />
+35485 exp/h<br />
+Estimated time left for level up:<br />
+1h 37m 9s<br />
+Played this session:<br />
+1h 20m 23s<br />
+Gained this session:<br />
+47538 exp<br />
+<br />
+And That's rate with going city 3 times ;] so exp ~40k<br />
+Lvled 39-44 in 12h Wasted ~50k</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ciurlik</div><div class="date">06-27-2009, 19:02</div></div><div class="posttext">Dach, Dear Dach ;p<br />
+Will you change this script when will be update 8.5?<br />
+I will be very happy becose i Love this script =* ;*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">06-27-2009, 19:10</div></div><div class="posttext">Dach, Dear Dach ;p<br />
+Will you change this script when will be update 8.5?<br />
+I will be very happy becose i Love this script =* ;*<br />
+<br />
+Well if CIP doesn't change anything in Yalahar than its still going to work for 8.5 only when they change hunting grounds you need to update the script.<br />
+<br />
+And if they do, I don't play tibia anymore, so someone else should modify it if needed.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ciurlik</div><div class="date">07-06-2009, 14:23</div></div><div class="posttext">I think, that will be better add to loot mana potions, will be smaller waste or no waste.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">07-06-2009, 21:32</div></div><div class="posttext">I think, that will be better add to loot mana potions, will be smaller waste or no waste.<br />
+<br />
+Well than all the mana potions will be put in your depot... I don't feel like writing resetloot and than rewrite it all... you can change the script if you want..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bling~</div><div class="date">07-08-2009, 22:49</div></div><div class="posttext">How can i make this without food buyer? I dont need it too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ciurlik</div><div class="date">07-16-2009, 17:58</div></div><div class="posttext">I have got a problem<br />
+This script is very very slow, od my 55 ED at second script i have got ~30 exp per hour, maybe change timer from 500&gt;800 to something other?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">janoy91</div><div class="date">07-18-2009, 15:59</div></div><div class="posttext">Could someone plz say where the script is to be activated at town etc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luxbartek</div><div class="date">07-18-2009, 16:43</div></div><div class="posttext">u can start it in the bank its the best way i guess ;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">elbow</div><div class="date">07-24-2009, 10:12</div></div><div class="posttext">second script &lt;3<br />
+from 41 to 50 in one day :D<br />
+thanks so much ;)<br />
+<br />
+after selling everything i waste only 10k~<br />
+<br />
+@edit<br />
+ah and i delete part of food from this script cause im using brown mushrooms</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheGuy</div><div class="date">08-25-2009, 19:33</div></div><div class="posttext">What town it goes deposit?<br />
+<br />
+/TheGuy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">08-27-2009, 07:27</div></div><div class="posttext">What town it goes deposit?<br />
+<br />
+/TheGuy<br />
+<br />
+Yalahar &lt;Short&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheGuy</div><div class="date">08-27-2009, 17:35</div></div><div class="posttext">im trying the script now on my ED,<br />
+The second script*<br />
+<br />
+16:34 You need 156919 exp<br />
+for level 5*<br />
+Average session speed:<br />
+29290 exp/h<br />
+Estimated time left for level up:<br />
+5h 21m 27s<br />
+Played this session:<br />
+0h 9m 43s<br />
+Gained this session:<br />
+4740 exp<br />
+<br />
+Very bad exp... will return in feq hours and post new copy.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheGuy</div><div class="date">08-29-2009, 04:49</div></div><div class="posttext">I must say, very nice script! But, the script is not advanced in any way, eceryone can make this script! Come on all people, make nice scripts like this! It's very easy, but still very good! Just check guides if you need help =)<br />
+<br />
+/TheGuy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheGuy</div><div class="date">08-30-2009, 22:11</div></div><div class="posttext">21:08 You need 9601 exp<br />
+for level 6X<br />
+Average session speed:<br />
+31578 exp/h<br />
+Estimated time left for level up:<br />
+0h 18m 15s<br />
+Played this session:<br />
+4h 6m 58s<br />
+Gained this session:<br />
+129979 exp<br />
+<br />
+ =) was akf during the time, works perfect! second script.<br />
+i get a little profit, looting wand of dragonbreath also, and whjite mushrooms, since i changed the script for buying white mushrooms.<br />
+EQ:Steel helmet, focus cape, ailstorm rod, dragon shield, boh, p-legs.<br />
+lvl 60<br />
+mlvl 45+1 (46)<br />
+Low pop server, about 350-400 ppl.<br />
+<br />
+EDIT:<br />
+After some more hours:<br />
+00:25 You need 76168 exp<br />
+for level 6X<br />
+Average session speed:<br />
+32531 exp/h<br />
+Estimated time left for level up:<br />
+2h 20m 29s<br />
+Played this session:<br />
+7h 23m 36s<br />
+Gained this session:<br />
+240512 exp<br />
+<br />
+Worked perfect all the time.<br />
+<br />
+/TheGuy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">08-31-2009, 04:05</div></div><div class="posttext">Good to hear you like it! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheGuy</div><div class="date">08-31-2009, 14:26</div></div><div class="posttext">Ye, its nice. but you have forgotten to add Necrotic rod to loot, FD 0B.<br />
+its 1k in djinn, dont remember if its blur or green.<br />
+<br />
+/TheGuy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SimoS</div><div class="date">09-28-2009, 18:43</div></div><div class="posttext">Yo,<br />
+<br />
+I am kinda back after a long time. How to set up your bp for mana resuplying? And how many yalahar missions do you need?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">09-29-2009, 00:58</div></div><div class="posttext">Yo,<br />
+<br />
+I am kinda back after a long time. How to set up your bp for mana resuplying? And how many yalahar missions do you need?<br />
+<br />
+I just make sure that all my bps that I carry are open and minimized and thats it. And you dont need any quest for this one! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dach</div><div class="date">04-19-2010, 09:12</div></div><div class="posttext">Well here is a script that was edited by f43ak, with the looks of it he added a logger when danger.<br />
+<br />
+Well credits go to him for editing it.<br />
+<br />
+<br />
+setBot OldLootMode=1<br />
+#Script created by Dach. Edited by f43ak$<br />
+#Mana<br />
+# MP = 0C 01, SMP = ED 00, GMP = EE 00<br />
+fastExiva _kmana = EC 00<br />
+# How many manas do you have?<br />
+fastExiva _xmana = 120<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _cpotion = 100<br />
+#Food<br />
+# How much potatoes do you have?<br />
+fastExiva _xfood = 30<br />
+# How much potatoes cost?<br />
+fastExiva _cfood = 10<br />
+# ID of food?<br />
+fastExiva _kfood = 8B 0E<br />
+################################################## ################<br />
+setChaoticMovesOFF<br />
+onGMpause<br />
+setMeleeKill dark apprentice<br />
+setMeleeKill priestess<br />
+setMeleeKill mad scientist<br />
+setMeleeKill ghoul<br />
+setMeleeKill dark magician<br />
+setMeleeKill slime<br />
+setMeleeKill vampire<br />
+setMeleeKill Centipede<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Bug<br />
+setMeleeKill Spider<br />
+setMeleeKill Cave Rat<br />
+setPriority mad scientist: +3<br />
+setPriority dark magician: +2<br />
+setPriority dark apprentice: +1<br />
+setPriority priestess: +1<br />
+#Gold Coins<br />
+setLoot D7 0B<br />
+#Enchated Saphire<br />
+setLoot A6 02<br />
+#Wand of Plague<br />
+setLoot 00 0C<br />
+#Talon<br />
+setLoot DA 0B<br />
+#Hailestrom Rod<br />
+setLoot FB 0B<br />
+#Talon<br />
+setLoot B3 0B<br />
+#Life Crystal<br />
+setLoot F5 0B<br />
+#Mastermind Potion<br />
+setloot 10 1D<br />
+:Hunt<br />
+move 32861,31134,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32861,31134,7<br />
+move 32851,31137,7<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32849,31137,6<br />
+move 32847,31137,5<br />
+move 32845,31137,4<br />
+move 32849,31132,3<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32848,31130,3<br />
+move 32849,31131,4<br />
+move 32848,31132,5<br />
+move 32847,31132,6<br />
+move 32848,31130,6<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32848,31132,7<br />
+move 32848,31132,7<br />
+move 32848,31130,6<br />
+move 32847,31130,5<br />
+move 32848,31130,4<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32847,31132,3<br />
+move 32845,31135,3<br />
+move 32845,31137,4<br />
+move 32847,31137,5<br />
+move 32849,31137,6<br />
+move 32851,31137,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32847,31142,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32852,31150,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32859,31149,7<br />
+move 32857,31149,6<br />
+move 32855,31149,5<br />
+move 32853,31149,4<br />
+move 32854,31146,3<br />
+move 32856,31144,3<br />
+move 32856,31144,4<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32855,31142,5<br />
+move 32855,31144,6<br />
+move 32855,31142,6<br />
+move 32855,31143,7<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32855,31143,7<br />
+move 32855,31142,6<br />
+move 32856,31142,5<br />
+move 32855,31142,4<br />
+Move 32853,31147,3<br />
+move 32854,31145,3<br />
+Move 32853,31147,3<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32853,31149,4<br />
+move 32855,31149,5<br />
+move 32857,31149,6<br />
+move 32859,31149,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#40) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32871,31153,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#40) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32875,31158,7<br />
+onDangerGoto $nlineoflabel:logger$<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#40) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32873,31160,7<br />
+move 32874,31156,6<br />
+move 32874,31154,5<br />
+move 32874,31152,4<br />
+move 32874,31150,3<br />
+move 32867,31150,3<br />
+move 32867,31148,4<br />
+move 32869,31151,4<br />
+move 32869,31157,4<br />
+move 32869,31159,4<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32868,31160,5<br />
+move 32866,31155,5<br />
+move 32866,31149,5<br />
+move 32867,31146,5<br />
+move 32867,31148,6<br />
+move 32869,31148,7<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32869,31146,6<br />
+move 32867,31152,6<br />
+move 32867,31156,6<br />
+move 32868,31158,7<br />
+move 32868,31155,6<br />
+move 32868,31149,6<br />
+move 32867,31148,6<br />
+move 32867,31146,5<br />
+move 32866,31150,5<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32866,31155,5<br />
+move 32868,31157,5<br />
+move 32868,31158,4<br />
+move 32869,31151,4<br />
+move 32867,31148,4<br />
+move 32867,31146,3<br />
+move 32874,31150,3<br />
+move 32874,31150,3<br />
+move 32874,31152,4<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32874,31154,5<br />
+move 32874,31156,6<br />
+move 32874,31158,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32875,31154,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32870,31152,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32864,31152,7<br />
+onDangerGoto $nlineoflabel:logger$<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+move 32862,31148,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+move 32862,31140,7<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:Depositer$<br />
+IfTrue ($myexp$#number&gt;#3000000) Goto $nlineoflabel:logger$<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:Depositer$<br />
+onDangerGoto $nlineoflabel:logger$<br />
+gotoScriptLine $nlineoflabel:Hunt$<br />
+:Depositer<br />
+:Stairs<br />
+move 32861,31134,7<br />
+waitX 1<br />
+sayMessage exiva &gt; 65<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:Stairs$<br />
+sayMessage exiva &gt; 65<br />
+move 32861,31129,7<br />
+move 32834,31142,7<br />
+move 32834,31142,7<br />
+move 32834,31144,6<br />
+move 32834,31144,6<br />
+move 32834,31146,5<br />
+move 32834,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32834,31156,7<br />
+:TalkBank<br />
+move 32824,31250,7<br />
+sayMessage Hi<br />
+waitX 1<br />
+sayInTrade Deposit All<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+#Calculations##################################### ######################<br />
+#Mana<br />
+fastExiva _mana1 = $countitems:{$_kmana$}$<br />
+fastExiva _manapotion = $numericalexp:{$_xmana$}-{$_mana1$}$<br />
+fastExiva _manapotionmoney = $numericalexp:{$_manapotion$}*{$_cpotion$}$<br />
+#Food<br />
+fastExiva _food1 = $countitems:{$_kfood$}$<br />
+fastExiva _food = $numericalexp:{$_xfood$}-{$_food1$}$<br />
+fastExiva _foodmoney = $numericalexp:{$_food$}*{$_cfood$}$<br />
+fastExiva _allcost = $numericalexp:{$_foodmoney$}+{$_manapotionmoney$}$<br />
+sayInTrade Withdraw $_allcost$<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+sayInTrade Balance<br />
+waitX 1<br />
+:TalkFood<br />
+move 32854,31209,7<br />
+sayMessage Hi<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Trade$<br />
+waitX 1<br />
+fastExiva buy:0D 0E:{$_food$}<br />
+waitX 2<br />
+stackItems<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+:TalkMana<br />
+move 32789,31238,5<br />
+sayMessage Hi<br />
+waitX 2<br />
+sayInTrade Flask<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Trade$<br />
+waitX 1<br />
+fastExiva buy:$_kmana$:$_manapotion$<br />
+waitX 1<br />
+IfTrue ($countitems:{$_kmana$}$#number&lt;=#65) Goto $nlineoflabel:TalkMana$<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32800,31247,7<br />
+move 32788,31246,7<br />
+putLootOnDepot<br />
+move 32788,31246,7<br />
+move 32800,31247,7<br />
+move 32826,31192,7<br />
+move 32826,31192,7<br />
+move 32834,31156,7<br />
+move 32834,31156,7<br />
+move 32834,31154,6<br />
+move 32834,31154,6<br />
+move 32834,31152,5<br />
+move 32834,31152,5<br />
+move 32835,31146,5<br />
+move 32835,31146,5<br />
+move 32835,31144,6<br />
+move 32835,31144,6<br />
+move 32835,31142,7<br />
+move 32835,31142,7<br />
+:Stair<br />
+move 32861,31129,7<br />
+waitX 1<br />
+sayMessage exiva &gt; 67<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:Stair$<br />
+sayMessage exiva &gt; 67<br />
+move 32861,31134,7<br />
+gotoScriptLine $nlineoflabel:Hunt$<br />
+:logger<br />
+:Stairs1<br />
+move 32861,31134,7<br />
+waitX 1<br />
+sayMessage exiva &gt; 65<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:Stairs1$<br />
+sayMessage exiva &gt; 65<br />
+move 32861,31129,7<br />
+move 32834,31142,7<br />
+move 32834,31142,7<br />
+move 32834,31144,6<br />
+move 32834,31144,6<br />
+move 32834,31146,5<br />
+move 32834,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32834,31156,7<br />
+:TalkBank<br />
+move 32824,31250,7<br />
+sayMessage Hi<br />
+waitX 1<br />
+sayInTrade Deposit All<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+closeConnection<br />
+<br />
+Well have fun.<br />
+BTW I didn't try it if its bug free or not. So don't afk the first time you use it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gienkos</div><div class="date">04-29-2010, 13:25</div></div><div class="posttext">nice script thanks :D</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

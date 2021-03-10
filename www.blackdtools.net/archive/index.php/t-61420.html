@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="depositer, depositor, ghoul, skeleton, setloot, setmeleekill, minotaur, change, waitx, piece, depot, archer, people, sayintrade, undead, spider, 32397,32021,9, 32579,31893,7, 32579,31894,8, 32579,31896,9, 32442,32015,9, 32567,31940,7, leave, 32584,31973,9, potions, 32419,32022,9, entered, 32613,31922,9, 32605,31921,10, 32402,31998,8, 32411,32008,8, dwarf, 0b,1500,149, cloth, ifenoughitemsgoto, script, gotoscriptline, start, deposit, 32442,32016,8, 32518,31961,7, 32515,31993,7, 32650,31916,8, 32642,31917,8, 32428,32009,8, 32629,31921,8, 32420,32023,9, 32534,31984,7, 32417,32013,8, cave1enter" />
+	<meta name="description" content="Hello, I'm not very good at scripting, so please excuse me if this isn't perfect. The script will go to mount sternum's undead cave and hunt the first 3 levels then after you collect 1500 gold (you can change this in the code for a different amount) it will walk back to Kaz depot and deposit the gold in the bank and all the items in your depot. 
+ 
+Just start the script in Kaz depot and it should start. Here's the code: 
+ 
+setMeleeKill spider 
+setMeleeKill dwarf soldier 
+setMeleeKill rat" />
+	
+	<title> Undead Cave Floors 1,2,3(Ghould and Skeletons)  (With Gold and Item Depositor) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Undead Cave Floors 1,2,3(Ghould and Skeletons)  (With Gold and Item Depositor)</div>
+<hr />
+<div class="pda"><a href="t-61420.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61420-Undead-Cave-Floors-1-2-3(Ghould-and-Skeletons)-(With-Gold-and-Item-Depositor)">Undead Cave Floors 1,2,3(Ghould and Skeletons)  (With Gold and Item Depositor)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">rawrewree</div><div class="date">01-12-2014, 04:49</div></div><div class="posttext">Hello, I'm not very good at scripting, so please excuse me if this isn't perfect. The script will go to mount sternum's undead cave and hunt the first 3 levels then after you collect 1500 gold (you can change this in the code for a different amount) it will walk back to Kaz depot and deposit the gold in the bank and all the items in your depot.<br />
+<br />
+Just start the script in Kaz depot and it should start. Here's the code:<br />
+<br />
+<br />
+setMeleeKill spider<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill rat<br />
+setMeleeKill wolf<br />
+setMeleeKill dwarf<br />
+setMeleeKill bear<br />
+setMeleeKill skeleton<br />
+setMeleeKill scorpion<br />
+setMeleeKill ghoul<br />
+setMeleeKill minotaur archer<br />
+setMeleeKill poison spider<br />
+setMeleeKill bat<br />
+setMeleeKill cave rat<br />
+setPriority minotaur archer:+1<br />
+setLoot DC 2C<br />
+setLoot F8 16<br />
+setLoot D9 2C<br />
+setLoot 08 17<br />
+setLoot 0E 17<br />
+setLoot D7 0B<br />
+setLoot BB 2C<br />
+setLoot DB 2C<br />
+setLoot D0 2C<br />
+setLoot F6 16<br />
+setLoot F6 16<br />
+setLoot 06 17<br />
+setLoot CB 2C<br />
+setLoot 33 28<br />
+setLoot 19 17<br />
+setLoot EC 0B<br />
+#depoit<br />
+move 32647,31916,8<br />
+move 32634,31921,8<br />
+move 32613,31922,8<br />
+move 32613,31922,9<br />
+move 32605,31921,9<br />
+move 32605,31921,10<br />
+move 32593,31953,10<br />
+move 32585,31972,10<br />
+move 32584,31973,9<br />
+move 32579,31963,9<br />
+move 32579,31896,9<br />
+move 32579,31894,8<br />
+move 32580,31892,8<br />
+move 32579,31893,7<br />
+#exited kaz<br />
+move 32584,31909,7<br />
+move 32567,31940,7<br />
+move 32567,31941,6<br />
+move 32557,31924,6<br />
+move 32555,31924,7<br />
+move 32534,31918,7<br />
+move 32526,31918,7<br />
+move 32526,31933,7<br />
+move 32522,31940,7<br />
+move 32515,31958,7<br />
+move 32537,31975,7<br />
+move 32533,31986,7<br />
+move 32518,31994,7<br />
+move 32502,31992,7<br />
+move 32462,32003,7<br />
+move 32436,32006,7<br />
+move 32418,32009,7<br />
+move 32410,32009,7<br />
+move 32411,32008,8<br />
+#entered cave<br />
+move 32402,31998,8<br />
+move 32392,31981,8<br />
+move 32402,31998,8<br />
+move 32420,32011,8<br />
+move 32431,32022,8<br />
+move 32425,32011,8<br />
+move 32442,32014,8<br />
+move 32442,32015,9<br />
+#entered cave-2<br />
+move 32448,32018,9<br />
+move 32448,32028,9<br />
+move 32434,32032,9<br />
+move 32452,32040,9<br />
+move 32449,32028,9<br />
+move 32447,32015,9<br />
+move 32440,32016,9<br />
+move 32419,32022,9<br />
+move 32415,32042,9<br />
+move 32401,32046,9<br />
+move 32384,32029,9<br />
+move 32397,32021,9<br />
+move 32389,32007,9<br />
+move 32384,31990,9<br />
+move 32371,31983,9<br />
+move 32368,31966,9<br />
+move 32385,31958,9<br />
+move 32405,31959,9<br />
+move 32405,31978,9<br />
+move 32398,31980,9<br />
+move 32393,31986,9<br />
+move 32405,31988,9<br />
+move 32415,31994,9<br />
+move 32422,32008,9<br />
+move 32418,32014,9<br />
+move 32419,32022,9<br />
+move 32445,32016,9<br />
+move 32427,32032,9<br />
+move 32427,32031,10<br />
+move 32445,32026,10<br />
+move 32451,32037,10<br />
+move 32427,32054,10<br />
+move 32404,32061,10<br />
+move 32394,32058,10<br />
+move 32395,32043,10<br />
+move 32403,32041,10<br />
+move 32405,32028,10<br />
+move 32394,32016,10<br />
+move 32390,32013,10<br />
+move 32381,32007,10<br />
+move 32373,31988,10<br />
+move 32376,31977,10<br />
+move 32394,31973,10<br />
+move 32407,31974,10<br />
+move 32419,31994,10<br />
+move 32410,32005,10<br />
+move 32407,32015,10<br />
+move 32416,32023,10<br />
+move 32416,32024,9<br />
+move 32421,32009,9<br />
+move 32413,31996,9<br />
+move 32403,31988,9<br />
+move 32393,31980,9<br />
+move 32401,31979,9<br />
+move 32406,31965,9<br />
+move 32405,31958,9<br />
+move 32384,31958,9<br />
+move 32367,31967,9<br />
+move 32372,31986,9<br />
+move 32378,31991,9<br />
+move 32391,32004,9<br />
+move 32397,32021,9<br />
+move 32392,32038,9<br />
+move 32407,32044,9<br />
+move 32417,32038,9<br />
+move 32420,32023,9<br />
+move 32442,32015,9<br />
+move 32442,32016,8<br />
+move 32428,32009,8<br />
+move 32417,32013,8<br />
+move 32411,32008,8<br />
+#back at cave1enter<br />
+IfEnoughItemsGoto D7 0B,1500,149<br />
+gotoScriptLine 64<br />
+#walkingback<br />
+move 32409,32008,7<br />
+move 32427,32009,7<br />
+move 32442,31998,7<br />
+move 32461,32003,7<br />
+move 32477,31998,7<br />
+move 32501,31991,7<br />
+move 32515,31993,7<br />
+move 32534,31984,7<br />
+move 32523,31965,7<br />
+move 32518,31961,7<br />
+move 32514,31955,7<br />
+move 32519,31943,7<br />
+move 32526,31938,7<br />
+move 32525,31923,7<br />
+move 32527,31917,7<br />
+move 32554,31923,7<br />
+move 32555,31923,7<br />
+move 32557,31923,6<br />
+move 32566,31940,6<br />
+move 32567,31940,7<br />
+move 32584,31916,7<br />
+move 32579,31893,7<br />
+move 32579,31891,8<br />
+move 32579,31894,8<br />
+move 32579,31896,9<br />
+move 32579,31957,9<br />
+move 32580,31975,9<br />
+move 32584,31973,9<br />
+move 32584,31971,10<br />
+move 32595,31949,10<br />
+move 32597,31925,10<br />
+move 32605,31921,10<br />
+move 32605,31919,9<br />
+move 32613,31922,9<br />
+move 32613,31920,8<br />
+move 32616,31923,8<br />
+move 32629,31921,8<br />
+move 32642,31917,8<br />
+move 32650,31916,8<br />
+move 32649,31907,8<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+move 32653,31913,8<br />
+move 32664,31916,8<br />
+putLootOnDepot<br />
+move 32652,31913,8<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+If you want to change how much gold you leave at then find &quot;IfEnoughItemsGoto D7 0B,1500,149&quot; in the code and change 1500 to however much gold you want to have when you leave.<br />
+<br />
+Just make sure you have a few potions in case some weird crazy stuff happens.<br />
+<br />
+I recommend some potions, plate set, knight, level 17ish.<br />
+<br />
+Depending on how many people are in the cave it can make about 6-14kish xp from about 3 people to none.<br />
+<br />
+If you have any recommendations or tips for me they are welcome.<br />
+<br />
+Have fun! Happy farming.<br />
+<br />
+What it loots:<br />
+Bear paw<br />
+Honeycomb<br />
+Gold<br />
+Pelvis Bone<br />
+Broken Crossbow<br />
+Piece of archer Armor<br />
+Minotaur horns<br />
+Minotaur leather<br />
+Bat Wing<br />
+Ghoul Snack<br />
+Rotten Piece of Cloth<br />
+Brown Piece of Cloth<br />
+Pile of grave earth<br />
+Life Ring<br />
+Iron ore<br />
+<br />
+Thanks, hope you enjoy it :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aggerazor</div><div class="date">01-12-2014, 11:41</div></div><div class="posttext">Hey man!<br />
+<br />
+The script looks nice but I think you should say here what it loots, exp/h and recommended vocation!<br />
+Otherwise it looks sweet and im gonna try this today :)<br />
+<br />
+ These scripts your making are btw pretty good, ran this script on level 20 druid to level 24 almost today, about 6-8k exp/h average. I also made a potion buyer and goes back when 3 pots left :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rawrewree</div><div class="date">01-12-2014, 23:52</div></div><div class="posttext">Cool, glad you like it. I'll edit in what it loots now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rawrewree</div><div class="date">01-12-2014, 23:58</div></div><div class="posttext">Oh, and could you share how to make the bot go back when low on potions to buy? I know how to make him go back and to the npc but I don't know how to make him buy, since trading isn't text based anymore.<br />
+<br />
+Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aggerazor</div><div class="date">01-13-2014, 14:07</div></div><div class="posttext">Yeah sure, but you have to make the waypoints to the npc and fix how much gold should be withdrawn from the bank,<br />
+Mana Potion ID: 0C 01<br />
+Health Potion ID: 0A 01<br />
+<br />
+#How many potions to bring<br />
+fastExiva _pots = 15<br />
+#ItemID of the potion to bring<br />
+fastExiva _potid = 0C 01<br />
+#Price of potion<br />
+fastExiva _potprice = 50<br />
+#Empty potion ID<br />
+fastExiva _emptypotid = 1D 01<br />
+#Leave when potions less than<br />
+fastExiva _leavepots = 5<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+<br />
+(note that if you want it to buy health pots instead change to fastExiva_potid = 0A 01 and the fastExiva_potprice = 50 to 45)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rawrewree</div><div class="date">01-15-2014, 05:28</div></div><div class="posttext">Awesome, thanks a ton for the info.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

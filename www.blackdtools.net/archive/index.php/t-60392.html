@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, spears, potions, added, waypoint, health, amount, order, rotworm, rotworms, happen, replenish, started, troll, carrion, paladin, makes, hunting, scripts, dying, backpack, weapon, causing, edron, conditionals, buying, maces, swords, start, stuck, trollcave, safezone, level, starting, moving, testing, exura/exura, trolls, switches, fangs, close, entrances, withdraw, leave, shovel, lower, activate, works, higher, eventually" />
+	<meta name="description" content="Hi guys, 
+ 
+I just made my first script for my lvl 13 paladin. I recently started playing Tibia again with some friends and I started to use the Blackdtools Proxy bot. Since my char is a paladin many scripts don't work for me since they don't replenish my spears. I tried some scripts that I found on this forum, but they never satisfied my needs. So I decided to make my own 100% AFK paladin script. After I read some tutorials I started to modify an existing Edron Rotworm script that I found to" />
+	
+	<title> Afwasmiddel's Edron Rotworms bot for Paladins [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Afwasmiddel's Edron Rotworms bot for Paladins</div>
+<hr />
+<div class="pda"><a href="t-60392.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60392-Afwasmiddel-s-Edron-Rotworms-bot-for-Paladins">Afwasmiddel's Edron Rotworms bot for Paladins</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">05-26-2013, 06:03</div></div><div class="posttext">Hi guys,<br />
+<br />
+I just made my first script for my lvl 13 paladin. I recently started playing Tibia again with some friends and I started to use the Blackdtools Proxy bot. Since my char is a paladin many scripts don't work for me since they don't replenish my spears. I tried some scripts that I found on this forum, but they never satisfied my needs. So I decided to make my own 100% AFK paladin script. After I read some tutorials I started to modify an existing Edron Rotworm script that I found to be the best so far (Edron Rotworms Seller and Depositer (http://www.blackdtools.net/showthread.php?47576-Edron-Rotworms-%28Seller-and-Depositer%29)). However it kept bugging with the modifications and it wasn't 100% AFK proof since I kept dying because I ran out of spears. So I made a new script completely written by myself that would fulfill my needs. I only copied most of the coordinates from the previously mentioned script which had been copied from an unknown script (so no credits). The result was a 100% AFK bot that I could successfully use. <br />
+<br />
+This script makes sure you carry 15 spears and 10 health potions with you to minimize the chance of dying by running out of spears or extreme health loss. This was done to make it 100% AFK proof. At every waypoint in the cave the script will check for the amount of equipped spears (3 or more), the amount of health potions in the inventory (2 or more), your leftover capacity (30/50 or more) and your leftover hit points (20% or more). When one of these things gets to low it will exit the cave after eliminating all creeps at the waypoint and start selling the loot. It sells your looted swords, maces and dirt (if present in inventory to limit wasted time by moving) while replenishing your spears and health potions if needed. At the Ivory towers it sells the dirt and the empty flasks and it will replenish your potions. Make sure to set your HP/Mana regulation by loading conditionals or using the 'HP &amp; MANA' tool implemented in Blackdtools Proxy. You might need some testing done so you can optimize these settings. It will sell the loot, buy potions and spears and deposit all remaining gold before going back to the cave. Since auto eat food is enabled you will most likely heal enough HP and mana in order to continue hunting.<br />
+<br />
+I added a Troll script as well. It will hunt Trolls till level 18/20 and then moves on to the Rotworm cave where it will eventually hunt Carrion Worms as well. It will start with an exp/h of about 5000 and will increase until it caps at 15000. It makes some nice Gold in the progress.<br />
+<br />
+Higher level characters hunting this cave might consider deleting:<br />
+setLoot C0 0C (Sword)<br />
+setLoot D6 0C (Mace)<br />
+since they will be able to make more rounds per trip and therefore need more capacity for looted gold, dirt and fangs instead of the quite heavy maces and swords. This will eventually be more gold rewarding. Of course it's recommended to wear some decent gear so you can take some hits. <br />
+<br />
+Enjoy!<br />
+<br />
+Afwasmiddel<br />
+<br />
+<br />
+Troubleshooting:<br />
+- You die before finishing a waypoint because you ran out of spears or because you couldn't replenish your health enough: this can happen when facing big waves of rotworms and is more likely to happen at low (skill)levels or when carrying poor gear. I have my own conditionals that minimize the risk of dying because it ignores all creeps when you are out of potions or spears. I uploaded this conditional in a later post.<br />
+- You won't be able to replenish your spears and/or potions because the loot won't cover the new costs: this is more likely to happen when you loot lots of maces and swords and almost no dirt or money and you have no gold on your bank account. In this case you should consider hunting trolls a little longer to get some gold and levels. Better gear also helps.<br />
+- Your character gets stuck at a waypoint: this happens if the new waypoint is somehow blocked like the waypoint at the bank, luckily it usually recovers by itself whenever the way is cleared. However there were some moments where the script seemed to get stuck and didn't recover until I clicked somewhere else. This is certain to happen if you don't bring a rope and shovel with you.<br />
+- The bot will leave to the safezone and log out: the rotworms are not in your safelist, some douchebag PK'er tried to kill you or you started the script too close to the safezone. Start it at the weapon shop or at the cave entrances.<br />
+- The script will endlessly withdraw gold for potions and buy them. This is something you should check well. It's caused by a closed backpack. If your backpack isn't open the bot won't recognize the potions that are present in your backpack. Causing it to buy potions over and over again. <br />
+<br />
+<br />
+THE TROLL AND ROTWORM SCRIPTS:<br />
+7823<br />
+7825<br />
+<br />
+for Knights:<br />
+7824<br />
+7826<br />
+<br />
+for Mages:<br />
+7831<br />
+7830<br />
+<br />
+<br />
+*UPDATES*<br />
+26-05-2013<br />
+Some numbers weren't in sync causing a loop when not buying spears and leaving the cave because the amount of equipped spears was too low.<br />
+<br />
+27-05-2013<br />
+I added a new route in order to hunt Carrion Worms as well. It will activate the next time you enter the cave after you reach lvl 17. The amount of replenished spears also increases from 5 to 9 in order to be able to make longer rounds.<br />
+<br />
+29-05-2013<br />
+Ok I finished my troll script as well and I added them together. I am still testing the combination, but so far so good. It seems everything works as planned. It's best to activate the script fully prepared (spears, potions, shovel and rope) in the caves (lvl 17 or lower trollcave, lvl 18+ rotworm cave). It seems the exp per hour is sometimes close to 10000, but it usually scores less (around 7000). However, you do get a lot of gold. The script caps at 15k exp/h. I also made text appear at every major step so that you can see what the bot is up too (Example: if bot goes to the Trollcave a red message will appear saying &quot;Moving to Trollcave&quot;). This was mainly done for myself in order to get some insight, because it sometimes got stuck in a loop while buying potions. It however looked like a cool feature, so I decided to keep it. I changed the buying and selling order to give it more structure. This should decrease the amount of occurring unwanted loops. I also added Trollroot and Carrion Worm Fangs to the list of items that get sold. The bot will now withdraw gold for the bank for potions and/or spears if you don't have enough gold with you. I also noticed that starting the script at the safezone (the bank) makes it disconnect and trigger the alarm. I still have to figure out how to prevent this. Starting at the cave entrances or at the shops does work, so it isn't that big of a deal. Keep this in mind.<br />
+From now on I will update this script instead of the stand-alone Rotworm script, given the fact that this script works just as good and has more to offer!<br />
+<br />
+15-06-2013<br />
+Added a Knight script as well. I made some improvements in the script. It now always refills potions and spears till they are 15. I added the conditionals I use when running this script as well. They waste mana when it's 100% with exura/exura ico. They autoheal with exura/exura ico if enough mana or with health potion. They ignore monsters when out of potions or spears, causing it to leave the cave.<br />
+<br />
+16-06-2013<br />
+Added a Mage script + conds as well. You'll have to change the weapon ID's though: it switches to a melee weapon when mana is lower than 40 and switches back to Wand/Rod when mana is higher than 40. This one is setup for my Druid, it uses a Crimson Sword and a Wand of Cosmic Energy.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lemmy</div><div class="date">05-31-2013, 00:07</div></div><div class="posttext">anyone tried this script?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">05-31-2013, 14:17</div></div><div class="posttext">Well since it's wuite new I guess not many people did. And well of course I tested it :P<br />
+I tested it with 2 new paladins and it worked fine for them. Just make sure where to activate the bot. It's best to activate them in the caves, at the cave entrances or at the shop where you can buy and sell weapons. You'll get the hang of it after using it multiple times. I would like some people to try it out besides me, so I can remove any bugs if there are any left besides the ones mentioned. I made a lvl 25 paladin in less than 2 days (lvl 1 to lvl 25). At higher levels you will get 10000 exp/hour + lots of gold (my lvl 30 pala currently has these values). <br />
+I am currently trying to make this script work for all classes (knight script was easy, but now I have to figure out what changes I should make for druids and sorcerers since I never played them). You can expect them soon as well. I also updated the latest version this day.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">29381</div><div class="date">06-11-2013, 00:12</div></div><div class="posttext">well not many ppl can try this cuz edron is only for premiums accounts =P.<br />
+if u have time, can u make a script for low levels paladins in venore ( trolls and amazon ) please?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-11-2013, 01:03</div></div><div class="posttext">well not many ppl can try this cuz edron is only for premiums accounts =P.<br />
+if u have time, can u make a script for low levels paladins in venore ( trolls and amazon ) please?<br />
+<br />
+I could alternate some already existing scripts (if they are out there) in order to make it Paladin compatible. I like making the scripts and stuff, but I am playing myself with a premium account and I make the script to help myself further. So making Venore scripts would force me to make a character there as well slowing my others. I can however, make paladin scripts by just getting some waypoints.<br />
+All I need are waypoints for:<br />
+- bank in order to deposit<br />
+- weapon store to sell loot and buy spears<br />
+- potion store to sell flasks and buy potions<br />
+- hunting ground<br />
+Most people make scripts with just the hunting spot waypoints with maybe some kind of depositer. So I probably can get those from already existing scripts. I'll look into it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-15-2013, 16:38</div></div><div class="posttext">I updated the script and improved it. I also uploaded my conditionals that I use when running this script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-16-2013, 14:01</div></div><div class="posttext">Added a Mage script as well. This one buys 10 mana potions and 5 health potion since mages heal much better with exura than paladins do. Mages make less gold than paladins or knights, so it's definitely recommended to already have a decent amount of gold on your bank account before you run this script. This script doesn't follow monsters. Mages suffer more when getting stucked and therefore need to escape immediately if possible. The waypoints are mostly set next to holes or rope spots. So now it will be able to escape easily. Because Trolls flee it will follow them in the Troll cave. When moving to the deeper floors it won't follow at first.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

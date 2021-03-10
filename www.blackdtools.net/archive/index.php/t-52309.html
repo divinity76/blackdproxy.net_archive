@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="long, localizarmemfps, public, function, phandle, memreallimitefps, memrealfps, memory, tibia_hwnd, integer, rmem, frameratecurrentoffset, memoryfps, const, address, process, size, frameratelimitoffset, copymemory, byte, double, code, programme, readfps, temp, doevents, limiter, setfpsfps, closehandle, writeprocessmemory, framerate, round1110, cintbi, cinttemp, wmem, executable, external, http://www.tpforums.org/forum/thread-6343-page-1.html?highlight=framerate, declare, &amp;h76793c, &amp;h60, kernel32, alias, destination, source, byval, length, &amp;h58, memoryhwnd, hwnd" />
+	<meta name="description" content="Hi, i need external FPS limiter (Framerate) programme, 
+the code is here: 
+http://www.tpforums.org/forum/thread-6343-page-1.html?highlight=framerate 
+Could someone create it? Many players would use it for sure. 
+Thanks.  
+Public Declare Sub CopyMemory Lib &quot;kernel32&quot; Alias &quot;RtlMoveMemory&quot; (Destination As Any, Source As Any, ByVal Length As Long) 
+ 
+'-------------------------------------------------------- 
+Public Const MemoryFPS = &amp;H76793C '" />
+	
+	<title> FPS Limiter, got the code, need executable programme. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  FPS Limiter, got the code, need executable programme.</div>
+<hr />
+<div class="pda"><a href="t-52309.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?52309-FPS-Limiter-got-the-code-need-executable-programme">FPS Limiter, got the code, need executable programme.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">kusiak</div><div class="date">09-01-2010, 14:17</div></div><div class="posttext">Hi, i need external FPS limiter (Framerate) programme,<br />
+the code is here:<br />
+http://www.tpforums.org/forum/thread-6343-page-1.html?highlight=framerate<br />
+Could someone create it? Many players would use it for sure.<br />
+Thanks. <br />
+<br />
+Public Declare Sub CopyMemory Lib &quot;kernel32&quot; Alias &quot;RtlMoveMemory&quot; (Destination As Any, Source As Any, ByVal Length As Long)<br />
+<br />
+'--------------------------------------------------------<br />
+Public Const MemoryFPS = &amp;H76793C '<br />
+<br />
+Public Const FrameRateCurrentOffset = &amp;H60<br />
+Public Const FrameRateLimitOffset = &amp;H58<br />
+'--------------------------------------------------------------------------------------<br />
+<br />
+Public Function Memory(hwnd As Long, Address As Long, Value As Long, Size As Long, Process As Integer)<br />
+    Dim Pid As Long<br />
+    Dim phandle As Long<br />
+    GetWindowThreadProcessId hwnd, Pid<br />
+    phandle = OpenProcess(&amp;H1F0FFF, False, Pid)<br />
+    If Process = 1 Then ReadProcessMemory phandle, Address, Value, Size, 0<br />
+    If Process = 2 Then WriteProcessMemory phandle, Address, Value, Size, 0<br />
+    CloseHandle phandle<br />
+End Function<br />
+'--------------------------------------------------------------------------------------------<br />
+Public Function ReadFPS()<br />
+Dim LocalizarMemFps As Long<br />
+Dim MemRealFPS As Long<br />
+Dim MemRealLimiteFPS As Long<br />
+Dim i As Integer<br />
+Dim B(1 To 8) As Byte<br />
+Dim f As Double<br />
+Dim Temp As Long<br />
+<br />
+Memory Tibia_Hwnd, MemoryFPS, LocalizarMemFps, 4, RMem<br />
+<br />
+MemRealFPS = LocalizarMemFps + FrameRateCurrentOffset<br />
+MemRealLimiteFPS = LocalizarMemFps + FrameRateLimitOffset<br />
+<br />
+For i = 1 To 8<br />
+    Memory Tibia_Hwnd, MemRealFPS + i - 1, Temp, 1, RMem<br />
+    B(i) = CInt(Temp)<br />
+    DoEvents<br />
+Next i<br />
+<br />
+CopyMemory f, B(1), 8<br />
+ReadFPS = f<br />
+<br />
+End Function<br />
+'------------------------------------------------------------------------------------------<br />
+<br />
+<br />
+Public Function SetFPS(Fps As Integer)<br />
+Dim LocalizarMemFps As Long<br />
+Dim MemRealFPS As Long<br />
+Dim MemRealLimiteFPS As Long<br />
+Dim i As Integer<br />
+Dim B(1 To 8) As Byte<br />
+Dim f As Double<br />
+<br />
+Memory Tibia_Hwnd, MemoryFPS, LocalizarMemFps, 4, RMem<br />
+<br />
+MemRealFPS = LocalizarMemFps + FrameRateCurrentOffset<br />
+MemRealLimiteFPS = LocalizarMemFps + FrameRateLimitOffset<br />
+<br />
+f = Round((1110 / Fps) - 5, 1)<br />
+CopyMemory B(1), f, 8<br />
+<br />
+For i = 1 To 8<br />
+    Memory Tibia_Hwnd, MemRealLimiteFPS + i - 1, CInt(B(i)), 1, WMem<br />
+    DoEvents<br />
+Next i<br />
+<br />
+End Function</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

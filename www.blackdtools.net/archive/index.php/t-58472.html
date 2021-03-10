@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="cavebot, iftrue, need help, script, syntax, 0c$number, $countitems53, answer, issue, istrue, problem" />
+	<meta name="description" content="(not sure if it belongs to &quot;Support&quot; or &quot;Script Factory&quot;, please move it if placed wrong) 
+hoping i could get some help with my cavebot script, i use BlackD Proxy 24.5, Tibia 7.6, and 
+i have this line: 
+IfTrue ($countitems:53 0C$#number&lt;=# 4) Goto needtoStop1 
+and it ALWAYS jump to needtoStop1 
+(afaik) That is the ONLY way to get to needtoStop1 (its at the bottom of the script, and every other path leads to an unconditional &quot;jump back&quot;) 
+and $countitems:53 0C$ == 16 
+why does it jump to" />
+	
+	<title> Cavebot isTrue issue [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Cavebot isTrue issue</div>
+<hr />
+<div class="pda"><a href="t-58472.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58472-Cavebot-isTrue-issue">Cavebot isTrue issue</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">07-13-2012, 18:56</div></div><div class="posttext">(not sure if it belongs to &quot;Support&quot; or &quot;Script Factory&quot;, please move it if placed wrong)<br />
+hoping i could get some help with my cavebot script, i use BlackD Proxy 24.5, Tibia 7.6, and<br />
+i have this line:<br />
+IfTrue ($countitems:53 0C$#number&lt;=# 4) Goto needtoStop1<br />
+and it ALWAYS jump to needtoStop1<br />
+(afaik) That is the ONLY way to get to needtoStop1 (its at the bottom of the script, and every other path leads to an unconditional &quot;jump back&quot;)<br />
+and $countitems:53 0C$ == 16<br />
+why does it jump to needtoStop1 ?<br />
+<br />
+full script:<br />
+<br />
+setMeleeKill Evil Morder<br />
+SetMaxAttackTimeMs 40000<br />
+onGMpause<br />
+setRetryAttacks<br />
+setNoFollow<br />
+setLootDistance 99<br />
+#setBot LootAll=1<br />
+:caveloop<br />
+#check SDs<br />
+IfTrue ($countitems:53 0C$#number&lt;=# 4) Goto needtoStop1<br />
+#it always jumps even when $countitems:53 0C# is 16<br />
+:&lt;place<br />
+move 367,313,6<br />
+IfTrue ($hpofhex-id:{$hex-lastattackedid$}$#number&gt;=#3) Goto &lt;place<br />
+:2.5<br />
+move 363,305,6<br />
+IfTrue ($hpofhex-id:{$hex-lastattackedid$}$#number&gt;=#3) Goto 2.5<br />
+:^place<br />
+move 376,305,6<br />
+IfTrue ($hpofhex-id:{$hex-lastattackedid$}$#number&gt;=#3) Goto ^place<br />
+gotoScriptLine $nlineoflabel:caveloop$<br />
+:needtoStop1<br />
+setLootOff<br />
+resetLoot<br />
+resetKill<br />
+:needtoStop<br />
+move 375,309,6<br />
+sayMessage {$countitems:53 0C$}BLEHAS<br />
+#says 16BLEHAS and exits</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">07-13-2012, 19:42</div></div><div class="posttext">tried to debug it, changed a few things, and found out that its actually jumping on a Move x y z  command :eek:<br />
+<br />
+The following code will make the char say<br />
+18:39 Gal: 1<br />
+18:39 Gal: 16BLEHAS<br />
+18:39 Cavebot script finished!<br />
+code:<br />
+SetMaxAttackTimeMs 40000<br />
+onGMpause<br />
+setRetryAttacks<br />
+setNoFollow<br />
+setLootDistance 99<br />
+#setBot LootAll=1<br />
+setMeleeKill Evil Morder<br />
+:caveloop<br />
+#check SDs<br />
+IfTrue ($countitems:53 0C$#number&lt;=#4) Goto $nlineoflabel:needtoStop1$<br />
+:leftplace<br />
+sayMessage 1<br />
+move 367,313,6<br />
+sayMessage 2<br />
+IfTrue ($hpofhex-id:{$hex-lastattackedid$}$#number&gt;=#3) Goto $nlineoflabel:leftplace$<br />
+:2.5<br />
+move 363,305,6<br />
+IfTrue ($hpofhex-id:{$hex-lastattackedid$}$#number&gt;=#3) Goto $nlineoflabel:2.5$<br />
+:upplace<br />
+move 376,305,6<br />
+IfTrue ($hpofhex-id:{$hex-lastattackedid$}$#number&gt;=#3) Goto $nlineoflabel:upplace$<br />
+gotoScriptLine $nlineoflabel:caveloop$<br />
+:needtoStop1<br />
+setLootOff<br />
+resetLoot<br />
+resetKill<br />
+:needtoStop<br />
+move 375,309,6<br />
+sayMessage {$countitems:53 0C$}BLEHAS</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-14-2012, 14:38</div></div><div class="posttext">Wierd script....Dont know what the problem is with it....What is the script for and what is an Evil Morder!?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">07-14-2012, 14:57</div></div><div class="posttext">(note that it is a OT)<br />
+it is a VERY dangerous monster that will kill me unless i stand at an exact spot. <br />
+i need the cavebot to stand at that exact spot until it kills, and then find the next monster, <br />
+stand in an exact spot and kill it, and go to next.. etc<br />
+having that said, it is great EXP! :p<br />
+if i don't stand exactly where the fucker cant hit me, i will die in seconds. that's why i use<br />
+IfTrue ($hpofhex-id:{$hex-lastattackedid$}$#number&gt;=#3) Goto $nlineoflabel:upplace$<br />
+(i cant move as long as the mob has at least 3% hp or more left.)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-14-2012, 16:26</div></div><div class="posttext">I had a simular problem with a creature in an OT in the end i just got a cond to replace amulet's and bought ton's of stone skin amulet's. Don't know if that would benifit you mind.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-15-2012, 16:06</div></div><div class="posttext">answer to first post:<br />
+the problem is you are using bad syntax there.<br />
+IfTrue ($countitems:53 0C$#number&lt;=# 4) Goto needtoStop1<br />
+<br />
+the correct syntax to reference the line of the label in this case...<br />
+IfTrue ($countitems:53 0C$#number&lt;=# 4) Goto $nlineoflabel:needtoStop1$</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

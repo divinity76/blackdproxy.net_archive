@@ -1,0 +1,749 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, waitx, saymessage, gotoscriptline, setmeleekill, ifenoughitemsgoto, gold, exchanges, exchange, time, 33140,32406,8, 33167,32421,9, 33167,32421,8, 33215,32454,7, setloot, resetloot, script, 33215,32456,8, night, stackitems, 33169,32463,9, poison, spider, 33150,32458,8, 33150,32458,9, setlooton, rotworm, 33133,32433,8, 33150,32457,9, 33132,32441,8, 33118,32481,9, 33137,32472,9, 33121,32459,9, 33120,32459,8, 33121,32460,9, 33114,32432,8, 33134,32441,8, 33149,32457,8, 33134,32432,7, 33133,32432,8, 33121,32460,8, 33149,32440,9, 33139,32405,9, 33220,32426,7, 0b,100,62, 33221,32390,7, 0b,500,50, 33215,32460,8, 33215,32459,8, 33160,32440,7" />
+	<meta name="description" content="This was posted by Brandon123 on the old forums. 
+Found this script, dont remember who posted it, but it would sell 5 maces and swords, i removed that and edited it, this script got me 15 levels in 1 week, (30 to 45 or so), it goes around once, checks for 500 gp, exchanges at shop, if it failed and still has the 500 it tries exchanging again until it has less tahn 500, at which time it exchanges 100 gp at a time until you are out of gold to exchange (useful in case you have 100 and it only" />
+	
+	<title> [Script]West Dara rots, 20k gp a night. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  [Script]West Dara rots, 20k gp a night.</div>
+<hr />
+<div class="pda"><a href="t-50.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?50-Script-West-Dara-rots-20k-gp-a-night">[Script]West Dara rots, 20k gp a night.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Dragoon</div><div class="date">08-24-2006, 16:49</div></div><div class="posttext">This was posted by Brandon123 on the old forums.<br />
+Found this script, dont remember who posted it, but it would sell 5 maces and swords, i removed that and edited it, this script got me 15 levels in 1 week, (30 to 45 or so), it goes around once, checks for 500 gp, exchanges at shop, if it failed and still has the 500 it tries exchanging again until it has less tahn 500, at which time it exchanges 100 gp at a time until you are out of gold to exchange (useful in case you have 100 and it only exchanges at 300, etc.) Leave this on overnight with reconnect on and you will make about 15-25k a night. *joke removed.* (btw im on non pvp -.-) <br />
+<br />
+<br />
+<br />
+onGMcloseConnection<br />
+setMeleeKill carrion worm<br />
+setFriendly<br />
+setMeleeKill wasp<br />
+setMeleeKill poison spider<br />
+setMeleeKill rotworm<br />
+setLootOn<br />
+setLoot D7 0B<br />
+move 33134,32432,7<br />
+move 33133,32432,8<br />
+move 33114,32432,8<br />
+move 33132,32441,8<br />
+move 33120,32459,8<br />
+move 33121,32459,9<br />
+move 33137,32472,9<br />
+move 33118,32481,9<br />
+move 33121,32460,9<br />
+move 33121,32460,8<br />
+move 33134,32441,8<br />
+move 33149,32457,8<br />
+move 33150,32457,9<br />
+move 33149,32440,9<br />
+move 33169,32463,9<br />
+move 33150,32458,9<br />
+move 33150,32458,8<br />
+move 33133,32433,8<br />
+move 33145,32425,8<br />
+move 33150,32437,8<br />
+move 33167,32425,8<br />
+move 33167,32421,8<br />
+move 33167,32421,9<br />
+move 33175,32437,9<br />
+move 33167,32421,9<br />
+move 33167,32421,8<br />
+move 33134,32430,8<br />
+move 33140,32406,8<br />
+move 33140,32405,9<br />
+move 33128,32382,9<br />
+move 33122,32371,9<br />
+move 33139,32405,9<br />
+move 33140,32406,8<br />
+move 33132,32432,8<br />
+IfEnoughItemsGoto D7 0B,500,45<br />
+gotoScriptLine 0<br />
+move 33132,32433,7<br />
+move 33151,32432,7<br />
+move 33189,32440,7<br />
+move 33209,32447,7<br />
+move 33218,32442,7<br />
+move 33221,32390,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage exchange gold<br />
+waitX 2<br />
+sayMessage 5<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 2<br />
+stackItems<br />
+IfEnoughItemsGoto D7 0B,500,50<br />
+IfenoughItemsGoto D7 0b,100,62<br />
+gotoScriptLine 74<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage exchange gold<br />
+waitX 2<br />
+sayMessage 1<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 2<br />
+waitX 2<br />
+stackItems<br />
+gotoScriptLine 61<br />
+move 33220,32426,7<br />
+move 33215,32454,7<br />
+move 33215,32454,7<br />
+move 33215,32456,8<br />
+move 33215,32460,8<br />
+move 33215,32459,8<br />
+move 33215,32456,8<br />
+resetLoot<br />
+setLoot DB 0B<br />
+putLootOnDepot<br />
+resetLoot<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33160,32440,7<br />
+move 33133,32432,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jocke</div><div class="date">09-11-2006, 15:29</div></div><div class="posttext">well u should add this in atk monster :p <br />
+<br />
+&quot;setMeleeKill carrion worm&quot;<br />
+<br />
+i like this script much i use it alot<br />
+<br />
+/Jocke</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragoon</div><div class="date">09-11-2006, 21:44</div></div><div class="posttext">Added, this script was made before the update so ty for pointing it out :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fro</div><div class="date">10-08-2006, 10:41</div></div><div class="posttext">pretty bad english on the exchange stuff, didnt really understand..<br />
+<br />
+and btw, 20k on 1night?? joke or truth? :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">doz</div><div class="date">10-17-2006, 04:53</div></div><div class="posttext">I tried this script and my charecter wouldnt move...like i was in the wrong cave...Is this the GS Cave or just the West Cave?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">10-17-2006, 05:21</div></div><div class="posttext">ok for the 4903573 time, take the first x,y,z say &quot;exiva plot xyz&quot; in this case it would be:<br />
+<br />
+33134,32432,7<br />
+<br />
+btw its at west rots closest to city</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kel</div><div class="date">10-22-2006, 18:03</div></div><div class="posttext">Is it ment to collecto 500 gp and go change it? if so, can you change it to collect more GP? like put a cap limit or so~?<br />
+thx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lexi</div><div class="date">10-26-2006, 16:15</div></div><div class="posttext">It didn't work for me. Do i have to change anything in the script? My Cap? My character name? Im new on Blackd so i have no idea of how to use this script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zkaningen</div><div class="date">12-09-2006, 03:58</div></div><div class="posttext">Dragoon, could you please make it change 2000 gold instead i'm really noob on this kind's of stuff. It would mean the world to me if you could do that :*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">amagad</div><div class="date">12-11-2006, 02:45</div></div><div class="posttext">how can i add looting maces and swords, and putting them on dp when i run out of cap?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rune</div><div class="date">12-11-2006, 07:41</div></div><div class="posttext">Dragoon, could you please make it change 2000 gold instead i'm really noob on this kind's of stuff. It would mean the world to me if you could do that :*<br />
+<br />
+<br />
+<br />
+just change every &quot;500&quot; in the entire script to &quot;2000&quot; and &quot;sayMessage: 5&quot; to &quot;sayMessage: 20&quot;. I would do if for you if i had the energy to, but im off to bed :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jim</div><div class="date">12-11-2006, 18:34</div></div><div class="posttext">onGMcloseConnection<br />
+setMeleeKill carrion worm<br />
+setFriendly<br />
+setMeleeKill wasp<br />
+setMeleeKill poison spider<br />
+setMeleeKill rotworm<br />
+setLootOn<br />
+setLoot D7 0B<br />
+move 33134,32432,7<br />
+move 33133,32432,8<br />
+move 33114,32432,8<br />
+move 33132,32441,8<br />
+move 33120,32459,8<br />
+move 33121,32459,9<br />
+move 33137,32472,9<br />
+move 33118,32481,9<br />
+move 33121,32460,9<br />
+move 33121,32460,8<br />
+move 33134,32441,8<br />
+move 33149,32457,8<br />
+move 33150,32457,9<br />
+move 33149,32440,9<br />
+move 33169,32463,9<br />
+move 33150,32458,9<br />
+move 33150,32458,8<br />
+move 33133,32433,8<br />
+move 33145,32425,8<br />
+move 33150,32437,8<br />
+move 33167,32425,8<br />
+move 33167,32421,8<br />
+move 33167,32421,9<br />
+move 33175,32437,9<br />
+move 33167,32421,9<br />
+move 33167,32421,8<br />
+move 33134,32430,8<br />
+move 33140,32406,8<br />
+move 33140,32405,9<br />
+move 33128,32382,9<br />
+move 33122,32371,9<br />
+move 33139,32405,9<br />
+move 33140,32406,8<br />
+move 33132,32432,8<br />
+IfEnoughItemsGoto D7 0B,2000,45<br />
+gotoScriptLine 0<br />
+move 33132,32433,7<br />
+move 33151,32432,7<br />
+move 33189,32440,7<br />
+move 33209,32447,7<br />
+move 33218,32442,7<br />
+move 33221,32390,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage exchange gold<br />
+waitX 2<br />
+sayMessage 20<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 2<br />
+stackItems<br />
+IfEnoughItemsGoto D7 0B,2000,50<br />
+IfenoughItemsGoto D7 0b,100,62<br />
+gotoScriptLine 74<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage exchange gold<br />
+waitX 2<br />
+sayMessage 20<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 2<br />
+waitX 2<br />
+stackItems<br />
+gotoScriptLine 61<br />
+move 33220,32426,7<br />
+move 33215,32454,7<br />
+move 33215,32454,7<br />
+move 33215,32456,8<br />
+move 33215,32460,8<br />
+move 33215,32459,8<br />
+move 33215,32456,8<br />
+resetLoot<br />
+setLoot DB 0B<br />
+putLootOnDepot<br />
+resetLoot<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33160,32440,7<br />
+move 33133,32432,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">amagad</div><div class="date">12-16-2006, 19:29</div></div><div class="posttext">Some one should add the &quot;Putting maces and sword on dp&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tokizh</div><div class="date">12-23-2006, 21:38</div></div><div class="posttext">This script is juuuust great. But, im disapointed on one thing, When it've changed gold. and putted it in depot, Then it will go to the shovel hole, and then u get a msg in tibia; The script has finnished.   So, u cant have this script on for a whole night, without sitting and watching the screen whole night.<br />
+<br />
+Anyone up for fixing this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Borat</div><div class="date">12-23-2006, 23:36</div></div><div class="posttext">This script is juuuust great. But, im disapointed on one thing, When it've changed gold. and putted it in depot, Then it will go to the shovel hole, and then u get a msg in tibia; The script has finnished.   So, u cant have this script on for a whole night, without sitting and watching the screen whole night.<br />
+<br />
+Anyone up for fixing this?<br />
+<br />
+<br />
+LOL! Just add &quot;GoToScriptLine 0&quot; at the end of the script.. lmfao.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragoon</div><div class="date">12-23-2006, 23:50</div></div><div class="posttext">lol..<br />
+<br />
+&lt;short&gt; &lt;.&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">didi</div><div class="date">01-08-2007, 15:35</div></div><div class="posttext">Where are the cave? :S how i can find the cave?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hjelpen</div><div class="date">01-30-2007, 18:55</div></div><div class="posttext">Please Dragon.. Could u change so it dont loot mace and swords and go to and change gold when it has 2kgp<br />
+im really noob :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">walla</div><div class="date">01-30-2007, 19:27</div></div><div class="posttext">lol its pretty simple i got the bot yesterday here is one that changes at 2k:<br />
+<br />
+onGMcloseConnection<br />
+setMeleeKill carrion worm<br />
+setFriendly<br />
+setMeleeKill wasp<br />
+setMeleeKill poison spider<br />
+setMeleeKill rotworm<br />
+setLootOn<br />
+setLoot D7 0B<br />
+move 33134,32432,7<br />
+move 33133,32432,8<br />
+move 33114,32432,8<br />
+move 33132,32441,8<br />
+move 33120,32459,8<br />
+move 33121,32459,9<br />
+move 33137,32472,9<br />
+move 33118,32481,9<br />
+move 33121,32460,9<br />
+move 33121,32460,8<br />
+move 33134,32441,8<br />
+move 33149,32457,8<br />
+move 33150,32457,9<br />
+move 33149,32440,9<br />
+move 33169,32463,9<br />
+move 33150,32458,9<br />
+move 33150,32458,8<br />
+move 33133,32433,8<br />
+move 33145,32425,8<br />
+move 33150,32437,8<br />
+move 33167,32425,8<br />
+move 33167,32421,8<br />
+move 33167,32421,9<br />
+move 33175,32437,9<br />
+move 33167,32421,9<br />
+move 33167,32421,8<br />
+move 33134,32430,8<br />
+move 33140,32406,8<br />
+move 33140,32405,9<br />
+move 33128,32382,9<br />
+move 33122,32371,9<br />
+move 33139,32405,9<br />
+move 33140,32406,8<br />
+move 33132,32432,8<br />
+IfEnoughItemsGoto D7 0B,2000,45<br />
+gotoScriptLine 0<br />
+move 33132,32433,7<br />
+move 33151,32432,7<br />
+move 33189,32440,7<br />
+move 33209,32447,7<br />
+move 33218,32442,7<br />
+move 33221,32390,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage exchange gold<br />
+waitX 2<br />
+sayMessage 20<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 2<br />
+stackItems<br />
+IfEnoughItemsGoto D7 0B,500,50<br />
+IfenoughItemsGoto D7 0b,100,62<br />
+gotoScriptLine 74<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage exchange gold<br />
+waitX 2<br />
+sayMessage 1<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 2<br />
+waitX 2<br />
+stackItems<br />
+gotoScriptLine 61<br />
+move 33220,32426,7<br />
+move 33215,32454,7<br />
+move 33215,32454,7<br />
+move 33215,32456,8<br />
+move 33215,32460,8<br />
+move 33215,32459,8<br />
+move 33215,32456,8<br />
+resetLoot<br />
+setLoot DB 0B<br />
+putLootOnDepot<br />
+resetLoot<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33160,32440,7<br />
+move 33133,32432,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hjelpen</div><div class="date">01-30-2007, 21:24</div></div><div class="posttext">But i dont want it to pick up maces and swords :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hjelpen</div><div class="date">01-31-2007, 00:47</div></div><div class="posttext">Its dont go to city and put gp in dp and that shit ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Prangler</div><div class="date">05-13-2007, 13:24</div></div><div class="posttext">I'm trying it right now. Lets hope it works :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kurwawy</div><div class="date">05-20-2007, 23:17</div></div><div class="posttext">Its dont go to city and put gp in dp and that shit ^^<br />
+Yes it does. Works perfect for me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luxbartek</div><div class="date">08-13-2007, 08:24</div></div><div class="posttext">@up<br />
+<br />
+Which version working??<br />
+Here's posted 3 times...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fire Necromacer</div><div class="date">09-08-2007, 13:41</div></div><div class="posttext">Working good, but seen one bug, losting some rots.. but... its mkay!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mpa984</div><div class="date">12-21-2007, 01:05</div></div><div class="posttext">This script doesn't work after latest update. -.-<br />
+It'd be great if someone could fix it. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wall</div><div class="date">01-05-2008, 19:36</div></div><div class="posttext">i tryed to edit it, but when i run it, its get debug or somthing it doesnt work<br />
+<br />
+<br />
+onGMpause<br />
+setPriority carrion worm:+1<br />
+setMeleeKill carrion worm<br />
+setExoriVis carrion worm<br />
+setFriendly<br />
+setExoriVis wasp<br />
+setExoriVis poison spider<br />
+setMeleeKill rotworm<br />
+setLootOn<br />
+setLoot D7 0B<br />
+move 33134,32432,7<br />
+move 33133,32432,8<br />
+move 33114,32432,8<br />
+move 33132,32441,8<br />
+move 33120,32459,8<br />
+move 33121,32459,9<br />
+move 33137,32472,9<br />
+move 33118,32481,9<br />
+move 33121,32460,9<br />
+move 33121,32460,8<br />
+move 33134,32441,8<br />
+move 33149,32457,8<br />
+move 33150,32457,9<br />
+move 33149,32440,9<br />
+move 33169,32463,9<br />
+move 33150,32458,9<br />
+move 33150,32458,8<br />
+move 33133,32433,8<br />
+move 33145,32425,8<br />
+move 33150,32437,8<br />
+move 33167,32425,8<br />
+move 33167,32421,8<br />
+move 33167,32421,9<br />
+move 33175,32437,9<br />
+move 33167,32421,9<br />
+move 33167,32421,8<br />
+move 33134,32430,8<br />
+move 33140,32406,8<br />
+move 33140,32405,9<br />
+move 33128,32382,9<br />
+move 33122,32371,9<br />
+move 33139,32405,9<br />
+move 33140,32406,8<br />
+move 33132,32432,8<br />
+IfEnoughItemsGoto D7 0B,500,47<br />
+gotoScriptLine 0<br />
+move 33132,32433,7<br />
+move 33151,32432,7<br />
+move 33189,32440,7<br />
+move 33209,32447,7<br />
+move 33218,32442,7<br />
+move 33221,32390,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage deposit all<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 2<br />
+sayMessage bye<br />
+move 33220,32426,7<br />
+move 33215,32454,7<br />
+move 33215,32454,7<br />
+move 33214,32454,7<br />
+move 33160,32440,7<br />
+move 33133,32432,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aparacik</div><div class="date">01-07-2008, 16:26</div></div><div class="posttext">setExoriVis wasp<br />
+setExoriVis poison spider <br />
+<br />
+<br />
+its wrong, you should read new options in cave bot<br />
+'in Tibia 8.1+ setExoriVis will cast from distance'<br />
+fix that<br />
+<br />
+<br />
+<br />
+setSpellKill wasp,exori vis,3<br />
+setSpellKill poison spider,exori vis,3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wall</div><div class="date">01-09-2008, 16:15</div></div><div class="posttext">setExoriVis wasp<br />
+setExoriVis poison spider <br />
+<br />
+<br />
+its wrong, you should read new options in cave bot<br />
+'in Tibia 8.1+ setExoriVis will cast from distance'<br />
+fix that<br />
+<br />
+<br />
+<br />
+setSpellKill wasp,exori vis,3<br />
+setSpellKill poison spider,exori vis,3<br />
+<br />
+<br />
+ahh, okay i changed it, now i test if it works later</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Symbolic-</div><div class="date">05-20-2008, 17:36</div></div><div class="posttext">With depositer (collects 5k). Just change IfEnoughItemsGoto D7 0B,5000,45 to any other amount if that's too much</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">arkanus</div><div class="date">05-20-2008, 20:02</div></div><div class="posttext">wath the prof and skills to use that script?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Symbolic-</div><div class="date">05-20-2008, 20:38</div></div><div class="posttext">wath the prof and skills to use that script?<br />
+<br />
+p-set and spike sword I guess. For any voc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mr Bocik</div><div class="date">05-31-2008, 22:15</div></div><div class="posttext">add lion and nomand ;]<br />
+<br />
+onGMcloseConnection<br />
+\/<br />
+onGMpause<br />
+<br />
+i thing this can be better;]<br />
+//////<br />
+hmmm my char don't go to bank if he have 500gp+:(   how i can fix that??;/<br />
+<br />
+<br />
+srry for my eng</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ru5h3r</div><div class="date">05-31-2008, 22:34</div></div><div class="posttext">Well, script is awsome, i just edited part when he is changeing gold to depositing it all, and added looting wroms. :)<br />
+<br />
+<br />
+Exp is like 7-11k/h<br />
+<br />
+About money i wouldn't say it's 20k per night, but it isnt bad :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oijoi</div><div class="date">06-15-2008, 14:56</div></div><div class="posttext">I edited depositer &amp; some things. Should work now.<br />
+<br />
+<br />
+onGMpause<br />
+setPriority carrion worm:+1<br />
+setMeleeKill carrion worm<br />
+setMeleeKill wasp<br />
+setMeleeKill nomad<br />
+setMeleeKill poison spider<br />
+setMeleeKill rotworm<br />
+setLoot D7 0B<br />
+move 33134,32432,7<br />
+move 33133,32432,8<br />
+move 33114,32432,8<br />
+move 33132,32441,8<br />
+move 33120,32459,8<br />
+move 33121,32459,9<br />
+move 33137,32472,9<br />
+move 33118,32481,9<br />
+move 33121,32460,9<br />
+move 33121,32460,8<br />
+move 33134,32441,8<br />
+move 33149,32457,8<br />
+move 33150,32457,9<br />
+move 33149,32440,9<br />
+move 33169,32463,9<br />
+move 33150,32458,9<br />
+move 33150,32458,8<br />
+move 33133,32433,8<br />
+move 33145,32425,8<br />
+move 33150,32437,8<br />
+move 33167,32425,8<br />
+move 33167,32421,8<br />
+move 33167,32421,9<br />
+move 33175,32437,9<br />
+move 33167,32421,9<br />
+move 33167,32421,8<br />
+move 33134,32430,8<br />
+move 33140,32406,8<br />
+move 33140,32405,9<br />
+move 33128,32382,9<br />
+move 33122,32371,9<br />
+move 33139,32405,9<br />
+move 33140,32406,8<br />
+move 33132,32432,8<br />
+IfTrue ($mycap$#number&lt;=#10) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 33132,32433,7<br />
+move 33151,32432,7<br />
+move 33171,32432,7<br />
+move 33189,32420,7<br />
+move 33209,32402,7<br />
+move 33221,32387,7<br />
+sayMessage hi<br />
+waitX 3<br />
+IfTrue ($lastmsg$#string=#Sorry $charactername$, I am busy. Please wait for your turn.) Goto $nlineoflabel:wait$<br />
+IfTrue ($lastmsg$#string=#Welcome $charactername$! Daraman's blessings.) Goto $nlineoflabel:Change gold$<br />
+:wait<br />
+waitX 5<br />
+IfTrue ($lastmsg$#string=#Daraman's blessings.) Goto $nlineoflabel:cumpliments$<br />
+IfTrue ($lastmsg$#string=#Daraman's blessings.) Goto $nlineoflabel:cumpliments$<br />
+IfTrue ($lastmsg$#string=#Welcome $charactername$! Daraman's blessings.) Goto $nlineoflabel:Change gold$<br />
+gotoScriptLine $nlineoflabel:wait$<br />
+:Change Gold<br />
+waitX 3<br />
+sayMessage deposit $countitems:D7 0B$<br />
+:yes<br />
+waitX 3<br />
+sayMessage yes<br />
+move 33209,32402,7<br />
+move 33189,32420,7<br />
+move 33171,32432,7<br />
+move 33151,32432,7<br />
+move 33133,32432,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blazzek</div><div class="date">08-11-2008, 00:58</div></div><div class="posttext">this script take mace and sword and sell them in town?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mcree</div><div class="date">08-11-2008, 09:53</div></div><div class="posttext">Hai<br />
+Script up botting on tibia 8.21????? =)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raphimac</div><div class="date">08-11-2008, 19:55</div></div><div class="posttext">lie dont give 20k for night -.-</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boxer</div><div class="date">08-12-2008, 01:10</div></div><div class="posttext">depositer is working after update?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dras</div><div class="date">08-19-2008, 09:21</div></div><div class="posttext">Hello,<br />
+<br />
+I'll try to edit that script to loot maces and swords and sell it when cap &lt; X.<br />
+<br />
+I bot in Liberty Bay rotworms -3 floor and i make about 7.5k gold each night,<br />
+i dont know lvl, but i'm 40 EK and i make about 1 lvl/night.<br />
+<br />
+At the moment, I edited that script and should work for 8.2X<br />
+<br />
+<br />
+<br />
+onGMpause<br />
+setPriority carrion worm:+1<br />
+setMeleeKill carrion worm<br />
+setMeleeKill wasp<br />
+setMeleeKill nomad<br />
+setMeleeKill poison spider<br />
+setMeleeKill rotworm<br />
+setLoot D7 0B<br />
+move 33134,32432,7<br />
+move 33133,32432,8<br />
+move 33114,32432,8<br />
+move 33132,32441,8<br />
+move 33120,32459,8<br />
+move 33121,32459,9<br />
+move 33137,32472,9<br />
+move 33118,32481,9<br />
+move 33121,32460,9<br />
+move 33121,32460,8<br />
+move 33134,32441,8<br />
+move 33149,32457,8<br />
+move 33150,32457,9<br />
+move 33149,32440,9<br />
+move 33169,32463,9<br />
+move 33150,32458,9<br />
+move 33150,32458,8<br />
+move 33133,32433,8<br />
+move 33145,32425,8<br />
+move 33150,32437,8<br />
+move 33167,32425,8<br />
+move 33167,32421,8<br />
+move 33167,32421,9<br />
+move 33175,32437,9<br />
+move 33167,32421,9<br />
+move 33167,32421,8<br />
+move 33134,32430,8<br />
+move 33140,32406,8<br />
+move 33140,32405,9<br />
+move 33128,32382,9<br />
+move 33122,32371,9<br />
+move 33139,32405,9<br />
+move 33140,32406,8<br />
+move 33132,32432,8<br />
+IfTrue ($mycap$#number&lt;=#10) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 33132,32433,7<br />
+move 33151,32432,7<br />
+move 33171,32432,7<br />
+move 33189,32420,7<br />
+move 33209,32402,7<br />
+move 33221,32387,7<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hello$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:bye$<br />
+move 33209,32402,7<br />
+move 33189,32420,7<br />
+move 33171,32432,7<br />
+move 33151,32432,7<br />
+move 33133,32432,7<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+<br />
+Cya</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pablol</div><div class="date">08-24-2008, 23:00</div></div><div class="posttext">You should add Rotworm Queen to the list of things it attacks, because your Waypoints run right threw it, and well you would prolly die if it spawned and you werent there... just a thought tho, Also Nice Script botting my 28 MS right now :D<br />
+<br />
+Sincerely,<br />
+Yours Pablol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lans</div><div class="date">10-12-2008, 12:39</div></div><div class="posttext">Works great, thank's :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SoulMagu</div><div class="date">10-17-2008, 22:18</div></div><div class="posttext">I dont know why the scripts only goes 1x to bank and dont go anyore and he the dont deposit he said 'hi/EXchange gold/~on default... in not NPC Chat ... Some1 Can Fix It?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Phyron</div><div class="date">10-17-2008, 23:02</div></div><div class="posttext">I dont know why the scripts only goes 1x to bank and dont go anyore and he the dont deposit he said 'hi/EXchange gold/~on default... in not NPC Chat ... Some1 Can Fix It?<br />
+<br />
+Man just look the post date 08-24-2006</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">suse_100</div><div class="date">10-25-2008, 20:50</div></div><div class="posttext">This script works for Tibia 8.31?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">meltdres</div><div class="date">12-15-2008, 08:45</div></div><div class="posttext">:obro please update this script that has an error when going to change the coins PLX you ask</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ofir</div><div class="date">02-12-2009, 20:22</div></div><div class="posttext">its talking in the general chat, not in the NPC chat.<br />
+so its like the char talking to no one and cant change the money.<br />
+please updatye this scripts its awesome</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">saracene</div><div class="date">05-05-2009, 22:44</div></div><div class="posttext">I hope this works...I just started at a new world and im DESPERATE to gain some cash ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">trucker</div><div class="date">02-01-2011, 09:45</div></div><div class="posttext">it is all perfect but have a small problem,when he go to talk with the bank for change gold. he said the messages on default... no in npc.. so he stopped inside the bank and ask always (hi,change gold,5,yes) all time...what can i do?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">02-01-2011, 21:13</div></div><div class="posttext">hmm old script , you should find another</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

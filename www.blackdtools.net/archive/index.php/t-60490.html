@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, great, works, exp/h, knight, paladins, cyclopolis, afwasmiddel" />
+	<meta name="description" content="Hi guys, 
+ 
+I just finished my new script for the Cyclopolis. My Royal Paladin reached lvl 40 and needed a new hunting spot. So I decided to make a Cyclopolis script. At first it will only hunt the first floor. When you reach lvl 50 or higher it will also move to the second floor after clearing the first floor. With some nice gear on, you should be able to make profit. It will replenish your potions and Royal Spears (20) and deposit any remaining Gold and rare loot. 
+ 
+The script hunts for all" />
+	
+	<title> Cyclopolis script for Knight and Paladins by Afwasmiddel [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Cyclopolis script for Knight and Paladins by Afwasmiddel</div>
+<hr />
+<div class="pda"><a href="t-60490.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60490-Cyclopolis-script-for-Knight-and-Paladins-by-Afwasmiddel">Cyclopolis script for Knight and Paladins by Afwasmiddel</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-12-2013, 12:26</div></div><div class="posttext">Hi guys,<br />
+<br />
+I just finished my new script for the Cyclopolis. My Royal Paladin reached lvl 40 and needed a new hunting spot. So I decided to make a Cyclopolis script. At first it will only hunt the first floor. When you reach lvl 50 or higher it will also move to the second floor after clearing the first floor. With some nice gear on, you should be able to make profit. It will replenish your potions and Royal Spears (20) and deposit any remaining Gold and rare loot.<br />
+<br />
+The script hunts for all creatures on the the first and second floor. However it won't move to the north-east corner of the first floor if you have less than 10 Health Potions (where the elves, minotaurs and orcs lure). It pretty much loots everything that can be sold for 50 Gold or more in Edron. However I also set it up rare and very rare items that can't be sold like Axe Ring, Club Ring, Cyclops Trophy, Dark Helmet and more. It also loots Health Potions and White Mushrooms. With my added conditionals it will maintain a maximum of 20 white mushrooms. If you bring your own food you might want to delete the setLoot for it. It will also flee from battle when you hit 0 Royal Spears or 0 Health Potions (without finishing off the monster) and leave the cave immediately. It is set up to cast exura or exura ico when too low on HP (70%) and it heals with Health Potion when your HP gets below 40%. It will buy some Mana Potions so you will be able to cast exura for a while, also making sure you raise your magic lvl. This conditional works better than the HP and Mana tool from Blackdtools, because it won't try to cast over and over when out of mana, making it less suspicious.<br />
+<br />
+So what will it sell:<br />
+- Battle Axe<br />
+- Battle Hammer<br />
+- Battle Shield<br />
+- Brass Armor<br />
+- Chain Armor<br />
+- Double Axe<br />
+- Dwarven Shield<br />
+- Halberd<br />
+- Iron Helmet<br />
+- Plate Shield<br />
+- Steel Helmet<br />
+- Steel Shield<br />
+If you have any of these items set up as your gear, it will sell these as well. So make sure you delete the lines that sell that gear if you want to keep it. Or make it sell all of it but one. I am using a Dwarven Shield and a Steel Helmet so I set it up to sell all of it but 1.<br />
+When checking what to sell:<br />
+<br />
+IfTrue ($countitems:17 0D$#number&gt;#1) Goto $nlineoflabel:sellgear$<br />
+IfTrue ($countitems:61 0D$#number&gt;#1) Goto $nlineoflabel:sellgear$<br />
+When selling looted gear:<br />
+<br />
+sayMessage exiva sell:17 0D:$numericalexp:{$countitems:17 0D$}-1$<br />
+waitX 1<br />
+sayMessage exiva sell:61 0D:$numericalexp:{$countitems:61 0D$}-1$<br />
+waitX 1<br />
+<br />
+What rare loot will it deposit:<br />
+- Axe Ring<br />
+- Blank Rune<br />
+- Club Ring<br />
+- Cyclops Trophy<br />
+- Dark Helmet<br />
+- Elvish Bow<br />
+- Iron Ore<br />
+- Minotaur Trophy<br />
+- Plate Armor<br />
+- Plate Legs<br />
+- Piercing Bolts (only for Paladins)<br />
+- Small Amethyst <br />
+- Spiked Squelcher<br />
+- Strong Health Potion<br />
+- Strong Mana Potion<br />
+- Sword Ring<br />
+- Wand of Cosmic Energy<br />
+- Warrior Helmet<br />
+- Yellow Gem<br />
+If you carry any of these things you should adjust the lines for it as well. Else it will try to deposit that item over and over. All items you have equipped won't be deposited, but it still sees it as an item that requires the action deposit. I, for example, use a Dark Helmet which is also in the deposit list. I change the lines for it like this:<br />
+From<br />
+<br />
+IfTrue ($countitems:38 0D$#number&gt;#0) Goto $nlineoflabel:depositloot$<br />
+to<br />
+<br />
+IfTrue ($countitems:38 0D$#number&gt;#1) Goto $nlineoflabel:depositloot$<br />
+Instead of greater than 0, it becomes greater than 1. That's all you have to keep in mind.<br />
+<br />
+<br />
+<br />
+THE SCRIPTS:<br />
+7851<br />
+7852<br />
+<br />
+THE CONDITIONALS:<br />
+7817<br />
+7818<br />
+<br />
+<br />
+<br />
+***UPDATES***<br />
+- 14/06/2013:<br />
+I uploaded the wrong knight script. The older version malfunctioned when buying potions. Also instead of 15 health potions, this one gets 30.<br />
+- 15/06/2013:<br />
+Fixed a similar bug that happened when the amount of gold needed to be withdrawn was greater than 100. This caused a loop withdrawing and depositing gold.<br />
+- 16/06/2013:<br />
+I added the second floor to the script. It will now move to -2 after clearing -1 when you are level 50 or higher. I also added the north east corner to the script. It will go there when you have at least 10 Health Potions left. Rare loot will now be deposited. Check the description for the item list.<br />
+- 18/06/2013:<br />
+Small amethyst is now added to the deposit list instead of the sell list. I increased the amount of potions needed before hunting. It will now also leave when your Health Potions drop below the amount of 10 instead of 3. When I ran the script I died a couple of times by a Dwarf Guard. With 10 potions at every waypoint this shouldnt happen so fast. I also increased the amount of spears needed to hunt to 20 from 15. There seemed to be a typo in the waypoints for floor -2. That is now fixed.<br />
+- 19/06/2013:<br />
+Fixed a typo in the waypoints for the first floor when checking for the north east corner. I also reworked the sell loot so it will check for each item if it's in your inventory. If not, it will move on to the next item and so on.<br />
+- 19/06/2013:<br />
+Script will attempt to deposit loot before buying potions. It will calculate the exact amount of gold needed to buy potions and it will keep in mind your empty flasks. This halves traveling time for buying potions and depositing gold!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">burosek</div><div class="date">06-13-2013, 14:45</div></div><div class="posttext">Using this script is a sure ban,  Red text that appears on the server log can be detected by the anti bot system, you're stupid if you're writing a script  Good Luck.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-13-2013, 15:07</div></div><div class="posttext">Using this script is a sure ban,  Red text that appears on the server log can be detected by the anti bot system, you're stupid if you're writing a script  Good Luck.<br />
+<br />
+Many scripts use colored text. I never heard of it being harmful. So far I didn't receive any bans. I could easily remove those lines if someone could verify that what Burosek said is true. Hearing this from a Junior Member on the forum doesn't give much value to me :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">06-13-2013, 17:11</div></div><div class="posttext">Using this script is a sure ban,  Red text that appears on the server log can be detected by the anti bot system, you're stupid if you're writing a script  Good Luck.<br />
+<br />
+That text is client sided, it never gets sent to the server and is therefore undetectable.<br />
+<br />
+What is detectable is incorrect packets (such as those we use to walk/attack creatures) and that is why I don't reccomend using premium accounts with blackdproxy at the moment.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-13-2013, 23:42</div></div><div class="posttext">That text is client sided, it never gets sent to the server and is therefore undetectable.<br />
+<br />
+What is detectable is incorrect packets (such as those we use to walk/attack creatures) and that is why I don't reccomend using premium accounts with blackdproxy at the moment.<br />
+<br />
+All right, thx for the info. I just enjoy making scripts and all my friends use premium as well. I believe all of them use a bot too. However they use iBot which you have to pay for. Which wouldn't be such a big issue if they had some kind of tutorial for the commands and stuff in order to make scripts. I came across Blackdtools and explored the forum. I liked what I saw even though most important posts were from 2011 and before. Of course you risk getting banned when using bots, this counts for all bots. So I don't mind using premium for it. Besides, premium adds so much more to the game.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-15-2013, 16:41</div></div><div class="posttext">I fixed some bugs that can cause a loop when withdrawing gold for potions or spears. So if you downloaded the scripts before 15-06, you should delete them in download the new ones instead. If someone comes across any kind of bug please report it to me :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-16-2013, 13:43</div></div><div class="posttext">I added floor -2 and a rare loot depositer! It will also attempt to hunt the north east corner of -1 if you have 10 Health Potions or more.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-17-2013, 23:52</div></div><div class="posttext">where should i put the conditionals part of the script?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-18-2013, 00:19</div></div><div class="posttext">where should i put the conditionals part of the script?<br />
+<br />
+You save it in your conds folder in blackdproxy, then you open blackd proxy en click on the &quot;?&quot; tile on the far right. This is the conditional tool. In here you can search your folder (where it says file:). You might need to reload first. After selecting, click Load conds and you're done.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">qelsik</div><div class="date">06-18-2013, 12:11</div></div><div class="posttext">cool scripts :)) nice job</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-18-2013, 14:01</div></div><div class="posttext">I made some new changes that will make the script more durable. It now gets 50 Mana potions and 30 Health potions before hunting. It also buys 20 Royal Spears instead of 15 if you are a Paladin. Small amethyst is removed from the sell list and added to the deposit list. Fixed a typo in the waypoints for floor -2 that caused it to stop moving after clearing that floor.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-18-2013, 16:54</div></div><div class="posttext">You save it in your conds folder in blackdproxy, then you open blackd proxy en click on the &quot;?&quot; tile on the far right. This is the conditional tool. In here you can search your folder (where it says file:). You might need to reload first. After selecting, click Load conds and you're done.<br />
+<br />
+Thanks, I ran it for awhile without the conditionals and it worked great. Thanks for the fast reply and help! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NGH_95</div><div class="date">06-18-2013, 23:33</div></div><div class="posttext">no clue why im getting this..<br />
+16:32 Start.<br />
+16:32 Determining next action.<br />
+16:32 Selling looted gear.<br />
+16:32 Blackd Proxy [255]: Cavebot syntax error: expecting to jump to a line number. You typed something can NOT be converted to a number: &lt;nlineoflabel:huntnoextra<br />
+16:32 Cavebot script finished!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NGH_95</div><div class="date">06-18-2013, 23:49</div></div><div class="posttext">Also, my bot just sits next to williard giving me this message<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 01:00</div></div><div class="posttext">no clue why im getting this..<br />
+16:32 Start.<br />
+16:32 Determining next action.<br />
+16:32 Selling looted gear.<br />
+16:32 Blackd Proxy [255]: Cavebot syntax error: expecting to jump to a line number. You typed something can NOT be converted to a number: &lt;nlineoflabel:huntnoextra<br />
+16:32 Cavebot script finished!<br />
+<br />
+Ok I fixed it. It misses a &quot;$&quot; sign. You can download the new version or just add it yourself in the script. Just search for huntnoextra and add a $. It should look like this:<br />
+<br />
+IfTrue ($countitems:0A 01$#number&lt;#20) Goto $nlineoflabel:huntnoextra$<br />
+<br />
+You can also change it when in Cavebot. The easiest way is to just copy paste the whole thing and then load it into cavebot and then save it. Or you could scroll down to find the line, add the &quot;$&quot; and save.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 01:03</div></div><div class="posttext">Also, my bot just sits next to williard giving me this message<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive<br />
+16:48 Blackd Proxy is unable to sell that: amount should be positive<br />
+<br />
+This is kinda weird, it doesn't continue? The script will try to sell all the items on the list. If you don't have them in your inventory it will eventually jump to the next item. Selling the gear takes some time. If this problem persists I'll have to modify those lines in order to sell it the precise items.<br />
+When I run the script it does continue so...<br />
+<br />
+*Just in case I uploaded a new version that does check each item separately. This should fix your problem!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-19-2013, 01:37</div></div><div class="posttext">Mine goes to the bank without selling and logs out. uploaded the new script 15 min ago, still happens?<br />
+ Also, keeps saying &quot;list of ignored creatures is reset and clean&quot; constantly</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 02:09</div></div><div class="posttext">Mine goes to the bank without selling and logs out. uploaded the new script 15 min ago, still happens?<br />
+ Also, keeps saying &quot;list of ignored creatures is reset and clean&quot; constantly<br />
+<br />
+If you find this annoying you should open the Stealth Tool in BlackdProxy The tile that says &quot;STEALTH&quot;. Click 'Bot messages here'. Now all bot messages will move to this tool and not to your client. You can also check your exp here. <br />
+<br />
+About the bank and logout thingy. 1. You probably didn't setup a safelist. This is a list of monsters that won't be seen as dangerous when attacking you. Players won't be on this list and will therefore be seen as dangerous when attacking you causing the alarm to go off. <br />
+Or/and 2. you started it at the bank. Try to go downstairs where you will find the lockers and then activate the script. Or move to the shopping area and activate it.<br />
+<br />
+This is a safelist that I use. It contain nearly all monsters.<br />
+7845<br />
+Save it into your Blackdproxy folder.<br />
+Start Blackdproxy. Click on the &quot;RUNEMAKER&quot; tile. On the right side click load. I am not sure if you'll need to select a file or need to write it in the box. In the last case write fri.txt and click load.<br />
+~You always need to load this list before starting a script!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-19-2013, 14:28</div></div><div class="posttext">It's working great for me now, thank you very much. My one suggestion would be when it buys potions, it deposits remaining gold in bank, which is a waste of time because you have less than 45 gold on you and it goes to deposit it.<br />
+<br />
+EDIT: Just ran into an error, sometimes it will go down to -1 level, kill monsters on screen, and then begin fleeing to safe zone.  Also, avoiding the main dwarf area on level 1 might be good, there is alot of waste there because 2 or even 3 dwarf guards can be hitting you at once.<br />
+<br />
+Also doesn't loot creature products<br />
+<br />
+Overall working, 21k xp/hr with lvl 32 knight 62/55 not sure on waste/gain per hour</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 14:58</div></div><div class="posttext">It's working great for me now, thank you very much. My one suggestion would be when it buys potions, it deposits remaining gold in bank, which is a waste of time because you have less than 45 gold on you and it goes to deposit it.<br />
+<br />
+EDIT: Just ran into an error, sometimes it will go down to -1 level, kill monsters on screen, and then begin fleeing to safe zone.  Also, avoiding the main dwarf area on level 1 might be good, there is alot of waste there because 2 or even 3 dwarf guards can be hitting you at once.<br />
+<br />
+Fleeing to safezone? or does it say:&quot;Leaving Cyclopolis&quot;. The script leaves if you carry less than 10 Health Potions or when you Capacity drops below 30. It also leaves if your hppercent is below 20%. If it says fleeing to safezone it's probably due to the safelist. The Dwarf section can indeed be hard, but it's good for loot and you can get your White Mushrooms there which are useful for regen wasting less potions. <br />
+<br />
+About the buying potions thingy. It will go back to buy mana potions as well so i doesn't really matter. I was thinking about calculating the gold needed for both potions considering the empty flasks you carry. This will make you move only once towards the potion shop. <br />
+<br />
+Are you using the Paladin or the knight script? Because the Paladin script for levels below 50 can be annoying since 20 royal spears + the potions and your gear leave little more capacity for loot. Causing it to retreat early if it gets some fast loot like spears or weapons, because you get below the 30 capacity. I personally use a customized version with 15 royal spears for my lvl 40 Paladin. And it keeps in mind some gear which I carry, so it doesn't sell it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-19-2013, 15:23</div></div><div class="posttext">Fleeing to safezone? or does it say:&quot;Leaving Cyclopolis&quot;. The script leaves if you carry less than 10 Health Potions or when you Capacity drops below 30. It also leaves if your hppercent is below 20%. If it says fleeing to safezone it's probably due to the safelist. The Dwarf section can indeed be hard, but it's good for loot and you can get your White Mushrooms there which are useful for regen wasting less potions. <br />
+<br />
+About the buying potions thingy. It will go back to buy mana potions as well so i doesn't really matter. I was thinking about calculating the gold needed for both potions considering the empty flasks you carry. This will make you move only once towards the potion shop. <br />
+<br />
+Are you using the Paladin or the knight script? Because the Paladin script for levels below 50 can be annoying since 20 royal spears + the potions and your gear leave little more capacity for loot. Causing it to retreat early if it gets some fast loot like spears or weapons, because you get below the 30 capacity. I personally use a customized version with 15 royal spears for my lvl 40 Paladin. And it keeps in mind some gear which I carry, so it doesn't sell it.<br />
+<br />
+Im using the knight script. As I'm worried about XP more than money atm, how could I remove the leave at 30 oz cap and make it just stay until low on potions?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 15:35</div></div><div class="posttext">Im using the knight script. As I'm worried about XP more than money atm, how could I remove the leave at 30 oz cap and make it just stay until low on potions?<br />
+<br />
+Delete all these lines:<br />
+<br />
+IfTrue ($mycap$#number&lt;=#3000) Goto $nlineoflabel:leave$<br />
+<br />
+There are quite a few of them so good luck :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-19-2013, 21:14</div></div><div class="posttext">Still logs out at bank for some reason</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wellz</div><div class="date">06-19-2013, 22:20</div></div><div class="posttext">Mine gets stuck in a &quot;depositing rare loot&quot; loop:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 23:12</div></div><div class="posttext">Still logs out at bank for some reason<br />
+<br />
+Does it log out immediately or after the hunt?<br />
+Did you or did you not make use of the safelist? Without it you basically can't use any hunting scripts!<br />
+Pls tell me which steps you take before you start the script (start from starting Blackdproxy).<br />
+<br />
+I can't think of any other reason for it to dc than not having loaded the safelist or starting it at a wrong position. If you start it too close to the bank it often thinks it's in the onDanger part and will logout to safety. Start it downstairs where the lockers are or at the weapon shop and see what happens.<br />
+If these things don't help I'll gues you'll have to use the script without the onDanger part. This does make you way more vulnerable for PK. This ofc isn't a problem when you are on a non-pvp server. <br />
+Here is the modified version where I disabled the ondanger lines:<br />
+<br />
+7853</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 23:15</div></div><div class="posttext">Mine gets stuck in a &quot;depositing rare loot&quot; loop:(<br />
+<br />
+This probably means you carry gear that is on the deposit list, plate armor perhaps?<br />
+<br />
+- Axe Ring<br />
+- Blank Rune<br />
+- Club Ring<br />
+- Cyclops Trophy<br />
+- Dark Helmet<br />
+- Elvish Bow<br />
+- Iron Ore<br />
+- Minotaur Trophy<br />
+- Plate Armor<br />
+- Plate Legs<br />
+- Piercing Bolts (only for Paladins)<br />
+- Small Amethyst<br />
+- Spiked Squelcher<br />
+- Strong Health Potion<br />
+- Strong Mana Potion<br />
+- Sword Ring<br />
+- Wand of Cosmic Energy<br />
+- Warrior Helmet<br />
+- Yellow Gem<br />
+In my intro post you can find a way to fix this problem:<br />
+<br />
+If you carry any of these things you should adjust the lines for it as well. Else it will try to deposit that item over and over. All items you have equipped won't be deposited, but it still sees it as an item that requires the action deposit. I, for example, use a Dark Helmet which is also in the deposit list. I change the lines for it like this:<br />
+<br />
+IfTrue ($countitems:38 0D$#number&gt;#1) Goto $nlineoflabel:depositloot$<br />
+There are 3 location where you will find these lines.<br />
+1. at the start above the hunting label<br />
+2. &amp; 3. in the deposit gold part <br />
+<br />
+If you're having trouble changing these lines send me a pm with your gear and I will adjust it for you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lemmy</div><div class="date">06-23-2013, 22:39</div></div><div class="posttext">you got level 3 or just 1 and 2?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-24-2013, 01:46</div></div><div class="posttext">you got level 3 or just 1 and 2?<br />
+<br />
+Just 1 and 2 since 3 is kinda shit with the elementals. It's not really worth it to go 3 or 4 when 1 and 2 have the same to offer with less waste.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-24-2013, 15:32</div></div><div class="posttext">Just started running the no ondanger script, noticed that even if you have no gold on you it will go to bank and try to deposit, as well as try to sell vials and buy new pots even if you have the required number of pots on you already. I don't know if there's a way to avoid that. I will edit this post with how it works when its done with the first cycle. Also I think killing the weaker monsters first works better for lower levels.<br />
+<br />
+Sometimes it will chase an elf scout into a group of 3+ orc berserkers and leaders and waste a bunch of potions.<br />
+<br />
+Ok, it ran through cyc and sold items, deposited all gold, withdrew some, went and sold vials, went back to bank and deposited, withdrew again, went to potion store, then looped to bank and potion store repeatedly. I believe this is caused by having more than 50 mana pots or more than 30 health pots upon starting.<br />
+<br />
+Works fine now and cycles correctly after starting with only 50/30 pots.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-24-2013, 16:54</div></div><div class="posttext">Just started running the no ondanger script, noticed that even if you have no gold on you it will go to bank and try to deposit, as well as try to sell vials and buy new pots even if you have the required number of pots on you already. I don't know if there's a way to avoid that. I will edit this post with how it works when its done with the first cycle. Also I think killing the weaker monsters first works better for lower levels.<br />
+<br />
+Sometimes it will chase an elf scout into a group of 3+ orc berserkers and leaders and waste a bunch of potions.<br />
+<br />
+hmm it shouldn't go deposit or buy/sell anything if you have enough, unless you are carrying gear that is on the deposit or sell list. It will get into a loop when you carry more than 30 Health Potions or more than 50 Mana Potions because the calculation won't work that way.<br />
+<br />
+You can't really hunt that east corner without running into Orc Berserkers and wasting some potions, if you turn chase off you will die beacuse of the archers. However they have many possible rare loots that I found to be interesting, so I made it optional to go there if you have enough potions with you. <br />
+<br />
+ I am considering to change lots of variables into custom ones so everyone can customize the script to their own needs. Think of minimum cap to leave, amount of potions and or spears bought before hunt and more!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mackosawk</div><div class="date">09-04-2013, 00:45</div></div><div class="posttext">Hi, has anyone converted the script on the same exp?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">09-27-2013, 11:27</div></div><div class="posttext">That text is client sided, it never gets sent to the server and is therefore undetectable.<br />
+<br />
+What is detectable is incorrect packets (such as those we use to walk/attack creatures) and that is why I don't reccomend using premium accounts with blackdproxy at the moment.<br />
+<br />
+What if part of the anti bot detection also lays within the client? It might send secret reports to CIP if the client detects abnormal messages not sent by the server? :o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">09-27-2013, 21:32</div></div><div class="posttext">What if part of the anti bot detection also lays within the client? It might send secret reports to CIP if the client detects abnormal messages not sent by the server? :o<br />
+<br />
+Is possible. But unlikely. When using blackdproxy it is the incorrect packets for attacks and movements (which causes all the random behavior when using the cavebot) that is more likely to be detected.<br />
+<br />
+If the messages are detectable we would have reports of people using just the healer and the alarm (and subsquent red message) causing deletions. But we have no reports of that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gulczasek</div><div class="date">10-18-2013, 00:01</div></div><div class="posttext">Thank you for your script! it works great 27k exp/h!<br />
+Good luck</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tompan</div><div class="date">05-03-2014, 14:56</div></div><div class="posttext">hey to me it just walks down the stairs to the cave and stops. My char just stands there and nothing happens.<br />
+What may be the problem??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tompan</div><div class="date">05-03-2014, 15:03</div></div><div class="posttext">hey to me it just walks down the stairs to the cave and stops. My char just stands there and nothing happens.<br />
+What may be the problem??</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

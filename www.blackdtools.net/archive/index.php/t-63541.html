@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="./tibiamemory.py, rata@la-rata~$, testhandler.find_target_range, heapdata, recent, traceback, find_target_range, directory, /proc/14982/maps, advance, open/proc//maps.formatself.processid, maps_file, ioerror, [errno, @darkbyte, 12.31, discord, tibia, bypassing, memory, battleeye, defeating, instaled, python, verson, ubuntu, [linux][tutorial]reading, script, interested, problem, running" />
+	<meta name="description" content="Note: You must use python 2.7 for this , something changed in 3.7 that makes the code not work , im not sure what it was. I get no errors but the code just fails to find addresses so its probly some module change somewhere. 
+In linux when we load a process a folder with the process id is created in  
+ 
+/proc/processid/ 
+ 
+Inside this folder we have a bunch of files that contain info on the process two of them are extremely useful to us. 
+ 
+1./proc/processid/maps. 
+ 
+This contains the map of all" />
+	
+	<title> [Linux][Tutorial]Reading Memory, Bypassing BattleEye and defeating Dma Tibia 12.31 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  [Linux][Tutorial]Reading Memory, Bypassing BattleEye and defeating Dma Tibia 12.31</div>
+<hr />
+<div class="pda"><a href="t-63541.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?63541-Linux-Tutorial-Reading-Memory-Bypassing-BattleEye-and-defeating-Dma-Tibia-12-31">[Linux][Tutorial]Reading Memory, Bypassing BattleEye and defeating Dma Tibia 12.31</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Darkbyte</div><div class="date">03-02-2020, 03:59</div></div><div class="posttext">Note: You must use python 2.7 for this , something changed in 3.7 that makes the code not work , im not sure what it was. I get no errors but the code just fails to find addresses so its probly some module change somewhere.<br />
+In linux when we load a process a folder with the process id is created in <br />
+<br />
+/proc/processid/<br />
+<br />
+Inside this folder we have a bunch of files that contain info on the process two of them are extremely useful to us.<br />
+<br />
+1./proc/processid/maps.<br />
+<br />
+This contains the map of all memory addresses and points to classes/modules within our process lets take a look at tibias map:<br />
+<br />
+<br />
+<br />
+00400000-014ee000 r-xp 00000000 08:15 6441562                            /home/steven/.local/share/CipSoft GmbH/Tibia/packages/Tibia/bin/client<br />
+<br />
+<br />
+<br />
+021f6000-0a2a2000 rw-p 00000000 00:00 0                                  [heap]<br />
+<br />
+<br />
+<br />
+The actual file is alot bigger than this , but for now thats not to important. Next I used a tool called GameConqueror. This a simple tool just like cheat engine but without debugger stuff so its not detected. I wont talk your through how to find a address with this , its easy as pie and you should know this already. Anyway I am going to look for mana address in this tutorial so lets find it in GameConqueror for me it was at:<br />
+<br />
+5afe708<br />
+<br />
+Now of course if we reload tibia , this address will change and we cant attach a debugger without battleye blocking us. But heres the thing , we now know that<br />
+5afe708 was used once to store our mana address. We also have a list of ranges in which memory is allocated and these ranges never change. So if we find the range that 5afe708 is in this range will always contain our mana so using the above we can at least narrow our search down to only hundreds of thousands of adresses rather than billions. Progress! Lets find the range below that contains &quot;5afe708&quot;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+    def find_target_range(self):<br />
+        target = int(&quot;5afe708&quot;,16)<br />
+        maps_file = open(&quot;/proc/{}/maps&quot;.format(self.processid), 'r')<br />
+       <br />
+        for line in maps_file.readlines():  # for each mapped region                            <br />
+                splitter = line.split(&quot; &quot;) #Split the line into spaces<br />
+                region_low = int(splitter[0].split(&quot;-&quot;)[0],16) #region low of chunk<br />
+                region_high =  int(splitter[0].split(&quot;-&quot;)[1],16) #region high of chunk<br />
+               <br />
+                if target &gt; region_low:<br />
+                      if target &lt; region_high:<br />
+                                returndata = {&quot;region_low&quot; : region_low,<br />
+                                                &quot;region_high&quot; : region_high}<br />
+                                return(returndata)<br />
+ <br />
+<br />
+<br />
+this gives us:<br />
+{'region_low': 35610624, 'region_high': 178696192}<br />
+<br />
+I am converting values to ints , rather than there hex offset just because its easier to do math on however if you convert them to hex you can see we have out memory range.<br />
+<br />
+<br />
+Now stick with me. This will seem convuluded at first:<br />
+Next I used GameConqueror to find my mana address. I then browsed memory on that location and copied backwards as much of the hext data as I could this gave me a long hex string. I made a new python script like so:<br />
+<br />
+<br />
+import textwrap<br />
+hexstring = &quot;&quot;&quot;F8 CD 0D 20 6D 7F 00 00 2B 00 00 00 00 00 00 00<br />
+F0 AE A3 38 6D 7F 00 ..........&quot;&quot;&quot; ###This is trimmed so I dont hit the char limit on forum<br />
+<br />
+hexstring = hexstring.replace(&quot; &quot;,&quot;&quot;)<br />
+thelist = textwrap.wrap(hexstring, 16)<br />
+for item in thelist:<br />
+    print(item)<br />
+<br />
+All this script does is to take my bytes from memory and spit them out in 8 byte chunks. I now used this site:<br />
+https://www.textfixer.com/tools/remove-duplicate-lines.php<br />
+<br />
+to remove the duplicates and then saved the none dupes in 1.txt I then closed the game and repeated the above for the new mana address and saved as 2.txt. I did this again , 3.txt.<br />
+<br />
+Now i combined all 3 text files into one single text file list and used https://www.somacon.com/p568.php to count duplicates. I was looking for entrys with 3 counts. I got these:<br />
+<br />
+ <br />
+       3 | 3900000000000000<br />
+       3 | 4800000000000000<br />
+       3 | 70D0780100000000<br />
+       3 | 9B18000000000000<br />
+       3 | A100000000000000<br />
+       3 | F0AA780100000000<br />
+<br />
+If you are confused what I just did , I just found the memory addresses near the address I want (mana) that never change. Even if we open a new client. All will become clear as to why shortly:<br />
+<br />
+the last value we extracted above seems the best to use for now:<br />
+F0AA780100000000 <br />
+<br />
+Infact this value can be found -120 bytes of our target mana address.<br />
+<br />
+remember earlier I said there was two interesting files in /proc/ ? The second one contains all our memory values! This is /proc/processid/mem.<br />
+<br />
+This is a raw byte file so we cant use it like a normal file , we have to use  .open (as rb)  .read() and .seek<br />
+<br />
+so our plan of attack is this:<br />
+1.Get the address range from the map file, our target mana address is in there somewhere!<br />
+2.We open our .mem file and jump to range start.<br />
+3.We search every 8 bytes for F0AA780100000000.<br />
+4.Once we find this we add the distance to our mana value (its exactly 120) this is our mana address.<br />
+5.Read the above value.<br />
+<br />
+lets goo...<br />
+<br />
+<br />
+    def find_mana_address(self,heapdata):<br />
+        print(&quot;Scanning memory , this could take a few seconds....&quot;)<br />
+        mem_file = open(&quot;/proc/{}/mem&quot;.format(self.processid), 'rb')<br />
+<br />
+        region_low=heapdata[&quot;region_low&quot;]<br />
+        region_high=heapdata[&quot;region_high&quot;]<br />
+        mem_file.seek(region_low) #Goto the start address of our heap<br />
+        memoryposition = region_low #Just a buffer so we know what address we are at currently<br />
+<br />
+<br />
+        while memoryposition&lt;region_high: #Stop searching when we exit end of heap<br />
+            memoryposition = memoryposition +8<br />
+            chunks=&quot;&quot;<br />
+            count = 0<br />
+            while count&lt;8: #Read every 8 bytes and stick them into a string<br />
+                count=count+1<br />
+                chunk = binascii.hexlify(mem_file.read(1)) <br />
+                chunks = chunks + str(chunk)<br />
+                shifted_bytes = chunks.upper()<br />
+            if shifted_bytes == &quot;F0AA780100000000&quot;:<br />
+                print(&quot;Signature found at - &quot; + str(memoryposition))<br />
+                              <br />
+                int_memory_address = (memoryposition+120)<br />
+                print(&quot;Memory address is - &quot; + str(int_memory_address))  <br />
+                return int_memory_address<br />
+<br />
+This prints:<br />
+Scanning memory , this could take a few seconds....<br />
+Signature found at - 94777736<br />
+Memory address is - 94777856<br />
+94777856 is just the int for 5afe708 I added this to GameConqurer and indeed it works Below I have added a function to read this address and a loop that prints whenever our mana changes:<br />
+<br />
+https://i.imgur.com/qrj7yN8.png<br />
+<br />
+<br />
+Final Code: <br />
+https://pastebin.com/UqtmsJBs<br />
+<br />
+I ran out of space so stuck it on pastebin.<br />
+<br />
+The important thing about this is:<br />
+We never interact with the game client at all. We are reading files from the operating system we call no functions what so ever on the game!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipe93</div><div class="date">04-13-2020, 11:53</div></div><div class="posttext">Thanks you so much mat ei want to make a bot for myself  this will help</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipe93</div><div class="date">05-05-2020, 06:09</div></div><div class="posttext">@Darkbyte<br />
+DO YOU HAVE DISCORD TO HELP ME ? IM VERY INTERESTED IN THIS<br />
+ im having problem running you script i have instaled the python verson 2.7 ubuntu 18,.04<br />
+<br />
+rata@la-rata:~$ ./tibiamemory.py<br />
+Traceback (most recent call last):<br />
+  File &quot;./tibiamemory.py&quot;, line 85, in &lt;module&gt;<br />
+    heapdata = (testhandler.find_target_range())<br />
+  File &quot;./tibiamemory.py&quot;, line 10, in find_target_range<br />
+    maps_file = open(&quot;/proc/{}/maps&quot;.format(self.processid), 'r')<br />
+IOError: [Errno 2] No such file or directory: '/proc/14982/maps'<br />
+<br />
+<br />
+THANKS IN ADVANCE</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, setmeleekill, setloot, minotaur, setpriority, beholder, 32107,31577,10, open, spider, fastexiva, enter, vault, script, 32137,31575,10, armor, brass, crossbow, leather, trophy, coins, gold, double, wand, sword, handed, enjoy, cosmic, gotoscriptline, mace, 32125,31551,10, taurus, 32115,31595,10, energy, 32107,31575,9, 32133,31600,10, 32102,31529,10, 32174,31567,10, 32040,31624,10, 32071,31625,10, 32064,31613,10, 32197,31555,10, 32227,31566,10, 32230,31546,10, 32076,31626,10, 32088,31627,10, 32126,31617,10, 32167,31603,10, 32149,31624,10, 32115,31615,10, 32088,31618,10" />
+	<meta name="description" content="I won't go into detail on how to enter the Vault because that's available from TibiaWikia. You do however need to get the keys, copper key 4502 to enter and exit easily, also key 4501 in your ammoslot to open one of the doors. 
+I don't know why, but it didn't work to open the door with the key when using a hotkey to use it. 
+Anyways, you probarly want to be in the lvl 30-40 range and a knight to use this script. It kills Minotaurs/Guards/Archers/Mages and Beholders and some odd small mobs" />
+	
+	<title> Alawar's Vault Script [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Alawar's Vault Script</div>
+<hr />
+<div class="pda"><a href="t-51080.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?51080-Alawar-s-Vault-Script">Alawar's Vault Script</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">06-22-2010, 17:41</div></div><div class="posttext">I won't go into detail on how to enter the Vault because that's available from TibiaWikia. You do however need to get the keys, copper key 4502 to enter and exit easily, also key 4501 in your ammoslot to open one of the doors.<br />
+I don't know why, but it didn't work to open the door with the key when using a hotkey to use it.<br />
+Anyways, you probarly want to be in the lvl 30-40 range and a knight to use this script. It kills Minotaurs/Guards/Archers/Mages and Beholders and some odd small mobs between the major spawns. Neither the xp or the loot is that great but I don't think there's alot of people there.<br />
+<br />
+Here we go:<br />
+<br />
+setFriendly<br />
+setBot OldLootMode=1<br />
+setChaoticMovesOFF<br />
+setMeleeKill snake<br />
+setMeleeKill scorpion<br />
+setMeleeKill slime<br />
+setMeleeKill Rat<br />
+setMeleeKill Bug<br />
+setMeleeKill Spider<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Rotworm<br />
+setMeleeKill Minotaur<br />
+setMeleeKill Minotaur Archer<br />
+setMeleeKill Minotaur Guard<br />
+setMeleeKill Minotaur Mage<br />
+setMeleeKill Beholder<br />
+setMeleeKill Skeleton<br />
+setPriority Beholder:+1<br />
+setPriority Minotaur Archer:+1<br />
+setPriority Minotaur Guard:+1<br />
+setPriority Minotaur Mage:+2<br />
+#Beholder Eye<br />
+setLoot 0A 17<br />
+#Terra Rod<br />
+setLoot F9 0B<br />
+#Beholder Shield<br />
+setLoot 5A 0D<br />
+#Two handed sword<br />
+setLoot C1 0C<br />
+#Wand of Cosmic Energy<br />
+setLoot 01 0C<br />
+#Taurus Mace<br />
+setLoot 01 1D<br />
+#Double Axe<br />
+setLoot CB 0C<br />
+#Crossbow<br />
+setLoot 15 0D<br />
+#Brass Armor<br />
+setLoot 1F 0D<br />
+#Minotaur Leather<br />
+setLoot F6 16<br />
+#Gold Coins<br />
+setLoot D7 0B<br />
+#Minotaur Trophy<br />
+setLoot E9 1C<br />
+move 32107,31574,9<br />
+move 32107,31577,10<br />
+move 32099,31559,10<br />
+move 32087,31550,10<br />
+move 32080,31543,10<br />
+move 32071,31552,10<br />
+move 32057,31567,10<br />
+move 32062,31590,10<br />
+move 32077,31599,10<br />
+move 32053,31577,10<br />
+move 32038,31603,10<br />
+fastExiva &gt; 82 27 7D 73 7B 0A 83 1B 02 06<br />
+waitX 1<br />
+fastExiva &gt; 83 FF FF 0A 00 00 9A 0B 00 27 7D 73 7B 0A 83 1B 02<br />
+move 32040,31624,10<br />
+move 32071,31625,10<br />
+move 32064,31613,10<br />
+move 32076,31626,10<br />
+move 32088,31627,10<br />
+move 32106,31629,10<br />
+move 32088,31618,10<br />
+move 32115,31615,10<br />
+move 32126,31617,10<br />
+move 32149,31624,10<br />
+move 32149,31604,10<br />
+move 32167,31603,10<br />
+move 32192,31606,10<br />
+move 32184,31588,10<br />
+move 32174,31567,10<br />
+move 32197,31555,10<br />
+move 32230,31546,10<br />
+move 32227,31566,10<br />
+move 32210,31571,10<br />
+move 32230,31554,10<br />
+move 32195,31556,10<br />
+move 32161,31534,10<br />
+move 32186,31534,10<br />
+move 32150,31533,10<br />
+move 32102,31529,10<br />
+move 32125,31551,10<br />
+move 32137,31575,10<br />
+move 32133,31600,10<br />
+move 32115,31595,10<br />
+move 32107,31577,10<br />
+move 32107,31575,9<br />
+gotoScriptLine 0<br />
+Enjoy.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

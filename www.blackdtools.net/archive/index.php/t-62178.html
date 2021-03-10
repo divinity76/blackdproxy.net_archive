@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="bsc delay, events, number, $myhppercent$, conditional, healing, delay" />
+	<meta name="description" content="Hello! I seem to have a problem with the auto - healing delay (hp). I currently have 3 options for my healing: exura, exura gran and exura vita. The first one works perfectly, with the delay that I wish to have. However, as soon as either the second or the third option  must kick in, the spell is used almost instantly. My question is: why do the other 2 options completely disregard the intended delay?  
+ 
+Thanks in advance! :) 
+ 
+P.S. The delay always works for the very first line in the auto -" />
+	
+	<title> Auto - Healing Delay [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-14.html">Old tools for Tibia 10.99 and below</a> &gt; <a href="f-71.html">Blackd Safe Cheats</a> &gt; <a href="f-72.html">General</a> &gt;  Auto - Healing Delay</div>
+<hr />
+<div class="pda"><a href="t-62178.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62178-Auto-Healing-Delay">Auto - Healing Delay</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">DarthVader8888</div><div class="date">07-02-2015, 02:21</div></div><div class="posttext">Hello! I seem to have a problem with the auto - healing delay (hp). I currently have 3 options for my healing: exura, exura gran and exura vita. The first one works perfectly, with the delay that I wish to have. However, as soon as either the second or the third option  must kick in, the spell is used almost instantly. My question is: why do the other 2 options completely disregard the intended delay? <br />
+<br />
+Thanks in advance! :)<br />
+<br />
+P.S. The delay always works for the very first line in the auto - healing section. What's interesting, if I have a spell that is located in either the second or the third line (with no other healing options!), the intended delay doesn't kick in.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">07-02-2015, 21:32</div></div><div class="posttext">Im having some problems too. I have already email Daniel but hasnt answered yet. Maybe he is on holidays.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jesseh</div><div class="date">07-13-2015, 21:22</div></div><div class="posttext">You can try opening 3 different blackd safe cheats windows, it's not ideal but I use that way to heal with 4 options instead of 3, and then you can set each delay as you wish. Test it if you feel like.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">09-07-2015, 18:09</div></div><div class="posttext">have you tried using Conditional Event's instead? something like<br />
+<br />
+$myhppercent$ #number&lt;=# 30<br />
+or if you want to get fancy, <br />
+$istrue:{$check:{$myhppercent$},#number&lt;=#,{30}},{$check:{$mymana$},#number&gt;=#,{100}$}$<br />
+<br />
+action: exura vita<br />
+<br />
+cooldown: 5000<br />
+<br />
+or something along those lines :p (untested, maybe i have a typo somewhere)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

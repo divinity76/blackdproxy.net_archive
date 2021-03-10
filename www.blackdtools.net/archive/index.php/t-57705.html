@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="warning, [255], blackdproxy, alerts, increased, attack, nettle, stops, character, script, check, banuta, ground" />
+	<meta name="description" content="Hi, 
+can you look at this script and tell me what is wrong? I used it on the newest tibia by the way. 
+ 
+setBot OldLootMode=1 
+setFollow 
+onTrapGiveAlarm 
+setLoot 05 0E 
+setLoot D9 0B 
+setLoot 0C 0C 
+setLoot 00 0C" />
+	
+	<title> banuta 0,-1 - script check [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  banuta 0,-1 - script check</div>
+<hr />
+<div class="pda"><a href="t-57705.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57705-banuta-0-1-script-check">banuta 0,-1 - script check</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">butchelfk</div><div class="date">04-07-2012, 20:59</div></div><div class="posttext">Hi,<br />
+can you look at this script and tell me what is wrong? I used it on the newest tibia by the way.<br />
+<br />
+<br />
+setBot OldLootMode=1<br />
+setFollow<br />
+onTrapGiveAlarm<br />
+setLoot 05 0E<br />
+setLoot D9 0B<br />
+setLoot 0C 0C<br />
+setLoot 00 0C<br />
+setLoot 0A 01<br />
+setLoot 14 0D<br />
+setLoot 0C 01<br />
+setLoot CF 2C<br />
+setLoot 1D 0D<br />
+setLoot FB 16<br />
+setLoot F5 06<br />
+setLoot F7 2C<br />
+setLoot D7 0B<br />
+setMeleeKill Kongra<br />
+setMeleeKill Sibang<br />
+setMeleeKill tiger<br />
+setMeleeKill Merlkin<br />
+setMeleeKill Spider<br />
+setMeleeKill Crocodile<br />
+setMeleeKill Cobra<br />
+setMeleeKill Wasp<br />
+setMeleeKill Centipede<br />
+setMeleeKill Bat<br />
+setMeleeKill Bug<br />
+setPriority Kongra:+1<br />
+setPriority Merlkin:+2<br />
+setLootOn<br />
+:goCave<br />
+move 32653,32718,7<br />
+move 32678,32691,7<br />
+move 32698,32664,7<br />
+move 32719,32631,7<br />
+move 32736,32602,7<br />
+move 32760,32580,7<br />
+move 32772,32564,7<br />
+gotoScriptLine $nlineoflabel:hunting$<br />
+:hunting<br />
+setFollow<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32772,32566,8<br />
+move 32755,32565,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32779,32534,8<br />
+move 32762,32519,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32787,32499,8<br />
+move 32819,32516,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32819,32547,8<br />
+move 32849,32545,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32847,32570,8<br />
+move 32789,32571,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+gotoScriptLine $nlineoflabel:ground$<br />
+:ground<br />
+move 32772,32567,7<br />
+move 32775,32571,6<br />
+move 32787,32583,7<br />
+move 32792,32585,6<br />
+move 32789,32585,5<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32812,32583,7<br />
+move 32815,32581,6<br />
+move 32826,32575,7<br />
+move 32843,32565,7<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32838,32553,7<br />
+move 32839,32550,6<br />
+move 32838,32548,5<br />
+move 32842,32534,7<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32839,32525,7<br />
+move 32835,32512,6<br />
+move 32823,32510,7<br />
+move 32816,32508,6<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+move 32802,32523,7<br />
+move 32780,32521,7<br />
+move 32772,32534,6<br />
+move 32772,32562,7<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:backDepot$<br />
+onDangerGoto $nlineoflabel:logDepot$<br />
+gotoScriptLine $nlineoflabel:hunting$<br />
+:backDepot<br />
+setNoFollow<br />
+move 32772,32566,8<br />
+move 32745,32604,7<br />
+move 32733,32625,7<br />
+move 32719,32639,7<br />
+move 32698,32661,7<br />
+move 32680,32680,7<br />
+move 32655,32706,7<br />
+move 32638,32731,7<br />
+move 32631,32750,7<br />
+move 32632,32747,6<br />
+gotoScriptLine $nlineoflabel:SellAndDeposit$<br />
+:SellAndDeposit<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva sell:CF 2C:$countitems:CF 2C$<br />
+waitX 1<br />
+sayMessage exiva sell:F7 2C:$countitems:F7 2C$<br />
+waitX 1<br />
+sayMessage exiva sell:1D 0D:$countitems:1D 0D$<br />
+stackItems<br />
+move 32632,32739,6<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+move 32629,32745,7<br />
+putLootOnDepot<br />
+gotoScriptLine $nlineoflabel:goCave$<br />
+:logDepot<br />
+resetKill<br />
+setNoFollow<br />
+move 32772,32566,8<br />
+move 32745,32604,7<br />
+move 32733,32625,7<br />
+move 32719,32639,7<br />
+move 32698,32661,7<br />
+move 32680,32680,7<br />
+move 32655,32706,7<br />
+move 32638,32731,7<br />
+move 32631,32750,7<br />
+move 32632,32747,6<br />
+closeConnection<br />
+<br />
+<br />
+Thanks a lot, Michal</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bougbear</div><div class="date">04-07-2012, 22:25</div></div><div class="posttext">you need to tell us what it's not doing right before we can tell you whats wrong</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">butchelfk</div><div class="date">04-07-2012, 22:55</div></div><div class="posttext">my character stops when he back from -1 to the ground.<br />
+<br />
+and please tell me, how i can turn off alerts like that?<br />
+<br />
+21:58 BlackdProxy [255]: WARNING : YOU ARE UNDER PK ATTACK ! (spit nettle) Auto heal have been auto increased to 75 %</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bistets</div><div class="date">04-08-2012, 04:36</div></div><div class="posttext">try to put it on safe list of runemaker.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">unimporta</div><div class="date">04-08-2012, 05:31</div></div><div class="posttext">my character stops when he back from -1 to the ground.<br />
+<br />
+and please tell me, how i can turn off alerts like that?<br />
+<br />
+21:58 BlackdProxy [255]: WARNING : YOU ARE UNDER PK ATTACK ! (spit nettle) Auto heal have been auto increased to 75 %<br />
+<br />
+<br />
+For the &quot;YOU ARE UNDER PK ATTACK!&quot; message, you need to include this:<br />
+<br />
+<br />
+setMeleeKill spit nettle<br />
+<br />
+In the <br />
+setMeleeKill series of statements.<br />
+If he stops when he's back from -1 to the ground, you need to check for extra messages that might appear that say that a certain action is impossible. If a message of that kind appears, it must like means that something changed in the map and the character cannot walk to the next X,Y,Z position. It might be that a new non walkable area appeared in an area that used to be walkable. Or maybe the script is just broken.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-08-2012, 11:03</div></div><div class="posttext">Like @bistets said, just put it on the safe list in Runemaker, you don't want you character running around 'spit nettle' with setMeleeKill, but if that extra exp is good for ya, then you should do exactly what @unimporta said.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">butchelfk</div><div class="date">04-08-2012, 18:28</div></div><div class="posttext">Thanks guys, i'm ill now and haven't strenght for it, but tommorow i will try :)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

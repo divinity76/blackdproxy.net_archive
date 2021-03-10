@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="packet, getcheatpacket, function, bytes, goodpacket, hhbfilter, comparepacketsbytes, modify, client, reconnectionpacketindex.packet, server, count, filter, sckclientgameindex.senddata, source, structure, sckserverindex.senddata, frmmain.sckservergameindex.senddata, change, sckclientindex.senddata, servers, frmmain.hhbfilter, changed, sending, working, outcastserver.com, works, great, finds, parts, clientlessindex.senddata, public, uboundbytes, integer, easily, hhbfilterbyref, replace, todo^, exact, problem, fixed^, matched, fixed" />
+	<meta name="description" content="Hey Daniel, this is most likely a proposal that'll never be done, but here it is x) 
+ 
+A lot of OTs use different packets for actions in their custom clients 
+for example, if let's say the walk packet is normally 26, they might change it to 27 or something totally different. Some OT's have moved around/scrambled the packet structure totally. 
+ 
+I've managed to make blackD work with every OT so far, but it is REALLY REALLY tedious to change all packets/packetstructures as the same code is" />
+	
+	<title> Easily change packet structure in source (Fix for some OT servers) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-35.html">Proposals</a> &gt;  Easily change packet structure in source (Fix for some OT servers)</div>
+<hr />
+<div class="pda"><a href="t-61975.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61975-Easily-change-packet-structure-in-source-(Fix-for-some-OT-servers)">Easily change packet structure in source (Fix for some OT servers)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">01-29-2015, 18:14</div></div><div class="posttext">Hey Daniel, this is most likely a proposal that'll never be done, but here it is x)<br />
+<br />
+A lot of OTs use different packets for actions in their custom clients<br />
+for example, if let's say the walk packet is normally 26, they might change it to 27 or something totally different. Some OT's have moved around/scrambled the packet structure totally.<br />
+<br />
+I've managed to make blackD work with every OT so far, but it is REALLY REALLY tedious to change all packets/packetstructures as the same code is allover the place. <br />
+<br />
+For example, using a rune on a creature, is coded in magebomb, warbot and the core, so making it work on all three places I must change the packets and its structure on all places. Think how much work it is to change every packet and structure needed to play/bot on Tibia for every action done by the bot multiple times and places in the source code. <br />
+<br />
+So basicly I would like you to make the packet structure easily configured at one place.<br />
+<br />
+So if use rune on X Y Z is normally for example: <br />
+26 ID ID XX YY ZZ (where 26 is use item, ID = itemid,  followed by XYZ)<br />
+<br />
+Then some ot's have changed the order and packettype to something like this:<br />
+26 XX ZZ YY ID ID<br />
+Sometimes some 0's as well. <br />
+<br />
+I hope you understand what I mean, but making it easy to change all the packets and its structure in one place, would make it a thousand times easier to make BlackD work on any OT :)<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">01-29-2015, 21:45</div></div><div class="posttext">i had the same problem with sillent cores ot (custom 10.41) and also classicus (7.x).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">06-13-2015, 13:26</div></div><div class="posttext">i had this exact problem myself, here's how i fixed it: <br />
+i made a packet filter, that, if matched, would replace a known packet with another, <br />
+<br />
+<br />
+<br />
+<br />
+Public Function HHBFilter(ByRef Bytes() As Byte)<br />
+<br />
+Dim count As Integer<br />
+count = UBound(Bytes)<br />
+Dim buf() As Byte<br />
+'&lt;HellKaiser123766&gt;<br />
+GetCheatPacket buf, &quot;27 00 0A 02 00 F8 02 00 71 B6 02 00 0F 00 4 0A 00 66 6F 78 6B 69 64 73 38 39 38&quot;<br />
+If ComparePackets(Bytes, buf) Then<br />
+GetCheatPacket Bytes, &quot;C9 00 0A 03 64 F2 FF 07 00 66 75 63 6B 68 6B 47 67 45 32 4C 32 34 48 61 69 4C 48 76 73 51 59 43 67 3D F7 02 00 71 B6 02 00 0F 00 48 65 6C 6C 20 4B 61 69 0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&quot;<br />
+Exit Function<br />
+End If<br />
+GetCheatPacket buf, &quot;04 00 A0 02 00 01&quot;<br />
+If ComparePackets(Bytes, buf) Then<br />
+GetCheatPacket Bytes, &quot;04 00 A0 02 00 01 03 00 98 03 00 03 00 98 03 00 98 04 00 &quot;<br />
+Exit Function<br />
+End If<br />
+'&lt;/HellKaiser123766&gt;<br />
+<br />
+'&lt;RedArrow181939&gt;<br />
+'GetCheatPacket buf, &quot;27 00 0A 02 4B 61 69 73 65 72 20 52 79 6F 0A 00 70 61 73 73 77 6F 72 64 64 64&quot;<br />
+GetCheatPacket buf, &quot;21 00 0A 02 00 72 6F 77 0A 00 70 61 73 73 77 6F 72 64 64 64 &quot;<br />
+'TODO^<br />
+If ComparePackets(Bytes, buf) Then<br />
+GetCheatPacket Bytes, &quot;C9 00 0A 03 64 F2 FF 07 00 66 75 63 6B  67 6A 72 49 45 70 6F 77 6F 4B 46 6B 66 72 69 72 47 4A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&quot;<br />
+'FIXED^<br />
+Exit Function<br />
+End If<br />
+'&lt;/RedArrow181939&amp;&gt;<br />
+<br />
+End Function<br />
+<br />
+<br />
+etc. if it finds a packet it KNOWS has changed, it will modify it right before sending it to the client or server. then <br />
+<br />
+  HHBFilter packet<br />
+    sckServer(Index).SendData packet<br />
+<br />
+<br />
+    HHBFilter packet<br />
+        sckClientGame(Index).SendData packet<br />
+<br />
+<br />
+        HHBFilter goodPacket<br />
+        SckClient(Index).SendData goodPacket<br />
+<br />
+<br />
+    HHBFilter ReconnectionPacket(Index).packet<br />
+    <br />
+    frmMain.sckServerGame(Index).SendData ReconnectionPacket(Index).packet<br />
+<br />
+<br />
+        frmMain.HHBFilter goodPacket<br />
+        clientLess(Index).SendData goodPacket<br />
+<br />
+ and its working great. now no need to modify other parts of the code :p everything sent to the client or the server will go through this filter.<br />
+<br />
+<br />
+<br />
+Note: This example works for outcastserver.com</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">02-06-2016, 21:02</div></div><div class="posttext">wups, i forgot the accompanying function ComparePackets<br />
+<br />
+<br />
+<br />
+Private Declare Function RtlCompareMemory Lib &quot;NtDll&quot; (Source1 As Any, Source2 As Any, ByVal Length As Long) As Long<br />
+<br />
+Public Function ComparePackets(Packet1() As Byte, Packet2() As Byte) As Boolean<br />
+Dim P1Size As Long<br />
+Dim P2Size As Long<br />
+P1Size = UBound(Packet1)<br />
+P2Size = UBound(Packet2)<br />
+If (P1Size &lt;&gt; P2Size) Then<br />
+    ComparePackets = False<br />
+    Exit Function<br />
+End If<br />
+If (P1Size + 1 &lt;&gt; RtlCompareMemory(Packet1(0), Packet2(0), P1Size + 1)) Then<br />
+    ComparePackets = False<br />
+    Exit Function<br />
+End If<br />
+ComparePackets = True<br />
+End Function<br />
+<br />
+<br />
+and here is a readable version of HHBFilter<br />
+<br />
+<br />
+Public Function HHBFilter(ByRef Bytes() As Byte)<br />
+Dim buf() As Byte<br />
+  GetCheatPacket buf, &quot;cipsoft client packet hex here&quot;<br />
+  If ComparePackets(Bytes, buf) Then<br />
+    GetCheatPacket Bytes, &quot;custom client packet hex here&quot;<br />
+    Exit Function<br />
+  End If<br />
+End Function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Spirit</div><div class="date">04-24-2016, 03:05</div></div><div class="posttext">Well.. Daniel never hear our voices...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-11-2017, 16:28</div></div><div class="posttext">Awesome! Thank you a lot Hans.<br />
+<br />
+The only problem here is that all the packet compare/replace operations might lag the connection. Before I can release this feature for public I will need to find an optimized procedure. However, for now, it is worth a sticky for people with custom ot servers.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

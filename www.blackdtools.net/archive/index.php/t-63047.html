@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="container, structure, pointer, information, qt5core_dll, 0x004555c8, collection, backpack, items, containers, windows, coins, 0x124, window, 0x1e4, bytes, number, tibia, collections, paths, slots, 0x114, stack, 0x034, backpacks, exchanged, stores, structures, height, index, interior, means, position, minimized, hovering, examples, relative, suppose, start, 11.02.4171, disregarded, navigate, inside, http://www.blackdtools.net/showthread.php?62980-code-to-read-tibia-11-collections-skills-server-info-etc, instance, invalidated, immutable, throw, alignment, bigger" />
+	<meta name="description" content="Here's what I've learned so far: Tibia 11 uses two collections to keep track of open containers. One collection stores information about the containers and its items. The other one stores UI information (related to each container's window). To access these collections, traverse the following paths: 
+ 
+// Tibia 11.02.4171 
+// Container collection start 
+{qt5core_dll + 0x004555C8, 0x8, 0x1E4, 0x124, 0x20 }; 
+ 
+// Container UI collection start 
+{qt5core_dll + 0x004555C8, 0x8, 0x114, 0x034 }; 
+" />
+	
+	<title> Tibia 11 - The structure of containers and items [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - The structure of containers and items</div>
+<hr />
+<div class="pda"><a href="t-63047.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?63047-Tibia-11-The-structure-of-containers-and-items">Tibia 11 - The structure of containers and items</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Morse</div><div class="date">12-11-2016, 20:36</div></div><div class="posttext">Here's what I've learned so far: Tibia 11 uses two collections to keep track of open containers. One collection stores information about the containers and its items. The other one stores UI information (related to each container's window). To access these collections, traverse the following paths:<br />
+<br />
+<br />
+// Tibia 11.02.4171<br />
+// Container collection start<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x1E4, 0x124, 0x20 };<br />
+<br />
+// Container UI collection start<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x114, 0x034 };<br />
+<br />
+Both collections use one byte, the container ID, as keys. Due to alignment, however, keys end up taking 4 bytes in memory. The other 3 should be disregarded (or so I think). Each collection item has also a pointer to a structure, (A) or (D), containing useful data, exactly like in the battle list example (http://www.blackdtools.net/showthread.php?62991-Tibia-11-The-Battle-list/page2). For more information on how to navigate these collections, see Daniel's posts (http://www.blackdtools.net/showthread.php?62980-Code-to-read-Tibia-11-collections-(skills-server-info-etc)).<br />
+<br />
+(A) Each item in the first collection has a pointer to a structure that looks like this:<br />
+0x08: pointer to the container item information structure (C). That is, if the container is a backpack, this should point to a structure that contains information about a backpack item.<br />
+0x14: pointer to a QString (http://www.blackdtools.net/showthread.php?62992-Tibia-11-Understanding-QStrings-in-memory) containing the container name.<br />
+0x18: number of slots in the container. Looks like 4 bytes long, but one byte should be enough.<br />
+0x20: number of occupied slots in the container. One byte should be enough.<br />
+0x28: pointer to a list (B). May be null if this container is empty. Each element in the list has a pointer to one item information structure (C).<br />
+<br />
+(B) Item list:<br />
+0x00: pointer to the 1st item's information structure.<br />
+0x08: pointer to the 2nd item's information structure.<br />
+0x10: pointer to the 3rd item's information structure.<br />
+...<br />
+<br />
+(C) Item information structure:<br />
+0x08: pointer to the item's ID. 2 bytes should be enough.<br />
+0x38: item count, exactly one byte. When the item isn't stackable, this byte should be disregarded.<br />
+<br />
+(D) Each item in the second collection, the one about container windows, has a pointer to a structure that looks like:<br />
+0x04: a pointer to a pointer to... ultimately leads to a structure with data about the container window (E). (See examples below).<br />
+0x40: a 4 byte integer indicating the container slot your mouse is currently hovering. If you're not hovering one of this container's slots, this number is -1 (that is, 0xFFFFFFFF).<br />
+<br />
+(E) Container window info structure:<br />
+0x08C: height of the window's interior. Doesn't include the window's borders measurements.<br />
+0x1F4: 1 byte long. 0 means the window is minimized, 1 means it isn't.<br />
+0x23C: duplicated minimized flag?<br />
+0x284: window's relative position index. (2/4 bytes long?) (Example: Suppose there are two containers open: a backpack and, below it, a bag. The bag's relative position index should be bigger than the backpack's. These number are not necessarily consecutive, and are exchanged when the windows positions are exchanged.)<br />
+<br />
+It is important to note that some of these structures are immutable: The item structure (C), for instance. If you have a stack of coins inside your backpack, and you throw one of them into the sea, your old stack of coins gets invalidated and a new one is allocated. Meaning you must frequently retraverse some paths. Also, when a container is closed, the corresponding window collection item might not be deleted immediately.<br />
+<br />
+Here are some examples of how to navigate this mess. Suppose now that you have just one open backpack. It's first item is a stack of coins and its second item is a rope. You can use the following paths:<br />
+<br />
+<br />
+// Tibia 11.02.4171<br />
+// Backpack item ID:<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x1E4, 0x124, 0x20, 0x04, 0x14, 0x08, 0x8, 0x00 };<br />
+<br />
+// Coins item ID:<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x1E4, 0x124, 0x20, 0x04, 0x14, 0x28, 0x0, 0x08, 0x0 };<br />
+<br />
+// Ammount of coins:<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x1E4, 0x124, 0x20, 0x04, 0x14, 0x28, 0x0, 0x38 };<br />
+<br />
+// Rope item ID:<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x1E4, 0x124, 0x20, 0x04, 0x14, 0x28, 0x8, 0x08, 0x0 };<br />
+<br />
+// Backpack hovered slot:<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x114, 0x034, 0x00, 0x14, 0x40 };<br />
+<br />
+// Backpack's interior height:<br />
+{qt5core_dll + 0x004555C8, 0x8, 0x114, 0x034, 0x00, 0x14, 0x04, 0x38, 0x40, 0x8C };<br />
+<br />
+We're lacking a lot of information about the aforementioned structures. Contributions and corrections of any kind are welcome. Thank you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">12-12-2016, 11:06</div></div><div class="posttext">Thank you for sharing. It might be usefull for advanced cheats.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Morse</div><div class="date">12-16-2016, 02:20</div></div><div class="posttext">Thank you, Daniel. My mouse and keyboard bot is working (somewhat), partly due to all the information available in this forum. So it's my turn to share more information. I hope somebody finds it useful.<br />
+<br />
+So far, we know how big each container window is, and their relative positions. In order to send mouse clicks for a looting routine, we need to know each container window's absolute position. Here's what I used to achieve that:<br />
+<br />
+<br />
+// Tibia 11.03.4221<br />
+// Height of the free space below the last open container.<br />
+{ qt5core_dll + 0x004555C8, 0x8, 0x108, 0x14, 0x4, 0x18, 0x38, 0x4 };<br />
+<br />
+What if the player opened their battle/VIP/skills/unjust windows in some random order, messing up the container windows' positions? We're in luck, because there is an (E) structure for each one of these non-container windows, storing their heights, relative positions and minimized flags. The start of paths to these structures are stored in an array:<br />
+<br />
+<br />
+// Array of path starts to battle/VIP/skills/unjust windows (in this order)<br />
+{ qt5core_dll + 0x004555C8, 0x8, 0x12C, 0x5C };<br />
+<br />
+Usage examples:<br />
+<br />
+// Battle window internal height<br />
+{ qt5core_dll + 0x004555C8, 0x8, 0x12C, 0x5C, 0x04, 0x38, 0x40, 0x8C };<br />
+<br />
+// VIP window internal height<br />
+{ qt5core_dll + 0x004555C8, 0x8, 0x12C, 0x60, 0x04, 0x38, 0x40, 0x8C };<br />
+<br />
+Beware though: if a certain window is closed, it's corresponding array entry is null.<br />
+<br />
+Combining all information so far, it is possible to make a mouse-only looter. We're still lacking information about each container's scrollbar value (it is stored as a double somewhere).<br />
+<br />
+Another path that I find useful is the one to the height of the area with tiles in it (where the actual game is shown):<br />
+<br />
+ // Looks like a 4-byte integer.<br />
+{ qt5core_dll + 0x004555C8, 0x8, 0x24, 0x64 };<br />
+<br />
+Maps are useful when caveboting. As explained here (https://tibiamaps.io/guides/minimap-file-format), each Tibia map piece has two corresponding .png files: the pathfinding file and the color one. I like reading these maps from Tibia memory instead of externally opening the .png files, because the memory maps get updated as you walk around. As always, these maps are kept in a collection.<br />
+<br />
+<br />
+ // Map pieces collection start.<br />
+{ qt5core_dll + 0x004555C8, 0x8, 0xAC, 0x1C };<br />
+<br />
+Each collection item looks like:<br />
+<br />
+(F) Map piece collection item:<br />
+0x14: Map piece start X.<br />
+0x18: Map piece start Y.<br />
+0x1C: Map piece Z.<br />
+0x24: Pointer structure containing useful information (G).<br />
+<br />
+(G) Structure that holds useful pointers:<br />
+0x14: Map piece start X.<br />
+0x18: Map piece start Y.<br />
+0x1C: Map piece Z.<br />
+0x2C: Pointer to a color-map related structure (H).<br />
+0x3C: Pointer to a pathfinding map related structure (H).<br />
+<br />
+(H) Structure that holds pointer to the 8BPP pixel data:<br />
+0x24: Pointer to map image data.<br />
+<br />
+Usage example:<br />
+<br />
+<br />
+// Path to pathfinding map pixels, 8BPP<br />
+{ qt5core_dll + 0x004555C8, 0x8, 0xAC, 0x1C, 0x0, 0x24, 0x3C, 0x24, 0 }<br />
+<br />
+Since each piece stores 256 rows and 256 columns, at 8BPP, each image has 65536 bytes. Depending on how your programming language treats arrays (column- vs row-major), you might have to exchange x and y coordinate to access this data. When your character gets near the border to another map piece, Tibia will put it in the collection. When you change your Z coordinate (by going up and down ladders, for example), Tibia will unload every map piece, then load the ones corresponding to the floor you just entered.<br />
+<br />
+And that's all I know. Hope it helps, thank you.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

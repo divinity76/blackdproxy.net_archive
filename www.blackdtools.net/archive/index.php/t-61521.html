@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, fastexiva, dragon, potion, leave, hatchling, setavoidfront, setmeleekill, 33089,31662,8, potions, bring, 33080,31644,8, 33083,31648,8, 33077,31639,8, 33075,31635,8, 33087,31650,8, 33077,31635,9, 33078,31638,9, 33100,31647,9, 33090,31656,8, $mycap$number, 33090,31665,8, 33098,31651,8, 33102,31648,9, 33099,31649,8, 33076,31639,8, 33094,31653,8, 33080,31653,8, 33054,31652,9, 33054,31649,9, resetloot, 33053,31652,8, 33086,31658,8, 33079,31655,8, 33065,31657,8, 33057,31655,8, droplootonground, 33053,31653,8, 33065,31655,8, 33073,31654,8, 33071,31654,8, 33060,31657,8, 33055,31655,8, iftrue, 33079,31644,8, empty, _potprice, _emptypotid, capacity, _leavepots" />
+	<meta name="description" content="#How many potions to bring 
+fastExiva _pots = 300 
+#ItemID of the potion to bring 
+fastExiva _potid = 0C 01 
+#Price of potion 
+fastExiva _potprice = 50 
+#Empty potion ID 
+fastExiva _emptypotid = 1D 01 
+#Leave when capacity less than 
+fastExiva _leavecap = 50" />
+	
+	<title> &quot;Dragon lair edron! (Depositer, Bank , Refill) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  &quot;Dragon lair edron! (Depositer, Bank , Refill)</div>
+<hr />
+<div class="pda"><a href="t-61521.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61521-quot-Dragon-lair-edron!-(Depositer-Bank-Refill)">&quot;Dragon lair edron! (Depositer, Bank , Refill)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">frederiik</div><div class="date">04-01-2014, 03:07</div></div><div class="posttext">#How many potions to bring<br />
+fastExiva _pots = 300<br />
+#ItemID of the potion to bring<br />
+fastExiva _potid = 0C 01<br />
+#Price of potion<br />
+fastExiva _potprice = 50<br />
+#Empty potion ID<br />
+fastExiva _emptypotid = 1D 01<br />
+#Leave when capacity less than<br />
+fastExiva _leavecap = 50<br />
+#Leave when potions less than<br />
+fastExiva _leavepots = 30<br />
+#<br />
+setLoot C1 2C<br />
+setLoot FA 0C<br />
+setLoot F5 16<br />
+setLoot 20 17<br />
+setLoot E1 0C<br />
+setLoot FF 0B<br />
+setLoot D7 0B<br />
+setLoot 58 0D<br />
+setLoot 06 1D<br />
+setLoot F5 0B<br />
+setLoot D4 0B<br />
+setLoot EC 00<br />
+setMeleeKill Dragon<br />
+setAvoidFront Dragon<br />
+setMeleeKill dragon hatchling<br />
+setAvoidFront dragon hatchling<br />
+:hunt<br />
+move 33090,31665,8<br />
+move 33090,31656,8<br />
+move 33098,31651,8<br />
+move 33102,31648,9<br />
+move 33100,31647,9<br />
+move 33099,31649,8<br />
+move 33094,31653,8<br />
+move 33087,31650,8<br />
+move 33083,31648,8<br />
+move 33080,31644,8<br />
+move 33077,31639,8<br />
+move 33075,31635,8<br />
+move 33077,31635,9<br />
+move 33078,31638,9<br />
+move 33076,31639,8<br />
+move 33079,31644,8<br />
+move 33080,31653,8<br />
+move 33073,31654,8<br />
+move 33065,31655,8<br />
+move 33060,31657,8<br />
+move 33055,31655,8<br />
+move 33053,31653,8<br />
+move 33054,31649,9<br />
+move 33054,31652,9<br />
+move 33053,31652,8<br />
+move 33057,31655,8<br />
+move 33065,31657,8<br />
+move 33071,31654,8<br />
+move 33079,31655,8<br />
+move 33086,31658,8<br />
+move 33089,31662,8<br />
+resetLoot <br />
+setLoot 1D 01<br />
+dropLootOnGround 33089,31662,8<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depot$<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depot$<br />
+gotoScriptLine 0<br />
+:depot<br />
+move 33091,31664,8<br />
+move 33091,31667,9<br />
+move 33091,31672,9<br />
+move 33090,31675,8<br />
+move 33092,31681,8<br />
+move 33095,31686,8<br />
+move 33097,31691,8<br />
+move 33097,31698,8<br />
+move 33100,31700,7<br />
+move 33101,31706,7<br />
+move 33112,31704,7<br />
+move 33126,31702,7<br />
+move 33142,31702,7<br />
+move 33150,31705,7<br />
+move 33164,31706,7<br />
+move 33182,31707,7<br />
+move 33189,31715,7<br />
+move 33200,31721,7<br />
+move 33207,31728,7<br />
+move 33214,31734,7<br />
+move 33215,31742,7<br />
+move 33215,31750,7<br />
+move 33214,31756,7<br />
+move 33216,31760,6<br />
+move 33224,31768,6<br />
+move 33234,31768,6<br />
+move 33238,31768,6<br />
+move 33243,31767,7<br />
+move 33250,31780,7<br />
+move 33245,31789,7<br />
+move 33243,31801,7<br />
+move 33243,31817,7<br />
+move 33237,31825,7<br />
+move 33226,31838,7<br />
+move 33215,31843,7<br />
+move 33202,31843,7<br />
+move 33193,31836,7<br />
+move 33191,31825,7<br />
+move 33184,31821,7<br />
+move 33174,31819,7<br />
+move 33169,31810,7<br />
+move 33173,31803,7<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$<br />
+sayInTrade yes<br />
+move 33173,31804,7<br />
+move 33168,31810,7<br />
+move 33168,31813,8<br />
+move 33172,31807,8<br />
+move 33171,31801,8<br />
+resetLoot<br />
+setLoot C1 2C<br />
+setLoot FA 0C<br />
+setLoot F5 16<br />
+setLoot 20 17<br />
+setLoot E1 0C<br />
+setLoot FF 0B<br />
+setLoot 58 0D<br />
+setLoot 06 1D<br />
+setLoot F5 0B<br />
+setLoot D4 0B<br />
+putLootOnDepot<br />
+move 33172,31801,8<br />
+move 33172,31811,8<br />
+move 33170,31810,7<br />
+move 33177,31818,7<br />
+move 33191,31825,7<br />
+move 33194,31835,7<br />
+move 33202,31843,7<br />
+move 33214,31842,7<br />
+move 33228,31841,7<br />
+move 33235,31841,7<br />
+move 33243,31841,7<br />
+move 33248,31840,6<br />
+move 33254,31839,6<br />
+move 33255,31840,7<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+move 33255,31841,7<br />
+move 33255,31839,6<br />
+move 33248,31840,6<br />
+move 33245,31842,7<br />
+move 33236,31835,7<br />
+move 33236,31825,7<br />
+move 33243,31811,7<br />
+:tohunt<br />
+move 33243,31809,7<br />
+move 33243,31795,7<br />
+move 33250,31781,7<br />
+move 33250,31770,7<br />
+move 33245,31768,7<br />
+move 33239,31768,6<br />
+move 33223,31769,6<br />
+move 33216,31762,6<br />
+move 33215,31756,7<br />
+move 33212,31753,7<br />
+move 33203,31748,7<br />
+move 33203,31736,7<br />
+move 33204,31726,7<br />
+move 33199,31718,7<br />
+move 33189,31716,7<br />
+move 33185,31704,7<br />
+move 33178,31707,7<br />
+move 33163,31706,7<br />
+move 33153,31697,7<br />
+move 33141,31697,7<br />
+move 33126,31697,7<br />
+move 33116,31702,7<br />
+move 33102,31706,7<br />
+move 33098,31705,7<br />
+move 33098,31700,7<br />
+move 33098,31697,8<br />
+move 33098,31688,8<br />
+move 33093,31683,8<br />
+move 33089,31676,8<br />
+move 33090,31672,9<br />
+move 33091,31668,9<br />
+move 33090,31666,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">radzradz</div><div class="date">04-22-2014, 06:48</div></div><div class="posttext">will test soon : D<br />
+can u tell me what &quot;chaoticmoves&quot; means?<br />
+Thx</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="seller, plate, halberds, armor, deposit" />
+	<meta name="description" content="Could anybody help me with item seller ? how can i for example sell halberds or plate armor before gold deposit? please help" />
+	
+	<title> Item seller [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Item seller</div>
+<hr />
+<div class="pda"><a href="t-60303.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60303-Item-seller">Item seller</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">maxibott</div><div class="date">04-25-2013, 11:40</div></div><div class="posttext">Could anybody help me with item seller ? how can i for example sell halberds or plate armor before gold deposit? please help</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mackiiboy</div><div class="date">05-05-2013, 17:46</div></div><div class="posttext">Here is an example of how you could sell all visible halberds in your backpacks and make sure that you not will leave the shop until you have sold all of them. Make sure to change the 'move x,y,x to the right position of the shop.<br />
+<br />
+<br />
+fastExiva _halberdid = C5 0C<br />
+#------------------<br />
+#--Sell loot<br />
+#------------------<br />
+:selling<br />
+#the x,y,z position of the spot where you are selling your items<br />
+move x,y,z<br />
+fastExiva _halberd = $countitems:{$_halberdid$}$<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade trade<br />
+waitX $randomnumber:1&gt;2$<br />
+fastExiva sell:C5 0C:{$_halberd$}<br />
+waitX $randomnumber:1&gt;2$<br />
+fastExiva _halberd = $countitems:{$_halberdid$}$<br />
+IfTrue ($_halberd$#number&gt;#0) Goto $nlineoflabel:selling$<br />
+#------------------<br />
+#--/End sell loot<br />
+#------------------</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exp, stop, script, $myexp$number=6300, iftrue, $nlineoflabellogoff$, logoff, http://www.blackdtools.com/forum/showthread.php?57419-startngo-rook2main, wished, malmis, rook2main, awesome, startngo, helped, found, credits, label, preferably, create, exping, waypoints, times, saymessage, exiva, close" />
+	<meta name="description" content="hello 
+ 
+i would like to make my characters avoid getting 9 lvl on rookgaard but I do not know how to do that exactly 
+ 
+ 
+ 
+IfTrue ( $myexp$ #number&gt;=# 6300 ) goto ...now what? 
+ 
+how to make it stop hunting and disconnect?" />
+	
+	<title> Stop EXPing if &gt;= X exp [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Stop EXPing if &gt;= X exp</div>
+<hr />
+<div class="pda"><a href="t-57634.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57634-Stop-EXPing-if-gt-X-exp">Stop EXPing if &gt;= X exp</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">nizlov</div><div class="date">04-03-2012, 06:06</div></div><div class="posttext">hello<br />
+<br />
+i would like to make my characters avoid getting 9 lvl on rookgaard but I do not know how to do that exactly<br />
+<br />
+<br />
+<br />
+<br />
+IfTrue ( $myexp$ #number&gt;=# 6300 ) goto ...now what?<br />
+<br />
+how to make it stop hunting and disconnect?<br />
+<br />
+any help will be much appreciated</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-03-2012, 13:26</div></div><div class="posttext">Create a new label somewhere in the script, preferably at the end~ ... For example :logoff<br />
+<br />
+<br />
+IfTrue ($myexp$#number&gt;=#6300) Goto $nlineoflabel:logoff$<br />
+..... &lt;other stuff in script, like wpts and other actions&gt;<br />
+:logoff<br />
+sayMessage exiva close<br />
+<br />
+You might put 'IfTrue ($myexp$#number&gt;=#6300) Goto $nlineoflabel:logoff$' several times in your script, like after few waypoints, so it'll log exactly like you wished it would.<br />
+<br />
+Anyway, I have to give credits to Malmis, helped myself with his awesome script 'StartNGo Rook2Main' which can be found here: http://www.blackdtools.net/showthread.php?57419-StartNGo-Rook2Main<br />
+<br />
+Might be useful for you. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nizlov</div><div class="date">04-04-2012, 17:53</div></div><div class="posttext">thank you so much!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

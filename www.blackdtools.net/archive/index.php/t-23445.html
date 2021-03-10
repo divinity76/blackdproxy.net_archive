@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, 34442,54535,7, iftrue, basic, understanding, cordinates, random, numbers, accurate, 34442,54535,6, 34442,54535,2, $mycap$=, 34442,54535,5, line, script, making, scripts, works, good, note, give, someunderstanding" />
+	<meta name="description" content="First you need to have a very basic understanding of how this works 
+ 
+To give you someunderstanding we will use this script! (note that i just put random numbers for cordinates and the ifTrue line is not accurate) 
+move 34442,54535,7 
+move 34442,54535,5 
+move 34442,54535,6 
+move 34442,54535,2 
+move 34442,54535,7 
+ifTrue $mycap$#=&lt;#30 $nlineoflabel:cap$ 
+gotoScriptLine 0" />
+	
+	<title> Good understanding to making BASIC scripts [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  Good understanding to making BASIC scripts</div>
+<hr />
+<div class="pda"><a href="t-23445.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?23445-Good-understanding-to-making-BASIC-scripts">Good understanding to making BASIC scripts</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">07-12-2008, 00:57</div></div><div class="posttext">First you need to have a very basic understanding of how this works<br />
+<br />
+To give you someunderstanding we will use this script! (note that i just put random numbers for cordinates and the ifTrue line is not accurate)<br />
+move 34442,54535,7<br />
+move 34442,54535,5<br />
+move 34442,54535,6<br />
+move 34442,54535,2<br />
+move 34442,54535,7<br />
+ifTrue $mycap$#=&lt;#30 $nlineoflabel:cap$<br />
+gotoScriptLine 0<br />
+:cap<br />
+#your cap is under 30!<br />
+gotoscriptline 0<br />
+<br />
+having a quick look at scripts we can understand that its executed with the behaviour of a falling rock, unless its told to do other wise.<br />
+<br />
+For example <br />
+<br />
+It will tell your character to move to move 34442,54535,7 repeativly until you finally get there, then procide to the next line (thats obvious)<br />
+it will do this until its executed ALL of those lines, now it hits this line<br />
+<br />
+ifTrue $mycap$#=&lt;#30 $nlineoflabel:cap$<br />
+<br />
+This asks the bot, is my capacity under or eqaul to 30?<br />
+<br />
+Yes it is:<br />
+<br />
+It will goto the label &quot;cap&quot; labels are defined with &quot;:&quot; infront of the word in this case the label looks like this :cap<br />
+after wich it will goto the label, and execute the line after in our case its a comment line!<br />
+<br />
+whats a comment line? a comment is just for users of the script to understand whats happening, or telling what loot it will loot, the bot doesnt even do anything with this line its just in a way for your eyes only.<br />
+then it will goto the next line wich is gotoScriptLine 0 wich will start this action all over again<br />
+<br />
+No its not<br />
+<br />
+The bot will see its not true, go right threw this line and hit<br />
+<br />
+gotoScriptLine 0 wich will send it to line 0 of the cavebot thus starting over again<br />
+<br />
+Questions you want answered and/or added to this tutorial, ask them here!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raoul</div><div class="date">07-12-2008, 15:45</div></div><div class="posttext">nice but still a small tutorial:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nuboterich</div><div class="date">07-16-2008, 15:16</div></div><div class="posttext">i have some nub questions,<br />
+to go up in a ramps i have to add something? the wpt in the ramp? and to use rope?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lolzan1</div><div class="date">07-16-2008, 15:28</div></div><div class="posttext">with the ramp thing you add 1 script point on the ramp and 1 above it<br />
+when it comes to rope you add 1 under it and 1 over it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nuboterich</div><div class="date">07-16-2008, 16:07</div></div><div class="posttext">thanks<br />
+&lt;short&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mqrcin</div><div class="date">12-04-2008, 23:06</div></div><div class="posttext">Not working for me.<br />
+IfTrue ($mycap$#number&lt;=#1900) $nlineoflabel:depo$ ??<br />
+This is correct?<br />
+Or maybe<br />
+IfTrue ($mycap$#number&lt;=#1900) GoTo $nlineoflabel:depo$ ??<br />
+<br />
+Or maybe 1900 is too much for this bot? ;)<br />
+<br />
+Can someone write me correct version, please?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="delete, tibia, paladin, trolls, abdendriel" />
+	<meta name="description" content="Delete delete" />
+	
+	<title> Ab'Dendriel trolls for Paladin made for Tibia 9.0 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Ab'Dendriel trolls for Paladin made for Tibia 9.0</div>
+<hr />
+<div class="pda"><a href="t-55693.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?55693-Ab-Dendriel-trolls-for-Paladin-made-for-Tibia-9-0">Ab'Dendriel trolls for Paladin made for Tibia 9.0</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">zihinu</div><div class="date">06-23-2011, 18:17</div></div><div class="posttext">Delete delete</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Krosser</div><div class="date">08-20-2011, 16:41</div></div><div class="posttext">I've done everything what you said but bot doesn't open doors with key when they're locked.<br />
+Im using Tibia 9.1<br />
+<br />
+##NVM i fixed it by myself, btw thanks for the script :)<br />
+If someone wants to fix it then just find these lines<br />
+<br />
+:Open1_2<br />
+move 32658,31646,9<br />
+sayMessage exiva check 32658,31645,9<br />
+IfTrue ($lastchecktileid$#string=#32 18) Goto $nlineoflabel:Locked2_2$<br />
+IfTrue ($lastchecktileid$#string=#33 18) Goto $nlineoflabel:Closed2_2$<br />
+:Open2_2<br />
+move 32659,31639,9<br />
+gotoScriptLine $nlineoflabel:Start$<br />
+:Locked1_2<br />
+sayMessage exiva &gt; 83 FF FF 41 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_2$<br />
+:Closed1_2<br />
+sayMessage exiva &gt; 82 8F 7F A7 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_2$<br />
+:Locked2_2<br />
+sayMessage exiva &gt; 83 FF FF 41 00 00 99 0B 00 92 7F 9D 7B 09 32 18 01<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_2$<br />
+:Closed2_2<br />
+sayMessage exiva &gt; 82 92 7F 9D 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_2$<br />
+:Locked1_1<br />
+sayMessage exiva &gt; 83 FF FF 41 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_1$<br />
+:Closed1_1<br />
+sayMessage exiva &gt; 82 8F 7F A7 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_1$<br />
+:Locked2_1<br />
+sayMessage exiva &gt; 83 FF FF 41 00 00 99 0B 00 92 7F 9D 7B 09 32 18 01<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_1$<br />
+:Closed2_1<br />
+sayMessage exiva &gt; 82 92 7F 9D 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_1$<br />
+<br />
+<br />
+and change them for my edited lines:<br />
+<br />
+<br />
+:Open1_2<br />
+move 32658,31646,9<br />
+sayMessage exiva check 32658,31645,9<br />
+IfTrue ($lastchecktileid$#string=#32 18) Goto $nlineoflabel:Locked2_2$<br />
+IfTrue ($lastchecktileid$#string=#33 18) Goto $nlineoflabel:Closed2_2$<br />
+:Open2_2<br />
+move 32659,31639,9<br />
+gotoScriptLine $nlineoflabel:Start$<br />
+:Locked1_2<br />
+sayMessage exiva &gt; 11 00 83 FF FF 40 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_2$<br />
+:Closed1_2<br />
+sayMessage exiva &gt; 82 8F 7F A7 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_2$<br />
+:Locked2_2<br />
+sayMessage exiva &gt; 11 00 83 FF FF 40 00 00 99 0B 00 92 7F 9D 7B 09 32 18 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_2$<br />
+:Closed2_2<br />
+sayMessage exiva &gt; 82 92 7F 9D 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_2$<br />
+:Locked1_1<br />
+sayMessage exiva &gt; 11 00 83 FF FF 40 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_1$<br />
+:Closed1_1<br />
+sayMessage exiva &gt; 82 8F 7F A7 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open1_1$<br />
+:Locked2_1<br />
+sayMessage exiva &gt; 11 00 83 FF FF 40 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_1$<br />
+:Closed2_1<br />
+sayMessage exiva &gt; 82 92 7F 9D 7B 09 33 18 01 02<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:Open2_1$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jagex</div><div class="date">08-23-2011, 16:54</div></div><div class="posttext">Thanks Kross.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">baraabero</div><div class="date">12-24-2011, 16:28</div></div><div class="posttext">how to make the cond.???? please make it iam new here</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rbk18</div><div class="date">12-27-2011, 03:04</div></div><div class="posttext">Need this bath only for knight simple for poor kina :d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">welys</div><div class="date">01-13-2012, 05:01</div></div><div class="posttext">ya, it would be very nice if someone could edit this script</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

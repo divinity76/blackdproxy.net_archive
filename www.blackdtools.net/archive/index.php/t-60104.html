@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="relief, 45smp, 300smp, items, doors, hunt,again, refiller, deposit, water, elemental, nerana, depositer" />
+	<meta name="description" content="hi i'm new and i don't know what the problem ist. need help :( 
+i can't find my fault. always logged out but why? this is my first try do make a script and i hope u can help me. 
+ 
+########################################## 
+#############CONFIG####################### 
+########################################## 
+#put here number of amount of you potions to refil 
+fastExiva _potionsamount = 60 
+#put here number of cap to go dp 
+fastExiva _captodp = 20" />
+	
+	<title> Port Hope Water Elemental deposit + refiller need help [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Port Hope Water Elemental deposit + refiller need help</div>
+<hr />
+<div class="pda"><a href="t-60104.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60104-Port-Hope-Water-Elemental-deposit-refiller-need-help">Port Hope Water Elemental deposit + refiller need help</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Reantor</div><div class="date">03-05-2013, 00:13</div></div><div class="posttext">hi i'm new and i don't know what the problem ist. need help :(<br />
+i can't find my fault. always logged out but why? this is my first try do make a script and i hope u can help me.<br />
+<br />
+<br />
+##########################################<br />
+#############CONFIG#######################<br />
+##########################################<br />
+#put here number of amount of you potions to refil<br />
+fastExiva _potionsamount = 60<br />
+#put here number of cap to go dp<br />
+fastExiva _captodp = 20<br />
+#how much does you potions cost<br />
+fastExiva _potionscost = 80<br />
+#ID of your potions<br />
+fastExiva _potionid = ED 00<br />
+#ID of your vials<br />
+fastExiva _vialid = 1D 01<br />
+#put here amount of gold to go deposit<br />
+fastExiva _gp = 2000<br />
+##########################################<br />
+###DO NOT CHANGE IT!<br />
+cap 100<br />
+fastExiva _captogodp = $numericalexp{$_captodp$}100$<br />
+##########################################<br />
+start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setFriendly<br />
+######Monsters#####<br />
+setExoriVis Quara Mantassin Scout<br />
+setExoriVis Water Elemental<br />
+##############<br />
+####PRIORITIES####<br />
+#################<br />
+######LOOT######<br />
+setLoot ED 00<br />
+setLoot EC 0B<br />
+setLoot D7 0B<br />
+setLoot DB 0B<br />
+setLoot D2 0B<br />
+setLoot D3 0B<br />
+setLoot D4 0B<br />
+setLoot D8 0B<br />
+#################<br />
+IfTrue ($mycap$#number=#$_captogodp$) Goto $nlineoflabeldp$<br />
+IfTrue ($countitems{$_potionid$}$#number=#$_potionsamount $) Goto $nlineoflabeldp$<br />
+IfTrue ($countitemsD7 0B$#number=#$_gp$) Goto $nilneoflabeldp$<br />
+move 32632,32741,6<br />
+move 32629,32748,6<br />
+move 32629,32751,7<br />
+useItem 32618,32771,7<br />
+move 32629,32785,7<br />
+move 32602,32835,7<br />
+move 32561,32860,7<br />
+move 32555,32860,9<br />
+useItem 32554,32860,9<br />
+move 32552,32860,9<br />
+move 32542,32847,9<br />
+move 32530,32838,9<br />
+move 32513,32820,9<br />
+move 32501,32817,9<br />
+move 32498,32823,9<br />
+move 32496,32806,9<br />
+move 32497,32795,9<br />
+move 32503,32775,9<br />
+move 32513,32767,9<br />
+move 32515,32788,9<br />
+move 32526,32794,9<br />
+move 32546,32810,9<br />
+move 32564,32819,9<br />
+move 32552,32842,9<br />
+move 32550,32859,9<br />
+gotoScriptLine $nlineoflabelstart$<br />
+dp<br />
+setChaoticMovesOFF<br />
+#do dp<br />
+move 32552,32860,9<br />
+useItem 32554,32860,9<br />
+move 32557,32860,9<br />
+move 32561,32860,7<br />
+move 32604,32794,7<br />
+useItem 32604,32793,7<br />
+move 32630,32777,6<br />
+move 32618,32771,7<br />
+move 32625,32750,7<br />
+move 32632,32740,6<br />
+##########################################<br />
+##########################################<br />
+BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionstobuy = $countitems{$_vialid$}$<br />
+fastExiva _cashfromvials = $numericalexp{$countitems{$_vialid$}$}5$<br />
+fastExiva _potioncost = $numericalexp{$_potionstobuy$}{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+IfTrue ($_refil$#number=#0) Goto $nlineoflabelnopots2$<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+nopots2<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+##########################################<br />
+move 32630,32742,6<br />
+useItem 32630,32742,6<br />
+move 32624,32741,5<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell$_vialid$100<br />
+waitX 1<br />
+sayMessage exiva sell$_vialid$100<br />
+waitX 1<br />
+sayMessage exiva buy$_potionid$$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+move 32626,32742,6<br />
+move 32625,32750,7<br />
+move 32625,32747,7<br />
+putLootOnDepot<br />
+move 32625,32748,6<br />
+move 32632,32741,6<br />
+gotoScriptLine $nlineoflabelstart$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">stepcio88</div><div class="date">04-09-2013, 11:49</div></div><div class="posttext">Please...help us!!!:( Plx:(<br />
+<br />
+i can pay on Nerana.... Only help me make wpt..depositer..and relief like (when 45smp...go to dp...buy 300smp but items in dp and go hunt,again... only u must know about lvl's doors)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

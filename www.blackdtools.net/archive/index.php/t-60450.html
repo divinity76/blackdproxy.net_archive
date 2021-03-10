@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, setloot, fastexiva, setpriority, spider, charniphila, $countitems$_potid$$number, centipede, nettle, tiger, nettle-1, poison, tarantula, iftrue, skunk, kongra, check, _pots, script, tiquanda, _potid, crocodile, carniphila, elephant, carniphila+1, _potprice, _emptypotid" />
+	<meta name="description" content="This is Script on Charniphila . Pls check .  
+fastExiva _pots = 200 
+fastExiva _potid = 0C 01 
+fastExiva _potprice = 50 
+fastExiva _emptypotid = 1D 01 
+setPriority Carniphila:+1 
+setMeleeKill crocodile 
+setMeleeKill Carniphila 
+setMeleeKill kongra 
+setMeleeKill Elephant" />
+	
+	<title> Charniphila (tiquanda) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Charniphila (tiquanda)</div>
+<hr />
+<div class="pda"><a href="t-60450.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60450-Charniphila-(tiquanda)">Charniphila (tiquanda)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">roniu</div><div class="date">06-02-2013, 12:16</div></div><div class="posttext">This is Script on Charniphila . Pls check . <br />
+<br />
+fastExiva _pots = 200<br />
+fastExiva _potid = 0C 01<br />
+fastExiva _potprice = 50<br />
+fastExiva _emptypotid = 1D 01<br />
+setPriority Carniphila:+1<br />
+setMeleeKill crocodile<br />
+setMeleeKill Carniphila<br />
+setMeleeKill kongra<br />
+setMeleeKill Elephant<br />
+setMeleeKill bat<br />
+setMeleeKill Wasp<br />
+setMeleeKill Tarantula<br />
+setMeleeKill Tiger<br />
+setPriority Spit Nettle:-1<br />
+setMeleeKill Spit Nettle<br />
+setMeleeKill Spider<br />
+setMeleeKill Centipede<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Cave Rat<br />
+setMeleeKill Skunk<br />
+setLoot 3C 28<br />
+setLoot D7 0B<br />
+setLoot 0E 17<br />
+setLoot 90 0E<br />
+setLoot 29 28<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#40) Goto 44<br />
+move 32825,32723,7<br />
+move 32811,32724,7<br />
+move 32820,32712,7<br />
+move 32824,32700,7<br />
+move 32827,32683,7<br />
+move 32826,32670,7<br />
+move 32832,32655,7<br />
+move 32841,32642,7<br />
+move 32859,32633,7<br />
+move 32872,32634,7<br />
+move 32870,32653,7<br />
+move 32875,32666,7<br />
+move 32868,32678,7<br />
+move 32859,32683,7<br />
+move 32848,32694,7<br />
+move 32836,32712,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#40) Goto 44<br />
+gotoScriptLine 0<br />
+:mana<br />
+move 32825,32725,7<br />
+move 32825,32740,7<br />
+move 32800,32769,7<br />
+move 32783,32773,7<br />
+move 32773,32774,7<br />
+move 32731,32780,7<br />
+move 32694,32779,7<br />
+move 32668,32787,7<br />
+move 32631,32785,7<br />
+move 32631,32785,7<br />
+move 32629,32782,6<br />
+move 32639,32769,6<br />
+move 32638,32769,7<br />
+move 32620,32765,7<br />
+move 32626,32752,7<br />
+move 32630,32747,6<br />
+move 32631,32738,6<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$<br />
+waitX 1<br />
+sayInTrade yes<br />
+move 32626,32743,6<br />
+move 32624,32741,5<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+move 32628,32742,5<br />
+move 32626,32742,6<br />
+move 32626,32745,6<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+move 32630,32754,7<br />
+move 32621,32770,7<br />
+move 32619,32772,6<br />
+move 32630,32785,6<br />
+move 32632,32785,7<br />
+move 32657,32786,7<br />
+move 32681,32784,7<br />
+move 32719,32785,7<br />
+move 32754,32784,7<br />
+move 32792,32784,7<br />
+move 32815,32765,7<br />
+move 32818,32760,7<br />
+move 32824,32740,7<br />
+move 32826,32725,7<br />
+gotoScriptLine 0<br />
+<br />
+When u Find Bug Pls Fix ;)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="updated, important, trueloginport3=7171, preferedloginport=7171, trueloginport4=7171, &amp;h1000, &amp;h39380, trueloginport2=7171, trueloginport5=7172, highest_bp_id=15, $expleft$, trueloginserver2=server2.tibia.com, tileid_grasscouldbehole=25, addresses, trueloginserver3=tibia1.cipsoft.com, trueloginserver1=server.tibia.com, &amp;h5a000, level, trueloginserver4=tibia2.cipsoft.com, trueloginport1=7171, tileid_backpack=36, grass, levelspy_below=&amp;h4b0904, tileid_woodenstairstoup=a6, stairs, wooden, tileid_oracle=ef, tileid_rope=bb, tileid_shovel=81, tileid_ramptoleftcycmountain=a0, ramps, tileid_ramptosouth=a2, levelspy_above=&amp;h4b08fc, tileid_ramptonorth=a4, tileid_fishingrod=14, tileid_ramptorightcycmountain=9e, tileid_bag=25, timerinterval=300, newautohealforpkattack=75, [cavebot], kopia, ctemovedelay=700, timetogivetrapalarm=45000, blockoption=1, allowrepositionatstart=1, setveryfriendly_noattacktimer_ms=10000, tibiaexepath=cuserstonydesktoptibia7.7, preferedloginserver=tibia1.cipsoft.com, multiclientbyte2=&amp;h90, multiclientbyte1=&amp;h90" />
+	<meta name="description" content="Hellu, just noticed about the new cheat you made Daniel. I would like to have it working for 7.72 but I cant manage to get the new addresses working. 
+ 
+I've found HP, MaxHP and currentMana addresses via cheatengine. 
+ 
+HP: 05C6848 
+maxHP: 5C6844 
+mana: 5C682C 
+maxMana: ? 
+ 
+Not sure how to make it work, the program asks for a &quot;long&quot; variable type and not a string when I input them. Would love if anyone could make it work." />
+	
+	<title> Make &quot;Safer Tibian&quot; 7.72 compatible. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-14.html">Old tools for Tibia 10.99 and below</a> &gt; <a href="f-94.html">Safer  Tibian</a> &gt;  Make &quot;Safer Tibian&quot; 7.72 compatible.</div>
+<hr />
+<div class="pda"><a href="t-60269.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60269-Make-quot-Safer-Tibian-quot-7-72-compatible">Make &quot;Safer Tibian&quot; 7.72 compatible.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">04-15-2013, 21:07</div></div><div class="posttext">Hellu, just noticed about the new cheat you made Daniel. I would like to have it working for 7.72 but I cant manage to get the new addresses working.<br />
+<br />
+I've found HP, MaxHP and currentMana addresses via cheatengine.<br />
+<br />
+HP: 05C6848<br />
+maxHP: 5C6844<br />
+mana: 5C682C<br />
+maxMana: ?<br />
+<br />
+Not sure how to make it work, the program asks for a &quot;long&quot; variable type and not a string when I input them. Would love if anyone could make it work.<br />
+<br />
+Regards</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">04-16-2013, 11:25</div></div><div class="posttext">you can get all address from blackd proxy config772\config.ini<br />
+However I think soulpoints didn't exist in Tibia 7.72 so you might have to find an address that always contain zero.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">04-16-2013, 13:00</div></div><div class="posttext">Ah, ok. I was looking at the 772 config.ini but I didn't really find any of those addresses. Will take another look.<br />
+<br />
+edit: I can't find any of those addresses. Hmm.<br />
+<br />
+ <br />
+[Proxy]<br />
+TibiaVersion=7.72<br />
+MAXCLIENTS=5<br />
+HIGHEST_BP_ID=15<br />
+MAXDATTILES=6000<br />
+FirstExecute=FALSE<br />
+ForwardOption=1<br />
+ShowAdvancedOptions=1<br />
+TibiaPath=<br />
+; GmStartWithThis3 redefine first 3 characters of a gm name for tests<br />
+; for example to give alarm with something that start <br />
+; with blackd, you could set it this way:<br />
+; GmStartWithThis3=bla-<br />
+GmStartWithThis3=gm -<br />
+UseCrackd=1<br />
+LoginMethod=1<br />
+[Cheats]<br />
+MapClickOption=1<br />
+LogoutIfDangerAtStart=0<br />
+RevealInvis=1<br />
+ChangeLight=1<br />
+AutoHealEnabled=1<br />
+AutoChangePKHeal=1<br />
+AutoVitaEnabled=0<br />
+AcceptSDorder=0<br />
+SDorder=fireSDnow<br />
+ColorEffects=0<br />
+LightPower=15<br />
+LowHPforAutoHeal=60<br />
+LowHPforAutoVita=70<br />
+UHretry=100<br />
+LockOnMyFloor=1<br />
+MapOnTop=1<br />
+MapUpdateIntervalInMs=1000<br />
+CheatsEnabled=1<br />
+OrderType=0<br />
+UHalarmEnabled=1<br />
+LowUHforAlarm=10<br />
+TitleExp=1<br />
+chkAutoGratz=1<br />
+txtExuraVita=exura vita<br />
+chkAutorelog=0<br />
+txtExuraVitaMana=160<br />
+ExivaExpPlace=19 : white center<br />
+txtExivaExpFormat=You need $expleft$ exp$lf$for level $nextlevel$$lf$Average session speed:$lf$$exph$ exp/h$lf$Estimated time left for level up:$lf$$timeleft$$lf$Played this session:$lf$$played$$lf$Gained this session:$lf$$expgained$ exp<br />
+tibiaTittleFormat=$charactername$ - $expleft$ exp to lv $nextlevel$ - $exph$ exp/h<br />
+BlueAuraDelay=300<br />
+RelogBackpacks=4<br />
+[AdvancedProxyOptions]<br />
+LocalLoginUseProxy=1<br />
+LocalGameUseProxy=1<br />
+ListenLoginPort=15000<br />
+ListenGamePort=16000<br />
+trueLoginServer1=server.tibia.com<br />
+trueLoginServer2=server2.tibia.com<br />
+trueLoginServer3=tibia1.cipsoft.com<br />
+trueLoginServer4=tibia2.cipsoft.com<br />
+trueLoginServer5=test.cipsoft.com<br />
+PREFEREDLOGINSERVER=server2.tibia.com<br />
+trueLoginPort1=7171<br />
+trueLoginPort2=7171<br />
+trueLoginPort3=7171<br />
+trueLoginPort4=7171<br />
+trueLoginPort5=7172<br />
+PREFEREDLOGINPORT=7171<br />
+MyPriorityID=4<br />
+TibiaPriorityID=2<br />
+[Log]<br />
+MaxLogBuffer=30000<br />
+MaxHexLines=3000<br />
+LogFullAction=1<br />
+LogFile=log.txt<br />
+AutoSelectHexAscii=1<br />
+HideHexLogIfLogDisabled=1<br />
+[MemoryAddresses]<br />
+adrPointerToInternalFPSminusH5D=&amp;H71D0CC<br />
+; + 2220 in Tibia 7.6<br />
+; 7.63 -&gt; 7.64 = - &amp;H20B0<br />
+; 7.64 -&gt; 7.65 = + &amp;H1000<br />
+; 7.65 -&gt; 7.7 = -&amp;H39380<br />
+; 7.7 -&gt; 7.71 = +&amp;H5A008<br />
+; UPDATED 7.71<br />
+MemLoginServer1=&amp;H715368<br />
+MemLoginServer2=&amp;H7153D8<br />
+MemLoginServer3=&amp;H715448<br />
+MemLoginServer4=&amp;H7154B8<br />
+MemLoginServer5=&amp;H7152F8<br />
+MemPortLoginServer1=&amp;H7153CC<br />
+MemPortLoginServer2=&amp;H71544C<br />
+MemPortLoginServer3=&amp;H7154AC<br />
+MemPortLoginServer4=&amp;H71551C<br />
+MemPortLoginServer5=&amp;H71535C<br />
+adrLastPacket=&amp;H719542<br />
+adrConnectionKey=&amp;H719D78<br />
+<br />
+adrRSA=&amp;H55B620<br />
+<br />
+; 7.7 -&gt; 7.71 = : + &amp;H59FA0<br />
+adrCharListPtr=&amp;H71C54C<br />
+adrSelectedCharIndex=&amp;H71C548<br />
+adrConnected=&amp;H71C588<br />
+<br />
+; 7.55 -&gt; 7.6 = + &amp;H2210<br />
+; 7.6 -&gt; 7.63 = + &amp;H105A08 unreliable<br />
+; 7.63 -&gt; 7.64 = - &amp;H2080<br />
+; 7.64 -&gt; 7.65 = + &amp;H1000<br />
+; 7.65 -&gt; 7.7 = -&amp;H39380<br />
+<br />
+; UPDATED 7.71<br />
+; 7.7 -&gt; 7.71 = : + &amp;H5A000<br />
+adrXgo=&amp;H5C6890<br />
+adrYgo=&amp;H5C688C<br />
+adrZgo=&amp;H5C6888<br />
+adrNum=&amp;H5C684C<br />
+adrNChar=&amp;H5C68B0<br />
+adrOutfit=&amp;H5C6910<br />
+; adrgo 7.63 -&gt; 7.64 = - &amp;H211C<br />
+; 7.64 -&gt; 7.65 = + &amp;H109C<br />
+; 7.65 -&gt; 7.7 =  ?<br />
+; 7.7 -&gt; 7.71 = + &amp;H5A000<br />
+; UPDATED 7.7<br />
+adrGo=&amp;H5C68FC<br />
+;unchanged<br />
+CharDist=&amp;H9C<br />
+SpeedDist=&amp;H88<br />
+HIGHEST_BP_ID=15<br />
+MAXDATTILES=10000<br />
+serverLogoutMessage=You have been idle for 15 minutes. You will be disconnected in one minute if you are still idle then.<br />
+tibiaclassname=tibiaclient<br />
+LEVELSPY_NOP=&amp;H4B0900<br />
+LEVELSPY_ABOVE=&amp;H4B08FC<br />
+LEVELSPY_BELOW=&amp;H4B0904<br />
+LIGHT_NOP=&amp;H4BF94B<br />
+LIGHT_AMOUNT=&amp;H4BF94E<br />
+PLAYER_Z=&amp;H5D16E8<br />
+RedSquare=&amp;H0<br />
+adrMulticlient=&amp;H4DA6E5<br />
+multiclientByte1=&amp;H90<br />
+multiclientByte2=&amp;H90<br />
+NameDist=&amp;H4<br />
+OutfitDist=&amp;H60<br />
+adrInternalFPS=&amp;H5F6DF5<br />
+NumberOfLoginServers=5<br />
+trueLoginServer1=server.tibia.com<br />
+trueLoginServer2=server2.tibia.com<br />
+trueLoginServer3=tibia1.cipsoft.com<br />
+trueLoginServer4=tibia2.cipsoft.com<br />
+trueLoginServer5=server2.tibia.com<br />
+PREFEREDLOGINSERVER=tibia1.cipsoft.com<br />
+trueLoginPort1=7171<br />
+trueLoginPort2=7171<br />
+trueLoginPort3=7171<br />
+trueLoginPort4=7171<br />
+trueLoginPort5=7172<br />
+PREFEREDLOGINPORT=7171<br />
+TibiaExePath=C:\Users\Tony\Desktop\Tibia7.7 - Kopia<br />
+[Cavebot]<br />
+NewAutohealForPKattack=75<br />
+TimerInterval=300<br />
+CteMoveDelay=700<br />
+TimeToGiveTrapAlarm=45000<br />
+SetVeryFriendly_NOATTACKTIMER_ms=10000<br />
+AllowRepositionAtStart=1<br />
+BlockOption=1<br />
+MAX_LOCKWAIT=30000<br />
+[Runemaker]<br />
+ChkDangerSound=1<br />
+ChkCloseSound=1<br />
+[Tools]<br />
+InspectTileIDs=0<br />
+[tileIDs]<br />
+tileID_Blank=D4 08<br />
+tileID_SD=DC 08<br />
+tileID_HMM=7E 0C<br />
+tileID_Explosion=80 0C<br />
+tileID_IH=50 0C<br />
+tileID_UH=58 0C<br />
+tileID_Bag=25 0B<br />
+tileID_Backpack=36 0B<br />
+tileID_Oracle=EF 07<br />
+tileID_FishingRod=14 0A<br />
+tileID_Rope=BB 0B<br />
+tileID_Shovel=81 0D<br />
+;ramps - updated<br />
+tileID_rampToRightCycMountain=9E 07<br />
+tileID_rampToLeftCycMountain=A0 07<br />
+tileID_rampToSouth=A2 07<br />
+tileID_rampToNorth=A4 07<br />
+;grass - important<br />
+tileID_grassCouldBeHole=25 01<br />
+; wooden stairs to up - important<br />
+tileID_woodenStairstoUp=A6 07<br />
+;not important for new version<br />
+tileID_ladderToUp=89 07<br />
+tileID_holeInCelling=80 01<br />
+tileID_grassCouldBeHole=25 01<br />
+tileID_stairsToUp=88 07<br />
+tileID_pitfall=26 01<br />
+tileID_openHole=44 02<br />
+tileID_OpenDesertLooseStonePile=51 02<br />
+tileID_trapdoor=71 01<br />
+tileID_down1=72 01<br />
+tileID_openHole2=7F 01<br />
+tileID_trapdoor2=98 01<br />
+tileID_down2=99 01<br />
+tileID_stairsToDownKazordoon=9A 01<br />
+tileID_stairsToDownThais=9B 01<br />
+tileID_trapdoorKazordoon=AB 01<br />
+tileID_down3=AC 01<br />
+tileID_stairsToDown=AD 01<br />
+tileID_stairsToDown2=B0 01<br />
+tileID_woodenStairstoDown=B1 01<br />
+tileID_rampToDown=CB 01<br />
+tileID_sewerGate=AE 01<br />
+tileID_closedHole=43 02<br />
+tileID_desertLooseStonePile=50 02<br />
+;FOOD<br />
+tileID_firstFoodTileID=6A 0A<br />
+tileID_lastFoodTileID=EC 0A<br />
+tileID_firstMushroomTileID=8B 0E<br />
+tileID_lastMushroomTileID=8F 0E<br />
+;fields<br />
+tileID_firstFieldRangeStart=46 08<br />
+tileID_firstFieldRangeEnd=4F 08<br />
+tileID_secondFieldRangeStart=53 08<br />
+tileID_secondFieldRangeEnd=5A 08<br />
+tileID_walkableFire1=48 08<br />
+tileID_walkableFire2=4D 08<br />
+tileID_walkableFire3=55 08<br />
+;inside depot container updated <br />
+tileID_depotChest=AE 0D<br />
+;water<br />
+tileID_waterEmpty=01 12<br />
+tileID_waterEmptyEnd=06 12<br />
+<br />
+tileID_waterWithFish=EA 01<br />
+tileID_waterWithFishEnd=EC 01<br />
+<br />
+tileID_campFire1=D0 07<br />
+tileID_campFire2=CE 07<br />
+tileID_flask=3A 0B<br />
+byteMana=&amp;H7<br />
+byteNothing=&amp;H0<br />
+tileID_desertRamptoUp=A8 07<br />
+tileID_WallBugItem=4E 10<br />
+AditionalStairsToUpFloor=AC 07,AE 07,AA 07,94 08,96 08,90 08,92 08<br />
+AditionalStairsToDownFloor=<br />
+AditionalRequireRope=<br />
+AditionalRequireShovel=<br />
+tileID_fireball=75 0C<br />
+tileID_stalagmite=6B 0C<br />
+tileID_icicle=56 0C<br />
+tileID_LightRope=86 02<br />
+tileID_LightShovel=4E 16<br />
+tileID_blockingBox=A5 09<br />
+tileID_jungleStairsToNorth=B9 07<br />
+tileID_jungleStairsToLeft=BA 07<br />
+tileID_health_potion=0A 01<br />
+tileID_strong_health_potion=EC 00<br />
+tileID_great_health_potion=EF 00<br />
+tileID_small_health_potion=C4 1E<br />
+tileID_mana_potion=0C 01<br />
+tileID_strong_mana_potion=ED 00<br />
+tileID_great_mana_potion=EE 00<br />
+tileID_ultimate_health_potion=DB 1D<br />
+tileID_great_spirit_potion=DA 1D<br />
+byteLife=&amp;HB<br />
+[Hotkeys]<br />
+HotkeysActivated=1<br />
+RepeatEnabled=1<br />
+RepeatDelay=500<br />
+<br />
+<br />
+This is the 772 config and I can't find any of those x)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">06-14-2015, 10:49</div></div><div class="posttext">I think soulpoints didn't exist in Tibia 7.72 Actually, soul points were introduced in 7.5 :p</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

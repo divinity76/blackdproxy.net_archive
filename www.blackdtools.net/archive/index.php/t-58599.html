@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="$mycap$number, setloot, [script, iftrue, depot, waypoints], droploot, health, potions" />
+	<meta name="description" content="Ive been trying to get this droploot script to work but I just cant seem to figure it out, I looked at a few other posts but could'nt get it working. Ive tryed reset loot &lt;all my setloot IDS&gt; then drop loot &lt;and all my ids&gt; and ive tryed other variations but just cant get anything to work. Im hunting at mintwallin and if i would have to drop the loot manually it would take so much time! I just want it to drop certain loot items whenever im below sayyy 100 cap? thanks so much if anyone could" />
+	
+	<title> DropLoot still dont work! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  DropLoot still dont work!</div>
+<hr />
+<div class="pda"><a href="t-58599.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58599-DropLoot-still-dont-work!">DropLoot still dont work!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">loganh</div><div class="date">08-05-2012, 00:00</div></div><div class="posttext">Ive been trying to get this droploot script to work but I just cant seem to figure it out, I looked at a few other posts but could'nt get it working. Ive tryed reset loot &lt;all my setloot IDS&gt; then drop loot &lt;and all my ids&gt; and ive tryed other variations but just cant get anything to work. Im hunting at mintwallin and if i would have to drop the loot manually it would take so much time! I just want it to drop certain loot items whenever im below sayyy 100 cap? thanks so much if anyone could figure this out</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">loganh</div><div class="date">08-10-2012, 05:51</div></div><div class="posttext">nobody can help with this? :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sharpie</div><div class="date">08-21-2012, 21:00</div></div><div class="posttext">I use this all the time to loot health potions but NOT put them into the depot when I get back. Heres what I do: <br />
+<br />
+<br />
+setLoot [all loot id's, etc]<br />
+[script waypoints]<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:droploot$<br />
+gotoScriptLine 0<br />
+:droploot<br />
+resetLoot<br />
+[waypoints to walk to your drop point]<br />
+setLoot [ALL ID'S OF ITEMS YOU WANT TO DROP] <br />
+dropLootOnGround<br />
+resetLoot<br />
+[waypoints to walk to your beginning again]<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+For example, say you're looting energy rings and gold. You want to drop the rings but keep the gold. It would look something like this:<br />
+<br />
+#energy ring<br />
+setLoot EB 0B<br />
+#gold<br />
+setLoot D7 0B<br />
+[moving through waypoints]<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:droploot$<br />
+gotoScriptLine 0<br />
+:droploot<br />
+resetLoot<br />
+setLoot EB 0B<br />
+[moved to drop zone]<br />
+dropLootOnGround<br />
+Rings are now on the ground.<br />
+resetLoot<br />
+[walk to beginning of waypoints]<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+If you have issues still, just post your script and let me take a look at it. It shouldn't be too difficult</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

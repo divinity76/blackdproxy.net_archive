@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, waitx, fastexiva, setmeleekill, sayintrade, saymessage, exiva, iftrue, goto, food, 32050,32160,9, 32110,32206,6, 32059,32171,9, 32060,32173,8, 32050,32158,10, hunt, 32110,32208,7, 32060,32174,7, gotoscriptline, loggs, main, setloot, $mycap$number, rook, 32050,32155,11, 32097,32213,7, $nlineoflabelbuy$, $mycap$number=3000, 0d$$, $numbertohex1$countitemsf9, buy54, trade, 32107,32206,6, buyc8, 32061,32173,7, 32061,32184,7, tradec8, 32023,32148,11, 32117,32190,8, $hex-tibiastrhi$, $hex-tibiastrdeposit, all$, 32096,32191,8, 32096,32190,7, 32047,32155,11, 32050,32156,10, 32055,32164,9, 32059,32172,8, $hex-tibiastryes$, $hex-tibiastrbye$" />
+	<meta name="description" content="Logg in and start the cavebot and do not touch anything untill it loggs out itself. Its one of wiotkis scripts, since every rook to main got a bug by food selling, this one works 100%! 
+ 
+Skips turtorial, sells food, buy eq and hunt till lvl 8 and loggs out!: 
+ 
+onGMpause 
+setBot OldLootMode=1 
+waitX 1 
+fastExiva &lt; B4 11 $hex-tibiastr:Script Made By Wiotki, edited by chualo$ 
+waitX 1 
+fastExiva &lt; B4 11 $hex-tibiastr:All Rights reserved.$" />
+	
+	<title> Perfect Rook to Main 8.5 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Perfect Rook to Main 8.5</div>
+<hr />
+<div class="pda"><a href="t-44102.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?44102-Perfect-Rook-to-Main-8-5">Perfect Rook to Main 8.5</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Friday</div><div class="date">09-02-2009, 19:09</div></div><div class="posttext">Logg in and start the cavebot and do not touch anything untill it loggs out itself. Its one of wiotkis scripts, since every rook to main got a bug by food selling, this one works 100%!<br />
+<br />
+Skips turtorial, sells food, buy eq and hunt till lvl 8 and loggs out!:<br />
+<br />
+<br />
+onGMpause<br />
+setBot OldLootMode=1<br />
+waitX 1<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Script Made By Wiotki, edited by chualo$<br />
+waitX 1<br />
+fastExiva &lt; B4 11 $hex-tibiastr:All Rights reserved.$<br />
+move 32023,32273,7<br />
+move 32025,32273,6<br />
+move 32032,32273,6<br />
+sayMessage exiva &gt; A2 $hex-idofname:santiago$<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade skip tutorial<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayMessage exiva &gt; A2 00 00 00 00<br />
+waitX 2<br />
+fastExiva &gt; 0F 00 78 FF FF 06 00 00 68 0B 00 61 7D DB 7D 07 01<br />
+waitX 2<br />
+fastExiva &gt; 0A 00 82 FF FF 03 00 00 25 0B 00 00<br />
+waitX 2<br />
+IfTrue ($myexp$#number&gt;=#200) Goto $nlineoflabel:hunt$<br />
+waitX 2<br />
+IfTrue ($mycap$#number&gt;=#30000) Goto $nlineoflabel:food$<br />
+:food<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Food Collecting...$<br />
+setMeleeKill Deer<br />
+setMeleeKill Rabbit<br />
+setMeleeKill Sheep<br />
+setMeleeKill Pig<br />
+setLootOn<br />
+setLoot F9 0D<br />
+move 32087,32216,7<br />
+move 32079,32216,7<br />
+fastExiva &gt; 0A 00 82 4E 7D D8 7D 07 81 08 01 01<br />
+move 32071,32215,7<br />
+move 32074,32219,7<br />
+fastExiva &gt; 0A 00 82 4A 7D DC 7D 07 83 08 02 01<br />
+move 32075,32233,7<br />
+move 32084,32239,7<br />
+move 32096,32213,7<br />
+move 32113,32241,7<br />
+move 32110,32248,7<br />
+move 32098,32246,7<br />
+move 32097,32213,7<br />
+IfTrue ($mycap$#number&lt;=#3000) Goto $nlineoflabel:sell$<br />
+gotoScriptLine 24<br />
+:sell<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Selling Food ...$<br />
+setMeleeKill Rat<br />
+move 32082,32193,7<br />
+move 32070,32197,7<br />
+move 32067,32204,7<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 7B F9 0D 00 $numbertohex1:{$countitems:F9 0D$}$<br />
+waitX 2<br />
+sayInTrade bye<br />
+IfTrue ($mycap$#number&gt;=#3000) Goto $nlineoflabel:buy$<br />
+IfTrue ($mycap$#number&lt;=#3000) Goto $nlineoflabel:sell$<br />
+:buy<br />
+fastExiva &lt; B4 11 $hex-tibiastr:EQ Buying...$<br />
+move 32082,32192,7<br />
+move 32080,32182,7<br />
+move 32080,32182,7<br />
+move 32100,32204,7<br />
+move 32107,32203,7<br />
+fastExiva &gt; 0F 00 78 FF FF 06 00 00 D7 0B 00 FF FF 40 00 00 32<br />
+waitX 2<br />
+fastExiva &gt; 0F 00 78 FF FF 06 00 00 D7 0B 00 FF FF 40 00 00 32<br />
+waitX 2<br />
+fastExiva &gt; 0F 00 78 FF FF 05 00 00 C6 0C 00 6B 7D CB 7D 07 01<br />
+waitX 2<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade tradeC8 0C<br />
+waitX 2<br />
+saymessage exiva buy:C8 0C:1<br />
+exiva &gt; 78 FF FF 0A 00 00 C8 0C 00 FF FF 06 00 00 01<br />
+move 32110,32208,7<br />
+move 32110,32206,6<br />
+move 32107,32206,6<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+saymessage exiva buy:54 0D:1<br />
+waitX 2<br />
+sayInTrade bye<br />
+move 32110,32206,6<br />
+:hunt<br />
+move 32110,32208,7<br />
+move 32061,32184,7<br />
+move 32061,32173,7<br />
+move 32060,32173,8<br />
+move 32059,32171,9<br />
+move 32050,32160,9<br />
+move 32050,32158,10<br />
+move 32050,32155,11<br />
+setMeleeKill rat<br />
+setMeleekill bug<br />
+setFollow<br />
+setLoot D7 0B<br />
+:cave<br />
+move 32046,32158,11<br />
+move 32039,32158,11<br />
+move 32031,32150,11<br />
+move 32023,32148,11<br />
+move 32016,32143,11<br />
+move 32004,32139,11<br />
+move 31996,32132,11<br />
+move 31986,32137,11<br />
+move 31981,32139,11<br />
+move 31986,32151,11<br />
+move 31987,32171,11<br />
+move 32000,32175,11<br />
+move 32010,32168,11<br />
+move 32025,32159,11<br />
+move 32046,32157,11<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#600) Goto $nlineoflabel:dp$<br />
+gotoScriptLine $nlineoflabel:cave$<br />
+:dp<br />
+sayMessage Exiva &lt; B4 11 $hex-tibiastr:going to the dp$<br />
+setMeleeKill rat<br />
+move 32047,32155,11<br />
+move 32050,32156,10<br />
+move 32055,32164,9<br />
+move 32059,32172,8<br />
+move 32060,32174,7<br />
+move 32096,32190,7<br />
+move 32096,32191,8<br />
+move 32117,32190,8<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:bye$<br />
+IfTrue ($myexp$#number&gt;=#4200) Goto $nlineoflabel:logout$<br />
+setMeleeKill rat<br />
+move 32097,32191,8<br />
+move 32098,32191,7<br />
+move 32084,32191,7<br />
+move 32061,32180,7<br />
+move 32060,32174,7<br />
+move 32060,32173,8<br />
+move 32059,32171,9<br />
+move 32050,32160,9<br />
+move 32050,32158,10<br />
+move 32050,32155,11<br />
+gotoScriptLine 88<br />
+:logout<br />
+waitX 1<br />
+sayMessage exiva close</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Elaine</div><div class="date">09-04-2009, 17:33</div></div><div class="posttext">not too convinced, i ended up losing my weapon for some reason</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Friday</div><div class="date">09-04-2009, 18:41</div></div><div class="posttext">Ive botted 6 characters without any problems..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">eachziN</div><div class="date">09-10-2009, 03:31</div></div><div class="posttext">i will try =))</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tabasco</div><div class="date">09-10-2009, 14:21</div></div><div class="posttext">Hey, thanks for script but...<br />
+Why my char is doing nothing, except killing rabbits and sheeps ????<br />
+<br />
+Char is going in one way all the script time.<br />
+<br />
+Thanks for scripts like that =\</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pajkzor</div><div class="date">09-11-2009, 17:54</div></div><div class="posttext">Yeah, guy is right this script is bugged as hell, try to fix it please.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Friday</div><div class="date">09-13-2009, 23:49</div></div><div class="posttext">Well, i never saw it by myself.. Its running a long time the same roads for sheeps and rabbits, i know. But i put this on before i go to sleep and next morning i got a lvl 8 char.. Cant help you guys, just thought it were good!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sirpollo</div><div class="date">09-25-2009, 00:39</div></div><div class="posttext">done 4 chars... 3 worked correctly but 1 got buged when it talked to the weapon npc it didint bought the rapier =/ and couldnt make it work again <br />
+so had to manual that =/<br />
+<br />
+<br />
+It collect meats, then sell them, buy wooden shield, buy rapier and it goes to rats all the way to lvl 8.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tygandil</div><div class="date">10-08-2009, 19:37</div></div><div class="posttext">if u make an acript for lvl up say this<br />
+and if u make an script for take moeny selling meat say this :D:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Friday</div><div class="date">10-08-2009, 19:48</div></div><div class="posttext">Its not perfect as i said i know it now, cuz it happen to me, too. But somehow it works mostly and be thankfull to get this. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">10-08-2009, 20:26</div></div><div class="posttext">It worked like in like 90% of the chars I passed to main. I know it's hard ( REALLY ) but if you could add something like this would be nice:<br />
+You change in the script a number, like 1 (sorc), 2(druid), 3 (knight) and 4 (pally), then it'll hunt as it already does but it would talk to the statue then to the right NPC, after that it collects the EQ on the vocation room and hunt in the IOD cave until lvl 9, then it walks to the boat, talk to the captain and go to thais.<br />
+I know nobody will do it but..... the idea is here xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jokerrlx</div><div class="date">10-30-2009, 14:36</div></div><div class="posttext">Its Really good...it worked perfectly until now ^^...but you need be patience, let the bot work, he will hunt rabbit and deers for 30 45 min.<br />
+after this he will buy EQ and go hunt rats! :D<br />
+I really like this script!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marcus</div><div class="date">11-10-2009, 01:01</div></div><div class="posttext">Awesome script sir.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bebbzor</div><div class="date">11-11-2009, 18:56</div></div><div class="posttext">So.. i started it, it first killed rats and shit to 3 cap and bought wooden shield (some error while it was buying rapier so i had to do that manual..) and when i went down in the cave it went ape and said &quot;under pk atk&quot; and the alarm started..<br />
+<br />
+So i had to go to stop alarms but now its working, hunting rats. tyty</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RaPoZaUm</div><div class="date">10-25-2010, 18:21</div></div><div class="posttext">So, is this working nowadays?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

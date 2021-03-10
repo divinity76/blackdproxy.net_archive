@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, command, north, mwall, making, mistake, shooting, gameclient1, handle, hours, @blackd" />
+	<meta name="description" content="The power of the new experimental commands (avaiable for test since 9.032) are yet to be discovered. 
+  
+You can use them to build your own cheats and automate things that you could not do with anything else before. 
+  
+For example, to talk to trade channel, if you log packets in proxy menu, you will see the packets looks like this test, where we wrote ... (2E 2E 2E): 
+  
+GAMECLIENT1&gt;( hex ) 09 00 96 05 05 00 03 00 2E 2E 2E  
+  
+So after some research you get to see that it is a about a header," />
+	
+	<title> How to use: exiva &gt; [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-23.html">1. Cheats</a> &gt;  How to use: exiva &gt;</div>
+<hr />
+<div class="pda"><a href="t-1313.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?1313-How-to-use-exiva-gt">How to use: exiva &gt;</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-24-2006, 01:06</div></div><div class="posttext">The power of the new experimental commands (avaiable for test since 9.032) are yet to be discovered.<br />
+ <br />
+You can use them to build your own cheats and automate things that you could not do with anything else before.<br />
+ <br />
+For example, to talk to trade channel, if you log packets in proxy menu, you will see the packets looks like this test, where we wrote ... (2E 2E 2E):<br />
+ <br />
+GAMECLIENT1&gt;( hex ) 09 00 96 05 05 00 03 00 2E 2E 2E <br />
+ <br />
+So after some research you get to see that it is a about a header, a 96 05 05 00 , and a string in hex values, so you can build your own cheat there to talk in trade channel:<br />
+ <br />
+exiva &gt; 96 05 05 00 $hex-tibiastr:hello$<br />
+ <br />
+(this command will say hello in trade channel)<br />
+ <br />
+Note that you should not include the header (09 00) as the own command will build it to match the length of the packet.<br />
+ <br />
+Now almost all will be scriptable. Note that this can be integrated in cavebots:<br />
+ <br />
+<br />
+<br />
+sayMessage exiva &gt; 96 05 05 00 $hex-tibiastr:selling firesword 5k thais$<br />
+wait 125<br />
+gotoScriptline 0<br />
+<br />
+ <br />
+There you have a simple trade channel spammer.<br />
+ <br />
+This is only a simple example. You can see some more in the edronbps.txt , a cavebot script that can buy you 5 bps of blanks, in edron.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">11-24-2006, 07:44</div></div><div class="posttext">Rox ty blackd</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">11-24-2006, 12:35</div></div><div class="posttext">how to move like my fire sword to weapon slot??<br />
+<br />
+I will try it if i'm back to home.....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">11-24-2006, 14:20</div></div><div class="posttext">Great, but now we have a problem... What if we just want to run... let's say 2 or more script at the same time?<br />
+<br />
+Like &quot;Trade Chat&quot; assistant script,<br />
+and <br />
+Regular Hunting Script.<br />
+<br />
+This rox, I lilke it a lot, and some new powerfull versions should come with it.<br />
+<br />
+Like new variables: How many creatures on screen, how many in upper/lower floor, etc.<br />
+<br />
+Also maybe this is the beggining to a mage-bed script. ^^ woha</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragoon</div><div class="date">11-24-2006, 18:37</div></div><div class="posttext">Talk about confusing &gt;.&gt;<br />
+<br />
+I'll experiment with it later..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-24-2006, 19:14</div></div><div class="posttext">how to move like my fire sword to weapon slot??<br />
+ <br />
+I will try it if i'm back to home.....<br />
+ <br />
+This command will move your left hand item to main backpack<br />
+exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 FF FF 03 00 00 01 <br />
+ <br />
+This old command will move a firesword to your left hand:<br />
+ <br />
+exiva #D0 0C 06<br />
+ <br />
+and yes, Fry, new commands and variables will come. This is only the start of a new generation of commands that will allow advanced scripts.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">11-24-2006, 19:39</div></div><div class="posttext">and people say NG is better pfft.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragoon</div><div class="date">11-24-2006, 19:59</div></div><div class="posttext">@ ^ have you even tried using it yet? I have gotten some hexs. well me and Tom.. Still having trouble using the $hex-tibiastr:hello$ thing tho o.o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tom</div><div class="date">11-24-2006, 20:06</div></div><div class="posttext">Well I'm going slower than a turtle I want to see everything :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragoon</div><div class="date">11-24-2006, 20:50</div></div><div class="posttext">:]]]]]]]]]]]]]]]]]]]]]]]<br />
+<br />
+http://www.blackdtools.net/showthread.php?p=7932#post7932</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BUg</div><div class="date">11-25-2006, 02:03</div></div><div class="posttext">Shouldnt this be in 'Cavebot Tutorials.'?<br />
+<br />
+I dunno:P <br />
+<br />
+<br />
+<br />
+Yours,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">11-25-2006, 09:19</div></div><div class="posttext">no because its not using the cavebot (unless you put it into a script) this is just exiva hex commands :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-26-2006, 00:44</div></div><div class="posttext">to make your own command just enable the log exactly during the action you want to record and disable it after, then search for last gameclient packet. Here is another example: the yell command<br />
+ <br />
+here I yelled some points:<br />
+ <br />
+HH:MM XXXXXXXX [XXX]: ................<br />
+ <br />
+GAMECLIENT1&gt;( hex ) 14 00 96 03 10 00 2E 2E 2E 2E 2E 2E 2E 2E 2E 2E 2E 2E 2E 2E 2E 2E <br />
+ <br />
+so the yell command is<br />
+ <br />
+exiva &gt; 96 03 $hex-tibiastr:hello$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">11-26-2006, 01:39</div></div><div class="posttext">how did you know which ones of these  14 00 96 03 10 00 were the yelling hex?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">11-26-2006, 02:00</div></div><div class="posttext">sorry for double post but i think I got a good idea.<br />
+suppose you want to make the cavebot move your firesword from hand to bp.<br />
+Then you make the script, but it would only work if you are using a firesword. And you would have to edit it for the item you are  currently using. Instead you could tell the proxy before moving the sword to bp, to copy the item's ID in left hand to a temporal memory (like a calculator) and then tell the proxy to move whatever's item ID is on the memory to the bp. That way the script would work with any item in left hand.<br />
+<br />
+hope i made myself clear</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-28-2006, 21:28</div></div><div class="posttext">yes, I will probably allow some user variables soon, maybe very soon indeed.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Leopard</div><div class="date">11-28-2006, 22:03</div></div><div class="posttext">Is this possible to send hex, that u will see something what is out of ur screen.. north/south/west/east...( ur screen will move on x side) you can see a lot of interesting things/places....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">11-29-2006, 00:26</div></div><div class="posttext">yes, I will probably allow some user variables soon, maybe very soon indeed.<br />
+<br />
+I would like to see them, I allways tought it would be easier to make scripts then. It could just be like.<br />
+<br />
+UsrVar1<br />
+UsrVar2<br />
+<br />
+etc till 9<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">11-29-2006, 07:18</div></div><div class="posttext">yeah :D<br />
+and add functions like add var1 +1 so variables can hold numerical values. Then some really cool stuff can b made with the scripts.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">11-30-2006, 06:39</div></div><div class="posttext">sorry for double post<br />
+please somebody make an in-depth tutorial of how to use this function!!!<br />
+I tried making a hotkey that when i press it it follow the last attacked and didnt work :( I was experimenting stuff for about an hour and got nothing to work :/<br />
+<br />
+EDIT: is it possible to minimize bps with the new features? this would be incredibly useful</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">11-30-2006, 12:08</div></div><div class="posttext">sorry for double post<br />
+please somebody make an in-depth tutorial of how to use this function!!!<br />
+I tried making a hotkey that when i press it it follow the last attacked and didnt work :( I was experimenting stuff for about an hour and got nothing to work :/<br />
+<br />
+EDIT: is it possible to minimize bps with the new features? this would be incredibly useful<br />
+<br />
+<br />
+1. You know how to edit (edited that post). Good, then why not edit the previous one. Ok I got it sorry, forget about it. So we realize you posted new shit. Good: point for you.<br />
+<br />
+2. You cannot follow last attacked creature cause the attack packet contains monster ID and you have to know it's id (even if you managed to knew it, Blackd hasn't variables to handle it). So that's not possible ATM. (Point for me ;P )<br />
+<br />
+3. Minimizing BPs is done by memory, not packets. So no :P (2-1)<br />
+<br />
+:P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-01-2006, 02:55</div></div><div class="posttext">hmm... I'll get you next time fry!! haha<br />
+just need a chance to score!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steeled</div><div class="date">12-02-2006, 02:27</div></div><div class="posttext">lets do a little list<br />
+ <br />
+moves:<br />
+exiva &gt; 65 - move up<br />
+exiva &gt; 66 - move right<br />
+exiva &gt; 67 - move down<br />
+exiva &gt; 68 - move left<br />
+ <br />
+says: (as you can see say is 96, and it's followed by the type)<br />
+exiva &gt; 96 01 $hex-tibiastr:hello$ - say hello<br />
+exiva &gt; 96 02 $hex-tibiastr:hello$ - say hello<br />
+exiva &gt; 96 03 $hex-tibiastr:hello$ - yell hello<br />
+ <br />
+exiva &gt; A1 $hex-idofname:scarab$ - Attack a Scarab! (exiva &gt; A1 $hex-idofname:larva$ - is not attacking larvas I dunno why (it says Target Lost... I think it's getting the ID of a larva far from me))<br />
+exiva &gt; A2 $hex-idofname:scarab$ - Follow a Scarab! (same problem as up)<br />
+ <br />
+Note from blackd: Very nice post. I must warn however that some commands only will work as intended if you have Blackd Proxy 9.06 or a higher version.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Steeled</div><div class="date">12-02-2006, 02:29</div></div><div class="posttext">1. You know how to edit (edited that post). Good, then why not edit the previous one. Ok I got it sorry, forget about it. So we realize you posted new shit. Good: point for you.<br />
+<br />
+2. You cannot follow last attacked creature cause the attack packet contains monster ID and you have to know it's id (even if you managed to knew it, Blackd hasn't variables to handle it). So that's not possible ATM. (Point for me ;P )<br />
+<br />
+3. Minimizing BPs is done by memory, not packets. So no :P (2-1)<br />
+<br />
+:P<br />
+<br />
+$hex-lastattackedid$ returns (hex) ID of last attacked creature or player<br />
+<br />
+I guess this is the command<br />
+exiva &gt; A2 $hex-lastattackedid$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tom</div><div class="date">12-02-2006, 04:20</div></div><div class="posttext">Hopefully in the future we can run scripts with the chars offline (and be able to log them in) meaning sleeper druids would be possible, But these functions are quite awesome and help a lot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-02-2006, 22:40</div></div><div class="posttext">$hex-lastattackedid$ returns (hex) ID of last attacked creature or player<br />
+<br />
+I guess this is the command<br />
+exiva &gt; A2 $hex-lastattackedid$<br />
+<br />
+Hey fry if this guy is right then our score would be 2-1 me winning :D<br />
+muahahah<br />
+<br />
+thx steeled<br />
+<br />
+EDIT: It worked!! but with this one<br />
+exiva &gt; A2 $hex-idofname:PERSON$   <br />
+I got a problem now if it's not possible then I would like it to be a proposal.<br />
+<br />
+exiva &gt; A2 $hex-idofname:$lastsender$$   &lt;---- that one doesnt work   i want it to follow the person who sent the command &quot;!follow&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">12-02-2006, 23:51</div></div><div class="posttext">exiva &gt; A2 $hex-idofname:$lastsender$$<br />
+ <br />
+this will not work as the parser will see 4 parts there:<br />
+1. exiva &gt; A2 <br />
+2. $hex-idofname:$<br />
+3. lastsender<br />
+4. $$<br />
+ <br />
+Instead of that you should do:<br />
+ <br />
+exiva &gt; A2 $hex-idofname:{$lastsender$}$<br />
+ <br />
+(THIS IS ONLY POSSIBLE IN BLACKD PROXY 9.06 OR HIGHER)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-07-2006, 23:12</div></div><div class="posttext">thx  blackd<br />
+btw can you or somebody make a tutorial about the exiva &gt; and &lt; commands and all the new variables? Like of examples of situations where they could come in handy etc.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-19-2006, 06:11</div></div><div class="posttext">please make a tutorial of how to get the right hex code cuz when I click on log packets, before I can make the action I want to get logged done and disable log packets, the little box with the packets that were logged is full of hex code.<br />
+Also examples of use of the new variables would be very nice too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lodewijk</div><div class="date">01-03-2007, 15:04</div></div><div class="posttext">Only ppl who know something about programming can understand this new option...<br />
+<br />
+@ Daniel, not everyone is as good as you are.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-03-2007, 21:43</div></div><div class="posttext">This command is only there for people that like to do advanced special things in scripts. Most people do not need to use this command at all as they only want to hunt around, loot, and drop items on ground, at max. No need to use exiva &gt; at all for that.<br />
+ <br />
+You dont need to be an expert to use 90 % of the features of Blackd Proxy, but (of course) being an expert helps to use it at 100 %</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">01-03-2007, 22:23</div></div><div class="posttext">Well some time ago I knew nothing about hex or exiva &gt;. I'm not an expert, but with patience and trying stuff to see what happens I figured out most of it's usage. ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niklas</div><div class="date">02-14-2007, 23:02</div></div><div class="posttext">:]]]]]]]]]]]]]]]]]]]]]]]<br />
+<br />
+http://www.blackdtools.net/showthread.php?p=7932#post7932<br />
+I wounder what can i do if i fishing fishes and got no longer room in my bp to to hold more fishes and it drops on the ground<br />
+<br />
+then my question is how to pick the fishes up from the ground to a backpack or something!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">02-15-2007, 00:23</div></div><div class="posttext">how to pick the fishes up from the ground to a backpack<br />
+<br />
+you use the trainer for that</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niklas</div><div class="date">02-16-2007, 06:46</div></div><div class="posttext">Thanks! dude really works</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Coke_01</div><div class="date">08-15-2007, 04:08</div></div><div class="posttext">I'm still not understanding this. by the time I do whatever I want, the thing is being spammed by numbers and letters. is there a way the hex command of what you did?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">celestian hunter</div><div class="date">10-10-2007, 17:18</div></div><div class="posttext">Im botting on chakoyas and I have crappy cap, so I need script that take 4 hams from parcel in depot to arrow slot. Its possible? If yes, can some1 make this? Im poor in scripting :&lt;<br />
+<br />
+Anyways, Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wesbot</div><div class="date">02-11-2009, 20:33</div></div><div class="posttext">Have one of this exiva &gt; Who shot exori frigo on demon, to i can use it on hotkey, to up/shot frigo/down?<br />
+<br />
+I already tried with cavebot, but doesn't work perfect, it is delay to shot frigo, so i prefer use it on hotkey, with a exiva who atk and shot frigo auto :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rdgz</div><div class="date">05-16-2016, 07:35</div></div><div class="posttext">Is it possible to set a &quot;follow the leader&quot;, or just to set a character to follow another one?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">schizzo</div><div class="date">02-22-2017, 02:23</div></div><div class="posttext">@blackd ;<br />
+<br />
+i need your help!<br />
+im trying this since 3 hours and just cant handle it ._.<br />
+please help me..<br />
+<br />
+GAMECLIENT1&gt;( hex ) 11 00 83 FF FF 40 00 02 6C 0C 02 B6 01 10 01 07 A3 11 00 <br />
+<br />
+thats the hex of shooting a mwall 1sqm north of me<br />
+<br />
+how can i turn it into a exiva command ? im trying and trying and nothing happens, but i feel its quite easy and im just making some dumb mistake... :/<br />
+<br />
+Please help me !</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

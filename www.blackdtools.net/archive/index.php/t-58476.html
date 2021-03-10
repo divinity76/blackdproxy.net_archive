@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="future, worry, hurry, answer, gonna, statusbits, paralyze, things, detected, similar, proxy, blackd" />
+	<meta name="description" content="First of all you should understand that Tibia have 16 status bits. Each bit can be 0 or 1. If you have that status then the value is 1, else the value is 0 
+If you don't have any special status then the status bits array would be 0000000000000000 
+How to check a single bit? 
+$statusbit:x$ 
+How to check first bit? 
+$statusbit:1$ 
+How to check second bit? 
+$statusbit:2$ 
+... 
+How to check the last bit?" />
+	
+	<title> Anti paralyze and other things you can do with statusbits [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-42.html">13. Conditional Events</a> &gt;  Anti paralyze and other things you can do with statusbits</div>
+<hr />
+<div class="pda"><a href="t-58476.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58476-Anti-paralyze-and-other-things-you-can-do-with-statusbits">Anti paralyze and other things you can do with statusbits</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-15-2012, 15:15</div></div><div class="posttext">First of all you should understand that Tibia have 16 status bits. Each bit can be 0 or 1. If you have that status then the value is 1, else the value is 0<br />
+If you don't have any special status then the status bits array would be 0000000000000000<br />
+How to check a single bit?<br />
+$statusbit:x$<br />
+How to check first bit?<br />
+$statusbit:1$<br />
+How to check second bit?<br />
+$statusbit:2$<br />
+...<br />
+How to check the last bit?<br />
+$statusbit:16$<br />
+<br />
+Now... the meaning of each bit:<br />
+<br />
+bit 1 = You may not logout during a fight<br />
+bit 2 = You are hasted<br />
+bit 3 = You are paralysed<br />
+bit 4 = You are protected by a magic shield<br />
+bit 5 = You are drunk<br />
+bit 6 = You are electrified<br />
+bit 7 = You are burning<br />
+bit 8 = You are poisoned<br />
+bit 9 = You are bleeding<br />
+bit 10 = You are in protection zone<br />
+bit 11 = You may not logout or enter a protection zone<br />
+bit 12 = You are strengthened<br />
+bit 13 = You are cursed<br />
+bit 14 = You are dazzled<br />
+bit 15 = You are freezing<br />
+bit 16 = You are drowning<br />
+<br />
+Note: This guide is valid since Tibia 7.73. Older versions only have bits 1-8 and bits have a different meaning there.<br />
+<br />
+Example of use:<br />
+<br />
+How to cure paralyze with exure whenever you get paralyzed:<br />
+cond1: $statusbit:3$<br />
+operator: #number=#<br />
+cond2: 1<br />
+action: exura<br />
+delay action: 400<br />
+do not execute again: 1000<br />
+<br />
+Click the image to see the settings:<br />
+7479</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-15-2012, 16:44</div></div><div class="posttext">That's a big help...That check's if your paralyzed then cast's exura to cure it, What if you want it to check when mana shield has run out and then cast utamo vita?<br />
+<br />
+<br />
+cond1: $statusbit:4$<br />
+operator: #number=#<br />
+cond2: 1<br />
+delay action: 400<br />
+do not execute again: 1000<br />
+<br />
+Would it still be the same or would it be something different?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-15-2012, 16:48</div></div><div class="posttext">That's a big help...That check's if your paralyzed then cast's exura to cure it, What if you want it to check when mana shield has run out and then cast utamo vita!?<br />
+<br />
+<br />
+How to check when mana shield has run out and then cast utamo vita:<br />
+<br />
+cond1: $statusbit:4$<br />
+operator: #number=#<br />
+cond2: 0<br />
+action: utamo vita<br />
+delay action: 400<br />
+do not execute again: 4000</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-15-2012, 16:52</div></div><div class="posttext">Thank's for the fast reply am going to test this out it will be a big help. Is it detectable?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ravhul</div><div class="date">07-15-2012, 17:32</div></div><div class="posttext">Am I able to use BSC and Proxy simultaneously without any problems? Will I remain safe?<br />
+I.E. I use BSC for longer time now and I'm satisfied but what I need is anti-paralyse function. I would not bot or so with Proxy.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-15-2012, 21:41</div></div><div class="posttext">How about Utura!? <br />
+<br />
+cond1: $statusbit:12$<br />
+operator: #number=#<br />
+cond2: 0<br />
+action: utura<br />
+delay action: 400<br />
+do not execute again: 4000<br />
+<br />
+Tested this last night and it work's perfectly thank's for the infomation daniel.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ravhul</div><div class="date">07-18-2012, 20:32</div></div><div class="posttext">Am I able to use BSC and Proxy simultaneously without any problems? Will I remain safe?<br />
+I.E. I use BSC for longer time now and I'm satisfied but what I need is anti-paralyse function. I would not bot or so with Proxy.<br />
+<br />
+Bump. I need to know if Proxy's modification of the client will get me banned if I only use conditions, i.e. anti paralyse.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-25-2012, 19:07</div></div><div class="posttext">Bump. I need to know if Proxy's modification of the client will get me banned if I only use conditions, i.e. anti paralyse.<br />
+<br />
+I am not 100% sure, but I think you won't be detected if you only use that part of blackd proxy.<br />
+Anyways maybe I will make something similar in BSC in a near future.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ravhul</div><div class="date">07-26-2012, 16:33</div></div><div class="posttext">I am not 100% sure, but I think you won't be detected if you only use that part of blackd proxy.<br />
+Anyways maybe I will make something similar in BSC in a near future.<br />
+<br />
+That would be dope! :D<br />
+Anyway I am facc now so I am not in a hurry, was just asking so I could use it in the future but if you're gonna add it to BSC in the future then I dont have worry about that :)<br />
+Thanks for you answer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RaRF</div><div class="date">09-13-2012, 09:47</div></div><div class="posttext">Omg!, This thread is one of the most useful tutorials for the bot, this is basic stuff thanks so much :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RaRF</div><div class="date">09-14-2012, 03:21</div></div><div class="posttext">I have 1 Question, which statusbit says if I'm invisible? I would like to make an utana vid conditional :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">09-14-2012, 05:24</div></div><div class="posttext">I have 1 Question, which statusbit says if I'm invisible? I would like to make an utana vid conditional :)<br />
+<br />
+For an invisible condition<br />
+<br />
+Your best picking 5 seconds prior to becoming uninvisible. Otherwise because of the randomiser you could be visible for 5-10 seconds which could end up dieing. So just set use utana vid every x seconds (randomised by 5 seconds) to ensure you don't become visible.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

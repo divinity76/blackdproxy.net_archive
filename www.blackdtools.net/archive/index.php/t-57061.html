@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="safer, advertising, banned, possibility, training, caveboting, fight, autodetection, waves, patch, blackd, proxy, actualy" />
+	<meta name="description" content="I noticed today we had a new autodetection wave. 
+How does an autodetection wave look? 
+You login in Tibia and there is small fast download bar then it enters in the game as always. 
+So, what really happened there? 
+Tibia client downloaded a new tibia.dat without changing tibia version. 
+Botters using outdated tibia.dat will be detected because they will be sending wrong packets (packets containing outdated tile info) 
+ 
+I got a solution for this since Blackd Proxy 22.2. I strongly recommend to" />
+	
+	<title> NOW SAFER: Blackd Proxy 22.2 - Patch to fight autodetection waves [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  NOW SAFER: Blackd Proxy 22.2 - Patch to fight autodetection waves</div>
+<hr />
+<div class="pda"><a href="t-57061.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57061-NOW-SAFER-Blackd-Proxy-22-2-Patch-to-fight-autodetection-waves">NOW SAFER: Blackd Proxy 22.2 - Patch to fight autodetection waves</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-17-2012, 14:52</div></div><div class="posttext">I noticed today we had a new autodetection wave.<br />
+How does an autodetection wave look?<br />
+You login in Tibia and there is small fast download bar then it enters in the game as always.<br />
+So, what really happened there?<br />
+Tibia client downloaded a new tibia.dat without changing tibia version.<br />
+Botters using outdated tibia.dat will be detected because they will be sending wrong packets (packets containing outdated tile info)<br />
+<br />
+I got a solution for this since Blackd Proxy 22.2. I strongly recommend to download/install this update.<br />
+You don't need to touch the code. Just download latest installer and reinstall.<br />
+<br />
+Anyways, for curious persons, this is the main change in the code, at the connection event:<br />
+<br />
+<br />
+     ' NEW ANTIBAN FEATURE:<br />
+     ' SINCE BLACKD PROXY 22.2, WE NOW RELOAD TIBIA.DAT AT NINJA PATCHES:<br />
+        If ((TibiaVersionLong = highestTibiaVersionLong) And (UseRealTibiaDatInLatestTibiaVersion = True)) Then<br />
+          UpdatedDATE = GetDATEOfFile(CurrentTibiaDatPath)<br />
+          If (Not (CurrentTibiaDatDATE = UpdatedDATE)) Then<br />
+            ' close the rest of clients because they would be using outdated tibia.dat other way<br />
+            closeAllTibiaClientsExcept ProcessID(tmpID)<br />
+            ' reload tibia.dat<br />
+            res = UnifiedLoadDatFile(CurrentTibiaDatPath)<br />
+            If ((res = -1) Or (res = -2)) Then<br />
+              MsgBox &quot;Non compatible tibia.dat file , error &quot; &amp; CStr(res), vbOKOnly, &quot;Problem with config&quot; &amp; CStr(TibiaVersionLong)<br />
+              End<br />
+            End If<br />
+            If (res = -3) Then<br />
+              MsgBox &quot;Too many tiles found in tibia.dat , please increase MAXDATTILES in your settings.ini&quot; &amp; CStr(res), vbOKOnly, &quot;Problem with config&quot; &amp; CStr(TibiaVersionLong)<br />
+              End<br />
+            End If<br />
+            If (res = -4) Then<br />
+              MsgBox &quot;Outstanding error -4 while reading tibia.dat: &quot; &amp; vbCrLf &amp; DBGtileError, vbOKOnly, &quot;Problem with config&quot; &amp; CStr(TibiaVersionLong)<br />
+              End<br />
+            End If<br />
+            If (res = -5) Then<br />
+              MsgBox &quot;Bug caught: &quot; &amp; vbCrLf &amp; DBGtileError, vbOKOnly, &quot;Debug report&quot;<br />
+              End<br />
+            End If<br />
+            frmMenu.Caption = &quot;Updated Tibia.dat : &quot; &amp; CStr(UpdatedDATE)<br />
+          End If<br />
+        End If<br />
+<br />
+<br />
+This update tibia.dat on the fly for the current client being connected to the game. Before that it also will close the rest of your mc clients for security reasons (to ensure everything will be using updated tibia.dat from that moment)<br />
+<br />
+Does this mean Blackd Proxy is completely safe now? I don't know. MAYBE it is now safe, but I won't guarantee that yet. In any case with this patch Blackd Proxy it is now a bit safer (it won't be sending outdated packets now)<br />
+<br />
+Anyways I will keep doing tests until I am sure it is completely safe again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">goldpot</div><div class="date">01-17-2012, 15:09</div></div><div class="posttext">hows this suppose to work</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-17-2012, 15:16</div></div><div class="posttext">hows this suppose to work<br />
+<br />
+Don't worry. You don't need to touch the code. Just download latest installer and reinstall it.<br />
+<br />
+Blackd Proxy 22.2+ will be able to detect tibia.dat ninja updates and it will also update tile info on the fly like real tibia does = no more bad packets containing outdated tiles = you will be safer.<br />
+<br />
+Future ninja patches: you won't need to download any updated version.<br />
+Future big patches: you still will need to download an updated version, but that won't be a safety problem for you because cheats won't work at all until you update Blackd Proxy.<br />
+<br />
+<br />
+Anyways, I must insist in this point: if there is any other small thing I am missing to fix then Blackd Proxy might be still unsafe. I don't know yet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-17-2012, 16:47</div></div><div class="posttext">I always wondered what the little quick download tibia client sometimes did when I tried to login.<br />
+<br />
+It doesn't always happen so I guess it is overlooked.<br />
+<br />
+Good work! Hopefully BlackDproxy will return in its true blood soon!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xRafinha</div><div class="date">01-17-2012, 19:02</div></div><div class="posttext">Damn, i logged at server save and placed my knight to train, i saw the little update but didn't really cared about it.<br />
+<br />
+<br />
+Training i only use the ant-logout freature, do you think i may be deleted?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-17-2012, 19:05</div></div><div class="posttext">Damn, i logged at server save and placed my knight to train, i saw the little update but didn't really cared about it.<br />
+<br />
+<br />
+Training i only use the ant-logout freature, do you think i may be deleted?<br />
+<br />
+I doubt it, spinning around every 15 mins won't even be related to the .dat file I would assume</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Razoor</div><div class="date">01-17-2012, 19:18</div></div><div class="posttext">Hope your right man, would love to go back to using blackdproxy!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Botter</div><div class="date">01-17-2012, 19:26</div></div><div class="posttext">Don't worry. You don't need to touch the code. Just download latest installer and reinstall it.<br />
+<br />
+Blackd Proxy 22.2+ will be able to detect tibia.dat ninja updates and it will also update tile info on the fly like real tibia does = no more bad packets containing outdated tiles = you will be safer.<br />
+<br />
+Future ninja patches: you won't need to download any updated version.<br />
+Future big patches: you still will need to download an updated version, but that won't be a safety problem for you because cheats won't work at all until you update Blackd Proxy.<br />
+<br />
+<br />
+Anyways, I must insist in this point: if there is any other small thing I am missing to fix then Blackd Proxy might be still unsafe. I don't know yet.<br />
+<br />
+<br />
+<br />
+So blackd is safe to use blackd safe cheats?¿</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-17-2012, 19:52</div></div><div class="posttext">this have no relation with Blackd Safe Cheats. Blackd Safe Cheats is always safe. It was never unsafe.<br />
+I am talking about my big bot, Blackd Proxy, the one that contains the cavebot feature.<br />
+<br />
+Will you get a ban if you played Tibia today with the outdated Blackd Proxy? <br />
+- if you did not use cavebot then I am almost sure you was NOT detected.<br />
+- If you used cavebot, then you was detected, no doubt. Anyways I think the deletion system only deletes people randomly from the list they detected. Maybe you are lucky, maybe not.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thegat</div><div class="date">01-17-2012, 20:55</div></div><div class="posttext">Hello, when i download today new version and turn bot and log into the game its okay but when i try open mc and log to another character it close first client all time when i try run 2.<br />
+When it will be fixed?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-18-2012, 00:29</div></div><div class="posttext">Hello, when i download today new version and turn bot and log into the game its okay but when i try open mc and log to another character it close first client all time when i try run 2.<br />
+When it will be fixed?<br />
+That happens to avoid that you run mc clients with outdated tibia.dat. Fix: after this happens just close everything (including blackd proxy) and load blackd proxy and tibia mcs again. Blackd Proxy won't close them now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hayashii</div><div class="date">01-18-2012, 05:05</div></div><div class="posttext">Bug !!!<br />
+non compatible tibia.dat file,error -2<br />
+<br />
+errors.txt<br />
+<br />
+<br />
+[18/01/2012 01:05:55 using version 22.2 , with config.ini v944 ] [Playing real servers] ERROR WITH FILESYSTEM OBJECT (76) : Path not found</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Botter</div><div class="date">01-18-2012, 08:17</div></div><div class="posttext">this have no relation with Blackd Safe Cheats. Blackd Safe Cheats is always safe. It was never unsafe.<br />
+I am talking about my big bot, Blackd Proxy, the one that contains the cavebot feature.<br />
+<br />
+Will you get a ban if you played Tibia today with the outdated Blackd Proxy? <br />
+- if you did not use cavebot then I am almost sure you was NOT detected.<br />
+- If you used cavebot, then you was detected, no doubt. Anyways I think the deletion system only deletes people randomly from the list they detected. Maybe you are lucky, maybe not.<br />
+<br />
+<br />
+Thanks for reply me...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-18-2012, 11:58</div></div><div class="posttext">Bug !!!<br />
+non compatible tibia.dat file,error -2<br />
+<br />
+errors.txt<br />
+<br />
+<br />
+[18/01/2012 01:05:55 using version 22.2 , with config.ini v944 ] [Playing real servers] ERROR WITH FILESYSTEM OBJECT (76) : Path not found<br />
+Something failed when trying to read tibia.dat at program files\tibia\tibia.dat<br />
+It might be a permission problem. Anyways first try reloading blackd proxy and try again. If that does not work then reinstall Blackd Proxy as admin. If that does not work then drop your windows vista/7 account security level at control panel&gt; user accounts and then restart computer.<br />
+<br />
+I forgot: please ensure you installed Tibia in default folder.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rydwan</div><div class="date">01-18-2012, 15:23</div></div><div class="posttext">BlackD won't be safe if it is still free...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Razoor</div><div class="date">01-18-2012, 15:23</div></div><div class="posttext">BlackD won't be safe if it is still free...<br />
+<br />
+That makes alot of sense.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-18-2012, 15:50</div></div><div class="posttext">BlackD won't be safe if it is still free...<br />
+<br />
+Don't worry. Blackd Proxy will continue to be free, safe or not. You can be sure of that.<br />
+If I have to sell something in the future that will be a small optional feature or a small pack of premium advantages, but there are low chances of that happening anyways.<br />
+<br />
+Bot might be safe now, but I won't know until I see my test chars surviving to several ban waves.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rydwan</div><div class="date">01-18-2012, 16:21</div></div><div class="posttext">You are right dude</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NeverX</div><div class="date">01-18-2012, 23:50</div></div><div class="posttext">Damn, I've botted with older version today xD ... Meh, I don't care since all my botting accounts are like 'newb' ones, doing some Rookie project which I hope I'll be able to open/start in screenshot section soon ... We'll se if I get deleted now :P<br />
+<br />
+Anyway, I said it before, I'll say it again ... I'm so fuckin' glad I've chosen this bot years ago and became part of community.<br />
+<br />
+I haven't really got into posting/helping till now, usually I was the one asking for help and of course I got a lot of my questions answered, and from now on after almost 3 years of straight using BlackD I'll try to answer and help every newcomer or anyone who'll need any kind of help regarding bot functions.<br />
+<br />
+Keep up the good work BlackD! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">679alex</div><div class="date">01-19-2012, 01:41</div></div><div class="posttext">Bug !!!<br />
+non compatible tibia.dat file,error -2<br />
+<br />
+errors.txt<br />
+<br />
+<br />
+[18/01/2012 01:05:55 using version 22.2 , with config.ini v944 ] [Playing real servers] ERROR WITH FILESYSTEM OBJECT (76) : Path not found<br />
+<br />
+1. Re-Install tibia in the good folder ( /c/programfile/tibia ...)<br />
+2. Then Run it once (log in) <br />
+3. Log out and make sure it is closed.<br />
+4. Run the bot and Hope \o/<br />
+<br />
+If it doesnt work i dont know why but that what i did when he did that to me and it fixed it :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hayashii</div><div class="date">01-19-2012, 02:56</div></div><div class="posttext">Thanks for all !! Now is running perfect,and thanks for the blackd ! The best bot !!!<br />
+Now im running in my char level 140 :)<br />
+NOW IS SAFE ! FUCKYEA !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-19-2012, 03:13</div></div><div class="posttext">Thanks for all !! Now is running perfect,and thanks for the blackd ! The best bot !!!<br />
+Now im running in my char level 140 :)<br />
+NOW IS SAFE ! FUCKYEA !<br />
+<br />
+It isn't 100% safe yet....<br />
+<br />
+I hope your not using cavebot when we have no idea if anything else is detectable. Oh please don't come back at banwave and complain if your deleted...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-19-2012, 13:17</div></div><div class="posttext">right... it is not really a good idea to use it in a char level 140 at this moment. As I already said, I don't know if my last fixes were enough to make it 100% safe yet. You are taking a serious risk there. I only can recommend it for low level chars at this moment. <br />
+<br />
+If Cipsoft detects you, they will delete you directly, even if you are premium.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xianghan</div><div class="date">01-19-2012, 15:20</div></div><div class="posttext">Has it not occured to you that these recent changes might be because of the tibian 15th aniversary in which something new is happening DAILY, therefore, they update tibia, DAILY?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-21-2012, 09:28</div></div><div class="posttext">there may be an other cavebot anti-detection fix coming soon :)<br />
+<br />
+Thanks for all !! Now is running perfect,and thanks for the blackd ! The best bot !!!<br />
+Now im running in my char level 140 :)<br />
+NOW IS SAFE ! FUCKYEA !<br />
+do not use cavebot with version 22.2 just yet...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheSlice</div><div class="date">01-24-2012, 23:51</div></div><div class="posttext">Damn, I've botted with older version today xD ... Meh, I don't care since all my botting accounts are like 'newb' ones, doing some Rookie project which I hope I'll be able to open/start in screenshot section soon ... We'll se if I get deleted now :P<br />
+<br />
+Anyway, I said it before, I'll say it again ... I'm so fuckin' glad I've chosen this bot years ago and became part of community.<br />
+<br />
+I haven't really got into posting/helping till now, usually I was the one asking for help and of course I got a lot of my questions answered, and from now on after almost 3 years of straight using BlackD I'll try to answer and help every newcomer or anyone who'll need any kind of help regarding bot functions.<br />
+<br />
+Keep up the good work BlackD! :)<br />
+<br />
+<br />
+I HAVE to agree with you,but including that daniel is the most nice and helpful admin of ALL bots,since always. :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-25-2012, 00:59</div></div><div class="posttext">yes,<br />
+there are small updates almost daily. However blackd proxy already do instant autoupdates in such small things so it should not be a problem.<br />
+<br />
+Now I am working on many additional fixes to avoid autodetection.<br />
+Everybody is helping with many usefull reports. Thank you!<br />
+And special thanks to Hans Henrik who is helping with the code. He have made a lot of improvements that I need to review and test before releasing the next version.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">diegoeli</div><div class="date">01-26-2012, 02:00</div></div><div class="posttext">i have a question... do you think it is safe to bot magic level?<br />
+<br />
+sorry for my noob question, i just looked in the forums and its 100% safe, the only think that is detectable is the cavebot</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kukicro</div><div class="date">01-26-2012, 10:25</div></div><div class="posttext">I was wondering that too, is it safer to skill/train on monk then using cavebot, since i'm looking for some good undetectable bot only for skilling, and then i would hunt completly manual.<br />
+And black could u tell me what bot are u using atm for or higher lvled chars, since this is not 100% secure yet, thx!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-26-2012, 12:39</div></div><div class="posttext">I was wondering that too, is it safer to skill/train on monk then using cavebot, since i'm looking for some good undetectable bot only for skilling, and then i would hunt completly manual.<br />
+And black could u tell me what bot are u using atm for or higher lvled chars, since this is not 100% secure yet, thx!<br />
+<br />
+At this moment the only bot that I can recommend for a high level char is Blackd Safe Cheats. Every user survived to all ban waves so far. <br />
+<br />
+Of course this *might* change in the future, so never read my words as a contract that grants you any compensation in case of deletion. I will never give any compensation for deletions!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kukicro</div><div class="date">01-26-2012, 13:03</div></div><div class="posttext">I know that non bot is actualy 100% safe, but just tell me is it possible that ur safer if u only use bot NO ADVERTISING OTHER BOTS for training then caveboting, or possibility to get banned is same, thx! ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-26-2012, 17:07</div></div><div class="posttext">BlackD trainer is 100% safe from what has been posted on these boards.<br />
+<br />
+Only the cavebot feature is detectable.<br />
+<br />
+For other bots go to other bots forums and ask.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">szyszek7</div><div class="date">02-13-2012, 21:59</div></div><div class="posttext">and why in BSC u wont add runemaker or mana trainer if its not detectable?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="doors, packets, server, gameclient, check, close, alredy, character, happy, opened, cavebot, amazing, required, explanation, http://www.blackdtools.com/forum/showthread.php?54377-advanced-scripters-how-to-open-doors-safely, level, detectable, today, uncheck, kinds, lines, proxy, clear, press, gameserver, works, default, typing, recorded, incoming, opening, sequence, channel" />
+	<meta name="description" content="Hi, i want to make a script but i didnt know how to make that my char open door. I have read other topics but i didnt understand.  
+ 
+What i have to do for my char open the door?? 
+ 
+That the id of the door and always is closed because required level, please help me! 
+ 
+ 
+I know that is something with the log packets in the proxy menu but i dont know which code must i selectioned and what minds!" />
+	
+	<title> Doors! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Doors!</div>
+<hr />
+<div class="pda"><a href="t-59280.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59280-Doors!">Doors!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Qetkut</div><div class="date">10-06-2012, 17:21</div></div><div class="posttext">Hi, i want to make a script but i didnt know how to make that my char open door. I have read other topics but i didnt understand. <br />
+<br />
+What i have to do for my char open the door??<br />
+<br />
+That the id of the door and always is closed because required level, please help me!<br />
+<br />
+<br />
+I know that is something with the log packets in the proxy menu but i dont know which code must i selectioned and what minds!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tytrydsdf</div><div class="date">10-07-2012, 18:40</div></div><div class="posttext">Hi, i want to make a script but i didnt know how to make that my char open door. I have read other topics but i didnt understand. <br />
+<br />
+What i have to do for my char open the door??<br />
+<br />
+That the id of the door and always is closed because required level, please help me!<br />
+<br />
+<br />
+I know that is something with the log packets in the proxy menu but i dont know which code must i selectioned and what minds!<br />
+<br />
+You have to use &quot;proxy&quot; tool:<br />
+1. press clear logs <br />
+2. go near door that u want to open and close that doors.<br />
+3. check &quot;Log Packets&quot; <br />
+4. open doors<br />
+5. uncheck &quot;Log Packets&quot;<br />
+There should be few lines with hex code<br />
+There are 2 kinds of that: <br />
+Gameserver - incoming hex from server<br />
+Gameclient - hex that you send to server<br />
+You recorded only opening doors so there will be just one Gameclient sequence.<br />
+It will look like that:<br />
+<br />
+GAMECLIENT1&gt;( hex ) 0F 00 78 4D 7E 29 7C 08 1D 01 02 4C 7E 29 7C 08 01 <br />
+You have to cut just code:<br />
+<br />
+0F 00 78 4D 7E 29 7C 08 1D 01 02 4C 7E 29 7C 08 01<br />
+<br />
+Now if you want to open doors you have just to send this code. You can check that it works by typing<br />
+<br />
+exiva &gt; 0F 00 78 4D 7E 29 7C 08 1D 01 02 4C 7E 29 7C 08 01<br />
+in default channel. Your character will open doors.<br />
+<br />
+Or if you want add it to cavebot just add this line:<br />
+<br />
+fastexiva &gt; 0F 00 78 4D 7E 29 7C 08 1D 01 02 4C 7E 29 7C 08 01<br />
+<br />
+<br />
+<br />
+<br />
+but bot will always send packets even if doors are alredy opened and that might be detectable so better use that:<br />
+http://www.blackdtools.net/showthread.php?54377-advanced-scripters-How-to-open-doors-safely</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Qetkut</div><div class="date">10-09-2012, 02:12</div></div><div class="posttext">You have to use &quot;proxy&quot; tool:<br />
+1. press clear logs <br />
+2. go near door that u want to open and close that doors.<br />
+3. check &quot;Log Packets&quot; <br />
+4. open doors<br />
+5. uncheck &quot;Log Packets&quot;<br />
+There should be few lines with hex code<br />
+There are 2 kinds of that: <br />
+Gameserver - incoming hex from server<br />
+Gameclient - hex that you send to server<br />
+You recorded only opening doors so there will be just one Gameclient sequence.<br />
+It will look like that:<br />
+<br />
+You have to cut just code:<br />
+<br />
+<br />
+Now if you want to open doors you have just to send this code. You can check that it works by typing<br />
+in default channel. Your character will open doors.<br />
+<br />
+Or if you want add it to cavebot just add this line:<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+but bot will always send packets even if doors are alredy opened and that might be detectable so better use that:<br />
+http://www.blackdtools.net/showthread.php?54377-advanced-scripters-How-to-open-doors-safely<br />
+<br />
+<br />
+Thx you for your explanation, i will try to do.<br />
+<br />
+In this case the door is always close because required level<br />
+<br />
+<br />
+Its amazing!! Today I try and the char open the door. Im very happy thx you very much!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

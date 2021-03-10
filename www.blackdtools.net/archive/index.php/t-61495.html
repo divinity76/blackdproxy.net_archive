@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="integer, memory_readlongtibiapid, check, failed, function, addresspath, totalchannels, public, myreadstringtibiapid, return, thischannelmsgcount, totallines, channelname, resetlocaltibiachatstructs, lastpartindex, debug, point, redim, debug.printintegrity, adrselector, desirederrorvalue, msgpointer, log_struct, ptrchannelname, log_selchannel, adrpath.lastjumpindex, string, adrselectedchatchannel, memory_readlongpid, tibia, channel, byref, adrfirstchatchannel, false, readcurrentaddresstibiapid, selectedchannel, iterate, preserve, parts, adrpath.baseaddress, 10.50, update, ctemaxchannels, readfinalvalue, res.lastjumpindex, res.baseaddress, integrity, ctemaxmsgsperchannel, module, adrselaux" />
+	<meta name="description" content="People used to read chat through GUI pointers at GUI structure, but I could not find it nowadays in Tibia 10.35, so I investigated an alternative way and I finally found the solution. I am sharing it for experienced programmers. If you are not an experienced programmer you still can buy a full working example for 50 euros :cool: , just contact me by email to daniel@blackdtools.com with subject &quot;BUY CHAT READER&quot; 
+ 
+- Code is VB.NET 2010 (a nice free Visual Basic editor that you can download from" />
+	
+	<title> [10.35+] Tibia Chat Reader (directly from memory) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  [10.35+] Tibia Chat Reader (directly from memory)</div>
+<hr />
+<div class="pda"><a href="t-61495.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61495-10-35-Tibia-Chat-Reader-(directly-from-memory)">[10.35+] Tibia Chat Reader (directly from memory)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-01-2014, 12:19</div></div><div class="posttext">People used to read chat through GUI pointers at GUI structure, but I could not find it nowadays in Tibia 10.35, so I investigated an alternative way and I finally found the solution. I am sharing it for experienced programmers. If you are not an experienced programmer you still can buy a full working example for 50 euros :cool: , just contact me by email to daniel@blackdtools.com with subject &quot;BUY CHAT READER&quot;<br />
+<br />
+- Code is VB.NET 2010 (a nice free Visual Basic editor that you can download from Microsoft)<br />
+<br />
+<br />
+Public Module modTibiaChatReader<br />
+    ' Designed for Tibia 10.35!<br />
+    ' Version 1.1<br />
+    ' An experienced programmer will find here all what you need to know<br />
+    ' to read Tibia full chat from memory.<br />
+<br />
+    ' Code made by Blackd (http://blackdtools.net)<br />
+    ' This module can be only be published in blackdtools.net <br />
+    ' YOU ARE NOT ALLOWED TO REPOST THIS CODE IN ANY OTHER WEB DOMAIN.<br />
+    ' However you CAN use this module in your bots or tools. That is no problem.<br />
+    ' You can also purchase the code of a full working example for VB.NET 2010 contacting Blackd.<br />
+    ' That full code costs 50 euros. You will be allowed to reuse it in your tools too.<br />
+    ' Contact email: daniel@blackdtools.com<br />
+<br />
+    Public Structure TibiaChatLine<br />
+        Public Sender As String<br />
+        Public Msg As String<br />
+        Public Level As String<br />
+        Public Time As String<br />
+        Public Channel As String<br />
+        Public Type As Byte<br />
+    End Structure<br />
+    ' We will store all chat lines here:<br />
+    Public TibiaFullChat() As TibiaChatLine<br />
+    ' We will store all available channel names here:<br />
+    Public TibiaChannelNames() As String<br />
+    ' We will store active chat channel here:<br />
+    Public SelectedChannel As String<br />
+    ' For fast checks we will also store totals here:<br />
+    Public TotalChatLines As Integer<br />
+    Public TotalChannelNames As Integer<br />
+<br />
+    ' An aux function to read Tibia strings.<br />
+    Private Function MyReadString(ByVal tibiaPID As Integer, ByVal adrString As Integer, Optional ByVal maxSize As Integer = 2048) As String<br />
+        Dim res As String<br />
+        Dim b As Byte<br />
+        Dim i As Integer<br />
+        i = 0<br />
+        res = &quot;&quot;<br />
+        Do<br />
+            b = Memory_ReadByte(tibiaPID, adrString + i, , True)<br />
+            i = i + 1<br />
+            If Not (b = 0) Then<br />
+                res = res &amp; Chr(CInt(b))<br />
+            End If<br />
+        Loop Until (b = 0) Or (i = maxSize)<br />
+<br />
+        Return res<br />
+    End Function<br />
+<br />
+    ' An aux function to init our local structs.<br />
+    Private Sub ResetLocalTibiaChatStructs()<br />
+        ReDim TibiaFullChat(0)<br />
+        TotalChatLines = 0<br />
+        SelectedChannel = &quot;&quot;<br />
+        TibiaFullChat(0).Sender = &quot;&quot;<br />
+        TibiaFullChat(0).Msg = &quot;&quot;<br />
+        TibiaFullChat(0).Level = &quot;&quot;<br />
+        TibiaFullChat(0).Time = &quot;&quot;<br />
+        TibiaFullChat(0).Channel = &quot;&quot;<br />
+        TibiaFullChat(0).Type = &amp;H0<br />
+    End Sub<br />
+<br />
+    '  LoadTibiaChatLog: It will load all the chat lines in TibiaFullChat()<br />
+    '  Only tested in Tibia 10.35<br />
+    Public Sub LoadTibiaChatLog(ByVal tibiaPID As Integer, ByVal adrChatStruct As Integer, ByVal initialJumpBytes As String)<br />
+        Const cteMaxChannels As Integer = 1000 ' just to avoid a infinite loop in case something goes wrong....<br />
+        Const cteMaxMsgsPerChannel As Integer = 100000 ' (same)<br />
+        Dim totalLines As Integer<br />
+        Dim totalChannels As Integer<br />
+        Dim thisChannelMsgCount As Integer<br />
+        Dim channelName As String<br />
+        Dim adrPos As Integer<br />
+        Dim adrSelector As Integer<br />
+        Dim adrFirstChatChannel As Integer<br />
+        Dim adrSelectedChatChannel As Integer<br />
+        Dim ptrChannelName As Integer<br />
+        Dim ptr As Integer<br />
+        Dim addr As Integer<br />
+        Dim msgPointer As Integer<br />
+        Dim jumpParts() As String<br />
+        Dim i As Integer<br />
+        Dim thisJump As Integer<br />
+        Dim lastJump As Integer<br />
+        totalLines = 0<br />
+        totalChannels = 0<br />
+        ResetLocalTibiaChatStructs()<br />
+        ' First read is a special read that do the initial translation for computers with ASRL activated (win7+)<br />
+        ' We set our last paramater of our Memory_ReadLong function to false,<br />
+        ' then it will consider the address as an relative address that needs to be translated to absolute according ASRL)<br />
+        adrPos = Memory_ReadLong(tibiaPID, adrChatStruct, , False)<br />
+        ' Debug.Print(&quot;adrPos =&quot; + Hex(adrPos))<br />
+        jumpParts = Split(initialJumpBytes, &quot;,&quot;)<br />
+        lastJump = UBound(jumpParts)<br />
+        For i = 0 To UBound(jumpParts)<br />
+            thisJump = Convert.ToInt32(jumpParts(i), 16)<br />
+            adrPos = adrPos + thisJump<br />
+            If Not (i = lastJump) Then<br />
+                adrPos = Memory_ReadLong(tibiaPID, adrPos, , True)<br />
+                If (adrPos &lt; 1000) Then<br />
+                    ' Integrity check check failed. We should stop.<br />
+                    Debug.Print(&quot;Integrity check failed at debug point 1&quot;)<br />
+                    ResetLocalTibiaChatStructs()<br />
+                    Exit Sub<br />
+                End If<br />
+            End If<br />
+        Next i<br />
+<br />
+        adrSelector = adrPos<br />
+        ' We reached the interesting zone of Tibia memory: <br />
+        ' We have a pointer to the first channel struct and <br />
+        ' 0xC bytes later, we have a pointer to the active channel struct<br />
+        adrFirstChatChannel = Memory_ReadLong(tibiaPID, adrSelector, , True)<br />
+        adrSelectedChatChannel = Memory_ReadLong(tibiaPID, adrSelector + &amp;HC, , True)<br />
+<br />
+        If (adrFirstChatChannel &lt; 1000) Then<br />
+            ' Integrity check failed. We should stop.<br />
+            Debug.Print(&quot;Integrity check failed at debug point 2&quot;)<br />
+            ResetLocalTibiaChatStructs()<br />
+            Exit Sub<br />
+        End If<br />
+        If (adrSelectedChatChannel &lt; 1000) Then<br />
+            ' Integrity check failed. We should stop.<br />
+            Debug.Print(&quot;Integrity check failed at debug point 3&quot;)<br />
+            ResetLocalTibiaChatStructs()<br />
+            Exit Sub<br />
+        End If<br />
+<br />
+        ptr = adrFirstChatChannel<br />
+        While (ptr &gt; 0)<br />
+            ' iterate through the list of channels<br />
+            ptrChannelName = Memory_ReadLong(tibiaPID, ptr + &amp;H2C, , True)<br />
+            channelName = MyReadString(tibiaPID, ptrChannelName)<br />
+            ReDim Preserve TibiaChannelNames(totalChannels)<br />
+            TibiaChannelNames(totalChannels) = channelName<br />
+            totalChannels = totalChannels + 1<br />
+            ' Check if current channel is the active chat channel<br />
+            If ptr = adrSelectedChatChannel Then<br />
+                SelectedChannel = channelName ' Update SelectedChannel<br />
+            End If<br />
+            addr = Memory_ReadLong(tibiaPID, ptr + &amp;H24, , True)<br />
+            addr = Memory_ReadLong(tibiaPID, addr + &amp;H10, , True)<br />
+            thisChannelMsgCount = 0<br />
+            While (addr &gt; 0)<br />
+                ' iterate through the list of messages for this channel<br />
+                thisChannelMsgCount = thisChannelMsgCount + 1<br />
+                ReDim Preserve TibiaFullChat(totalLines)<br />
+                TibiaFullChat(totalLines).Sender = MyReadString(tibiaPID, addr + &amp;H14)<br />
+                msgPointer = Memory_ReadLong(tibiaPID, addr + &amp;H4C, , True)<br />
+                TibiaFullChat(totalLines).Msg = MyReadString(tibiaPID, msgPointer)<br />
+                TibiaFullChat(totalLines).Level = MyReadString(tibiaPID, addr + &amp;H3C)<br />
+                TibiaFullChat(totalLines).Time = MyReadString(tibiaPID, addr + &amp;H8, 6)<br />
+                TibiaFullChat(totalLines).Channel = channelName<br />
+                TibiaFullChat(totalLines).Type = Memory_ReadByte(tibiaPID, addr + &amp;H4, , True)<br />
+                totalLines = totalLines + 1<br />
+                addr = Memory_ReadLong(tibiaPID, addr + &amp;H5C, , True)<br />
+                If thisChannelMsgCount = cteMaxMsgsPerChannel Then<br />
+                    ' Integrity check failed. We should stop.<br />
+                    Debug.Print(&quot;Integrity check failed at debug point 4&quot;)<br />
+                    ResetLocalTibiaChatStructs()<br />
+                    Exit Sub<br />
+                End If<br />
+            End While<br />
+            If totalChannels = cteMaxChannels Then<br />
+                ' Integrity check failed. We should stop.<br />
+                Debug.Print(&quot;Integrity check failed at debug point 5&quot;)<br />
+                ResetLocalTibiaChatStructs()<br />
+                Exit Sub<br />
+            End If<br />
+            ptr = Memory_ReadLong(tibiaPID, ptr + &amp;H10, , True)<br />
+        End While<br />
+        TotalChannelNames = totalChannels<br />
+        TotalChatLines = totalLines<br />
+    End Sub<br />
+<br />
+    ' FilterChatLog will read the full chat log of your desired channel.<br />
+    ' - Requires a previous call to LoadTibiaChatLog.<br />
+    ' You can skip mark symbols { } with the optional parameter removeMarks.<br />
+    Public Function FilterChatLog(ByRef channelName As String, Optional ByVal removeMarks As Boolean = False) As String<br />
+        Dim res As String<br />
+        Dim i As Integer<br />
+        Dim last As Integer<br />
+        Dim filteredLine As String<br />
+        last = TotalChatLines - 1<br />
+        res = &quot;&quot;<br />
+        For i = 0 To last<br />
+            If TibiaFullChat(i).Channel = channelName Then<br />
+                If Not (res = &quot;&quot;) Then<br />
+                    res = res &amp; vbCrLf<br />
+                End If<br />
+                If removeMarks = False Then<br />
+                    res = res &amp; TibiaFullChat(i).Msg<br />
+                Else<br />
+                    filteredLine = Replace(TibiaFullChat(i).Msg, &quot;{&quot;, &quot;&quot;)<br />
+                    filteredLine = Replace(filteredLine, &quot;}&quot;, &quot;&quot;)<br />
+                    res = res &amp; filteredLine<br />
+                End If<br />
+            End If<br />
+        Next i<br />
+        Return res<br />
+<br />
+    End Function<br />
+<br />
+    ' Reads current active Tibia chat window.<br />
+    ' Default values are ok for Tibia 10.35<br />
+    Public Function ReadTibiaChatLog(ByVal tibiaPID As Integer, Optional ByVal adrChatStruct As Integer = &amp;H9E955C, Optional ByVal initialJumpBytes As String = &quot;1C,C,6C&quot;) As String<br />
+        LoadTibiaChatLog(tibiaPID, adrChatStruct, initialJumpBytes)<br />
+        Dim res As String<br />
+        res = FilterChatLog(SelectedChannel, True)<br />
+        Return res<br />
+    End Function<br />
+End Module</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-11-2014, 01:45</div></div><div class="posttext">update for Tibia 10.50<br />
+<br />
+<br />
+<br />
+  '  LoadTibiaChatLog: It will load all the chat lines in TibiaFullChat()<br />
+    '  Valid from 10.35 to 10.5 Now based in GUIpointer!<br />
+    ' In Tibia 10.50 ...<br />
+    ' log_struct : &amp;H812BB4&gt;&amp;H40&gt;&amp;H3C<br />
+    ' log_selchannel : &amp;H812BB4&gt;&amp;H40&gt;&amp;H30&gt;&amp;H30<br />
+    Public Sub LoadTibiaChatLog(ByVal tibiaPID As Integer, ByRef log_struct As AddressPath, ByRef log_selchannel As AddressPath)<br />
+        Const cteMaxChannels As Integer = 1000 ' just to avoid a infinite loop in case something goes wrong....<br />
+        Const cteMaxMsgsPerChannel As Integer = 100000 ' (same)<br />
+        Dim totalLines As Integer<br />
+        Dim totalChannels As Integer<br />
+        Dim thisChannelMsgCount As Integer<br />
+        Dim channelName As String<br />
+        Dim adrSelector As Integer<br />
+        Dim adrFirstChatChannel As Integer<br />
+        Dim adrSelectedChatChannel As Integer<br />
+        Dim adrSelAUX As Integer<br />
+        Dim ptrChannelName As Integer<br />
+        Dim ptr As Integer<br />
+        Dim addr As Integer<br />
+        Dim msgPointer As Integer<br />
+<br />
+        totalLines = 0<br />
+        totalChannels = 0<br />
+        ResetLocalTibiaChatStructs()<br />
+<br />
+        If (log_struct.baseAddress = 0) Then<br />
+            Exit Sub<br />
+        End If<br />
+<br />
+        adrSelector = ReadCurrentAddress(tibiaPID, log_struct, -1, False)<br />
+        If ptr = -1 Then<br />
+            Debug.Print(&quot;Integrity check failed at debug point X1&quot;)<br />
+            ResetLocalTibiaChatStructs()<br />
+            Exit Sub<br />
+        End If<br />
+<br />
+        adrSelAUX = adrSelector + &amp;HC<br />
+        adrFirstChatChannel = Memory_ReadLong(tibiaPID, adrSelector, , True)<br />
+        adrSelectedChatChannel = ReadCurrentAddress(tibiaPID, log_selchannel, -1, True)<br />
+        If ptr = -1 Then<br />
+            Debug.Print(&quot;Integrity check failed at debug point X2&quot;)<br />
+            ResetLocalTibiaChatStructs()<br />
+            Exit Sub<br />
+        End If<br />
+<br />
+        ptr = adrFirstChatChannel<br />
+<br />
+        While (ptr &gt; 0)<br />
+            ' iterate through the list of channels<br />
+            ptrChannelName = Memory_ReadLong(tibiaPID, ptr + &amp;H2C, , True)<br />
+            channelName = MyReadString(tibiaPID, ptrChannelName)<br />
+            ReDim Preserve TibiaChannelNames(totalChannels)<br />
+            TibiaChannelNames(totalChannels) = channelName<br />
+            totalChannels = totalChannels + 1<br />
+            ' Check if current channel is the active chat channel<br />
+            If ptr = adrSelectedChatChannel Then<br />
+                SelectedChannel = channelName ' Update SelectedChannel<br />
+            End If<br />
+            addr = Memory_ReadLong(tibiaPID, ptr + &amp;H24, , True)<br />
+            addr = Memory_ReadLong(tibiaPID, addr + &amp;H10, , True)<br />
+            thisChannelMsgCount = 0<br />
+            While (addr &gt; 0)<br />
+                ' iterate through the list of messages for this channel<br />
+                thisChannelMsgCount = thisChannelMsgCount + 1<br />
+                ReDim Preserve TibiaFullChat(totalLines)<br />
+                TibiaFullChat(totalLines).Sender = MyReadString(tibiaPID, addr + &amp;H14)<br />
+                msgPointer = Memory_ReadLong(tibiaPID, addr + &amp;H4C, , True)<br />
+                TibiaFullChat(totalLines).Msg = MyReadString(tibiaPID, msgPointer)<br />
+                TibiaFullChat(totalLines).Level = MyReadString(tibiaPID, addr + &amp;H3C)<br />
+                TibiaFullChat(totalLines).Time = MyReadString(tibiaPID, addr + &amp;H8, 6)<br />
+                TibiaFullChat(totalLines).Channel = channelName<br />
+                TibiaFullChat(totalLines).Type = Memory_ReadByte(tibiaPID, addr + &amp;H4, , True)<br />
+                totalLines = totalLines + 1<br />
+                addr = Memory_ReadLong(tibiaPID, addr + &amp;H5C, , True)<br />
+                If thisChannelMsgCount = cteMaxMsgsPerChannel Then<br />
+                    ' Integrity check failed. We should stop.<br />
+                    Debug.Print(&quot;Integrity check failed at debug point 4&quot;)<br />
+                    ResetLocalTibiaChatStructs()<br />
+                    Exit Sub<br />
+                End If<br />
+            End While<br />
+            If totalChannels = cteMaxChannels Then<br />
+                ' Integrity check failed. We should stop.<br />
+                Debug.Print(&quot;Integrity check failed at debug point 5&quot;)<br />
+                ResetLocalTibiaChatStructs()<br />
+                Exit Sub<br />
+            End If<br />
+            ptr = Memory_ReadLong(tibiaPID, ptr + &amp;H10, , True)<br />
+        End While<br />
+        TotalChannelNames = totalChannels<br />
+        TotalChatLines = totalLines<br />
+    End Sub<br />
+<br />
+<br />
+<br />
+<br />
+Public Module modAddressPath<br />
+    Public Structure AddressPath<br />
+        Dim baseAddress As Integer<br />
+        Dim lastJumpIndex As Integer<br />
+        Dim jump() As Integer<br />
+    End Structure<br />
+    Public Function ReadAddressPath(ByVal strRawAddressPath As String) As AddressPath<br />
+        Dim res As AddressPath<br />
+        Dim parts() As String<br />
+        Dim lastPartIndex As Integer<br />
+        Dim i As Integer<br />
+        res.baseAddress = &amp;H0<br />
+        res.lastJumpIndex = -1<br />
+        ReDim res.jump(0)<br />
+        parts = Split(strRawAddressPath, &quot;&gt;&quot;)<br />
+        res.baseAddress = parts(0)<br />
+        lastPartIndex = UBound(parts)<br />
+        If lastPartIndex &gt; 0 Then<br />
+            res.lastJumpIndex = lastPartIndex - 1<br />
+            ReDim res.jump(lastPartIndex - 1)<br />
+            For i = 1 To lastPartIndex<br />
+                res.jump(i - 1) = parts(i)<br />
+            Next i<br />
+        End If<br />
+        Return res<br />
+    End Function<br />
+    Public Function ReadCurrentAddress(ByVal pid As Integer, ByRef adrPath As AddressPath, Optional ByVal desiredErrorValue As Integer = -1, Optional ByVal readFinalValue As Boolean = True) As Integer<br />
+        Dim res As Integer = 0<br />
+        If adrPath.baseAddress = 0 Then<br />
+            Return desiredErrorValue<br />
+            Exit Function<br />
+        End If<br />
+        Try<br />
+            res = Memory_ReadLong(pid, adrPath.baseAddress, , False)<br />
+            If (res = 0) Then<br />
+                Return desiredErrorValue<br />
+                Exit Function<br />
+            End If<br />
+            If adrPath.lastJumpIndex &gt;= 0 Then<br />
+                For i = 0 To adrPath.lastJumpIndex<br />
+                    ' follow the path of jumps<br />
+                    res = res + adrPath.jump(i)<br />
+                    If i = adrPath.lastJumpIndex Then<br />
+                        If readFinalValue = True Then<br />
+                            res = Memory_ReadLong(pid, res, , True)<br />
+                        End If<br />
+                    Else<br />
+                        res = Memory_ReadLong(pid, res, , True)<br />
+                    End If<br />
+                Next i<br />
+            End If<br />
+            Return res<br />
+        Catch ex As Exception<br />
+            Return desiredErrorValue<br />
+        End Try<br />
+    End Function<br />
+End Module</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

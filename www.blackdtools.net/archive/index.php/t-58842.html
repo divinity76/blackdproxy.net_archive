@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, mutated, setmeleekill, potions, potion, script, number, human, humans, start, setloot, snowmans, armor, rusty, flasks, empty, _potionid, _potionscost, $mycap$number, iftrue, _vialid, waypoints, _captogodp, mercury, slime, human+1, setpriority, priorities, setchaoticmoveson, $numericalexp$_captodp$$, ongmpause, setfriendly, setavoidfront, monsters, _potionsamount, problem, annyone, snowman, refil, amount, _captodp, config, yalahar, $hex-tibiastrwelcome, depositer, waitx, script$, buyer" />
+	<meta name="description" content="Well hello there, 
+ 
+I've tried snowmans mutated humans script but when i start it it bugs, 
+annyone around here wo can fix the problem for me?" />
+	
+	<title> dead script? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  dead script?</div>
+<hr />
+<div class="pda"><a href="t-58842.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58842-dead-script">dead script?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">rarity</div><div class="date">08-26-2012, 09:58</div></div><div class="posttext">Well hello there,<br />
+<br />
+I've tried snowmans mutated humans script but when i start it it bugs,<br />
+annyone around here wo can fix the problem for me?<br />
+<br />
+<br />
+########Made by Snowman##############<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Yalahar Mutated Humans with depositer and potion buyer script!$<br />
+waitX 3<br />
+##########################################<br />
+#############CONFIG#######################<br />
+##########################################<br />
+#put here number of amount of you potions to refil<br />
+fastExiva _potionsamount = 60<br />
+#put here number of cap to go dp<br />
+fastExiva _captodp = 300<br />
+#pu here how much does you potions cost<br />
+fastExiva _potionscost = 50<br />
+#put here ID of your potions<br />
+fastExiva _potionid = 0C 01<br />
+#put here ID of your empty potion flasks:<br />
+fastExiva _vialid = 1D 01<br />
+##########################################<br />
+##########################################<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########################################<br />
+:start<br />
+setChaoticMovesON<br />
+##########################################<br />
+onGMpause<br />
+setFriendly<br />
+######Monsters#####<br />
+setAvoidFront mutated human<br />
+setMeleeKill Mutated Human<br />
+setMeleeKill Slime<br />
+setMeleeKill Mercury Blob<br />
+setMeleeKill Acid Blob<br />
+setMeleeKill Mutated Rat<br />
+##############<br />
+####PRIORITIES####<br />
+setPriority Mutated Human:+1<br />
+############<br />
+######LOOT######<br />
+#Cash<br />
+setLoot D7 0B<br />
+#Rusty Armor<br />
+setLoot BE 22<br />
+################<br />
+###WAYPOINTS####<br />
+IfTrue ($mycap$#number&lt;=#$_captogodp$) Goto $nlineoflabel:dp$<br />
+IfTrue ($countitems:{$_potionid$}$#number&lt;=#$_potionsamount$) Goto $nlineoflabel:dp$<br />
+move 32737,31113,7<br />
+move 32730,31122,7<br />
+move 32739,31131,7<br />
+move 32740,31130,6<br />
+move 32741,31128,5<br />
+move 32741,31130,6<br />
+move 32740,31132,7<br />
+move 32734,31134,7<br />
+move 32734,31134,6<br />
+move 32734,31136,7<br />
+move 32743,31144,7<br />
+move 32742,31145,6<br />
+move 32744,31145,7<br />
+move 32752,31145,7<br />
+move 32737,31154,7<br />
+move 32727,31156,7<br />
+move 32714,31178,7<br />
+move 32698,31178,7<br />
+move 32696,31178,6<br />
+move 32700,31179,6<br />
+move 32697,31179,6<br />
+move 32698,31178,7<br />
+move 32688,31186,7<br />
+move 32696,31185,7<br />
+move 32729,31164,7<br />
+move 32727,31156,7<br />
+move 32734,31147,7<br />
+move 32728,31145,7<br />
+move 32742,31136,7<br />
+move 32731,31113,7<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Going to deposit gold, loot and refill potions.$<br />
+move 32738,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+move 32758,31112,7<br />
+move 32799,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade magician<br />
+move 32820,31104,7<br />
+move 32835,31132,7<br />
+move 32835,31142,7<br />
+move 32835,31144,6<br />
+move 32835,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32859,31206,7<br />
+move 32849,31243,7<br />
+move 32824,31249,7<br />
+##########################################<br />
+##########################################<br />
+:BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionstobuy = $countitems:{$_vialid$}$<br />
+fastExiva _cashfromvials = $numericalexp:{$countitems:{$_vialid$}*5$<br />
+fastExiva _potioncost = $numericalexp:{$_potionstobuy$}*{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp:{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+move 32829,31242,7<br />
+move 32811,31233,7<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+##########################################<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+##########################################<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32798,31246,7<br />
+move 32796,31246,6<br />
+move 32785,31244,6<br />
+putLootOnDepot<br />
+move 32786,31247,6<br />
+move 32786,31249,7<br />
+move 32802,31236,7<br />
+move 32842,31168,7<br />
+move 32835,31156,7<br />
+move 32835,31154,6<br />
+move 32835,31152,5<br />
+move 32835,31146,5<br />
+move 32835,31144,6<br />
+move 32835,31142,7<br />
+move 32804,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+move 32792,31103,7<br />
+move 32743,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade alchemist<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sharpie</div><div class="date">08-31-2012, 18:55</div></div><div class="posttext">I took out all of the exiva &lt; commands where it sends it to the client. Those things ALWAYS bug my client and crash it. And then after looking through the script, there were lots of things that had extra spaces (like in one of the IfTrue statements there was a space like $_potionsamou  nt$) which causes it to bug. And then there were some things messed up with the numericalexp commands, where there were brackets missing and a $ sign or two. I think that's all I changed. I got on one of my characters and ran it through a cycle and it worked fine. I didnt buy any potions, so I'm not sure if the &quot;sayMessage exiva sell:$_vialid$:100&quot; this type of command before so I'm not sure how to debug that. I always just use exiva &gt; commands. Run it, see if it buys potions and everything for you and if it doesn't we can debug it further. Good Luck<br />
+<br />
+<br />
+<br />
+<br />
+########Made by Snowman##############<br />
+##########################################<br />
+#############CONFIG#######################<br />
+##########################################<br />
+#put here number of amount of you potions to refill<br />
+fastExiva _potionsamount = 60<br />
+#put here number of cap to go dp<br />
+fastExiva _captodp = 1500<br />
+#put here how much does you potions cost<br />
+fastExiva _potionscost = 50<br />
+#put here ID of your potions<br />
+fastExiva _potionid = 0C 01<br />
+#put here ID of your empty potion flasks:<br />
+fastExiva _vialid = 1D 01<br />
+##########################################<br />
+##########################################<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########################################<br />
+:start<br />
+setChaoticMovesON<br />
+##########################################<br />
+onGMpause<br />
+setFriendly<br />
+######Monsters#####<br />
+setAvoidFront mutated human<br />
+setMeleeKill Mutated Human<br />
+setMeleeKill Slime<br />
+setMeleeKill Mercury Blob<br />
+setMeleeKill Acid Blob<br />
+setMeleeKill Mutated Rat<br />
+##############<br />
+####PRIORITIES####<br />
+setPriority Mutated Human:+1<br />
+############<br />
+######LOOT######<br />
+#Cash<br />
+setLoot D7 0B<br />
+#Rusty Armor<br />
+setLoot BE 22<br />
+################<br />
+###WAYPOINTS####<br />
+IfTrue ($mycap$#number&lt;=#$_captogodp$) Goto $nlineoflabel:dp$<br />
+IfTrue ($countitems:{$_potionid$}$#number&lt;=#$_potionsamount$) Goto $nlineoflabel:dp$<br />
+move 32737,31113,7<br />
+move 32730,31122,7<br />
+move 32739,31131,7<br />
+move 32740,31130,6<br />
+move 32741,31128,5<br />
+move 32741,31130,6<br />
+move 32740,31132,7<br />
+move 32734,31134,7<br />
+move 32734,31134,6<br />
+move 32734,31136,7<br />
+move 32743,31144,7<br />
+move 32742,31145,6<br />
+move 32744,31145,7<br />
+move 32752,31145,7<br />
+move 32737,31154,7<br />
+move 32727,31156,7<br />
+move 32714,31178,7<br />
+move 32698,31178,7<br />
+move 32696,31178,6<br />
+move 32700,31179,6<br />
+move 32697,31179,6<br />
+move 32698,31178,7<br />
+move 32688,31186,7<br />
+move 32696,31185,7<br />
+move 32729,31164,7<br />
+move 32727,31156,7<br />
+move 32734,31147,7<br />
+move 32728,31145,7<br />
+move 32742,31136,7<br />
+move 32731,31113,7<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+move 32738,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+waitX 1<br />
+sayInTrade yes<br />
+move 32758,31112,7<br />
+move 32799,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade magician<br />
+waitX 1<br />
+sayInTrade yes<br />
+move 32820,31104,7<br />
+move 32835,31132,7<br />
+move 32835,31142,7<br />
+move 32835,31144,6<br />
+move 32835,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32859,31206,7<br />
+move 32849,31243,7<br />
+move 32824,31249,7<br />
+##########################################<br />
+##########################################<br />
+:BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionstobuy = $countitems:{$_vialid$}$<br />
+fastExiva _cashfromvials = $numericalexp:{$countitems:{$_vialid$}$}*5$<br />
+fastExiva _potioncost = $numericalexp:{$_potionstobuy$}*{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp:{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+move 32829,31242,7<br />
+move 32811,31233,7<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+##########################################<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+##########################################<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32798,31246,7<br />
+move 32796,31246,6<br />
+move 32785,31244,6<br />
+putLootOnDepot<br />
+move 32786,31247,6<br />
+move 32786,31249,7<br />
+move 32802,31236,7<br />
+move 32842,31168,7<br />
+move 32835,31156,7<br />
+move 32835,31154,6<br />
+move 32835,31152,5<br />
+move 32835,31146,5<br />
+move 32835,31144,6<br />
+move 32835,31142,7<br />
+move 32804,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+waitX 1<br />
+sayInTrade yes<br />
+move 32792,31103,7<br />
+move 32743,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade alchemist<br />
+waitX 1<br />
+sayInTrade yes<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

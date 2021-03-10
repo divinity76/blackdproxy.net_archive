@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="number, cbytecte1, cbytenumber, redim, const, elseif, usefull, public, tibia, protobuf, testgetprotobyval, getprotobufbytesfrom4bytesnumber, arraytostringarr, 268435456, 2097152, maybe-, byval, debug.print, 16384, getprotobufbytesfrom4bytesnumberbyref, called, system, function, discovered, structure, investigation, convert, investigations, recent, bytes, subproduct" />
+	<meta name="description" content="https://tibiapf.com/showthread.php?101-dat-Structure 
+ 
+Here you can see my progress in understanding the new .dat file structure. My 4th post (Update #3) contains a basically-complete breakdown of the structure. I still have a few flags to find, and some unknown values to figure out, but, for the most part, I have the whole structure decoded." />
+	
+	<title> Tibia 11 - .dat File Structure [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - .dat File Structure</div>
+<hr />
+<div class="pda"><a href="t-62999.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62999-Tibia-11-dat-File-Structure">Tibia 11 - .dat File Structure</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Jo3Bingham</div><div class="date">10-19-2016, 21:08</div></div><div class="posttext">https://tibiapf.com/showthread.php?101-dat-Structure<br />
+<br />
+Here you can see my progress in understanding the new .dat file structure. My 4th post (Update #3) contains a basically-complete breakdown of the structure. I still have a few flags to find, and some unknown values to figure out, but, for the most part, I have the whole structure decoded.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-20-2016, 00:03</div></div><div class="posttext">Thank you for sharing. I was about to write that I already finished parsing all the properties there, obtaining same property info than what I obtained with old tibia.dat 10.98<br />
+<br />
+For me, the hardest part was solving the problem of this smart numeric language:<br />
+64 = 100<br />
+65 = 101<br />
+...<br />
+7F = 127<br />
+80 01 = 128<br />
+81 01 = 129<br />
+...<br />
+FE 01 = 254<br />
+FF 01 = 255<br />
+80 02 = 256<br />
+81 02 = 257<br />
+82 02 = 258<br />
+...<br />
+FF 02 = 383<br />
+80 03 = 384<br />
+...<br />
+80 7F = 16256<br />
+FF 7F = 16383<br />
+80 80 01 = 16384<br />
+<br />
+This is my current function to read them properly:<br />
+<br />
+<br />
+<br />
+Public Function readProtobufNumber(ByRef arr() As Byte, ByVal pos As Long, ByRef positionsRead As Long) As Long<br />
+     Dim num As Long<br />
+     Dim b1 As Byte<br />
+     Dim b2 As Byte<br />
+     Dim b3 As Byte<br />
+     Dim b4 As Byte<br />
+     Dim b5 As Byte<br />
+     On Error GoTo gotErr<br />
+     b1 = arr(pos)<br />
+     num = CLng(b1)<br />
+     If (b1 &lt; &amp;H80) Then<br />
+        positionsRead = 1<br />
+        num = CLng(b1)<br />
+     Else<br />
+        b2 = arr(pos + 1)<br />
+        num = num + (128 * (CLng(b2) - 1))<br />
+        If (b2 &lt; &amp;H80) Then<br />
+            positionsRead = 2<br />
+        Else<br />
+            b3 = arr(pos + 2)<br />
+            num = num + (16384 * (CLng(b3) - 1)) ' 16384 = 128*128<br />
+            If (b3 &lt; &amp;H80) Then<br />
+                positionsRead = 3<br />
+            Else<br />
+                b4 = arr(pos + 3)<br />
+                num = num + (2097152 * (CLng(b4) - 1)) ' 2097152 = 16384*128<br />
+                If (b4 &lt; &amp;H80) Then<br />
+                    positionsRead = 4<br />
+                Else<br />
+                    b5 = arr(pos + 4)<br />
+                    num = num + (268435456 * (CLng(b5) - 1)) ' 268435456 = 2097152*128<br />
+                    positionsRead = 5<br />
+                End If<br />
+            End If<br />
+        End If<br />
+     End If<br />
+     readProtobufNumber = num<br />
+     Exit Function<br />
+gotErr:<br />
+     readProtobufNumber = -2<br />
+End Function<br />
+<br />
+' Example: testProtobufNumber (&quot;80 80 01&quot;)<br />
+Public Sub testProtobufNumber(ByVal str As String)<br />
+    Dim arr() As String<br />
+    Dim arrb() As Byte<br />
+    Dim res As Long<br />
+    Dim i As Integer<br />
+    Dim positions As Long<br />
+    Dim tam As Long<br />
+    str = Trim$(str)<br />
+    arr = Split(str, &quot; &quot;)<br />
+    tam = UBound(arr)<br />
+    ReDim arrb(tam)<br />
+    For i = 0 To UBound(arr)<br />
+        arrb(i) = CByte(CLng(&quot;&amp;H&quot; &amp; arr(i)))<br />
+    Next i<br />
+    res = readProtobufNumber(arrb, 0, positions)<br />
+    Debug.Print str &amp; &quot; = &quot; &amp; CStr(res) &amp; &quot; (used &quot; &amp; CStr(positions) &amp; &quot; positions)&quot;<br />
+End Sub<br />
+<br />
+<br />
+Problem solved.<br />
+After understanding that, the rest should be a piece of cake.<br />
+The flags there are almost the same than Tibia 10.98. Very few differences. It is just funny game of matching tibia.dat flags with flags at new .dat<br />
+<br />
+My full parser: http://blackdtools.net/tibia11parser.txt</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jo3Bingham</div><div class="date">10-20-2016, 00:37</div></div><div class="posttext">That's an odd numerical system... Thanks for the info, though. I appreciate it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-02-2016, 13:01</div></div><div class="posttext">After some further investigation I discovered this is part of a system called protobuf.<br />
+<br />
+I also made a new VB6 function to convert a 4 bytes number into a protobuf number (the way back). It was only a subproduct of one of my recent investigations on Tibia and maybe it is not really usefull for me, however -maybe- someone will find it usefull:<br />
+<br />
+<br />
+<br />
+Public Sub getProtobufBytesFrom4BYTESNUMBER(ByRef arr() As Byte, ByVal number As Long)<br />
+    Const cte1 As Long = 128<br />
+    Const cte2 As Long = 16384 ' 128 * 128<br />
+    Const cte3 As Long = 2097152 ' 128 * 128 * 128<br />
+    Const cte4 As Long = 268435456 ' 128 * 128 * 128 * 128<br />
+    If number &lt; cte1 Then<br />
+        ReDim arr(0)<br />
+        arr(0) = CByte(number)<br />
+    ElseIf number &lt; cte2 Then<br />
+        ReDim arr(1)<br />
+        arr(1) = CByte(number \ cte1)<br />
+        number = number - (arr(1) * cte1)<br />
+        arr(0) = CByte(cte1 + number)<br />
+    ElseIf number &lt; cte3 Then<br />
+        ReDim arr(2)<br />
+        arr(2) = CByte(number \ cte2)<br />
+        number = number - (arr(2) * cte2)<br />
+        arr(1) = CByte(cte1 + (number \ cte1))<br />
+        number = number - ((arr(1) - cte1) * cte1)<br />
+        arr(0) = CByte(cte1 + number)<br />
+    ElseIf number &lt; cte4 Then<br />
+        ReDim arr(3)<br />
+        arr(3) = CByte(number \ cte3)<br />
+        number = number - (arr(3) * cte3)<br />
+        arr(2) = CByte(cte1 + (number \ cte2))<br />
+        number = number - ((arr(2) - cte1) * cte2)<br />
+        arr(1) = CByte(cte1 + (number \ cte1))<br />
+        number = number - ((arr(1) - cte1) * cte1)<br />
+        arr(0) = CByte(cte1 + number)<br />
+    Else<br />
+        ReDim arr(4)<br />
+        arr(4) = CByte(number \ cte4)<br />
+        number = number - (arr(4) * cte4)<br />
+        arr(3) = CByte(cte1 + (number \ cte3))<br />
+        number = number - ((arr(3) - cte1) * cte3)<br />
+        arr(2) = CByte(cte1 + (number \ cte2))<br />
+        number = number - ((arr(2) - cte1) * cte2)<br />
+        arr(1) = CByte(cte1 + (number \ cte1))<br />
+        number = number - ((arr(1) - cte1) * cte1)<br />
+        arr(0) = CByte(cte1 + number)<br />
+    End If<br />
+    Debug.Print arrayToString(arr)<br />
+End Sub<br />
+<br />
+Public Sub testGetProto(ByVal number As Long)<br />
+    Dim arr() As Byte<br />
+    getProtobufBytesFrom4BYTESNUMBER arr, number<br />
+End Sub</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

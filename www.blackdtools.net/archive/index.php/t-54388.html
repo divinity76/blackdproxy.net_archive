@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, setmeleekill, iftrue, $mycap$number=$_gp$, $nlineoflabeldp$, goto, sayintrade, 33064,32360,9, rotworm, $randomnumber12$, waitx, fastexiva, spider, carrion, setloot, setpriority, 33081,32389,7, 33014,32374,9, 33015,32372,8, 33008,32344,8, 33008,32343,9, gotoscriptline, 33064,32361,8, 33058,32375,8, 33217,32400,7, 33168,32417,7, 33116,32399,7, 33058,32376,7, 33220,32387,7, 33200,32404,7, 33028,32376,9, 33015,32375,9, 33032,32376,9, 33025,32377,9, 33022,32375,9, 33014,32375,8, 33013,32375,8, 33020,32365,8, 33023,32351,8, 33014,32373,8, 33013,32373,8, 33013,32374,8, 33021,32367,9, 33020,32371,9, 33061,32362,8, 33039,32375,8, 33056,32354,9, 33052,32348,9, 33068,32338,9, 33055,32349,9" />
+	<meta name="description" content="Hunts rots in east cave and refills/deposits. 
+Start at Depot 
+ 
+ 
+setBot OldLootMode=1 
+setMeleeKill rotworm queen 
+setMeleeKill carrion worm 
+setPriority rotworm queen:+5 
+setMeleeKill rotworm 
+setMeleeKill wasp" />
+	
+	<title> 21. Darashia Rotworms - by BldMx [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  21. Darashia Rotworms - by BldMx</div>
+<hr />
+<div class="pda"><a href="t-54388.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54388-21-Darashia-Rotworms-by-BldMx">21. Darashia Rotworms - by BldMx</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-18-2011, 21:20</div></div><div class="posttext">Hunts rots in east cave and refills/deposits.<br />
+Start at Depot<br />
+<br />
+<br />
+<br />
+setBot OldLootMode=1<br />
+setMeleeKill rotworm queen<br />
+setMeleeKill carrion worm<br />
+setPriority rotworm queen:+5<br />
+setMeleeKill rotworm<br />
+setMeleeKill wasp<br />
+setMeleeKill lion<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill Sandcrawler<br />
+setMeleeKill wolf<br />
+setSpellKill carrion worm,exori flam,3<br />
+setSpellKill rotworm queen,exori flam,3<br />
+setSpellKill nomad,exori flam,3<br />
+setFriendly<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+:tothecave<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33220,32387,7<br />
+move 33217,32400,7<br />
+move 33200,32404,7<br />
+move 33168,32417,7<br />
+move 33116,32399,7<br />
+move 33081,32389,7<br />
+move 33058,32376,7<br />
+move 33058,32375,8<br />
+:hunt<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33032,32370,8<br />
+move 33040,32375,8<br />
+move 33049,32371,8<br />
+move 33055,32370,8<br />
+move 33059,32362,8<br />
+move 33062,32361,8<br />
+move 33064,32361,8<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33064,32360,9<br />
+move 33066,32363,9<br />
+move 33064,32373,9<br />
+move 33066,32376,9<br />
+move 33064,32360,9<br />
+move 33058,32350,9<br />
+move 33068,32338,9<br />
+move 33055,32349,9<br />
+move 33052,32348,9<br />
+move 33056,32354,9<br />
+move 33064,32360,9<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33064,32361,8<br />
+move 33061,32362,8<br />
+move 33039,32375,8<br />
+move 33034,32373,8<br />
+move 33027,32370,8<br />
+move 33021,32369,8<br />
+move 33015,32372,8<br />
+move 33015,32374,8<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33014,32374,9<br />
+move 33010,32368,9<br />
+move 33020,32371,9<br />
+move 33021,32367,9<br />
+move 33022,32375,9<br />
+move 33025,32377,9<br />
+move 33032,32376,9<br />
+move 33028,32376,9<br />
+move 33015,32375,9<br />
+move 33014,32374,9<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33014,32375,8<br />
+move 33013,32375,8<br />
+move 33013,32374,8<br />
+move 33013,32373,8<br />
+move 33014,32373,8<br />
+move 33015,32372,8<br />
+move 33020,32365,8<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33023,32351,8<br />
+move 33017,32354,8<br />
+move 33012,32349,8<br />
+move 33009,32344,8<br />
+move 33008,32344,8<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33008,32343,9<br />
+move 33003,32338,9<br />
+move 33004,32348,9<br />
+move 33011,32343,9<br />
+move 33017,32339,9<br />
+move 33020,32338,9<br />
+move 33010,32344,9<br />
+move 33009,32343,9<br />
+move 33008,32343,9<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+move 33008,32344,8<br />
+move 33009,32346,8<br />
+move 33017,32355,8<br />
+move 33020,32360,8<br />
+move 33026,32369,8<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:bank$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:bank<br />
+move 33058,32375,8<br />
+move 33058,32376,7<br />
+move 33081,32389,7<br />
+move 33116,32399,7<br />
+move 33168,32417,7<br />
+move 33200,32404,7<br />
+move 33217,32400,7<br />
+move 33220,32387,7<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Deposit all$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+move 33219,32422,7<br />
+move 33214,32454,7<br />
+move 33214,32460,8<br />
+putLootOnDepot<br />
+IfTrue ($countitems:0C 01$#number&lt;#60) Goto $nlineoflabel:buyManas$<br />
+IfTrue ($countitems:0A 01$#number&lt;#20) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:tothecave$<br />
+:buyManas<br />
+fastExiva _mananeeded = $numericalexp:60-{$countitems:0C 01$}$<br />
+fastExiva _costmana = $numericalexp:50*{$_mananeeded$}$<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33222,32387,7<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+sayInTrade withdraw $_costmana$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:bye$<br />
+waitX 1<br />
+move 33216,32401,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mananeeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33214,32454,7<br />
+move 33214,32456,8<br />
+IfTrue ($countitems:0A 01$#number&lt;#20) Goto $nlineoflabel:buyHealth$<br />
+gotoScriptLine $nlineoflabel:tothecave$<br />
+:buyHealth<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33222,32387,7<br />
+fastExiva _healthneeded = $numericalexp:20-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33216,32401,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 33214,32454,7<br />
+move 33214,32456,8<br />
+gotoScriptLine $nlineoflabel:tothecave$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">elban_nr.1@hotmail.com</div><div class="date">05-06-2011, 17:04</div></div><div class="posttext">Doesn't it hunt in west cave? :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">urcoco</div><div class="date">05-07-2011, 03:00</div></div><div class="posttext">it goes to west cave goes down kill like 4 rotworms and then goes back to store...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Spinewal</div><div class="date">05-07-2011, 15:14</div></div><div class="posttext">I don't seem to have any trouble with it...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">crazyguy</div><div class="date">05-08-2011, 22:18</div></div><div class="posttext">it goes to west cave goes down kill like 4 rotworms and then goes back to store...<br />
+ <br />
+happened to me too. :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">crazyguy</div><div class="date">05-09-2011, 18:47</div></div><div class="posttext">I fixed it abit, i tested it.<br />
+IT IS NOT PERFEKT!<br />
+but i like it, cause its my first sript i tryed to fix :)<br />
+Its only cash depositer and Hunting!<br />
+Code:<br />
+<br />
+fastExiva _captodp = 20<br />
+fastExiva _gp = 1000<br />
+###<br />
+:cap*100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+###<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setVeryFriendly<br />
+setLoot D7 0B<br />
+setMeleeKill rotworm queen<br />
+setMeleeKill carrion worm<br />
+setPriority carrion worm:+1<br />
+setPriority rotworm queen:+2<br />
+setMeleeKill rotworm<br />
+setMeleeKill wasp<br />
+setMeleeKill lion<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill Sandcrawler<br />
+setMeleeKill wolf<br />
+setLoot DC 25<br />
+###<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+#exp<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33220,32387,7<br />
+move 33217,32400,7<br />
+move 33200,32404,7<br />
+move 33168,32417,7<br />
+move 33116,32399,7<br />
+move 33081,32389,7<br />
+move 33058,32376,7<br />
+move 33058,32375,8<br />
+:hunt<br />
+move 33032,32370,8<br />
+move 33040,32375,8<br />
+move 33049,32371,8<br />
+move 33055,32370,8<br />
+move 33059,32362,8<br />
+move 33062,32361,8<br />
+move 33064,32361,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33064,32360,9<br />
+move 33066,32363,9<br />
+move 33064,32373,9<br />
+move 33066,32376,9<br />
+move 33064,32360,9<br />
+move 33058,32350,9<br />
+move 33068,32338,9<br />
+move 33055,32349,9<br />
+move 33052,32348,9<br />
+move 33056,32354,9<br />
+move 33064,32360,9<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33064,32361,8<br />
+move 33061,32362,8<br />
+move 33039,32375,8<br />
+move 33034,32373,8<br />
+move 33027,32370,8<br />
+move 33021,32369,8<br />
+move 33015,32372,8<br />
+move 33015,32374,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33014,32374,9<br />
+move 33010,32368,9<br />
+move 33020,32371,9<br />
+move 33021,32367,9<br />
+move 33022,32375,9<br />
+move 33025,32377,9<br />
+move 33032,32376,9<br />
+move 33028,32376,9<br />
+move 33015,32375,9<br />
+move 33014,32374,9<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33014,32375,8<br />
+move 33013,32375,8<br />
+move 33013,32374,8<br />
+move 33013,32373,8<br />
+move 33014,32373,8<br />
+move 33015,32372,8<br />
+move 33020,32365,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33023,32351,8<br />
+move 33017,32354,8<br />
+move 33012,32349,8<br />
+move 33009,32344,8<br />
+move 33008,32344,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33008,32343,9<br />
+move 33003,32338,9<br />
+move 33004,32348,9<br />
+move 33011,32343,9<br />
+move 33017,32339,9<br />
+move 33020,32338,9<br />
+move 33010,32344,9<br />
+move 33009,32343,9<br />
+move 33008,32343,9<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33008,32344,8<br />
+move 33009,32346,8<br />
+move 33017,32355,8<br />
+move 33020,32360,8<br />
+move 33026,32369,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+move 33058,32375,8<br />
+move 33058,32376,7<br />
+move 33081,32389,7<br />
+move 33116,32399,7<br />
+move 33168,32417,7<br />
+move 33200,32404,7<br />
+move 33217,32400,7<br />
+move 33220,32387,7<br />
+sayInTrade hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade deposit all<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade balance<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">corrupt</div><div class="date">05-10-2011, 21:09</div></div><div class="posttext">I fixed it abit, i tested it.<br />
+IT IS NOT PERFEKT!<br />
+but i like it, cause its my first sript i tryed to fix :)<br />
+Its only cash depositer and Hunting!<br />
+Code:<br />
+<br />
+fastExiva _captodp = 20<br />
+fastExiva _gp = 1000<br />
+###<br />
+:cap*100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+###<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setVeryFriendly<br />
+setLoot D7 0B<br />
+setMeleeKill rotworm queen<br />
+setMeleeKill carrion worm<br />
+setPriority carrion worm:+1<br />
+setPriority rotworm queen:+2<br />
+setMeleeKill rotworm<br />
+setMeleeKill wasp<br />
+setMeleeKill lion<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill Sandcrawler<br />
+setMeleeKill wolf<br />
+setLoot DC 25<br />
+###<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+#exp<br />
+move 33214,32456,8<br />
+move 33214,32454,7<br />
+move 33220,32387,7<br />
+move 33217,32400,7<br />
+move 33200,32404,7<br />
+move 33168,32417,7<br />
+move 33116,32399,7<br />
+move 33081,32389,7<br />
+move 33058,32376,7<br />
+move 33058,32375,8<br />
+:hunt<br />
+move 33032,32370,8<br />
+move 33040,32375,8<br />
+move 33049,32371,8<br />
+move 33055,32370,8<br />
+move 33059,32362,8<br />
+move 33062,32361,8<br />
+move 33064,32361,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33064,32360,9<br />
+move 33066,32363,9<br />
+move 33064,32373,9<br />
+move 33066,32376,9<br />
+move 33064,32360,9<br />
+move 33058,32350,9<br />
+move 33068,32338,9<br />
+move 33055,32349,9<br />
+move 33052,32348,9<br />
+move 33056,32354,9<br />
+move 33064,32360,9<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33064,32361,8<br />
+move 33061,32362,8<br />
+move 33039,32375,8<br />
+move 33034,32373,8<br />
+move 33027,32370,8<br />
+move 33021,32369,8<br />
+move 33015,32372,8<br />
+move 33015,32374,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33014,32374,9<br />
+move 33010,32368,9<br />
+move 33020,32371,9<br />
+move 33021,32367,9<br />
+move 33022,32375,9<br />
+move 33025,32377,9<br />
+move 33032,32376,9<br />
+move 33028,32376,9<br />
+move 33015,32375,9<br />
+move 33014,32374,9<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33014,32375,8<br />
+move 33013,32375,8<br />
+move 33013,32374,8<br />
+move 33013,32373,8<br />
+move 33014,32373,8<br />
+move 33015,32372,8<br />
+move 33020,32365,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33023,32351,8<br />
+move 33017,32354,8<br />
+move 33012,32349,8<br />
+move 33009,32344,8<br />
+move 33008,32344,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33008,32343,9<br />
+move 33003,32338,9<br />
+move 33004,32348,9<br />
+move 33011,32343,9<br />
+move 33017,32339,9<br />
+move 33020,32338,9<br />
+move 33010,32344,9<br />
+move 33009,32343,9<br />
+move 33008,32343,9<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+move 33008,32344,8<br />
+move 33009,32346,8<br />
+move 33017,32355,8<br />
+move 33020,32360,8<br />
+move 33026,32369,8<br />
+IFTrue ($mycap$#number&lt;=$_captogodp$) Goto $nlineoflabel:dp$<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nlineoflabel:dp$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+move 33058,32375,8<br />
+move 33058,32376,7<br />
+move 33081,32389,7<br />
+move 33116,32399,7<br />
+move 33168,32417,7<br />
+move 33200,32404,7<br />
+move 33217,32400,7<br />
+move 33220,32387,7<br />
+sayInTrade hi<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade deposit all<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade yes<br />
+waitX $randomnumber:1&gt;2$<br />
+sayInTrade balance<br />
+gotoScriptLine $nlineoflabel:start$<br />
+<br />
+ <br />
+If i could get someone to add in the hp pots/mana pots/ and the buyer from the previous one, would be much appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mati88</div><div class="date">05-26-2011, 14:14</div></div><div class="posttext">it doesn't rope me to the store :s</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rivve</div><div class="date">07-28-2011, 19:34</div></div><div class="posttext">Nice script, testing it right now, <br />
+People having problems with it id suggest you change<br />
+IfTrue ($countitems:0C 01$#number&lt;#60) Goto $nlineoflabel:buyManas$<br />
+IfTrue ($countitems:0A 01$#number&lt;#20) Goto $nlineoflabel:buyHealth$</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, $myexp$, testding, folder, number=, points, close, helped, chaarcter, logged, conds, reload, saved, events, conditional, blackd, proxy, sounds, conditionals, combined, conitional, condsfunctions/actions, question, reach, connection, higher, default, alarm" />
+	<meta name="description" content="Hello 
+ 
+I am a new member and Today I've made my first script which was Rat's sewer 
+it works fine but now I'd like to create a 'cond' (the &quot;?&quot; block) 
+ 
+What I want to be done: 
+$myexp$ | #number&gt;=# | 6100 bla bla~~ to make an Alarm^^ if i wont be around then later on EXP 6,300 it'll CloseConnection 
+ 
+now im quite sure that &quot;$myexp$&quot; is correct? Right? 
+6,400 exp = level 9" />
+	
+	<title> Question regarding Conds(functions/actions) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Question regarding Conds(functions/actions)</div>
+<hr />
+<div class="pda"><a href="t-57862.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57862-Question-regarding-Conds(functions-actions)">Question regarding Conds(functions/actions)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Septermbe</div><div class="date">04-21-2012, 18:05</div></div><div class="posttext">Hello<br />
+<br />
+I am a new member and Today I've made my first script which was Rat's sewer<br />
+it works fine but now I'd like to create a 'cond' (the &quot;?&quot; block)<br />
+<br />
+What I want to be done:<br />
+$myexp$ | #number&gt;=# | 6100 bla bla~~ to make an Alarm^^ if i wont be around then later on EXP 6,300 it'll CloseConnection<br />
+<br />
+now im quite sure that &quot;$myexp$&quot; is correct? Right?<br />
+6,400 exp = level 9<br />
+I dont want my characters to reach level 9 but to hear the &quot;Danger&quot; alarm or some other alarm out of the 3 <br />
+if Exp &gt;= 6100 -&gt; Alarm<br />
+if Exp&gt;= 6300 -&gt; CloseConnection<br />
+<br />
+my question is what should I write in order to have such orders executed?<br />
+<br />
+Thanks in advance!<br />
+p.s. I looked for an answer in threads but these 2 specificly I could not find.. :\</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-22-2012, 01:52</div></div><div class="posttext">This one's easy and I'm glad to help. I've combined both conditionals for you into one conitional.<br />
+<br />
+1.) When your exp will be 6100 or higher it will 'ding' every second. (test it by saying &quot;exiva testding&quot; in default chat so you'll know how it sounds = 'ding' :D).<br />
+<br />
+2.) And when you'll reach 6300 exp points it will close the connection without the alarm, so when you come back you'll find your chaarcter logged out with exactly 6300 exp points.<br />
+<br />
+I hope I helped. :D<br />
+<br />
+EDIT: Save it as .txt file, put it into 'conds' folder in BlackD Proxy folder, open Conditional Events, reload list, load the saved .txt file and you're good to go. :D<br />
+<br />
+<br />
+$myexp$<br />
+#number&gt;=#<br />
+6100<br />
+0<br />
+1000<br />
+0<br />
+exiva testding<br />
+$myexp$<br />
+#number&gt;=#<br />
+6300<br />
+0<br />
+1000<br />
+0<br />
+exiva close</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

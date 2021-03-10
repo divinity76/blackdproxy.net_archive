@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="creature, exiva, strike, strikes, conditional, hunting, casting, $_strike$, _strike, $hpofhex-id$hex-lastattackedid$$, _live2strike, number, exori, number=, finishes, death, higher, $nameofhex-id$hex-lastattackedid$$, string=, minotaur, $numericalexp$_live2strike$+1$, frigo, archer, strong, order, _strike=no, correct, creatures, conditionals, finished, dragons, summons, manually, melee, works, function, built, exori/exori, cavebot, health, target, start, targeted, damage, configured, percentage, hitpoints, early, stops, percent" />
+	<meta name="description" content="The built in function only works in cavebot and may cast strikes when a target is at so low health a hit with melee, rod or wand would have finished it of. So this will save mana and can be used while hunting manually, like when hunting dragons with summons. 
+It will start casting once the targeted creature has been hit once by your weapon, so as to not try to cast when outside range, and stop once the creature reaches a fixed percent hp. 
+This percentage (blue) should be configured to suit" />
+	
+	<title> Better Mage Exori/Exori Gran [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-49.html">Conditional Events Miniscripts</a> &gt;  Better Mage Exori/Exori Gran</div>
+<hr />
+<div class="pda"><a href="t-57339.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57339-Better-Mage-Exori-Exori-Gran">Better Mage Exori/Exori Gran</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">02-21-2012, 13:52</div></div><div class="posttext">The built in function only works in cavebot and may cast strikes when a target is at so low health a hit with melee, rod or wand would have finished it of. So this will save mana and can be used while hunting manually, like when hunting dragons with summons.<br />
+It will start casting once the targeted creature has been hit once by your weapon, so as to not try to cast when outside range, and stop once the creature reaches a fixed percent hp.<br />
+This percentage (blue) should be configured to suit your damage and the creature you hunt hitpoint's. If it stops casting to early and you kill too slow lower it, if it seems to cast alot of strikes that finishes the creature of make it higher. If you want it to strike until death set it to 1.<br />
+For every creature you wish to use a strike on you need to make a conditional like the red one. Also all conditionals must stay in the correct order, the _strike=no always before the different creatures and the conditional for the strike itself after.<br />
+For use with Strong Strikes edit the last line from &quot;exori $_strike$&quot; to &quot;exori gran $_strike$&quot;.<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _strike = no<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+minotaur archer<br />
+0<br />
+0<br />
+0<br />
+exiva _strike = frigo<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = 0<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number&gt;#<br />
+20<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = $numericalexp:{$_live2strike$}+1$<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number&lt;#<br />
+100<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = $numericalexp:{$_live2strike$}+1$<br />
+$_strike$<br />
+#string&lt;&gt;#<br />
+no<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strike = $numericalexp:{$_live2strike$}+1$<br />
+$_live2strike$<br />
+#number=#<br />
+3<br />
+0<br />
+1000<br />
+0<br />
+exori $_strike$<br />
+<br />
+I thought I had already released this but apparently not.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">02-28-2012, 23:21</div></div><div class="posttext">Here's one to attack pks:<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _strikepk = no<br />
+$lastpkname$<br />
+#string&lt;&gt;#<br />
+0<br />
+0<br />
+0<br />
+exiva _strikepk = frigo<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strikepk = 0<br />
+$lastpkname$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strikepk = $numericalexp:{$_live2strikepk$}+1$<br />
+$lastpkname$<br />
+#number&lt;#<br />
+100<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strikepk = $numericalexp:{$_live2strikepk$}+1$<br />
+$_strikepk$<br />
+#string&lt;&gt;#<br />
+no<br />
+0<br />
+0<br />
+0<br />
+exiva _live2strikepk = $numericalexp:{$_live2strikepk$}+1$<br />
+$_live2strikepk$<br />
+#number=#<br />
+3<br />
+0<br />
+1000<br />
+0<br />
+exori $_strikepk$</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

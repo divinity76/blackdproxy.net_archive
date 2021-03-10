@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="account, droping, unsafe, recording, coins, remembered, revise, items, dunno, malmis, reply, understand, proper, happenes, position, exiva, saymessage, entire, searched, guides, characters, causing, paint, erroneous, $numbertohex2x$, $numbertohex2y$, $numbertohex1z$, squares, package, tutorials" />
+	<meta name="description" content="So, I know how to record actions in Proxy ... Like, how to throw a random item, from random bp, from random slot, to random tile, etc. 
+ 
+For example: exiva &gt; 78 FF FF 40 00 00 D7 0B 00 55 7E DA 7D 07 01 
+ 
+D7 0B = item ID 
+40 = # of the opened BP 
+55 = y-axis  
+7E = x-axis  
+07 = z-axis  
+00, 00 = # of the slot in opened BP" />
+	
+	<title> Droping items ... ?! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Droping items ... ?!</div>
+<hr />
+<div class="pda"><a href="t-57507.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57507-Droping-items-!">Droping items ... ?!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-15-2012, 01:58</div></div><div class="posttext">So, I know how to record actions in Proxy ... Like, how to throw a random item, from random bp, from random slot, to random tile, etc.<br />
+<br />
+For example: exiva &gt; 78 FF FF 40 00 00 D7 0B 00 55 7E DA 7D 07 01<br />
+<br />
+D7 0B = item ID<br />
+40 = # of the opened BP<br />
+55 = y-axis [tile]<br />
+7E = x-axis [tile]<br />
+07 = z-axis [tile, # of the floor]<br />
+00, 00 = # of the slot in opened BP<br />
+<br />
+Bare with me! D: ... I'm still a noob with this stuff, I dunno what the rest of the letters/numbers are that are uncloured, but that's not the case.<br />
+<br />
+After my little experiment and research I couldn't come to conclusion if it's possible to drop items to any of the reachable sqm at the same time.<br />
+<br />
+For example, my mate's birthday's coming up, so I thought this would be fun ... Coming to his house on day of his birthday, droping 1 crystal coin on every sqm on ground floor of his house in matter of seconds, saying: 'Happy birthday, you deserve it! :D'<br />
+<br />
+So like, let's say his house has 15 sqm big ground floor, that means I'd need 15 crystal coins, no problem with that.<br />
+They would be in the first slot [00] of the first opened backpack [40]. And ground floor is on +1 floor [06]. The question is: Can I manipulate x-axis and y-axis in such way, so it covers whole (reachable) 15 sqm area? Short: Can I drop them all at once 1 cc per 1sqm?<br />
+<br />
+It would look like this: exiva &gt; 78 FF FF 40 00 E3 0B 00 XX YY DA 7D 06 01<br />
+<br />
+40 = 1st opened bp<br />
+E3 0B = crystal coin ID<br />
+00 (E3 0B) 00 : 1st slot of opened bp<br />
+06 = +1 floor<br />
+XX = questionable<br />
+YY = questionable<br />
+-----------------------------<br />
+(What's up with 'DA'? ... D_ in other cases when I recorded with proxy, what's that? And of course, those left which I still dunno?)<br />
+<br />
+<br />
+<br />
+<br />
+So, is it possible to do that, or just sqms around standing charatcer. It seems impossible, I mean probably it is impossible, but I thought I'd give it a shot, maybe it is ...<br />
+<br />
+I've tried with '00 00' of course ... ^^, failed miserably.<br />
+<br />
+Is there a way? D: ... Every help very much appreciated! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-15-2012, 12:27</div></div><div class="posttext">I wouldn't play around too much, just a typo causing an erroneous package or whatever is VERY unsafe. :p<br />
+If you had searched for my guides on hex you would also see that the XYZ in hex is 10 characters, so the entire 55 7E DA 7D 07 is position.<br />
+<br />
+Just do sayMessage exiva &gt; 78 FF FF 40 00 00 D7 0B 00 $numbertohex2:X$ $numbertohex2:Y$ $numbertohex1:Z$ 01 for all the squares you want to &quot;paint&quot;. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-15-2012, 15:35</div></div><div class="posttext">I wouldn't play around too much, just a typo causing an erroneous package or whatever is VERY unsafe. :p<br />
+If you had searched for my guides on hex you would also see that the XYZ in hex is 10 characters, so the entire 55 7E DA 7D 07 is position.<br />
+<br />
+Just do sayMessage exiva &gt; 78 FF FF 40 00 00 D7 0B 00 $numbertohex2:X$ $numbertohex2:Y$ $numbertohex1:Z$ 01 for all the squares you want to &quot;paint&quot;. :)<br />
+<br />
+<br />
+<br />
+Thanks for the help! :D Oh yeah, read some of your tutorials, long time ago tho, now you remembered I should revise those.<br />
+<br />
+And I know, it is very unsafe, therefore all recording was done on naab account with gold coins ofc, even droping if ever happenes will be done on naab account, I still don't want to risk main account. <br />
+<br />
+And yeah, thanks for that info, now I shall proper understand what those mean!<br />
+<br />
+Will try that out! Thanks again. I dunno who would reply if you weren't around Malmis o.O :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-15-2012, 15:50</div></div><div class="posttext">Noone I believe. :p And you're welcome.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-15-2012, 16:17</div></div><div class="posttext">Hum, it doesn't seem to be working, I dunno ... I'm doing it wrong probably D:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-15-2012, 18:17</div></div><div class="posttext">It would be alot easier helping you understand what might be wrong if you actually show what you are doing... :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-15-2012, 18:27</div></div><div class="posttext">Hum, well I've put 'sayMessage exiva &gt; 78 FF FF 40 00 00 D7 0B 00 $numbertohex2:X$ $numbertohex2:Y$ $numbertohex1:Z$ 01' to cavebot of course, at least I thought that would go in there, or I just said it in local chat/stealth window, but then again I'm not sure what am I supposed to be getting out of it :&lt;. Cuz, nothing happens, well it says 'Sorry, not possible.'<br />
+<br />
+That might sound a bit off, possibly noobish, but then again, I am one of those when dealing with new stuff around here. xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-16-2012, 00:08</div></div><div class="posttext">I sincerely hope you changed the X, Y and Z to real coordinates...?<br />
+And sayMessage is a cavebot command yes, to just call it from chat/stealth just say &quot;exiva &gt;&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-23-2012, 02:25</div></div><div class="posttext">@Malmis ... Of course, figured it out shortly after that, that's why I haven't replied here ... But that's the same as recording packets for every sqm in Proxy, which takes some time ... All I wanted to know is, if it was possible throwing items to each reachable sqm in matter of seconds. I guess that wouldn't be possible :). Anyway, thanks for the help, was a great lesson for me! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-23-2012, 12:03</div></div><div class="posttext">@Malmis ... Of course, figured it out shortly after that, that's why I haven't replied here ... But that's the same as recording packets for every sqm in Proxy, which takes some time ... All I wanted to know is, if it was possible throwing items to each reachable sqm in matter of seconds. I guess that wouldn't be possible :). Anyway, thanks for the help, was a great lesson for me! :)<br />
+<br />
+But it is possible you nut.... -.-<br />
+You need to either know all the sqms you want to throw at and hardcode them, or use the positional variables and numericalexps to calculate the positions of all tiles on screen relative to you.<br />
+Then you just send all hexes using sayMessage exiva &gt; and you'll spam the screen in a few seconds.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

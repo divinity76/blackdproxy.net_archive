@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="mapinfo, long, square, public, type, array, tibia, code, byval, rtlmovememory, tibiaclientpid, position, char, function, post, private, squareinfo, contest, 1000k, time, getmapinfoof-1,0,0, getmapinfoof0,0,0, save, getmapinfoof1,0,0, left, relative, incx, incy, getmapinfoofbyval, read, incz, values, parameters, north, email, send, small, poster, correctly, works, getmapinfoof0,0,-1, south, getmapinfoof0,1,0, getmapinfoof0,0,1, prefer, getmapinfoof0,-1,0, window, getmapinfoof, start, readtibiamap" />
+	<meta name="description" content="This would save a lot of time for me... 
+  
+I need some functions to handle Tibia map. 
+The following article should be your guide: 
+http://www.tibiaauto.net/articles/ta_art_mapread.html 
+  
+Reward: 1000k in any server where I have more than 1000k of stock. 
+  
+Required language: Visual Basic 6" />
+	
+	<title> Programming contest #2: Tibia map [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Programming contest #2: Tibia map</div>
+<hr />
+<div class="pda"><a href="t-49058.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?49058-Programming-contest-2-Tibia-map">Programming contest #2: Tibia map</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-09-2010, 21:56</div></div><div class="posttext">This would save a lot of time for me...<br />
+ <br />
+I need some functions to handle Tibia map.<br />
+The following article should be your guide:<br />
+http://www.tibiaauto.net/articles/ta_art_mapread.html<br />
+ <br />
+Reward: 1000k in any server where I have more than 1000k of stock.<br />
+ <br />
+Required language: Visual Basic 6<br />
+ <br />
+Requirement: (for speed) The Tibia map should be readed in block in a single step and stored to an array of bytes. This can be done with the api RtlMoveMemory<br />
+ <br />
+You should code ReadTibiaMap and GetMapInfoOf<br />
+This would be a start...<br />
+ <br />
+<br />
+<br />
+ <br />
+Option Explicit<br />
+ <br />
+Private Declare Sub RtlMoveMemory Lib &quot;kernel32&quot; ( _<br />
+lpDest As Any, _<br />
+lpSource As Any, _<br />
+ByVal ByValcbCopy As Long)<br />
+ <br />
+Public Type SquareInfo<br />
+itemID As Long<br />
+data1 As Long<br />
+data2 As Long<br />
+End Type<br />
+ <br />
+Public Type MapInfo<br />
+square(0 To 13) As SquareInfo<br />
+End Type<br />
+ <br />
+Public RawMapInfo(0 To TibiaMapSize) As Byte<br />
+ <br />
+ <br />
+ <br />
+Public Sub ReadTibiaMap(ByVal tibiaclientPID)<br />
+' Update array of mapinfo and any other variable if needed.<br />
+' tibiaclientPID = the PID of the tibia client window that we want to read.<br />
+End Sub<br />
+ <br />
+Public Function GetMapInfoOf(ByVal incX As Long, ByVal incY As Long, ByVal incZ As Long) As MapInfo<br />
+' Get mapinfo fro the raw array of mapinfo<br />
+' Parameters are values relative to position to my char<br />
+' GetMapInfoOf(0,0,0) = my char position in the array of mapinfo<br />
+' GetMapInfoOf(-1,0,0) = mapinfo of whatever is 1 square at my left.<br />
+' GetMapInfoOf(1,0,0) = mapinfo of whatever is 1 square at my right.<br />
+' GetMapInfoOf(0,-1,0) = mapinfo of whatever is 1 square at my north<br />
+' GetMapInfoOf(0,1,0) = mapinfo of whatever is 1 square at my south.<br />
+' GetMapInfoOf(0,0,-1) = mapinfo of whatever is 1 square above me.<br />
+' GetMapInfoOf(0,0,1) = mapinfo of whatever is 1 square under me.<br />
+End Function<br />
+ <br />
+ <br />
+ <br />
+<br />
+ <br />
+you can post the zip with the code here or if you prefer to keep it private then just do a small post and send me the code by email.<br />
+First poster that gets me a code that works correctly will win this contest.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">beziak</div><div class="date">03-10-2010, 08:48</div></div><div class="posttext">I can do it using c++ DLL.<br />
+<br />
+Then you need to LoadLibrary &amp; GetProcAddress your functions. Tell me if agree.<br />
+<br />
+#edit<br />
+actually it's done</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-10-2010, 13:28</div></div><div class="posttext">I can do it using c++ DLL.<br />
+ <br />
+Then you need to LoadLibrary &amp; GetProcAddress your functions. Tell me if agree.<br />
+ <br />
+#edit<br />
+actually it's done<br />
+ <br />
+well... I try to avoid dlls as much as possible but if after 1 week nobody gives me a better solution writen in pure VB6 then I will consider you the winner.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-15-2010, 16:50</div></div><div class="posttext">ok Beziak is the winner.<br />
+I tested the functions. They work. I also translated the functions to VB6 myself to avoid dll calls.<br />
+ <br />
+Well, contest closed now.<br />
+ <br />
+Gratz Beziak!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

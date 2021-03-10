@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="white, enraged, attacks, attack, warning, autologout, enable, trainer, minutes, attacked, cavebot, setnofollow, gotoscriptline, setmaleekill, train, regen, dance, target, attacking, traning" />
+	<meta name="description" content="Hello, for some time I'm trying to train on Enraged White Deer. At Cavebot I have: 
+setNoFollow 
+setMaleeKill enraged white deer 
+gotoScriptLine 0 
+ 
+In this way he attacks him, but ofc, he won't stop ^^, so in Traning: 
+ Stop attacking target until regen 50 % hp, Dance at 15 minutes autologout warning, Enable trainer 
+Like that he still attacks him, but he still won't stop! When I 'Get ID of last attacked', He still attacks him, and won't stop... But now, when I'll stop attack enraged White" />
+	
+	<title> enraged white deer [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  enraged white deer</div>
+<hr />
+<div class="pda"><a href="t-58860.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58860-enraged-white-deer">enraged white deer</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Ererior</div><div class="date">08-28-2012, 19:32</div></div><div class="posttext">Hello, for some time I'm trying to train on Enraged White Deer. At Cavebot I have:<br />
+setNoFollow<br />
+setMaleeKill enraged white deer<br />
+gotoScriptLine 0<br />
+<br />
+In this way he attacks him, but ofc, he won't stop ^^, so in Traning:<br />
+ Stop attacking target until regen 50 % hp, Dance at 15 minutes autologout warning, Enable trainer<br />
+Like that he still attacks him, but he still won't stop! When I 'Get ID of last attacked', He still attacks him, and won't stop... But now, when I'll stop attack enraged White Deer, he won't attack him by him self... Dono what to dooo<br />
+(Win 7) Is it just me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ererior</div><div class="date">08-30-2012, 02:45</div></div><div class="posttext">So... I did something wrong? Or that 'stop attacking target until...' isn't working?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-30-2012, 03:30</div></div><div class="posttext">add retry attacks into cavebot script</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">08-30-2012, 09:21</div></div><div class="posttext">Please for the love of god stop training on an Enraged White Deer for starters. But it seems like Hellsx has explained your problem, your cavebot is timing out after the amount of time it has spent on one mob. Can always add a command <br />
+SetBot EnableMaxAttackTime=1<br />
+SetMaxAttackTimeMs 90000  ( That is 90 seconds ) <br />
+<br />
+Now, second scrap the command that says stop attacking target when under 50% I used it before it never worked, stop trying.<br />
+Training with a secondary account will be much better, get a second level 10 knight out of rook and have them train together, or better yet, get a mage level 25 with summon creature, attack eachother mage summons two rats and then you have a perfect train, just need to bring food. Hope this helped,<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ererior</div><div class="date">08-30-2012, 12:29</div></div><div class="posttext">won't help ;) 22 lv non-pvp :) monks still a little too strong, rotworms and others like that are killing my stamina</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">08-31-2012, 19:57</div></div><div class="posttext">ahhh non pvp.. ouch.<br />
+<br />
+SetBot EnableMaxAttackTime=1<br />
+SetMaxAttackTimeMs 90000000000<br />
+setMeleeKill Enraged White Deer<br />
+waitX XXX ( How long before he goes into yellow? )<br />
+exiva ignore<br />
+waitX XXX ( How long it takes him to regen to full ? )<br />
+exiva resetignores<br />
+gotoScriptLine 0<br />
+<br />
+Thats the only thing I could think of on the fly bro, sorry Ill try and wrap my head around it some more!<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

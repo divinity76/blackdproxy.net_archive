@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="hide, port hope, tarantula, tarantulas, tarantulas task, define, started, quest, fastexiva, potions, $_counter$, $_taskstarted$, killed, script, cavebot, things, questlog, number, prepared, fully, health, helps, _taskstarted, settings, lines, label, _counter, found, destination, occasionally, range, problem, noticed, problems, afwasmiddel, reworked, bldmx, conditionals, bank/depot, hide-out, adams, status, grizzly, rewriting, south, tiquanda, start, check" />
+	<meta name="description" content="Hi guys, 
+ 
+This is a script I came across that I wanted to use, but that turned out not to work. The original post can be found here:  
+http://www.blackdtools.net/showthread.php?54435-50-Complete-Tarantula-Tasker-%28Dep-Seller-Refiller-Hide-Killer-%29-By-BldMx 
+ 
+The script was bugged and there were some mistakes in it, so I decided to rework it. You can check the original post for the features this script has to offer.  
+ 
+What did I change: 
+- script doesn't debug client anymore 
+- some" />
+	
+	<title> Port Hope Tarantulas Task by BldMx - reworked by Afwasmiddel [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Port Hope Tarantulas Task by BldMx - reworked by Afwasmiddel</div>
+<hr />
+<div class="pda"><a href="t-60519.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60519-Port-Hope-Tarantulas-Task-by-BldMx-reworked-by-Afwasmiddel">Port Hope Tarantulas Task by BldMx - reworked by Afwasmiddel</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-18-2013, 14:40</div></div><div class="posttext">Hi guys,<br />
+<br />
+This is a script I came across that I wanted to use, but that turned out not to work. The original post can be found here: <br />
+http://www.blackdtools.net/showthread.php?54435-50-Complete-Tarantula-Tasker-%28Dep-Seller-Refiller-Hide-Killer-%29-By-BldMx<br />
+<br />
+The script was bugged and there were some mistakes in it, so I decided to rework it. You can check the original post for the features this script has to offer. <br />
+<br />
+What did I change:<br />
+- script doesn't debug client anymore<br />
+- some enters were missing in the lines<br />
+- improved the overall structure of the script<br />
+- added some monsters to the kill list<br />
+- added new items to loot list<br />
+- added health and mana regen conditions to the conditionals<br />
+- when moving to Grizzly Adams it won't follow the monsters (this could cause you to get lured deep into the Tiquanda)<br />
+- removed the avoid cave option since it hunts so fast through these caves that avoiding one is kinda useless<br />
+<br />
+This script doesn't make much profit, in fact I don't make profit at all atm. It does give good exp though (~25k exp/h). I used it to get the loot from Hide. It drops Knight Armor and Legs and I needed them. If you want to make money you should probably hunt something else like Rotworms.<br />
+Keep in mind that you need a rope in order to run this script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wellz</div><div class="date">06-18-2013, 21:32</div></div><div class="posttext">When I load the conditionals, my character just keeps saying 0. Any idea what that could be?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-18-2013, 23:16</div></div><div class="posttext">When I load the conditionals, my character just keeps saying 0. Any idea what that could be?<br />
+<br />
+Thx for that report. I added a line too much at each condition. It's fixed now!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wellz</div><div class="date">06-19-2013, 21:38</div></div><div class="posttext">Conditionals work now, but there is a few problems with the script. It gets lost occasionally, and very often gets a &quot;Destination out of Range&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-19-2013, 23:48</div></div><div class="posttext">Conditionals work now, but there is a few problems with the script. It gets lost occasionally, and very often gets a &quot;Destination out of Range&quot;<br />
+<br />
+I noticed that problem as well, however I can't really fix it other than by rewriting most of the script.<br />
+It will work if you start it at the Tiquanda (south side of Port Hope near Grizzly Adams hide-out) and not at the bank/depot.<br />
+Make sure you set up $_counter$ and $_taskstarted$ according to your status. You can check how many tarantulas you have killed so far by looking into the questlog. Define $_counter$ as that number (you can do this in cavebot, these things can be found as some of the first lines at the settings label). If you started the tarantulas task define $_taskstarted$ as 1, if you started the Hide quest define it as 2.<br />
+<br />
+For example you started the quest and you killed 75 tarantulas:<br />
+<br />
+fastExiva _counter = 75<br />
+fastExiva _taskstarted = 1<br />
+<br />
+Being fully prepared (100 mana potions and 30 health potions + rope) also helps alot.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

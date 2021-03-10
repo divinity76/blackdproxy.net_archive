@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="character, scirpt, depositing, problem, gold,when, repair, moving, staying, deposited, workin, snowman, buyer, potion, ankrahmun, north, scarabs, depositer, lines, comments, debug, tibia, remove" />
+	<meta name="description" content="Extremely easy to configure. you can choose how many pots u would like to refill, number of cap to go dp, you can choose different types of potions by entering the correct potion ID,  and also go deposit when X gold. 
+Where it should be started: here:  
+ 
+http://blackdtools.net/cavebotimages/ankrahmunnorthscarabs.jpg 
+ 
+ 
+ 
+ 
+########Made by Snowman############## 
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Ankrahmun Scarabs with depositer and potion buying script!$" />
+	
+	<title> 42. Ankrahmun North Scarabs with depositer and potion buyer - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  42. Ankrahmun North Scarabs with depositer and potion buyer - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54446.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54446-42-Ankrahmun-North-Scarabs-with-depositer-and-potion-buyer-by-Snowman">42. Ankrahmun North Scarabs with depositer and potion buyer - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-22-2011, 13:21</div></div><div class="posttext">Extremely easy to configure. you can choose how many pots u would like to refill, number of cap to go dp, you can choose different types of potions by entering the correct potion ID,  and also go deposit when X gold.<br />
+Where it should be started: here: <br />
+<br />
+http://blackdtools.net/cavebotimages/ankrahmunnorthscarabs.jpg<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+########Made by Snowman##############<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Ankrahmun Scarabs with depositer and potion buying script!$<br />
+waitX 1<br />
+##########################################<br />
+#############CONFIG#######################<br />
+##########################################<br />
+#put here number of amount of you potions to refil<br />
+fastExiva _potionsamount = 60<br />
+#put here number of cap to go dp<br />
+fastExiva _captodp = 250<br />
+#how much does you potions cost<br />
+fastExiva _potionscost = 50<br />
+#ID of your potions<br />
+fastExiva _potionid = 0C 01<br />
+#ID of your vials<br />
+fastExiva _vialid = 1D 01<br />
+#put here amount of gold to go deposit:<br />
+fastExiva _gp = 4000<br />
+##########################################<br />
+###DO NOT CHANGE IT!<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########################################<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setFriendly<br />
+######Monsters#####<br />
+setMeleeKill larva<br />
+setMeleeKill scarab<br />
+setMeleeKill nomad<br />
+##############<br />
+####PRIORITIES####<br />
+#################<br />
+######LOOT######<br />
+setLoot D7 0B<br />
+setLoot D9 0B<br />
+setLoot D8 0B<br />
+setLoot E2 0B<br />
+#################<br />
+IfTrue ($mycap$#number&lt;=#$_captogodp$) Goto $nlineoflabel:dp$<br />
+IfTrue ($countitems:{$_potionid$}$#number&lt;=#$_potionsamount$) Goto $nlineoflabel:dp$<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#$_gp$) Goto $nilneoflabel:dp$<br />
+move 33164,32684,9<br />
+move 33155,32676,9<br />
+move 33150,32666,9<br />
+move 33152,32651,9<br />
+move 33169,32671,9<br />
+move 33173,32659,9<br />
+move 33167,32651,9<br />
+move 33182,32669,9<br />
+move 33193,32685,9<br />
+move 33202,32675,9<br />
+move 33204,32692,9<br />
+move 33216,32717,9<br />
+move 33202,32727,9<br />
+move 33177,32698,9<br />
+move 33163,32698,9<br />
+move 33186,32721,9<br />
+move 33178,32729,9<br />
+move 33159,32709,9<br />
+move 33165,32722,9<br />
+move 33158,32736,9<br />
+move 33164,32730,9<br />
+move 33135,32733,9<br />
+move 33147,32731,9<br />
+move 33168,32688,9<br />
+move 33144,32702,9<br />
+move 33141,32717,9<br />
+move 33122,32689,9<br />
+move 33155,32689,9<br />
+move 33132,32702,9<br />
+move 33141,32658,9<br />
+move 33132,32664,9<br />
+move 33115,32670,9<br />
+move 33139,32687,9<br />
+move 33154,32673,9<br />
+move 33153,32651,9<br />
+move 33170,32672,9<br />
+move 33175,32660,9<br />
+move 33161,32658,9<br />
+move 33172,32648,9<br />
+move 33181,32670,9<br />
+move 33163,32684,9<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+#do dp<br />
+move 33163,32684,9<br />
+move 33164,32684,8<br />
+move 33153,32685,8<br />
+move 33154,32686,7<br />
+move 33154,32716,7<br />
+useItem 33154,32740,7<br />
+move 33154,32761,7<br />
+move 33154,32763,6<br />
+move 33154,32765,6<br />
+move 33154,32767,7<br />
+move 33134,32804,7<br />
+move 33134,32806,6<br />
+move 33133,32818,6<br />
+##########################################<br />
+##########################################<br />
+:BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionstobuy = $countitems:{$_vialid$}$<br />
+fastExiva _cashfromvials = $numericalexp:{$countitems:{$_vialid$}$}*5$<br />
+fastExiva _potioncost = $numericalexp:{$_potionstobuy$}*{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp:{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+IfTrue ($_refil$#number=#0) Goto $nlineoflabel:nopots2$<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+:nopots2<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+##########################################<br />
+move 33132,32817,6<br />
+move 33131,32815,5<br />
+move 33131,32813,5<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+move 33131,32815,5<br />
+move 33131,32817,6<br />
+move 33128,32825,6<br />
+move 33128,32827,7<br />
+move 33123,32842,7<br />
+putLootOnDepot<br />
+move 33123,32842,7<br />
+move 33123,32842,7<br />
+move 33143,32805,7<br />
+move 33153,32768,7<br />
+move 33154,32764,6<br />
+move 33154,32762,6<br />
+move 33154,32762,7<br />
+move 33153,32755,7<br />
+move 33157,32706,7<br />
+move 33153,32687,7<br />
+move 33153,32686,8<br />
+move 33163,32684,8<br />
+move 33164,32684,9<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">napster2k</div><div class="date">10-16-2011, 03:04</div></div><div class="posttext">Whats the xp/hr?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jenitinha</div><div class="date">10-20-2011, 00:59</div></div><div class="posttext">Man, This code not work with comments, ( Debug tibia)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jenitinha</div><div class="date">10-21-2011, 20:44</div></div><div class="posttext">Every time the character comes out of the hunt and go to deposit the money, he deposited everything, but he gets caught and does not take away the money for the mp. Please someone can correct the error in this script?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">slyn</div><div class="date">10-24-2011, 04:16</div></div><div class="posttext">Man, This code not work with comments, ( Debug tibia)<br />
+<br />
+Remove first four lines from the top and it will workin (:<br />
+<br />
+But I got a problem when my character is depositing gold,when he deposited everything he is still staying near bank and don't moving.<br />
+Could somebody repair this scirpt?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">netolm</div><div class="date">10-16-2012, 20:03</div></div><div class="posttext">Someone experienced in scripts could add that same script to restore royal spear?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="blackd, connected, characters, recognize, chars, blank, logged, shows, opened, correctly, autoload, deleting, totally, thing, experiencing, problem, ensure, reporting, email, funny, reopening, account, thought, working, support, lemme, tibia, updated, proxy, 10.11, effort, putted, recognized, client, cavebot, accounts, works, blackdproxy, properly, logging, message, clients" />
+	<meta name="description" content="EDIT: I already found the function that detects proxy. It can be nullified. I was finally able to update Blackd Proxy :)" />
+	
+	<title> Blackd Proxy UPDATED FOR Tibia 10.11 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  Blackd Proxy UPDATED FOR Tibia 10.11</div>
+<hr />
+<div class="pda"><a href="t-60871.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60871-Blackd-Proxy-UPDATED-FOR-Tibia-10-11">Blackd Proxy UPDATED FOR Tibia 10.11</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-25-2013, 18:32</div></div><div class="posttext">EDIT: I already found the function that detects proxy. It can be nullified. I was finally able to update Blackd Proxy :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">08-26-2013, 00:20</div></div><div class="posttext">So, if Cipsoft doesn't come back about the proxy restriction, you guys won't continue with blackD even as not a proxy (like most of the other bots) ? Or would that be too painful to &quot;convert&quot; it (or even impossible), just to release a free software ? I knoooow it sounds retarded what I said, because I really suck at programming, so I don't know the proper words to express better what I'm thinking, but I think you got my point.<br />
+ If not, do you plan to create another paid bot, one that doesn't get caught as much as blackD ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-26-2013, 12:01</div></div><div class="posttext">So, if Cipsoft doesn't come back about the proxy restriction, you guys won't continue with blackD even as not a proxy (like most of the other bots) ? Or would that be too painful to &quot;convert&quot; it (or even impossible), just to release a free software ? I knoooow it sounds retarded what I said, because I really suck at programming, so I don't know the proper words to express better what I'm thinking, but I think you got my point.<br />
+ If not, do you plan to create another paid bot, one that doesn't get caught as much as blackD ?<br />
+<br />
+It can't be converted. Everything in Blackd Proxy depends on the proxy core. My bot gets all the game information from received packets at proxy, and it performs all actions by sending packets through that proxy connection. This does not work while Cipsoft is rejecting connections that goes through proxies.<br />
+I would have to write a new bot from scratch, but I don't have time for it. Maybe I will release some new minor safe cheat tools, but nothing else.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-26-2013, 17:34</div></div><div class="posttext">As alot of tibia players use proxys in order to reduce lag on their connections. I'm sure someone will soon find a way around the new system.<br />
+<br />
+If someone stumbles upon this information feel free to share it here.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-26-2013, 21:14</div></div><div class="posttext">I already found the function that detects proxy. It can be nullified. Maybe I will be able to update Blackd Proxy soon.<br />
+<br />
+<br />
+<br />
+004E8660      8B40 20                      MOV EAX,DWORD PTR DS:[EAX+20]            ; Tibia.004E8660(guessed void)<br />
+004E8663      8038 00                      CMP BYTE PTR DS:[EAX],0<br />
+004E8666      74 18                        JE SHORT 004E8680<br />
+004E8668      8078 01 00                   CMP BYTE PTR DS:[EAX+1],0<br />
+004E866C      74 12                        JE SHORT 004E8680<br />
+004E866E      8078 02 00                   CMP BYTE PTR DS:[EAX+2],0<br />
+004E8672      74 0C                        JE SHORT 004E8680<br />
+004E8674      8078 03 00                   CMP BYTE PTR DS:[EAX+3],0<br />
+004E8678      74 06                        JE SHORT 004E8680<br />
+004E867A      B8 01000000                  MOV EAX,1<br />
+004E867F      C3                           RETN<br />
+004E8680      33C0                         XOR EAX,EAX<br />
+004E8682      C3                           RETN</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-26-2013, 21:24</div></div><div class="posttext">Proxy checker function successfully nullified and Blackd Proxy is now receiving login connections from tibia client. <br />
+Enough work for today. Tomorrow I will deal with the new character list system. After that step Blackd Proxy will have full control of the game connection again, so everything will probably work again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-26-2013, 21:51</div></div><div class="posttext">Proxy checker function successfully nullified and Blackd Proxy is now receiving login connections from tibia client. <br />
+Enough work for today. Tomorrow I will deal with the new character list system. After that step Blackd Proxy will have full control of the game connection again, so everything will probably work again.<br />
+<br />
+ MAGEBOMB? :oOO</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-27-2013, 00:05</div></div><div class="posttext">MAGEBOMB? :oOO<br />
+<br />
+mmm, no, sorry. I mean that features that worked in 10.1 will work in 10.11.<br />
+Magebomb is not possible since long time ago and won't be possible.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">niniots</div><div class="date">08-27-2013, 00:16</div></div><div class="posttext">I'm using BlackD Proxy for the last year on OTs mostly though.<br />
+<br />
+Anyway, I've just noticed that Trainer doesn't work properly on BlackD Proxy version 29.4 for Tibia client 10.10<br />
+<br />
+I'm using it mostly to clean up depots/trash/etc. However, on version 29.4 it'll pick up individual items set in Trainer, but it won't pick them, if I set '00 00' (which is used to pick 'any' item).<br />
+<br />
+Other than that, it works great. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jalomo</div><div class="date">08-27-2013, 22:16</div></div><div class="posttext">you are the best &lt;3  blackd proxy &lt;3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jalomo</div><div class="date">08-27-2013, 22:27</div></div><div class="posttext">EDIT: I already found the function that detects proxy. It can be nullified. I was finally able to update Blackd Proxy :)<br />
+<br />
+Dont work :/ it show me a box with &quot;tibia.dat unreadable/missing&quot;  what can i do? <br />
+<br />
+<br />
+i try again and work great:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">08-28-2013, 01:44</div></div><div class="posttext">Thanks for the effort you've putted into it, blackd. You're the man.<br />
+<br />
+edit: btw, I know it's not the support part, but lemme ask here; well, some of my chars doesn't get recognized by blackdproxy. It's like, some of them works properly, just like before; but on some others blackd doesn't recognize them - I still get the blackd message when logging in, but when I go to the cavebot, the client char line is blank, it's like it's connected but has no name, while other accounts logged in have their name there, and clients that are not opened still shows correctly 4 - not connected, 5 - not connected, and so on. But some logged chars are totally blank. I tried deleting the .txt autoload of the characters that weren't working, reopening blackd but still didn't work. The funny thing is other characters of the same account blackd still recognize!<br />
+ I just thought I should warn you about that =d<br />
+                                                                                                                                                       Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-28-2013, 02:13</div></div><div class="posttext">Thanks for the effort you've putted into it, blackd. You're the man.<br />
+<br />
+edit: btw, I know it's not the support part, but lemme ask here; well, some of my chars doesn't get recognized by blackdproxy. It's like, some of them works properly, just like before; but on some others blackd doesn't recognize them - I still get the blackd message when logging in, but when I go to the cavebot, the client char line is blank, it's like it's connected but has no name, while other accounts logged in have their name there, and clients that are not opened still shows correctly 4 - not connected, 5 - not connected, and so on. But some logged chars are totally blank. I tried deleting the .txt autoload of the characters that weren't working, reopening blackd but still didn't work. The funny thing is other characters of the same account blackd still recognize!<br />
+ I just thought I should warn you about that =d<br />
+                                                                                                                                                       Thanks.<br />
+<br />
+please ensure you are using 29.7<br />
+<br />
+if you are still experiencing that problem in 29.7 then just send me an email reporting me it again there.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

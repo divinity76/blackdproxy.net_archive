@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="saymessage, exiva, iftrue, waitx, fastexiva, gotoscriptline, turn0, cassino, $randomnumber16$, _rndnum, $nlineoflabelloser$, $numbertohex2$numericalexp$myy$-1$$, $numbertohex1$myz$$, roled, $_rndnum$, $nlineoflabelstart$, turn2, $nlineoflabelpayout3$, $nlineoflabelpayout4$, $nlineoflabelpayout$, $nlineoflabelpayout2$, $countitems$_crystalid$$, $numbertohex2$numericalexp$myx$+1$$, _count3, $numericalexp$_count2$-$_count1$$, _count2, $_rndnum$number=5, $_rndnum$number=4, $_rndnum$number=3, $_rndnum$number=6, $numbertohex2$numericalexp$myx$+2$$, $hex-equiped-item06$, $_rndnum$number=2, $_rndnum$number=1, $lastmsg$string=hi, continue, $lastmsg$string=high, $lastmsg$string=low, $hex-equiped-item05$, ganha, _cont, payout, $numbertohex1$_pay3$$, $numbertohex1$_payout2$$, $numbertohex1$_pay2$$, $numbertohex1$_pay4$$, script, $numbertohex1$_pay$$, dicehigh3, blackd" />
+	<meta name="description" content="This script is very simple, I created the ElfBot Casino Script, so this one is very look like. 
+ 
+There is 2 versions of Casino Script: 
+ 
+1- With Dice 
+Tested on otserver 8.6 
+Put 1 (just one) dice inside your open backpack 
+ 
+2- Without Dice (easy) 
+For newer Tibia versions that you cant roll Die (dice) on Depot;" />
+	
+	<title> [tutorial] script casino blackd [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-34.html">14. Other tutorials</a> &gt;  [tutorial] script casino blackd</div>
+<hr />
+<div class="pda"><a href="t-61858.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61858-tutorial-script-casino-blackd">[tutorial] script casino blackd</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">09-21-2014, 21:38</div></div><div class="posttext">This script is very simple, I created the ElfBot Casino Script, so this one is very look like.<br />
+<br />
+There is 2 versions of Casino Script:<br />
+<br />
+1- With Dice<br />
+Tested on otserver 8.6<br />
+Put 1 (just one) dice inside your open backpack<br />
+<br />
+2- Without Dice (easy)<br />
+For newer Tibia versions that you cant roll Die (dice) on Depot;<br />
+Generate a Randon number between 1-6.<br />
+<br />
+Casino accept 3 crystal and payout 5. You can edit values but you may have some trouble, than PM me. <br />
+<br />
+Do exactly as image below:<br />
+http://i.imgur.com/RWcOLn7.png<br />
+<br />
+<br />
+1- With Dice<br />
+<br />
+<br />
+#define pay and payout<br />
+SetLootOff<br />
+fastExiva _pay = 3<br />
+fastExiva _payout = 5<br />
+fastExiva _message2 = Come and play on BlackdBot Casino! Play 30k<br />
+# default pay = 3 crystals (30k), payout = 5 crystals (50k)<br />
+:start<br />
+fastExiva _message1 = $randomnumber:1&gt;50$<br />
+fastExiva _crystalid = E3 0B<br />
+fastExiva _count1 = $countitems:{$_crystalid$}$<br />
+sayMessage Exiva &gt; 78 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ E3 0B 01 FF FF 05 00 00 $numbertohex1:{$_pay$}$<br />
+waitX 1<br />
+fastExiva _count2 = $countitems:{$_crystalid$}$<br />
+fastExiva _count3 = $numericalexp:{$_count2$}-{$_count1$}$<br />
+IfTrue ($_count3$#number=#$_pay$) Goto $nlineoflabel:run$<br />
+IfTrue ($_message1$#number=#1) Goto $nlineoflabel:message$<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:run<br />
+sayMessage exiva &gt; 78 FF FF 05 00 00 $hex-equiped-item:05$ 00 FF FF 03 00 00 $numbertohex1:{$_pay$}$<br />
+sayMessage Say &quot;hi&quot; to continue<br />
+:hi<br />
+IfTrue ($lastmsg$#string=#hi) Goto $nlineoflabel:check$<br />
+gotoScriptLine $nlineoflabel:hi$<br />
+:check<br />
+sayMessage Say &quot;high&quot; or &quot;low&quot;<br />
+:horl<br />
+IfTrue ($lastmsg$#string=#low) Goto $nlineoflabel:dicelow$<br />
+IfTrue ($lastmsg$#string=#high) Goto $nlineoflabel:dicehigh$<br />
+gotoScriptLine $nlineoflabel:horl$<br />
+:dicelow<br />
+:ll<br />
+fastExiva _dice1id = A0 16<br />
+fastExiva _dice2id = A1 16<br />
+fastExiva _dice3id = A2 16<br />
+fastExiva _dice4id = A3 16<br />
+fastExiva _dice5id = A4 16<br />
+fastExiva _dice6id = A5 16<br />
+fastExiva _dice1 = $countitems:{$_dice1id$}$<br />
+fastExiva _dice2 = $countitems:{$_dice2id$}$<br />
+fastExiva _dice3 = $countitems:{$_dice3id$}$<br />
+fastExiva _dice4 = $countitems:{$_dice4id$}$<br />
+fastExiva _dice5 = $countitems:{$_dice5id$}$<br />
+fastExiva _dice6 = $countitems:{$_dice6id$}$<br />
+IfTrue ($_dice1$#number&gt;#0) Goto $nlineoflabel:llow1$<br />
+IfTrue ($_dice2$#number&gt;#0) Goto $nlineoflabel:llow2$<br />
+IfTrue ($_dice3$#number&gt;#0) Goto $nlineoflabel:llow3$<br />
+IfTrue ($_dice4$#number&gt;#0) Goto $nlineoflabel:llow4$<br />
+IfTrue ($_dice5$#number&gt;#0) Goto $nlineoflabel:llow5$<br />
+IfTrue ($_dice6$#number&gt;#0) Goto $nlineoflabel:llow6$<br />
+gotoScriptLine $nlineoflabel:ll$<br />
+:dicehigh<br />
+:hh<br />
+fastExiva _dice1id = A0 16<br />
+fastExiva _dice2id = A1 16<br />
+fastExiva _dice3id = A2 16<br />
+fastExiva _dice4id = A3 16<br />
+fastExiva _dice5id = A4 16<br />
+fastExiva _dice6id = A5 16<br />
+fastExiva _dice1 = $countitems:{$_dice1id$}$<br />
+fastExiva _dice2 = $countitems:{$_dice2id$}$<br />
+fastExiva _dice3 = $countitems:{$_dice3id$}$<br />
+fastExiva _dice4 = $countitems:{$_dice4id$}$<br />
+fastExiva _dice5 = $countitems:{$_dice5id$}$<br />
+fastExiva _dice6 = $countitems:{$_dice6id$}$<br />
+IfTrue ($_dice1$#number&gt;#0) Goto $nlineoflabel:hhigh1$<br />
+IfTrue ($_dice2$#number&gt;#0) Goto $nlineoflabel:hhigh2$<br />
+IfTrue ($_dice3$#number&gt;#0) Goto $nlineoflabel:hhigh3$<br />
+IfTrue ($_dice4$#number&gt;#0) Goto $nlineoflabel:hhigh4$<br />
+IfTrue ($_dice5$#number&gt;#0) Goto $nlineoflabel:hhigh5$<br />
+IfTrue ($_dice6$#number&gt;#0) Goto $nlineoflabel:hhigh6$<br />
+gotoScriptLine $nlineoflabel:hh$<br />
+:loser<br />
+sayMessage You lose Playboy<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:payout<br />
+sayMessage You WIN<br />
+sayMessage exiva #E3 0B 06<br />
+waitX 1<br />
+sayMessage Exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ $numbertohex1:{$_payout$}$<br />
+waitX 1<br />
+sayMessage exiva #E3 0B 06<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:message<br />
+sayMessage $_message2$<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:llow1<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A0 16 00 00<br />
+gotoScriptLine $nlineoflabel:low$<br />
+:llow2<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A1 16 00 00<br />
+gotoScriptLine $nlineoflabel:low$<br />
+:llow3<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A2 16 00 00<br />
+gotoScriptLine $nlineoflabel:low$<br />
+:llow4<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A3 16 00 00<br />
+gotoScriptLine $nlineoflabel:low$<br />
+:llow5<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A4 16 00 00<br />
+gotoScriptLine $nlineoflabel:low$<br />
+:llow6<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A5 16 00 00<br />
+gotoScriptLine $nlineoflabel:low$<br />
+:hhigh1<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A0 16 00 00<br />
+gotoScriptLine $nlineoflabel:high$<br />
+:hhigh2<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A1 16 00 00<br />
+gotoScriptLine $nlineoflabel:high$<br />
+:hhigh3<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A2 16 00 00<br />
+gotoScriptLine $nlineoflabel:high$<br />
+:hhigh4<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A3 16 00 00<br />
+gotoScriptLine $nlineoflabel:high$<br />
+:hhigh5<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A4 16 00 00<br />
+gotoScriptLine $nlineoflabel:high$<br />
+:hhigh6<br />
+sayMessage exiva &gt; 82 FF FF 00 00 00 A5 16 00 00<br />
+gotoScriptLine $nlineoflabel:high$<br />
+:low<br />
+sayMessage Loading [...]<br />
+waitX 1<br />
+fastExiva _dice1id = A0 16<br />
+fastExiva _dice1 = $countitems:{$_dice1id$}$<br />
+waitX 1<br />
+fastExiva _dice1 = $countitems:{$_dice1id$}$<br />
+IfTrue ($_dice1$#number&gt;#0) Goto $nlineoflabel:payout$<br />
+fastExiva _dice2id = A1 16<br />
+fastExiva _dice2 = $countitems:{$_dice2id$}$<br />
+waitX 1<br />
+fastExiva _dice2 = $countitems:{$_dice2id$}$<br />
+IfTrue ($_dice2$#number&gt;#0) Goto $nlineoflabel:payout$<br />
+fastExiva _dice3id = A2 16<br />
+fastExiva _dice3 = $countitems:{$_dice3id$}$<br />
+waitX 1<br />
+fastExiva _dice3 = $countitems:{$_dice3id$}$<br />
+IfTrue ($_dice3$#number&gt;#0) Goto $nlineoflabel:payout$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:high<br />
+sayMessage Loading [...]<br />
+waitX 1<br />
+fastExiva _dice4id = A3 16<br />
+fastExiva _dice4 = $countitems:{$_dice4id$}$<br />
+waitX 1<br />
+fastExiva _dice4 = $countitems:{$_dice4id$}$<br />
+IfTrue ($_dice4$#number&gt;#0) Goto $nlineoflabel:payout$<br />
+fastExiva _dice5id = A4 16<br />
+fastExiva _dice5 = $countitems:{$_dice5id$}$<br />
+waitX 1<br />
+fastExiva _dice5 = $countitems:{$_dice5id$}$<br />
+IfTrue ($_dice5$#number&gt;#0) Goto $nlineoflabel:payout$<br />
+fastExiva _dice6id = A5 16<br />
+fastExiva _dice6 = $countitems:{$_dice6id$}$<br />
+waitX 1<br />
+fastExiva _dice6 = $countitems:{$_dice6id$}$<br />
+IfTrue ($_dice6$#number&gt;#0) Goto $nlineoflabel:payout$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+<br />
+<br />
+<br />
+2- Without Dice<br />
+<br />
+<br />
+#define pay and payout<br />
+SetLootOff<br />
+fastExiva _pay = 3<br />
+fastExiva _payout = 5<br />
+fastExiva _message2 = Come and play on BlackdBot Casino! Play 30k<br />
+# default pay = 3 crystals (30k), payout = 5 crystals (50k)<br />
+:start<br />
+fastExiva _message1 = $randomnumber:1&gt;50$<br />
+fastExiva _crystalid = E3 0B<br />
+fastExiva _count1 = $countitems:{$_crystalid$}$<br />
+sayMessage Exiva &gt; 78 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ E3 0B 01 FF FF 05 00 00 $numbertohex1:{$_pay$}$<br />
+waitX 1<br />
+fastExiva _count2 = $countitems:{$_crystalid$}$<br />
+fastExiva _count3 = $numericalexp:{$_count2$}-{$_count1$}$<br />
+IfTrue ($_count3$#number=#$_pay$) Goto $nlineoflabel:run$<br />
+IfTrue ($_message1$#number=#1) Goto $nlineoflabel:message$<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:run<br />
+sayMessage exiva &gt; 78 FF FF 05 00 00 $hex-equiped-item:05$ 00 FF FF 03 00 00 $numbertohex1:{$_pay$}$<br />
+sayMessage Say &quot;hi&quot; to continue<br />
+:hi<br />
+IfTrue ($lastmsg$#string=#hi) Goto $nlineoflabel:check$<br />
+gotoScriptLine $nlineoflabel:hi$<br />
+:check<br />
+sayMessage Say &quot;high&quot; or &quot;low&quot;<br />
+:horl<br />
+IfTrue ($lastmsg$#string=#low) Goto $nlineoflabel:dicelow$<br />
+IfTrue ($lastmsg$#string=#high) Goto $nlineoflabel:dicehigh$<br />
+gotoScriptLine $nlineoflabel:horl$<br />
+:dicelow<br />
+sayMessage Blackd Bot is generating randon number<br />
+waitX 1<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+waitX 2<br />
+sayMessage Random number: $_rndnum$<br />
+IfTrue ($_rndnum$#number=#1) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#2) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#3) Goto $nlineoflabel:payout$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:dicehigh<br />
+sayMessage Blackd Bot is generating randon number<br />
+waitX 2<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+waitX 1<br />
+sayMessage Random number: $_rndnum$<br />
+IfTrue ($_rndnum$#number=#4) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#5) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#6) Goto $nlineoflabel:payout$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:loser<br />
+sayMessage You lose Playboy<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:payout<br />
+sayMessage You WIN<br />
+sayMessage exiva #E3 0B 06<br />
+waitX 1<br />
+sayMessage Exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 $numbertohex2:{$numericalexp:{$myx$}+2$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ $numbertohex1:{$_payout$}$<br />
+waitX 1<br />
+sayMessage exiva #E3 0B 06<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:message<br />
+sayMessage $_message2$<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CHICODM</div><div class="date">11-25-2014, 17:00</div></div><div class="posttext">I could not use your script becaus i can't put some money in my hand :(<br />
+R u going to do another casino script with the money and dice in the backpack?<br />
+And i want to play min: 1 crystal coin max 50 crystal coins... how can i do it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-25-2014, 20:05</div></div><div class="posttext">I could not use your script becaus i can't put some money in my hand :(<br />
+R u going to do another casino script with the money and dice in the backpack?<br />
+And i want to play min: 1 crystal coin max 50 crystal coins... how can i do it?<br />
+<br />
+Why u cant put some money into ur hand? Bot need to process/count/read this way exactly as image above.<br />
+<br />
+also its there is a possibility to add more plays (like my casino script for elfbot), but I lost motivation since dice is not usable over depot box</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">vine96</div><div class="date">02-07-2015, 02:23</div></div><div class="posttext">Why u cant put some money into ur hand? Bot need to process/count/read this way exactly as image above.<br />
+<br />
+also its there is a possibility to add more plays (like my casino script for elfbot), but I lost motivation since dice is not usable over depot box<br />
+<br />
+Help Please in now version of tibia 10.53 not is possible put crystal coins in hands how i processed?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">02-07-2015, 22:24</div></div><div class="posttext">Help Please in now version of tibia 10.53 not is possible put crystal coins in hands how i processed?<br />
+<br />
+i didnt know that, so it needs some edit in the code to make it work. but i have no time nor motivation to do it.<br />
+<br />
+tip: probably it will need another bp to pay from.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rdgz</div><div class="date">08-04-2015, 17:12</div></div><div class="posttext">Hi! <br />
+<br />
+I want to run the script on OTServ. Its version 10.8 and its possible to put dice over depot and money in hands. What I have to do?<br />
+And I want to change the values of pay and payout. Which lines I have to change?<br />
+Or where can I learn more about writing this kind of script?<br />
+<br />
+Thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">05-17-2016, 02:15</div></div><div class="posttext">Just update of the script i am using on 7.x otserver. platinum coins instead + some fixes.<br />
+<br />
+MULTIPLE<br />
+<br />
+<br />
+<br />
+#define pay and payout<br />
+SetLootOff<br />
+fastExiva _cont = 0<br />
+fastExiva _pay = 20<br />
+fastExiva _pay2 = 30<br />
+fastExiva _pay3 = 40<br />
+fastExiva _pay4 = 50<br />
+fastExiva _payout = 30<br />
+fastExiva _payout2 = 50<br />
+fastExiva _payout3 = 60<br />
+fastExiva _payout4 = 80<br />
+fastExiva _message2 = .            Cassino                               *100% AFK*                          (2k - ganha 3k)                         (3k - ganha 5k)                         (4k - ganha 6k)                        (5k - ganha 8k)                  Cast ON<br />
+:start<br />
+fastExiva _cont = $numericalexp:{$_cont$}+1$<br />
+fastExiva _crystalid = DB 0B<br />
+fastExiva _count1 = $countitems:{$_crystalid$}$<br />
+#####<br />
+sayMessage Exiva &gt; 78 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ DB 0B 01 FF FF 05 00 00 $numbertohex1:{$_pay4$}$<br />
+waitX 1<br />
+fastExiva _count2 = $countitems:{$_crystalid$}$<br />
+fastExiva _count3 = $numericalexp:{$_count2$}-{$_count1$}$<br />
+IfTrue ($_count3$#number=#$_pay4$) Goto $nlineoflabel:run4$<br />
+sayMessage Exiva &gt; 78 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ DB 0B 01 FF FF 05 00 00 $numbertohex1:{$_pay3$}$<br />
+waitX 1<br />
+fastExiva _count2 = $countitems:{$_crystalid$}$<br />
+fastExiva _count3 = $numericalexp:{$_count2$}-{$_count1$}$<br />
+IfTrue ($_count3$#number=#$_pay3$) Goto $nlineoflabel:run3$<br />
+sayMessage Exiva &gt; 78 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ DB 0B 01 FF FF 05 00 00 $numbertohex1:{$_pay2$}$<br />
+waitX 1<br />
+fastExiva _count2 = $countitems:{$_crystalid$}$<br />
+fastExiva _count3 = $numericalexp:{$_count2$}-{$_count1$}$<br />
+IfTrue ($_count3$#number=#$_pay2$) Goto $nlineoflabel:run2$<br />
+sayMessage Exiva &gt; 78 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ DB 0B 01 FF FF 05 00 00 $numbertohex1:{$_pay$}$<br />
+waitX 1<br />
+fastExiva _count2 = $countitems:{$_crystalid$}$<br />
+fastExiva _count3 = $numericalexp:{$_count2$}-{$_count1$}$<br />
+IfTrue ($_count3$#number=#$_pay$) Goto $nlineoflabel:run$<br />
+#####<br />
+IfTrue ($_cont$#number&gt;=#5) Goto $nlineoflabel:message$<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:run4<br />
+sayMessage exiva &gt; 78 FF FF 05 00 00 $hex-equiped-item:05$ 00 FF FF 03 00 00 $numbertohex1:{$_pay4$}$<br />
+sayMessage exiva turn0<br />
+sayMessage Say &quot;hi&quot; to continue<br />
+:hi4<br />
+IfTrue ($lastmsg$#string=#hi) Goto $nlineoflabel:check4$<br />
+gotoScriptLine $nlineoflabel:hi4$<br />
+:check4<br />
+sayMessage Say &quot;high&quot; or &quot;low&quot;<br />
+:horl4<br />
+IfTrue ($lastmsg$#string=#low) Goto $nlineoflabel:dicelow4$<br />
+IfTrue ($lastmsg$#string=#high) Goto $nlineoflabel:dicehigh4$<br />
+gotoScriptLine $nlineoflabel:horl4$<br />
+:dicelow4<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#1) Goto $nlineoflabel:payout4$<br />
+IfTrue ($_rndnum$#number=#2) Goto $nlineoflabel:payout4$<br />
+IfTrue ($_rndnum$#number=#3) Goto $nlineoflabel:payout4$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:dicehigh4<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#4) Goto $nlineoflabel:payout4$<br />
+IfTrue ($_rndnum$#number=#5) Goto $nlineoflabel:payout4$<br />
+IfTrue ($_rndnum$#number=#6) Goto $nlineoflabel:payout4$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:payout4<br />
+sayMessage You WIN<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage Exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 $numbertohex2:{$numericalexp:{$myx$}+2$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ $numbertohex1:{$_payout4$}$<br />
+waitX 1<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage exiva turn0<br />
+sayMessage exiva turn2<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:run3<br />
+sayMessage exiva &gt; 78 FF FF 05 00 00 $hex-equiped-item:05$ 00 FF FF 03 00 00 $numbertohex1:{$_pay3$}$<br />
+sayMessage exiva turn0<br />
+sayMessage Say &quot;hi&quot; to continue<br />
+:hi3<br />
+IfTrue ($lastmsg$#string=#hi) Goto $nlineoflabel:check3$<br />
+gotoScriptLine $nlineoflabel:hi3$<br />
+:check3<br />
+sayMessage Say &quot;high&quot; or &quot;low&quot;<br />
+:horl3<br />
+IfTrue ($lastmsg$#string=#low) Goto $nlineoflabel:dicelow3$<br />
+IfTrue ($lastmsg$#string=#high) Goto $nlineoflabel:dicehigh3$<br />
+gotoScriptLine $nlineoflabel:horl3$<br />
+:dicelow3<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#1) Goto $nlineoflabel:payout3$<br />
+IfTrue ($_rndnum$#number=#2) Goto $nlineoflabel:payout3$<br />
+IfTrue ($_rndnum$#number=#3) Goto $nlineoflabel:payout3$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:dicehigh3<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#4) Goto $nlineoflabel:payout3$<br />
+IfTrue ($_rndnum$#number=#5) Goto $nlineoflabel:payout3$<br />
+IfTrue ($_rndnum$#number=#6) Goto $nlineoflabel:payout3$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:payout3<br />
+sayMessage You WIN<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage Exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 $numbertohex2:{$numericalexp:{$myx$}+2$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ $numbertohex1:{$_payout2$}$<br />
+waitX 1<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage exiva turn0<br />
+sayMessage exiva turn2<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:run2<br />
+sayMessage exiva &gt; 78 FF FF 05 00 00 $hex-equiped-item:05$ 00 FF FF 03 00 00 $numbertohex1:{$_pay2$}$<br />
+sayMessage exiva turn0<br />
+sayMessage Say &quot;hi&quot; to continue<br />
+:hi2<br />
+IfTrue ($lastmsg$#string=#hi) Goto $nlineoflabel:check2$<br />
+gotoScriptLine $nlineoflabel:hi2$<br />
+:check2<br />
+sayMessage Say &quot;high&quot; or &quot;low&quot;<br />
+:horl2<br />
+IfTrue ($lastmsg$#string=#low) Goto $nlineoflabel:dicelow2$<br />
+IfTrue ($lastmsg$#string=#high) Goto $nlineoflabel:dicehigh2$<br />
+gotoScriptLine $nlineoflabel:horl2$<br />
+:dicelow2<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#1) Goto $nlineoflabel:payout2$<br />
+IfTrue ($_rndnum$#number=#2) Goto $nlineoflabel:payout2$<br />
+IfTrue ($_rndnum$#number=#3) Goto $nlineoflabel:payout2$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:dicehigh2<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#4) Goto $nlineoflabel:payout2$<br />
+IfTrue ($_rndnum$#number=#5) Goto $nlineoflabel:payout2$<br />
+IfTrue ($_rndnum$#number=#6) Goto $nlineoflabel:payout2$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:payout2<br />
+sayMessage You WIN<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage Exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 $numbertohex2:{$numericalexp:{$myx$}+2$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ $numbertohex1:{$_payout2$}$<br />
+waitX 1<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage exiva turn0<br />
+sayMessage exiva turn2<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:run<br />
+sayMessage exiva &gt; 78 FF FF 05 00 00 $hex-equiped-item:05$ 00 FF FF 03 00 00 $numbertohex1:{$_pay$}$<br />
+sayMessage exiva turn0<br />
+sayMessage Say &quot;hi&quot; to continue<br />
+:hi<br />
+IfTrue ($lastmsg$#string=#hi) Goto $nlineoflabel:check$<br />
+gotoScriptLine $nlineoflabel:hi$<br />
+:check<br />
+sayMessage Say &quot;high&quot; or &quot;low&quot;<br />
+:horl<br />
+IfTrue ($lastmsg$#string=#low) Goto $nlineoflabel:dicelow$<br />
+IfTrue ($lastmsg$#string=#high) Goto $nlineoflabel:dicehigh$<br />
+gotoScriptLine $nlineoflabel:horl$<br />
+:dicelow<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#1) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#2) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#3) Goto $nlineoflabel:payout$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:dicehigh<br />
+fastExiva _rndnum = $randomnumber:1&gt;6$<br />
+sayMessage exiva &gt; 82 FF FF 0A 00 00 85 0B 00 0C<br />
+waitX 1<br />
+sayMessage Cassino roled a $_rndnum$.<br />
+waitX 1<br />
+IfTrue ($_rndnum$#number=#4) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#5) Goto $nlineoflabel:payout$<br />
+IfTrue ($_rndnum$#number=#6) Goto $nlineoflabel:payout$<br />
+gotoScriptLine $nlineoflabel:loser$<br />
+:loser<br />
+sayMessage You lose Playboy<br />
+sayMessage exiva turn1<br />
+waitX 1<br />
+sayMessage exiva turn0<br />
+sayMessage exiva turn2<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:payout<br />
+sayMessage You WIN<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage Exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 $numbertohex2:{$numericalexp:{$myx$}+2$}$ $numbertohex2:{$numericalexp:{$myy$}-1$}$ $numbertohex1:{$myz$}$ $numbertohex1:{$_payout$}$<br />
+waitX 1<br />
+sayMessage exiva #DB 0B 06<br />
+waitX 1<br />
+sayMessage exiva turn0<br />
+sayMessage exiva turn2<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:message<br />
+sayMessage $_message2$<br />
+fastExiva _cont = 0<br />
+sayMessage exiva turn0<br />
+sayMessage exiva turn2<br />
+sayMessage exiva &gt; 96 05 05 00 $hex-tibiastr:Casino 100% Afk ~ Thais DP ~ Cast ON &lt;apostas de 2k,3k,4k,5k&gt;$<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, depositor, buyer, spear, wiotki, setlooton, setloot, remember, autorefill, trainer, warrior, iftrue, $countitemscd, 0c$number, spearman, spearman+1, setchaoticmovesoff, thais, setpriority, potions, lvls, pally, paladins, scripts, made, 14-17, bring, orcs, 5-6k, 3-4k/h, health" />
+	<meta name="description" content="Hello. 
+ 
+I made two scripts for lov lvls pally , the first one , min 10 lvl - 3-4k/h , the second 5-6k on 14-17 lvl. 
+ 
+You should bring some health potions , remember set autorefill on trainer ! 
+ 
+Both got spear buyer and depositor . 
+ 
+First ." />
+	
+	<title> Orcs under Thais for Paladins only with spear buyer and depositor [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Orcs under Thais for Paladins only with spear buyer and depositor</div>
+<hr />
+<div class="pda"><a href="t-54002.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54002-Orcs-under-Thais-for-Paladins-only-with-spear-buyer-and-depositor">Orcs under Thais for Paladins only with spear buyer and depositor</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-16-2011, 21:01</div></div><div class="posttext">Hello.<br />
+<br />
+I made two scripts for lov lvls pally , the first one , min 10 lvl - 3-4k/h , the second 5-6k on 14-17 lvl.<br />
+<br />
+You should bring some health potions , remember set autorefill on trainer !<br />
+<br />
+Both got spear buyer and depositor .<br />
+<br />
+First .<br />
+<br />
+<br />
+#By Wiotki<br />
+setLootOn<br />
+setLoot D7 0B<br />
+setChaoticMovesOFF<br />
+setMeleeKill Orc<br />
+setPriority Orc Spearman:+1<br />
+setMeleeKill Orc Spearman<br />
+setMeleeKill Orc Warrior<br />
+#exp<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32332,32189,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32332,32198,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32322,32169,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32312,32166,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32332,32152,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32332,32189,10<br />
+gotoScriptLine 0<br />
+:spear<br />
+move 32332,32190,9<br />
+move 32356,32183,9<br />
+move 32356,32174,9<br />
+move 32356,32172,8<br />
+move 32356,32169,7<br />
+move 32344,32228,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2000$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*9$<br />
+sayInTrade withdraw $_spearcost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32349,32246,7<br />
+move 32350,32245,6<br />
+move 32343,32246,6<br />
+sayInTrade Hello<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A CD 0C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 2<br />
+move 32350,32245,6<br />
+move 32350,32247,7<br />
+move 32368,32214,7<br />
+move 32359,32172,7<br />
+move 32357,32170,7<br />
+move 32356,32171,8<br />
+move 32356,32174,9<br />
+move 32333,32189,9<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+Second<br />
+<br />
+<br />
+<br />
+#By Wiotki<br />
+setLootOn<br />
+setLoot CD 0C<br />
+setLoot D7 0B<br />
+setChaoticMovesOFF<br />
+setPriority orc shaman:+2<br />
+setPriority Orc Spearman:+1<br />
+setMeleeKill Troll<br />
+setMeleeKill Orc<br />
+setMeleeKill Orc Spearman<br />
+setMeleeKill Orc Warrior<br />
+setMeleeKill orc shaman<br />
+setMeleeKill snake<br />
+#exp<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32332,32189,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32332,32204,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32332,32205,9<br />
+move 32357,32230,9<br />
+move 32366,32242,9<br />
+move 32366,32216,9<br />
+move 32317,32210,9<br />
+move 32323,32198,9<br />
+move 32346,32206,9<br />
+move 32332,32205,9<br />
+move 32332,32204,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32323,32168,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32318,32139,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32313,32123,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32319,32119,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32319,32120,9<br />
+move 32325,32154,9<br />
+move 32320,32119,9<br />
+move 32319,32119,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#5) Goto $nlineoflabel:spear$<br />
+move 32322,32170,10<br />
+move 32311,32166,10<br />
+gotoScriptLine 0<br />
+:spear<br />
+move 32332,32190,9<br />
+move 32356,32183,9<br />
+move 32356,32174,9<br />
+move 32356,32172,8<br />
+move 32356,32169,7<br />
+move 32344,32228,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2000$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*9$<br />
+sayInTrade withdraw $_spearcost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32349,32246,7<br />
+move 32350,32245,6<br />
+move 32343,32246,6<br />
+sayInTrade Hello<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A CD 0C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 2<br />
+move 32350,32245,6<br />
+move 32350,32247,7<br />
+move 32368,32214,7<br />
+move 32359,32172,7<br />
+move 32357,32170,7<br />
+move 32356,32171,8<br />
+move 32356,32174,9<br />
+move 32333,32189,9<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+Have funn :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gleen666</div><div class="date">02-02-2011, 07:42</div></div><div class="posttext">Good Work ;D Man</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">02-09-2011, 09:54</div></div><div class="posttext">I got stuck a few times on the second one, the first one is sweet though! thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kird</div><div class="date">10-12-2011, 20:19</div></div><div class="posttext">buged rrefiller!!!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kird</div><div class="date">10-12-2011, 20:21</div></div><div class="posttext">i changed the depositer and it works fine if u want it just pm me!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

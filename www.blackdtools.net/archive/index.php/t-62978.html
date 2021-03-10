@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="bytes, collection, server, start, [pointer, points, 004555c8, tibia, address, qt5core.dll, struct, [server, starter0, chars, random, elem1, access, [byte, starter, qt5gui.dll, 00482ee4, number, engine, cheat, search, qstring, searching, account, element, skills, stored, required, [key], [integer], retrieved, avoiding, short, paths, client, [b]collection, fixed, loops, http://www.blackdtools.net/showthread.php?62973-tibia-11-about-the-structure-of-the-skills-in-memory, order, reference, port], [b]current, worked, adrserverlist_collectionstart=qt5core.dll, randomservernameincollection=qt5core.dll" />
+	<meta name="description" content="I noticed that Tibia 11 stores server info in some kind of collection struct. 
+This collection will only store 1 entry per server, no matter if your account have many chars that belong to that server. 
+If all your chars play same server, then this collection will only have 1 item. 
+If you have 20 chars, each of them in 20 different servers, then this collection will have 20 items. 
+ 
+Tips for reverse engineering, for future updates: 
+- The initial key for finding this struct is searching game" />
+	
+	<title> Tibia 11 - Collection of server info AND character list [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - Collection of server info AND character list</div>
+<hr />
+<div class="pda"><a href="t-62978.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62978-Tibia-11-Collection-of-server-info-AND-character-list">Tibia 11 - Collection of server info AND character list</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-26-2016, 17:51</div></div><div class="posttext">I noticed that Tibia 11 stores server info in some kind of collection struct.<br />
+This collection will only store 1 entry per server, no matter if your account have many chars that belong to that server.<br />
+If all your chars play same server, then this collection will only have 1 item.<br />
+If you have 20 chars, each of them in 20 different servers, then this collection will have 20 items.<br />
+<br />
+Tips for reverse engineering, for future updates:<br />
+- The initial key for finding this struct is searching game server url in memory. For example: astera-lb.ciproxy.com<br />
+- A shortcut is using an account with only 1 char, and searching 010000000000000000000000????????????????031C0000<br />
+- You should find 2 results. Result - 0x0C = possible element. So have ELEM0 and ELEM1. Each possible element points to a possible start address: STARTER0 and STARTER1. Check what access each address. Control+L to go back to char list. Tibia should access the right one. Now you should be able to determine wich one is the good start. If good start is STARTER0 then use cheat engine to search address ELEM1. If good start is STARTER0 then use cheat engine to search address ELEM1. In any case, force last offset to 0. <br />
+- You usually end obtaining a path starting in gui or threadstack-e8, don't worry. Use following translations to Qt5Core.dll, a stable point where all the most important things can start safely:<br />
+&quot;THREADSTACK0&quot;-000000E8 = &quot;Qt5Core.dll&quot; + 004555C8 &gt; 8<br />
+&quot;Qt5Gui.dll&quot; + 00482EE4 &gt; 28 &gt; 0 = &quot;Qt5Core.dll&quot; + 004555C8 &gt; 8<br />
+&quot;Qt5Gui.dll&quot; + 00482EE4 &gt; 20 &gt; C = &quot;Qt5Core.dll&quot; + 004555C8 &gt; 4 &gt; 20 &gt; C<br />
+<br />
+How is a Tibia 11 collection struct?<br />
+COLLECTION START:<br />
+[Pointer to starter item] 4 bytes<br />
+[Total count] 4 bytes<br />
+<br />
+STARTER ITEM:<br />
+[Pointer 0] 4 bytes<br />
+[Pointer 1] 4 bytes<br />
+[Pointer 2] 4 bytes<br />
+ 1 byte , always 01<br />
+[Byte 2] 1 byte , always 01<br />
+<br />
+[B]COLLECTION ITEM<br />
+[Pointer 0] 4 bytes - points to a random? different collection item<br />
+[Pointer 1] 4 bytes - points to a random? different collection item<br />
+[Pointer 2] 4 bytes - points to a random? different collection item<br />
+ 1 byte<br />
+[Byte 2] 1 byte<br />
+[Integer] 2 bytes<br />
+[KEY] 4 bytes - The key required by client to find this item. In the case of the server collection here you have a short id number that is used in the charlist as reference to this server.<br />
+[Long number] 4 bytes<br />
+[Server Name] 4 bytes - points to a QString containing game server name<br />
+[Server URL] 4 bytes - points to a QString containing game server url<br />
+[Server port] 4 bytes - game server port, for now always 7171<br />
+<br />
+[B]Current path to the collection start:<br />
+adrServerList_CollectionStart=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 168 &gt; 54 &gt; 18 &gt; 2c<br />
+<br />
+An example path to test if it worked:<br />
+randomServerNameInCollection=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 168 &gt; 54 &gt; 18 &gt; 2c &gt; 0 &gt; 18 &gt; 10<br />
+<br />
+Some final notes:<br />
+- Reading full collection will require a small algorithm to follow all possible pointer paths, avoiding loops.<br />
+- Tibia 11 skills are stored in a collection struct too. However they are always the same number of skills, and they are always stored in the same order so each of them can be retrieved using a fixed path. Read more here (http://www.blackdtools.net/showthread.php?62973-Tibia-11-About-the-structure-of-the-SKILLS-in-memory).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-28-2016, 16:40</div></div><div class="posttext">Interesting additional fact:<br />
+adrServerList_CollectionStart + 8 = LIST OF LOADED CHARACTERS!<br />
+<br />
+How to read char list in Tibia 11:<br />
+At the first 4 bytes of the list start you can see 01 00 00 00 (you are already in the real list start), or a pointer to the real list start.<br />
+Now, when you are in the real list start:<br />
+NUMBER OF CHARS = start + 4<br />
+LIST START = start + HEX 10<br />
+That is...<br />
+Pointer to CHAR #0 = start + HEX 10<br />
+Pointer to CHAR #1 = start + HEX 14<br />
+Pointer to CHAR #2 = start + HEX 18<br />
+Pointer to CHAR #3 = start + HEX 1C<br />
+Pointer to CHAR #4 = start + HEX 20<br />
+Pointer to CHAR #5 = start + HEX 24<br />
+Pointer to CHAR #6 = start + HEX 28<br />
+Pointer to CHAR #7 = start + HEX 2C<br />
+etc.<br />
+<br />
+Each char contains 2 usefull things:<br />
+Pointer to a QString containing CHAR NAME = item start + HEX 10<br />
+Pointer to a QString containing SERVER NAME = item start + HEX 14<br />
+And I am afraid that is all.<br />
+However... you can obtain server info from the collection of servers! Problem solved. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-28-2016, 16:54</div></div><div class="posttext">How to determine the selected char:<br />
+<br />
+When you are still in the char list:<br />
+adrSelectedCharIndex=&quot;Qt5Gui.dll&quot;+00482EE4 &gt; 20 &gt; C &gt; 58 &gt; 4 &gt; F8 &gt; 418<br />
+WARNING: does not work after login into game: &quot;Qt5Gui.dll&quot;+00482EE4 &gt; 20 &gt; C &gt; 58 &gt; 4 &gt; F8 = 0 <br />
+However, when you are ingame you can read selected char name directly:<br />
+adrSelectedCharName=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; C &gt; 4 &gt; 18 &gt; 38 &gt; 28<br />
+adrSelectedCharName points to a QSTRING with character name. If you are outside game then it will point to null (address FFFFFFF) or to an address containing an empty qstring &quot;&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-28-2016, 17:54</div></div><div class="posttext">I am still searching an stable path for adrSelectedCharIndex<br />
+<br />
+alternatives:<br />
+adrSelectedCharIndex=&quot;Qt5Gui.dll&quot; + 00482EE4 &gt; 20 &gt; C &gt; 58 &gt; 4 &gt; F8 &gt; 418<br />
+adrSelectedCharIndex=&quot;Qt5Gui.dll&quot; + 00482EE4 &gt; 20 &gt; C &gt; 58 &gt; 4 &gt; 108 &gt; 4 &gt; 418<br />
+adrSelectedCharIndex=&quot;Qt5Gui.dll&quot; + 00482EE4 &gt; 20 &gt; C &gt; 4 &gt; 98 &gt; 8C &gt; 418<br />
+<br />
+?? adrSelectedCharIndex=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 24 &gt; 0 &gt; A4 &gt; 4 &gt; 64 &gt; 8 &gt; 4 &gt; 418</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

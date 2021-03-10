@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibia, customer, source, configs, proxy, blackd, client, 10.99, 11.01, https://github.com/blackdtools/blackd-proxy-classic, shared, latest, http://blackdtools.com/vip.php, config, github, share, allowed, installer, persons, thing, small, compile, version, features, restriction, status, locked, current, updated, works, customers, request, bought, special" />
+	<meta name="description" content="Hello everybody and hello Daniel if you're reading it, as the title says, will Blackd Proxy and another tools work in Tibia Client Version 11?  
+ 
+I hope it continues working, I love this bot, made hundreds of scripts and they all will be trash if it doesn't work anymore :/" />
+	
+	<title> [ANSWERED] NEW Tibia Client 11 - Will Blackd Proxy works? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  [ANSWERED] NEW Tibia Client 11 - Will Blackd Proxy works?</div>
+<hr />
+<div class="pda"><a href="t-62961.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62961-ANSWERED-NEW-Tibia-Client-11-Will-Blackd-Proxy-works">[ANSWERED] NEW Tibia Client 11 - Will Blackd Proxy works?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">alfredomt</div><div class="date">09-13-2016, 22:33</div></div><div class="posttext">Hello everybody and hello Daniel if you're reading it, as the title says, will Blackd Proxy and another tools work in Tibia Client Version 11? <br />
+<br />
+I hope it continues working, I love this bot, made hundreds of scripts and they all will be trash if it doesn't work anymore :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-14-2016, 11:46</div></div><div class="posttext">Well, that is a good question. Updating everything for Tibia 11 would require several months of hard investigation over that new client.<br />
+I guess I will start updating the smaller cheat tools, then I will try to fix Blackd Proxy. However it can take months, and I don't guarantee anything here. If I fail to update it then Blackd Proxy will be left as a bot only for OTs with version below Tibia 11.0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">alfredomt</div><div class="date">09-14-2016, 20:12</div></div><div class="posttext">Thanks for your answer Daniel, I don't know much about programation and etc, but I can help you with something if you need, for test or another things, just send a email to amtrosul@hotmail.com, I would like to help you, hugs!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Spirit</div><div class="date">10-06-2016, 02:03</div></div><div class="posttext">Im counting with you job...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-12-2016, 12:28</div></div><div class="posttext">Today I already managed to complete a system that will allow Tibia 11 connection through my proxy. That is a big step. The core of Blackd Proxy 41.0 is now ready for Tibia 11.<br />
+The protocol is exactly the same than Tibia 10.98 so that will save me a lot of time. However I still need to do many big tasks so I can reenable the cavebot (it depends on a few memory addresses and maps)<br />
+<br />
+But, for now I am very happy.<br />
+<br />
+http://blackdtools.com/images/tibia11beta.png</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">10-12-2016, 23:38</div></div><div class="posttext">Nicely done!! Was it hard figure it out? I've not spend so much time in tibia 11 but it seems like a real mess.<br />
+<br />
+Jumping between many liberies, and pointers all over. Have not found any static addresses at all.<br />
+<br />
+Btw I was thinking of just read all map from packets, maybe that is the way to go? Read fullmap on login and then read all map packets.<br />
+<br />
+And playerHp mana etc can you read from packets? And even player location if you got the mappackets working.<br />
+<br />
+Take a look in the flash client, you have all structures there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-13-2016, 00:08</div></div><div class="posttext">Reverse engineering takes a lot of time, but it is easier when you discover the full power of Cheat Engine.<br />
+<br />
+I already wrote some tutorials about Tibia 11 in my programmers subforum here (http://www.blackdtools.net/forumdisplay.php?7-Programmer-s-corner)<br />
+<br />
+Yes, you can obtain map, hp, mana and everything from packets. However, you need to read tiles correctly first. For now I am using Tibia 10.98 old dat file, but it will be outdated soon so I need to build a parser for the new tile file.<br />
+I also need to rebuild map reader and I need a new virtual mini map clicker function to do moves by memory. Then Blackd Proxy will be 100% completed.<br />
+<br />
+About flash client: Yes, it might have some common structures. However, reading memory in a flash client is probably much harder. I have no interest in making a bot for flash, but whenever I find guides about it I always take a look in case I can learn something new there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">10-13-2016, 01:28</div></div><div class="posttext">Ahh did not notice! great work man!<br />
+I ment to decompile the swf file you can see all packet structures, use a program like this. http://www.sothink.com/product/flashdecompiler/<br />
+And you will find the swf file here https://secure.tibia.com/flash-regular-bin/catalog-client.xml</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bmvr</div><div class="date">10-16-2016, 01:58</div></div><div class="posttext">Blackd, can you share the source code you are currently working with? If you share it, I'll try to take a look at my free time. I'm pretty good with programming (c# .net) so vb won't be much different.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-25-2016, 18:29</div></div><div class="posttext">Blackd Proxy is now updated for Tibia 10.99 and Tibia 11.01<br />
+Current status of this bot:<br />
+Configs up to Tibia 10.99 are FREE for everybody.<br />
+Configs Tibia 11+ are locked only for VIP customers. VIP customer = anyone who bought at least 4 EUR of Tibia Gold in the last 30 days. If you are VIP customer then you can request a special version for Tibia 11+ client here: http://blackdtools.com/vip.php<br />
+<br />
+Latest config: Tibia 11.01 <br />
+<br />
+You can find source code at GitHub: https://github.com/blackdtools/Blackd-Proxy-CLASSIC<br />
+Source code is shared with a restriction: If you edit a small thing and compile the code then you can use all the features of the bot. However you are not allowed to share the exe neither the bot installer with other persons.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

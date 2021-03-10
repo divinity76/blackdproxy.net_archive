@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, saymessage, exiva, setmeleekill, waitx, gotoscriptline, sayintrade, troll, 32657,31964,8, $nlineoflabelgohunt$, 32663,31963,7, bldmx, 32623,31986,8, 32623,32008,9, iftrue, 32621,31986,8, 32657,31966,8, venore, trolls, 32634,31988,8, 32623,32009,8, nomage, 32661,32009,9, 32647,32005,8, 32663,31961,8, 32657,31981,8, 32659,31986,9, $mycap$number, 32633,31979,9, 32647,32001,9, 32627,31993,9, 32627,32001,9, edit, $__killmage$number=0, $hex-idofnameroykn$, 32646,31979,9, $nlineoflabelnomage$, goto, 32652,31974,9, 32790,32087,6, 32786,32087,6, 32792,32087,7, 32793,32087,7, 32862,32127,7, 32784,32087,7, 32783,32087,7, $nlineoflabelhunttrolls$, 32665,31968,7, 32670,31979,7, 32679,32027,7" />
+	<meta name="description" content="Hunts trolls 
+Start at cave. 
+ 
+ 
+## 
+#Script By BldMx  
+#Version 1.0 
+# 
+#Do not edit anything 
+##" />
+	
+	<title> 25. Trolls Venore Bridge - By BldMx [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  25. Trolls Venore Bridge - By BldMx</div>
+<hr />
+<div class="pda"><a href="t-54392.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54392-25-Trolls-Venore-Bridge-By-BldMx">25. Trolls Venore Bridge - By BldMx</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-18-2011, 21:24</div></div><div class="posttext">Hunts trolls<br />
+Start at cave.<br />
+<br />
+<br />
+<br />
+##<br />
+#Script By BldMx <br />
+#Version 1.0<br />
+#<br />
+#Do not edit anything<br />
+##<br />
+sayMessage Exiva &lt; B4 13 $hex-tibiastr:Welcome to the Automated Venore Troll Experience.$<br />
+sayMessage Exiva &lt; B4 13 $hex-tibiastr:For more scripts visit BlackdTools's forums and search for BldMx's posts.$<br />
+setLootOn<br />
+setFollow<br />
+setMeleeKill snake<br />
+setMeleeKill rat<br />
+setMeleeKill spider<br />
+setMeleeKill bug<br />
+setMeleeKill bat<br />
+setMeleeKill troll champion<br />
+setMeleeKill troll<br />
+fastExiva __killmage = 0<br />
+#Gold<br />
+setLoot D7 0B<br />
+gotoScriptLine $nlineoflabel:goHunt$<br />
+:huntTrolls<br />
+move 32656,31963,7<br />
+move 32663,31963,7<br />
+move 32663,31962,8<br />
+move 32657,31964,8<br />
+sayMessage exiva &gt; 0A 00 82 91 7F DD 7C 08 6C 18 01 01<br />
+move 32657,31966,8<br />
+sayMessage exiva &gt; 0A 00 82 91 7F DD 7C 08 6D 18 01 01<br />
+move 32657,31970,8<br />
+move 32644,31973,8<br />
+move 32630,31978,8<br />
+move 32623,31986,8<br />
+sayMessage exiva &gt; 0A 00 82 6E 7F F2 7C 08 69 18 01 01<br />
+move 32621,31986,8<br />
+sayMessage exiva &gt; 0A 00 82 6E 7F F2 7C 08 6A 18 01 01<br />
+move 32598,31985,8<br />
+move 32584,31985,8<br />
+move 32591,31995,8<br />
+move 32621,31986,8<br />
+sayMessage exiva &gt; 0A 00 82 6E 7F F2 7C 08 69 18 01 01<br />
+move 32623,31986,8<br />
+sayMessage exiva &gt; 0A 00 82 6E 7F F2 7C 08 6A 18 01 01<br />
+move 32623,32007,8<br />
+move 32623,32008,9<br />
+move 32627,32001,9<br />
+move 32627,31993,9<br />
+move 32647,32001,9<br />
+IfTrue ($__killmage$#number=#0) Goto $nlineoflabel:noMage$<br />
+move 32646,31979,9<br />
+move 32633,31979,9<br />
+move 32652,31974,9<br />
+move 32659,31986,9<br />
+move 32661,32009,9<br />
+:noMage<br />
+move 32623,32008,9<br />
+move 32623,32009,8<br />
+move 32634,31988,8<br />
+move 32647,32005,8<br />
+move 32657,31981,8<br />
+move 32657,31966,8<br />
+sayMessage exiva &gt; 0A 00 82 91 7F DD 7C 08 6C 18 02 00<br />
+move 32657,31964,8<br />
+sayMessage exiva &gt; 0A 00 82 91 7F DD 7C 08 6D 18 02 00<br />
+move 32663,31961,8<br />
+move 32663,31963,7<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:goDepot$<br />
+gotoScriptLine $nlineoflabel:huntTrolls$<br />
+:goDepot<br />
+move 32670,31979,7<br />
+move 32679,32027,7<br />
+move 32783,32087,7<br />
+move 32784,32087,7<br />
+move 32786,32087,6<br />
+move 32790,32087,6<br />
+move 32792,32087,7<br />
+move 32793,32087,7<br />
+move 32862,32127,7<br />
+move 32862,32125,6<br />
+move 32910,32076,6<br />
+move 32919,32070,6<br />
+move 33019,32053,6<br />
+fastExiva &gt; A2 $hex-idofname:Roykn$<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32919,32070,6<br />
+move 32919,32072,7<br />
+gotoScriptLine $nlineoflabel:goHunt$<br />
+:goHunt<br />
+move 32910,32078,7<br />
+move 32910,32076,6<br />
+move 32862,32125,6<br />
+move 32862,32127,7<br />
+move 32793,32087,7<br />
+move 32792,32087,7<br />
+move 32790,32087,6<br />
+move 32786,32087,6<br />
+move 32784,32087,7<br />
+move 32783,32087,7<br />
+move 32679,32027,7<br />
+move 32670,31979,7<br />
+move 32665,31968,7<br />
+gotoScriptLine $nlineoflabel:huntTrolls$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wolfuns</div><div class="date">02-21-2011, 16:55</div></div><div class="posttext">? it doesnt work  for me ? why ?:P  when im in the cave and there is a rotworm or a troll the PK alarm is going on? help me plz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dynamickk</div><div class="date">02-21-2011, 17:07</div></div><div class="posttext">Its because of the alert of runemaker xD.<br />
+<br />
+Go to the runemaker, on the right side of the options theres something like:<br />
+<br />
+Add exception:<br />
+[                       ]<br />
+Add Remove sel.<br />
+<br />
+There, u can put the names of monsters that you are hunting. So the PK alert wont ring.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wolfuns</div><div class="date">02-21-2011, 18:30</div></div><div class="posttext">Its because of the alert of runemaker xD.<br />
+<br />
+Go to the runemaker, on the right side of the options theres something like:<br />
+<br />
+Add exception:<br />
+[                       ]<br />
+Add Remove sel.<br />
+<br />
+There, u can put the names of monsters that you are hunting. So the PK alert wont ring.<br />
+ <br />
+Thnx mate it worked !</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="label, fastexiva, _manapotionid, $_count1$number, iftrue, $countitems$_goldid$, _count1, function, script" />
+	<meta name="description" content="Everything is working fine, except my character will not leave when he runs out of potions. No matter what i do i cannot get ny of my scripts to leave when they are supposed to, he just ignores if true commands. 
+ 
+ 
+ 
+fastExiva _manapotionid = EE 00 
+fastExiva _manas = 1400 
+fastExiva _idcost = 120 
+setMeleeKill Deepling Tyrant 
+setMeleeKill Deepling Guard 
+setMeleeKill Deepling Warrior" />
+	
+	<title> Script will not function as it should. Please Help [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  Script will not function as it should. Please Help</div>
+<hr />
+<div class="pda"><a href="t-61909.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61909-Script-will-not-function-as-it-should-Please-Help">Script will not function as it should. Please Help</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Arkemis</div><div class="date">11-12-2014, 19:22</div></div><div class="posttext">Everything is working fine, except my character will not leave when he runs out of potions. No matter what i do i cannot get ny of my scripts to leave when they are supposed to, he just ignores if true commands.<br />
+<br />
+<br />
+<br />
+fastExiva _manapotionid = EE 00<br />
+fastExiva _manas = 1400<br />
+fastExiva _idcost = 120<br />
+setMeleeKill Deepling Tyrant<br />
+setMeleeKill Deepling Guard<br />
+setMeleeKill Deepling Warrior<br />
+setMeleeKill Deepling Elite<br />
+setMeleeKill Deepling Spellsinger<br />
+setSpellKill Deepling Tyrant,exevo gran mas vis,2<br />
+setSpellKill Deepling Guard,exevo gran mas vis,2<br />
+setSpellKill Deepling Warrior,exevo gran mas vis,2<br />
+setSpellKill Deepling Elite,exevo gran mas vis,2<br />
+setSpellKill Deepling Spellsinger,exevo gran mas vis,2<br />
+setLootOn<br />
+setLoot E3 0B<br />
+setLoot 24 0D<br />
+setLoot 26 0D<br />
+setLoot 5C 0D<br />
+setLoot 56 0D<br />
+move 617,636,9<br />
+move 615,658,9<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto 47<br />
+move 632,660,9<br />
+move 631,672,9<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto 47<br />
+move 615,674,9<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+move 617,673,8<br />
+move 630,677,8<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto 43<br />
+move 630,664,8<br />
+move 615,660,8<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto 43<br />
+move 615,672,8<br />
+waitX 1<br />
+fastExiva &gt;67<br />
+move 630,671,9<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto 47<br />
+move 636,648,9<br />
+gotoscriptline 0<br />
+:refill<br />
+move 615,672,8<br />
+waitX 1<br />
+fastExiva &gt;67<br />
+move 630,671,9<br />
+move 637,645,9<br />
+fastExiva &gt;66<br />
+move 640,635,8<br />
+move 640,628,8<br />
+waitX 1<br />
+useItem 640,627,8<br />
+move 640,622,8<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+move 793,937,7<br />
+waitX 1<br />
+fastExiva &gt;66<br />
+move 338,31365,9<br />
+move 314,31356,9<br />
+move 308,31357,9<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+move 308,31353,8<br />
+waitX 1<br />
+putLootOnDepot<br />
+waitX 1<br />
+move 308,31355,8<br />
+waitX 1<br />
+fastExiva &gt;67<br />
+move 313,31354,9<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitx 1<br />
+move 306,31354,9<br />
+move 305,31354,9<br />
+waitX 1<br />
+saymessage hi<br />
+waitx 2<br />
+sayInTrade trade<br />
+waitx 2<br />
+sayMessage exiva buy:EE 00:1300<br />
+waitx 1<br />
+sayMessage exiva buy:58 0C:5<br />
+waitX 1<br />
+move 321,31356,9<br />
+move 349,31377,9<br />
+move 363,31387,9<br />
+fastExiva &gt;67<br />
+waitX 1<br />
+move 793,938,7<br />
+move 793,935,7<br />
+move 794,927,7<br />
+move 794,923,7<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+waitX 1<br />
+move 640,623,8<br />
+move 640,626,8<br />
+move 640,626,8<br />
+waitX 1<br />
+useItem 640,627,8<br />
+waitX 1<br />
+move 640,635,8<br />
+move 639,645,8<br />
+waitX 1<br />
+fastExiva &gt;68<br />
+gotoscriptline 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-12-2014, 19:50</div></div><div class="posttext">use label and goto label <br />
+<br />
+try to do it:<br />
+<br />
+fastExiva _manapotionid = EE 00<br />
+fastExiva _count1 = $countitems:{$_goldid$}<br />
+IfTrue ($_count1$#number&lt;#300) Goto $nlineoflabel:label$ &lt;--- use goto &quot;label&quot;, ur string is missing &quot;)&quot;<br />
+<br />
+:label &lt;--- this is how declare label</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Arkemis</div><div class="date">11-13-2014, 04:39</div></div><div class="posttext">use label and goto label <br />
+<br />
+try to do it:<br />
+<br />
+fastExiva _manapotionid = EE 00<br />
+fastExiva _count1 = $countitems:{$_goldid$}<br />
+IfTrue ($_count1$#number&lt;#300) Goto $nlineoflabel:label$ &lt;--- use goto &quot;label&quot;, ur string is missing &quot;)&quot;<br />
+<br />
+:label &lt;--- this is how declare label<br />
+<br />
+I changed to line of label which is how i used to have it...<br />
+<br />
+am i supposed to change the &quot;count1&quot; to 1400 and the &quot;goldid&quot; to 120?<br />
+<br />
+where is it missing &quot;)&quot; ?<br />
+<br />
+this is revised script, how should it look?<br />
+<br />
+fastExiva _manapotionid = EE 00<br />
+fastExiva _manas = 1400<br />
+fastExiva _idcost = 120<br />
+setMeleeKill Deepling Tyrant<br />
+setMeleeKill Deepling Guard<br />
+setMeleeKill Deepling Warrior<br />
+setMeleeKill Deepling Elite<br />
+setMeleeKill Deepling Spellsinger<br />
+setSpellKill Deepling Tyrant,exevo gran mas vis,2<br />
+setSpellKill Deepling Guard,exevo gran mas vis,2<br />
+setSpellKill Deepling Warrior,exevo gran mas vis,2<br />
+setSpellKill Deepling Elite,exevo gran mas vis,2<br />
+setSpellKill Deepling Spellsinger,exevo gran mas vis,2<br />
+setLootOn<br />
+setLoot E3 0B<br />
+setLoot 24 0D<br />
+setLoot 26 0D<br />
+setLoot 5C 0D<br />
+setLoot 56 0D<br />
+move 617,636,9<br />
+move 615,658,9<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto $nlineoflabel:refill2$<br />
+move 632,660,9<br />
+move 631,672,9<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto $nlineoflabel:refill2$<br />
+move 615,674,9<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+move 617,673,8<br />
+move 630,677,8<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto $nlineoflabel:refill$<br />
+move 630,664,8<br />
+move 615,660,8<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto $nlineoflabel:refill$<br />
+move 615,672,8<br />
+waitX 1<br />
+fastExiva &gt;67<br />
+move 630,671,9<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto $nlineoflabel:refill2$<br />
+move 636,648,9<br />
+gotoscriptline 0<br />
+:refill<br />
+move 615,672,8<br />
+waitX 1<br />
+fastExiva &gt;67<br />
+move 630,671,9<br />
+:refill2<br />
+move 637,645,9<br />
+fastExiva &gt;66<br />
+move 640,635,8<br />
+move 640,628,8<br />
+waitX 1<br />
+useItem 640,627,8<br />
+move 640,622,8<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+move 793,937,7<br />
+waitX 1<br />
+fastExiva &gt;66<br />
+move 338,31365,9<br />
+move 314,31356,9<br />
+move 308,31357,9<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+move 308,31353,8<br />
+waitX 1<br />
+putLootOnDepot<br />
+waitX 1<br />
+move 308,31355,8<br />
+waitX 1<br />
+fastExiva &gt;67<br />
+move 313,31354,9<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitx 1<br />
+move 306,31354,9<br />
+move 305,31354,9<br />
+waitX 1<br />
+saymessage hi<br />
+waitx 2<br />
+sayInTrade trade<br />
+waitx 2<br />
+sayMessage exiva buy:EE 00:1300<br />
+waitx 1<br />
+sayMessage exiva buy:58 0C:5<br />
+waitX 1<br />
+move 321,31356,9<br />
+move 349,31377,9<br />
+move 363,31387,9<br />
+fastExiva &gt;67<br />
+waitX 1<br />
+move 793,938,7<br />
+move 793,935,7<br />
+move 794,927,7<br />
+move 794,923,7<br />
+waitX 1<br />
+fastExiva &gt;65<br />
+waitX 1<br />
+move 640,623,8<br />
+move 640,626,8<br />
+move 640,626,8<br />
+waitX 1<br />
+useItem 640,627,8<br />
+waitX 1<br />
+move 640,635,8<br />
+move 639,645,8<br />
+waitX 1<br />
+fastExiva &gt;68<br />
+gotoscriptline 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-13-2014, 10:19</div></div><div class="posttext">look at this:<br />
+<br />
+IfTrue (($countitems:{$_manapotionid$}$#number&lt;#300) Goto $nlineoflabel:refill2$<br />
+<br />
+Why two &quot;(&quot; on the left and one &quot;)&quot; in the right ?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="server, tibia, client, blackd, folder, proxy, version, custom, tiles, config, tileid_uh=e1, important, default, modified, [tileids], tileid_firstfoodtileid=6b, tileid_blank=d4, tileid_lastfoodtileid=6b, something.dat, things, modify, placing, friends, tibianic.org, configxxx, config.override.ini, tileid_backpack=d0, share, config772config.override.ini, place, correctly, select, connect, easier, start, servers, designed, desired, domain, tibia.dat" />
+	<meta name="description" content="Now there is a new menu at start. It will allow you to set all your OT server config correctly in the same place, in a fast way: 
+ 
+7385 
+ 
+Just select your Tibia version, and in case of OT servers just fill: 
+- tibia path 
+- tibia map folder 
+- ot server ip (or domain) 
+- ot server port 
+You don't need anything else now (besides having a Tibia client designed for your ot server)" />
+	
+	<title> Blackd Proxy 23.4 - Easier way to connect to your OT server. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  Blackd Proxy 23.4 - Easier way to connect to your OT server.</div>
+<hr />
+<div class="pda"><a href="t-57731.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57731-Blackd-Proxy-23-4-Easier-way-to-connect-to-your-OT-server">Blackd Proxy 23.4 - Easier way to connect to your OT server.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">04-10-2012, 23:30</div></div><div class="posttext">Now there is a new menu at start. It will allow you to set all your OT server config correctly in the same place, in a fast way:<br />
+<br />
+7385<br />
+<br />
+Just select your Tibia version, and in case of OT servers just fill:<br />
+- tibia path<br />
+- tibia map folder<br />
+- ot server ip (or domain)<br />
+- ot server port<br />
+You don't need anything else now (besides having a Tibia client designed for your ot server)<br />
+<br />
+Blackd Proxy will load .dat from your desired ot client folder. It doesnt care if your ot client have a custom tibia.dat name like something.dat Blackd Proxy will now read it there. <br />
+<br />
+<br />
+Note: you still have to modify some tiles if your server modified the default tiles for important things. Placing a custom config.override.ini in your configxxx folder is the best way. That way you can share that config file with your friends.<br />
+Example, for tibianic.org (port 7272, version 7.72) , just make this config772\config.override.ini<br />
+<br />
+<br />
+[tileIDs]<br />
+tileID_firstFoodTileID=6B 0A<br />
+tileID_lastFoodTileID=6B 0A<br />
+tileID_Blank=D4 08<br />
+tileID_Backpack=D0 07<br />
+tileID_UH=E1 08</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bOTtter</div><div class="date">04-11-2012, 01:29</div></div><div class="posttext">please blackd fix SetSDkill and SetSpellKill for ots!! <br />
+<br />
+thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-11-2012, 02:18</div></div><div class="posttext">please blackd fix SetSDkill and SetSpellKill for ots!! <br />
+<br />
+thanks<br />
+<br />
+Spell:<br />
+<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+&lt;name of the creature&gt;<br />
+0<br />
+500<br />
+0<br />
+&lt;spell&gt;<br />
+<br />
+Example:<br />
+<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+Hydra<br />
+0<br />
+500<br />
+0<br />
+exori mort<br />
+<br />
+SD (just a random cond which is always true):<br />
+<br />
+$mymana$<br />
+#number&gt;#<br />
+10<br />
+0<br />
+500<br />
+0<br />
+exiva 5&lt;name of the creature&gt;<br />
+<br />
+Example:<br />
+<br />
+$mymana$<br />
+#number&gt;#<br />
+10<br />
+0<br />
+500<br />
+0<br />
+exiva 5Hydra<br />
+<br />
+Yes, it's a bit choppy, it isn't smooth as you might think, but for the OT is great.<br />
+<br />
+On Topic: Magnificent work Daniel! :D ... Tho, I'm back to rl Tibia for a while. :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bOTtter</div><div class="date">04-11-2012, 16:27</div></div><div class="posttext">@provocate<br />
+<br />
+thanks mate I already knew about the SD method.<br />
+<br />
+could u explain more about the spell method? is it a cond too?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-11-2012, 17:16</div></div><div class="posttext">@bOTtter<br />
+<br />
+Yeah, it's a conditional, add as many as you want. You add monster on setMeleeKill list in cavebot and for every monster you want to hit with a spell you make a cond. Ofc like I said it's a bit choppy, cuz it's kind of old, but this might work better, haven't tested it yet: @Malmis released it when he came back to BlackD Proxy, all credits to him :D ... http://www.blackdtools.net/showthread.php?57339-Better-Mage-Exori-Exori-Gran</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

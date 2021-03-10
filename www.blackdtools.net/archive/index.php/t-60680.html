@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, refiller, waitx, _manacost, $numericalexp$_manas$-$countitems$_potionid$$$, $numericalexp$_mana$$_idcost$$, saymessage, _mana, _potionid, problem, _idcost, advance, thankful, $hex-tibiastrtrade$, $numbertohex2$_mana$$, blackd, refill, tibia, client, carry, combined, great, bank/deposit, write" />
+	<meta name="description" content="Hey! 
+I have little problem. 
+So I'm using blackd on tibia client 8.6. I tried to write my own refill but it doesn't work ;/ 
+I need refiller that I have for example 3kk in my bp and refiller doesn't go bank/deposit etc. Want it only to buy as many great mana pots as I can carry. 
+ 
+I combined sth like this 
+ 
+fastExiva _potionid = EE 00 
+fastExiva _idcost = 120 
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_potionid$}$}$" />
+	
+	<title> about refiller [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  about refiller</div>
+<hr />
+<div class="pda"><a href="t-60680.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60680-about-refiller">about refiller</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">kpgRtHm</div><div class="date">07-29-2013, 19:34</div></div><div class="posttext">Hey!<br />
+I have little problem.<br />
+So I'm using blackd on tibia client 8.6. I tried to write my own refill but it doesn't work ;/<br />
+I need refiller that I have for example 3kk in my bp and refiller doesn't go bank/deposit etc. Want it only to buy as many great mana pots as I can carry.<br />
+<br />
+I combined sth like this<br />
+<br />
+fastExiva _potionid = EE 00<br />
+fastExiva _idcost = 120<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_potionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayMessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitX 2<br />
+fastExiva &gt; 07 00 EE 00 01 00 $numbertohex2:{$_mana$}$ 00<br />
+<br />
+<br />
+but it doesn't work. I would be thankful if You can help me.<br />
+Thanks in advance :)<br />
+<br />
+<br />
+i</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

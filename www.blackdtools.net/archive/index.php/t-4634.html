@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, 00001000000000000000, slave, master, follow, make, move, left, face, stop, makes, commands, party, attack, command, event, master/slave, events, moves, char, basic, control, faceleft, facedown, faceright, faceup, direction, packet, based, canceled, type, leave, logout, join, working, escape, turn1, turn3, turn2, turn0, $hex-idofname$lastsender$$, password, text, specific, made, controlling, tells, ians, remember, function" />
+	<meta name="description" content="Remember old Ian's TPR? It had a function called &quot;master/slave&quot; that allowed somebody to have a basic control of somebody else's char without having their acc and password. 
+This is done by text commands that a specific &quot;master&quot; tells to the char he's controlling (slave) 
+ 
+I've made some events that allow some basic moves. I will add more commands as soon as I can. Make your requests about a command you want to be added and I'll see if it's possible to make. 
+ 
+Load this event in the slave's" />
+	
+	<title> [EVENTS] Master/slave [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  [EVENTS] Master/slave</div>
+<hr />
+<div class="pda"><a href="t-4634.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?4634-EVENTS-Master-slave">[EVENTS] Master/slave</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-04-2007, 20:08</div></div><div class="posttext">Remember old Ian's TPR? It had a function called &quot;master/slave&quot; that allowed somebody to have a basic control of somebody else's char without having their acc and password.<br />
+This is done by text commands that a specific &quot;master&quot; tells to the char he's controlling (slave)<br />
+<br />
+I've made some events that allow some basic moves. I will add more commands as soon as I can. Make your requests about a command you want to be added and I'll see if it's possible to make.<br />
+<br />
+Load this event in the slave's event window (not conditional events!!)<br />
+and use the following commands to control him.<br />
+<br />
+!up - move up<br />
+!down - move down<br />
+!right - move right<br />
+!left - move left<br />
+!faceup - makes slave face upwards<br />
+!facedown - make slave face downwards<br />
+!faceright - make slave face right<br />
+!faceleft - make slave face left<br />
+!follow - Makes slave follow the master.<br />
+Note about follow: Slave won't see the green square surrounding the master that indicate following, but still it will go after the master. This type of following (packet based) do not get canceled whenever the slave moves to another direction. Slave must hit escape key or get a stop command from the master.<br />
+!stop - Makes slave stop attack or follow.<br />
+<br />
+<br />
+<br />
+<br />
+1<br />
+0000100000000000000:0<br />
+!up<br />
+exiva &gt; 65<br />
+1<br />
+0000100000000000000:0<br />
+!right<br />
+exiva &gt; 66<br />
+1<br />
+0000100000000000000:0<br />
+!down<br />
+exiva &gt; 67<br />
+1<br />
+0000100000000000000:0<br />
+!left<br />
+exiva &gt; 68<br />
+1<br />
+0000100000000000000:0<br />
+!follow<br />
+exiva &gt; A2 $hex-idofname:{$lastsender$}$<br />
+1<br />
+0000100000000000000:0<br />
+!faceup<br />
+exiva turn0<br />
+1<br />
+0000100000000000000:0<br />
+!facedown<br />
+exiva turn2<br />
+1<br />
+0000100000000000000:0<br />
+!faceright<br />
+exiva turn1<br />
+1<br />
+0000100000000000000:0<br />
+!faceleft<br />
+exiva turn3<br />
+1<br />
+0000100000000000000:0<br />
+!stop<br />
+exiva &gt; 69<br />
+<br />
+<br />
+Working on (don't know for sure if all of them are possible)<br />
+- Attack somebody else than master.<br />
+- Follow somebody else than master.<br />
+- Say something<br />
+- Join party<br />
+- Leave party<br />
+- Logout</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Phantom</div><div class="date">05-04-2007, 20:30</div></div><div class="posttext">think ill go test that now, sounds fun, but still kinky lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Goodfellow</div><div class="date">05-04-2007, 20:46</div></div><div class="posttext">Nice idea! This way I can make my slave to vis hydras near the stairs ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rurewonu</div><div class="date">05-04-2007, 21:12</div></div><div class="posttext">good idea:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Danivera</div><div class="date">05-04-2007, 22:17</div></div><div class="posttext">Can anybody explain better how it works? I don't understand :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-04-2007, 23:15</div></div><div class="posttext">Nice idea! This way I can make my slave to vis hydras near the stairs ;p<br />
+<br />
+for that, open the txt file in notepad and add this at the end:<br />
+<br />
+<br />
+<br />
+1<br />
+0000100000000000000:0<br />
+!vis<br />
+exori vis<br />
+<br />
+<br />
+The mage will say exori vis whenever you msg him with &quot;!vis&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-04-2007, 23:20</div></div><div class="posttext">Can anybody explain better how it works? I don't understand :(<br />
+<br />
+Ok I'll give you an example of the script usage.<br />
+Open 2 mcs.<br />
+MC1 will be a char named John and MC2 will be a char named Peter.<br />
+Open your Events windows on John and load the master/slave.txt.<br />
+Now go to Peter's MC, open a private char with John and tell him &quot;!up&quot; (without the quotes). <br />
+You will see how John moves upwards at your command.<br />
+<br />
+This is what the script is for, controlling chars using text commands.<br />
+<br />
+To use it, save the code to a txt file. And put it in your events folder, which is inside blackd proxy folder. Now go to events window on your proxy and hit Reload. Then select the master/slave.txt from the drop down box or whatever you named the file. Then hit LOAD, and you're done :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Danivera</div><div class="date">05-04-2007, 23:30</div></div><div class="posttext">Thank you very much, weeper, now I understand :)<br />
+<br />
+So that's usefull to hunt with mc's, isn't it? If it is it would be very nice :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Goodfellow</div><div class="date">05-05-2007, 00:14</div></div><div class="posttext">for that, open the txt file in notepad and add this at the end:<br />
+<br />
+<br />
+<br />
+1<br />
+0000100000000000000:0<br />
+!vis<br />
+exori vis<br />
+<br />
+<br />
+The mage will say exori vis whenever you msg him with &quot;!vis&quot;<br />
+<br />
+I knew that lol:)  Just never though about it before</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Erra</div><div class="date">05-05-2007, 01:05</div></div><div class="posttext">CMs are going to check these things in their logs, so my tip to all of you is to not do it too much..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-05-2007, 03:43</div></div><div class="posttext">My personal recommendation is to set YOUR OWN CUSTOM commands. These were just to give you an idea.<br />
+Maybe use change the &quot;!&quot; sign to something else. Or use commands in another language.<br />
+Example. <br />
+#arriba<br />
+#abajo<br />
+<br />
+etc.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">05-08-2007, 12:22</div></div><div class="posttext">Please note that anybody will be able to control the slave. If they know command keys. So it's better to redesign them to something more impossible to &quot;know&quot;.<br />
+<br />
+Otherwise, anybody selling &quot;!up&quot; will make the char walking up, wich would be sooo lame</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">05-08-2007, 17:01</div></div><div class="posttext">http://www.blackdtools.net/showthread.php?t=4710<br />
+I guess this tutorial made by weeper himself could be useful, making it check if the sender was your char and then check the message.<br />
+Since i dont have blackd proxy yet i cant try anything lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Haris</div><div class="date">05-09-2007, 14:45</div></div><div class="posttext">CMs are going to check these things in their logs, so my tip to all of you is to not do it too much..<br />
+<br />
+Doesnt this go only to blackd proxy? I think it doesnt go to tibia server, like exiva exp and stuffs~</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-09-2007, 20:01</div></div><div class="posttext">http://www.blackdtools.net/showthread.php?t=4710<br />
+I guess this tutorial made by weeper himself could be useful, making it check if the sender was your char and then check the message.<br />
+Since i dont have blackd proxy yet i cant try anything lol<br />
+<br />
+Indeed, you could do that check for $lastsender$ and $lastmsg$, if both are true then respond to master's commands.<br />
+<br />
+<br />
+Doesnt this go only to blackd proxy? I think it doesnt go to tibia server, like exiva exp and stuffs~<br />
+It actually goes to tibia serv. It's like a normal private message. When the slave detects that msg he acts as he's programmed to.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bajenalex</div><div class="date">08-15-2007, 00:56</div></div><div class="posttext">This is very smart man. Ultimate botting xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">08-15-2007, 01:33</div></div><div class="posttext">Is there anyway to get it to do something like:<br />
+<br />
+!say blahblahblah<br />
+<br />
+Then the slave says &quot;blahblahblah&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">08-15-2007, 02:12</div></div><div class="posttext">I was working in a way to do that but I doubt it's possible, however I may find  a way in the future.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Titan</div><div class="date">03-10-2008, 06:37</div></div><div class="posttext">can add !sio?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BlizZ4rd</div><div class="date">05-04-2008, 19:07</div></div><div class="posttext">im just wondering why it didnt work the way it should for me, me and my friend tried it but my account was stopping at !stop but after casting a spell(in this case i healed him with sio integrated into warbot) it started to follow again and ran with him into the mad spawns... is it possible that it really stops like a slave and is not moving anymore(or maybe im doing something wrong, would be nice to have a suggestion than) even though im healing?<br />
+thanks in advance</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lili123</div><div class="date">09-12-2010, 22:48</div></div><div class="posttext">!follow doesn't work for me :(</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

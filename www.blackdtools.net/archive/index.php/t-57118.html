@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="golbin, problem, remove, found, script, $mycap$0$0000" />
+	<meta name="description" content="Can someone edit this script so my char goes and deposits when he has 30 or less cap? i cant figure out how to work the iftrue command things. thanks 
+ 
+ 
+ 
+ 
+:start 
+setChaoticMovesON 
+onGMpause 
+setLootOn 
+setBot OldLootMode=1" />
+	
+	<title> can someone edit this script [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  can someone edit this script</div>
+<hr />
+<div class="pda"><a href="t-57118.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57118-can-someone-edit-this-script">can someone edit this script</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">clos16</div><div class="date">01-23-2012, 01:41</div></div><div class="posttext">Can someone edit this script so my char goes and deposits when he has 30 or less cap? i cant figure out how to work the iftrue command things. thanks<br />
+<br />
+<br />
+<br />
+<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setLootOn<br />
+setBot OldLootMode=1<br />
+setLoot D7 0B<br />
+setLoot 13 2D<br />
+setLoot F5 06<br />
+setMeleeKill Starving Wolf<br />
+setMeleeKill bug<br />
+setMeleeKill Goblin Assassin<br />
+setPriority goblin assassin:+3<br />
+setMeleeKill Goblin Scavenger<br />
+setPriority goblin scavenger:+2<br />
+setMeleeKill rat<br />
+setMeleeKill Poacher<br />
+setMeleeKill wolf<br />
+setMeleeKill bat<br />
+setMeleeKill goblin<br />
+setPriority goblin:+1<br />
+setMeleeKill pig<br />
+move 32652,31698,7<br />
+IfTrue ($mycap$0&lt;=40 Goto $nlineoflabel:dp$<br />
+move 32638,31735,7<br />
+move 32625,31788,7<br />
+:hunt<br />
+move 32620,31794,6<br />
+move 32615,31783,6<br />
+move 32608,31764,6<br />
+move 32584,31765,6<br />
+IfTrue ($mycap$0&lt;=40) Goto $nlineoflabel:deposit$<br />
+move 32566,31767,6<br />
+move 32553,31775,6<br />
+move 32537,31781,6<br />
+move 32538,31796,6<br />
+move 32537,31813,6<br />
+move 32545,31820,6<br />
+move 32553,31824,6<br />
+move 32552,31833,6<br />
+move 32548,31834,6<br />
+move 32546,31834,5<br />
+move 32552,31841,5<br />
+move 32556,31849,5<br />
+move 32547,31852,5<br />
+move 32529,31845,5<br />
+move 32521,31838,5<br />
+move 32531,31854,6<br />
+move 32553,31856,6<br />
+move 32567,31856,6<br />
+move 32580,31856,6<br />
+move 32600,31838,6<br />
+move 32602,31823,6<br />
+move 32613,31804,6<br />
+move 32617,31794,6<br />
+IfTrue ($mycap$0&lt;=40) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:deposit<br />
+move 32620,31790,6<br />
+move 32625,31788,7<br />
+move 32638,31735,7<br />
+move 32681,31686,7<br />
+move 32684,31687,8<br />
+setChaoticMovesON<br />
+sayMessage Hi<br />
+waitX 2<br />
+sayInTrade Deposit all<br />
+waitX 2<br />
+sayInTrade Yes<br />
+putLootOnDepot<br />
+setChaoticMovesOFF<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+move 32681,31686,7<br />
+move 32684,31687,8<br />
+setChaoticMovesON<br />
+sayMessage Hi<br />
+waitX 2<br />
+sayInTrade Deposit all<br />
+waitX 2<br />
+sayInTrade Yes<br />
+putLootOnDepot<br />
+setChaoticMovesOFF<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-23-2012, 06:04</div></div><div class="posttext">umm,<br />
+&gt;&gt;&gt;&gt;&gt;$mycap$0&lt;=40<br />
+&gt;&gt;&gt;&gt;$0&lt;=40<br />
+&gt;&gt;&gt;0&lt;=40<br />
+&gt;&gt;0&lt;=<br />
+&gt;0<br />
+i think i found your problem! :p<br />
+remove that 0</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

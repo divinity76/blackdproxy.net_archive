@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="need help, deposit, setloot, items, script, 32344,32228,7, iftrue, $mycap$number, 32343,32223,7, 32346,32223,7, worked, caveboting, $nlineoflabeldeposit$, final" />
+	<meta name="description" content="Hi! When i tryied to make a deposit script (just testing) i got constantly dc all the time, after some secs. My char runs and do whats the scripts says but i get dc in the progress. Can some1 help me with my problem!  
+ 
+Btw sry for my english ;)" />
+	
+	<title> [SOLVED] I get dc when trying to caveboting [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  [SOLVED] I get dc when trying to caveboting</div>
+<hr />
+<div class="pda"><a href="t-59810.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59810-SOLVED-I-get-dc-when-trying-to-caveboting">[SOLVED] I get dc when trying to caveboting</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">oskar123</div><div class="date">12-16-2012, 20:40</div></div><div class="posttext">Hi! When i tryied to make a deposit script (just testing) i got constantly dc all the time, after some secs. My char runs and do whats the scripts says but i get dc in the progress. Can some1 help me with my problem! <br />
+<br />
+Btw sry for my english ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">12-16-2012, 21:39</div></div><div class="posttext">I would have to see the script to offer some suggestions, there is nothing wrong on my side of things, but maybe it is something you haven't included in your script? Other then that maybe there is something in your script that is wrong, I have heard my cousin make this mistake and it would immediately disconnect his client and it had something to do with either a typo or a bad line he had in his script, anyways need a little more information my friend..<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oskar123</div><div class="date">12-17-2012, 08:55</div></div><div class="posttext">:testar<br />
+setLoot 0C 01<br />
+setLoot DB 0B<br />
+move 32347,32222,7<br />
+move 32344,32225,7<br />
+move 32347,32227,7<br />
+IfTrue ($mycap$#number&lt;=#700) Goto deposit<br />
+gotoScriptLine testar<br />
+:deposit<br />
+move 32349,32226,7<br />
+move 32348,32226,6<br />
+move 32344,32219,5<br />
+putLootOnDepot<br />
+move 32348,32224,5<br />
+move 32349,32226,6<br />
+gotoScriptLine testar</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">12-17-2012, 11:15</div></div><div class="posttext">As far as I can tell your script is missing a few things,<br />
+ex; IfTrue ($mycap$#number&lt;=#700) Goto deposit     ( $nlineoflabel:deposit$ )?<br />
+Also, 700 means 7 cap, 7000 70 cap and etc.<br />
+<br />
+My suggestion is try using numbers instead of :testar and :deposit basically count every line as a number starting with 1 and so forth.<br />
+<br />
+setLoot 0C 01<br />
+setLoot DB 0B<br />
+move 32347,32222,7<br />
+move 32344,32225,7<br />
+move 32347,32227,7<br />
+IfTrue ($mycap$#number&lt;=#7000) GotoScriptLine 8<br />
+gotoScriptLine 0<br />
+move 32349,32226,7<br />
+move 32348,32226,6<br />
+move 32344,32219,5<br />
+putLootOnDepot<br />
+move 32348,32224,5<br />
+move 32349,32226,6<br />
+gotoScriptLine 0<br />
+<br />
+I hope this makes sense Oskar,<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oskar123</div><div class="date">12-17-2012, 13:43</div></div><div class="posttext">Thanks for helping me out, gonna try this. <br />
+<br />
+Bye!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oskar123</div><div class="date">12-17-2012, 18:20</div></div><div class="posttext">this worked for me, without getting dc or something, instead of &quot;Goto 0&quot; i did Goto $nlineoflabel:deposit$<br />
+<br />
+Here was my final test script for deposit loot items and deposit gold into bank:<br />
+<br />
+<br />
+setLoot DB 0B<br />
+setLoot 0C 01<br />
+move 32346,32223,7<br />
+move 32343,32223,7<br />
+move 32344,32228,7<br />
+IfTrue ($mycap$#number&lt;=#70000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 32349,32226,7<br />
+move 32348,32228,6<br />
+move 32344,32228,6<br />
+move 32344,32230,6<br />
+putLootOnDepot<br />
+waitX 3<br />
+move 32344,32228,6<br />
+move 32348,32228,6<br />
+move 32350,32227,6<br />
+move 32349,32229,7<br />
+IfTrue ($mycap$#number&lt;=#70000) Goto $nlineoflabel:gold$<br />
+gotoScriptLine 0<br />
+:gold<br />
+move 32344,32229,7<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+Thanks for helping me out, Byee!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">12-17-2012, 19:17</div></div><div class="posttext">Glad to help and thanks for helping what I said sound a lot clearer zihinu was very late and tired last night =)<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

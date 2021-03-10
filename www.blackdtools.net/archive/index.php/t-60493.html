@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, floor, items, 3-4-5-6" />
+	<meta name="description" content="I Want a Script Who Put Whatever Fast On The floor for put 3-4-5-6 items on the floor same items, same when we put item on the floor but very fast :o Thanks" />
+	
+	<title> Need Script please help me [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Need Script please help me</div>
+<hr />
+<div class="pda"><a href="t-60493.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60493-Need-Script-please-help-me">Need Script please help me</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">dany12345</div><div class="date">06-13-2013, 08:46</div></div><div class="posttext">I Want a Script Who Put Whatever Fast On The floor for put 3-4-5-6 items on the floor same items, same when we put item on the floor but very fast :o Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-13-2013, 12:06</div></div><div class="posttext">Your description is a bit vague, but I'll try to help...<br />
+If you want all your loot to be dropped at your current location, you can use the dropLootOnGround command. It will drop all your defined setLoot at your current position. This is mainly used for moneymaking scripts that don't use a depositer. However this allows other players to loot your loot, making it a bit risky. If you want to drop your loot at any given moment when using a larger script, this doesn't help. In that case you should use a conditional. I use a script that loots food, but most times I consume it slower than I loot it. So I keep stacking up food, which I don't want because I want to make full use of my capacity. So I set it up to drop 1 item of that ID when the looted amount is larger than 10. It will check for this any 200-300 ms. So it's fast.<br />
+Example for conditional:<br />
+<br />
+$countitems:AA AA$<br />
+#number&gt;#<br />
+10<br />
+0<br />
+0<br />
+0<br />
+exiva drop AA AA 01<br />
+If amount of AA is larger than 10, drop 01 (has to be 2 digits).<br />
+<br />
+I hope this helps.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

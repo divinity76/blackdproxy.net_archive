@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="count, opened, separately, platinum, custom, [gold, _goldid, fastexiva, variable, amount, remember, potions, health, items, transfer" />
+	<meta name="description" content="Hey, i can't make the bot auto buy health potions when the potions get lower than the amount of 10. 
+ 
+How can i fix it? 
+ 
+Thanks!" />
+	
+	<title> Auto buy health potions [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Auto buy health potions</div>
+<hr />
+<div class="pda"><a href="t-61899.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61899-Auto-buy-health-potions">Auto buy health potions</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-03-2014, 12:59</div></div><div class="posttext">Hey, i can't make the bot auto buy health potions when the potions get lower than the amount of 10.<br />
+<br />
+How can i fix it?<br />
+<br />
+Thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-03-2014, 17:48</div></div><div class="posttext">Hey, i can't make the bot auto buy health potions when the potions get lower than the amount of 10.<br />
+<br />
+How can i fix it?<br />
+<br />
+Thanks!<br />
+<br />
+And can i sell my loot and after that how can i transfer my looted gold to another account?<br />
+I know how to transfer 3k automaticly, but i wanna know how i can transfer the variable of the looted gold.<br />
+<br />
+Thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-03-2014, 22:24</div></div><div class="posttext">Remember that bot will only count items if bp is opened.<br />
+<br />
+About transfer the exactly amount of gold u did, u will need all bp opened, count platinum and gold separately in different custom variable.<br />
+<br />
+example:<br />
+<br />
+fastExiva _goldid = [gold id]                  &lt;------ determinate custom variable for gold, i dont remember gold id<br />
+fastExiva _count1 = $countitems:{$_goldid$}$            &lt;------ count how many gold, leave ALL bps opened<br />
+fastExiva _platinumid = [platinum id]                         &lt;------ determinate custom variable for platinum<br />
+fastExiva _count2 = $countitems:{$_platinumid$}$        &lt;------ count how many platinum, leave ALL bps opened<br />
+sayMessage hi                                   &lt;--------- start talking with npc<br />
+sayMessage deposit $_count1$               &lt;--------- say deposit how many gold you have<br />
+sayMessage yes<br />
+sayMessage deposit $_count2$00       &lt;--------- same as above, 00 because 1 platinum = 100 gold<br />
+sayMessage yes</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-05-2014, 17:53</div></div><div class="posttext">Oke thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-05-2014, 23:12</div></div><div class="posttext">Oke thanks!<br />
+<br />
+Hmmm, said to soon thanks :(<br />
+<br />
+it doesn't work:(<br />
+tried it multiple times, but doesn't work:O<br />
+<br />
+And if it will work, how can i make the amount of gold transferred to another account what i just did deposit?<br />
+that should be awesome if that works too!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-05-2014, 23:42</div></div><div class="posttext">copy and paste your script here.<br />
+<br />
+remember you need to put some &quot;wait 1&quot; between lines and leave all bps opened to avoid problem with count items</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-05-2014, 23:57</div></div><div class="posttext">here it is:P<br />
+<br />
+I tried it also with transfer and another things, and i used also another script to combine this but that didn't work also...<br />
+<br />
+<br />
+fastExiva _goldid = D7 0B<br />
+fastExiva _count1 = $countitems:{$_goldid$}$ <br />
+<br />
+<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit $_goldid$<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade transfer $_goldid$<br />
+waitX 2<br />
+sayInTrade ***********<br />
+sayInTrade yes<br />
+<br />
+<br />
+And found this in another script, i tried to figure it out for deposit gold and transfer gold instead withdraw gold for the amount of pots, but it didn't work:(:(<br />
+<br />
+IfTrue ($countitems:{$_potid$}$#number&gt;=#$_pots$) Goto $nlineoflabel:nowithdraw$<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-06-2014, 11:11</div></div><div class="posttext">it will never deposit, omg. the variable is wrong its deposit &quot;_count1&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-06-2014, 16:39</div></div><div class="posttext">it will never deposit, omg. the variable is wrong its deposit &quot;_count1&quot;<br />
+<br />
+hehe thanks!<br />
+works great now!<br />
+even made by my self a loot seller:D<br />
+<br />
+now i have another question: I want to loot something &quot;medicine pouch&quot;, and drop it in my depot.<br />
+But how can i make the bot loot the item in a bp, drop the bp in my depot. and rebuy an new bp?<br />
+<br />
+Do u understand what i mean?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-07-2014, 01:33</div></div><div class="posttext">i searched almost the whole site for an answer i want, <br />
+i found only this question without an answer :(<br />
+<br />
+<br />
+How do i decide my loots destination ? do i use hex because i want gold to go to one bp and stones to go to another, is it possible ?<br />
+<br />
+if i know that, it would be awesome. Than i can deposit my gold and drop my loot bp in my depot. And i can buy after that a new one:D</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

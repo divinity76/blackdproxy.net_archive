@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="snowman, thread, humans, mutated, yalahar, depositer, buyer, potion" />
+	<meta name="description" content="You can set how many potions u wan to refill, u can easily change when the bot will start going to dp (cap), u can also change what type of potions would u like to refill by changing the potion ID and it will also sell vials. 
+Where should it be started: at cave 
+ 
+ 
+########Made by Snowman############## 
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Yalahar Mutated Humans with depositer and potion buyer script!$ 
+waitX 3 
+##########################################" />
+	
+	<title> 41. Yalahar mutated humans with depositer and potion buyer - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  41. Yalahar mutated humans with depositer and potion buyer - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54445.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54445-41-Yalahar-mutated-humans-with-depositer-and-potion-buyer-by-Snowman">41. Yalahar mutated humans with depositer and potion buyer - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-22-2011, 13:13</div></div><div class="posttext">You can set how many potions u wan to refill, u can easily change when the bot will start going to dp (cap), u can also change what type of potions would u like to refill by changing the potion ID and it will also sell vials.<br />
+Where should it be started: at cave<br />
+<br />
+<br />
+<br />
+########Made by Snowman##############<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Yalahar Mutated Humans with depositer and potion buyer script!$<br />
+waitX 3<br />
+##########################################<br />
+#############CONFIG#######################<br />
+##########################################<br />
+#put here number of amount of you potions to refil<br />
+fastExiva _potionsamount = 60<br />
+#put here number of cap to go dp<br />
+fastExiva _captodp = 300<br />
+#pu here how much does you potions cost<br />
+fastExiva _potionscost = 50<br />
+#put here ID of your potions<br />
+fastExiva _potionid = 0C 01<br />
+#put here ID of your empty potion flasks:<br />
+fastExiva _vialid = 1D 01<br />
+##########################################<br />
+##########################################<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########################################<br />
+:start<br />
+setChaoticMovesON<br />
+##########################################<br />
+onGMpause<br />
+setFriendly<br />
+######Monsters#####<br />
+setAvoidFront mutated human<br />
+setMeleeKill Mutated Human<br />
+setMeleeKill Slime<br />
+setMeleeKill Mercury Blob<br />
+setMeleeKill Acid Blob<br />
+setMeleeKill Mutated Rat<br />
+##############<br />
+####PRIORITIES####<br />
+setPriority Mutated Human:+1<br />
+############<br />
+######LOOT######<br />
+#Cash<br />
+setLoot D7 0B<br />
+#Rusty Armor<br />
+setLoot BE 22<br />
+################<br />
+###WAYPOINTS####<br />
+IfTrue ($mycap$#number&lt;=#$_captogodp$) Goto $nlineoflabel:dp$<br />
+IfTrue ($countitems:{$_potionid$}$#number&lt;=#$_potionsamount$) Goto $nlineoflabel:dp$<br />
+move 32737,31113,7<br />
+move 32730,31122,7<br />
+move 32739,31131,7<br />
+move 32740,31130,6<br />
+move 32741,31128,5<br />
+move 32741,31130,6<br />
+move 32740,31132,7<br />
+move 32734,31134,7<br />
+move 32734,31134,6<br />
+move 32734,31136,7<br />
+move 32743,31144,7<br />
+move 32742,31145,6<br />
+move 32744,31145,7<br />
+move 32752,31145,7<br />
+move 32737,31154,7<br />
+move 32727,31156,7<br />
+move 32714,31178,7<br />
+move 32698,31178,7<br />
+move 32696,31178,6<br />
+move 32700,31179,6<br />
+move 32697,31179,6<br />
+move 32698,31178,7<br />
+move 32688,31186,7<br />
+move 32696,31185,7<br />
+move 32729,31164,7<br />
+move 32727,31156,7<br />
+move 32734,31147,7<br />
+move 32728,31145,7<br />
+move 32742,31136,7<br />
+move 32731,31113,7<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+setChaoticMovesOFF<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Going to deposit gold, loot and refill potions.$<br />
+move 32738,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+move 32758,31112,7<br />
+move 32799,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade magician<br />
+move 32820,31104,7<br />
+move 32835,31132,7<br />
+move 32835,31142,7<br />
+move 32835,31144,6<br />
+move 32835,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32859,31206,7<br />
+move 32849,31243,7<br />
+move 32824,31249,7<br />
+##########################################<br />
+##########################################<br />
+:BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionstobuy = $countitems:{$_vialid$}$<br />
+fastExiva _cashfromvials = $numericalexp:{$countitems:{$_vialid$}*5$<br />
+fastExiva _potioncost = $numericalexp:{$_potionstobuy$}*{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp:{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+move 32829,31242,7<br />
+move 32811,31233,7<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+##########################################<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+##########################################<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32798,31246,7<br />
+move 32796,31246,6<br />
+move 32785,31244,6<br />
+putLootOnDepot<br />
+move 32786,31247,6<br />
+move 32786,31249,7<br />
+move 32802,31236,7<br />
+move 32842,31168,7<br />
+move 32835,31156,7<br />
+move 32835,31154,6<br />
+move 32835,31152,5<br />
+move 32835,31146,5<br />
+move 32835,31144,6<br />
+move 32835,31142,7<br />
+move 32804,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+move 32792,31103,7<br />
+move 32743,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade alchemist<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-16-2011, 02:43</div></div><div class="posttext">This script is working with 8.71? because i donwloaded one snowman script and this scri[pt debug tibia...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">846246</div><div class="date">03-21-2011, 15:37</div></div><div class="posttext">gz u script are perfect it debug me tibia i leave that sh*its what u give in all u scripts and it still dont work</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-30-2011, 11:13</div></div><div class="posttext">What lvl/skills do ineed to hunt here? I will fix the script if I can..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Spinewal</div><div class="date">04-02-2011, 18:25</div></div><div class="posttext">For mutated humans?  ~level 60+ and 70/70ish skills on an ek for it to be safe for 100% afk.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ogro_173</div><div class="date">06-10-2011, 06:30</div></div><div class="posttext">i am palla 80, this script are good for me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lodel86</div><div class="date">06-10-2011, 17:07</div></div><div class="posttext">can u send script if u can fix it :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ogro_173</div><div class="date">06-10-2011, 21:55</div></div><div class="posttext">snowman... can you make one script for palla lvl 80+ in mutant human please...<br />
+becouse i am new with blackd..<br />
+tnhx you</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DroniC</div><div class="date">11-27-2011, 12:02</div></div><div class="posttext">Hello. Why always when I want to use this script my Tibia is disconnecting ? ;d <br />
+Thanks for help.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">laconiun</div><div class="date">04-05-2012, 16:52</div></div><div class="posttext">hey i was wondering if you could fix this script or what do i need to change or doing wrong that everytime i run this script my tibia disconnects</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">06-14-2012, 00:30</div></div><div class="posttext">I plan on remaking this script, what lvl/skills are needed for a knight?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-14-2012, 10:40</div></div><div class="posttext">Im not entirely sure but 50 - 60 should be fine im assuming</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-16-2012, 00:35</div></div><div class="posttext">I'l make a new thread for it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bolo</div><div class="date">08-06-2012, 09:33</div></div><div class="posttext">Hey guys, someone can config it? i need the script for pally, with royal spear buyer and those things please, i would be so thankful :*</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

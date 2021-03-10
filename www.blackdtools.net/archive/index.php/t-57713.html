@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="attach, dunno, script, searched, exist" />
+	<meta name="description" content="dunno if this script exist... but i searched it for a while... anyone? need it for rook, and how can i attach it to my wps :D 
+ 
+ 
+Thx all" />
+	
+	<title> Req: Exp Log out [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Req: Exp Log out</div>
+<hr />
+<div class="pda"><a href="t-57713.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57713-Req-Exp-Log-out">Req: Exp Log out</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">1manu1</div><div class="date">04-08-2012, 23:11</div></div><div class="posttext">dunno if this script exist... but i searched it for a while... anyone? need it for rook, and how can i attach it to my wps :D<br />
+<br />
+<br />
+Thx all</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-09-2012, 03:07</div></div><div class="posttext">Create a new label somewhere in the script, preferably at the end~ ... For example :logoff<br />
+<br />
+<br />
+IfTrue ($myexp$#number&gt;=#6300) Goto $nlineoflabel:logoff$<br />
+..... &lt;other stuff in script, like wpts and other actions&gt;<br />
+:logoff<br />
+sayMessage exiva close<br />
+<br />
+You might put 'IfTrue ($myexp$#number&gt;=#6300) Goto $nlineoflabel:logoff$' several times in your script, like after few waypoints, so it'll log exactly like you wished it would.<br />
+<br />
+Anyway, I have to give credits to Malmis, helped myself with his awesome script 'StartNGo Rook2Main' which can be found here: http://www.blackdtools.net/sho...tNGo-Rook2Main<br />
+<br />
+Might be useful for you.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

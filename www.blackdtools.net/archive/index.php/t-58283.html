@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="mutated, towers, floor, holes, great, script, altough, buyer, potion, humans, depositer, noticed, yalahar, empty, stays" />
+	<meta name="description" content="Here you go, an old script updated....Test and comment if you like it or if it has any fault's. If you have any extra loot ID's post them and i will add them. 
+ 
+#UPDATED 
+ 
+Por favor comenten" />
+	
+	<title> Yalahar Mutated Human's....Depositer and potion buyer [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Yalahar Mutated Human's....Depositer and potion buyer</div>
+<hr />
+<div class="pda"><a href="t-58283.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58283-Yalahar-Mutated-Human-s-Depositer-and-potion-buyer">Yalahar Mutated Human's....Depositer and potion buyer</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-17-2012, 01:38</div></div><div class="posttext">Here you go, an old script updated....Test and comment if you like it or if it has any fault's. If you have any extra loot ID's post them and i will add them.<br />
+<br />
+#UPDATED<br />
+<br />
+Por favor comenten<br />
+<br />
+<br />
+#Edited by Vinnie<br />
+setMeleeKill Mutated Human<br />
+setMeleeKill Slime<br />
+setMeleeKill Mercury Blob<br />
+setMeleeKill Acid Blob<br />
+setMeleeKill Mutated Rat<br />
+setPriority Mutated Human:+1<br />
+setLoot 64 0D <br />
+setLoot 88 1F<br />
+setLoot E9 0B<br />
+setLoot BF 22<br />
+setLoot 44 28<br />
+setLoot D7 0B<br />
+setLoot BE 22<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:depositer$<br />
+IfTrue ($countitems:0A 01$#number&lt;=#15) Goto $nlineoflabel:depositer$<br />
+move 32737,31113,7<br />
+move 32730,31122,7<br />
+move 32739,31131,7<br />
+move 32740,31130,6<br />
+move 32741,31128,5<br />
+move 32741,31130,6<br />
+move 32740,31132,7<br />
+move 32734,31134,7<br />
+move 32734,31134,6<br />
+move 32734,31136,7<br />
+move 32743,31144,7<br />
+move 32742,31145,6<br />
+move 32744,31145,7<br />
+move 32752,31145,7<br />
+move 32737,31154,7<br />
+move 32727,31156,7<br />
+move 32714,31178,7<br />
+move 32698,31178,7<br />
+move 32696,31178,6<br />
+move 32700,31179,6<br />
+move 32697,31179,6<br />
+move 32698,31178,7<br />
+move 32688,31186,7<br />
+move 32696,31185,7<br />
+move 32729,31164,7<br />
+move 32727,31156,7<br />
+move 32734,31147,7<br />
+move 32728,31145,7<br />
+move 32742,31136,7<br />
+move 32731,31113,7<br />
+gotoScriptLine 0<br />
+:depositer<br />
+move 32738,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+move 32758,31112,7<br />
+move 32799,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade magician<br />
+move 32820,31104,7<br />
+move 32835,31132,7<br />
+move 32835,31142,7<br />
+move 32835,31144,6<br />
+move 32835,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32859,31206,7<br />
+move 32849,31243,7<br />
+move 32824,31249,7<br />
+waitX 1<br />
+fastExiva _healthneeded = $numericalexp:80-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+move 32829,31242,7<br />
+move 32811,31233,7<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32798,31246,7<br />
+move 32796,31246,6<br />
+move 32785,31244,6<br />
+waitX 1<br />
+putLootOnDepot<br />
+move 32786,31247,6<br />
+move 32786,31249,7<br />
+move 32802,31236,7<br />
+move 32842,31168,7<br />
+move 32835,31156,7<br />
+move 32835,31154,6<br />
+move 32835,31152,5<br />
+move 32835,31146,5<br />
+move 32835,31144,6<br />
+move 32835,31142,7<br />
+move 32804,31103,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade cemetery<br />
+move 32792,31103,7<br />
+move 32743,31113,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade pass<br />
+waitX 2<br />
+sayInTrade alchemist<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Deanoi</div><div class="date">06-18-2012, 23:09</div></div><div class="posttext">Nice script bro, you may want to add these items tho ;)<br />
+<br />
+Rusty Armor : BF 22<br />
+Stealth Ring : E9 0B<br />
+Spellbook of Enlightenment : 88 1F<br />
+Tower Shield : 64 0D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-25-2012, 00:46</div></div><div class="posttext">154 view's and one comment....Anyone find this usefull or not!?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">06-25-2012, 18:45</div></div><div class="posttext">154 view's and one comment....Anyone find this usefull or not!?<br />
+<br />
+We reccomend users don't use the cavebot with premium accounts, as deletion is possible.<br />
+<br />
+Also alot of users don't actually speak english so... Probably can't reply ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Deanoi</div><div class="date">06-25-2012, 21:53</div></div><div class="posttext">My account was made with for testing this bot 100% afk with premium and so far so good (fingers crossed) i wont be detected :)  All i need is for tibia to sort out this sucky stamina time we have lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-25-2012, 22:00</div></div><div class="posttext">We reccomend users don't use the cavebot with premium accounts, as deletion is possible.<br />
+<br />
+Also alot of users don't actually speak english so... Probably can't reply ^^<br />
+<br />
+The same goes for any bot....I been around long enough to know....I'd rather spend an hour making a script and go afk all day with the risk of deletion than play it manually all day without the risk. Stamina suck's big time.<br />
+<br />
+Por favor comenten</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BoogerKid</div><div class="date">08-01-2012, 23:05</div></div><div class="posttext">Nice! Thanks, Will deffinitely test this one out once I get the appropriate level to profit :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hinsy</div><div class="date">08-02-2012, 00:10</div></div><div class="posttext">what level is recommended for profit? and also skills to for knight</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byakuya</div><div class="date">08-02-2012, 02:38</div></div><div class="posttext">recommended level? for knight?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bolo</div><div class="date">08-04-2012, 11:26</div></div><div class="posttext">Man, could you do it for pally's? i think u just need to add the royal spears refiller, would be great! please :* thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rarity</div><div class="date">08-27-2012, 15:24</div></div><div class="posttext">Great script altough i noticed it doesnt sell the empty pots and for me it only stays on the main floor and  +-2 towers. it doesnt go up the ramp or go down the holes. So it doesnt kill anny mutated rat or something.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jr031322</div><div class="date">10-21-2012, 21:18</div></div><div class="posttext">Vinnie de donde eres?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tengy</div><div class="date">11-07-2012, 14:34</div></div><div class="posttext">Great script!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">netolm</div><div class="date">11-09-2012, 04:05</div></div><div class="posttext">EDite for pallys</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

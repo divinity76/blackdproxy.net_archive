@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, trolls, funn, wiotki, setlooton, shovel, setfollow, trow, rope, setchaoticmovesoff, troll, iftrue, $countitemscd, 0c$number, setmeleekill, 90000, setmaxattacktimems, depositor, made, simply, buyer, spear, destinity, paladin, script, exp/h, autorefill, island, trainer, 2.5k, gold, hunt, paladins, spears, deposit" />
+	<meta name="description" content="Hello. 
+ 
+I made very simply script for new paladins , hunt trolls , buy spears and deposit gold . 
+ 
+2.5k exp/h . 
+ 
+Set autorefill in trainer ! 
+ 
+Need a lot of cap , you should trow shovel , rope etc ." />
+	
+	<title> 3. Island Of Destinity Trolls - For Paladin only with buyer and dep - By Wiotki [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  3. Island Of Destinity Trolls - For Paladin only with buyer and dep - By Wiotki</div>
+<hr />
+<div class="pda"><a href="t-54317.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54317-3-Island-Of-Destinity-Trolls-For-Paladin-only-with-buyer-and-dep-By-Wiotki">3. Island Of Destinity Trolls - For Paladin only with buyer and dep - By Wiotki</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">01-15-2011, 15:03</div></div><div class="posttext">Hello.<br />
+<br />
+I made very simply script for new paladins , hunt trolls , buy spears and deposit gold .<br />
+<br />
+2.5k exp/h .<br />
+<br />
+Set autorefill in trainer !<br />
+<br />
+Need a lot of cap , you should trow shovel , rope etc .<br />
+<br />
+Have funn :)<br />
+<br />
+<br />
+<br />
+#By Wiotki<br />
+setLootOn<br />
+setFollow<br />
+SetMaxAttackTimeMs 90000<br />
+setChaoticMovesOFF<br />
+setLoot D7 0B<br />
+setLoot CD 0C<br />
+setMeleeKill troll<br />
+:exp<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:spear$<br />
+move 32116,31977,11<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:spear$<br />
+move 32099,31978,11<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:spear$<br />
+move 32100,31954,11<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:spear$<br />
+move 32100,31933,11<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:spear$<br />
+move 32121,31941,11<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:spear$<br />
+move 32118,31965,11<br />
+gotoScriptLine 0<br />
+:spear<br />
+move 32116,31977,11<br />
+move 32116,31975,10<br />
+move 32118,31978,10<br />
+move 32118,31976,9<br />
+move 32116,31978,9<br />
+move 32116,31976,8<br />
+move 32112,31987,8<br />
+waitX 1<br />
+fastExiva &gt; 0A 00 82 70 7D F4 7C 08 F2 1A 01 01<br />
+move 32112,31992,8<br />
+move 32112,31990,7<br />
+move 32098,31989,7<br />
+sayMessage hi<br />
+waitX 2<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2000$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*10$<br />
+sayInTrade withdraw $_spearcost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A CD 0C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 2<br />
+move 32111,31991,7<br />
+move 32112,31992,8<br />
+move 32112,31989,8<br />
+fastExiva &gt; 0A 00 82 70 7D F4 7C 08 F2 1A 01 01<br />
+move 32116,31976,8<br />
+move 32116,31978,9<br />
+move 32117,31977,9<br />
+move 32118,31978,10<br />
+move 32117,31976,10<br />
+move 32116,31977,11<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kacper033</div><div class="date">11-17-2011, 21:24</div></div><div class="posttext">bot is putting money to the bank, and it cant buy any spears, how to repair that?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

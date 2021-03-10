@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibia, paths, client, address, 004555c8, memory, engine, obtain, cheat, addresses, adrypos=qt5core.dll, adrzpos=qt5core.dll, gather, adrxpos=qt5core.dll, position, adrxpos, https://blackdtools.net/adrxpos_tibia11.jpg, http://www.blackdtools.net/showthread.php?62970-tibia-11-the-procedure-to-find-new-memory-addresses-paths, learn, player, current, things, http://www.blackdtools.net/showthread.php?62965-11-00-blackd-tibia-addresses-11-00, image, http://www.cheatengine.org, updates, allocated, problem, moment, proccess, named, tibiaclient, qt5qwindowowndcicon, called, class, distributed, parts, shortest, stable, obtaining, qt5core.dll, start, dealing, calculating, future" />
+	<meta name="description" content="Well, let's gather what we have. 
+For now it looks like dealing with memory addresses will be the main problem for bot updates. 
+- Tibia proccess is now named &quot;client&quot; instead of &quot;Tibia&quot;. 
+- Tibia class name is now called &quot;Qt5QWindowOwnDCIcon&quot; instead of &quot;TibiaClient&quot;. 
+- The new tibia client code is now distributed in several parts, each of them allocated in a different zone of memory. 
+- At this moment all the shortest address paths start at Qt5Core.dll 
+- A first step for a future Tibia 11" />
+	
+	<title> Tibia 11 - How to read things in Tibia 11 memory [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - How to read things in Tibia 11 memory</div>
+<hr />
+<div class="pda"><a href="t-62963.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62963-Tibia-11-How-to-read-things-in-Tibia-11-memory">Tibia 11 - How to read things in Tibia 11 memory</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-15-2016, 18:52</div></div><div class="posttext">Well, let's gather what we have.<br />
+For now it looks like dealing with memory addresses will be the main problem for bot updates.<br />
+- Tibia proccess is now named &quot;client&quot; instead of &quot;Tibia&quot;.<br />
+- Tibia class name is now called &quot;Qt5QWindowOwnDCIcon&quot; instead of &quot;TibiaClient&quot;.<br />
+- The new tibia client code is now distributed in several parts, each of them allocated in a different zone of memory.<br />
+- At this moment all the shortest address paths start at Qt5Core.dll<br />
+- A first step for a future Tibia 11 bot will be calculating base address for each part of the new Tibia client code.<br />
+- A second step will be obtaining stable paths of all addresses through Cheat Engine (http://www.cheatengine.org/).<br />
+- A Tibia 11 address will usually look like paths. Below I already got some of them:<br />
+<br />
+adrXPos=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 134 &gt; 24 &gt; 18<br />
+adrYPos=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 134 &gt; 24 &gt; 1C<br />
+adrZPos=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 134 &gt; 24 &gt; 20<br />
+<br />
+You can find full list here (http://www.blackdtools.net/showthread.php?62965-11-00-Blackd-Tibia-addresses-11-00).<br />
+<br />
+In this image you can see how to obtain current player position X using adrXPos in Cheat Engine:<br />
+https://blackdtools.net/adrXPos_Tibia11.jpg<br />
+<br />
+You can learn how to obtain paths here (http://www.blackdtools.net/showthread.php?62970-Tibia-11-The-procedure-to-find-new-memory-addresses-(paths)).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-16-2016, 01:20</div></div><div class="posttext">I just made a VB.NET function that will help to use address paths obtained with Cheat Engine:<br />
+<br />
+<br />
+<br />
+    ' Obtain memory bases and region sizes of all modules in a running proccess.<br />
+    ' By Blackd (blackdtools.com)<br />
+    ' Tibia 11 : expectedName=&quot;client&quot; expectedClass=&quot;Qt5QWindowOwnDCIcon&quot;<br />
+    Public Sub GetAllBaseAddressesAndRegionSizes(ByRef expectedName As String, ByRef expectedClass As String)<br />
+        Dim procmodule_name As String<br />
+        Dim procmodule_base As Long<br />
+        Dim procmodule_size As Long<br />
+        Dim ubproc As Long<br />
+        Dim hwnd As Long<br />
+        Dim allModules As System.Diagnostics.ProcessModuleCollection<br />
+        Try<br />
+            Dim proc() As Process<br />
+            proc = System.Diagnostics.Process.GetProcessesByName(expe ctedName)<br />
+            ubproc = UBound(proc)<br />
+            If ubproc &lt; 0 Then<br />
+                Debug.Print(&quot;Error: Can't find anything with class=&quot; &amp; expectedName)<br />
+                Exit Sub<br />
+            End If<br />
+            For i As Integer = 0 To ubproc<br />
+                hwnd = proc(i).MainWindowHandle<br />
+                If GetWindowClass(hwnd) = expectedClass Then<br />
+                    allModules = proc(i).Modules<br />
+                    Debug.Print(&quot;Found &quot; + CStr(allModules.Count) + &quot; process modules:&quot;)<br />
+                    For Each procmodule As ProcessModule In allModules<br />
+                        ' Get procmodule_name - Static: always same names.<br />
+                        procmodule_name = procmodule.ModuleName<br />
+                        ' Get procmodule_base - Dynamic: bases will change each new run of the executable!<br />
+                        procmodule_base = procmodule.BaseAddress<br />
+                        ' Get procmodule_size - Static: always same size. Usefull to search things in modules (for autoupdaters)<br />
+                        procmodule_size = procmodule.ModuleMemorySize '<br />
+                        Debug.Print(procmodule_name &amp; &quot; = &quot; &amp; Hex(procmodule_base) &amp; &quot; (size = &quot; &amp; Hex(procmodule_size) &amp; &quot;)&quot;)<br />
+                        ' TODO: Add/update in a dictionary object so we can later<br />
+                        ' translate complex address paths that start in such places.<br />
+                    Next procmodule<br />
+                    Exit Sub<br />
+                End If<br />
+            Next<br />
+            Exit Sub<br />
+        Catch ex As Exception<br />
+            Debug.Print(&quot;Error: Unexpected error - &quot; &amp; ex.ToString())<br />
+        End Try<br />
+    End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-16-2016, 10:18</div></div><div class="posttext">Tibia 11 seems to have 90 modules in memory. When a memory address path starts in a module you need to obtain its base addresses so you can start translating the memory address path into a final address (only valid for your current running proccess).<br />
+<br />
+Below is the full list of modules for Tibia 11.00.3801 :<br />
+<br />
+client.exe (size = 60C000)<br />
+ntdll.dll (size = 17B000)<br />
+KERNEL32.DLL (size = E0000)<br />
+KERNELBASE.dll (size = 17E000)<br />
+USER32.dll (size = 147000)<br />
+Qt5Concurrent.dll (size = 9000)<br />
+GDI32.dll (size = 14F000)<br />
+Qt5Widgets.dll (size = 43B000)<br />
+Qt5Quick.dll (size = 256000)<br />
+ADVAPI32.dll (size = 7B000)<br />
+msvcrt.dll (size = BE000)<br />
+sechost.dll (size = 44000)<br />
+RPCRT4.dll (size = AD000)<br />
+SspiCli.dll (size = 1E000)<br />
+CRYPTBASE.dll (size = A000)<br />
+bcryptPrimitives.dll (size = 58000)<br />
+SHELL32.dll (size = 13FE000)<br />
+cfgmgr32.dll (size = 37000)<br />
+windows.storage.dll (size = 4FA000)<br />
+combase.dll (size = 1BD000)<br />
+shlwapi.dll (size = 45000)<br />
+kernel.appcore.dll (size = C000)<br />
+shcore.dll (size = 8D000)<br />
+powrprof.dll (size = 44000)<br />
+profapi.dll (size = F000)<br />
+Qt5Gui.dll (size = 4A9000)<br />
+Qt5Qml.dll (size = 27C000)<br />
+Qt5Network.dll (size = D4000)<br />
+Qt5Core.dll (size = 46E000)<br />
+MSVCP120.dll (size = 71000)<br />
+MSVCR120.dll (size = EE000)<br />
+WS2_32.dll (size = 5F000)<br />
+CRYPT32.dll (size = 179000)<br />
+MSASN1.dll (size = E000)<br />
+DNSAPI.dll (size = 84000)<br />
+NSI.dll (size = 7000)<br />
+ole32.dll (size = EB000)<br />
+MPR.dll (size = 16000)<br />
+IMM32.DLL (size = 2B000)<br />
+version.dll (size = 8000)<br />
+qwindows.dll (size = F9000)<br />
+OLEAUT32.dll (size = 95000)<br />
+WINMM.dll (size = 24000)<br />
+WINMMBASE.dll (size = 23000)<br />
+uxtheme.dll (size = 75000)<br />
+dwmapi.dll (size = 1D000)<br />
+d3d9.dll (size = 1CB000)<br />
+nvspcap.dll (size = 151000)<br />
+SETUPAPI.dll (size = 40B000)<br />
+PSAPI.DLL (size = 6000)<br />
+WINHTTP.dll (size = 9B000)<br />
+nvapi.dll (size = 381000)<br />
+dxgi.dll (size = 82000)<br />
+opengl32.dll (size = E0000)<br />
+GLU32.dll (size = 25000)<br />
+DDRAW.dll (size = EE000)<br />
+DCIMAN32.dll (size = 7000)<br />
+MSCTF.dll (size = 11F000)<br />
+nvoglv32.DLL (size = 1B18000)<br />
+WTSAPI32.dll (size = F000)<br />
+Dbghelp.dll (size = 13F000)<br />
+DEVOBJ.dll (size = 22000)<br />
+WINTRUST.dll (size = 42000)<br />
+ntmarta.dll (size = 28000)<br />
+WINSTA.dll (size = 44000)<br />
+dbgcore.DLL (size = 21000)<br />
+iphlpapi.dll (size = 2F000)<br />
+dhcpcsvc.DLL (size = 14000)<br />
+dhcpcsvc6.DLL (size = 13000)<br />
+clbcatq.dll (size = 84000)<br />
+PROPSYS.dll (size = 14B000)<br />
+qtquick2plugin.dll (size = 9000)<br />
+windowplugin.dll (size = 8000)<br />
+qjpeg.dll (size = 3F000)<br />
+dataexchange.dll (size = 41000)<br />
+d3d11.dll (size = 21A000)<br />
+dcomp.dll (size = A7000)<br />
+twinapi.appcore.dll (size = CE000)<br />
+bcrypt.dll (size = 1B000)<br />
+ssleay32.dll (size = 57000)<br />
+LIBEAY32.dll (size = 154000)<br />
+CRYPTSP.dll (size = 13000)<br />
+rsaenh.dll (size = 2F000)<br />
+ondemandconnroutehelper.dll (size = 12000)<br />
+mswsock.dll (size = 4F000)<br />
+rasadhlp.dll (size = 8000)<br />
+fwpuclnt.dll (size = 47000)<br />
+qtquickcontrolsplugin.dll (size = AD000)<br />
+qquicklayoutsplugin.dll (size = 12000)<br />
+edputil.dll (size = 49000)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PsychoBoy</div><div class="date">09-29-2016, 11:26</div></div><div class="posttext">Hello. Do you know if new Tibia 11 client uses the same tibia protocol as before? As far as I know it does. And if so then what's the point of reversing new client from scratch if you can use already reversed tibia protocol to make clientless bots? I think it's 100% possible, am I right? I saw someone connected to OTS using Tibia 11 client so it means that Tibia 11 client still uses the same protocol and therefore you can just simply send packets onto real tibia server to simulate that you are moving/attacking or doing whatever you want.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-29-2016, 14:09</div></div><div class="posttext">Hello. Do you know if new Tibia 11 client uses the same tibia protocol as before? As far as I know it does. And if so then what's the point of reversing new client from scratch if you can use already reversed tibia protocol to make clientless bots? I think it's 100% possible, am I right? I saw someone connected to OTS using Tibia 11 client so it means that Tibia 11 client still uses the same protocol and therefore you can just simply send packets onto real tibia server to simulate that you are moving/attacking or doing whatever you want.<br />
+<br />
+Yes, it is the same protocol, so my bot does not really require a total change.<br />
+However, the main problem for me is handling memory, specially login interception (so I can proxify the game connection). Then I also need to know a way to order a move to x,y,z using memory, a way to know selected char in the character list, and a few more things that requires memory.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Acrozo0</div><div class="date">10-01-2016, 01:55</div></div><div class="posttext">What's language is blackdtools in ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-04-2016, 10:08</div></div><div class="posttext">Blackd Proxy = Visual Basic 6<br />
+<br />
+However I try to make all my new projects with VB.NET 2010.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

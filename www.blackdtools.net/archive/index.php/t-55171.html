@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="error, packet, received, chain, total, debug, reasons, ptype, unknown, v872, config.ini, [25-04-2011, version, 19.5, 19.6, errors.txt, worm, alarm, 173844, 173632, 173618, throwing, 173516, 185801, 213606, 174930, 185504, 185637, 213027, 173935, details, [error], report, safe, mode, daniel@blackdtools.com, relog, 173405, cheats, reactivate, critical, throw, [255], proxy, blackd, 2136" />
+	<meta name="description" content="Yo, when I throw 1x worm to any sqm im getting alarm and this error: 
+ 
+21:36 Blackd : Proxy got critical error! Safe mode ON . Alarm on. Report log details (errors.txt) to daniel@blackdtools.com . Relog to reactivate cheats 
+ 
+This is my errors.txt 
+ ERROR: 
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET: 
+( hex ) 38 00 71 01 00 A4 0D 63 00 6A F5 80 3C 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 44 02  
+ 
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN:" />
+	
+	<title> [FIXED SINCE 20.0] Debug while throwing worm.. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  [FIXED SINCE 20.0] Debug while throwing worm..</div>
+<hr />
+<div class="pda"><a href="t-55171.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?55171-FIXED-SINCE-20-0-Debug-while-throwing-worm">[FIXED SINCE 20.0] Debug while throwing worm..</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">krychaj5</div><div class="date">04-25-2011, 22:38</div></div><div class="posttext">Yo, when I throw 1x worm to any sqm im getting alarm and this error:<br />
+<br />
+<br />
+21:36 Blackd [255]: Proxy got critical error! Safe mode ON . Alarm on. Report log details (errors.txt) to daniel@blackdtools.com . Relog to reactivate cheats<br />
+<br />
+This is my errors.txt<br />
+<br />
+[25-04-2011 17:34:05 using version 19.5 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 01 00 A4 0D 63 00 6A F5 80 3C 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 44 02 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 17:35:16 using version 19.5 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 01 00 A4 0D 63 00 6A F5 80 3C 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 00 02 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 17:36:18 using version 19.5 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 63 00 6A F5 80 3C 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 C5 01 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 17:36:32 using version 19.5 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 63 00 6A F5 80 38 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 B8 01 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 17:38:44 using version 19.5 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 63 00 6A F5 80 32 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 36 01 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 17:39:35 using version 19.5 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 63 00 6A F5 80 32 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 2B 01 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 17:49:30 using version 19.5 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 63 00 6A F5 80 32 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 78 09 68 01 00 00 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 18:55:04 using version 19.6 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 01 00 A4 0D 63 00 6A F5 80 32 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 7D 09 68 01 00 00 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 18:56:37 using version 19.6 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 63 00 6A F5 80 32 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 7D 09 68 01 00 00 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 18:58:01 using version 19.6 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 01 00 A4 0D 63 00 6A F5 80 32 7D 07 02 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 7D 09 68 01 00 00 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 21:30:27 using version 19.6 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 62 00 6A FE 80 2E 7D 07 02 A4 0D 02 00 A0 2F 03 2F 03 32 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 8B 09 68 01 00 00 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+[25-04-2011 21:36:06 using version 19.6 , with config.ini v872 ] ERROR:<br />
+&gt;&gt;&gt;&gt; 1. RECEIVED PACKET:<br />
+( hex ) 38 00 71 00 00 A4 0D 63 00 6A FC 80 2E 7D 07 01 A4 0D 01 00 A0 2F 03 2F 03 1E 2D 00 00 C8 A3 02 00 88 35 56 00 00 00 00 00 47 00 45 2F 00 D4 03 11 11 46 C8 8B 09 68 01 00 00 <br />
+<br />
+&gt;&gt;&gt;&gt; 2. LAST TOTAL CHAIN: 71 00<br />
+<br />
+&gt;&gt;&gt;&gt; 3. DEBUG REASONS:<br />
+ [ UNKNOWN PTYPE : 00 ] <br />
+<br />
+How to fix it? :|</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">04-29-2011, 14:56</div></div><div class="posttext">that happened because after patch all items that have animations comes with an weird extra byte 00 in the packet that messed with my parser. I already fixed that. Just download latest version of Blackd Proxy.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

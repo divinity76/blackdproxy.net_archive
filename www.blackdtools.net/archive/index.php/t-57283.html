@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="paladin trolls, setmeleekill, setloot, fastexiva, script, troll, thais, modified, wiotki, spear, spears, 32493,32259,8, 32485,32265,8, adding, 32484,32265,9, 32478,32269,9, gotoscriptline, 32478,32270,8, refill, 32445,32231,7, 32492,32259,7, 32369,32214,7, 32348,32230,7, 32349,32231,8, rewrite, progress, 3500xp/hr, approx, edit2, pally, great, 500gp/hr, testing, trolls+depo+spear, fixing, issue, putlootondepot, refillpaladin, loosing, simple, 32338,32233,7, _idcost, setlooton, setbot, learned, oldlootmode=1, older, _spears, riddla, setchaoticmovesoff" />
+	<meta name="description" content="This is a rewrite of the Thais troll script with some script that i learned from an older script that refilled spears for you.  
+ 
+Original by Wiotki 
+Modified by me(Riddla) 
+ 
+ 
+ 
+setChaoticMovesOFF 
+#By Wiotki -&gt; Modified By Riddla 
+fastExiva _spearid = CD 0C" />
+	
+	<title> [Release/rewrite] Thais trolls+depo+spear refill(paladin script) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  [Release/rewrite] Thais trolls+depo+spear refill(paladin script)</div>
+<hr />
+<div class="pda"><a href="t-57283.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57283-Release-rewrite-Thais-trolls-depo-spear-refill(paladin-script)">[Release/rewrite] Thais trolls+depo+spear refill(paladin script)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Riddla</div><div class="date">02-11-2012, 05:15</div></div><div class="posttext">This is a rewrite of the Thais troll script with some script that i learned from an older script that refilled spears for you. <br />
+<br />
+Original by Wiotki<br />
+Modified by me(Riddla)<br />
+<br />
+<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+#By Wiotki -&gt; Modified By Riddla<br />
+fastExiva _spearid = CD 0C<br />
+# How many spears do you have?<br />
+fastExiva _spears = 9<br />
+# How much does 1 spear cost?<br />
+fastExiva _idcost = 9<br />
+setLootOn<br />
+setBot OldLootMode=1<br />
+setLoot D9 25<br />
+setLoot F9 0D<br />
+setLoot FB 2C<br />
+setLoot D7 0B<br />
+setMeleeKill wolf<br />
+setMeleeKill troll<br />
+setMeleeKill snake<br />
+setMeleeKill poison spider<br />
+setMeleeKill bug<br />
+setMeleeKill orc<br />
+setMeleeKill troll champion<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:depo$<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;#$_spears$) Goto $nlineoflabel:depo$<br />
+IfTrue ($countitems:{$D7 0B}$#number&gt;=#500) Goto $nlineoflabel:depo$<br />
+move 32477,32273,8<br />
+move 32476,32272,9<br />
+move 32475,32286,8<br />
+move 32474,32286,9<br />
+move 32474,32287,8<br />
+move 32482,32295,8<br />
+move 32482,32296,9<br />
+move 32482,32297,8<br />
+move 32493,32289,8<br />
+move 32494,32289,9<br />
+move 32500,32281,9<br />
+move 32494,32289,9<br />
+move 32494,32290,8<br />
+move 32499,32303,8<br />
+move 32500,32303,9<br />
+move 32499,32302,8<br />
+gotoScriptLine 0<br />
+:depo<br />
+fastExiva _spears = $numericalexp:{$_spears$}-{$countitems:{$_spearid$}$}$<br />
+fastExiva _spearcost = $numericalexp:{$_spears$}*{$_idcost$}$<br />
+move 32478,32270,8<br />
+move 32478,32269,9<br />
+move 32484,32265,9<br />
+move 32484,32266,8<br />
+move 32493,32259,8<br />
+move 32493,32260,7<br />
+move 32436,32225,7<br />
+move 32369,32215,7<br />
+move 32344,32229,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitx 1<br />
+sayInTrade withdraw $_spearcost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitx 1<br />
+move 32338,32233,7<br />
+move 32338,32242,7<br />
+move 32342,32248,7<br />
+move 32349,32246,7<br />
+move 32350,32245,6<br />
+move 32345,32245,6<br />
+move 32343,32244,6<br />
+#mod by r?ddla<br />
+saymessage hi<br />
+waitx 2<br />
+sayInTrade trade<br />
+waitx 2<br />
+fastExiva &gt; 07 00 7A $_spearid$ 00 $numbertohex2:{$numericalexp:{$_spears$}/1$}$ 00<br />
+waitx 1<br />
+move 32343,32244,6<br />
+move 32345,32245,6<br />
+move 32350,32245,6<br />
+move 32349,32246,7<br />
+move 32342,32248,7<br />
+move 32338,32242,7<br />
+move 32338,32233,7<br />
+move 32346,32230,7<br />
+move 32347,32232,8<br />
+move 32353,32222,8<br />
+putLootOnDepot<br />
+move 32349,32231,8<br />
+move 32348,32230,7<br />
+move 32369,32214,7<br />
+move 32445,32231,7<br />
+move 32492,32259,7<br />
+fastExiva &gt; 11 00 83 FF FF 0A 00 00 81 0D 00 ED 7E 03 7E 07 51 02 00<br />
+move 32493,32259,8<br />
+move 32485,32265,8<br />
+move 32484,32265,9<br />
+move 32478,32269,9<br />
+move 32478,32270,8<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+Edit: This is a Work in progress, i am currently fixing the issue of the char going back to thais after loosing 1 spear, Simple but i am testing it.<br />
+<br />
+Edit2: Approx 3500xp/hr with a 18 pally, and about 500gp/hr Not great but i havent died since adding the Refill in.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sibigi</div><div class="date">02-15-2012, 08:31</div></div><div class="posttext">I tried this script but everytime i get into cave it turns around and heads back to dp :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Riddla</div><div class="date">02-16-2012, 15:48</div></div><div class="posttext">char info? lvl? voc? and do you have a shovel in backpack?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sibigi</div><div class="date">02-17-2012, 00:14</div></div><div class="posttext">level 18(now was level 10 at time) paladin, and yes shovel n backpack.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

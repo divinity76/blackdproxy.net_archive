@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, problem, record, cavebot, doors, packets, tutorials" />
+	<meta name="description" content="I have seen it used in a few scripts, but I thought I'd try to explain how you do it. 
+ 
+It is recomended you only are using one client when you try to do this. But if you have several clients online, first find out what ID your client has in the Proxy. To do this, I don't know if there is a better way, but I go to &quot;tools&quot; and use the &quot;Fake messages to self&quot; function and try different IDs there. 
+ 
+When you know what ID the right client is open the &quot;Proxy&quot; window. Here you check the small box" />
+	
+	<title> How to open doors using the cavebot [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  How to open doors using the cavebot</div>
+<hr />
+<div class="pda"><a href="t-6966.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?6966-How-to-open-doors-using-the-cavebot">How to open doors using the cavebot</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-07-2007, 23:15</div></div><div class="posttext">I have seen it used in a few scripts, but I thought I'd try to explain how you do it.<br />
+<br />
+It is recomended you only are using one client when you try to do this. But if you have several clients online, first find out what ID your client has in the Proxy. To do this, I don't know if there is a better way, but I go to &quot;tools&quot; and use the &quot;Fake messages to self&quot; function and try different IDs there.<br />
+<br />
+When you know what ID the right client is open the &quot;Proxy&quot; window. Here you check the small box called &quot;log packets&quot; and then you open and close the door, then you uncheck the box. Now you should have a bunch of logged packets.<br />
+<br />
+The ones we are interested in are the ones that have the prefix &quot;GAMCLIENT-ID-&gt;( hex )&quot;. Try to find the first line that is sent FROM your client ( &gt; ) and copy only the hex. But remove the first four characters from the hex, they're called headers and the &quot;exiva&quot; command automatically adds them. Stand next to the door and write &quot;exiva &gt; -hex-&quot;. If it is the right hex the door will now open. Try to find the hex to close the door, it should look very similar to the first hex you have.<br />
+<br />
+Try both hexes a few times to open and close the door. Then you make a waypoint at one side of the door and add a &quot;sayMessage exiva &gt; -hex to open-&quot; to open the door. Then make a waypoint at the other side of the door and use &quot;sayMessage &gt; -hex to close-&quot;. You don't really need to close the door again, but you can if you wish. Make sure you really use the right arrow &quot;&gt;&quot; and not &quot;&lt;&quot;, because if you do the client will crash.<br />
+<br />
+To make sure you are at the right spot when sendind the hex, make a waypoint at the door and then another one. Because of lag or too fast execution the bot may not be at the right coordinates.<br />
+<br />
+To use a key to enter a place (like Fibula rots), place the key in the ammo slot, there it will have a &quot;fixed&quot; position, if you have it anywhere else the hex to use it may change. You record the hex in the same way as with normal doors.<br />
+<br />
+Sorry that I don't have any screenshots, but I hope this may be useful anyways.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">07-09-2007, 00:05</div></div><div class="posttext">very nice and useful. <br />
+I made a tutorial myself on how to do this but I didn't open a thread. I just posted on somebody else's thread. I think it was &quot;Nargor pirates 50k+/h&quot; or something.<br />
+<br />
+EDIT: ahh found it: http://www.blackdtools.net/showpost.php?p=47508&amp;postcount=26<br />
+<br />
+Keep up the good work ! ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-09-2007, 00:23</div></div><div class="posttext">Thank you very much. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">frog</div><div class="date">08-08-2007, 11:54</div></div><div class="posttext">and don't forget the &quot;&gt;&quot; or &quot;&lt;&quot;. 10:25 Player [10]: exiva 45<br />
+if the door doesn't open (because it wont), you'll probably just stand there and more or less spamm the door with &quot;exiva 45&quot; until you logout, by mr gm :O<br />
+<br />
+(random number, haven't check what it is to open a door)<br />
+<br />
+btw nice tutorial, very educational</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rock</div><div class="date">04-09-2013, 03:01</div></div><div class="posttext">This about record packets should be on tutorials <br />
+<br />
+THANKS !!! u save my ass<br />
+<br />
+i'm trying to do exiva &gt;  0A 00 82 FF FF 40 00 00 6B 0A 00 00 to eat some fish but it doesnt do anything where is my problem??</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

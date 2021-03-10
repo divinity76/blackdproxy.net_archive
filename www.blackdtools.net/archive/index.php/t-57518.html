@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="druid, vocation, place, premium, interested, paladin, skills, level, needed, equipment" />
+	<meta name="description" content="Made this script myself a few day's ago after a few week's of intense reading trying to figure out this damn bot....I think i just got the hang of it. Started using this on my paladin at level 25 65 Distance and P-Set. Please test/comment if i can get a bit of advice to improve it i'd be greatfull. Start on -3 Liberty Bay Rotworm's. 
+ 
+Vinnie xD" />
+	
+	<title> LB Rot's for Paladin [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  LB Rot's for Paladin</div>
+<hr />
+<div class="pda"><a href="t-57518.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57518-LB-Rot-s-for-Paladin">LB Rot's for Paladin</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-16-2012, 20:29</div></div><div class="posttext">#Created by Vinnie<br />
+setChaoticMovesOFF<br />
+setMeleeKill rat<br />
+setMeleeKill bug<br />
+setMeleeKill centipede<br />
+setMeleeKill rotworm<br />
+setMeleeKill carrion worm<br />
+setMeleeKill spider<br />
+setLoot D7 0B<br />
+move 32273,32750,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32268,32787,10<br />
+move 32249,32803,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32229,32817,10<br />
+move 32225,32832,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32208,32810,10<br />
+move 32187,32782,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32176,32754,10<br />
+move 32201,32722,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32245,32710,10<br />
+move 32257,32721,10<br />
+move 32261,32739,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32251,32751,10<br />
+move 32239,32732,10<br />
+move 32218,32732,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32206,32748,10<br />
+move 32208,32763,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32246,32775,10<br />
+move 32259,32750,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32269,32738,10<br />
+move 32273,32749,10<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32273,32749,10<br />
+move 32273,32751,9<br />
+move 32255,32774,9<br />
+move 32255,32775,8<br />
+move 32233,32774,8<br />
+move 32233,32775,7<br />
+move 32240,32812,7<br />
+move 32252,32817,7<br />
+move 32266,32815,7<br />
+move 32289,32814,7<br />
+move 32339,32836,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2000$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*9$<br />
+waitX 1<br />
+sayInTrade withdraw $_spearcost$<br />
+sayInTrade yes<br />
+move 32327,32836,7<br />
+move 32312,32835,7<br />
+move 32294,32820,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A CD 0C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 1<br />
+move 32285,32815,7<br />
+move 32250,32817,7<br />
+move 32237,32794,7<br />
+move 32233,32781,7<br />
+move 32233,32775,7<br />
+move 32233,32774,8<br />
+move 32238,32762,8<br />
+move 32248,32770,8<br />
+move 32254,32774,8<br />
+move 32255,32774,9<br />
+move 32260,32769,9<br />
+move 32264,32761,9<br />
+move 32272,32756,9<br />
+move 32273,32751,9<br />
+gotoScriptLine 0<br />
+<br />
+Made this script myself a few day's ago after a few week's of intense reading trying to figure out this damn bot....I think i just got the hang of it. Started using this on my paladin at level 25 65 Distance and P-Set. Please test/comment if i can get a bit of advice to improve it i'd be greatfull. Start on -3 Liberty Bay Rotworm's.<br />
+<br />
+Vinnie xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-17-2012, 01:54</div></div><div class="posttext">Looks good, but maybe you want to loot more stuff from them than gold? :p<br />
+<br />
+Also using this, to easier change to royal spears, or if they change weight or price (again) of regular spear:<br />
+http://www.blackdtools.net/showthread.php?57511-HOW-TO-Spear-Refiller<br />
+Maybe also adding &quot;fastExiva _leavespears = 6&quot; at the top and using &quot;IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$&quot;, if you use the link provided.<br />
+<br />
+Not that there's anything wrong at all with your script, I just figured making it a little more configurable would be nice. :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-17-2012, 03:04</div></div><div class="posttext">If you could edit it for me please malmis i'd be greatfull, Especially the royal spear bit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-17-2012, 11:41</div></div><div class="posttext">Updated so you can change to royal spears easily, and change the amount of spears before leaving.<br />
+<br />
+<br />
+#Created by Vinnie, updated by Malmis<br />
+#<br />
+#Leave when spears less than<br />
+fastExiva _leavespears = 6<br />
+#ID, price and weight of spear<br />
+fastExiva _spearid = CD 0C<br />
+fastExiva _spearprice = 9<br />
+fastExiva _spearweight = 20<br />
+#<br />
+setChaoticMovesOFF<br />
+setMeleeKill rat<br />
+setMeleeKill bug<br />
+setMeleeKill centipede<br />
+setMeleeKill rotworm<br />
+setMeleeKill carrion worm<br />
+setMeleeKill spider<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+setLoot 23 28<br />
+move 32273,32750,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32268,32787,10<br />
+move 32249,32803,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32229,32817,10<br />
+move 32225,32832,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32208,32810,10<br />
+move 32187,32782,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32176,32754,10<br />
+move 32201,32722,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32245,32710,10<br />
+move 32257,32721,10<br />
+move 32261,32739,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32251,32751,10<br />
+move 32239,32732,10<br />
+move 32218,32732,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32206,32748,10<br />
+move 32208,32763,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32246,32775,10<br />
+move 32259,32750,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+move 32269,32738,10<br />
+move 32273,32749,10<br />
+IfTrue ($countitems:{$_spearid$}$#number&lt;=#$_leavespears$) Goto $nlineoflabel:depo$<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32273,32749,10<br />
+move 32273,32751,9<br />
+move 32255,32774,9<br />
+move 32255,32775,8<br />
+move 32233,32774,8<br />
+move 32233,32775,7<br />
+move 32240,32812,7<br />
+move 32252,32817,7<br />
+move 32266,32815,7<br />
+move 32289,32814,7<br />
+move 32339,32836,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$}*{$_spearprice$}$<br />
+sayInTrade yes<br />
+move 32327,32836,7<br />
+move 32312,32835,7<br />
+move 32294,32820,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:$_spearid$:$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$<br />
+move 32285,32815,7<br />
+move 32250,32817,7<br />
+move 32237,32794,7<br />
+move 32233,32781,7<br />
+move 32233,32775,7<br />
+move 32233,32774,8<br />
+move 32238,32762,8<br />
+move 32248,32770,8<br />
+move 32254,32774,8<br />
+move 32255,32774,9<br />
+move 32260,32769,9<br />
+move 32264,32761,9<br />
+move 32272,32756,9<br />
+move 32273,32751,9<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-17-2012, 13:15</div></div><div class="posttext">Thank's for the update i'l test it later when stamina build's back up a bit :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MilkTown</div><div class="date">03-23-2012, 23:19</div></div><div class="posttext">Would it be possible for you to modify it so it doesn't buy spears? Would love to try this script on my knight and sorc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-25-2012, 03:01</div></div><div class="posttext">Sorry, Been waiting on stamina to top back up so botting has taken a back seat...I will make one for a knight tomorrow. No need for a potion refiller at this location but i'l add creature product's to the loot list and gold/loot depositer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-26-2012, 02:11</div></div><div class="posttext">As promised...Edited version for a knight.<br />
+<br />
+<br />
+#Created by Vinnie<br />
+setChaoticMovesOFF<br />
+setMeleeKill rat<br />
+setMeleeKill bug<br />
+setMeleeKill centipede<br />
+setMeleeKill rotworm<br />
+setMeleeKill carrion worm<br />
+setMeleeKill spider<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+setLoot 23 28<br />
+move 32273,32750,10<br />
+move 32268,32787,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32249,32803,10<br />
+move 32229,32817,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32225,32832,10<br />
+move 32208,32810,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32187,32782,10<br />
+move 32176,32754,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32201,32722,10<br />
+move 32245,32710,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32257,32721,10<br />
+move 32261,32739,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32251,32751,10<br />
+move 32239,32732,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32218,32732,10<br />
+move 32206,32748,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32208,32763,10<br />
+move 32246,32775,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32259,32750,10<br />
+move 32269,32738,10<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+move 32273,32749,10<br />
+gotoScriptLine 0<br />
+:depositer<br />
+move 32273,32749,10<br />
+move 32273,32751,9<br />
+move 32255,32774,9<br />
+move 32255,32775,8<br />
+move 32233,32774,8<br />
+move 32233,32775,7<br />
+move 32240,32812,7<br />
+move 32252,32817,7<br />
+move 32266,32815,7<br />
+move 32289,32814,7<br />
+move 32339,32836,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+move 32339,32845,7<br />
+putLootOnDepot<br />
+move 32304,32827,7<br />
+move 32286,32814,7<br />
+move 32267,32814,7<br />
+move 32242,32816,7<br />
+move 32237,32788,7<br />
+move 32233,32775,7<br />
+move 32233,32774,8<br />
+move 32238,32761,8<br />
+move 32255,32773,8<br />
+move 32255,32774,9<br />
+move 32273,32751,9<br />
+move 32273,32750,10<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MilkTown</div><div class="date">03-28-2012, 15:59</div></div><div class="posttext">Nice! I'll try it with my knight right away! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-29-2012, 03:59</div></div><div class="posttext">I havent tested it so let me know...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zensas</div><div class="date">06-12-2012, 14:48</div></div><div class="posttext">The knight script works flawlessly :D have done about 8 complete runs completely afk.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-12-2012, 17:49</div></div><div class="posttext">Thank's for the feed back....I'm thinking about using the waypoints to make a moner making version that collects all loot and sell's it and a pk runner.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">basku90</div><div class="date">11-09-2012, 17:45</div></div><div class="posttext">hey how many exp /hour dois it have?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tengy</div><div class="date">11-10-2012, 23:02</div></div><div class="posttext">hey how many exp /hour dois it have?<br />
+Around 10-15k/h</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dog Of XV</div><div class="date">11-19-2012, 15:17</div></div><div class="posttext">What skills, level, and equipment is needed? I'm interested in any vocation except druid.<br />
+<br />
+<br />
+-FACC<br />
+<br />
+--------<br />
+LB is a premium place isn't it</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

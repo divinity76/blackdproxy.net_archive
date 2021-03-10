@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="backpack, darashia, loot dropper, rots, script, explain, simpler, asked, images, gonna, upload, garrexx, paste, backpackpossibly, simplify, basically, maces, drops, bagging, dropping, pretty, figuring, capable, swords, possibly, modified, ground, inside, waypoints" />
+	<meta name="description" content="I am new to this script idea but am pretty capable of figuring it out with some help. So basically to simplify what im looking for is a script that drops maces and swords (possibly in one spot if possible, if not just on the ground anywhere) and one that puts gold in a backpack inside the main backpack(possibly until its full then it puts in gold into the main backpack, again if possible). Also I have modified my script to dump my mana in between waypoints. There has to be a simpler way to do" />
+	
+	<title> Loot Dropping, Gold Bagging, Darashia Rots [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Loot Dropping, Gold Bagging, Darashia Rots</div>
+<hr />
+<div class="pda"><a href="t-57529.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57529-Loot-Dropping-Gold-Bagging-Darashia-Rots">Loot Dropping, Gold Bagging, Darashia Rots</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">garrexx</div><div class="date">03-19-2012, 23:12</div></div><div class="posttext">I am new to this script idea but am pretty capable of figuring it out with some help. So basically to simplify what im looking for is a script that drops maces and swords (possibly in one spot if possible, if not just on the ground anywhere) and one that puts gold in a backpack inside the main backpack(possibly until its full then it puts in gold into the main backpack, again if possible). Also I have modified my script to dump my mana in between waypoints. There has to be a simpler way to do this. If someone could please just explain. I KNOW I have asked a lot but I would appreciate any and all help :D<br />
+Much Thanks,<br />
+Garrexx<br />
+<br />
+Heres the script I am using currently for Darashia Rots:<br />
+I tried to paste it here but it says something like theres to many images in my msg so im just gonna upload it as a txt file.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-20-2012, 10:41</div></div><div class="posttext">To waste mana when almost full, use this conditional event:<br />
+<br />
+$mymanapercent$<br />
+#number&gt;=#<br />
+99<br />
+0<br />
+2000<br />
+0<br />
+utani hur<br />
+or for a more precise method:<br />
+http://www.blackdtools.net/showthread.php?7040-Cond-Event-Use-spell-when-max-mana-1<br />
+<br />
+Lootdropping you do like this<br />
+<br />
+move x,y,z<br />
+resetLoot<br />
+#Loot to drop, don't remember IDs<br />
+setLoot sword<br />
+setLoot mace<br />
+dropLootOnGround x,y,z<br />
+#Set loot not dropped, gold dirt and fangs<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+setLoot 23 28<br />
+<br />
+Just edit the x,y,z to the pos you want it to drop on.<br />
+<br />
+Also it will always loot everything into every open backpakc you have, it will not discimrinate between loot nor open new backpacks. So best have several open. But don't minimize them... Dropping loot into minimized backpacks could be considered pretty... fishy.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="variables, events, numbers, strings, cavebot, returns, experiment, difference, saymessage, return, written, actions, values, atleast, decided, functions, dollar, symbols, order, scripts, types, title, ignoring, listed, exiva, message" />
+	<meta name="description" content="I've decided to try to make a list of what all of the variables are used for, or atleast those of them that I know how to use. I'll take them in the order they're listed, ignoring those that I don't know how to use. 
+ 
+The events are used in the Exiva EXP message, the &quot;show EXP in Title&quot; text, and in certain cavebot scripts. 
+ 
+There are two types of returns. Strings and numbers. I'm not sure what events that returns what, so you'll have to experiment a bit. As far as I know, all values are" />
+	
+	<title> Variables and functions between dollar symbols [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-30.html">8. Events</a> &gt;  Variables and functions between dollar symbols</div>
+<hr />
+<div class="pda"><a href="t-7779.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?7779-Variables-and-functions-between-dollar-symbols">Variables and functions between dollar symbols</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-27-2007, 02:39</div></div><div class="posttext">I've decided to try to make a list of what all of the variables are used for, or atleast those of them that I know how to use. I'll take them in the order they're listed, ignoring those that I don't know how to use.<br />
+<br />
+The events are used in the Exiva EXP message, the &quot;show EXP in Title&quot; text, and in certain cavebot scripts.<br />
+<br />
+There are two types of returns. Strings and numbers. I'm not sure what events that returns what, so you'll have to experiment a bit. As far as I know, all values are only numbers unless otherwise is written.<br />
+<br />
+Whatever the type of the return, they can all be used with &quot;sayMessage&quot; in the cavebot or as actions in the cond. events. The difference is that you can do math with numbers but not with strings.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-27-2007, 02:40</div></div><div class="posttext">$expleft$<br />
+Pretty easy, this one returns the amount of EXP left to the next level.<br />
+<br />
+<br />
+$nextlevel$<br />
+Returns what your next level is.<br />
+<br />
+<br />
+$exph$<br />
+Returns the amount of EXP you get each hour.<br />
+<br />
+<br />
+$timeleft$<br />
+Returns the time left for the next level at the current EXP/h rate.<br />
+<br />
+<br />
+$played$<br />
+Returns how long you have been online. (I believe this is only a string)<br />
+<br />
+<br />
+$expgained$<br />
+EXP gained since you logged in.<br />
+<br />
+<br />
+$charactername$<br />
+Returns your charactername. String.<br />
+<br />
+<br />
+$lastsender$<br />
+Returns the name of the character that last said something to you, I believe this is only for default and PMs tho. String.<br />
+<br />
+<br />
+$lastmsg$<br />
+Returns the last message recieved, I believe this also is only for default and PMs. Useful when talking to NPCs; example:<br />
+<br />
+IfTrue ($lastmsg$#string=#Hiho $charactername$.) Goto $nlineoflabel:label$<br />
+This would only become true if the NPC said &quot;Hiho&quot; followed by the name of your current character.<br />
+<br />
+<br />
+$myhp$<br />
+Returns the current amount of HP.<br />
+<br />
+<br />
+$myhppercent$<br />
+Returns the current amount of HP in percent.<br />
+<br />
+<br />
+$mymana$<br />
+Returns the current amount of mana.<br />
+<br />
+<br />
+$mylevel$<br />
+Returns your current level.<br />
+<br />
+<br />
+$mysoulpoints$<br />
+Returns your current amount of soul points.<br />
+<br />
+<br />
+$myexp$<br />
+Returns your current amount of EXP.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-27-2007, 02:42</div></div><div class="posttext">$lastpkname$<br />
+Returns the name of the monster or player that attacked you that was not on the runemaker friend list or in the cavebot's kill list. String.<br />
+ <br />
+<br />
+$lastgmname$<br />
+Returns the name of the last GM seen. String.<br />
+ <br />
+<br />
+$date$<br />
+Returns the current date in DD-MM-YYYY. Only string I believe.<br />
+ <br />
+<br />
+$time$<br />
+Returns current time in HH:MM:SS. Only string I believe.<br />
+ <br />
+<br />
+$shorttime$<br />
+Returns current time in HH:MM. This might be both string and number.<br />
+ <br />
+<br />
+$mycap$<br />
+Returns your current cap.<br />
+ <br />
+<br />
+$mystamina$<br />
+Returns current stamina in minutes.<br />
+ <br />
+<br />
+$randomlineof:*.txt$<br />
+Returns a random line of the textfile named *. Needs to be saved in the &quot;randline&quot; folder of BlackD Proxy. Useful for answering players/GMs.<br />
+ <br />
+<br />
+$nlineoflabel:labelname$<br />
+Returns what line the label &quot;labelname&quot; is on. Useful when using &quot;IfTrues&quot; in the cavebot.<br />
+ <br />
+<br />
+$hex-equiped-item:01$<br />
+The hex of the item equipped in slot 01. The slots are:<br />
+01: Head<br />
+02: Necklace<br />
+03: Backpack<br />
+04: Armor<br />
+05: Shield<br />
+06:Weapon<br />
+07: Legs<br />
+08: Boots<br />
+09: Ring<br />
+0A: Ammo<br />
+Useful when creating custom hexes for moving items to/from the EQ slots.<br />
+ <br />
+<br />
+$hex-equiped-ammount:01$<br />
+Returns the amount, in hex, of items equipped in the specified slot. Same use as above.<br />
+ <br />
+<br />
+$num-equiped-ammount:01$<br />
+Returns a numerical value on the amount of equipped items in the specified slot.<br />
+ <br />
+<br />
+$hex-tibiastr:*$<br />
+Returns what the hex of the text * is.<br />
+ <br />
+<br />
+$numbertohex1:*$<br />
+Returns what the number * is in hex. Can only count to 255.<br />
+ <br />
+<br />
+$numbertohex2:*$<br />
+Same as above, but can count to 65535.<br />
+ <br />
+<br />
+$hex1tonumber:**$<br />
+Returns what the hex of * is. Largest hex is FF.<br />
+ <br />
+<br />
+$hex2tonumber:** **$<br />
+Returns what the hex of ** ** is. Must be four letters with a space in the middle. Largest hex is FF FF.<br />
+ <br />
+<br />
+$numericalexp:A(+ - / *)B$<br />
+Returns what the value of A plus, minus, divided by or mulitplied by B is. Other events can be used by replacing A and/or B with {$event$}. You can use several numericalexp in the same calculation, but be sure to have enough $'s and {}.<br />
+ <br />
+<br />
+$myx$, $myy$ and $myz$<br />
+Returns your current X, Y and Z coordinates. Remember that they are always used in this order in the cavebot and when sending hexes.<br />
+ <br />
+<br />
+$comboorder$<br />
+Returns what the current order to use a combo is.<br />
+ <br />
+<br />
+$comboleader$<br />
+Returns who the current combo leader is.<br />
+ <br />
+<br />
+$pksonrelativefloor:0$<br />
+Returns the amount of players, NPCs and creatures currently detected at your floor. It only detects beings that are not on the friend list or the kill list. Change the zero to -* to see * floors below you, or number greater than zero to see floors above. Remember that it can not detect above or below if that floor is the &quot;ground&quot; floor, 7.<br />
+ <br />
+<br />
+$gmsonrelativefloor:0$<br />
+Same as above, but only detects GMs.<br />
+ <br />
+<br />
+$pksandgmsonrelativefloor:0$<br />
+Returns the amount of both GMs and &quot;PKs&quot;.<br />
+ <br />
+<br />
+$statusbit:*$<br />
+Returns 0 if you are not affected by status *, or 1 if you are.<br />
+Poison: 8<br />
+Attack sign: 1<br />
+Paralyze: 3<br />
+ <br />
+<br />
+$_customvariable$<br />
+Creates a variable that returns whatever is specified in it. You create it by saying &quot;exiva _customvariable = *&quot; or in the cavebot using either sayMessage or fastExiva, where * is what the value should be. Maybe a numericalexp?<br />
+ <br />
+<br />
+$__customglobalvariable$<br />
+Same as above, but this variable can be used and edited by all currently logged in characters. There are pretty few uses for this variable, for an example check out the follower script in my signature.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-27-2007, 02:42</div></div><div class="posttext">Please post here or PM me if you find any errors or have a better explanation. Also post here if you know what all the missing variables are for.<br />
+<br />
+I hope this is useful for someone. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Neuro</div><div class="date">07-27-2007, 11:25</div></div><div class="posttext">Really nice work :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-27-2007, 11:36</div></div><div class="posttext">Thank you. :)<br />
+I was kinda suprised that noone has done this before tho, or atleast I haven't seen it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eliteknight</div><div class="date">07-28-2007, 20:33</div></div><div class="posttext">rly nice are them all ? i would want to know more.. and maybe some nice person make a new thread with uses of some that are uncommon for most ussers</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-28-2007, 22:05</div></div><div class="posttext">rly nice are them all ? i would want to know more.. and maybe some nice person make a new thread with uses of some that are uncommon for most ussers<br />
+<br />
+Try checking out some of mine and some of weeper's works and you'll get some ideas. I usually get my ideas by thinking of something I want done as automatically as possible, and then I try to create a script that does just that. Sometime it works, sometimes it doesn't.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-03-2007, 23:56</div></div><div class="posttext">Thanks Malmis,<br />
+your guide is very nice, and I didn't found any important error there in a first look.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Waffe</div><div class="date">08-04-2007, 01:46</div></div><div class="posttext">This whas needing :) thanks, now maybe even the &quot;no exp scripters&quot; can understand 50% o the script they download? :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">08-04-2007, 02:35</div></div><div class="posttext">This whas needing :) thanks, now maybe even the &quot;no exp scripters&quot; can understand 50% o the script they download? :P<br />
+<br />
+Yeah, hopefully. :)<br />
+But even some experienced users complain about my scripts sometimes :p dragoon says they're too complex and weeper sometimes complains about there being to much math. :eek:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byanex</div><div class="date">08-06-2007, 05:19</div></div><div class="posttext">Realy nice job, i could sugest to explain some functions to script, <br />
+eg.: <br />
+  useitem xx,xx,xx,<br />
+  onDangerGoto <br />
+<br />
+Regards<br />
+Byanex</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">08-06-2007, 23:46</div></div><div class="posttext">Realy nice job, i could sugest to explain some functions to script, <br />
+eg.: <br />
+  useitem xx,xx,xx,<br />
+  onDangerGoto <br />
+<br />
+Regards<br />
+Byanex<br />
+<br />
+http://www.blackdtools.net/showthread.php?t=594 :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jamaica</div><div class="date">10-10-2007, 17:19</div></div><div class="posttext">i wanted to put on tibia window title a Profit thing for instance<br />
+Profit $countitems:27 0D$+($countitems:AB CD$*25)-($countitems:&quot;empty vials&quot;$*50)<br />
+i dont know if you understand what i mean but it would basicly show a value like 3350<br />
+wich would be the result of the math i put there.<br />
+is this possible?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">10-10-2007, 17:35</div></div><div class="posttext">i wanted to put on tibia window title a Profit thing for instance<br />
+Profit $countitems:27 0D$+($countitems:AB CD$*25)-($countitems:&quot;empty vials&quot;$*50)<br />
+i dont know if you understand what i mean but it would basicly show a value like 3350<br />
+wich would be the result of the math i put there.<br />
+is this possible?<br />
+<br />
+Yes, but you would have to have all the backpacks with vials opened.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jamaica</div><div class="date">10-10-2007, 17:55</div></div><div class="posttext">i've got a big screen they fit if minimized.<br />
+how could i do this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">10-10-2007, 18:11</div></div><div class="posttext">i've got a big screen they fit if minimized.<br />
+how could i do this?<br />
+<br />
+<br />
+$numericalexp:{$numericalexp:{$numericalexp:{$coun titems:27 0D$}+{$countitems:AB CD$}*25$}$}-{$numericalexp:{$countitems:3A 0B 00$}*50$}$<br />
+<br />
+That should be it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jamaica</div><div class="date">10-10-2007, 18:21</div></div><div class="posttext">thanks ill test it<br />
+tested it said 0<br />
+ill try the same thing in other ways or see if you forgot any&quot;}&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jamaica</div><div class="date">10-10-2007, 18:40</div></div><div class="posttext">Profit: $numericalexp:{$numericalexp:{$countitems:27 0D$}*{66}$}+{$countitems:D7 0B$ }$<br />
+<br />
+so far i got this and its doing ok i cant seem to effectively - the mf cost</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sayow</div><div class="date">02-03-2008, 08:05</div></div><div class="posttext">fastExiva &gt; 78 FF FF 0A 00 00 $hex-equiped-item:0A$ 00 FF FF 06 00 00<br />
+$hex-equiped-ammount:0A$<br />
+<br />
+fastExiva &gt; 78 FF FF 40 00 00 D2 1C 00 FF FF 06 00 00 $numbertohex1:100$<br />
+<br />
+can someone cut it in parts and explain each one? :P<br />
+also i saw some event called &quot;sum&quot; wtf is that? &lt;.&lt;<br />
+IfTrue ($_sum$#number&lt;#0) Goto $nlineoflabel:withdraw$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">02-04-2008, 10:43</div></div><div class="posttext">fastExiva &gt; 78 FF FF 0A 00 00 $hex-equiped-item:0A$ 00 FF FF 06 00 00<br />
+$hex-equiped-ammount:0A$<br />
+<br />
+fastExiva &gt; 78 FF FF 40 00 00 D2 1C 00 FF FF 06 00 00 $numbertohex1:100$<br />
+<br />
+can someone cut it in parts and explain each one? :P<br />
+also i saw some event called &quot;sum&quot; wtf is that? &lt;.&lt;<br />
+IfTrue ($_sum$#number&lt;#0) Goto $nlineoflabel:withdraw$<br />
+<br />
+All variables starting with an underscore is a custom variable.<br />
+<br />
+Also those are hexes to move stuff.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Krix_and</div><div class="date">07-17-2008, 00:06</div></div><div class="posttext">$pksandgmsonrelativefloor:0$ tells u the number from whole FLOOR<br />
+what i must do to dedect onli on screen?<br />
+i wnat to meke alert event<br />
+if gm or pk on scren do exive testding<br />
+<br />
+is it possible?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">suntzu</div><div class="date">08-04-2008, 13:21</div></div><div class="posttext">IfTrue ($randomlineof:npcs*.txt$#String:NPCNAME$.) Goto $nlineoflabel:Z$<br />
+<br />
+Please send me msg this are correct or no thx.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gutodrcn</div><div class="date">08-10-2008, 09:51</div></div><div class="posttext">$randomlineof:*.txt$<br />
+Returns a random line of the textfile named *. Needs to be saved in the &quot;randline&quot; folder of BlackD Proxy. Useful for answering players/GMs.<br />
+ <br />
+Is there any way to return a certain line of a textfile?<br />
+Not random I mean.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tunicow</div><div class="date">09-22-2008, 04:12</div></div><div class="posttext">Really nice. it helps me alot with conds<br />
+;p<br />
+<br />
+Thanks, Really thanks<br />
+<br />
+cya ;D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">02-19-2013, 15:28</div></div><div class="posttext">Thanks Malmis.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sztuczny</div><div class="date">09-12-2013, 02:04</div></div><div class="posttext">Is there anything like:<br />
+If(target hp percent &gt; 80) say: SPELL NAME<br />
+??<br />
+I'd like to have something like this to avoid wasting my mana on &quot;almost deads&quot;<br />
+<br />
+thanks in advance ;)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

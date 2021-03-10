@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="blackd, tibia, versions, configs, proxy, pointer, building, virtual, mappointer, wondering, pointers, saved, address, reads, packets" />
+	<meta name="description" content="So as you know, Blackd Proxy uses several configs of different versions of Tibia, so I ask you, where is map pointer saved in these configs? Or does Blackd only reads packets and building virtual map so it doesn't need mappointer? I need several map pointers on different versions of Tibia, so that's why I'm wondering." />
+	
+	<title> Blackd Proxy, where is map pointer address? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Blackd Proxy, where is map pointer address?</div>
+<hr />
+<div class="pda"><a href="t-50895.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?50895-Blackd-Proxy-where-is-map-pointer-address">Blackd Proxy, where is map pointer address?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">06-11-2010, 17:53</div></div><div class="posttext">So as you know, Blackd Proxy uses several configs of different versions of Tibia, so I ask you, where is map pointer saved in these configs? Or does Blackd only reads packets and building virtual map so it doesn't need mappointer? I need several map pointers on different versions of Tibia, so that's why I'm wondering.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">06-12-2010, 00:12</div></div><div class="posttext">So as you know, Blackd Proxy uses several configs of different versions of Tibia, so I ask you, where is map pointer saved in these configs? Or does Blackd only reads packets and building virtual map so it doesn't need mappointer? I need several map pointers on different versions of Tibia, so that's why I'm wondering.<br />
+<br />
+<br />
+TibiaAuto have them all:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xadi</div><div class="date">06-13-2010, 11:10</div></div><div class="posttext">tibiaapi has it too, <br />
+http://code.google.com/p/tibiaapi/source/browse/trunk/tibiaapi/Addresses/Map.cs <br />
+<br />
+<br />
+        /// &lt;summary&gt;<br />
+        /// Pointer to the start of the map memory addresses.<br />
+        /// &lt;/summary&gt;<br />
+        public static uint MapPointer = 0x654110; // 8.57</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

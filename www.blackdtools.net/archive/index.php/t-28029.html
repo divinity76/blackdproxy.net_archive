@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, selling, problems, buying, fill, make, sell, $numbertohex210$, flask, empty, luckd, good, post, works, $numbertohex25$, appearantly, $numbertohex2$_spears$$, people, mycap$number, spears||buying, scripts||buying, iftrue, potion, health, assume, $numbertohex2x$, item, packets, amount, updateing, number" />
+	<meta name="description" content="To fix your cap problems 
+ 
+IfTrue (mycap$#number&lt;=#5000) Goto $nlineoflabel:Deposit Gold$ 
+If your cap is below 50 change to 5000 
+ 
+ 
+Heres the code from my Ph scripts to updated buy Royal spears. 
+ 
+:hi 
+sayMessage hi" />
+	
+	<title> UPDATEING SCRIPTS||Buying spears||buying and selling [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  UPDATEING SCRIPTS||Buying spears||buying and selling</div>
+<hr />
+<div class="pda"><a href="t-28029.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?28029-UPDATEING-SCRIPTS-Buying-spears-buying-and-selling">UPDATEING SCRIPTS||Buying spears||buying and selling</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Random-j</div><div class="date">10-04-2008, 00:24</div></div><div class="posttext">To fix your cap problems<br />
+<br />
+IfTrue (mycap$#number&lt;=#5000) Goto $nlineoflabel:Deposit Gold$<br />
+If your cap is below 50 change to 5000<br />
+<br />
+<br />
+Heres the code from my Ph scripts to updated buy Royal spears.<br />
+<br />
+<br />
+:hi<br />
+sayMessage hi<br />
+waitX 2<br />
+fastExiva _spears = $numericalexp:{$numericalexp:{$numericalexp:{$myca p$}/100$}/35$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spears$}*15$<br />
+sayInTrade withdraw $_spearcost$<br />
+waitx 2<br />
+sayInTrade yes<br />
+:buyspear<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A D2 1C 00 $numbertohex2:{$_spears$}$ 00<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Appearantly some people have been having some problems with buying and selling. So here are the packets.<br />
+<br />
+Buying:<br />
+<br />
+exiva &gt; 07 00 7A  xx xx 00 yy 00<br />
+<br />
+At xx xx fill in item id, at yy fill in the amount in hex.<br />
+To get a number into hex use: <br />
+<br />
+$numbertohex2:x$<br />
+The Id of a health potion is 0A 01 and lets assume I want to buy 10, that would make it.<br />
+<br />
+exiva &gt; 07 00 7A 0A 01 00 $numbertohex2:10$ 00<br />
+<br />
+Selling:<br />
+<br />
+exiva &gt; 06 00 7B xx xx 00 yy 01<br />
+The id of an empty flask is: 1D 01 so to sell 5 it would make:<br />
+<br />
+exiva &gt; 06 00 7B 1D 01 00 $numbertohex2:5$ 01<br />
+<br />
+This works for me, if you have any problems post me or someone else might be able to help.<br />
+<br />
+Good luck!:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malice</div><div class="date">10-04-2008, 06:13</div></div><div class="posttext">Hi could you please post ur whole script of north PH plx scince i am a noob at scripts :)<br />
+Thank you</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PauloOzz</div><div class="date">11-17-2008, 15:46</div></div><div class="posttext">still not working for me x=</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Maeo</div><div class="date">11-25-2008, 13:47</div></div><div class="posttext">I modify PH North For pally with Spear buyyer, my frist trying in script, i think it work :x. It Go buy Spear when u got Less 8 Spears, and Deposit / Withdraw to bank  for Buying Spears. I start bot  in dp with all Spears and cash in bank. <br />
+<br />
+Post commant plez :P<br />
+<br />
+<br />
+onGMpause<br />
+OnDangerGoTo $nlineoflabel:pk$<br />
+setFriendly<br />
+setFollow<br />
+setPriority slime:+3<br />
+setPriority Terror Bird:+2<br />
+setPriority tarantula:+1<br />
+setPriority centipede:+1<br />
+setPriority cave rat:-1<br />
+setMeleeKill Crab<br />
+setMeleeKill slime<br />
+setMeleeKill terror bird<br />
+setMeleeKill cobra<br />
+setMeleeKill crocodile<br />
+setMeleeKill centipede<br />
+setMeleeKill swamp troll<br />
+setMeleeKill cave rat<br />
+setMeleeKill snake<br />
+setMeleeKill spider<br />
+setMeleeKill bug<br />
+setMeleeKill tarantula<br />
+setLoot 4E 0D<br />
+setLoot E4 0D<br />
+setLoot D7 0B<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:depot$<br />
+move 32599,32708,7<br />
+move 32587,32704,7<br />
+move 32577,32701,7<br />
+move 32574,32687,7<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:depot$<br />
+move 32595,32676,7<br />
+move 32611,32684,7<br />
+move 32639,32652,7<br />
+move 32645,32666,7<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:depot$<br />
+move 32643,32635,7<br />
+move 32627,32617,7<br />
+move 32653,32618,7<br />
+move 32642,32601,7<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:depot$<br />
+move 32674,32609,7<br />
+move 32695,32600,7<br />
+move 32710,32587,7<br />
+move 32704,32618,7<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#8) Goto $nlineoflabel:depot$<br />
+move 32677,32638,7<br />
+move 32680,32650,7<br />
+move 32680,32654,7<br />
+move 32655,32672,7<br />
+move 32649,32680,7<br />
+gotoScriptLine 0<br />
+:depot<br />
+move 32633,32707,7<br />
+move 32629,32749,7<br />
+move 32629,32749,7<br />
+move 32632,32740,6<br />
+move 32632,32740,6<br />
+waitx 1<br />
+move 32632,32740,6<br />
+:hi<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 3<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:withdraw 1500$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:balance$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:bye$<br />
+#spears<br />
+move 32631,32741,6<br />
+move 32630,32743,5<br />
+move 32633,32742,5<br />
+waitX 1<br />
+move 32633,32742,5<br />
+:hi<br />
+sayMessage hi<br />
+waitX 2<br />
+fastExiva _spears = $numericalexp:{$numericalexp:{$numericalexp:{$myca p$}/100$}/25$}-2$<br />
+fastExiva _spearcost = $numericalexp:{$_spears$}*15$<br />
+sayInTrade withdraw $_spearcost$<br />
+waitx 2<br />
+sayInTrade yes<br />
+:buyspear<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A D2 1C 00 $numbertohex2:{$_spears$}$ 00<br />
+move 32630,32743,5<br />
+move 32631,32741,6<br />
+move 32629,32748,6<br />
+move 32629,32750,7<br />
+gotoScriptLine 0<br />
+:pk<br />
+sayMessage exiva kill $lastpkname$<br />
+sayMessage exiva kill<br />
+sayMessage exiva cancel<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

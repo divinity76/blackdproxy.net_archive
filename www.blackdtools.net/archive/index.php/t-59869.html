@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, strings, required, patch, command, manas, multiple, scripts, large, exiva, quick, hands, myxyz, iftrue, easier, method, learn, check, beginner, scripters, suggested, solution, buying, honestly, packets, blessed, pre-set, fully, advanced, brilliant, food/enough, working, scripter, piece, suggestions, string, works, means, regular, ladders/rope, basically, xxxxx,xxxxx,6, xxxxx,xxxxx,5, holes/stairs, simple, locked, correct, hells, question, provo~" />
+	<meta name="description" content="We know that this was the unhealthy exiva cmd sending out wrong packets if we were not near the vendor or have the cap and try to buy MORE then the character can actually hold ( normal Tibia menu would not do this ) I suggest a few things here.  
+ 
+1 . Always buy the correct amount of potions, have this pre - calculated. I have explained this on a thread before but It may have been missed so I will explain very briefly I hope you catch the drift. 
+ 
+Start Script &gt; Walk to cave &gt; Fill up at Cave" />
+	
+	<title> A question concerning Exiva Buy [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  A question concerning Exiva Buy</div>
+<hr />
+<div class="pda"><a href="t-59869.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59869-A-question-concerning-Exiva-Buy">A question concerning Exiva Buy</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-02-2013, 21:57</div></div><div class="posttext">We know that this was the unhealthy exiva cmd sending out wrong packets if we were not near the vendor or have the cap and try to buy MORE then the character can actually hold ( normal Tibia menu would not do this ) I suggest a few things here. <br />
+<br />
+1 . Always buy the correct amount of potions, have this pre - calculated. I have explained this on a thread before but It may have been missed so I will explain very briefly I hope you catch the drift.<br />
+<br />
+Start Script &gt; Walk to cave &gt; Fill up at Cave &gt; Start Deposit &gt; Go Directly to Mana Shop, say Hi, Deposit All, Yes. &gt;<br />
+Goto Banker and Deposit All Cash ( Empties were now turned into Cash ) &gt; Deposit Loot &gt; Withdraw 5000 Gold &gt; Walk Back to Mana Shop Exiva Buy:01 0C:100 &gt; Back to Depot &gt; Re-Loop Script.<br />
+<br />
+That is very brief and broken down, but I made sure that every time he only buys 100 Potions and he withdrew the exact amount of gold FOR 100 potions.<br />
+<br />
+2. I was thinking since the only other reason this actually did not work was because either you were Blocked and couldn't path to the Mana shop, and or lag or some reason your bot did not make it to the shop and says Exiva Buy:xx xx:n in the middle of the depot. ( Not a good thing ) So I was thinking over it and It came to me, what if there was an .. IfTrue MyXYZ=(xxxxx,xxxxx,x) Exiva Buy:XX XX:N<br />
+<br />
+So technically he would just double check that he was at the co-ordinates infront of the mana vendor and THEN he would actually send the Exiva Buy:xx xx:n<br />
+<br />
+Any suggestions tips would be greatly appreciated,<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-03-2013, 13:33</div></div><div class="posttext">Smart indeed.<br />
+<br />
+Well this is how I do it usually ...<br />
+<br />
+Well it's kind of the same lol ^_^. I just record packets in Proxy and use them in the actual script as 'sayMessage exiva &gt; blablablablablablablabla', if it's either for opening hole with a shovel, roping or buying potions.<br />
+<br />
+So for example, 300 mana potions is more than enough for me to fill full cap of gold in a cave, therefor bot will buy mana potions until it caps them 300 or more like so:<br />
+<br />
+<br />
+<br />
+<br />
+IfTrue ($countitems:0C 01$#number&lt;#300) Goto $nlineoflabel:xodet$<br />
+:xodet<br />
+move 32399,32220,7<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva &gt; 7A 0C 01 00 0A 00 00<br />
+waitX 1<br />
+stackItems<br />
+waitX 1<br />
+IfTrue ($countitems:0C 01$#number&lt;#300) gotoScriptLine 7<br />
+IfTrue ($countitems:0C 01$#number&gt;=#300) Goto $nlineoflabel:backtothecave$<br />
+<br />
+<br />
+<br />
+sayMessage exiva &gt; 7A 0C 01 00 0A 00 00 ... Buys 10 mana potions.<br />
+IfTrue ($countitems:0C 01$#number&lt;#300) gotoScriptLine 7 ... Assuming that 'sayMessage exiva &gt; 7A 0C 01 00 0A 00 00' is on line 7.<br />
+<br />
+Of course, you can buy more than 10 potions at once, even 100, I just put 10 for an example, because if someones needs only 300 potions for one round then it's useless buying 100 at once if you already have like 290 capped, then you'd have 390 capped, which from point of capacity left for gold ain't that good. Better loop script 10 times than buy too much pots than needed. :)<br />
+<br />
+Of course like you Lithium said, you gotta make sure you have enough cash, so I always deposit empty vials, deposit gold at the bank, withdraw cash for at least 300 mana potions and then I head back to Magic Shop. 10 mana potions cost 500 gp so leftover cash isn't really a 'cap issue' since those platinum coins weigh less than 10oz.<br />
+<br />
+Hope it helps somehow. My scripts are usually FULL of 'sayMessage exiva &gt; blabla' commands along with ifTrue's, it looks a mess, but it works like a charm! :)<br />
+<br />
+Edit: You might have noticed that I use a lot of waitX 1's ... I don't know, I always put these in front of and after the 'sayMessage exiva &gt; blabla' commands and after or before ifTrue's ... I find it more secure than just flying through script like a mad man and probably get caught. I take it slow, few more seconds won't hurt.<br />
+<br />
+Edit2: @Lithium, what's your timer in Cavebot usually?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-03-2013, 19:39</div></div><div class="posttext">I totally agree with you, I toss in extra waitx1s when necessary. See the thing I really dont like about this and correct me if im wrong, but every update it seems I would have to update this string? &quot;sayMessage exiva &gt; 7A 0C 01 00 0A 00 00&quot; What is to say next patch when I just run my bot script and he gets banned because these are no longer the packets to buy mana potions? What I am saying is we need a universal type of &quot;Buy&quot; that doesn't involve having to update our packets every patch and need to worry about sending &quot;wrong&quot; packets. But thank you very much for the explanation, I would love to learn how to write the fastExiva msgs myself and how to &quot;record&quot; the packets like you say you do. If you are ever up for giving me a lesson send me a PM I am always thirsty for knowledge,<br />
+<br />
+Sincerely,<br />
+Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-03-2013, 20:52</div></div><div class="posttext">You're right, it may change from update to update, but I haven't noticed any change for quite a while now, since like ... I don't know, didn't even notice any change after all this years playing Tibia. Yeah, it hasn't change at all.<br />
+<br />
+And of course that can get you easily banned if you're using outdated version and if they decide to change packets fot that, that's why I try to check those packets I'm sending every new update and update my scripts if necessary.<br />
+<br />
+I love to record these packets and use them in scripts simply because those are the same packets I'd send if I wasn't using any bot at all. Which adds to security quite a lot.<br />
+<br />
+And no problem, it's damn easy to record them, I'll take a few screenies and send you a PM explaining all. Probably tomorow. Off to bed in like an hour and I still have to script Thais north Rotworm cave for some nice profit. ^_^<br />
+<br />
+Or I'll maybe write a little tutorial so anyone can easily script things with this amazing bot! D: ^_^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-04-2013, 12:47</div></div><div class="posttext">Whoa this is weird! o__O! Noticed it yesterday when I recorded packet for roping myself one floor above at certain rope spot and it seems like it ain't safe anymore ... o__O?!<br />
+<br />
+http://i.imgur.com/A7NXR.png<br />
+<br />
+But why is that?! If I load the script I wrote above for mana shop which uses 'sayMessage exiva &gt; blabla' as well, it doesn't give a warning sign at all ... Weird! o__O<br />
+<br />
+I thought that was the most secure option to do, record packets tibia client is sending to Tibia and use them everytime you get to that certain rope spot for an example.<br />
+<br />
+Now I'm not sure if I should write a tutorial at all, cuz this is super weird! One 'exiva' command is detectable and the other one isn't D:!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-05-2013, 13:56</div></div><div class="posttext">Whoa this is weird! o__O! Noticed it yesterday when I recorded packet for roping myself one floor above at certain rope spot and it seems like it ain't safe anymore ... o__O?!<br />
+<br />
+<br />
+But why is that?! If I load the script I wrote above for mana shop which uses 'sayMessage exiva &gt; blabla' as well, it doesn't give a warning sign at all ... Weird! o__O<br />
+<br />
+I thought that was the most secure option to do, record packets tibia client is sending to Tibia and use them everytime you get to that certain rope spot for an example.<br />
+<br />
+Now I'm not sure if I should write a tutorial at all, cuz this is super weird! One 'exiva' command is detectable and the other one isn't D:!<br />
+<br />
+All Hex scripts now come with a warning so that newbi people are aware a script they downloaded may be detectable.<br />
+<br />
+Also, why use a hex for rope/shovel? BlackD finds and does this automatically... Using a hex ontop of it will likely result in a double hex being sent and you being detected.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-05-2013, 21:34</div></div><div class="posttext">Also, why use a hex for rope/shovel? BlackD finds and does this automatically... Using a hex ontop of it will likely result in a double hex being sent and you being detected.<br />
+<br />
+Never happened D:. There's always a chance of course, but I've always used hexes no matter what. I'm just being careful it doesn't send those twice, for an example slightly larger cavebot timer. Worked like a charm everytime! D:<br />
+<br />
+Edit: Obviously every bot is detectable, there's no doubt about it, I guess banwaves are just random among those who were reported, that's all. D:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-06-2013, 01:06</div></div><div class="posttext">I think Hells is correct there Provo~ If you were to attempt going into Fibula Well or through a Locked Door, then yes by all means your Fastexiva&gt; string works, but when using regular ladders/rope holes/stairs, all that is required is the simple Move command.<br />
+<br />
+ex. move xxxxx,xxxxx,5<br />
+ex. move xxxxx,xxxxx,6<br />
+<br />
+Basically you just need the direct spot under the hole/ladder ( Right infront of the stair 1 SQ before moving up a floor ) and the exact waypoint when you land up the hole/ladder/stair. and Voila no hexing required for that. I would still love to see your tutorial on the fastExiva &gt; Mana strings though, I have never understood that and I am quite lazy so I probably wont use/update it every patch like you, I have multiple scripts and multiple accs to bot I do not have time to check if they are safe EVERY patch. That is why I suggested a quick method of fix with the IfTrue MyXYZ, Seems like the most brilliant solution to me but I am not an advanced scripter so I would like to hear any suggestions on how to fix the EXIVA BUY command so we do NOT have to send large strings of packets.<br />
+<br />
+Edit; By the way I honestly do not care for the buying manas part. All of my scripts are pre-set with Food/Enough Manas to take care of themselves and fully blessed to never lose a piece. I am working on a fix for those who like to run everything 100% hands free and I would like to make it a little easier for beginner scripters than having to learn large strings of the FastExiva cmds.<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-06-2013, 01:57</div></div><div class="posttext">You don't even have to have waypoint on rope spot/above. just the general idea and blackd will find a way!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">01-06-2013, 23:44</div></div><div class="posttext">I remember when I was a beginner scripter and I did not use the way I speak of Hells, there would always be a problem and he would be stuck saying There is no way. Since I started scripting like I speak of, Blackd has little to no troubles of ever making the mistake. I think the most problems were the dwarf caves in Kazordoon, I had to re-write that script many of times before it would ever properly work, and once it did all hail the Iron Ore.<br />
+<br />
+Any suggestions and the ifTrue MyXYZ=(xxxxx,xxxxx,x) would actually work or is this just hoping and wishing?<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

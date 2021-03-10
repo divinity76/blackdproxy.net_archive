@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="conditional, variable, event, space, events, equal, action, understanding, blackd, variables, operator, condition, greater, number, window, picture, health, analyze, case, write, explained, desired, select, drop, &amp;8216operator&amp;8217, menu, &amp;8216$myhppercent$&amp;8217, &amp;8216thing1&amp;8217, order, vita, &amp;8216number=, vita&amp;8217, exura, program, opens, button, click, simple, alright, nutshell, date], tutorial, setting, sign, execute, instance, meet, http://img96.imageshack.us/img96/4382/conditionalcopy.jpg, defined, conditionoperator" />
+	<meta name="description" content="Alright this is a tutorial for understanding how to use conditional events. 
+ 
+Setting up a Simple Conditional Event 
+ 
+First of all the conditional events are set from the window that opens when you click the button with the ? sign in Blackd. 
+ 
+The conditional event window looks like this: 
+ 
+http://img96.imageshack.us/img96/4382/conditionalcopy.jpg" />
+	
+	<title> [In date!] Understanding Conditional Events (In a Nutshell) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-42.html">13. Conditional Events</a> &gt;  [In date!] Understanding Conditional Events (In a Nutshell)</div>
+<hr />
+<div class="pda"><a href="t-47680.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?47680-In-date!-Understanding-Conditional-Events-(In-a-Nutshell)">[In date!] Understanding Conditional Events (In a Nutshell)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 07:03</div></div><div class="posttext">Alright this is a tutorial for understanding how to use conditional events.<br />
+<br />
+Setting up a Simple Conditional Event<br />
+<br />
+First of all the conditional events are set from the window that opens when you click the button with the ? sign in Blackd.<br />
+<br />
+The conditional event window looks like this:<br />
+<br />
+http://img96.imageshack.us/img96/4382/conditionalcopy.jpg<br />
+<br />
+A conditional event in Blackd is defined by two variables and, of course, a condition(operator). If the two variables meet the condition then the program will execute the action you tell it to.<br />
+<br />
+Take for instance the following conditional, if my health is less than or equal to 70 then say &#8216;exura vita&#8217;. Let analyze it. In this case the first variable would be my health, the second variable would be 70, the operator (or condition) would be less than or equal to and the action would be exura vita.<br />
+<br />
+<br />
+In order to set a conditional event you must:<br />
+ Write your first variable on the space below where it says &#8216;thing1&#8217;. (In picture this space says &#8216;$myhppercent$&#8217;).<br />
+ Select the desired operator (explained below) from the drop down menu below where it says &#8216;operator&#8217;. (In picture this space says &#8216;#number&lt;=#&#8217;).<br />
+ Write your second variable on the space below where it says &#8216;thing2&#8217;. (In picture this space says &#8217;70&#8217;). <br />
+ Write the action on the space where it says &#8216;Action&#8217;. (In picture this space says &#8216;exura vita&#8217;).<br />
+ Click the bottom &#8216;Add as new conditional event&#8217;.<br />
+<br />
+In Blackd Conditional Events there are 8 possible operators. The following is a list of this operators and an explanation of each. <br />
+ #number=#: Variable 1 is equal than Variable 2.<br />
+ #number&gt;=#: Variable 1 is greater or equal to Variable 2.<br />
+ #number&lt;=#: Variable 1 is smaller or equal to Variable 2.<br />
+ #number&gt;#: Variable 1 is greater than Variable 2.<br />
+ #number&lt;#: Variable 1 is smaller to Variable 2.<br />
+ #number&lt;&gt;#: Variable 1 is greater or smaller than Variable 2. (Not variable 2)<br />
+ #string=#: Variable 1 is equal to Variable 2 (In syntax. e.i. 01 #string=# 1 will not be true).<br />
+ #string&lt;&gt;#: Variable 1 is not equal to Variable 2. ( e.i. &#8216;Example&#8217; #string=# &#8216;amp&#8217; will be true).<br />
+Note: If the variables are number then choose one of the first six operators, if its a string (letters) use one of the last two.<br />
+<br />
+Using &#8216;Delays&#8217; and &#8216;Locks&#8217; <br />
+A delay is a the time it will delay the conditional from executing. For example if you want it to say &#8216;exura vita&#8217; three seconds after your health is below 70 then you put 3000 in the box where it says &#8216;Delay action this time&#8217;. Remember that the time is in milliseconds, so one second is 1000.<br />
+A lock is a time frame in which the action cannot repeat itself. For example, if you are telling it to say &#8216;exana pox&#8217; when poisoned but you want to give it time for the spell to have an effect in order to not call it again immediately after, you can set it to wait X seconds before allowing your character to say the spell again.<br />
+<br />
+Remember to save your conditionals so you don&#8217;t have to make them each time you log or change character.<br />
+<br />
+For a complete guide of all the variables, such as $myhppercent$, please go to this thread (http://www.blackdtools.net/showthread.php?t=7779). (Including Poisoned, Paralyzed, Drunk, etc).<br />
+<br />
+Please note that the actions in conditional events are not limited to just saying messages as it can also execute exiva commands. For further information about exiva commands, please go to this thread (http://www.blackdtools.net/showthread.php?t=1706).<br />
+<br />
+Hope it helped.<br />
+Feel free to PM with questions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-02-2012, 23:30</div></div><div class="posttext">what about the option keep? how do u change that?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

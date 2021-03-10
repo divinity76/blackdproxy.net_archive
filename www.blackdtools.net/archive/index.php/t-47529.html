@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, running, great, mainland, automatic, rookgaard" />
+	<meta name="description" content="Greetings! 
+ 
+I have recently joined the Blackd community and this is my first released script, first of many I hope. 
+ 
+What it does? 
+This script will take a new character and level it until it has 6200 experience points. It is fully automated and no interaction is needed between the character and the person.  
+It know takes your character to main and up to level 11! 
+ 
+How does it do it? 
+This script will make the character hunt for food to make cash in order to buy decent equipment before" />
+	
+	<title> New, Better Automatic Rookgaard to Mainland Script. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  New, Better Automatic Rookgaard to Mainland Script.</div>
+<hr />
+<div class="pda"><a href="t-47529.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?47529-New-Better-Automatic-Rookgaard-to-Mainland-Script">New, Better Automatic Rookgaard to Mainland Script.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-05-2010, 06:07</div></div><div class="posttext">Greetings!<br />
+<br />
+I have recently joined the Blackd community and this is my first released script, first of many I hope.<br />
+<br />
+What it does?<br />
+This script will take a new character and level it until it has 6200 experience points. It is fully automated and no interaction is needed between the character and the person. <br />
+It know takes your character to main and up to level 11!<br />
+<br />
+How does it do it?<br />
+This script will make the character hunt for food to make cash in order to buy decent equipment before starting to hunt. After it reaches the specific amount of golden coins it buys all the equipment and then begins hunting in Al Dee's Sewer cave from level 1 through 4. When it reaches level 4 it then goes hunting on the Northern part of the island since it is faster than hunting rats until level 8.  <br />
+<br />
+Changes in Version 2<br />
+  Although it does not hunt them, I have added trolls in the kill list in order to avoid alarms.<br />
+  Added auto-continuer in case you get kicked or logged out. (See instructions for details).<br />
+  Removed areas of poison spiders (many characters that were used to test the script died).<br />
+  You can now select a vocation, weapon and city and it will take you to main. <br />
+  Experience Points needed to go to the Mainland is now 6000 to avoid issues with becoming level 9 and not being able to grab new items in Destiny Island.<br />
+  While hunting in the Northern part if the character has less than 90 hitpoints it will go buy food, eat and wait for hitpoints to recover and then resume hunting. (Many testers died when hunting not on peak hours).<br />
+  Added Wolf Paws to loot.<br />
+  Better, More efficient food hunting (Will notice it has no capacity left sooner).<br />
+<br />
+<br />
+What does it do in Main?<br />
+From levels 8-11<br />
+  Goes to depot and deposits all money (Except 50 gps).<br />
+  If it has 50 golden coins it will go buy a Rope then hunt the Sewers till level 11.<br />
+  If it doesn't have that amount it will go hunting in the sewers until it has 50 (it will not get trapped in holes). Once it gets 50 golden coins it will go buy the rope for better hunting.<br />
+  If it at any point it has lost more than 120 hitpoints it will go buy food, eat it, wait to recover and continue hunting.<br />
+<br />
+<br />
+<br />
+What does it kill?<br />
+For Money: Pig<br />
+ Deer<br />
+ Sheep<br />
+ Rabbit<br />
+<br />
+Levels 1-4: Rats<br />
+ Cave Rats<br />
+<br />
+Levels 4-8: Spider<br />
+ Poison Spider<br />
+ Wolves<br />
+ Deer<br />
+ Bugs<br />
+ Snakes<br />
+<br />
+Levels 8-11: Spiders<br />
+ Poison Spiders<br />
+ Bugs<br />
+ Rotworms<br />
+ Bats<br />
+<br />
+<br />
+What equipment does it buy in rook? Backpack<br />
+ Sabre<br />
+ Leather Armor<br />
+ Leather Legs<br />
+ Wooden Shield<br />
+ Studded Helmet<br />
+Note: Before going to main it grabs the equipment from the quest room in Destiny Island. Feel free to change its equipment as you see fit, but only after it reaches the Mainland.<br />
+<br />
+Other Comments<br />
+<br />
+ This script was designed so it can hunt in the area where the pigs and sheep are. Do not worry about it getting trapped with the gates as it will not happen.<br />
+ It was decided that the wolves cave will be avoided since while testing it was found that even characters of level 7 or 8 can die when sorrounded by 4-5 wolves. (For people who want to know, the script was set to only hunt the wolf cave if above level 6 but it was too dangerous).<br />
+ Some part of the script where taken from Arne's Script (http://blackdtools.net/showthread.php?t=34020), but everthing in the script was tested carefully. Thanks Arne!<br />
+ It was noted that although it will get experience faster the character will not loot as many golden coins as other scripts where it just hunts rats but the purpose of this script was to get it to the mainland fast, after all 600 gps are easier to get there.<br />
+ After it is done remember to check the bank because if at any time your character makes more than 500 golden coins it will go deposit it at the bank.<br />
+ It was decided to make it for free accounts as most people will use this script to level cash-makers.<br />
+ Tip: The script was successfully tested while using balanced fighting.<br />
+<br />
+<br />
+Instructions<br />
+1. Create a new character.<br />
+2. Login in Tibia.<br />
+3. Start script.<br />
+Note:Do touch anything else; it will do everything for you.<br />
+Remember: Uncheck allow reposition at start.<br />
+<br />
+Instructions for Re-running the Script<br />
+This are instructions for when you need to re-run the script on a character that for some reason stopped in the middle of the script running (kick, etc.)<br />
+1. Open Tibia and Log in.<br />
+2. Bring your character to<br />
+	  If you are still in Rookgaard bring him to temple.<br />
+	  If you in the Destiny Island take him to the place where you arrive to the island.<br />
+	  If you are in the Mainland bring him to Carlin Depot and edit the following line by changing the 0 for a 1:<br />
+	<br />
+fastExiva __mainland = 0<br />
+<br />
+<br />
+3. Start the script.<br />
+Warning: Do not open the bag/backpack.<br />
+<br />
+<br />
+Instructions for Choosing a Vocation <br />
+1. Open the file.<br />
+2. Edit the number in line where it says:<br />
+<br />
+fastExiva __vocation = 1<br />
+Put 1 for Knight, 2 for Paladin, 3 for Druid or 4 for Sorcerer<br />
+Note that for now it only works for knights, if you select a different vocation it will only take it to the destiny island and log off.<br />
+<br />
+<br />
+Instructions for Choosing a Weapon <br />
+(will only affect if you choose to be a Knight)<br />
+1. Open the file.<br />
+2. Edit the number in line where it says:<br />
+<br />
+fastExiva __weapon = 1<br />
+Put 1 for Axe, 2 for Club, 3 for Sword<br />
+<br />
+Future Features?<br />
+<br />
+  Go hunting at Fold Lower levels from level 11-20.<br />
+  Buy Light Healing Spell before going to Folda.<br />
+  You idea! Any valid suggestion might be added, so go ahead and post your ideas!<br />
+<br />
+<br />
+Feedback<br />
+All feedback is welcomed, including way to make it better.<br />
+It has been tested with many characters and is still under testing (although there shouldn't be any errors). If any errors, they will be fixed as soon as reported.<br />
+<br />
+The File:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-05-2010, 09:33</div></div><div class="posttext">Remember: Uncheck allow reposition at start. <br />
+what do you mean by this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-05-2010, 09:36</div></div><div class="posttext">Remember: Uncheck allow reposition at start. <br />
+what do you mean by this?<br />
+<br />
+Where you open the cavebot window from blackd tools, there is a checkbox option that says &quot;Allow reposition at start&quot;. You have to make sure it is not checked (no nike mark on it).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-05-2010, 21:05</div></div><div class="posttext">after ss on my server i loaded it back up and started it off but it was just walking around not killing anything... i moved the part were u put reset blah blah blah under hunting north and the kill list to the top of the script &lt;minus the reset stuff&gt; and it started working fine. only problem i have ran into. &lt;been going for 6 hours, 2 characters  at the same time. they are both 1/4 from 7 great script myfriend</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-05-2010, 22:35</div></div><div class="posttext">after ss on my server i loaded it back up and started it off but it was just walking around not killing anything... i moved the part were u put reset blah blah blah under hunting north and the kill list to the top of the script &lt;minus the reset stuff&gt; and it started working fine. only problem i have ran into. &lt;been going for 6 hours, 2 characters  at the same time. they are both 1/4 from 7 great script myfriend<br />
+<br />
+In which part of the script was it not killing anything? Since the begining?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-05-2010, 22:54</div></div><div class="posttext">when i reloaded the script and started it again after server save,it was using the hunt north waypoints but not killing anything. so i moved the kill list to the top of the script and it started killing the critters again</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">serababy</div><div class="date">01-05-2010, 23:05</div></div><div class="posttext">in how many hours aprox does it goes from 1 to 8?<br />
+also i got a nice script for isle of destiny if u wanna add it, but u need to set everythin :&lt;<br />
+anyway ill paste it ^^<br />
+( For Knight voc ofc )<br />
+setChaoticMovesOFF<br />
+setBot OldLootMode=1<br />
+setMeleeKill bug<br />
+setMeleeKill dwarf<br />
+#White Mushroom<br />
+setLoot 8B 0E<br />
+#Iron Ore<br />
+setLoot F8 16<br />
+#Gps<br />
+setLoot D7 0B<br />
+move 32076,31980,9<br />
+move 32073,31973,9<br />
+move 32072,31955,9<br />
+move 32063,31965,9<br />
+move 32046,31959,9<br />
+move 32042,31951,9<br />
+move 32051,31966,9<br />
+move 32048,31974,9<br />
+move 32050,31980,9<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-06-2010, 00:26</div></div><div class="posttext">@Serababy: I find the Destiny Island a place too hard to bot because characters can easily lure 3+ creatures and die.<br />
+<br />
+@Tippy88: This issue did not happen to me. In addition as you can see below, the new version will have an auto resumer so it shouldn't happen at all.<br />
+<br />
+Announcement:<br />
+I am currently working on two things.<br />
+1. A part at the beginning of the script that will allow you to continue botting if you where kicked or you logged out because of server save with out the need to do anything (just take the character back to temple).<br />
+2. A part where you choose a vocation and it goes to Destiny Island, drop all noob equipment, grab the new quest equipment then head to the boat and move to the city of your choice.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Piter</div><div class="date">01-06-2010, 00:55</div></div><div class="posttext">testing it atm <br />
+will post if its good if not will post too xD<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-06-2010, 04:14</div></div><div class="posttext">Hello!<br />
+<br />
+I am currently testing the new version of the script that will take the character through the Destiny Island and to the Mainland according to the vocation you choose. (Done for Knights)<br />
+<br />
+In addition, I thought that I could make a script that takes the character up to level 15-20 automatically (From 1)with depositers and no waste at all, but I am looking for someone to help me. I will do all the scripting but I am looking for someone to guide in me in the areas. To be honest I don't know the FACC areas because I'm premmy. I am looking for someone who will teach me nice areas, not like Ab'Dendriel trolls where the probability of dying is extremely high due to player killers. Also this person would get the scripts before released for thorough testing.<br />
+<br />
+Anyone interested?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gfx-master</div><div class="date">01-06-2010, 05:02</div></div><div class="posttext">Hello!<br />
+<br />
+I am currently testing the new version of the script that will take the character through the Destiny Island and to the Mainland according to the vocation you choose. (Done for Knights)<br />
+<br />
+In addition, I thought that I could make a script that takes the character up to level 15-20 automatically with depositers and no waste at all, but I am looking for someone to help me. I will do all the scripting but I am looking for someone to guide in me in the areas. To be honest I don't know the FACC areas because I'm premmy. I am looking for someone who will teach me nice areas, not like Ab'Dendriel trolls where the probability of dying is extremely high due to player killers. Also this person would get the scripts before released for thorough testing.<br />
+<br />
+Anyone interested?<br />
+<br />
+If you keep up these great advanced scripts I might be interested in donating to you in th efuture :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-06-2010, 06:19</div></div><div class="posttext">okay guys i gave it a full test, without stopping your script it will run through just fine i went from 1-8 <br />
+<br />
+Created:	Jan 06 2010, 13:06:57 CET<br />
+23:09 You advanced from Level 7 to Level 8.<br />
+ten hours from 1-8 and this is during peak times<br />
+<br />
+it is currently still running because i am not at 6200 xp yet but for the most part if u leave it running and dont mess with this script it will lvl u in ten hours<br />
+<br />
+nicely done</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gfx-master</div><div class="date">01-06-2010, 08:42</div></div><div class="posttext">okay guys i gave it a full test, without stopping your script it will run through just fine i went from 1-8 <br />
+<br />
+Created:	Jan 06 2010, 13:06:57 CET<br />
+23:09 You advanced from Level 7 to Level 8.<br />
+ten hours from 1-8 and this is during peak times<br />
+<br />
+it is currently still running because i am not at 6200 xp yet but for the most part if u leave it running and dont mess with this script it will lvl u in ten hours<br />
+<br />
+nicely done<br />
+<br />
+Thats good stuff - Can we expect a premmy version?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-06-2010, 09:05</div></div><div class="posttext">Like I said, I believe most people will use it for non-premmy characters so for now I am afraid there won't be a premium version. However, I am working on the new version that will take the character all the way to main, and perhaps even to lvl 15 if I get a nice place to bot the fresh lvl 8s (I don't like Ab'Dendriel's trolls).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gfx-master</div><div class="date">01-06-2010, 09:12</div></div><div class="posttext">Id love to see ones for specific vocs starting them off gets gold and buys eq from stores. Gets them to level 30 or something deposits gold etc. These are the advanced kind of scripts blackd used to thrive on</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-06-2010, 09:14</div></div><div class="posttext">Id love to see ones for specific vocs starting them off gets gold and buys eq from stores. Gets them to level 30 or something deposits gold etc. These are the advanced kind of scripts blackd used to thrive on<br />
+<br />
+Kind of what I am looking to do. However, my botting expertise has only been on knights, perhaps you could mentor me on how to level other vocations?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tyrix</div><div class="date">01-06-2010, 16:40</div></div><div class="posttext">At the start of the script my character just kept walking around and didn't do anything.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-06-2010, 18:15</div></div><div class="posttext">At the start of the script my character just kept walking around and didn't do anything.<br />
+<br />
+are u using a new character? or one that is past the tutorial area?<br />
+did u check reposition at start?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tyrix</div><div class="date">01-06-2010, 18:26</div></div><div class="posttext">are u using a new character? or one that is past the tutorial area?<br />
+did u check reposition at start?<br />
+<br />
+New character and not sure if i checked it i'll try again after.<br />
+<br />
+Edit : Thanks it works now</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-07-2010, 10:00</div></div><div class="posttext">Great News!<br />
+<br />
+I have released the new version of the script.<br />
+Changes are explained in the first post of the thread!<br />
+<br />
+It will now take your characters to main and keep leveling them!<br />
+<br />
+@any Moderator: Can you set the title to be &quot;Automated Tibia Experience: Automatic levels 1 to 11.&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">serababy</div><div class="date">01-10-2010, 21:44</div></div><div class="posttext">im gonna test it now, since im goin to my gfs, it will go hunt to carlin.... sewers or?<br />
+i think ill find out when i get back xD<br />
+lol someone lure me lots of rats while gettin food -.- lol xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-19-2010, 02:10</div></div><div class="posttext">@serababy<br />
+<br />
+That seems to be a raid of some sort, it also happened once to me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">masteral</div><div class="date">01-21-2010, 19:20</div></div><div class="posttext">I'm running 3 MCs on this script right now, I'll see how it goes.  Its hilarious watching 3 bots chase 1 deer :D.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Clivey</div><div class="date">02-01-2010, 23:54</div></div><div class="posttext">When the character withdraws the 140gp to go and buy equipment the waypoint he stands at doesnt always reach the banker and so he doesnt withdraw the 140 doesnt buy eq and wonders off and dies. The script should be changed to <br />
+<br />
+move 32096,32189,7<br />
+move 32096,32191,8<br />
+move 32118,32190,8<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade Withdraw 140<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">03-04-2010, 16:58</div></div><div class="posttext">It should have an option to select if you want to buy equipment or not. Some people, like me, have characters with equipments in rookgard so the lvling process can be faster. If it is that the case you should add that code line and make the character logout near the oracle.<br />
+Oh...and don't forget that blackd now is now set to ignore targets by default if they take more than x seconds, so you need to add SetMaxAttackTimeMs 9999999999999999 to your scrip. Unless there is other solution that i'm not aware of.( My characters were ignoring rabbits, sheeps because it was taking too long.)<br />
+<br />
+@edit:<br />
+2 of my characters were having problems with the &quot;Hunting in North&quot;. Their problem was equipments. After changing the armor and shield for studded they were hunting fine. Could you make the bot hunt a few more rabbits and buy those equipments? It will waste time in getting money, yes, but it will save during the hunts.<br />
+<br />
+Anyway, great script you made :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nescafe</div><div class="date">03-22-2010, 16:23</div></div><div class="posttext">Hello<br />
+At the beginning I want to tell you, that I am completely noobeq in blackD. I had lots of experience with Elfbot but I see that it is COMPLETELY DIFFERENT! <br />
+<br />
+I've got little problem with script. I died. Dunno why, wasnt by computer. But now I can't start! I have got level 5, and when I go to rookgard temple, it doesnt go north (but &quot;cavebot&quot; send me msg that it goes). It goes hunting meat (but do not kill any monsters). I tried to go to north manual but it doesnt start to hunt there anyway. I also tried to remove all waypoints (only move and such like buying eq) on rookgard city and rats. It gave nothing though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xicohti</div><div class="date">04-24-2010, 06:05</div></div><div class="posttext">Very Nice.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dreeda</div><div class="date">05-29-2010, 16:36</div></div><div class="posttext">My characters always die at 4-6 lvl from bugs and poison spiders .. sucks.  (I'm talking about second script - version 2)<br />
+#EDIT:<br />
+I found solution.<br />
+Change all:<br />
+<br />
+IfTrue ($myexp$#number&gt;#400) Goto .... <br />
+to<br />
+<br />
+IfTrue ($myexp$#number&gt;#1500) Goto .... <br />
+Now our character start hunting at north when reached level 6, it's safer.<br />
+Also I found bug at bank (when npc is blocked, script can't take cash)<br />
+Change:<br />
+<br />
+move 32096,32189,7<br />
+move 32096,32191,8<br />
+move 32117,32191,8<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade Withdraw 140<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+move 32096,32191,8<br />
+move 32096,32189,7<br />
+move 32107,32204,7<br />
+sayMessage hi<br />
+to:<br />
+<br />
+move 32096,32189,7<br />
+move 32096,32191,8<br />
+move 32117,32190,8<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade Withdraw 140<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+move 32096,32191,8<br />
+move 32096,32189,7<br />
+move 32107,32204,7<br />
+sayMessage hi<br />
+<br />
+OR<br />
+You download script fixed by me:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">06-22-2010, 16:39</div></div><div class="posttext">Works decent, however a few notes.<br />
+Why does it go to the bank twice? Instead of just withdrawing 150g at once.<br />
+Second, in my case it failed to buy a sabre, I am not sure as to why but it got all the other eq together. I noticed it was fisting rats, so maybe you oughta check it out.<br />
+The third thing is that it's pretty stupid to keep on looting meat/hams and kill deers when it goes north in Rook... It's just a waste of cap and time.<br />
+<br />
+The character I'm trying it on hasn't reached main yet so I can't say how it goes there but I hope it shouldn't have any more problems. :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">omar1</div><div class="date">08-16-2010, 15:51</div></div><div class="posttext">Ok well im new to botting so what program do i need to run the bot and how do i get it?<br />
+<br />
+<br />
+Please reply Quickly i need this script</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">omar1</div><div class="date">08-16-2010, 21:54</div></div><div class="posttext">Ok well im new to botting so what program do i need to run the bot and how do i get it?<br />
+<br />
+<br />
+Please reply Quickly i need this script<br />
+<br />
+ok i started it but does it like stay till lvl 8 at rats or what<br />
+?????<br />
+<br />
+and how much time is it?  cuz ive started for like 3 hours and still not lvl 8</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">omar1</div><div class="date">08-16-2010, 21:56</div></div><div class="posttext">ok i started it but does it like stay till lvl 8 at rats or what<br />
+?????</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">omar1</div><div class="date">08-16-2010, 21:57</div></div><div class="posttext">plz answer quicklyyyyyy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">09-13-2010, 01:17</div></div><div class="posttext">ok i started it but does it like stay till lvl 8 at rats or what<br />
+?????<br />
+<br />
+No, it should go hunt at other areas after lvl 4.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pliszka</div><div class="date">09-15-2010, 19:02</div></div><div class="posttext">drop loot on ground function requires that the character stands on the x, y, z where the line was created.<br />
+<br />
+but most non floor reset places is sqms where you can not stand with your character for example this place.<br />
+<br />
+http://img229.imageshack.us/img229/3332/lootdropnc6.jpg<br />
+<br />
+so if the lootdroponground would just throw the items that is on setloot and not be required to stand on the sqm while dropping it would be really good cause alot of exping grounds has non floor reset sqms but they are like these ;S</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mituzux</div><div class="date">09-22-2010, 00:04</div></div><div class="posttext">What should I do now? It's standing all the time in this place, and bot don't go hunt...<br />
+<br />
+http://img530.imageshack.us/img530/8781/wtfblackd.jpg<br />
+<br />
+Any advices? :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">09-22-2010, 03:45</div></div><div class="posttext">That is some odd problem I haven't figured it out.<br />
+Just take your char to the land (out of water).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mituzux</div><div class="date">09-22-2010, 22:42</div></div><div class="posttext">That is some odd problem I haven't figured it out.<br />
+Just take your char to the land (out of water).<br />
+<br />
+Okey, I will try it, when black will be updated. I hope it will works :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rychu130</div><div class="date">10-11-2010, 01:47</div></div><div class="posttext">I think you should make the character do the tutorial so it'll have 2nd lvl and basic eq. Then it should not waste so many time on collecting food but go for rats instead. I hope that you will change it soon.<br />
+Even if it has some bad things I hope you'll make more and more and better scripts and thanks for all you have already done.<br />
+<br />
+Oh, and one more thing. As already said REMEMBER TO SET MAX ATTACK TIME TO REALLY BIG NUMBER (i.e. 9999999). That's why it was taking me so long - my char stopped attacking after a while so it collected food once per many animals</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">10-11-2010, 02:10</div></div><div class="posttext">I think you should make the character do the tutorial so it'll have 2nd lvl and basic eq. Then it should not waste so many time on collecting food but go for rats instead. I hope that you will change it soon.<br />
+Even if it has some bad things I hope you'll make more and more and better scripts and thanks for all you have already done.<br />
+<br />
+Oh, and one more thing. As already said REMEMBER TO SET MAX ATTACK TIME TO REALLY BIG NUMBER (i.e. 9999999). That's why it was taking me so long - my char stopped attacking after a while so it collected food once per many animals<br />
+ <br />
+Yeah, my new version has that maxattack issue fixed, but im still waiting on Blackd to resolve some issues before releasing it. I guess I didn't do the tutorial because it required some sort of counter of the little quest (the kill 3 cockroaches) and it would imply the need for extra conditional events.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rychu130</div><div class="date">10-11-2010, 14:23</div></div><div class="posttext">Yeah, my new version has that maxattack issue fixed, but im still waiting on Blackd to resolve some issues before releasing it. I guess I didn't do the tutorial because it required some sort of counter of the little quest (the kill 3 cockroaches) and it would imply the need for extra conditional events.<br />
+<br />
+You could just leave a char there for 3 minutes.<br />
+<br />
+And btw I have died today using this script. Again. Last time on wolf at 4th lvl and this time on poison spider at 5th.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joenankey</div><div class="date">01-28-2012, 21:14</div></div><div class="posttext">I'm not sure if someone has mentioned this already (very long thread), but if the fence gates in beside rookgaard get closed the bot just sits. Seems very good so far though, thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joenankey</div><div class="date">01-28-2012, 21:46</div></div><div class="posttext">Dropped gold on floor in depot, went to Al Dee's and didn't buy anything, returned to depot to drop more gold on floor. <br />
+<br />
+I presume this is because you can no longer hold gold in your hand, it has to go in a bag.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">02-10-2012, 23:37</div></div><div class="posttext">why the crying fawk can you no longer hold gold in your hand?<br />
+<br />
+and yeah, this script isn't updated since 2010 :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ibrahim</div><div class="date">08-10-2012, 23:17</div></div><div class="posttext">good job nigg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kwg jahb</div><div class="date">01-19-2013, 04:03</div></div><div class="posttext">I'm aware the script hasn't been updated but I'm just wondering why it crashes my client when i try to launch it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-19-2013, 05:07</div></div><div class="posttext">Do not even try to use it. You will probably get banned. It uses way to many hex commands and risky stuff.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Agete</div><div class="date">05-26-2013, 19:35</div></div><div class="posttext">I have 59 coins collected by the script but I don 't have any itens and the script is going to rats, so I'm dying all the time. Any solution?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">greenbean</div><div class="date">08-07-2013, 04:59</div></div><div class="posttext">Running great thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lol098</div><div class="date">12-11-2013, 13:02</div></div><div class="posttext">Awesome, thanks :)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="throwable, carry, script, amount, change, iftrue, $countitemsd2, 1c$number, refiller, spear, $_spearid$, $numbertohex1$_spearneed$$, start], [waypoints" />
+	<meta name="description" content="Ok so so far I have not been able to put spear refiller into my script, I have  
+ifTrue ($countitems:d2 1c$#number&lt;#2) Goto $:nlineoflabel:RefillSpears$ 
+to go to the line of script 
+:RefillSpears 
+to start walking back to buy spears. When i get to bank i put 
+waitX 1 
+sayMessage hi 
+waitX 1 
+sayInTrade deposit all 
+sayInTrade yes" />
+	
+	<title> Need a lil help with spear refiller [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Need a lil help with spear refiller</div>
+<hr />
+<div class="pda"><a href="t-58559.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58559-Need-a-lil-help-with-spear-refiller">Need a lil help with spear refiller</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">loganh</div><div class="date">07-28-2012, 21:35</div></div><div class="posttext">Ok so so far I have not been able to put spear refiller into my script, I have <br />
+ifTrue ($countitems:d2 1c$#number&lt;#2) Goto $:nlineoflabel:RefillSpears$<br />
+to go to the line of script<br />
+:RefillSpears<br />
+to start walking back to buy spears. When i get to bank i put<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw 250<br />
+sayInTrade yes<br />
+then i put my waypoints below this to walk to spear refiller but then idk what to put<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:$_spearid$:$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$<br />
+<br />
+Idk what to put on that last line of code to say like idk refill me back to 15 spears? then go back to my hunting line of script :P<br />
+Help would be greatly appritiated ^.^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sharpie</div><div class="date">08-21-2012, 21:51</div></div><div class="posttext">ifTrue ($countitems:D2 1C$#number&lt;=#2) Goto $:nlineoflabel:RefillSpears$<br />
+:RefillSpears<br />
+fastExiva _spearswanted = 15<br />
+fastExiva _spearid = D2 1C<br />
+fastExiva _spearcost = 10<br />
+fastExiva _spearneed = $numericalexp:{$_spearswanted$}-{$countitems:{$_spearid$}$}$<br />
+fastExiva _totalcost = $numericalexp:{$_spearcost$}*{$_spearneed$}$<br />
+[waypoints to walk to bank]<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitx 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $_totalcost$<br />
+waitx 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+[waypoints to walk to spear seller]<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayInTrade exiva &gt; 7A $_spearid$ 00 $numbertohex1:{$_spearneed$}$ 00 00<br />
+[waypoints to walk back to where you want to start]<br />
+<br />
+<br />
+I didnt test it, but it should work. Let me know if it doesnt. This will work for any throwable, just change the ID, the cost, and the amount you want to carry. The script will do the rest</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

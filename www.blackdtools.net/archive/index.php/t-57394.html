@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, scripts, blackdtools, talking, crashing, latest, expect, years, activate, cavebot, client, tibia, tutorial, rookgard, bldmx, crashes, automated, functional, soonds" />
+	<meta name="description" content="PUBLIC BETA VERSION 4 
+UPDATES: 
+ 
+1&gt;2 Works better with setFollow on rabbits. 
+2&gt;3 Added SetMaxAttackTimeMs 
+3&gt;4 Added setChaoticMovesON after loading branches for Zirella, added setFriendly around Carlos and changed cap-check for meats from 13 to 1300 (Thanks x3 to zihinu) 
+ 
+This script will automatically take your character through the Tutorial on Rookgard. 
+It's pretty much just to login and start it, when you login and haven't configured the sex of the character you just have to write" />
+	
+	<title> Automated Rookgard Tutorial [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Automated Rookgard Tutorial</div>
+<hr />
+<div class="pda"><a href="t-57394.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57394-Automated-Rookgard-Tutorial">Automated Rookgard Tutorial</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-01-2012, 04:53</div></div><div class="posttext">PUBLIC BETA VERSION 4<br />
+UPDATES:<br />
+<br />
+ 1&gt;2 Works better with setFollow on rabbits.<br />
+ 2&gt;3 Added SetMaxAttackTimeMs<br />
+ 3&gt;4 Added setChaoticMovesON after loading branches for Zirella, added setFriendly around Carlos and changed cap-check for meats from 13 to 1300 (Thanks x3 to zihinu)<br />
+<br />
+This script will automatically take your character through the Tutorial on Rookgard.<br />
+It's pretty much just to login and start it, when you login and haven't configured the sex of the character you just have to write &quot;exiva _sex =&quot; and the sex of the character, male or female.<br />
+This is need to not send the wrong packets to server.<br />
+If you don't want to have to set it up manually every time, maybe if you are botting many characters in a row or using it as part of a bigger script, just change the &quot;fastExiva _sex = no&quot; line in the textfile.<br />
+There is also an option that under where under the third part of the tutorial, when gathering food for Carlos, you set it either to gather as much as it can carry (about 21 meat) (&quot;fastExiva _moneymaker = 1&quot;) or exit the isle as soon as it can (&quot;fastExiva _moneymaker = 0&quot; default mode).<br />
+<br />
+KNOWN BUGS:<br />
+<br />
+ Can stand forever and kill cockroaches because of their respawn and no way from cavebot to stop it. A conditional event could be used.<br />
+ Always tries to turn in Zirella's quest after putting in only one branch, no decent way of putting a check to stop this.<br />
+ The messages from the bot sometimes turn up on Default if you don't manually close windows. Most won't mind.<br />
+ Can not use either Shovel or Rope right after looting because they are &quot;glowing&quot; when looted. Can be changed by having BlackD proxy identify CB 1E as Shovel and CC 1E as Rope.<br />
+<br />
+<br />
+To not get the eternal cockroachkiller bug you should use this conditional:<br />
+<br />
+$countitems:CA 1E$<br />
+#number&gt;#<br />
+2<br />
+0<br />
+500<br />
+0<br />
+exiva ignore<br />
+What the bot will say:<br />
+<br />
+If you haven't set the sex it will first say:<br />
+03:23 AutoRook [255]: Please enter the sex (FEMALE or MALE) of your character like this: &quot;exiva _sex = male&quot;.<br />
+03:23 AutoRook [255]: The bot will not start until you do.<br />
+<br />
+03:23 AutoRook [255]: Welcome to Malmis Automatic Rookgard Tutorial Script!<br />
+03:23 AutoRook [255]: I am AutoRook and will guide you through this.<br />
+03:23 AutoRook [255]: If you have not already done so, you may set the sex of the character you want to bot in the Automated Rookgard Tutorial by Malmis.txt,<br />
+03:23 AutoRook [255]: then the script won't pause for setting the sex, but the AutoRook messages may appear in the default channel unless you manually close windows.<br />
+03:23 AutoRook [255]: -<br />
+03:23 AutoRook [255]: Feel free to check out other scripts by Malmis at BlackD Forums in http://www.blackdtools.net/showthread.php?57391-Malmis-Scripts!<br />
+03:23 AutoRook [255]: Setting full attack and auto-chase.<br />
+03:23 AutoRook [255]: Accepting Santiago's quest.<br />
+03:24 AutoRook [255]: Opening chest.<br />
+03:24 AutoRook [255]: Equipping coat.<br />
+03:24 AutoRook [255]: Accepting second quest.<br />
+03:24 AutoRook [255]: Getting torch.<br />
+03:24 AutoRook [255]: Starting to kill Cockroaches.<br />
+03:30 AutoRook [255]: Looted enough Cockroach Legs.<br />
+03:31 AutoRook [255]: Turning in Santiago's Cockroach Legs.<br />
+03:31 AutoRook [255]: Leaving for Zirella's.<br />
+03:31 AutoRook [255]: Accepting Zirella's Quest.<br />
+03:32 AutoRook [255]: Fetching branches.<br />
+03:32 AutoRook [255]: Moving to throw branch.<br />
+03:32 AutoRook [255]: Throwing branch.<br />
+03:32 AutoRook [255]: Loading branches.<br />
+03:32 AutoRook [255]: Turning in Zirella's Quest.<br />
+03:33 AutoRook [255]: Fetching branches.<br />
+03:33 AutoRook [255]: Moving to throw branch.<br />
+03:33 AutoRook [255]: Throwing branch.<br />
+03:33 AutoRook [255]: Loading branches.<br />
+03:34 AutoRook [255]: Turning in Zirella's Quest.<br />
+03:35 AutoRook [255]: Getting shovel.<br />
+03:35 AutoRook [255]: Getting rope.<br />
+03:35 AutoRook [255]: Going to Carlos.<br />
+03:36 AutoRook [255]: Accepting Carlos' Quest.<br />
+03:36 AutoRook [255]: Setting standard outfit and accepting next part of Carlos' quest.<br />
+03:36 AutoRook [255]: Gathering food.<br />
+03:36 AutoRook [255]: Not killing deers.<br />
+03:41 AutoRook [255]: Got enough food.<br />
+03:41 AutoRook [255]: Turning in Carlos' Food.<br />
+03:41 AutoRook [255]: Selling 7 meat for 14 gold to Carlos.<br />
+03:41 AutoRook [255]: Walking to Rookgard.<br />
+03:41 AutoRook [255]: Thank you for using this script!<br />
+03:41 AutoRook [255]: May your botting be good and your life long!<br />
+<br />
+P.S. Six hours and nine characters through tutorial... :cool:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bougbear</div><div class="date">03-02-2012, 00:15</div></div><div class="posttext">Worked nicely, I didn't get the branch bug either, although i did have problem when it came to the bit where you have to kill the rabbits to sell the meat: my guys just weren't interested, they started walking around and attacking stuff occassionally but never actually looted anything or fully killed a rabbit either. Apart from that, worked fine! it's nice to be able to set stuff up easily. Eagerly awaiting your full rookgaard script</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-02-2012, 00:20</div></div><div class="posttext">Worked nicely, I didn't get the branch bug either, although i did have problem when it came to the bit where you have to kill the rabbits to sell the meat: my guys just weren't interested, they started walking around and attacking stuff occassionally but never actually looted anything or fully killed a rabbit either. Apart from that, worked fine! it's nice to be able to set stuff up easily. Eagerly awaiting your full rookgaard script<br />
+<br />
+Try version 3.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-02-2012, 13:08</div></div><div class="posttext">I loled hard, but seriously, I mean gratz on a very advanced script, but why the hell would you waste your time on that island if you can leave it right away by saying 'skip tutorial' to NPC Santiago?<br />
+<br />
+&gt;.&gt; For me it's just silly annoying tutorial CipSoft made and I don't see any point of doing it. I mean level 2, rope, shovel, maybe some cash collected trough selling meat/hams, but that's it, all this can be done on rats on actual Rookgaard island.<br />
+<br />
+But, that's just me lol :P Gratz again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-02-2012, 13:26</div></div><div class="posttext">Two things you should change in the script.<br />
+<br />
+1. setChaoticMovesON after done with Zirella's quest.<br />
+<br />
+2. setAny / setFriendly after :huntfood. It won't kill the Rabbits because Carlos is there and setVeryFriendly is still there from before.<br />
+<br />
+<br />
+Will try it a bit more and tell you if I find more bugs.<br />
+<br />
+Thank you, I was going crazy not figuring out why it suddenly stopped attacking them. :p<br />
+<br />
+<br />
+Also: When $mycap$ = 13 it's actually 0.13 oz. Should be changed to 1300.<br />
+This was changed by blackd a while back (half an eternity) when cip introduced the decimals in the capacity.<br />
+<br />
+Yes ofcourse, thanks. It was a few years since I scripted, altough that had been introduced I just didn't remember. :p<br />
+<br />
+<br />
+I loled hard, but seriously, I mean gratz on a very advanced script, but why the hell would you waste your time on that island if you can leave it right away by saying 'skip tutorial' to NPC Santiago?<br />
+<br />
+&gt;.&gt; For me it's just silly annoying tutorial CipSoft made and I don't see any point of doing it. I mean level 2, rope, shovel, maybe some cash collected trough selling meat/hams, but that's it, all this can be done on rats on actual Rookgaard island.<br />
+<br />
+But, that's just me lol :P Gratz again.<br />
+<br />
+'Cause I got high, 'cause I got high, 'cause I got hiiiiiigh... Seriously.<br />
+I also was a bit WTF in the morning, why did I waste 6 hours last night creating sometimes that'll always just be a novelty. :P I was thinking of making the full quest but then I thought I'm not THAT high... And no sane botter would ever accept having to wait 10mins for the tutorial then having to relog because of Kraknork's Demon, even tough just scripting to after that would give decent equipment with selling 20 meats to Carlos from tutorial and sabre from quest.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-02-2012, 13:40</div></div><div class="posttext">@Malmis ... But still, awesome work \o/ ... Oh yeah, about Rookie guard quest or w/e it's called ... I did it once, 2 days ago, cuz I needed kitchen knife, and I'll never do it again. I spent 1 hour doing it manual &gt;.&gt; I mean what the hell!!! Scripting that is a challange for sure, but NAH! don't do it xD, you'll go crazy, lmao ... In my opinion it's better to get some cash for easy equipment buyable from NPC and then just 'bot all the waaaaay' till level 8 and if possible choose a vocation on destiny island, that's it. There have been some srcipts around like that, but now they're probably bugged and full of 'unwanted evul packets'. :P<br />
+<br />
+I mean, how hard is it to skip tutorial and start script in a temple which in the end brings you to main without annoying quests? :D<br />
+<br />
+Of course, RPG players who want all the quests out there to be done, are the completely other story.<br />
+<br />
+Anyway, good luck on your next project, it'll kick ass for sure. :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-02-2012, 15:14</div></div><div class="posttext">Of course, RPG players who want all the quests out there to be done, are the completely other story.<br />
+<br />
+Anyway, good luck on your next project, it'll kick ass for sure. :P<br />
+<br />
+RPG players wouldn't bot the quest anyways... :P And thank you for the praise to, it was actually alot of fun making it. And a great reminder to people what can be done with BlackD. :)<br />
+<br />
+<br />
+Because it's fun! It's a challenge! You learn stuff from doing these silly things. I've even thought about making a script for postman and desert quest.<br />
+<br />
+Postman and DD are ALOT more useful... ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-03-2012, 08:45</div></div><div class="posttext">Great job!! Keep them coming! <br />
+<br />
+Hopefully in a  couple weeks i will start posting scripts too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-03-2012, 11:27</div></div><div class="posttext">Yeah. Making rook to main now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bougbear</div><div class="date">03-03-2012, 12:09</div></div><div class="posttext">Yeah. Making rook to main now.<br />
+<br />
+Much love!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-03-2012, 12:34</div></div><div class="posttext">Yeah. Making rook to main now.<br />
+<br />
+like 2 years ago I made a script for that, Im not sure how much it will help but its around somewhere..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-03-2012, 15:34</div></div><div class="posttext">Sometime later today... Want to level my Ed with my brother while I can, will try to do it this afternoon. :p<br />
+You want my ED to level too so I can waypoint high level places and make nice mage scripts :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">03-03-2012, 15:34</div></div><div class="posttext">About your script, BldMx, it crashes the tibia client as soon as you activate the Cavebot.<br />
+<br />
+I must try this script :D Soonds good hehe.<br />
+Keep up the good work</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-03-2012, 17:46</div></div><div class="posttext">About your script, BldMx, it crashes the tibia client as soon as you activate the Cavebot.<br />
+<br />
+I must try this script :D Soonds good hehe.<br />
+Keep up the good work<br />
+<br />
+Never done for me. Using latest Blackdtools?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">03-03-2012, 17:53</div></div><div class="posttext">Yup. I'm using the latest BlackDtools version. I followed every step from the &quot;what to do before starting the sctipt&quot; and it still crashed.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-03-2012, 19:23</div></div><div class="posttext">About your script, BldMx, it crashes the tibia client as soon as you activate the Cavebot.<br />
+<br />
+I must try this script :D Soonds good hehe.<br />
+Keep up the good work<br />
+<br />
+I never said it was functional. In fact I don't expect any of my scripts to run at all - they are around 2 years old!\<br />
+<br />
+<br />
+<br />
+Never done for me. Using latest Blackdtools?<br />
+I believe his talking about my script crashing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-03-2012, 19:49</div></div><div class="posttext">I believe his talking about my script crashing.<br />
+<br />
+No, I meant my script crashing for Hurriel. :p<br />
+OnT: No real idea Hurriel... Can you send me your script? The one you edited?<br />
+Anyone else it crashing for?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

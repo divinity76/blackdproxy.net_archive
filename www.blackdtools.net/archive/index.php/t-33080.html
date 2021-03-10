@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, setloot, waitx, potions, script, $hex-tibiastryes$, move, $_manapotionid$, line, $numbertohex2$numericalexp$_mana$/4$$, space, backpack/bag, lines, defines, withdraw, deposit, buying, city, potionbuying, make, loot, gotoscriptline, cost, iftrue, ancient, efficient, tutorial, fourth, case, basic, work, cash, talking, onwards, manas, banking, calculates, needed, window, times, made, trade, vials, bring, edit, continues, post, sells, greets, cover" />
+	<meta name="description" content="Hello there :) 
+ 
+in this tutorial we will look into how to implement a potionbuyer into your script, it is rather easy as long as you got a template to copypaste from, so here goes 
+ 
+ 
+1. The script 
+ 
+A simple script would look somewhat like this: 
+ 
+setPriority ancient scarab:+1" />
+	
+	<title> Tutorial: Efficient potionbuying [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Tutorial: Efficient potionbuying</div>
+<hr />
+<div class="pda"><a href="t-33080.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?33080-Tutorial-Efficient-potionbuying">Tutorial: Efficient potionbuying</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">12-20-2008, 06:05</div></div><div class="posttext">Hello there :)<br />
+<br />
+in this tutorial we will look into how to implement a potionbuyer into your script, it is rather easy as long as you got a template to copypaste from, so here goes<br />
+<br />
+<br />
+ 1. The script<br />
+<br />
+A simple script would look somewhat like this:<br />
+<br />
+<br />
+setPriority ancient scarab:+1<br />
+setSpellkill ancient scarab,exori flam,3<br />
+setmeleekill larva<br />
+setloot 00 0D<br />
+setloot 70 0D<br />
+setLoot E2 0B<br />
+setLoot D8 0B<br />
+setLoot D9 0B<br />
+setLoot D7 0B<br />
+setLoot 3E 03<br />
+setLoot CA 0B<br />
+setLoot 1D 0D<br />
+setloot D1 0B<br />
+move 33042,32668,11<br />
+move 33093,32655,11<br />
+move 33067,32677,11<br />
+move 33091,32683,11<br />
+move 33062,32652,11<br />
+gotoscriptline 0<br />
+<br />
+First off we have parameters which remains constant (until a reset is requested), such as what monsters will be targetted, how to kill them and what loot to take, then follows the waypoints, and at last we have gotoscriptline 0.<br />
+<br />
+<br />
+ 2. Checking potions and walking to city<br />
+<br />
+Now, what we want the script to do is to return to the city to refill manapotions and/or deposit loot, so we'll need to use an IfTrue statement;<br />
+<br />
+<br />
+fastExiva _manapotionid = ED 00<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#45) Goto $nlineoflabel:refill$<br />
+gotoScriptLine 0<br />
+:refill<br />
+move 33119,32674,10<br />
+move 33118,32677,9<br />
+move 33163,32685,9<br />
+move 33164,32685,8<br />
+move 33153,32686,8<br />
+move 33153,32687,7<br />
+<br />
+The first line gives the variable _manapotionid the value ED 00 (strong manapotion) and the second line checks your opened containers for the value you assigned to _manapotionid, and if you have below 45 potions left, the script will jump to the label :refill.<br />
+If this is false, then it will go back to hunt. If true, the script will follow what's written below :refill, namely waypoints out of the cave.<br />
+<br />
+<br />
+ 3. Withdrawing money from bank<br />
+<br />
+When you're at the bank, you'll need to withdraw money to afford the potions, and by using this template it's pretty easy;<br />
+<br />
+<br />
+fastExiva _manas = 300<br />
+fastExiva _idcost = 80<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+<br />
+The first four lines assigns values to variables, the first line defines how many potions you're carrying in total, the second line defines what one potion of that type costs (strong manapotion in this case), the third line calculates how many manas you'll need to buy, and the fourth line defines how much it will cost.<br />
+The following banking lines are basic NPC talking, it'll say hi, deposit all the cash you have on you and withdraw the cost of the potions.<br />
+Onwards to the potionbuying!<br />
+<br />
+<br />
+ 4. Buying the potions<br />
+<br />
+Now, to make this actually work as an AFK script, you'll need to have your backpack/bag with backpacks/bags of potions in your backpack slot, and your main backpack/bag in arrowslot. You'll also need to cover the empty space in your backpack/bag with potions, I find worms to be most efficient (do NOT use gold/platinum/crystal coins to fill out the space).<br />
+Okay, so now to the actual buying;<br />
+<br />
+<br />
+saymessage hi<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:vial$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+<br />
+The first few lines greets the NPC and sells the vials you have on you, to make space for new potions.<br />
+Next, the script will bring up the trade window with the NPC, then the script will buy a fourth of the needed potions four times. I made it this way since you can't buy more than 100 potions at once, however, you may edit this to your needs.<br />
+<br />
+<br />
+CONTINUES IN NEXT POST</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">12-20-2008, 06:05</div></div><div class="posttext">5. The final script<br />
+<br />
+The final script has functions that are not explained in this tutorial, but anyway, here it is;<br />
+<br />
+<br />
+# Script made by Karelazi<br />
+# Special thanks to Erra :)<br />
+# Add Scarab, Larva, Hyaena and Nomad to safelist<br />
+<br />
+# &lt;--------- CHANGE THESE SETTINGS ---------&gt;<br />
+# MP = 0C 01, SMP = ED 00, GMP = EE 00<br />
+fastExiva _manapotionid = ED 00<br />
+# How many manas do you have?<br />
+fastExiva _manas = 300<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _idcost = 80<br />
+<br />
+onGMpause<br />
+:hunt<br />
+setfollow<br />
+setany<br />
+setPriority ancient scarab:+1<br />
+setSpellkill ancient scarab,exori flam,3<br />
+setmeleekill larva<br />
+setdontretryattacks<br />
+setlootdistance 3<br />
+setloot 00 0D<br />
+setloot 70 0D<br />
+setLoot E2 0B<br />
+setLoot D8 0B<br />
+setLoot D9 0B<br />
+setLoot D7 0B<br />
+setLoot 3E 03<br />
+setLoot CA 0B<br />
+setLoot 1D 0D<br />
+setloot D1 0B<br />
+move 33042,32668,11<br />
+move 33093,32655,11<br />
+move 33067,32677,11<br />
+move 33091,32683,11<br />
+move 33062,32652,11<br />
+setveryfriendly<br />
+setnofollow<br />
+move 33064,32652,10<br />
+setspellkill scarab,exori flam,3<br />
+setmeleekill larva<br />
+move 33067,32653,10<br />
+waitx 2<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+resetLoot<br />
+setLoot D7 0B<br />
+setLoot 00 0D<br />
+setLoot 70 0D<br />
+setLoot D7 0B<br />
+setLoot 3E 03<br />
+setLoot CA 0B<br />
+setLoot 1D 0D<br />
+setloot D1 0B<br />
+dropLootOnGround 33067,32653,10<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2A 81 8C 7F 0A 1B 01 01 2B 81 8D 7F 0A 01<br />
+waitx 1<br />
+resetkill<br />
+setspellkill ancient scarab,exori flam,3<br />
+setany<br />
+IfTrue ($countitems:82 19$#number&gt;#0) Goto $nlineoflabel:refill$<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#45) Goto $nlineoflabel:refill$<br />
+move 33062,32652,11<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:refill<br />
+resetkill<br />
+setSpellkill ancient scarab,exori flam,3<br />
+saymessage utana vid<br />
+move 33119,32674,10<br />
+saymessage utani hur<br />
+move 33118,32677,9<br />
+move 33163,32685,9<br />
+setveryfriendly<br />
+setfollow<br />
+setmeleekill larva<br />
+move 33164,32685,8<br />
+move 33153,32686,8<br />
+move 33153,32687,7<br />
+:ankgate<br />
+move 33153,32758,7<br />
+move 33153,32761,7<br />
+move 33153,32761,7<br />
+waitx 1<br />
+IfTrue ($myy$#string=#32760) Goto $nlineoflabel:exiva1$<br />
+gotoscriptline $nlineoflabel:check1$<br />
+:exiva1<br />
+fastexiva &gt; 67<br />
+waitx 1<br />
+:check1<br />
+IfTrue ($myy$#string&lt;&gt;#32761) Goto $nlineoflabel:ankgate$<br />
+fastexiva &gt; 67<br />
+waitx 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:ankgate$<br />
+:ankgate2<br />
+move 33152,32763,6<br />
+move 33155,32766,6<br />
+waitx 1<br />
+saymessage exiva &gt; 67<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#7) Goto $nlineoflabel:ankgate2$<br />
+:bank<br />
+move 33135,32827,7<br />
+IfTrue ($myy$#string=#32827) Goto $nlineoflabel:go3$<br />
+Gotoscriptline $nlineoflabel:bank$<br />
+saymessage exiva &gt; 65<br />
+:go3<br />
+move 33135,32823,6<br />
+IfTrue ($countitems:{$_manapotionid$}$#number&lt;#45) Goto $nlineoflabel:bankmanas$<br />
+IfTrue ($countitems:82 19$#number&gt;#0) Goto $nlineoflabel:banksofts$<br />
+:banksofts<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:withdraw 10500$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+Gotoscriptline $nlineoflabel:goboat$<br />
+:bankmanas<br />
+# Calculates how many manas you're gonna need and how much it costs<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+move 33131,32817,6<br />
+move 33131,32815,5<br />
+move 33131,32813,5<br />
+saymessage hi<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:vial$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+fastExiva &gt; 07 00 7A $_manapotionid$ 00 $numbertohex2:{$numericalexp:{$_mana$}/4$}$ 00<br />
+waitx 1<br />
+move 33131,32817,6<br />
+move 33134,32818,6<br />
+IfTrue ($countitems:82 19$#number&gt;#0) Goto $nlineoflabel:banksofts$<br />
+move 33137,32815,6<br />
+move 33139,32815,7<br />
+Gotoscriptline $nlineoflabel:back$<br />
+:goboat<br />
+move 33135,32827,7<br />
+move 33084,32876,7<br />
+move 33084,32878,6<br />
+move 33092,32884,6<br />
+fastExiva &gt; A2 $hex-idofname:Captain Sinbeard$<br />
+waitx 2<br />
+saymessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:venore$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+move 32953,32050,6<br />
+move 32952,32108,6<br />
+sayMessage hi<br />
+waitX 2<br />
+:softs<br />
+fastExiva &gt; 96 04 $hex-tibiastr:soft boots$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+IfTrue ($countitems:82 19$#number&gt;#0) Goto $nlineoflabel:softs$<br />
+move 32954,32041,6<br />
+move 32955,32023,6<br />
+fastExiva &gt; A2 $hex-idofname:Captain Fearless$<br />
+waitx 3<br />
+sayMessage hi<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:ankrahmun$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+move 33084,32878,6<br />
+move 33084,32876,7<br />
+:back<br />
+move 33135,32827,7<br />
+:ankgate3<br />
+move 33153,32770,7<br />
+move 33153,32766,7<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#6) Goto $nlineoflabel:ankgate3$<br />
+waitx 1<br />
+:ankgate4<br />
+move 33153,32762,6<br />
+waitx 1<br />
+move 33153,32759,7<br />
+waitX 1<br />
+IfTrue ($myz$#string&lt;&gt;#7) Goto $nlineoflabel:ankgate4$<br />
+waitx 1<br />
+move 33154,32687,7<br />
+saymessage utana vid<br />
+move 33153,32686,8<br />
+move 33163,32684,8<br />
+move 33164,32684,9<br />
+saymessage utani hur<br />
+move 33119,32677,9<br />
+move 33118,32676,10<br />
+move 33064,32652,10<br />
+move 33064,32653,10<br />
+move 33062,32652,11<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+<br />
+<br />
+That concludes this tutorial, and I hope you've learned what I'm trying to teach :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Random-j</div><div class="date">12-20-2008, 06:10</div></div><div class="posttext">Ty for this it will help alot of people xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">12-20-2008, 06:11</div></div><div class="posttext">got stickied pretty fast, haha</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fake</div><div class="date">12-20-2008, 10:56</div></div><div class="posttext">Great tutorial!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marissa</div><div class="date">12-20-2008, 15:01</div></div><div class="posttext">BEWARE OF CRILLE!<br />
+HE GOT A T-SHIRT IRL WITH HIS TIBIA CHARACTER NAME ON. XDDDDDDDDDDDDDDDDDDDDDDDDd</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">12-20-2008, 15:09</div></div><div class="posttext">and I know you guys want it ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SimoS</div><div class="date">12-20-2008, 15:25</div></div><div class="posttext">Hello there :)<br />
+<br />
+Now, to make this actually work as an AFK script, you'll need to have your backpack/bag with backpacks/bags of potions in your backpack slot, and your main backpack/bag in arrowslot. You'll also need to cover the empty space in your backpack/bag with potions, I find worms to be most efficient (do NOT use gold/platinum/crystal coins to fill out the space).<br />
+Okay, so now to the actual buying;<br />
+<br />
+I dont really get what you mean with this, for example:<br />
+<br />
+You got your bp with more backpacks in your bpslot. You got 16 bps in your bp so you will need to fill 4slots (normal bp) with worms?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">12-20-2008, 15:33</div></div><div class="posttext">no, you just put worms in the empty spaces</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bejker</div><div class="date">12-21-2008, 00:41</div></div><div class="posttext">hightech script, nice :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hrichi</div><div class="date">12-22-2008, 12:12</div></div><div class="posttext">nice job, I'll check it on my character</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eragon</div><div class="date">12-28-2008, 00:20</div></div><div class="posttext">It don't work for me as i want. I have my bag (no empty spaces) with bps of potions in backpack slot. When i'm selling vials and buying potions they are in my main bp in arrow slot and bps with potions have empty spaces.<br />
+And the second thing, 'countitems' work only when i have bps opened :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Erra</div><div class="date">12-30-2008, 17:58</div></div><div class="posttext">Guys, guys! Don't forget the &quot;Special thanks to Erra&quot; part!<br />
+<br />
+Plus, Crille, you didn't use the 5gp vial deposit in your calculation, who would not want to save 1k every 10 bp manas?! That's 9 bp manas + 1 for free, you know!<br />
+<br />
+Taken from my own script (which has yet to be released! it's edron trolls ._.):<br />
+fastExiva _nhptobuy = $numericalexp:{$_nhp$}-{$countitems:0A 01$}$<br />
+fastExiva _nhpcost = $numericalexp:{$numericalexp:{$_nhptobuy$}*45$}-{$numericalexp:{$countitems:1D 01$}*5$}$<br />
+<br />
+/\ How much it's supposed to withdraw<br />
+<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:1D 01$}$<br />
+waitX 3<br />
+fastExiva &gt; 7A 0A 01 00 $numbertohex1:{$_nhptobuy$}$ 00 00<br />
+<br />
+/\ Selling vials and buying, well... health potions :(<br />
+<br />
+IfTrue ($countitems:0A 01$#number&lt;#$_nhp$) Goto $nlineoflabel:close$<br />
+gotoScriptLine $nlineoflabel:back$<br />
+:close<br />
+closeConnection<br />
+<br />
+/\ My epic script shouldn't fail, if it does then it's because I'm out of gold, so logout!<br />
+<br />
+<br />
+<br />
+ASHEUAHESUHEUAHEU =D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vuda Pig</div><div class="date">01-02-2009, 02:42</div></div><div class="posttext">Nice work thx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Saito88</div><div class="date">01-13-2009, 01:19</div></div><div class="posttext">i dont know how work this:<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+waitx 1<br />
+fastexiva &gt; 0F 00 78 2B 81 8D 7F 0A 1B 01 01 2A 81 8C 7F 0A 01<br />
+<br />
+i mean how can i use this or what is it real  fuction.<br />
+<br />
+pls explain me. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ferigon</div><div class="date">01-19-2009, 12:50</div></div><div class="posttext">Nice tuto. But theres a easier way to do this, just deposit all the money from your hunt, sell the vials, count how many gps you got after selling the vials, go to dp again, withdraw the necessary money and buy more manas/hp's.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Belzebuth</div><div class="date">01-21-2009, 19:28</div></div><div class="posttext">nice work :) this will help me and others alot! :P thx again</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mooth</div><div class="date">01-29-2009, 16:52</div></div><div class="posttext">Is it posible to buy potions with backpack ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-08-2009, 00:27</div></div><div class="posttext">Thats pretty much the exact thing I do, but instead I create a loop while buying until the amount is bought, wich is simpler and takes only 10 seconds longer so I will use variables like:<br />
+<br />
+how many manas you want total =Bmana<br />
+how many manas you want before you leave =Lmana(if you want to leave when you only have 3 mana potions this would be 3)<br />
+and the id of the mana type = idmana<br />
+amount you want to buy at a time (to speed up buying process you can make it 50 if you want 100 because this line will almost always execute twice)<br />
+and the same for health potions if i were doing that<br />
+<br />
+then the script would looks something like this (note i wont be using code as i havent touched tibia in a long time)<br />
+<br />
+kill larva<br />
+loot  gold<br />
+move move<br />
+if Lmana =&lt; number goto 6<br />
+goto 0<br />
+:Lmana<br />
+move to 3 sqm away from exact position i want to be<br />
+waitX 1 (wait one second before next line)<br />
+move to exact position you want to goto (making it more accurate)<br />
+waitX 1<br />
+have convo to bring up trade<br />
+:buy<br />
+hex to buy idmana and setnumber of them<br />
+if countitems:idmana &lt; Bmana goto lineoflabel:buy<br />
+move all the way back to where script origionally starts<br />
+goto 0<br />
+<br />
+wow im gettin rusty huh:rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zepy10</div><div class="date">05-08-2009, 13:11</div></div><div class="posttext">So niceeeeee</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-18-2010, 00:26</div></div><div class="posttext">I tend to add this line of code when taking to some NPC (those who move a lot) in order to successfully get their attention. However, if its a NPC thats trapped (most shops) then it might not be need.<br />
+<br />
+<br />
+<br />
+fastExiva &gt; A2 $hex-idofname:NAME OF NPC$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">living10</div><div class="date">01-31-2010, 21:58</div></div><div class="posttext">Thank you for sharing codes...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">10-11-2010, 17:37</div></div><div class="posttext">Excellent work! I haven't used it yet, but it surely looks great. Thanks!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

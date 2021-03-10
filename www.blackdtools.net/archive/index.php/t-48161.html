@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, make, hide, change, tarantula, killed, tarantulas, cave, loots, feedback, load, line, fine, kills, events, conditional, script, comment, task, hunt, test, killer, _cavethreetaken, character, changing, _cavetwotaken, refiller, _caveonetaken, lines, note, time, errors, ways, including, welcomed, reported, file, fixed, depositor, post, seller, added, edit, runs, watching, best/most, programs, avoids, needed, potions" />
+	<meta name="description" content="Greetings!! 
+ 
+This is perhaps one of my best/most complex scripts I've released. I decided to make it public because in the server that I hunt the tarantula spawns are crowded with so many boters (I assume using other programs). Here it is, enjoy! and please comment on it.  
+ 
+What it does? 
+Kills Tarantulas, loots eggs, money and steel helmets, deposit loot when no capacity, kills hide when 300 tarantulas are killed and refills mana/health potions when needed. Also you can make it so it" />
+	
+	<title> Complete Tarantula Task (Depositor, Seller, Refiller, Hide Killer, More!) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Complete Tarantula Task (Depositor, Seller, Refiller, Hide Killer, More!)</div>
+<hr />
+<div class="pda"><a href="t-48161.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?48161-Complete-Tarantula-Task-(Depositor-Seller-Refiller-Hide-Killer-More!)">Complete Tarantula Task (Depositor, Seller, Refiller, Hide Killer, More!)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-28-2010, 02:03</div></div><div class="posttext">Greetings!!<br />
+<br />
+This is perhaps one of my best/most complex scripts I've released. I decided to make it public because in the server that I hunt the tarantula spawns are crowded with so many boters (I assume using other programs). Here it is, enjoy! and please comment on it. <br />
+<br />
+What it does?<br />
+Kills Tarantulas, loots eggs, money and steel helmets, deposit loot when no capacity, kills hide when 300 tarantulas are killed and refills mana/health potions when needed. Also you can make it so it avoids a particular tarantula cave if its taken by someone else.<br />
+<br />
+How to use it?<br />
+Download both the script and conditional events. <br />
+Load the script and if you have already started the task change the 0 in this line: <br />
+ fastExiva _taskstarted = 0  to a 1 and put the number of tarantulas that you have already killed in this line: <br />
+<br />
+fastExiva _counter = 0 <br />
+Load the conditional events (do no change them at all).<br />
+Start hunting!<br />
+<br />
+If any cave is taken you change tell your character not to hunt there by changing the 0 to a 1 in any of these lines:<br />
+<br />
+ fastExiva _caveonetaken =0<br />
+fastExiva _cavetwotaken =0<br />
+fastExiva _cavethreetaken =0 <br />
+<br />
+Note: I only killed the Hide once and it ran fine, but since I haven't been able to test it please make sure you are watching the first time you run it. Also please make sure to tell me the IDs of any other of the hide loots since I am not sure if I added them all. If it runs fine let me know so I can edit this post and   this comment.<br />
+<br />
+Feedback<br />
+All feedback is welcomed, including ways to make it better.<br />
+If any errors, they will be fixed as soon as reported.<br />
+<br />
+The file:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jayyz</div><div class="date">01-28-2010, 19:20</div></div><div class="posttext">Thank you. Ill try it out today and check back here later.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jayyz</div><div class="date">01-29-2010, 01:44</div></div><div class="posttext">alright, so ive tried it on now for a while and there are some minor bugs that could be improved.<br />
+<br />
+the character gets &quot;stuck&quot; on the surface when its going between the different caves, this goes to all caves. the character walks to the hole, and then goes back to the other cave without going inside, in any of them, no idea what this can be.<br />
+<br />
+It deposits and refills perfectly well so thats good, I havnt yet tried the entire task (with Hide and re-get task, but I will very soon).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jayyz</div><div class="date">01-29-2010, 02:56</div></div><div class="posttext">Alright. Ive researched a bit more by watching what happens and it seems theres some problems with jumping to labels between cave 2 and cave 3. When Im outside cave 3 on the way to cave 1 he goes to the enterance of cave 2, and then runs back to the enterance of cave 3. this goes on 2-3 times before he goes to cave 1. You might have missed something when jumping labels, since the character aint going down to the caves without running back and fourth a few times. this is so far the only thing I have found, otherwise it runs very well.<br />
+<br />
+edit: the bug goes on from walking from any of the caves, must be some problem in the label jumping.<br />
+<br />
+edit2: Alright, now I finished with killing hide (manually). Thing is, your script is a great idea and all, but its very messy. I do not know why, but there are several things that do not work. example: the char bugs at Grizzly when he needs to get the task, ive tried it twice now, and it just doesnt work. It does not get the task and the character gets bugged on that floor and wont go down. It keeps saying &quot;there is no way&quot;. <br />
+<br />
+second, when I had 300 tarantulas done the, the character gets out of cave and goes to deposit/refill, and then continues to grizzly and bugs again. he does not go to kill the big guy. <br />
+<br />
+third, the entering caves is all messed up. sometimes the character bugs totally and just walks the surface, longest have been 30min before i restarted the script. anyways, its very risky to put it on so far as I have found it to be messy, maybe you can check into the label jumping and see if you can find the errors?<br />
+<br />
+I got it to work for quite a while (just the killing tarantulas) so it still works somehow for that, but the rest I dont know what the problem is. Anyways, that was just my feedback, maybe you will use it maybe not.<br />
+<br />
+p.s. this was tested on a 40 knight with k-set, dragon shield, warrior helmet, bright sword. 70/70 skills</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-29-2010, 06:47</div></div><div class="posttext">ant got to be to critical to the man about this. if you think its to messey make one yourself 0.o  looks like a good script myfriend i will check it out when u look over this boys bugs</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jayyz</div><div class="date">01-29-2010, 16:13</div></div><div class="posttext">ant got to be to critical to the man about this. if you think its to messey make one yourself 0.o  looks like a good script myfriend i will check it out when u look over this boys bugs<br />
+<br />
+I was not being critical, I just gave him feedback on the script about things he could improve, as he stated  in his post that he wanted.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jayyz</div><div class="date">01-29-2010, 16:36</div></div><div class="posttext">ill run it today again and see if it was just messed up for me or if it will do the same.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jayyz</div><div class="date">01-29-2010, 18:45</div></div><div class="posttext">Edit:<br />
+Alright, ive ran it twice now and ill just state some errors here, this is by no means a bad script, its great actually, with just a few flaws that i think can be fixed by the creator. <br />
+<br />
+*The surface problem, where the character walks the surface but does not go down the caves: I fixed the problem by changing the hex for the holes, so thats not a big problem anymore.<br />
+<br />
+*The ramp at Grizzly Adams, at times it bugs and sometimes not. It bugs specially when the 300 tarantulas is killed and the message &quot;Now going to kill Hide&quot; pops up, he walks to the ramp and then just goes back for some reason, without walking up and delivering the task to be able to kill Hide. <br />
+<br />
+*When doing the walk to Hide, the character at times bugs by going north-east through city and thus getting stuck on the island. &quot;There is no way&quot; message. <br />
+<br />
+*When doing the walk to Hide or to deliver tasks the character does not kill the monsters on the way, which makes it get trapped and specially with the carniphilas on way to Hide, doesnt kill them but just passes by loosing lots of hp and at times getting suck without killing monsters. <br />
+<br />
+*Inside Hide cave, noticed a &quot;there is no way&quot; when Hide is dead and looted, so he just stands there.<br />
+<br />
+These are some of the ones I noticed by running the script twice, more than a few times I had to abort and start the script over by exiva jump X to make it work as it should.<br />
+<br />
+Anyways, great script, Im sure these things can be fixed and when they are it will be flawless and possibly your best work ever. You could also add that it should go back and deposit when Hide is killed, I got Knight Legs, Spider Silk and terra hood on both times killed, and the script just makes him go back hunting tarantulas. <br />
+<br />
+I recommend level 40 knight with k-set, dragon shield/weapon equal to level and brown mushrooms with you for it to be profitable. atleast 60/60 in skills.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xicohti</div><div class="date">02-08-2010, 22:26</div></div><div class="posttext">Where this script starts?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kubatrzeb</div><div class="date">02-28-2010, 18:32</div></div><div class="posttext">good job, cant test but yor scripts rule</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sinlak</div><div class="date">04-10-2010, 00:07</div></div><div class="posttext">I cant seem to get his script to work :/ good work ne ways tho</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gutter Drakun</div><div class="date">12-01-2010, 19:19</div></div><div class="posttext">Any way to you give just the script of hunt spot with depositer and refiller? I wanna take a bot at this spot, but do not want to do the task, cuz my char is lvl 50+ and can't do the task many times.<br />
+<br />
+If possible, will be glad :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">M5city</div><div class="date">01-02-2011, 06:27</div></div><div class="posttext">Greetings,<br />
+<br />
+I've considered buying BlackD proxy, I probanly will this week, Do you have anymore scripts than this? I'm going to bot my lvl 45 RP with good skills, But at lvl 50 I can't do this task anymore.<br />
+<br />
+Kind Regard's,<br />
+M5city</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-03-2011, 06:08</div></div><div class="posttext">I got a couple but nothing this complex. <br />
+Nevertheless I can always make new scripts.<br />
+<br />
+If BlackdProxy get safer as Daniel says, I will definitely come to back to make great free scripts and tutoring.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gleen666</div><div class="date">02-04-2011, 23:49</div></div><div class="posttext">no up stair of bank :)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

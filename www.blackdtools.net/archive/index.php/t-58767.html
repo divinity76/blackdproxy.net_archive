@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="pincers, torts, tortoise, depositer" />
+	<meta name="description" content="Here is a new script I slapped together that will run Torts and Blood crabs at the Tort cave in PH. 
+I have it setup to use exori con on blood crabs for a paladin, but if you wish you can remove that line.  
+ 
+#Made By Sohji444 
+#Port Hope Torts and Deposit 
+#Start at Bank in Port Hope 
+#Cave will Run all floors 
+setBot OldLootMode=1 
+setloot D7 0B 
+setloot D2 0B" />
+	
+	<title> Port Hope Tortoise (Torts) + Depositer [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Port Hope Tortoise (Torts) + Depositer</div>
+<hr />
+<div class="pda"><a href="t-58767.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58767-Port-Hope-Tortoise-(Torts)-Depositer">Port Hope Tortoise (Torts) + Depositer</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">sohji444</div><div class="date">08-13-2012, 05:00</div></div><div class="posttext">Here is a new script I slapped together that will run Torts and Blood crabs at the Tort cave in PH.<br />
+I have it setup to use exori con on blood crabs for a paladin, but if you wish you can remove that line. <br />
+<br />
+<br />
+#Made By Sohji444<br />
+#Port Hope Torts and Deposit<br />
+#Start at Bank in Port Hope<br />
+#Cave will Run all floors<br />
+setBot OldLootMode=1<br />
+setloot D7 0B<br />
+setloot D2 0B<br />
+setloot 0B 17<br />
+setloot 27 28<br />
+setMeleeKill cave rat<br />
+setMeleeKill snake<br />
+setMeleeKill slime<br />
+setMeleeKill crab<br />
+setMeleeKill crocodile<br />
+setMeleeKill tortoise<br />
+setMeleeKill carrion worm<br />
+setMeleeKill blood crab<br />
+setPriority tortoise:+1<br />
+setPriority blood crab:+2<br />
+setSpellKill blood crab,exori con,1<br />
+:Walk to Cave<br />
+move 32632,32740,6<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+move 32615,32717,7<br />
+move 32612,32703,7<br />
+waitX 3<br />
+useItem 32613,32703,7<br />
+:cave<br />
+move 32613,32703,8<br />
+move 32611,32680,8<br />
+move 32609,32672,8<br />
+move 32611,32674,8<br />
+move 32611,32675,8<br />
+move 32611,32673,9<br />
+move 32595,32674,9<br />
+move 32574,32688,9<br />
+move 32545,32719,9<br />
+move 32536,32725,9<br />
+move 32531,32709,9<br />
+move 32531,32710,9<br />
+move 32531,32708,10<br />
+move 32551,32682,10<br />
+move 32582,32653,10<br />
+sayMessage utani hur<br />
+move 32572,32675,10<br />
+move 32583,32697,10<br />
+move 32588,32720,10<br />
+move 32593,32719,10<br />
+move 32619,32718,10<br />
+move 32639,32715,10<br />
+useItem 32639,32714,10<br />
+move 32639,32715,9<br />
+move 32617,32722,9<br />
+move 32596,32740,9<br />
+move 32598,32753,9<br />
+move 32621,32757,9<br />
+move 32621,32758,9<br />
+move 32619,32758,10<br />
+move 32596,32743,10<br />
+move 32579,32731,10<br />
+useItem 32578,32728,10<br />
+move 32578,32729,9<br />
+move 32575,32743,9<br />
+move 32557,32746,9<br />
+move 32547,32735,9<br />
+move 32545,32721,9<br />
+useItem 32537,32729,9<br />
+move 32538,32730,8<br />
+move 32553,32719,8<br />
+move 32558,32702,8<br />
+move 32575,32702,8<br />
+move 32595,32702,8<br />
+waitX 3<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:cave to bank$<br />
+gotoScriptLine $nlineoflabel:cave$<br />
+:cave to bank<br />
+useItem 32595,32702,8<br />
+move 32606,32730,7<br />
+move 32616,32741,7<br />
+move 32629,32750,7<br />
+move 32629,32749,7<br />
+move 32629,32748,6<br />
+move 32632,32739,6<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:walk to cave$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">loganh</div><div class="date">08-14-2012, 06:53</div></div><div class="posttext">Great script ^.^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klaasvaak</div><div class="date">11-22-2012, 15:02</div></div><div class="posttext">Very nice script, im using it on my paladin.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">conteh</div><div class="date">12-16-2012, 22:33</div></div><div class="posttext">yo i think its having some trouble if the first hole is already open and need to add centipede to monster list, im gonna run it for a few hrs then post my final edit....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">conteh</div><div class="date">12-18-2012, 09:12</div></div><div class="posttext">srry havent posted add crab pincers to the loot if you want!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tcryder54</div><div class="date">02-03-2013, 09:50</div></div><div class="posttext">Here is a new script I slapped together that will run Torts and Blood crabs at the Tort cave in PH.<br />
+I have it setup to use exori con on blood crabs for a paladin, but if you wish you can remove that line. <br />
+<br />
+<br />
+#Made By Sohji444<br />
+#Port Hope Torts and Deposit<br />
+#Start at Bank in Port Hope<br />
+#Cave will Run all floors<br />
+setBot OldLootMode=1<br />
+setloot D7 0B<br />
+setloot D2 0B<br />
+setloot 0B 17<br />
+setloot 27 28<br />
+setMeleeKill cave rat<br />
+setMeleeKill snake<br />
+setMeleeKill slime<br />
+setMeleeKill crab<br />
+setMeleeKill crocodile<br />
+setMeleeKill tortoise<br />
+setMeleeKill carrion worm<br />
+setMeleeKill blood crab<br />
+setPriority tortoise:+1<br />
+setPriority blood crab:+2<br />
+setSpellKill blood crab,exori con,1<br />
+:Walk to Cave<br />
+move 32632,32740,6<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+move 32615,32717,7<br />
+move 32612,32703,7<br />
+waitX 3<br />
+useItem 32613,32703,7<br />
+:cave<br />
+move 32613,32703,8<br />
+move 32611,32680,8<br />
+move 32609,32672,8<br />
+move 32611,32674,8<br />
+move 32611,32675,8<br />
+move 32611,32673,9<br />
+move 32595,32674,9<br />
+move 32574,32688,9<br />
+move 32545,32719,9<br />
+move 32536,32725,9<br />
+move 32531,32709,9<br />
+move 32531,32710,9<br />
+move 32531,32708,10<br />
+move 32551,32682,10<br />
+move 32582,32653,10<br />
+sayMessage utani hur<br />
+move 32572,32675,10<br />
+move 32583,32697,10<br />
+move 32588,32720,10<br />
+move 32593,32719,10<br />
+move 32619,32718,10<br />
+move 32639,32715,10<br />
+useItem 32639,32714,10<br />
+move 32639,32715,9<br />
+move 32617,32722,9<br />
+move 32596,32740,9<br />
+move 32598,32753,9<br />
+move 32621,32757,9<br />
+move 32621,32758,9<br />
+move 32619,32758,10<br />
+move 32596,32743,10<br />
+move 32579,32731,10<br />
+useItem 32578,32728,10<br />
+move 32578,32729,9<br />
+move 32575,32743,9<br />
+move 32557,32746,9<br />
+move 32547,32735,9<br />
+move 32545,32721,9<br />
+useItem 32537,32729,9<br />
+move 32538,32730,8<br />
+move 32553,32719,8<br />
+move 32558,32702,8<br />
+move 32575,32702,8<br />
+move 32595,32702,8<br />
+waitX 3<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:cave to bank$<br />
+gotoScriptLine $nlineoflabel:cave$<br />
+:cave to bank<br />
+useItem 32595,32702,8<br />
+move 32606,32730,7<br />
+move 32616,32741,7<br />
+move 32629,32750,7<br />
+move 32629,32749,7<br />
+move 32629,32748,6<br />
+move 32632,32739,6<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:walk to cave$<br />
+<br />
+<br />
+Is there any way you could put a royal spear refiller into this this? I'm not quite sure how to do it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rorc</div><div class="date">02-07-2013, 06:50</div></div><div class="posttext">What's the code to add to loot bloody pincers?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Masterjez</div><div class="date">02-08-2013, 04:12</div></div><div class="posttext">Hi guys i was wondering what kind of exp per hour you guys are getting from this and what min-max lvl for a pally and a knight would you say to use this script for.<br />
+<br />
+if there is anyone who can make me a script for my Knight im really grateful just need a script from lvl 35-60 and 60-100 please if anyone can even if it comes in lower lvl scripts and more scripts i just want to get my chars back up past lvl 100 i was hacked afew mnth ago and almost got rooked till i loged in while he was killing me off..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Clay</div><div class="date">10-25-2013, 21:06</div></div><div class="posttext">this script is awesome thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sikfors</div><div class="date">12-12-2013, 18:12</div></div><div class="posttext">Hay ju guys im just wondering if this is with deposit/Man refiler or somthing like that ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Scymork</div><div class="date">12-15-2013, 15:57</div></div><div class="posttext">Works great</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

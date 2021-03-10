@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, stack, timeout, event, meaning, return, $useitemwithamountxx, changed, stackitems, action, xx,100$, coins, items, condition, press, repeat, functions, xx,a$, platinum, clicked, seconds, conditional, wrong, changelog, changer, added, useitemwithamount, containers, opened, xx,100, useitemwithamountxx, function, amount, change" />
+	<meta name="description" content="Many of you I'm sure have played on OT servers that allow you to right click and 'use' a stack of 100 gold to automatically turn it into platinum. Today, with the help of conditional events, we can automatically change that gold while you are on the fly without the need to click or even look at the screen while you are botting. 
+ 
+side note: I used a script that returned me to town at 5000 gold no matter what, so i could deposit it and it would be safe. because botting i would generally be afk." />
+	
+	<title> GOLD Changer FOR OT ONLY! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-49.html">Conditional Events Miniscripts</a> &gt;  GOLD Changer FOR OT ONLY!</div>
+<hr />
+<div class="pda"><a href="t-62342.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62342-GOLD-Changer-FOR-OT-ONLY!">GOLD Changer FOR OT ONLY!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">08-13-2015, 21:14</div></div><div class="posttext">Many of you I'm sure have played on OT servers that allow you to right click and 'use' a stack of 100 gold to automatically turn it into platinum. Today, with the help of conditional events, we can automatically change that gold while you are on the fly without the need to click or even look at the screen while you are botting.<br />
+<br />
+side note: I used a script that returned me to town at 5000 gold no matter what, so i could deposit it and it would be safe. because botting i would generally be afk. And its a good idea to have a return script, just as a fail safe, if you dont fall under the range that gold needs to be at to 'use' it.<br />
+<br />
+This conditional will auto use your gold by sending a packet any time your gold level reaches 100, 200, 300 etc up to 5000 you can easily modify this conditional to make the number higher or lower depending on your want to go to town. Always use a number rounded to the hundreds, because you cant use a stack of gold less than 100.<br />
+<br />
+You can even modify the packet to 'use' your platinum to change it into crystal coins.<br />
+<br />
+exiva &gt; 82 FF FF 00 00 00 D7 0B 00 00   is the packet to change gold into platinum<br />
+exiva &gt; 82 FF FF 00 00 00 DB 0B 00 00   would be the packet to change platinum into crystal<br />
+<br />
+<br />
+whenever that first slot in your backpack gets to 100 gold/plat exactly it will change in to 1 platinum/crystal respectively. if you have 96 gold in that slot, and pick up 5, you will now have 1 gold in that slot, hence the reason for the multiple levels in the conditional up to 5000.<br />
+<br />
+It is suggested that you set your conditional timer to around 100 to 100, since this is a use packet, you can spam it as fast as the game will let you. As long as your gold is rounded to the hundreds it will change it all to plat quickly. My cavebot timer is set to 300 - 550.<br />
+<br />
+If you want to test if this conditional works rather than wait to pick up an exact amount, wait until you have a couple stacks of gold, and a partial stack. Throw the partial stack on the ground, and watch the magic happen :D Enjoi!<br />
+<br />
+Make sure to comment if this helps you!<br />
+<br />
+[Edit: attaching the script im using in conjunction with this conditional]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">08-25-2015, 03:40</div></div><div class="posttext">there's a much better way to do this, you're doing it all wrong <br />
+look at the changelog for 22.0:<br />
+<br />
+- Added function exiva useitemwithamount:XX XX,A (will use an item with tile id XX XX only if there is A amount of that item in opened containers)&quot; <br />
+<br />
+Meaning: Conditional Event: 1 = 1  timeout 5000: exiva useitemwithamount: XX XX,100<br />
+^ when you have a stack of 100 of item id XX XX (change XX XX with platinum coins or whatever), press &quot;use&quot; on it. and repeat every 5 seconds. <br />
+this is actually 1 of my functions :p<br />
+<br />
+there's also an event for this:<br />
+$useitemwithamount:XX XX,A$ - will return 0 if you had A of this item, and it clicked on. else will return... not 0 (was it -1?)<br />
+<br />
+meaning condition: $useitemwithamount:XX XX,100$ = 1 timeout 5000<br />
+action: exiva stackitems<br />
+<br />
+^ every time it changed XX XX (gold or plat), stack items! :D</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

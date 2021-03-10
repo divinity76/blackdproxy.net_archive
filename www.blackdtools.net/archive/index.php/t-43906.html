@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, saymessage, move, sayintrade, exiva, iftrue, goto, waitx, runes, scarab, deposit, depot, setspellkill, trade, setfriendly, bandit, scarab,exori, withdraw, $nlineoflabelcheckworms$, larva, setloot, 33055,32850,7, 0c$number=1, $countitems4b, flam,3, nomad, spider, poison, $numericalexp$countitemsa4, 0d$+$countitemsfa, hyaena, rune, resetloot, putlootondepot, walkspot, cave, 33094,32840,7, $numbertohex2$_worms$$, 33124,32810,6, fish, fishx, $nlineoflabelfish$, $mycap$number, $mysoulpoints$number=5000, $nlineoflabelcheckcap$, stackitems, 0d$$number=50, $_worms$, 33132,32820,6, 33131,32818,6" />
+	<meta name="description" content="this is my frist script, i tested and work. 
+it will buy runes, deposit money, hunt for soul in nomads and bandits, kill any scarab lured with flam spell, and put loot on depot. 
+ps: u need have one backpack in depot, DEPOT, not locker, and use rune maker for make runes:) 
+ 
+#created by o.o'  !! 
+setChaoticMovesOFF 
+onTrapGiveAlarm 
+setBot OldLootMode=1 
+SetMaxAttackTimeMs 40000 
+setFriendly" />
+	
+	<title> Ankrahmun advanced rune maker/blank runes buyer/soul and fisher!! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Ankrahmun advanced rune maker/blank runes buyer/soul and fisher!!</div>
+<hr />
+<div class="pda"><a href="t-43906.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?43906-Ankrahmun-advanced-rune-maker-blank-runes-buyer-soul-and-fisher!!">Ankrahmun advanced rune maker/blank runes buyer/soul and fisher!!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">o.o'</div><div class="date">08-25-2009, 19:33</div></div><div class="posttext">this is my frist script, i tested and work.<br />
+it will buy runes, deposit money, hunt for soul in nomads and bandits, kill any scarab lured with flam spell, and put loot on depot.<br />
+ps: u need have one backpack in depot, DEPOT, not locker, and use rune maker for make runes:)<br />
+<br />
+<br />
+#created by o.o'  !!<br />
+setChaoticMovesOFF<br />
+onTrapGiveAlarm<br />
+setBot OldLootMode=1<br />
+SetMaxAttackTimeMs 40000<br />
+setFriendly<br />
+setMeleeKill bandit<br />
+setMeleeKill larva<br />
+setMeleeKill scarab<br />
+setSpellKill scarab,exori flam,3<br />
+setMeleeKill poison spider<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setLoot D7 0B<br />
+onDangerGoto $nlineoflabel:playeratack$<br />
+waitX 1<br />
+waitX 5<br />
+:refill<br />
+waitX 1<br />
+fastExiva _worms = $numericalexp:100-{$numericalexp:{$countitems:FA 0D$}+{$countitems:A4 0D$}$}$<br />
+IfTrue ($countitems:4B 0C$#number&gt;=#1) Goto $nlineoflabel:checkworms$<br />
+sayMessage exiva &gt; 0A 00 82 FF FF 0A 00 00 26 0B 00 01<br />
+IfTrue ($countitems:4B 0C$#number&gt;=#1) Goto $nlineoflabel:checkworms$<br />
+resetLoot<br />
+putLootOnDepot<br />
+sayMessage exiva &gt; 0F 00 78 FF FF 0A 00 00 26 0B 00 FF FF 42 00 00 01<br />
+sayMessage exiva &gt; 0F 00 78 FF FF 0A 00 00 26 0B 00 FF FF 41 00 00 01<br />
+move 33126,32829,7<br />
+move 33127,32825,6<br />
+move 33137,32821,6<br />
+sayMessage hi<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+sayInTrade withdraw 220<br />
+sayInTrade yes<br />
+move 33131,32818,6<br />
+move 33130,32813,5<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+SayMessage exiva &gt; 07 00 7A 4B 0C 00 14 00 01<br />
+sayMessage exiva &gt; 0F 00 78 FF FF 40 00 00 26 0B 00 FF FF 0A 00 00 01<br />
+sayMessage exiva &gt; 0A 00 82 FF FF 0A 00 00 26 0B 00 01<br />
+:checkworms<br />
+IfTrue ($numericalexp:{$countitems:A4 0D$}+{$countitems:FA 0D$}$#number&gt;=#56) Goto $nlineoflabel:walkspot$<br />
+move 33130,32817,6<br />
+move 33132,32820,6<br />
+sayMessage hi<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+sayInTrade withdraw $_worms$<br />
+sayInTrade yes<br />
+move 33124,32810,6<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+SayMessage exiva &gt; 07 00 7A A4 0D 00 $numbertohex2:{$_worms$}$ 00<br />
+:walkspot<br />
+setFriendly<br />
+setSpellKill scarab,exori flam,3<br />
+setMeleeKill cave rat<br />
+setMeleeKill rat<br />
+setMeleeKill bandit<br />
+setMeleeKill larva<br />
+setMeleeKill scarab<br />
+setMeleeKill nomad<br />
+setMeleeKill poison spider<br />
+setMeleeKill hyaena<br />
+setLoot D7 0B<br />
+move 33094,32840,7<br />
+move 33055,32850,7<br />
+:fish<br />
+move 33055,32850,7<br />
+waitX 1<br />
+fishX 5<br />
+stackItems<br />
+IfTrue ($numericalexp:{$countitems:A4 0D$}+{$countitems:FA 0D$}$#number&lt;=#5) Goto $nlineoflabel:backtodp$<br />
+IfTrue ($countitems:4B 0C$#number=#0) Goto $nlineoflabel:backtodp$<br />
+IfTrue ($mysoulpoints$#number&gt;=#50) Goto $nlineoflabel:checkcap$<br />
+IfTrue ($mysoulpoints$#number&lt;=#50) Goto $nlineoflabel:hunt$<br />
+:checkcap<br />
+IfTrue ($mycap$#number&gt;=#5000) Goto $nlineoflabel:fish$<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:espera$<br />
+:espera<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Low cap, Wait 60 Sec.$<br />
+WaitX 60<br />
+gotoScriptLine $nlineoflabel:checkcap$<br />
+:hunt<br />
+stackItems<br />
+setFriendly<br />
+setMeleeKill bandit<br />
+setMeleeKill larva<br />
+setMeleeKill scarab<br />
+setSpellKill scarab,exori flam,3<br />
+setMeleeKill poison spider<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+move 33062,32874,7<br />
+move 33066,32852,7<br />
+move 33067,32815,7<br />
+move 33085,32789,7<br />
+move 33086,32785,6<br />
+move 33056,32802,7<br />
+move 33038,32810,7<br />
+move 33037,32807,6<br />
+move 33033,32802,6<br />
+move 33033,32799,5<br />
+move 33034,32784,4<br />
+move 33032,32788,3<br />
+move 33029,32787,2<br />
+move 33029,32777,1<br />
+move 33029,32773,0<br />
+move 33030,32756,0<br />
+move 33032,32755,1<br />
+move 33026,32749,1<br />
+move 33039,32731,1<br />
+move 33032,32755,1<br />
+move 33030,32755,0<br />
+waitX 60<br />
+setLoot D7 0B<br />
+:caçando1<br />
+move 33032,32755,1<br />
+move 33026,32749,1<br />
+move 33039,32731,1<br />
+move 33032,32755,1<br />
+move 33030,32755,0<br />
+waitX 60<br />
+IfTrue ($numericalexp:{$countitems:A4 0D$}+{$countitems:FA 0D$}$#number&lt;=#1) Goto $nlineoflabel:backtodp$<br />
+IfTrue ($mysoulpoints$#number&lt;=#190) Goto $nlineoflabel:waitspawn$<br />
+IfTrue ($countitems:4B 0C$#number=#0) Goto $nlineoflabel:backtodp$<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:spot$<br />
+:waitspawn<br />
+Waitx 300<br />
+gotoScriptLine $nlineoflabel:caçando$<br />
+:killspawn2<br />
+move 33032,32755,1<br />
+move 33026,32749,1<br />
+move 33039,32731,1<br />
+move 33032,32755,1<br />
+move 33030,32755,0<br />
+waitX 60<br />
+gotoScriptLine $nlineoflabel:caçando1$<br />
+:spot<br />
+setFriendly<br />
+setMeleeKill bandit<br />
+setMeleeKill larva<br />
+setMeleeKill scarab<br />
+setSpellKill scarab,exori flam,3<br />
+setMeleeKill poison spider<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setLoot D7 0B<br />
+move 33030,32755,0<br />
+move 33029,32774,0<br />
+move 33029,32776,1<br />
+move 33029,32781,2<br />
+move 33031,32788,3<br />
+move 33032,32786,4<br />
+move 33032,32779,5<br />
+move 33034,32803,6<br />
+move 33038,32810,7<br />
+move 33083,32781,7<br />
+move 33085,32785,6<br />
+move 33085,32788,7<br />
+move 33065,32822,7<br />
+move 33055,32850,7<br />
+gotoScriptLine $nlineoflabel:fish$<br />
+:backtodp<br />
+setFriendly<br />
+setMeleeKill bandit<br />
+setMeleeKill larva<br />
+setMeleeKill scarab<br />
+setSpellKill scarab,exori flam,3<br />
+setMeleeKill poison spider<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setLoot D7 0B<br />
+move 33093,32832,7<br />
+move 33125,32848,7<br />
+move 33131,32853,7<br />
+move 33131,32843,7<br />
+:dpnow<br />
+setFriendly<br />
+setMeleeKill bandit<br />
+setMeleeKill larva<br />
+setMeleeKill scarab<br />
+setSpellKill scarab,exori flam,3<br />
+setMeleeKill poison spider<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setLoot D7 0B<br />
+move 33131,32853,7<br />
+move 33131,32843,7<br />
+waitX 2<br />
+gotoScriptLine $nlineoflabel:refill$<br />
+:playeratack<br />
+fastExiva testsound</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zac c</div><div class="date">03-06-2010, 08:14</div></div><div class="posttext">My guy walks in circles in ank</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

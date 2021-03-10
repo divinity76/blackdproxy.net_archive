@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, unable, missing, [255], anymore, messages, sayintrade, simply, worked, charm, exiva, wrote, equipment, autorook, bought, creature, rabbits, listed, suppose, outdated, sheeps,pigs, killing, character, rook2main, manually, effort, blackd, helps, proxy, amount, startngo, forward, rook2mainlv20, continue, positive" />
+	<meta name="description" content="Should be one of the safest scripts out there. Doesn't mean shit tho. :p 
+Just login and start it, doesn't matter if newly minted or in temple. 
+Hunts for 97 gold in food, buys EQ and BP and goes to hunt rats to 6000 EXP then it will go to oracle and logout. 
+Dings 10 times when finished, doesn't logout. 
+ 
+ 
+UPDATED: Doesn't sometimes crash on startup now. Doesn't endlessly open and close bag/backpack. 
+ - Thank you zihinu. 
+ 
+UPDATED: Had one waitX 5 for windows too much. Script now 5 seconds" />
+	
+	<title> StartNGo Rook2Main [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  StartNGo Rook2Main</div>
+<hr />
+<div class="pda"><a href="t-57419.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57419-StartNGo-Rook2Main">StartNGo Rook2Main</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-04-2012, 01:49</div></div><div class="posttext">Should be one of the safest scripts out there. Doesn't mean shit tho. :p<br />
+Just login and start it, doesn't matter if newly minted or in temple.<br />
+Hunts for 97 gold in food, buys EQ and BP and goes to hunt rats to 6000 EXP then it will go to oracle and logout.<br />
+Dings 10 times when finished, doesn't logout.<br />
+<br />
+<br />
+UPDATED: Doesn't sometimes crash on startup now. Doesn't endlessly open and close bag/backpack.<br />
+ - Thank you zihinu.<br />
+<br />
+UPDATED: Had one waitX 5 for windows too much. Script now 5 seconds faster. ;) Also made it better restartable, if you get kicked while hunting rats you just restart it no problems. Sheep already worked. If you get kicked while buying EQ or something just finish that yourself and go down to Al Dee rats or use exiva jump 244.<br />
+UPDATED: Remove apple check since it bugged.<br />
+UPDATED: A few mistakes in checks corrected. Doesn't buy backpack if you went through tutorial. No auto-chase in client, works better. Just sets full attack.<br />
+UPDATED: Checked for 97 gp while at Willie's but not counting right if the meats and hams looted were enough, like supposed to. Now fixed.<br />
+<br />
+Also contains AutoRook as did my Automated Tutorial Script (http://www.blackdtools.net/showthread.php?57394-Automated-Rookgard-Tutorial). It doesn't do much here other than telling you what's going on, close the windows that comes up if you want it in it's own channel. Otherwise client will spam you when you close them. :p Also it should be alot safer if you close the windows even if it works otherwise. There's just two of them and they are in the start so just wait 15 seconds at the most before going AFK.<br />
+The bot will wait for five seconds every time a window comes up for waitX 5 so you can close them if you're cautious.<br />
+<br />
+Please comment! And ofcourse all kind of bugreports are appreciated! :cool:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bougbear</div><div class="date">03-04-2012, 02:41</div></div><div class="posttext">My guy is standing in temple but he's just opening and closing his bag. Looking through the script now to see if I can spot what's up! Note that I used the automated tutorial one so i've already got a backpack, maybe that's messing things up? I've tried switching it into a normal bag but to no avail</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bougbear</div><div class="date">03-04-2012, 02:48</div></div><div class="posttext">I've commented out line 43 and seems to have started okay :) Will let you know in the morning if it's worked!<br />
+Cheers again mate, been looking forward to this one</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-04-2012, 10:19</div></div><div class="posttext">It's looking for the apple... :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-04-2012, 10:52</div></div><div class="posttext">Updated... Had one waitX 5 too much. Also changed the name a little of the textfile so the actual name of the script and not my name are visible in the little scriptlist dropdown :p<br />
+Edited: Made it work when you restart it if you get kicked in rats... In between you're on your own. :o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">slayer123</div><div class="date">03-04-2012, 21:12</div></div><div class="posttext">There is a problem with opening bag. It stands in temple and opening bag. I delete the label &quot;IfTrue ($countitems:01 0E$#number=#0) Goto $nlineoflabel:openbag$&quot; and everything works fine.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-04-2012, 21:27</div></div><div class="posttext">There is a problem with opening bag. It stands in temple and opening bag. I delete the label &quot;IfTrue ($countitems:01 0E$#number=#0) Goto $nlineoflabel:openbag$&quot; and everything works fine.<br />
+<br />
+You ate the apple before starting?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">vacti</div><div class="date">03-04-2012, 23:55</div></div><div class="posttext">Same happens to me, he is looking how pretty the apple is :/<br />
+<br />
+EDIT: I deleted what was said before and seems all works fine:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-05-2012, 00:00</div></div><div class="posttext">Updated. Thanks for replies. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">vacti</div><div class="date">03-05-2012, 00:34</div></div><div class="posttext">It doesn't work for me the: &quot;Dropping bag to equip backpack.&quot;<br />
+<br />
+It drops the bag to the ground but not takes the bp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-05-2012, 09:00</div></div><div class="posttext">It doesn't work for me the: &quot;Dropping bag to equip backpack.&quot;<br />
+<br />
+It drops the bag to the ground but not takes the bp<br />
+<br />
+Anyon else got this bug? Never a problem for me. :s</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-05-2012, 21:36</div></div><div class="posttext">This line:<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:but I am testing it out and going to review it soon and listen to user-reports. Also I will be used in the Destiny Island version and the Rook2lvl20 scripts.<br />
+<br />
+Missing $ at the end.<br />
+<br />
+I think you should use exiva openbp instead of the exiva &gt; command.<br />
+You don't get an apple after finishing the tutorial.<br />
+Also, you've got two :openbag<br />
+<br />
+What does exiva &gt; BE do?<br />
+<br />
+Thanks. &lt;3<br />
+Stops follow. So it doesn't screw up walking, which it sometimes does. :p Dunno if it stop other stuff too. Will try to take the time and look through your entire script soon and point out what you could do better... You got any tips for me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-06-2012, 11:25</div></div><div class="posttext">Great job both of you guys!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-06-2012, 13:08</div></div><div class="posttext">As I said, I never got bugs, it's odd. Anyways, sometimes $hex-equiped-item:XX$#string&lt;&gt;#00 00 doesn't work. Dunno why, so it's suposed to change to hex to number. :p Going to go over it now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-06-2012, 13:20</div></div><div class="posttext">Just got this: 11:17 AutoRook [255]: Going back to hunt for more food. Missing -5 gold.<br />
+<br />
+:D<br />
+<br />
+<br />
+<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:Going back to hunt for more food. Missing {$numericalexp:87-{$countitems:D7 0B$}$} gold.$<br />
+<br />
+The check was for 97 the hex said 87. :p<br />
+<br />
+<br />
+Changed this:<br />
+<br />
+move 32061,32181,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 1<br />
+:buybackpack<br />
+fastExiva buy:26 0B:1<br />
+waitX 2<br />
+IfTrue ($countitems:26 0B$#number=#0) Goto $nlineoflabel:buybackpack$<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:Dropping bag to equip backpack.$<br />
+:dropbag<br />
+fastExiva &gt; 78 FF FF 03 00 00 $hex-equiped-item:03$ 00 $numbertohex2:{$myx$}$ $numbertohex2:{$myy$}$ 07 01<br />
+waitX 1<br />
+IfTrue ($hex-equiped-item:03$#number&gt;#0) Goto $nlineoflabel:dropbag$<br />
+:equipbackpack<br />
+fastExiva #26 0B 03<br />
+waitX 1<br />
+IfTrue ($hex-equiped-item:03$#string=#0) Goto $nlineoflabel:equipbackpack$<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:Opening backpack.$<br />
+waitX 1<br />
+fastExiva &gt; 82 FF FF 03 00 00 26 0B 00 00<br />
+setChaoticMovesON<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:Entering Al Dee rats.$<br />
+<br />
+to this:<br />
+<br />
+<br />
+:buybackpack<br />
+move 32061,32181,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:26 0B:1<br />
+waitX 2<br />
+IfTrue ($countitems:26 0B$#number=#0) Goto $nlineoflabel:buybackpack$<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:Dropping bag to equip backpack.$<br />
+:dropbag<br />
+fastExiva &gt; 78 FF FF 03 00 00 $hex-equiped-item:03$ 00 $numbertohex2:{$myx$}$ $numbertohex2:{$myy$}$ $numbertohex1:{$myz$}$ 01<br />
+waitX 1<br />
+IfTrue ($hex-equiped-item:03$#string&lt;&gt;#00 00) Goto $nlineoflabel:dropbag$<br />
+:equipbackpack<br />
+fastExiva #26 0B 03<br />
+waitX 1<br />
+IfTrue ($hex-equiped-item:03$#string=#00 00) Goto $nlineoflabel:equipbackpack$<br />
+move 32061,32173,7<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:Opening backpack.$<br />
+waitX 1<br />
+fastExiva openbp<br />
+setChaoticMovesON<br />
+fastExiva &lt; AA 00 00 00 00 $hex-tibiastr:AutoRook$ FF 00 04 $hex-tibiastr:Entering Al Dee rats.$<br />
+<br />
+What I changed:<br />
+ I moved :buybackpack so it will try the whole process again, including saying hi etc. Now it doesn't matter if someone pushes you away.<br />
+ Added $numbertohex1:{$myz$}$ to make it safer. Making it a bit more idiot proof. I started it at Al Dee's second floor. (Where z=6).<br />
+ Changed the IfTrue line to use string instead of number.<br />
+ fastExiva openbp instead of fastExiva &gt; 82 FF FF 03 00 00 26 0B 00 00<br />
+ Added an extra waypoint because the bag has to close before exiva openbp can be used. Walking away is a simple way of making it close. :-)<br />
+<br />
+<br />
+<br />
+If we go through it line by line we can make this script perfect and idiot proof.<br />
+I think we've ironed out the major kinks now, I'll run it again now to try it but I don't enjoy testing. :p<br />
+Add me on MSN if you want, or PM me.<br />
+I also changed that part but well I didn't do much except fix the thing I said in last post, changed stuff to openbp. Moved the openbag to after sew-waypoint.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-06-2012, 15:26</div></div><div class="posttext">12:27 AutoRook [255]: Welcome to Malmis StartNGo Rook2Main Script!<br />
+12:27 AutoRook [255]: I am AutoRook and will guide you through this.<br />
+12:27 AutoRook [255]: I am unfortunetly totally superfluent in this script because it really has no options and not that much happens,<br />
+12:27 AutoRook [255]: but I am testing it out and going to review it soon and listen to user-reports. Also I will be used in the Destiny Island version and the Rook2lvl20 scripts.<br />
+12:27 AutoRook [255]: So feel free to comment me! On the forums...<br />
+12:27 AutoRook [255]: -<br />
+12:27 AutoRook [255]: Feel free to check out other scripts by Malmis at BlackD Forums in http://www.blackdtools.net/showthread.php?57391-Malmis-Scripts!<br />
+12:27 AutoRook [255]: -<br />
+12:27 AutoRook [255]: Starting the script.<br />
+12:27 AutoRook [255]: Hunting Deer, Rabbits, Sheeps and Pigs for Ham and Meat until reaching 97 gold.<br />
+12:27 AutoRook [255]: Setting full attack and auto-chase.<br />
+12:27 AutoRook [255]: Dropping unusables.<br />
+12:27 AutoRook [255]: Opening east gate.<br />
+12:32 AutoRook [255]: Opening south gate.<br />
+12:39 AutoRook [255]: Going to sell 26 meat and 1 ham to Willie for 56 gold.<br />
+12:41 AutoRook [255]: Going back to hunt for more food. Missing 41 gold.<br />
+12:47 AutoRook [255]: Going to sell 17 meat and 0 ham to Willie for 34 gold.<br />
+12:49 AutoRook [255]: Going back to hunt for more food. Missing 7 gold.<br />
+12:53 AutoRook [255]: Going to sell 12 meat and 0 ham to Willie for 24 gold.<br />
+12:54 AutoRook [255]: Going to deposit excess gold.<br />
+12:55 AutoRook [255]: Buying Sabre at Obi's.<br />
+12:55 AutoRook [255]: Buying armor at Dixi's.<br />
+12:56 AutoRook [255]: Going to Al Dee to buy backpack and hunt rats.<br />
+12:57 AutoRook [255]: Dropping bag to equip backpack.<br />
+12:57 AutoRook [255]: Entering Al Dee rats.<br />
+12:57 AutoRook [255]: Opening backpack.<br />
+<br />
+No problems at all. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-07-2012, 12:45</div></div><div class="posttext">Definitely gonna use it when I'll need new char in main or whatever :P. Looks like you again out did yourself. \o/<br />
+<br />
+I've got a short question tho, what do functions 'ChaoticMovesON' and 'ChaoticMovesOFF' actually do? D:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-07-2012, 16:26</div></div><div class="posttext">Definitely gonna use it when I'll need new char in main or whatever :P. Looks like you again out did yourself. \o/<br />
+<br />
+I've got a short question tho, what do functions 'ChaoticMovesON' and 'ChaoticMovesOFF' actually do? D:<br />
+<br />
+Make it move within 1 or 2 sqm of the move pos :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-07-2012, 18:57</div></div><div class="posttext">Make it move within 1 or 2 sqm of the move pos :P<br />
+<br />
+If I got it correctly xD:<br />
+<br />
+ChaoticMovesON = within 2 sqms<br />
+<br />
+ChaoticMovesOFF = within 1 sqm<br />
+<br />
+So this would be usefull for like character getting to certain, exact spot ... Hum well, I've used these two before and I've noticed the difference but never knew what the difference was all about.<br />
+<br />
+Thanks, now I shall use these PROPERLY. :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-07-2012, 19:46</div></div><div class="posttext">If I got it correctly xD:<br />
+<br />
+ChaoticMovesON = within 2 sqms<br />
+<br />
+ChaoticMovesOFF = within 1 sqm<br />
+<br />
+So this would be usefull for like character getting to certain, exact spot ... Hum well, I've used these two before and I've noticed the difference but never knew what the difference was all about.<br />
+<br />
+Thanks, now I shall use these PROPERLY. :D<br />
+<br />
+Yeah... ChaoticMovesOFF is old style walking, so usually get's it right but sometimes go one less or more sqm :P Chaotic Moves are great but useless for going to NPCs.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">03-19-2012, 03:52</div></div><div class="posttext">Tested this today and it worked perfectly! Awesome script!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">theboobx</div><div class="date">03-20-2012, 09:02</div></div><div class="posttext">Working perfect.<br />
+Thanks man keep posting, hard do find ONE script working in this forum.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">drakon121</div><div class="date">04-05-2012, 05:18</div></div><div class="posttext">so i started in temple after using your tutorial script i bought eq its starts to &quot;hunt&quot; for meat but doesnt move :/ is there a way to skip to rats?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">drakon121</div><div class="date">04-05-2012, 05:24</div></div><div class="posttext">ok it started walking but how is it going to kill monsters without follow? i was also curious if its set to sell food at under 13 cap<br />
+<br />
+sorry for double post. after my net disconnected a couple times and i reloaded seems to be working fine! cheers (:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">04-05-2012, 05:41</div></div><div class="posttext">The StartNGo was to imply you really just had to start it directly after login in, and load a conditional for better performance. :p But if you start in al dee rats the script can start hunting just rats.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Near</div><div class="date">04-14-2012, 23:47</div></div><div class="posttext">Out of date. In the latest updates of Tibia have been changes in the map and others.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Patrick</div><div class="date">06-03-2012, 17:17</div></div><div class="posttext">I am testing it now. Atm my char is level 5 and didn't get stuck since I started the script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RasoiR</div><div class="date">07-17-2012, 16:49</div></div><div class="posttext">Last time when i was using it, it works now he stops everywhere. First he try to get back at stairs near Santiago, now he stops near sheeps and dont attack them.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cardin</div><div class="date">08-15-2012, 06:52</div></div><div class="posttext">great script. works very good.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tha Goo</div><div class="date">10-19-2012, 16:36</div></div><div class="posttext">great script. works very good.<br />
+<br />
+Worked for me last night on latest tibia 9.7. Although when i logged back on this morning (char got kicked due to server save) it was level 8.5 and still trying to kill rats.   Anyone know why this is? What level is it supposed to go to Isle of Destiny? where in the script the Hunt to level code is? Haven't looked myself yet just started using this yesterday so i doubt i would understand any of the code anyways.. thanks:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tyrus</div><div class="date">10-28-2012, 19:50</div></div><div class="posttext">Worked for me last night on latest tibia 9.7. Although when i logged back on this morning (char got kicked due to server save) it was level 8.5 and still trying to kill rats.   Anyone know why this is? What level is it supposed to go to Isle of Destiny? where in the script the Hunt to level code is? Haven't looked myself yet just started using this yesterday so i doubt i would understand any of the code anyways.. thanks:)<br />
+<br />
+<br />
+It stops once it reaches 6k xp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tyrus</div><div class="date">10-28-2012, 20:01</div></div><div class="posttext">By the way, this script is AWESOME!!!Thank you very much</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sephiro45</div><div class="date">11-02-2012, 09:42</div></div><div class="posttext">Thank you my friend xD this script is awesome :) lvl 4 atm and no problems so far</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Karson327</div><div class="date">12-30-2012, 20:20</div></div><div class="posttext">Awesome bot, can I just ask why doesn't it activate auto-chase? My character just selects a rabbit to attack and just stands there without chasing it?<br />
+<br />
+***EDIT*** Also, now my bot has stopped, it gathered 54g, went to buy eq and bought leather armor and legs with a shield and then did nothing. I restarted the bot and now my bot drops the leather armor walked downstairs and tries to buy something. Can somebody explain what it's trying to do?<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">12-30-2012, 21:58</div></div><div class="posttext">Ill explain, your using an outdated script and Malmis was very intense in his Rook2Main script if I remember correctly, they are more than likely very out-dated packets and that account I would now consider &quot;High-Risk&quot; for being banned. Anyways you should really take a look at the dates these scripts were posted and maybe instead of just copy and pasting and using Malmis' script use his as a reference and create a very basic one yourself, give yourself sword/shield and some armor and just make it loop, create all the waypoints by walking around typing exiva pos in your client, copy &amp; paste those to a note pad, specify what to kill at the top of your script with..ex setMeleeKill rat and when you get to the end of your loop the end of your script should say..ex gotoScriptLine 0  to restart at the beginning of your script. Big suggestion because I used to do it myself until I got the ban hammer and lost things, dont use others scripts try and make your own, <br />
+<br />
+-Lith</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Karson327</div><div class="date">12-30-2012, 22:20</div></div><div class="posttext">Ill explain, your using an outdated script and Malmis was very intense in his Rook2Main script if I remember correctly, they are more than likely very out-dated packets and that account I would now consider &quot;High-Risk&quot; for being banned. Anyways you should really take a look at the dates these scripts were posted and maybe instead of just copy and pasting and using Malmis' script use his as a reference and create a very basic one yourself, give yourself sword/shield and some armor and just make it loop, create all the waypoints by walking around typing exiva pos in your client, copy &amp; paste those to a note pad, specify what to kill at the top of your script with..ex setMeleeKill rat and when you get to the end of your loop the end of your script should say..ex gotoScriptLine 0  to restart at the beginning of your script. Big suggestion because I used to do it myself until I got the ban hammer and lost things, dont use others scripts try and make your own, <br />
+<br />
+-Lith<br />
+<br />
+Wow thanks so much for your response. I will try and use this as a guideline like you said.<br />
+<br />
+Thanks again</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-02-2013, 13:00</div></div><div class="posttext">Just to add one small thing ... Of course like @Lithium said, try to write your own scripts, download them only to study how things are scripted by the others.<br />
+<br />
+And you don't have to copy/paste 'exiva pos' every time, just use 'exiva addmove', that will add the waypoint to the cavebot automaticaly.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xanoz</div><div class="date">01-15-2013, 12:45</div></div><div class="posttext">Eventough its an old script and maby a little outdated, it works perfectly fine for me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nalinat</div><div class="date">05-27-2013, 10:52</div></div><div class="posttext">why are that script dropping Chain armor? :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Haxxtt</div><div class="date">07-11-2013, 01:47</div></div><div class="posttext">My character was unable to sell the food so i did it manually, it just went back killing sheeps,pigs, rabbits whatever creature is listed.<br />
+I suppose this script really is outdated, besides that thanks alot for your effort i am looking forward to your Rook2Mainlv20 script if you will continue on that.<br />
+<br />
+I hope this helps you a bit.<br />
+<br />
+10:14 Blackd Proxy is unable to sell that: amount should be positive<br />
+10:14 AutoRook [255]: Going back to hunt for more food. Missing 97 gold.<br />
+<br />
+It is unable to sell the loot sayInTrade messages simply don't work anymore.<br />
+<br />
+After i bought equipment and went to Al Dee rats i wrote exiva jump 244 <br />
+After that the script worked like a charm, if only i could thank you more than just saying Thanks alot!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

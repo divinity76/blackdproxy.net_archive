@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="change, program, function, classname, version, server, changing, string, variable, client, place, weird, discover, tibiaclassname=tmmm¬mmm&amp;338mmm, [memoryaddresses], update/add, constant, tibiaclient, anwyays, configxxxconfig.ini, modified, ollydbg, guess, human, standard, loaded, wrote, result, severe, mistakes, concepts, wrong, input, thing, tibiaclassname, config.ini, modrsa.bas, output, trytoupdatersa, depends, variables, global" />
+	<meta name="description" content="After changing the ClassName(and rsa too) it looks like this: 
+ 
+And after compile, it write the .exe but! It keep detecting normal tibias and not the one with edited classname and rsa key. 
+Anyone know if I should change only some &quot;TibiaClients&quot; to &quot;Tmmm¬mmm&#338;mmm&quot; or It should be as I did(all), or if I need to decrypt that ClassName?" />
+	
+	<title> modRSA.bas [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  modRSA.bas</div>
+<hr />
+<div class="pda"><a href="t-60481.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60481-modRSA-bas">modRSA.bas</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Donbermu</div><div class="date">06-09-2013, 14:06</div></div><div class="posttext">After changing the ClassName(and rsa too) it looks like this:<br />
+<br />
+<br />
+#Const FinalMode = 1<br />
+Option Explicit<br />
+<br />
+Public adrRSA As Long<br />
+' Public Const RLserverRSAkey As String = &quot;12471045942682794300437644989798558216780170796069 70371640449048629485693808504213969045976869538770 22394604239428185498284169068581802277612081027966 72433631944853781144171907648434092285492927351730 86613707271053828991189994038080458464446472844991 23164879035103627004668521005328367415259939915284 902061793&quot;<br />
+<br />
+Public Const OTserverRSAkey As String = &quot;80036587448373301374214561743214971021002734146281 55474454857095160629703530738156700337056733670046 12329742849371048275308815946516512086687520718085 85072361806920252212000725812374142416691470534991 98610188020944640937297568843707971843509832046146 35525498889125934269461638576008377107245708057845 18960061&quot;<br />
+<br />
+Public WARNING_USING_OTSERVER_RSA As Boolean<br />
+<br />
+Public Sub TryToUpdateRSA(ByVal pid As Long, ByVal strKey As String)<br />
+    Dim i As Long<br />
+    Dim writeChr As String<br />
+    Dim currByteAdr As Long<br />
+    Dim byteChr As Byte<br />
+    Dim byteChrR As Byte<br />
+    Dim RSA_bytes(308) As Byte<br />
+    Dim b1 As Byte<br />
+    Dim b2 As Byte<br />
+    Dim b3 As Byte<br />
+    Dim b4 As Byte<br />
+    Dim res As Long<br />
+    Dim realAddress As Long<br />
+    ' needs to be fixed<br />
+<br />
+    If adrRSA = 0 Then<br />
+        Exit Sub<br />
+    End If<br />
+    If pid = -1 Then<br />
+        Exit Sub<br />
+    End If<br />
+   <br />
+    realAddress = Memory_BlackdAddressToFinalAdddress(adrRSA, pid)<br />
+    If (realAddress = 0) Then<br />
+      Exit Sub<br />
+    End If<br />
+   <br />
+    For i = 0 To 308<br />
+      writeChr = Mid$(strKey, i + 1, 1)<br />
+      byteChr = ConvStrToByte(writeChr)<br />
+      RSA_bytes(i) = byteChr<br />
+    Next i<br />
+   <br />
+    res = BlackdForceWrite(realAddress, RSA_bytes(0), 309, pid)<br />
+    Debug.Print &quot;RSA key changed&quot;<br />
+<br />
+    WARNING_USING_OTSERVER_RSA = True<br />
+End Sub<br />
+<br />
+Public Sub ModifyTibiaRSAs()<br />
+  Dim Tmmm¬mmm&#338;mmm As Long<br />
+  Tmmm¬mmm&#338;mmm = 0<br />
+  Do<br />
+    Tmmm¬mmm&#338;mmm = FindWindowEx(0, Tmmm¬mmm&#338;mmm, tibiaclassname, vbNullString)<br />
+    If Tmmm¬mmm&#338;mmm = 0 Then<br />
+        Exit Do<br />
+    Else<br />
+        TryToUpdateRSA Tmmm¬mmm&#338;mmm, OTserverRSAkey<br />
+    End If<br />
+  Loop<br />
+End Sub<br />
+<br />
+And after compile, it write the .exe but! It keep detecting normal tibias and not the one with edited classname and rsa key.<br />
+Anyone know if I should change only some &quot;TibiaClients&quot; to &quot;Tmmm¬mmm&#338;mmm&quot; or It should be as I did(all), or if I need to decrypt that ClassName?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">06-09-2013, 21:58</div></div><div class="posttext">Sorry, you made a lot of severe mistakes there and you have a lot of wrong concepts in your mind according to the weird function that you wrote below my code.<br />
+<br />
+First of all, changing the name of a variable does not change anything at all in the result of a program. In a function you should change the input value to see a different output.<br />
+Anyways my function TryToUpdateRSA depends of some global variables that are loaded in a different part of the code, and in your case the only thing you need to do is changing the VALUE of the variable tibiaclassname. My program load that value from config.ini , so if your program is version xxx then just go configxxx\config.ini and update/add this under [MemoryAddresses] :<br />
+<br />
+tibiaclassname=Tmmm¬mmm&#338;mmm<br />
+<br />
+And anwyays I don't think an human would change the classname to such weird string. I guess you didn't find the right classname of your ot server. You need to use the tool OLLYDBG to find the new classname. Just go to standard client of that version, find the place for the constant string &quot;tibiaclient&quot; and then go to the modified client of your ot server and read that place to discover new value.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oxlade</div><div class="date">06-21-2013, 04:42</div></div><div class="posttext">Sorry, you made a lot of severe mistakes there and you have a lot of wrong concepts in your mind according to the weird function that you wrote below my code.<br />
+<br />
+First of all, changing the name of a variable does not change anything at all in the result of a program. In a function you should change the input value to see a different output.<br />
+Anyways my function TryToUpdateRSA depends of some global variables that are loaded in a different part of the code, and in your case the only thing you need to do is changing the VALUE of the variable tibiaclassname. My program load that value from config.ini , so if your program is version xxx then just go configxxx\config.ini and update/add this under [MemoryAddresses] :<br />
+<br />
+tibiaclassname=Tmmm¬mmm&#338;mmm<br />
+<br />
+And anwyays I don't think an human would change the classname to such weird string. I guess you didn't find the right classname of your ot server. You need to use the tool OLLYDBG to find the new classname. Just go to standard client of that version, find the place for the constant string &quot;tibiaclient&quot; and then go to the modified client of your ot server and read that place to discover new value.<br />
+................</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

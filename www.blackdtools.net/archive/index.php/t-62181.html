@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="address, usefull, adrxor, 400000, subtract, addresses, tibia, blackd, [10.8]" />
+	<meta name="description" content="; ]]]]]]]]]]]]]]]]]]]]]]]]]] 
+; END - AUTOMATIC UPDATE ZONE" />
+	
+	<title> [10.8] Blackd Tibia addresses 10.8 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  [10.8] Blackd Tibia addresses 10.8</div>
+<hr />
+<div class="pda"><a href="t-62181.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62181-10-8-Blackd-Tibia-addresses-10-8">[10.8] Blackd Tibia addresses 10.8</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">07-21-2015, 21:58</div></div><div class="posttext">; [[[[[[[[[[[[[[[[[[[[[[[[[[[<br />
+; BEGIN AUTOMATIC UPDATE ZONE<br />
+version=10.80<br />
+DefaultTibiaFolder=Tibia<br />
+LoadedUseDynamicOffset=1<br />
+useDynamicOffset=yes<br />
+tibiaclassname=TibiaClient<br />
+tibiaModuleRegionSize=&amp;H421000<br />
+LoginServerStartPointer=&amp;H98C0B4<br />
+LoginServerStep=&amp;H30<br />
+HostnamePointerOffset=&amp;H4<br />
+IPAddressPointerOffset=&amp;H20<br />
+PortOffset=&amp;H28<br />
+adrMulticlient=&amp;H5AABF5<br />
+PLAYER_Z=&amp;HAD2040<br />
+LEVELSPY_NOP=&amp;H567920<br />
+LEVELSPY_ABOVE=&amp;H56791C<br />
+LEVELSPY_BELOW=&amp;H567924<br />
+LIGHT_TRICK_ADR=&amp;H587BF2<br />
+LIGHT_TRICK_CODE=BBFF000000EB11909090<br />
+adrRSA=&amp;H85EA30<br />
+tibiachatlog_struct=&amp;H934990&gt;&amp;H40&gt;&amp;H3C<br />
+tibiachatlog_selchannel=&amp;H934990&gt;&amp;H40&gt;&amp;H30&gt;&amp;H30<br />
+tibia_popup_title=&amp;H93497C&gt;&amp;H54<br />
+MAP_POINTER_ADDR=&amp;HB72230<br />
+OFFSET_POINTER_ADDR=&amp;HB76D60<br />
+adrConnectionKey=&amp;H91EBA4<br />
+adrXOR=&amp;H934678<br />
+adrMyHP=&amp;HAD2030<br />
+adrMyMaxHP=&amp;HAD2024<br />
+adrMyMana=&amp;H9346A8<br />
+adrMyMaxMana=&amp;H93467C<br />
+adrMySoul=&amp;H934694<br />
+adrNameStart=&amp;HB2C060<br />
+adrNChar=&amp;HB2C060<br />
+CharDist=&amp;HDC<br />
+LAST_BATTLELISTPOS=1299<br />
+adrNum=&amp;HAD202C<br />
+adrXPos=&amp;HAD2038<br />
+adrYPos=&amp;HAD203C<br />
+adrZPos=&amp;HAD2040<br />
+adrConnected=&amp;H946188<br />
+RedSquare=&amp;H9346A4<br />
+adrLastPacket=&amp;H944DE2<br />
+adrSelectedCharIndex=&amp;HACEF10<br />
+adrCharListPtr=&amp;HACEE88<br />
+adrCharListPtrEND=&amp;HACEE8C<br />
+adrXgo=&amp;HAD2028<br />
+adrYgo=&amp;HAD2020<br />
+adrZgo=&amp;HAD2034<br />
+adrGo=&amp;HB2C0B0<br />
+adrPointerToInternalFPSminusH5D=&amp;HB1D670<br />
+adrNumberOfAttackClick=&amp;HAD2D18<br />
+; ]]]]]]]]]]]]]]]]]]]]]]]]]]]<br />
+; END - AUTOMATIC UPDATE ZONE</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">pxpxd</div><div class="date">07-21-2015, 23:35</div></div><div class="posttext">Thanks, man! nice work</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dmThread</div><div class="date">07-22-2015, 19:32</div></div><div class="posttext">What kind of address's is this?<br />
+<br />
+Normally it is something like: 0x72C58C , never saw address's like this.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">monte321</div><div class="date">07-23-2015, 10:17</div></div><div class="posttext">You change &amp;H to 0x, like &amp;HB2C060 -&gt; 0xB2C060</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dmThread</div><div class="date">07-23-2015, 16:48</div></div><div class="posttext">You change &amp;H to 0x, like &amp;HB2C060 -&gt; 0xB2C060<br />
+<br />
+Are you sure? It's not working for tibia 10.80, everything return 0 for me. :(<br />
+<br />
+c++<br />
+<br />
+<br />
+#include &lt;iostream&gt;<br />
+#include &lt;Windows.h&gt;<br />
+#include &lt;string&gt;<br />
+#include &lt;TlHelp32.h&gt;<br />
+<br />
+//Tibia 10.80<br />
+<br />
+DWORD GameModule(LPCSTR moduleName, int pId);<br />
+<br />
+template&lt;typename TYPE&gt;<br />
+TYPE RPM(HANDLE proc, DWORD address, SIZE_T size){<br />
+	TYPE buffer = TYPE();<br />
+	::ReadProcessMemory(proc, (LPCVOID)address, &amp;buffer, size, 0);<br />
+	return buffer;<br />
+}<br />
+<br />
+template&lt;typename TYPE&gt;<br />
+BOOL WPM(HANDLE proc, DWORD address, TYPE dataToWrite){<br />
+	TYPE buffer = dataToWrite;<br />
+	return ::WriteProcessMemory(proc, (LPVOID)address, &amp;buffer, sizeof(buffer), 0);<br />
+}<br />
+<br />
+int main()<br />
+{<br />
+	std::cout &lt;&lt; &quot;Searching Tibia...&quot; &lt;&lt; std::endl;<br />
+	HWND hwndTibia = NULL;<br />
+	while (hwndTibia == NULL)<br />
+	{<br />
+		hwndTibia = ::FindWindow(&quot;TibiaClient&quot;, NULL);<br />
+		Sleep(16);<br />
+	}<br />
+<br />
+	if (!hwndTibia)<br />
+		return 0;<br />
+<br />
+	std::cout &lt;&lt; &quot;Tibia found.&quot; &lt;&lt; std::endl;<br />
+<br />
+	DWORD pid;<br />
+	GetWindowThreadProcessId(hwndTibia, &amp;pid);<br />
+	DWORD tibiaAddr = GameModule(&quot;Tibia.exe&quot;, pid);<br />
+	HANDLE proc = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);<br />
+<br />
+	while (true){<br />
+		if (tibiaAddr &amp;&amp; proc)<br />
+		{<br />
+			int hp = RPM&lt;int&gt;(proc, (tibiaAddr + 0xAD2030), sizeof(int));<br />
+			int maxHp = RPM&lt;int&gt;(proc, (tibiaAddr + 0xAD2024), sizeof(int));<br />
+			int mana = RPM&lt;int&gt;(proc, (tibiaAddr + 0x9346A8), sizeof(int));<br />
+			int maxMana = RPM&lt;int&gt;(proc, (tibiaAddr + 0x93467C), sizeof(int));<br />
+			std::cout &lt;&lt; &quot;HP: &quot; &lt;&lt; hp &lt;&lt; &quot;/&quot; &lt;&lt; maxHp<br />
+				&lt;&lt; &quot; - Mana:&quot; &lt;&lt; mana &lt;&lt; &quot;/&quot; &lt;&lt; maxMana &lt;&lt; std::endl;<br />
+		}		<br />
+		Sleep(500);<br />
+	}<br />
+<br />
+	CloseHandle(proc);<br />
+<br />
+	return 0;<br />
+}<br />
+<br />
+DWORD GameModule(LPCSTR moduleName, int pId)<br />
+{<br />
+	HANDLE hSnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, pId);<br />
+	MODULEENTRY32  allinfo;<br />
+	BOOL haveProcess = Module32First(hSnapShot, &amp;allinfo);<br />
+	while (haveProcess)<br />
+	{<br />
+		if (!strcmp(moduleName, allinfo.szModule))<br />
+		{<br />
+			return (DWORD)allinfo.modBaseAddr;<br />
+		}<br />
+		haveProcess = Module32Next(hSnapShot, &amp;allinfo);<br />
+	}<br />
+	return 0;<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Diemorko</div><div class="date">07-23-2015, 22:46</div></div><div class="posttext">You should also -400000</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dmThread</div><div class="date">07-26-2015, 04:37</div></div><div class="posttext">You should also -400000<br />
+<br />
+What? Example.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Diemorko</div><div class="date">07-28-2015, 13:42</div></div><div class="posttext">#include &lt;iostream&gt;<br />
+        #include &lt;Windows.h&gt;<br />
+        #include &lt;string&gt;<br />
+        #include &lt;TlHelp32.h&gt;<br />
+<br />
+        //Tibia 10.80<br />
+<br />
+        DWORD GameModule(LPCSTR moduleName, int pId);<br />
+<br />
+        template&lt;typename TYPE&gt;<br />
+        TYPE RPM(HANDLE proc, DWORD address, SIZE_T size){<br />
+        	TYPE buffer = TYPE();<br />
+        	::ReadProcessMemory(proc, (LPCVOID)address, &amp;buffer, size, 0);<br />
+        	return buffer;<br />
+        }<br />
+<br />
+        template&lt;typename TYPE&gt;<br />
+        BOOL WPM(HANDLE proc, DWORD address, TYPE dataToWrite){<br />
+        	TYPE buffer = dataToWrite;<br />
+        	return ::WriteProcessMemory(proc, (LPVOID)address, &amp;buffer, sizeof(buffer), 0);<br />
+        }<br />
+<br />
+        int main()<br />
+        {<br />
+        	std::cout &lt;&lt; &quot;Searching Tibia...&quot; &lt;&lt; std::endl;<br />
+        	HWND hwndTibia = NULL;<br />
+        	while (hwndTibia == NULL)<br />
+        	{<br />
+        		hwndTibia = ::FindWindow(&quot;TibiaClient&quot;, NULL);<br />
+        		Sleep(16);<br />
+        	}<br />
+<br />
+        	if (!hwndTibia)<br />
+        		return 0;<br />
+<br />
+        	std::cout &lt;&lt; &quot;Tibia found.&quot; &lt;&lt; std::endl;<br />
+<br />
+        	DWORD pid;<br />
+        	GetWindowThreadProcessId(hwndTibia, &amp;pid);<br />
+        	DWORD tibiaAddr = GameModule(&quot;Tibia.exe&quot;, pid);<br />
+        	HANDLE proc = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);<br />
+<br />
+        	while (true){<br />
+        		if (tibiaAddr &amp;&amp; proc)<br />
+        		{<br />
+        			int hp = RPM&lt;int&gt;(proc, (tibiaAddr + 0x6D2030), sizeof(int));<br />
+        			int maxHp = RPM&lt;int&gt;(proc, (tibiaAddr + 0x6D2024), sizeof(int));<br />
+        			int mana = RPM&lt;int&gt;(proc, (tibiaAddr + 0x5346A8), sizeof(int));<br />
+        			int maxMana = RPM&lt;int&gt;(proc, (tibiaAddr + 0x53467C), sizeof(int));<br />
+        			std::cout &lt;&lt; &quot;HP: &quot; &lt;&lt; hp &lt;&lt; &quot;/&quot; &lt;&lt; maxHp<br />
+        				&lt;&lt; &quot; - Mana:&quot; &lt;&lt; mana &lt;&lt; &quot;/&quot; &lt;&lt; maxMana &lt;&lt; std::endl;<br />
+        		}		<br />
+        		Sleep(500);<br />
+        	}<br />
+<br />
+        	CloseHandle(proc);<br />
+<br />
+        	return 0;<br />
+        }<br />
+<br />
+        DWORD GameModule(LPCSTR moduleName, int pId)<br />
+        {<br />
+        	HANDLE hSnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, pId);<br />
+        	MODULEENTRY32  allinfo;<br />
+        	BOOL haveProcess = Module32First(hSnapShot, &amp;allinfo);<br />
+        	while (haveProcess)<br />
+        	{<br />
+        		if (!strcmp(moduleName, allinfo.szModule))<br />
+        		{<br />
+        			return (DWORD)allinfo.modBaseAddr;<br />
+        		}<br />
+        		haveProcess = Module32Next(hSnapShot, &amp;allinfo);<br />
+        	}<br />
+        	return 0;<br />
+        }<br />
+<br />
+<br />
+Try this ;-)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dmThread</div><div class="date">07-31-2015, 22:12</div></div><div class="posttext">ow, ok, ty!<br />
+<br />
+Just subtract -400000 from address.<br />
+<br />
+=)<br />
+<br />
+Btw, what is adrXOR usefull for?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

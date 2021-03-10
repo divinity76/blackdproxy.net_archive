@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="rotworm, setmeleekill, setloot, bldmx, oldlootmode=1, setbot, queen+5, queen, ongmpause, sohji444, setpriority, carrion, setfriendly, 33173,31803,7, huntrots, 33237,31903,8, 33237,31904,7, ondangergoto, $nlineoflabeldangermain$, $mycap$number, iftrue, 33241,31892,7, 33227,31885,7, 33169,31811,7, updated, gocave, 33173,31819,7, 33190,31826,7, 33218,31858,7, 33200,31845,7, script, deposit, works, issue, edron, fixed, removed, picking, worth, swords, maces, weigh, waypoints" />
+	<meta name="description" content="Hunts rots in south caves and refills/deposits. 
+Start at Depot 
+ 
+ 
+#Script By BldMx (Not the cave waypoints) 
+onGMpause 
+setMeleeKill rotworm queen 
+setPriority tworm queen:+5 
+setMeleeKill Carrion Worm 
+setMeleeKill Rotworm" />
+	
+	<title> 22. Edron Rots - by BldMx [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  22. Edron Rots - by BldMx</div>
+<hr />
+<div class="pda"><a href="t-54389.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54389-22-Edron-Rots-by-BldMx">22. Edron Rots - by BldMx</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-18-2011, 21:21</div></div><div class="posttext">Hunts rots in south caves and refills/deposits.<br />
+Start at Depot<br />
+<br />
+<br />
+<br />
+#Script By BldMx (Not the cave waypoints)<br />
+onGMpause<br />
+setMeleeKill rotworm queen<br />
+setPriority tworm queen:+5<br />
+setMeleeKill Carrion Worm<br />
+setMeleeKill Rotworm<br />
+setFriendly<br />
+setBot OldLootMode=1<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+setLoot D6 0C<br />
+setLoot C0 0C<br />
+:goCave<br />
+move 33173,31803,7<br />
+move 33169,31811,7<br />
+move 33173,31819,7<br />
+move 33190,31826,7<br />
+move 33200,31845,7<br />
+move 33218,31858,7<br />
+move 33227,31885,7<br />
+move 33241,31892,7<br />
+move 33237,31904,7<br />
+move 33237,31903,8<br />
+:huntRots<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33237,31903,8<br />
+move 33241,31892,8<br />
+move 33242,31890,8<br />
+move 33242,31889,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveOne$<br />
+move 33245,31880,9<br />
+move 33254,31880,9<br />
+move 33244,31879,9<br />
+move 33238,31875,9<br />
+move 33237,31870,9<br />
+move 33234,31877,9<br />
+move 33242,31889,9<br />
+move 33242,31890,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33231,31901,8<br />
+move 33221,31892,8<br />
+move 33221,31891,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveTwo$<br />
+move 33215,31869,9<br />
+move 33219,31864,9<br />
+move 33210,31864,9<br />
+move 33205,31857,9<br />
+move 33212,31848,9<br />
+move 33202,31857,9<br />
+move 33194,31848,9<br />
+move 33208,31863,9<br />
+move 33220,31882,9<br />
+move 33221,31891,9<br />
+move 33221,31892,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33214,31890,8<br />
+move 33222,31906,8<br />
+move 33226,31914,8<br />
+move 33222,31929,8<br />
+move 33218,31932,8<br />
+move 33218,31941,8<br />
+move 33234,31921,8<br />
+move 33235,31921,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveThree$<br />
+move 33230,31924,9<br />
+move 33231,31915,9<br />
+move 33226,31917,9<br />
+move 33227,31897,9<br />
+move 33235,31922,9<br />
+move 33235,31922,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33230,31932,8<br />
+move 33244,31933,8<br />
+move 33244,31932,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveFour$<br />
+move 33251,31929,9<br />
+move 33250,31921,9<br />
+move 33253,31916,9<br />
+move 33244,31932,9<br />
+move 33244,31933,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33228,31916,8<br />
+move 33227,31902,8<br />
+move 33244,31909,8<br />
+move 33244,31908,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveFive$<br />
+move 33238,31898,9<br />
+move 33244,31908,9<br />
+move 33244,31909,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33248,31914,8<br />
+move 33254,31895,8<br />
+move 33262,31898,8<br />
+move 33263,31912,8<br />
+move 33267,31910,8<br />
+move 33263,31918,8<br />
+move 33263,31917,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveSix$<br />
+move 33267,31924,9<br />
+move 33270,31905,9<br />
+move 33281,31910,9<br />
+move 33271,31891,9<br />
+move 33257,31894,9<br />
+move 33263,31917,9<br />
+move 33263,31918,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33263,31922,8<br />
+move 33280,31926,8<br />
+move 33275,31942,8<br />
+move 33280,31947,8<br />
+move 33277,31956,8<br />
+move 33261,31946,8<br />
+move 33262,31920,8<br />
+move 33257,31908,8<br />
+move 33237,31903,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+gotoScriptLine $nlineoflabel:huntRots$<br />
+:sellAndDeposit<br />
+move 33237,31904,7<br />
+move 33242,31890,7<br />
+move 33227,31886,7<br />
+move 33218,31859,7<br />
+move 33202,31844,7<br />
+move 33186,31818,7<br />
+move 33210,31819,7<br />
+move 33210,31817,6<br />
+move 33214,31796,6<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva sell:C0 0C:$countitems:C0 0C$ <br />
+waitX 1<br />
+sayMessage exiva sell:D6 0C:$countitems:D6 0C$ <br />
+stackItems<br />
+move 33210,31817,6<br />
+move 33210,31819,7<br />
+move 33246,31841,7<br />
+move 33247,31840,6<br />
+move 33258,31841,6<br />
+move 33258,31839,5<br />
+move 33256,31840,5<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva sell:DC 25:$countitems:DC 25$ <br />
+waitX 1<br />
+stackItems<br />
+move 33257,31840,5<br />
+move 33258,31841,6<br />
+move 33248,31841,6<br />
+move 33247,31842,7<br />
+move 33190,31819,7<br />
+move 33183,31819,7<br />
+move 33170,31808,7<br />
+move 33173,31803,7<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:bye$<br />
+gotoScriptLine $nlineoflabel:goCave$<br />
+:leaveCaveMain<br />
+move 33236,31903,8<br />
+move 33237,31904,7<br />
+gotoScriptLine $nlineoflabel:sellAndDeposit$<br />
+:dangerSubcaveOne<br />
+move 33242,31888,9<br />
+move 33242,31890,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveTwo<br />
+move 33221,31891,9<br />
+move 33221,31892,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveThree<br />
+move 33235,31921,9<br />
+move 33235,31922,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveFour<br />
+move 33244,31932,9<br />
+move 33244,31933,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveFive<br />
+move 33243,31908,9<br />
+move 33244,31909,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveSix<br />
+move 33262,31918,9<br />
+move 33263,31918,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerMain<br />
+setNoFollow<br />
+resetKill<br />
+move 33236,31903,8<br />
+move 33237,31904,7<br />
+move 33242,31890,7<br />
+move 33227,31886,7<br />
+move 33218,31859,7<br />
+move 33202,31844,7<br />
+move 33183,31819,7<br />
+move 33170,31808,7<br />
+move 33173,31803,7<br />
+closeConnection</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NeverX</div><div class="date">03-17-2011, 17:17</div></div><div class="posttext">nice &lt;too short&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">05-29-2011, 22:29</div></div><div class="posttext">Heya BldMX tested this with two seperate characters, both sold loot &amp; lumps of dirt but did not deposit cash. It walked all the way there, but never started script Hi, Deposit all, yes. Etc. Fix this and script is 100% Man great work! ( Looks very complicated too, I am a very basic scripter so this stuff kinda boggled my brain. )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">danf164</div><div class="date">08-31-2011, 14:38</div></div><div class="posttext">I noticed that line 4 sais priority tworm queen not rotworm queen D:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sohji444</div><div class="date">07-09-2012, 07:25</div></div><div class="posttext">Here, I believe I fixed the bank issue where the bot would deposit gold. Hopefully it works for you. I removed picking up Swords and Maces because those weigh too much for their worth, Just dirt and gold. <br />
+<br />
+<br />
+#Script By BldMx (Not the cave waypoints)<br />
+#Updated By Sohji444<br />
+onGMpause<br />
+setMeleeKill rotworm queen<br />
+setPriority rotworm queen:+5<br />
+setMeleeKill Carrion Worm<br />
+setMeleeKill Rotworm<br />
+setFriendly<br />
+setBot OldLootMode=1<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+:goCave<br />
+move 33173,31803,7<br />
+move 33169,31811,7<br />
+move 33173,31819,7<br />
+move 33190,31826,7<br />
+move 33200,31845,7<br />
+move 33218,31858,7<br />
+move 33227,31885,7<br />
+move 33241,31892,7<br />
+move 33237,31904,7<br />
+move 33237,31903,8<br />
+:huntRots<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33237,31903,8<br />
+move 33241,31892,8<br />
+move 33242,31890,8<br />
+move 33242,31889,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveOne$<br />
+move 33245,31880,9<br />
+move 33254,31880,9<br />
+move 33244,31879,9<br />
+move 33238,31875,9<br />
+move 33237,31870,9<br />
+move 33234,31877,9<br />
+move 33242,31889,9<br />
+move 33242,31890,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33231,31901,8<br />
+move 33221,31892,8<br />
+move 33221,31891,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveTwo$<br />
+move 33215,31869,9<br />
+move 33219,31864,9<br />
+move 33210,31864,9<br />
+move 33205,31857,9<br />
+move 33212,31848,9<br />
+move 33202,31857,9<br />
+move 33194,31848,9<br />
+move 33208,31863,9<br />
+move 33220,31882,9<br />
+move 33221,31891,9<br />
+move 33221,31892,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33214,31890,8<br />
+move 33222,31906,8<br />
+move 33226,31914,8<br />
+move 33222,31929,8<br />
+move 33218,31932,8<br />
+move 33218,31941,8<br />
+move 33234,31921,8<br />
+move 33235,31921,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveThree$<br />
+move 33230,31924,9<br />
+move 33231,31915,9<br />
+move 33226,31917,9<br />
+move 33227,31897,9<br />
+move 33235,31922,9<br />
+move 33235,31922,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33230,31932,8<br />
+move 33244,31933,8<br />
+move 33244,31932,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveFour$<br />
+move 33251,31929,9<br />
+move 33250,31921,9<br />
+move 33253,31916,9<br />
+move 33244,31932,9<br />
+move 33244,31933,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33228,31916,8<br />
+move 33227,31902,8<br />
+move 33244,31909,8<br />
+move 33244,31908,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveFive$<br />
+move 33238,31898,9<br />
+move 33244,31908,9<br />
+move 33244,31909,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33248,31914,8<br />
+move 33254,31895,8<br />
+move 33262,31898,8<br />
+move 33263,31912,8<br />
+move 33267,31910,8<br />
+move 33263,31918,8<br />
+move 33263,31917,9<br />
+onDangerGoto $nlineoflabel:dangerSubcaveSix$<br />
+move 33267,31924,9<br />
+move 33270,31905,9<br />
+move 33281,31910,9<br />
+move 33271,31891,9<br />
+move 33257,31894,9<br />
+move 33263,31917,9<br />
+move 33263,31918,8<br />
+onDangerGoto $nlineoflabel:dangerMain$<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+move 33263,31922,8<br />
+move 33280,31926,8<br />
+move 33275,31942,8<br />
+move 33280,31947,8<br />
+move 33277,31956,8<br />
+move 33261,31946,8<br />
+move 33262,31920,8<br />
+move 33257,31908,8<br />
+move 33237,31903,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:leaveCaveMain$<br />
+gotoScriptLine $nlineoflabel:huntRots$<br />
+:sellAndDeposit<br />
+move 33237,31904,7<br />
+move 33242,31890,7<br />
+move 33227,31886,7<br />
+move 33218,31859,7<br />
+move 33202,31844,7<br />
+move 33186,31818,7<br />
+move 33210,31819,7<br />
+move 33210,31817,6<br />
+move 33214,31796,6<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva sell:C0 0C:$countitems:C0 0C$<br />
+waitX 1<br />
+sayMessage exiva sell:D6 0C:$countitems:D6 0C$<br />
+stackItems<br />
+move 33210,31817,6<br />
+move 33210,31819,7<br />
+move 33246,31841,7<br />
+move 33247,31840,6<br />
+move 33258,31841,6<br />
+move 33258,31839,5<br />
+move 33256,31840,5<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+sayMessage exiva sell:DC 25:$countitems:DC 25$<br />
+waitX 1<br />
+stackItems<br />
+move 33257,31840,5<br />
+move 33258,31841,6<br />
+move 33248,31841,6<br />
+move 33247,31842,7<br />
+move 33190,31819,7<br />
+move 33183,31819,7<br />
+move 33170,31808,7<br />
+move 33173,31803,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:goCave$<br />
+:leaveCaveMain<br />
+move 33236,31903,8<br />
+move 33237,31904,7<br />
+gotoScriptLine $nlineoflabel:sellAndDeposit$<br />
+:dangerSubcaveOne<br />
+move 33242,31888,9<br />
+move 33242,31890,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveTwo<br />
+move 33221,31891,9<br />
+move 33221,31892,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveThree<br />
+move 33235,31921,9<br />
+move 33235,31922,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveFour<br />
+move 33244,31932,9<br />
+move 33244,31933,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveFive<br />
+move 33243,31908,9<br />
+move 33244,31909,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerSubcaveSix<br />
+move 33262,31918,9<br />
+move 33263,31918,8<br />
+gotoScriptLine $nlineoflabel:dangerMain$<br />
+:dangerMain<br />
+setNoFollow<br />
+resetKill<br />
+move 33236,31903,8<br />
+move 33237,31904,7<br />
+move 33242,31890,7<br />
+move 33227,31886,7<br />
+move 33218,31859,7<br />
+move 33202,31844,7<br />
+move 33183,31819,7<br />
+move 33170,31808,7<br />
+move 33173,31803,7<br />
+closeConnection</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

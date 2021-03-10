@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, depositer, spears, edron, thing, wondering, quicky, to]spear, making, paladin, trolls, sweden, great, snowman, found, scripting, trollscript, refiller" />
+	<meta name="description" content="Configuration, put it at the start: 
+#ID, price and weight of spear 
+fastExiva _spearid = CD 0C 
+fastExiva _spearprice = 20 
+fastExiva _spearweight = 20 
+ 
+Withdraw money from bank: 
+sayMessage hi 
+waitX 1 
+sayInTrade deposit all" />
+	
+	<title> [HOW TO]Spear Refiller [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  [HOW TO]Spear Refiller</div>
+<hr />
+<div class="pda"><a href="t-57511.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57511-HOW-TO-Spear-Refiller">[HOW TO]Spear Refiller</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-15-2012, 12:50</div></div><div class="posttext">Configuration, put it at the start:<br />
+<br />
+#ID, price and weight of spear<br />
+fastExiva _spearid = CD 0C<br />
+fastExiva _spearprice = 20<br />
+fastExiva _spearweight = 20<br />
+<br />
+Withdraw money from bank:<br />
+<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$}*{$_spearprice$}$<br />
+sayInTrade yes<br />
+<br />
+Buy the spears:<br />
+<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:$_spearid$:$numericalexp:{$numericalexp:{$myca p$}/{$_spearweight$00}$}-1$<br />
+<br />
+Shouldn't be to hard. :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">valskog93</div><div class="date">03-15-2012, 15:17</div></div><div class="posttext">Hey man! Was wondering a thing.. Im new to this &quot;Scripting&quot; thing and i was wondering if you could help me out with a script? I found a very good Trollscript with depositer (edron) and i would like 2 add auto buy spears and pick up spears to it, making it a paladin script. Its really a quicky, and ill be on my own :D. Ps: Im from Sweden 2!<br />
+<br />
+43. Edron trolls with depositer - by Snowman, Great script &lt;- Script i would like help with<br />
+<br />
+Btw Good job!<br />
+<br />
+Thanks In Advance!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-15-2012, 15:58</div></div><div class="posttext">Buying spears for hunting trolls seems a waste, why not use http://www.blackdtools.net/showthread.php?57409-Use-looted-Small-Stones-or-Spears-instead-of-Weapon to hunt with melee and looted spears?<br />
+In any case, you just replace the hi/deposit all/yes with the one I showed, add the configuration at the start of script and add waypoints to Willard and the trader you're fine.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">valskog93</div><div class="date">03-15-2012, 16:20</div></div><div class="posttext">Thank you so much!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">vacti</div><div class="date">03-16-2012, 00:24</div></div><div class="posttext">Thanks sir ! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-16-2012, 01:03</div></div><div class="posttext">No problem guys. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cashmaker</div><div class="date">04-09-2012, 04:58</div></div><div class="posttext">I tried using the code to buy spears but it said the Blackd couldn't buy them because of an unknown error.<br />
+Please help!! Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Warrupcuz</div><div class="date">06-23-2013, 19:25</div></div><div class="posttext">I put that shit on the start and my character started talking to the air lol I know im supposed to do something man but this shit is hard</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

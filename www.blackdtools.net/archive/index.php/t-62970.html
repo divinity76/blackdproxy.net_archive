@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="address, search, tibia, final, player, repeat, obtain, procedure, pointer, addresses, memory, obtained, rescan, paths, close, start, press, change, actions, bit,change, floor, stopped, filtering, small, point, filter, enable, seconds, unknown, faster, remaining, playing, cheat, reattach, scannerrescan, login, settings, cases, https://blackdtools.net/cheat_engine_tibia11.jpg, enter" />
+	<meta name="description" content="The procedure to find addresses in Tibia 11: 
+1. Search what you want while your player is playing, using the old procedure. That is: you start a search with an known value (faster) or with unknown value, then you change something in your player, you search next, you change something, you search next... until only 1 value is remaining. You obtain a final address. 
+2. Do pointer scan over that obtained final address. You should obtain a huge list of possible paths. Don't close this list. 
+Best" />
+	
+	<title> Tibia 11 - The procedure to find new memory addresses (paths) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - The procedure to find new memory addresses (paths)</div>
+<hr />
+<div class="pda"><a href="t-62970.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62970-Tibia-11-The-procedure-to-find-new-memory-addresses-(paths)">Tibia 11 - The procedure to find new memory addresses (paths)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-18-2016, 10:42</div></div><div class="posttext">The procedure to find addresses in Tibia 11:<br />
+1. Search what you want while your player is playing, using the old procedure. That is: you start a search with an known value (faster) or with unknown value, then you change something in your player, you search next, you change something, you search next... until only 1 value is remaining. You obtain a final address.<br />
+2. Do pointer scan over that obtained final address. You should obtain a huge list of possible paths. Don't close this list.<br />
+Best settings for most cases:<br />
+https://blackdtools.net/cheat_engine_tibia11.jpg<br />
+<br />
+3. Close Tibia 11, open it again, and login a player again.<br />
+4. Reattach Tibia 11 to Game Cheat, and repeat only (1) so you obtain a new (different) final address.<br />
+5. Go back to the obtained list in (2) and go Pointer scanner&gt;Rescan memory. Enter new final address. Enable Repeat rescan until stopped. Press ok to start filtering.<br />
+6. Walk a bit,change floor and do some actions with your player. Around 15 seconds should be enough to filter a lot of address.<br />
+7. Go back to the list and press &quot;Stop rescan loop&quot;. Now you should have less address.<br />
+case 7a. If they are still a lot then repeat everything from point (3)<br />
+case 7b. If the list is small (&lt;20 address) then test the shortest paths (less steps) that start at a .dll because they are usally the right ones. In some cases you always get a few valid path solutions.<br />
+8. Test the obtained path solutions in a different computer with a different windows version, in order to discard paths that depends on operative system.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Maches</div><div class="date">10-28-2016, 13:25</div></div><div class="posttext">The procedure to find addresses in Tibia 11:<br />
+1. Search what you want while your player is playing, using the old procedure. That is: you start a search with an known value (faster) or with unknown value, then you change something in your player, you search next, you change something, you search next... until only 1 value is remaining. You obtain a final address.<br />
+2. Do pointer scan over that obtained final address. You should obtain a huge list of possible paths. Don't close this list.<br />
+IMPORTANT - Settings:<br />
+- Uncheck &quot;Don't include pointers with read-only nodes&quot;<br />
+- Uncheck &quot;Addresses must be 32-bit aligned&quot;<br />
+3. Close Tibia 11, open it again, and login a player again.<br />
+4. Reattach Tibia 11 to Game Cheat, and repeat only (1) so you obtain a new (different) final address.<br />
+5. Go back to the obtained list in (2) and go Pointer scanner&gt;Rescan memory. Enter new final address. Enable Repeat rescan until stopped. Press ok to start filtering.<br />
+6. Walk a bit,change floor and do some actions with your player. Around 15 seconds should be enough to filter a lot of address.<br />
+7. Go back to the list and press &quot;Stop rescan loop&quot;. Now you should have less address.<br />
+case 7a. If they are still a lot then repeat everything from point (3)<br />
+case 7b. If the list is small (&lt;20 address) then test the shortest paths (less steps) that start at a .dll because they are usally the right ones. In some cases you always get a few valid path solutions.<br />
+8. Test the obtained path solutions in a different computer with a different windows version, in order to discard paths that depends on operative system.<br />
+<br />
+Hi,<br />
+I can't find any address. In old tibia I just:<br />
+1. Open Tibia<br />
+2. Log into the game<br />
+3. Open cheat engine and select Tibia from processess<br />
+4. Write in Cheat Engine example 3385 (ID of crown helmet) to find helmet address, next change to dark helmet and write 3844 then click next scan and I had a pointer for helmet. <br />
+<br />
+Now when I write 3385 I have huge list with addressess, when I change to dark helmet, change id to 3844 and click next scan i have no results...<br />
+<br />
+WHat im doing wrong?<br />
+anyway i can't find in chean engine &quot;IMPORTANT - Settings:<br />
+- Uncheck &quot;Don't include pointers with read-only nodes&quot;<br />
+- Uncheck &quot;Addresses must be 32-bit aligned&quot;&quot; where is it?<br />
+<br />
+<br />
+I found now address : 6FCC129A for helmet, is it correct? also I dont know what i click,cause nowi  cant' find them again lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-28-2016, 22:58</div></div><div class="posttext">You can find the address for the current session using old tactics.<br />
+However, that address will only be valid in your machine until you close Tibia.<br />
+Nowadays your goal is obtaining universal paths to obtain that dynamic address so you need to do the procedure several times [open tibia, find current address, close tibia]<br />
+until you only havew few paths remaining. Such paths should work for any future session of Tibia, in any machine.<br />
+<br />
+<br />
+And finally, answering to your last question: No, there is not a single short address in tibia 11 like that. Everything are paths now.<br />
+And in the case of the helmet, I could bet it is now part of a collection of equipment slots. You will need to search that collection start. However, it should be a static collection, so obtaining a path there is still possible. But you can expect it to be a very long path (maybe with 9, 10 or 11 steps)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dantes</div><div class="date">01-01-2018, 14:28</div></div><div class="posttext">&quot;1. Search what you want while your player is playing, using the old procedure. That is: you start a search with an known value (faster) or with unknown value, then you change something in your player, you search next, you change something, you search next... until only 1 value is remaining. You obtain a final address.&quot;<br />
+<br />
+When I try to search for any value, nothing appears, even when I enter &quot;unknown initial value&quot;. Would you help me?<br />
+(Google translator)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MerinT</div><div class="date">08-11-2018, 08:20</div></div><div class="posttext">Thank you for the useful information.The described way is very beneficial to grab the procedure.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">appsng</div><div class="date">01-20-2019, 09:52</div></div><div class="posttext">http://appsnigeria.com</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

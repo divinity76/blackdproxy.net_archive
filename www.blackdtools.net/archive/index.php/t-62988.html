@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="function, tibiaclientconnectionstatus, auxadr, public, cte_not_connected, integer, const, connected, strres, string, currentcharname, cte_game_connected, pixels, character, selection, select, readcurrentaddresspid, auxval, cte_connecting, cte_login_char_selection, connecting, characer, readcurrentcharname, qmemory_readstringpid, cstrpixels, readcurrentcharnamebyref, status, current, adrselectedcharname, debug.print, progress, tibiaclientconnectionstatusbyref, tibia, determine, selected, double, adrselecteditem_height, false, qmemory_readdoublepid, readcurrentcharnamepid, math.roundauxval" />
+	<meta name="description" content="Well, we are stuck here for now. Any extra help would be nice. 
+Goal: We need a reliable way to determine the selected row in the character list. 
+Purpose: This small &quot;stupid&quot; part is important for proxy bots, tibiacast and many other software that depends on packets.  
+  
+This is my current progress: 
+ 
+- I could not find a reliable path that always contain the selector. However, there seems to be a path that works for the first show of the character list: 
+&quot;Qt5Gui.dll&quot;+00482EE4 &gt; 20 &gt; C &gt; 58" />
+	
+	<title> Tibia 11 - Selected row in Character List - Current progress [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - Selected row in Character List - Current progress</div>
+<hr />
+<div class="pda"><a href="t-62988.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62988-Tibia-11-Selected-row-in-Character-List-Current-progress">Tibia 11 - Selected row in Character List - Current progress</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-04-2016, 10:26</div></div><div class="posttext">Well, we are stuck here for now. Any extra help would be nice.<br />
+Goal: We need a reliable way to determine the selected row in the character list.<br />
+Purpose: This small &quot;stupid&quot; part is important for proxy bots, tibiacast and many other software that depends on packets. <br />
+ <br />
+This is my current progress:<br />
+<br />
+- I could not find a reliable path that always contain the selector. However, there seems to be a path that works for the first show of the character list:<br />
+&quot;Qt5Gui.dll&quot;+00482EE4 &gt; 20 &gt; C &gt; 58 &gt; 4 &gt; F8 &gt; 418<br />
+This is not a full solution. However, this path maybe could mean something.<br />
+- In a fast look to the assembly code, it looks like the real path must end in <br />
+X &gt; 418<br />
+or<br />
+X &gt; 3DC &gt; 4 &gt; DC<br />
+Why? Because if you toggle breakpoint at<br />
+Qt5Quick.QQuickMouseEvent::y+91C0<br />
+then you can verify both paths are valid while execution is paused at that point:<br />
+[EBX+4] &gt; 3DC &gt; 4 &gt; DC<br />
+[EBX+4] &gt; 418<br />
+The problem is [EBX+4] is overwritten with trash after the execution is resumed. :(<br />
+It could be the start of a solution with the help of injection tactics. However I prefer to avoid injection for now.<br />
+<br />
+<br />
+Some related findings:<br />
+I already found a stable way to obtain character list: http://www.blackdtools.net/showthread.php?62978-Tibia-11-Collection-of-server-info-AND-character-list It does not include a way to know selection. However, I guess the selection must be somewhere near that list. We need to investigate around.<br />
+<br />
+I also found a stable way to read Tibia title after login.<br />
+adrSelectedCharName=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; C &gt; 4 &gt; 18 &gt; 38 &gt; 28<br />
+adrSelectedCharName points to a QSTRING with character name. If you are outside game then it will point to null (address FFFFFFF) or to an address containing an empty qstring &quot;&quot; <br />
+<br />
+I also found a way to pause everything in Tibia client using Cheat Engine: Memory View&gt; Debug &gt; Break &gt; Select first thread in the list &gt; OK<br />
+Pausing Tibia during char list inspection is great because other way the memory there seems to be changing a lot with each selection change. It also prevents char list window to go away because inactivity.<br />
+<br />
+More facts:<br />
+- Somewhere in the memory there seems to be 3 chaotic places that hold the selection color for each row. <br />
+F4F4F4FF = COLOR SELECTED<br />
+C0C0C0FF = COLOR FOR ROW NOT SELECTED<br />
+Search array of bytes in Cheat Engine to discover them. If we can find the structure that links all the color positions then we could obtain selection from the color.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-04-2016, 22:20</div></div><div class="posttext">A new interesting discovery today:<br />
+adrSelectedItem_currentScreenPositionY=&quot;Qt5Widgets.dll&quot; + 00401DC4 &gt; 70 &gt; 4 &gt; 68<br />
+points to a 8 bytes DOUBLE, containing the Y position of the selected row.<br />
+<br />
+More data around:<br />
+adrSelectedItem_currentScreenPositionX=&quot;Qt5Widgets .dll&quot; + 00401DC4 &gt; 70 &gt; 4 &gt; 60<br />
+adrSelectedItem_width=&quot;Qt5Widgets.dll&quot; + 00401DC4 &gt; 70 &gt; 4 &gt; a0<br />
+adrSelectedItem_height=&quot;Qt5Widgets.dll&quot; + 00401DC4 &gt; 70 &gt; 4 &gt; a8</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DiegoTV</div><div class="date">10-05-2016, 04:09</div></div><div class="posttext">With the latter you could easily find a way to figure out the SelectedIndex quite easily, don't you think?<br />
+I haven't had the time to work around it though I'll try to make some now and post a code snippet if I get it to work :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-05-2016, 10:07</div></div><div class="posttext">The only problem with the selected item is that it depends on 2 things:<br />
+- current client height: You would need to determine current client height and include it in your maths.<br />
+- popup Y position: If someone drag and move the Character Selection popup then the selected item position will change too. <br />
+<br />
+Even if you can do proper maths with everything I am afraid this solution will not work after the character list is gone.<br />
+For my proxy I need to read selected character between character selection and ingame. I know there must be a way to read current selection in any moment. Other way client would not be able to restore current selection after logout.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-09-2016, 14:35</div></div><div class="posttext">I found a solution that works for me.<br />
+This allows to check selected char exactly after user selected a char:<br />
+<br />
+adrSelectedCharName_afterCharList=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 320 &gt; 18 &gt; 60 &gt; 0<br />
+adrSelectedServerURL_afterCharList=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 320 &gt; 18 &gt; 60 &gt; 4<br />
+adrSelectedServerPORT_afterCharList=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 320 &gt; 18 &gt; 60 &gt; 8<br />
+adrSelectedServerNAME_afterCharList=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 320 &gt; 18 &gt; 60 &gt; C<br />
+<br />
+This should allow proxy bots to redirect connection to right game server.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-26-2016, 13:42</div></div><div class="posttext">Regarding your proxy - did you manage to find a bit that resembles the 'isConnected' bit from the old client? Something that verifies that a player is currently logged in</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-29-2016, 13:52</div></div><div class="posttext">For now, you can use this function to determine if it is connected:<br />
+<br />
+<br />
+<br />
+Public Const CTE_NOT_CONNECTED As Integer = 0<br />
+Public Const CTE_LOGIN_CHAR_SELECTION As Integer = 1<br />
+Public Const CTE_CONNECTING As Integer = 2<br />
+Public Const CTE_GAME_CONNECTED As Integer = 3<br />
+Public Function TibiaClientConnectionStatus(ByRef pid As Long) As Long<br />
+       Dim auxAdr As Long<br />
+       Dim auxVal As Double<br />
+       Dim pixels As Long<br />
+       Dim currentCharName As String<br />
+       currentCharName = ReadCurrentCharName(pid)<br />
+       If Not (currentCharName = &quot;&quot;) Then<br />
+           TibiaClientConnectionStatus = CTE_GAME_CONNECTED ' 3 - Game connected<br />
+           Exit Function<br />
+       End If<br />
+       auxAdr = ReadCurrentAddress(pid, adrSelectedItem_height, -1, False)<br />
+       If (auxAdr = -1) Then<br />
+           TibiaClientConnectionStatus = CTE_NOT_CONNECTED<br />
+           Exit Function<br />
+       End If<br />
+       auxVal = QMemory_ReadDouble(pid, auxAdr)<br />
+       pixels = Math.Round(auxVal)<br />
+       Select Case (pixels)<br />
+           Case 18<br />
+               TibiaClientConnectionStatus = CTE_NOT_CONNECTED ' 0 - Not connected<br />
+               Exit Function<br />
+           Case 16<br />
+               TibiaClientConnectionStatus = CTE_LOGIN_CHAR_SELECTION ' 1 - User at Character Selection<br />
+               Exit Function<br />
+           Case 100<br />
+               TibiaClientConnectionStatus = CTE_CONNECTING ' 2 - Connecting... (to characer selection or to game)<br />
+               Exit Function<br />
+           Case 14<br />
+               TibiaClientConnectionStatus = CTE_GAME_CONNECTED ' 3 - Game connected<br />
+               Exit Function<br />
+           Case Else<br />
+               Debug.Print (&quot;status code =&quot; &amp; CStr(pixels))<br />
+               TibiaClientConnectionStatus = CTE_NOT_CONNECTED<br />
+               Exit Function<br />
+       End Select<br />
+End Function<br />
+<br />
+Public Function ReadCurrentCharName(ByRef pid As Long) As String<br />
+    Dim auxAdr As Long<br />
+    Dim strRes As String<br />
+    auxAdr = ReadCurrentAddress(pid, adrSelectedCharName, -1, True)<br />
+    strRes = QMemory_ReadString(pid, auxAdr)<br />
+    ReadCurrentCharName = strRes<br />
+End Function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-30-2016, 15:21</div></div><div class="posttext">Did you ever manage to get to case 14? Being that the current character name is &quot;&quot; AND you are connected? Just wondering</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-31-2016, 22:11</div></div><div class="posttext">not, really. But that is the value you would get if you check adrSelectedItem_height when you are connected while you do not open any menu.<br />
+Maybe the first mseconds after loading might reach that case, maybe not. Anyways it does not hurt to leave it there, just in case.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

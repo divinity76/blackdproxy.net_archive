@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="004e8680, short, ds[eax+3],0, ds[eax+2],0, 004e8674, 004e8672, 004e8678, 004e8668, ds[eax+1],0, 004e866c, 004e866e, 004e867a, bytes, eax,1, 01000000, 004e8666, 004e867f, overwrite, 004e8682, eax,eax, portoffset=&amp;h30, ipaddresspointeroffset=&amp;h20, hostnamepointeroffset=&amp;h4, change, numeric, loginserverstep=&amp;h38, loginserverstartpointer=&amp;h80f31c, login, 10.11, system, problem, proxychecker=&amp;h4e8660, solved, server, 004e8660, function, eax,dword, ds[eax+20], tibia, 004e8663, tibia.004e8660guessed, detected, avoid, proxy, ds[eax],0" />
+	<meta name="description" content="All my tools are now updated, except Blackd Proxy. 
+Blackd Proxy will be a bit harder to update because they changed the login server structure. 
+ 
+Now login servers seems to be loaded from this part of the code: 
+ 
+004E8870   8B0D 1CF38000    MOV ECX,DWORD PTR DS:80F31C] 
+004E8876   8B15 20F38000    MOV EDX,DWORD PTR DS: 
+004E887C   3BCA             CMP ECX,EDX 
+004E887E   74 0D            JE SHORT Tibia.004E888D 
+004E8880   8079 32 00       CMP BYTE PTR DS:,0" />
+	
+	<title> Tibia 10.11 - New login system [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 10.11 - New login system</div>
+<hr />
+<div class="pda"><a href="t-60842.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60842-Tibia-10-11-New-login-system">Tibia 10.11 - New login system</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-23-2013, 18:11</div></div><div class="posttext">All my tools are now updated, except Blackd Proxy.<br />
+Blackd Proxy will be a bit harder to update because they changed the login server structure.<br />
+<br />
+Now login servers seems to be loaded from this part of the code:<br />
+<br />
+<br />
+004E8870   8B0D 1CF38000    MOV ECX,DWORD PTR DS:[80F31C]<br />
+004E8876   8B15 20F38000    MOV EDX,DWORD PTR DS:[80F320]<br />
+004E887C   3BCA             CMP ECX,EDX<br />
+004E887E   74 0D            JE SHORT Tibia.004E888D<br />
+004E8880   8079 32 00       CMP BYTE PTR DS:[ECX+32],0<br />
+004E8884   75 0A            JNZ SHORT Tibia.004E8890<br />
+004E8886   83C1 38          ADD ECX,38<br />
+004E8889   3BCA             CMP ECX,EDX<br />
+004E888B  ^75 F3            JNZ SHORT Tibia.004E8880<br />
+004E888D   8910             MOV DWORD PTR DS:[EAX],EDX<br />
+004E888F   C3               RETN<br />
+004E8890   890D 2CF38000    MOV DWORD PTR DS:[80F32C],ECX<br />
+004E8896   8908             MOV DWORD PTR DS:[EAX],ECX<br />
+004E8898   C3               RETN<br />
+<br />
+<br />
+In Tibia 10.11 ...<br />
+NewLoginStructPointer=&amp;H80F31C *Windows xp address<br />
+NewLoginStructDist=&amp;H38 = 56 in decimal<br />
+NewLoginStructPortStep As Integer = &amp;H2C = 44 in decimal<br />
+<br />
+Pointer points to the start of some kind of structure. In that structure, 4 bytes later, you find pointer to first tibia login server, 56 bytes later you find pointer to 2nd login server, 56 bytes later you find pointer to 3nd login server, etc (total=10 servers)<br />
+<br />
+The port (7171)  is found 44 bytes after each login pointer<br />
+<br />
+Working on it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jalomo</div><div class="date">08-23-2013, 19:55</div></div><div class="posttext">you can do it. you the best&lt;3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">miro</div><div class="date">08-23-2013, 21:03</div></div><div class="posttext">ok, thanks for info, but how to extract current server not just a list? or at least its IP...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Maches</div><div class="date">08-23-2013, 22:54</div></div><div class="posttext">I see there is some changes on charlist, cause not working for me</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jo3Bingham</div><div class="date">08-23-2013, 23:55</div></div><div class="posttext">Thanks, blackd. Also, ports are located &amp;H2C = 44 from each login server pointer.<br />
+<br />
+Psuedo-Code<br />
+<br />
+<br />
+Dim NewLoginStructPointer As Long = &amp;H80F31C <br />
+Dim NewLoginStructServerStep As Integer = &amp;H38<br />
+Dim NewLoginStructPortStep As Integer = &amp;H2C<br />
+<br />
+Dim NewLoginStructStart As Long = Memory.ReadInt32(NewLoginStructPointer) + 4<br />
+<br />
+Dim i As Integer = 0<br />
+While (i &lt; 10)<br />
+    Dim LoginServer As Long = Memory.ReadInt32(NewLoginStructStart + (i * NewLoginStructServerStep))<br />
+    <br />
+    Dim Server As String = Memory.ReadString(LoginServer)<br />
+    Dim Port As Short = Memory.ReadShort(NewLoginStructStart + ((i * NewLoginStructServerStep) + NewLoginStructPortStep)<br />
+    <br />
+    'You can now store this server/port in an array, or whatever, before going to the next one.<br />
+<br />
+    i += 1<br />
+Do<br />
+<br />
+<br />
+Port addresses are not constant, you can write over them. However, even after changing all servers and ports in memory my proxy makes my client display a &quot;server offline&quot; error with error code 0. Not sure what that's all about, haha. Hopefully you can figure it out, and if I do I'll let you know.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-24-2013, 00:09</div></div><div class="posttext">Thanks, blackd. Also, ports are located &amp;H2C = 44 from each login server pointer.<br />
+Port addresses are not constant, you can write over them. However, even after changing all servers and ports in memory my proxy makes my client display a &quot;server offline&quot; error with error code 0. Not sure what that's all about, haha. Hopefully you can figure it out, and if I do I'll let you know.<br />
+<br />
+Thank you,<br />
+Yes. I am stuck there too.<br />
+I could modify all login ips to 127.0.0.1 and all ports to my program listen port, but somehow it does not even try to connect to program. Maybe the real port address is somewhere else, or maybe there is some kind of check to avoid changes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">08-26-2013, 18:47</div></div><div class="posttext">Problem almost solved now.<br />
+<br />
+<br />
+<br />
+proxyChecker=&amp;H4E8660<br />
+LoginServerStartPointer=&amp;H80F31C<br />
+LoginServerStep=&amp;H38<br />
+HostnamePointerOffset=&amp;H4<br />
+IPAddressPointerOffset=&amp;H20<br />
+PortOffset=&amp;H30<br />
+<br />
+You have to change ip numeric part too, not only server name.<br />
+<br />
+and to avoid being detected as proxy, we just need to find the following function:<br />
+<br />
+<br />
+004E8660      8B40 20                      MOV EAX,DWORD PTR DS:[EAX+20]            ; Tibia.004E8660(guessed void)<br />
+004E8663      8038 00                      CMP BYTE PTR DS:[EAX],0<br />
+004E8666      74 18                        JE SHORT 004E8680<br />
+004E8668      8078 01 00                   CMP BYTE PTR DS:[EAX+1],0<br />
+004E866C      74 12                        JE SHORT 004E8680<br />
+004E866E      8078 02 00                   CMP BYTE PTR DS:[EAX+2],0<br />
+004E8672      74 0C                        JE SHORT 004E8680<br />
+004E8674      8078 03 00                   CMP BYTE PTR DS:[EAX+3],0<br />
+004E8678      74 06                        JE SHORT 004E8680<br />
+004E867A      B8 01000000                  MOV EAX,1<br />
+004E867F      C3                           RETN<br />
+004E8680      33C0                         XOR EAX,EAX<br />
+004E8682      C3                           RETN<br />
+<br />
+and overwrite it with bytes &amp;H8B, &amp;H40, &amp;H20, &amp;H83, &amp;H38, 0, &amp;HB8, 0, 0, 0, 0, &amp;HF, &amp;H95, &amp;HD0, &amp;HC3</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

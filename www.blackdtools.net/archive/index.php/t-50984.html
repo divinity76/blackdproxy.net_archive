@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="battlelist, creatures, creature, attack, store, string, reading, read, screen, object, findcreatures, public, adds, listbox, //find, //will, adresstoread, creatureid, addresses.battlelist_begin, //we, start, found, charname, packets, send, program, huhu, make, find, close, clues, check" />
+	<meta name="description" content="Huhu.. 
+so i'm trying to make a program that will attack creatures in my screen.. 
+I know how to send the packets to attack a creature, but for that i need the creatures' ID. and i dont know exactly how to find it. 
+ 
+from what ive read i need to read the battlelist, then check if its on my screen and then i can attack it.. or something like that? 
+ 
+this is what ive got, is it close? anyone got some clues maybe? 
+ 
+when i run this.. it only adds myself to the listbox ;)" />
+	
+	<title> Reading battlelist... [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Reading battlelist...</div>
+<hr />
+<div class="pda"><a href="t-50984.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?50984-Reading-battlelist">Reading battlelist...</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-17-2010, 23:20</div></div><div class="posttext">Huhu..<br />
+so i'm trying to make a program that will attack creatures in my screen..<br />
+I know how to send the packets to attack a creature, but for that i need the creatures' ID. and i dont know exactly how to find it.<br />
+<br />
+from what ive read i need to read the battlelist, then check if its on my screen and then i can attack it.. or something like that?<br />
+<br />
+this is what ive got, is it close? anyone got some clues maybe?<br />
+<br />
+when i run this.. it only adds myself to the listbox ;)<br />
+<br />
+<br />
+<br />
+ public string FindCreatures()<br />
+        {<br />
+<br />
+            //find creatures in battlelist<br />
+            string CharName = &quot;Not Found&quot;; //will store name of creature<br />
+            int CreatureId; // store id of the creature<br />
+            int AdressToRead = Addresses.BattleList_Begin; //we start with reading the first object in battlelist<br />
+<br />
+            for (int i = 0; i &lt;= Addresses.BattleList_Max; i++) //loop through battlelist<br />
+            {<br />
+                int temp = 0;<br />
+                //read first battlelist item found + jump to first creature + jump to the creature id<br />
+                CreatureId = Memory.ReadInt(AdressToRead + Addresses.BattleList_StepCreatures + Addresses.DistanceId);<br />
+                if (CreatureId == 0) //if it has no creature id, its not interesting for us..<br />
+                {<br />
+                    //no creature found<br />
+                }<br />
+                else //creature found<br />
+                {<br />
+                    //we read the temporary address + jump to creature + jump to invis<br />
+                    int visible = 0;<br />
+                    //read isvisible<br />
+                    visible = Memory.ReadInt(AdressToRead + Addresses.BattleList_StepCreatures + Addresses.DistanceIsVisible);<br />
+                    if (visible == 1) //it has a creature id, and is visible.. to lets read the name.<br />
+                    {<br />
+                        CharName = Memory.ReadString(AdressToRead + Addresses.BattleList_StepCreatures + Addresses.DistanceName);<br />
+                    }<br />
+                }<br />
+                AdressToRead += Addresses.BattleList_StepCreatures; //next creature<br />
+            }<br />
+            if (CharName != &quot;&quot;)<br />
+            {<br />
+                if (!listBoxBattle.Items.Contains(CharName)) //if its not already on the list<br />
+                listBoxBattle.Items.Add(CharName); //then we add it<br />
+            }<br />
+            return CharName;<br />
+        }<br />
+<br />
+<br />
+<br />
+I managed to get the program to find players/NPCs and their ids. but that does not help me very much ;(  need creatures only.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Olzone</div><div class="date">06-18-2010, 02:24</div></div><div class="posttext">Huhu..<br />
+so i'm trying to make a program that will attack creatures in my screen..<br />
+I know how to send the packets to attack a creature, but for that i need the creatures' ID. and i dont know exactly how to find it.<br />
+<br />
+from what ive read i need to read the battlelist, then check if its on my screen and then i can attack it.. or something like that?<br />
+<br />
+this is what ive got, is it close? anyone got some clues maybe?<br />
+<br />
+when i run this.. it only adds myself to the listbox ;)<br />
+<br />
+<br />
+<br />
+ public string FindCreatures()<br />
+        {<br />
+<br />
+            //find creatures in battlelist<br />
+            string CharName = &quot;Not Found&quot;; //will store name of creature<br />
+            int CreatureId; // store id of the creature<br />
+            int AdressToRead = Addresses.BattleList_Begin; //we start with reading the first object in battlelist<br />
+<br />
+            for (int i = 0; i &lt;= Addresses.BattleList_Max; i++) //loop through battlelist<br />
+            {<br />
+                int temp = 0;<br />
+                //read first battlelist item found + jump to first creature + jump to the creature id<br />
+                CreatureId = Memory.ReadInt(AdressToRead + Addresses.BattleList_StepCreatures + Addresses.DistanceId);<br />
+                if (CreatureId == 0) //if it has no creature id, its not interesting for us..<br />
+                {<br />
+                    //no creature found<br />
+                }<br />
+                else //creature found<br />
+                {<br />
+                    //we read the temporary address + jump to creature + jump to invis<br />
+                    int visible = 0;<br />
+                    //read isvisible<br />
+                    visible = Memory.ReadInt(AdressToRead + Addresses.BattleList_StepCreatures + Addresses.DistanceIsVisible);<br />
+                    if (visible == 1) //it has a creature id, and is visible.. to lets read the name.<br />
+                    {<br />
+                        CharName = Memory.ReadString(AdressToRead + Addresses.BattleList_StepCreatures + Addresses.DistanceName);<br />
+                    }<br />
+                }<br />
+                AdressToRead += Addresses.BattleList_StepCreatures; //next creature<br />
+            }<br />
+            if (CharName != &quot;&quot;)<br />
+            {<br />
+                if (!listBoxBattle.Items.Contains(CharName)) //if its not already on the list<br />
+                listBoxBattle.Items.Add(CharName); //then we add it<br />
+            }<br />
+            return CharName;<br />
+        }<br />
+<br />
+<br />
+<br />
+I managed to get the program to find players/NPCs and their ids. but that does not help me very much ;(  need creatures only.<br />
+<br />
+<br />
+Had the same problem, the battlelist adresses must be wrong because you only find some of the stuffs who is in the battlelist i had the sameproblem i had to make 2 separate adresses for both start and end to find my char and monsters..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-18-2010, 02:51</div></div><div class="posttext">Had the same problem, the battlelist adresses must be wrong because you only find some of the stuffs who is in the battlelist i had the sameproblem i had to make 2 separate adresses for both start and end to find my char and monsters..<br />
+<br />
+what do you mean with 2 seperate addresses?<br />
+atm i got<br />
+<br />
+<br />
+<br />
+BattleList_Begin = 0x0049A07C;<br />
+BattleList_End = BattleList_Begin + BattleList_StepCreatures * BattleList_Max;<br />
+<br />
+anyway, do you know how to find each of those? so i can look them all up to make sure they have the correct values.<br />
+<br />
+now im using:<br />
+BattleList_StepCreatures = 0xA8; //168<br />
+BattleList_Dist = 156;<br />
+BattleList_Max = 250;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PlzNoKil</div><div class="date">06-18-2010, 05:13</div></div><div class="posttext">dont help him, he will only cheat on classictibia ;(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Olzone</div><div class="date">06-18-2010, 14:01</div></div><div class="posttext">Does anyone have BattleList End?<br />
+No not this battlelist * steps etc.. wont work in my application i get overflow so i need a adress example from last<br />
+<br />
+BattleListBegin = &amp;H635F70 <br />
+ BattleListEnd = &amp;H63FF9C <br />
+<br />
+You could just calculate it yourself if you have Battlelist start adress.<br />
+<br />
+0x63D350 + (0xA8 * 250)<br />
+<br />
+0xA8 * 250 is 0xA410 (42000)<br />
+<br />
+So, just add that to battlelist start:<br />
+<br />
+0x63D350 + 0xA410 = 0x647760<br />
+<br />
+There you go.<br />
+<br />
+<br />
+<br />
+[posted from tpforums] myself asking and got answer from korv</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">06-18-2010, 14:47</div></div><div class="posttext">Vb.net<br />
+<br />
+<br />
+  For i As Integer = Addresses.BattleList.Start To Addresses.BattleList.End Step Addresses.BattleList.StepCreatures<br />
+                If client.Memory.ReadByte(i + Addresses.Creature.DistanceIsVisible) = 1 Then<br />
+                    MsgBox(client.Memory.ReadString(i + 4))<br />
+                End If<br />
+            Next<br />
+<br />
+C#<br />
+<br />
+<br />
+for (int i = Addresses.BattleList.Start; i &lt;= Addresses.BattleList.End; i += Addresses.BattleList.StepCreatures) {<br />
+	if (client.Memory.ReadByte(i + Addresses.Creature.DistanceIsVisible) == 1) {<br />
+		Messagebox.Show(client.Memory.ReadString(i + 4));<br />
+	}<br />
+}<br />
+<br />
+<br />
+<br />
+Stepcreatures = &amp;HA8<br />
+maxcreatuers = 250<br />
+BlistEnds = bliststart +(stepcreatuers * maxcreatures)<br />
+<br />
+<br />
+<br />
+<br />
+IF you are doing this for classic remember the steps is not the same and  max creatures is not the same either. This is only for latest tibia version 8.57</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-18-2010, 15:32</div></div><div class="posttext">@up<br />
+<br />
+thanks a lot,<br />
+anyways, last question:<br />
+could you point me in the right direction how i could find maxCreatures and stepCreatures?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">06-18-2010, 15:44</div></div><div class="posttext">look at battlelist loops in the client with ollyDBG and u should find them</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-18-2010, 20:20</div></div><div class="posttext">look at battlelist loops in the client with ollyDBG and u should find them<br />
+<br />
+i managed to find out that StepCreature = 156,<br />
+<br />
+i did some manual searching with TSearch ;&gt;<br />
+<br />
+since im not that skilled with Ollydbg<br />
+anyways, how to find out maxcreatures on battlelist?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Olzone</div><div class="date">06-18-2010, 23:32</div></div><div class="posttext">latest tibia version:<br />
+<br />
+<br />
+Public Enum Distance<br />
+    IDDistance = 0<br />
+    NameDistance = 4<br />
+    XDistance = 36<br />
+    YDistance = 40<br />
+    ZDistance = 44<br />
+    WalkingDistance = 76<br />
+    DirectionDistance = 80<br />
+    OutfitIDDistance = 96<br />
+    HeadColorDistance = 100<br />
+    BodyColorDistance = 104<br />
+    LegsColorDistance = 108<br />
+    FeetColorDistance = 112<br />
+    AddonsDistance = 116<br />
+    LightDistance = 120<br />
+    LightColorDistance = 124<br />
+    LightPatternDistance = 127<br />
+    BlackSquareDistance = 132<br />
+    HPDistance = 136<br />
+    WalkSpeedDistance = 140<br />
+    VisibleDistance = 144<br />
+    SkullTypeDistance = 148<br />
+    PartyTypeDistance = 152<br />
+    SizeDistance = 168<br />
+    Max = 250<br />
+End Enum</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-19-2010, 00:05</div></div><div class="posttext">Vb.net<br />
+<br />
+<br />
+  For i As Integer = Addresses.BattleList.Start To Addresses.BattleList.End Step Addresses.BattleList.StepCreatures<br />
+                If client.Memory.ReadByte(i + Addresses.Creature.DistanceIsVisible) = 1 Then<br />
+                    MsgBox(client.Memory.ReadString(i + 4))<br />
+                End If<br />
+            Next<br />
+<br />
+C#<br />
+<br />
+<br />
+for (int i = Addresses.BattleList.Start; i &lt;= Addresses.BattleList.End; i += Addresses.BattleList.StepCreatures) {<br />
+	if (client.Memory.ReadByte(i + Addresses.Creature.DistanceIsVisible) == 1) {<br />
+		Messagebox.Show(client.Memory.ReadString(i + 4));<br />
+	}<br />
+}<br />
+<br />
+<br />
+<br />
+Stepcreatures = &amp;HA8<br />
+maxcreatuers = 250<br />
+BlistEnds = bliststart +(stepcreatuers * maxcreatures)<br />
+<br />
+<br />
+<br />
+<br />
+IF you are doing this for classic remember the steps is not the same and  max creatures is not the same either. This is only for latest tibia version 8.57<br />
+<br />
+<br />
+im now sure that all addresses are right,<br />
+it might be my ReadByte function that isnt working as it should, could you post yours?<br />
+i made it myself thats why its probably bugged heheh xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">06-20-2010, 02:22</div></div><div class="posttext">Public Function Memory_ReadByte(windowHwnd As Long, Address As Long) As Byte<br />
+  <br />
+   ' Declare some variables we need<br />
+   Dim PID As Long         ' Used to hold the Process Id<br />
+   Dim phandle As Long     ' Holds the Process Handle<br />
+   Dim valbuffer As Byte   ' Byte<br />
+    <br />
+   ' First get a handle to the &quot;game&quot; window<br />
+   If (windowHwnd = 0) Then Exit Function<br />
+   <br />
+   ' We can now get the pid<br />
+   GetWindowThreadProcessId windowHwnd, PID<br />
+   <br />
+   ' Use the pid to get a Process Handle<br />
+   phandle = OpenProcess(PROCESS_VM_READ, False, PID)<br />
+   If (phandle = 0) Then Exit Function<br />
+   <br />
+   ' Read Long<br />
+   ReadProcessMemory phandle, Address, valbuffer, 1, 0&amp;<br />
+       <br />
+   ' Return<br />
+   Memory_ReadByte = valbuffer<br />
+   <br />
+   ' Close the Process Handle<br />
+   CloseHandle phandle<br />
+  <br />
+End Function<br />
+<br />
+<br />
+thats the one i use, its from tpforums</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-21-2010, 01:52</div></div><div class="posttext">latest tibia version:<br />
+<br />
+<br />
+Public Enum Distance<br />
+    IDDistance = 0<br />
+    NameDistance = 4<br />
+    XDistance = 36<br />
+    YDistance = 40<br />
+    ZDistance = 44<br />
+    WalkingDistance = 76<br />
+    DirectionDistance = 80<br />
+    OutfitIDDistance = 96<br />
+    HeadColorDistance = 100<br />
+    BodyColorDistance = 104<br />
+    LegsColorDistance = 108<br />
+    FeetColorDistance = 112<br />
+    AddonsDistance = 116<br />
+    LightDistance = 120<br />
+    LightColorDistance = 124<br />
+    LightPatternDistance = 127<br />
+    BlackSquareDistance = 132<br />
+    HPDistance = 136<br />
+    WalkSpeedDistance = 140<br />
+    VisibleDistance = 144<br />
+    SkullTypeDistance = 148<br />
+    PartyTypeDistance = 152<br />
+    SizeDistance = 168<br />
+    Max = 250<br />
+End Enum<br />
+<br />
+thx but this is for an older version,<br />
+i already solved it anyway!<br />
+cavebot _/<br />
+<br />
+currently the features sux tho,<br />
+it can only follow waypoints on one floor, and attack creatures. But as it seems now he is just hitting random creatures, like 1 hit each rotworm lol.<br />
+trying to solve that then im gonna have to fix looting ;&gt;<br />
+<br />
+thanks everyone for the help ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-21-2010, 02:14</div></div><div class="posttext">dunno what happend, looks like most post just dissapeared<br />
+<br />
+anyway, its working now, thanks everyone for the help :P<br />
+<br />
+i've got another question tho, instead of just opening new threads ill ask here.<br />
+<br />
+atm im using a while loop to keep attacking the creature until it dies, but this freezez the whole program.<br />
+anyone got a nice way to avoid that?<br />
+<br />
+edit: didnt saw there was a second page on the thread -.- hrhr</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">06-26-2010, 20:32</div></div><div class="posttext">dunno what happend, looks like most post just dissapeared<br />
+<br />
+anyway, its working now, thanks everyone for the help :P<br />
+<br />
+i've got another question tho, instead of just opening new threads ill ask here.<br />
+<br />
+atm im using a while loop to keep attacking the creature until it dies, but this freezez the whole program.<br />
+anyone got a nice way to avoid that?<br />
+<br />
+edit: didnt saw there was a second page on the thread -.- hrhr<br />
+<br />
+my bot checks the target for its HP% and isVisible properties (depending on if it's cavebot or trainer). if you want it to loot a monster, then make a loop that reads the isVisible and start looting when it returns 0<br />
+<br />
+also, you should look into multi-threading, it will solve your issues with freezing :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">06-30-2010, 07:32</div></div><div class="posttext">dunno what happend, looks like most post just dissapeared<br />
+<br />
+anyway, its working now, thanks everyone for the help :P<br />
+<br />
+i've got another question tho, instead of just opening new threads ill ask here.<br />
+<br />
+atm im using a while loop to keep attacking the creature until it dies, but this freezez the whole program.<br />
+anyone got a nice way to avoid that?<br />
+<br />
+edit: didnt saw there was a second page on the thread -.- hrhr<br />
+<br />
+You should use timers instead of loops while attacking, multithreading is however the best way of doing it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-30-2010, 13:36</div></div><div class="posttext">the project is already closed but thanks for the help everyone.<br />
+i did read a lot about multithreading, if i get to work on this again thats probably how it will be done</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

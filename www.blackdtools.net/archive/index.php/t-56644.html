@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="today, knight, rafeq, oski1233, depositer, potion, refill" />
+	<meta name="description" content="Enjoy! ;3 
+ 
+setFriendly 
+setFollow 
+setLoot D7 0B 
+setLoot D4 0B 
+setLoot 33 28 
+setLoot D3 0B 
+setLoot CA 2C 
+setLoot CB 2C" />
+	
+	<title> &quot;FACC Tomb&quot; + cash depositer and potion refill  - by oski1233 &amp; Rafeq [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  &quot;FACC Tomb&quot; + cash depositer and potion refill  - by oski1233 &amp; Rafeq</div>
+<hr />
+<div class="pda"><a href="t-56644.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56644-quot-FACC-Tomb-quot-cash-depositer-and-potion-refill-by-oski1233-amp-Rafeq">&quot;FACC Tomb&quot; + cash depositer and potion refill  - by oski1233 &amp; Rafeq</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">rafek1241</div><div class="date">11-01-2011, 06:19</div></div><div class="posttext">Enjoy! ;3<br />
+<br />
+<br />
+setFriendly<br />
+setFollow<br />
+setLoot D7 0B<br />
+setLoot D4 0B<br />
+setLoot 33 28<br />
+setLoot D3 0B<br />
+setLoot CA 2C<br />
+setLoot CB 2C<br />
+setLoot 0A 17<br />
+setLoot F8 2C<br />
+setLoot 19 17<br />
+setChaoticMovesON<br />
+setBot AutoEatFood=1<br />
+setLootDistance 99<br />
+setBot OldLootMode=1<br />
+setBot MINDELAYTOLOOT=1<br />
+setMeleeKill ghoul<br />
+setMeleeKill skeleton<br />
+setMeleeKill dragon<br />
+setAvoidFront dragon<br />
+setMeleeKill skeleton warrior<br />
+setMeleeKill crypt shambler<br />
+setMeleeKill wolf<br />
+setMeleeKill bonelord<br />
+setMeleeKill mummy<br />
+setMeleeKill wolf<br />
+setMeleeKill cyclops<br />
+setMeleeKill cyclops smith<br />
+move 32389,32003,12<br />
+move 32381,31996,12<br />
+move 32373,31986,12<br />
+move 32371,32002,12<br />
+move 32361,32000,12<br />
+move 32375,32010,12<br />
+IfTrue ($mycap$#number&lt;=#40000) Goto $nlineoflabel:deposit$<br />
+IfFewItemsGoto 0A 01,20,$nlineoflabel:deposit$<br />
+move 32368,32022,12<br />
+move 32376,32028,12<br />
+move 32374,32006,12<br />
+move 32386,31988,12<br />
+move 32408,31997,12<br />
+move 32418,32004,12<br />
+move 32440,32006,12<br />
+IfTrue ($mycap$#number&lt;=#40000) Goto $nlineoflabel:deposit$<br />
+IfFewItemsGoto 0A 01,20,$nlineoflabel:deposit$<br />
+move 32444,32018,12<br />
+move 32413,32005,12<br />
+move 32391,31978,12<br />
+move 32371,31967,12<br />
+move 32360,31968,12<br />
+IfTrue ($mycap$#number&lt;=#40000) Goto $nlineoflabel:deposit$<br />
+IfFewItemsGoto 0A 01,20,$nlineoflabel:deposit$<br />
+move 32389,31986,12<br />
+move 32390,32005,12<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 32391,32006,12<br />
+move 32391,32007,11<br />
+move 32391,32011,11<br />
+move 32391,32012,10<br />
+move 32405,32033,10<br />
+move 32405,32034,9<br />
+move 32418,32041,9<br />
+move 32418,32042,8<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32105,7<br />
+move 32430,32142,7<br />
+move 32369,32175,7<br />
+move 32346,32214,7<br />
+move 32344,32229,7<br />
+sayMessage hi<br />
+waitX 3<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva _potionid = 0A 01<br />
+fastExiva _manas = 60<br />
+fastExiva _idcost = 45<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_potionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayInTrade withdraw $_manacost$<br />
+move 32353,32216,7<br />
+move 32399,32220,7<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade vial<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+SayInTrade good bye<br />
+move 32399,32220,7<br />
+move 32346,32226,7<br />
+move 32364,32214,7<br />
+move 32368,32182,7<br />
+move 32443,32130,7<br />
+move 32449,32105,7<br />
+move 32449,32069,7<br />
+move 32447,32069,8<br />
+move 32428,32064,8<br />
+move 32418,32042,8<br />
+move 32418,32041,9<br />
+move 32405,32034,9<br />
+move 32405,32033,10<br />
+move 32391,32012,10<br />
+move 32391,32010,11<br />
+move 32391,32006,12<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lorodara</div><div class="date">11-16-2011, 03:40</div></div><div class="posttext">where dis at?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Patrick</div><div class="date">01-19-2012, 20:08</div></div><div class="posttext">I will test it today on my 70 knight</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BoogerKid</div><div class="date">07-15-2012, 23:25</div></div><div class="posttext">where is this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">moontrix</div><div class="date">10-11-2012, 00:19</div></div><div class="posttext">what items it takes?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Scymork</div><div class="date">10-14-2012, 15:01</div></div><div class="posttext">I'll try it out whit 18lv pall 52-38 skills...:D</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

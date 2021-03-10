@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, write, dices, based, effect, ctrl~clicking, backpack, number, ideas, hotkeys" />
+	<meta name="description" content="How to write a script that uses a dice or another item from your backpack? I.e. the same effect as Ctrl~Clicking the item. Is it possible at all? I would just use hotkeys, but the dice item ID changes every time you roll a new number. Any ideas? 
+ 
+Here are the item IDs of the different dices: 
+ 
+Dice (1): A0 16 
+Dice (2): A1 16 
+Dice (3): A2 16 
+Dice (4): A3 16 
+Dice (5): A4 16 
+Dice (6): A5 16" />
+	
+	<title> How to write a script that uses a dice? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  How to write a script that uses a dice?</div>
+<hr />
+<div class="pda"><a href="t-58829.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58829-How-to-write-a-script-that-uses-a-dice">How to write a script that uses a dice?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">08-24-2012, 14:35</div></div><div class="posttext">How to write a script that uses a dice or another item from your backpack? I.e. the same effect as Ctrl~Clicking the item. Is it possible at all? I would just use hotkeys, but the dice item ID changes every time you roll a new number. Any ideas?<br />
+<br />
+Here are the item IDs of the different dices:<br />
+<br />
+Dice (1): A0 16<br />
+Dice (2): A1 16<br />
+Dice (3): A2 16<br />
+Dice (4): A3 16<br />
+Dice (5): A4 16<br />
+Dice (6): A5 16<br />
+<br />
+All I need to know is how to use an item based on its hex code. Thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tytrydsdf</div><div class="date">08-25-2012, 02:03</div></div><div class="posttext">conditional event:<br />
+<br />
+$countitems:A0 16$<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva &gt; 0A 00 82 FF FF 40 00 00 A0 16 00 00<br />
+$countitems:A1 16$<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva &gt; 0A 00 82 FF FF 40 00 00 A1 16 00 00<br />
+$countitems:A2 16$<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva &gt; 0A 00 82 FF FF 40 00 00 A2 16 00 00<br />
+$countitems:A3 16$<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva &gt; 0A 00 82 FF FF 40 00 00 A3 16 00 00<br />
+$countitems:A4 16$<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva &gt; 0A 00 82 FF FF 40 00 00 A4 16 00 00<br />
+$countitems:A5 16$<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva &gt; 0A 00 82 FF FF 40 00 00 A5 16 00 00<br />
+$countitems:A6 16$<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva &gt; 0A 00 82 FF FF 40 00 00 A6 16 00 00<br />
+<br />
+Dice must be in 1st backpack opened by you, and in 1st sqm of backpack (north west corner)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tytrydsdf</div><div class="date">08-25-2012, 02:10</div></div><div class="posttext">Mmm and if you want to use hotkeys just add dice 1 at F1, dice 2 at F2, dice 3 at F3... And press all hotkeys at once?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boget</div><div class="date">08-25-2012, 14:39</div></div><div class="posttext">Awesome, thank you!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

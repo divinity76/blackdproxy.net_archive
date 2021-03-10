@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="lngtibiapid, mymaxmana, result, tmplong, valuexor, function, similar, write, witch, xorvalue, points, 12906, adrmymaxmana, memory, maxhp, understand, convert, public, forum, readmaxmanabyval, memory_readlongadrconnected, codes, reading, found, source, memory_readlongadrmymaxmana, python, problem, tibiaversionlong, memory_readlongadrxor, readmaxmana, language" />
+	<meta name="description" content="I have found some function in source codes on this forum 
+  
+ 
+Public Function ReadMaxMana(ByVal lngTibiaPID As Long) As Long 
+    Dim tmpLong As Long 
+    Dim valueXOR As Long 
+    Dim result As Long 
+    Dim MyMaxMana As Long 
+ 
+    result = -1" />
+	
+	<title> Problem with reading mana value [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Problem with reading mana value</div>
+<hr />
+<div class="pda"><a href="t-61262.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61262-Problem-with-reading-mana-value">Problem with reading mana value</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">gadery</div><div class="date">11-15-2013, 01:39</div></div><div class="posttext">I have found some function in source codes on this forum<br />
+ <br />
+<br />
+<br />
+Public Function ReadMaxMana(ByVal lngTibiaPID As Long) As Long<br />
+    Dim tmpLong As Long<br />
+    Dim valueXOR As Long<br />
+    Dim result As Long<br />
+    Dim MyMaxMana As Long<br />
+<br />
+    result = -1<br />
+<br />
+    If lngTibiaPID &lt;&gt; 0 Then<br />
+        tmpLong = Memory_ReadLong(adrConnected, lngTibiaPID)<br />
+        If tmpLong = 8 Then<br />
+            MyMaxMana = Memory_ReadLong(adrMyMaxMana, lngTibiaPID)<br />
+            If TibiaVersionLong &gt;= 943 Then<br />
+                valueXOR = Memory_ReadLong(adrXOR, lngTibiaPID)<br />
+                MyMaxMana = valueXOR Xor MyMaxMana<br />
+                result = MyMaxMana<br />
+            End If<br />
+        End If<br />
+    End If<br />
+<br />
+    ReadMaxMana = result<br />
+<br />
+End Function<br />
+<br />
+<br />
+What language is this? It's similar to python but I never used it and I'm not sure. I don't understand what does &quot;XOR&quot; made. I want write similar code to read mp and hp value in c++ and I don't know how to convert value from adrMyMaxMana etc.<br />
+<br />
+In my memory in cell witch maxHp i have now 12906 and 9 in xorValue it should get me 395 Heat Points.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blade</div><div class="date">11-15-2013, 19:17</div></div><div class="posttext">All of blackd proxy is coded in Visual Basic 6 with possible a little bit or VB.NET I know for the majority of it though its VB6</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

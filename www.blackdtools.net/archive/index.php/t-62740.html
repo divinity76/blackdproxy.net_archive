@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="connect, succes, 137517927980753189208357188562282582262668806267970631572261580135329395834215789414469176665946388480466559314812455711263984931077050830014324733720284684029099823954196642189399518763642791205876995442272270142543471177440333581229848387922330194602964970217156516505215151373661178216214996195180102959201, compile, deeclaration, tested, updatersa, something?i, change, otserverrsakey, blackd, otserve, const, ublic, waropolis.no-ip.org, esteps, inject, string" />
+	<meta name="description" content="I set the blackd with ip OTServ but he did not let me connect with otserve! 
+can someone help me?? 
+ 
+ip : highexp.eu 
+ 
+10.76" />
+	
+	<title> I can not connect the otserve with blackd! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-95.html">OT servers</a> &gt;  I can not connect the otserve with blackd!</div>
+<hr />
+<div class="pda"><a href="t-62740.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62740-I-can-not-connect-the-otserve-with-blackd!">I can not connect the otserve with blackd!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">bsdailha</div><div class="date">03-19-2016, 02:21</div></div><div class="posttext">I set the blackd with ip OTServ but he did not let me connect with otserve!<br />
+can someone help me??<br />
+<br />
+ip : highexp.eu<br />
+<br />
+10.76</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">03-19-2016, 05:08</div></div><div class="posttext">Go to Proxy &gt; forward to OT &gt; enter OTs IP and port &gt; check all 3 options &gt; put OTs IP again on force login server.<br />
+<br />
+Test to see if it works.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bsdailha</div><div class="date">03-19-2016, 08:13</div></div><div class="posttext">I tried but did not work !!<br />
+God had locked himself bot client can not connect using IP otland !!<br />
+but they managed to break down the customer to make the bots pick up again deal with all but the blackd not work ¬¬<br />
+<br />
+I'll post the client tries to make, please tell me, how?<br />
+<br />
+https://mega.nz/#F!g9BzxZLb!IXRRVm_5TTV_c6bX3R1uwA<br />
+<br />
+<br />
+possible ip:<br />
+<br />
+forgotten.no-ip.org<br />
+highexp.eu<br />
+188.165.229.93<br />
+<br />
+Version: 10.76<br />
+<br />
+if even this version: (</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">03-19-2016, 16:59</div></div><div class="posttext">They use a custom client with a custom login protocl - <br />
+<br />
+you must reverse-engineer the login protocl used by highexp.eu then patch the blackd proxy source code to match the custom protocol - this may be very difficult, not for the faint of heart, so to speak :p<br />
+<br />
+- if you're lucky though, they merely changed the encryption keys. that's easy to patch, and indeed they use a custom RSA encryption key, &quot;13146904782324295394727183831500531303872348235911 60904321850610994950530421522584568082718058011218 77260432000307441697122963935205403345798421436352 15511866558075331708844673356368689217573532925210 92185242349394202170459886069740561271111457992918 31491301065152044360540623060663087830272779778816 065034131&quot;<br />
+<br />
+make a custom BlackD with patching the OTserverRSAkey in https://github.com/blackdtools/Blackd-Proxy-CLASSIC/blob/master/modRSA.bas#L9<br />
+<br />
+there is a compiling tutorial here http://www.blackdtools.net/showthread.php?62649-(Tutorial)-How-to-compile-BlackD-Proxy-from-source-(incl-Win-7-x64)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bsdailha</div><div class="date">03-20-2016, 19:49</div></div><div class="posttext">before the version 9.83 the same thing happened they just changed the config.ini by another comtivel with blackd and run however have no programming knowledge and do not know to do this you ,could please do ?<br />
+<br />
+<br />
+<br />
+config.ini 9.83<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+[Proxy]<br />
+; -------------------------------------<br />
+; IMPORTANT: if configPath is defined<br />
+; then the all settings here will be ignored<br />
+; and BlackdProxy will read all from that other path.<br />
+; Example :$statusbit:4$<br />
+#number=#<br />
+0<br />
+0<br />
+0<br />
+1<br />
+Utamo vita<br />
+; configPath=config760 <br />
+; -------------------------------------<br />
+configPath=config983<br />
+TibiaVersion=9.83<br />
+MAXCLIENTS=5<br />
+<br />
+FirstExecute=FALSE<br />
+ForwardOption=1<br />
+ShowAdvancedOptions=1<br />
+<br />
+; GmStartWithThis3 redefine first 3 characters of a gm name for tests<br />
+; for example to give alarm with something that start <br />
+; with blackd, you could set it this way:<br />
+; GmStartWithThis3=bla-<br />
+GmStartWithThis3=gm -<br />
+UseCrackd=1<br />
+LoginMethod=1<br />
+MAXTILEIDLISTSIZE=50<br />
+NextScreenshotNumber=1<br />
+[Cheats]<br />
+MapClickOption=4<br />
+LogoutIfDangerAtStart=0<br />
+RevealInvis=1<br />
+ChangeLight=1<br />
+AutoHealEnabled=1<br />
+AutoChangePKHeal=1<br />
+AutoVitaEnabled=0<br />
+AcceptSDorder=0<br />
+SDorder=fireSDnow<br />
+ColorEffects=0<br />
+LightPower=15<br />
+LowHPforAutoHeal=63<br />
+LowHPforAutoVita=70<br />
+UHretry=100<br />
+LockOnMyFloor=1<br />
+MapOnTop=1<br />
+MapUpdateIntervalInMs=1000<br />
+CheatsEnabled=1<br />
+OrderType=5<br />
+UHalarmEnabled=1<br />
+LowUHforAlarm=5<br />
+TitleExp=1<br />
+chkAutoGratz=1<br />
+txtExuraVita=exura vita<br />
+chkAutorelog=0<br />
+txtExuraVitaMana=160<br />
+ExivaExpPlace=19 : white center<br />
+txtExivaExpFormat=You need $expleft$ exp$lf$for level $nextlevel$$lf$Average session speed:$lf$$exph$ exp/h$lf$Estimated time left for level up:$lf$$timeleft$$lf$Played this session:$lf$$played$$lf$Gained this session:$lf$$expgained$ exp<br />
+tibiaTittleFormat=$charactername$ - $expleft$ exp to lv $nextlevel$ - $exph$ exp/h<br />
+BlueAuraDelay=300<br />
+RelogBackpacks=1<br />
+chkProtectedShots=1<br />
+chkGmMessagesPauseAll=1<br />
+TimerConditionTick=300<br />
+[AdvancedProxyOptions]<br />
+LocalLoginUseProxy=1<br />
+LocalGameUseProxy=1<br />
+ListenLoginPort=15000<br />
+ListenGamePort=16000<br />
+<br />
+MyPriorityID=4<br />
+TibiaPriorityID=2<br />
+<br />
+[Log]<br />
+MaxLogBuffer=30000<br />
+MaxHexLines=3000<br />
+LogFullAction=1<br />
+LogFile=log.txt<br />
+AutoSelectHexAscii=1<br />
+HideHexLogIfLogDisabled=1<br />
+<br />
+<br />
+[MemoryAddresses]<br />
+; For Tibia 9.0 and below you must SET useDynamicOffset=no<br />
+useDynamicOffset=yes<br />
+<br />
+<br />
+multiclientByte1=&amp;H90<br />
+multiclientByte2=&amp;H90<br />
+<br />
+tibiaclassname=TibiaClient<br />
+NumberOfLoginServers=10<br />
+PREFEREDLOGINPORT=7171<br />
+HIGHEST_BP_ID=15<br />
+MAXDATTILES=20000<br />
+<br />
+serverLogoutMessage=There was no variation in your behaviour for 15 minutes. You will be disconnected in one minute if there is no change in your actions until then.<br />
+<br />
+; [[[[[[[[[[[[[[[[[[[[[[[[[[[<br />
+; BEGIN AUTOMATIC UPDATE ZONE<br />
+tibiaModuleRegionSize=&amp;H2F9000<br />
+MemLoginServer1=&amp;H7BA6F8<br />
+MemLoginServer2=&amp;H7BA768<br />
+MemLoginServer3=&amp;H7BA7D8<br />
+MemLoginServer4=&amp;H7BA848<br />
+MemLoginServer5=&amp;H7BA8B8<br />
+MemLoginServer6=&amp;H7BA928<br />
+MemLoginServer7=&amp;H7BA998<br />
+MemLoginServer8=&amp;H7BAA08<br />
+MemLoginServer9=&amp;H7BAA78<br />
+MemLoginServer10=&amp;H7BAAE8<br />
+MemPortLoginServer1=&amp;H7BA75C<br />
+MemPortLoginServer2=&amp;H7BA7CC<br />
+MemPortLoginServer3=&amp;H7BA83C<br />
+MemPortLoginServer4=&amp;H7BA8AC<br />
+MemPortLoginServer5=&amp;H7BA91C<br />
+MemPortLoginServer6=&amp;H7BA98C<br />
+MemPortLoginServer7=&amp;H7BA9FC<br />
+MemPortLoginServer8=&amp;H7BAA6C<br />
+MemPortLoginServer9=&amp;H7BAADC<br />
+MemPortLoginServer10=&amp;H7BAB4C<br />
+adrMulticlient=&amp;H53462E<br />
+PLAYER_Z=&amp;H987EB0<br />
+LEVELSPY_NOP=&amp;H4F7C00<br />
+LEVELSPY_ABOVE=&amp;H4F7BFC<br />
+LEVELSPY_BELOW=&amp;H4F7C04<br />
+LIGHT_NOP=&amp;H517C79<br />
+LIGHT_AMOUNT=&amp;H517C7E<br />
+MAP_POINTER_ADDR=&amp;H9DE6AC<br />
+OFFSET_POINTER_ADDR=&amp;H9DE6C8<br />
+adrConnectionKey=&amp;H7B2110<br />
+adrXOR=&amp;H7BA090<br />
+adrMyHP=&amp;H950000<br />
+adrMyMaxHP=&amp;H987E9C<br />
+adrMyMana=&amp;H7BA0E4<br />
+adrMyMaxMana=&amp;H7BA094<br />
+adrMySoul=&amp;H7BA0D0<br />
+adrNameStart=&amp;H950008<br />
+adrNChar=&amp;H950008<br />
+adrNum=&amp;H987EA4<br />
+adrXPos=&amp;H987EA8<br />
+adrYPos=&amp;H987EAC<br />
+adrZPos=&amp;H987EB0<br />
+adrConnected=&amp;H7C3E98<br />
+RedSquare=&amp;H7BA0E0<br />
+adrLastPacket=&amp;H7C0F7A<br />
+adrCharListPtr=&amp;H94CE98<br />
+adrCharListPtrEND=&amp;H94CE9C<br />
+adrSelectedCharIndex=&amp;H94CF04<br />
+adrXgo=&amp;H987EA0<br />
+adrYgo=&amp;H987E98<br />
+adrZgo=&amp;H950004<br />
+LAST_BATTLELISTPOS=1299<br />
+CharDist=&amp;HB0<br />
+adrGo=&amp;H950058<br />
+adrPointerToInternalFPSminusH5D=&amp;H99A0CC<br />
+adrNumberOfAttackClick=&amp;H9D7FBC<br />
+; ]]]]]]]]]]]]]]]]]]]]]]]]]]]<br />
+; END - AUTOMATIC UPDATE ZONE<br />
+<br />
+; Rarely gets updated:<br />
+SpeedDist=&amp;H8C<br />
+NameDist=&amp;H4<br />
+OutfitDist=&amp;H60<br />
+<br />
+<br />
+; NO CHANGES<br />
+; adrInternalFPS should not be updated. Only for Tibia 7.6 !<br />
+<br />
+adrInternalFPS=&amp;H5F6DF5<br />
+<br />
+TibiaExePath=E:\Arquivos de programas\Tibia\<br />
+;ignored:<br />
+adrOutfit=&amp;H950068<br />
+trueLoginServer1=login01.tibia.com<br />
+trueLoginServer2=login02.tibia.com<br />
+trueLoginServer3=login03.tibia.com<br />
+trueLoginServer4=login04.tibia.com<br />
+trueLoginServer5=login05.tibia.com<br />
+trueLoginServer6=tibia01.cipsoft.com<br />
+trueLoginServer7=tibia02.cipsoft.com<br />
+trueLoginServer8=tibia03.cipsoft.com<br />
+trueLoginServer9=tibia04.cipsoft.com<br />
+trueLoginServer10=tibia05.cipsoft.com<br />
+PREFEREDLOGINSERVER=login01.tibia.com<br />
+trueLoginPort1=7171<br />
+trueLoginPort2=7171<br />
+trueLoginPort3=7171<br />
+trueLoginPort4=7171<br />
+trueLoginPort5=7171<br />
+trueLoginPort6=7171<br />
+trueLoginPort7=7171<br />
+trueLoginPort8=7171<br />
+trueLoginPort9=7171<br />
+trueLoginPort10=7171<br />
+<br />
+<br />
+[Cavebot]<br />
+NewAutohealForPKattack=75<br />
+TimerInterval=300<br />
+CteMoveDelay=700<br />
+TimeToGiveTrapAlarm=45000<br />
+SetVeryFriendly_NOATTACKTIMER_ms=10000<br />
+AllowRepositionAtStart=1<br />
+BlockOption=1<br />
+MAX_LOCKWAIT=100000<br />
+[Runemaker]<br />
+ChkDangerSound=1<br />
+ChkCloseSound=1<br />
+[Tools]<br />
+InspectTileIDs=0<br />
+[tileIDs]<br />
+tileID_Blank=4B 0C<br />
+tileID_SD=97 0D<br />
+tileID_HMM=97 0D<br />
+tileID_Explosion=80 0C<br />
+tileID_IH=70 0C<br />
+tileID_UH=70 0C<br />
+tileID_Bag=25 0B<br />
+tileID_Backpack=36 0B<br />
+tileID_Oracle=EF 07<br />
+tileID_FishingRod=9B 0D<br />
+tileID_Rope=BB 0B<br />
+tileID_Shovel=81 0D<br />
+;ramps - updated<br />
+tileID_rampToRightCycMountain=9E 07<br />
+tileID_rampToLeftCycMountain=A0 07<br />
+tileID_rampToSouth=A2 07<br />
+tileID_rampToNorth=A4 07<br />
+;grass - important<br />
+tileID_grassCouldBeHole=25 01<br />
+; wooden stairs to up - important<br />
+tileID_woodenStairstoUp=A6 07<br />
+;not important for new version<br />
+tileID_ladderToUp=89 07<br />
+tileID_holeInCelling=80 01<br />
+tileID_grassCouldBeHole=25 01<br />
+tileID_stairsToUp=88 07<br />
+tileID_pitfall=26 01<br />
+tileID_openHole=44 02<br />
+tileID_OpenDesertLooseStonePile=51 02<br />
+tileID_trapdoor=71 01<br />
+tileID_down1=72 01<br />
+tileID_openHole2=7F 01<br />
+tileID_trapdoor2=98 01<br />
+tileID_down2=99 01<br />
+tileID_stairsToDownKazordoon=9A 01<br />
+tileID_stairsToDownThais=9B 01<br />
+tileID_trapdoorKazordoon=AB 01<br />
+tileID_down3=AC 01<br />
+tileID_stairsToDown=AD 01<br />
+tileID_stairsToDown2=B0 01<br />
+tileID_woodenStairstoDown=B1 01<br />
+tileID_rampToDown=CB 01<br />
+tileID_sewerGate=AE 01<br />
+tileID_closedHole=43 02<br />
+tileID_desertLooseStonePile=50 02<br />
+;FOOD<br />
+tileID_firstFoodTileID=F9 0D<br />
+tileID_lastFoodTileID=17 0E<br />
+tileID_firstMushroomTileID=8B 0E<br />
+tileID_lastMushroomTileID=8F 0E<br />
+;fields<br />
+tileID_firstFieldRangeStart=46 08<br />
+tileID_firstFieldRangeEnd=4F 08<br />
+tileID_secondFieldRangeStart=53 08<br />
+tileID_secondFieldRangeEnd=5A 08<br />
+tileID_walkableFire1=48 08<br />
+tileID_walkableFire2=4D 08<br />
+tileID_walkableFire3=55 08<br />
+;inside depot container updated <br />
+tileID_depotChest=AE 0D<br />
+;water<br />
+tileID_waterEmpty=01 12<br />
+tileID_waterEmptyEnd=06 12<br />
+<br />
+tileID_waterWithFish=F5 11<br />
+tileID_waterWithFishEnd=FA 11<br />
+<br />
+tileID_campFire1=D0 07<br />
+tileID_campFire2=CE 07<br />
+tileID_flask=3A 0B<br />
+byteMana=&amp;HA<br />
+byteLife=&amp;HB<br />
+byteNothing=&amp;H0<br />
+tileID_desertRamptoUp=A8 07<br />
+tileID_WallBugItem=4E 10<br />
+tileID_jungleStairsToNorth=B9 07<br />
+tileID_jungleStairsToLeft=BA 07<br />
+<br />
+tileID_health_potion=72 0C<br />
+tileID_strong_health_potion=72 0C<br />
+tileID_great_health_potion=72 0C<br />
+tileID_mana_potion=83 0C<br />
+tileID_strong_mana_potion=70 0C<br />
+tileID_great_mana_potion=70 0C<br />
+tileID_ultimate_health_potion=72 0C<br />
+tileID_great_spirit_potion=83 0C<br />
+tileID_small_health_potion=72 0C<br />
+<br />
+<br />
+; LISTS OF ADITIONAL STAIRS  <br />
+; to up, in this order: ankrahmun south-&gt;north, north-&gt;south,right-&gt;left,pyramid cornerNW,cornerNE,cornerSE,cornerSW <br />
+; ice stair south-&gt;north, left-&gt;right , right-&gt;left,mini left-&gt;right<br />
+; femor hills right-&gt;left, femor hills left-&gt;right<br />
+; Yalahar left-&gt;right, north-&gt;south<br />
+; added Port Hope ramp (B7 07)<br />
+; added yalahar mutated rats ramp south (7A 1D) <br />
+; added yalahar mutated rats ramp north (7C 1D)<br />
+AditionalStairsToUpFloor=AC 07,AE 07,AA 07,94 08,96 08,90 08,92 08,03 1B,FF 1A,FD 1A,78 1D,76 1D,58 03,57 03,B7 07,7A 1D,7C 1D<br />
+; to down<br />
+AditionalStairsToDownFloor=36 1D,62 1D,64 03,34 1D,35 1D,6A 03<br />
+; added coryms rope spot (56 43) and hidden ankrahmun tombs rope spot (A5 01)<br />
+AditionalRequireRope=56 43,A5 01</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">03-21-2016, 07:19</div></div><div class="posttext">could please do ?<br />
+<br />
+maybe i could, but not for free. if you can spend money on fixing it, i suggest you ask Daniel BlackD himself - see http://www.blackdtools.net/showthread.php?59701-New-paid-service-I-can-make-update-functions-for-your-programs<br />
+<br />
+if you cannot use any money on it, i suggest you start studying programming :p  - a lot of helpful people over at http://tpforums.org/forum/ and irc://irc.freenode.net/##programming  and irc://irc.freenode.net/#anime and irc://irc.freenode.net/##asm</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bsdailha</div><div class="date">03-22-2016, 02:08</div></div><div class="posttext">I managed but not know where to put this key that you gave ???<br />
+I was in modRSA<br />
+and appeared:<br />
+Public Const RLserverRSAkey As String =<br />
+Public Const RLserverRSAkey1075 As String =<br />
+Public Const OTserverRSAkey As String =<br />
+<br />
+Which of these should I put the key that you provided?<br />
+or the three ???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">03-23-2016, 06:57</div></div><div class="posttext">OTserverRSAkey<br />
+<br />
+also, remove the spaces and newlines. that was just my hex editor being stupid</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bsdailha</div><div class="date">03-24-2016, 06:17</div></div><div class="posttext">I put ...<br />
+there appears in Blackd:<br />
+<br />
+Your Tibia Client Path: C: \ Users \ Brunoo \ Desktop \ Brunoooo \ xeraxzot<br />
+<br />
+Your Tibia Maps Path:<br />
+C: \ Users \ Brunoo \ AppData \ Roaming \ Tibia \ Automap<br />
+<br />
+I tested with three ips but all the character comes more does not appear &quot;Welcome to blackd&quot; and log out not to log in again know what it can be?<br />
+<br />
+<br />
+forgotten.no-ip.org<br />
+highexp.eu<br />
+188.165.229.93</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipe199</div><div class="date">08-19-2016, 10:41</div></div><div class="posttext">i had followed these esteps to connect or inject to waropolis.no-ip.org<br />
+ublic Const OTserverRSAkey As String = &quot;13751792798075318920835718856228258226266880626797 06315722615801353293958342157894144691766659463884 80466559314812455711263984931077050830014324733720 28468402909982395419664218939951876364279120587699 54422722701425434711774403335812298483879223301946 02964970217156516505215151373661178216214996195180 102959201&quot;<br />
+<br />
+compile but no succes i have to change deeclaration to updatersa or something?(i tested with all and no succes pls help</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

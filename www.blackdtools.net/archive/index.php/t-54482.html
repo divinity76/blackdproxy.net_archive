@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, dragon, lord, setavoidfront, setmeleekill, juanse22, fibula, exiva, start, script, 32281,32470,10, move, hunting, loot, setfollow, hunt, lord+1, 32275,32482,10, iftrue, $mycap$number, setpriority, saymessage, untill, lords, dragon/dragon, plot, dungeon, dragons, secure, $hex-tibiastrwelcome, kill, dragons.$, logout, place, cave, setlooton" />
+	<meta name="description" content="Script start on: exiva plot 32281,32470,10 
+ 
+Hunting dragons and dragon lord on fibula dungeon, it will keep hunting untill cap is less than 120, after 120 less it will go to a secure place out of the cave and logout 
+ 
+ 
+############### 
+#Script By juanse22# 
+############### 
+# 
+sayMessage Exiva &lt; B4 13 $hex-tibiastr:Welcome, Lets kill some dragons!.$" />
+	
+	<title> Fibula Dragon/Dragon lords - By juanse22 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Fibula Dragon/Dragon lords - By juanse22</div>
+<hr />
+<div class="pda"><a href="t-54482.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54482-Fibula-Dragon-Dragon-lords-By-juanse22">Fibula Dragon/Dragon lords - By juanse22</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-24-2011, 13:19</div></div><div class="posttext">Script start on: exiva plot 32281,32470,10<br />
+<br />
+Hunting dragons and dragon lord on fibula dungeon, it will keep hunting untill cap is less than 120, after 120 less it will go to a secure place out of the cave and logout<br />
+<br />
+<br />
+<br />
+###############<br />
+#Script By juanse22#<br />
+###############<br />
+#<br />
+sayMessage Exiva &lt; B4 13 $hex-tibiastr:Welcome, Lets kill some dragons!.$<br />
+setLootOn<br />
+setAvoidFront dragon lord<br />
+setAvoidFront dragon<br />
+#Loot<br />
+setLoot F5 0B<br />
+setLoot C1 2C<br />
+setLoot 06 1D<br />
+setLoot FA 0C<br />
+setLoot F5 16<br />
+setLoot 20 17<br />
+setLoot E1 0C<br />
+setLoot 17 0D<br />
+setLoot FF 0B<br />
+setLoot E5 0C<br />
+setLoot 58 0D<br />
+setLoot D7 0B<br />
+setLoot D4 0B<br />
+setFollow<br />
+setMeleeKill dragon<br />
+setPriority dragon lord:+1<br />
+setMeleeKill dragon lord<br />
+#Start Hunt<br />
+move 32281,32470,10<br />
+move 32275,32482,10<br />
+ifTrue ($mycap$#number&lt;=#12000) Goto $nlineoflabel:finishhunt$<br />
+move 32271,32494,10<br />
+move 32255,32494,10<br />
+ifTrue ($mycap$#number&lt;=#12000) Goto $nlineoflabel:finishhunt$<br />
+move 32249,32497,10<br />
+move 32238,32493,10<br />
+move 32234,32491,10<br />
+ifTrue ($mycap$#number&lt;=#12000) Goto $nlineoflabel:finishhunt$<br />
+move 32235,32486,10<br />
+move 32235,32478,10<br />
+move 32248,32479,10<br />
+ifTrue ($mycap$#number&lt;=#12000) Goto $nlineoflabel:finishhunt$<br />
+move 32257,32478,10<br />
+move 32261,32482,10<br />
+ifTrue ($mycap$#number&lt;=#12000) Goto $nlineoflabel:finishhunt$<br />
+move 32272,32477,10<br />
+ifTrue ($mycap$#number&lt;=#12000) Goto $nlineoflabel:finishhunt$<br />
+move 32276,32479,10<br />
+move 32279,32469,10<br />
+waitX 30<br />
+gotoScriptLine 26<br />
+:finishhunt<br />
+move 32270,32490,10<br />
+move 32262,32493,10<br />
+move 32234,32494,10<br />
+move 32234,32498,10<br />
+move 32234,32499,10<br />
+move 32234,32500,10<br />
+move 32234,32501,10<br />
+waitX 2<br />
+sayMessage exiva turbo<br />
+sayMessage exiva turbo<br />
+closeConnection</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kevalves</div><div class="date">05-14-2014, 13:52</div></div><div class="posttext">Hey i hunt in the darashia dragon lords, but i feel like i'm not doing it all good... my char attacks and follow waypoints, but sometimes there is the &quot;There is no way&quot; when firefields are in floor and stacks in one place for a long time... and then keep walking, what can i do to avoid that? Or can you help me getting the script for darashia dragon lords? please... thanks</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

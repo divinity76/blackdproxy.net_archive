@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="program, work, click, clicking, screen, monster, tibiacam, packets, mouse, sqms, north, walk, x,y,z, tibia, target, stop, monsters, message, person, glider, record, assume, hunt, client, whilst, world, checked, kill, button, hard, follow, control, plan, move, x+7,y+10,z, warcraft, good, option, list, battle, attack, left, campaign, comments, botting, anti, thing, cips, flaws, idea" />
+	<meta name="description" content="Ok, so I have a plan to avoid detection, that will 99.9% work. We're going to look at a simple macro system. Let's imagaine CIP have some secret way of detecting bots, but what if there was a bot that would do exactly what a person would do? Is it that hard to make? 
+ 
+The basics of it are this: We all know of programs such as TibiaCamTV which does not get you banned, yet records the coords of your map, what items you're using, your mana, etc. So we set it up to do this: 
+ 
+We work out the" />
+	
+	<title> New Program [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-35.html">Proposals</a> &gt;  New Program</div>
+<hr />
+<div class="pda"><a href="t-40833.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?40833-New-Program">New Program</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">05-15-2009, 19:23</div></div><div class="posttext">Ok, so I have a plan to avoid detection, that will 99.9% work. We're going to look at a simple macro system. Let's imagaine CIP have some secret way of detecting bots, but what if there was a bot that would do exactly what a person would do? Is it that hard to make?<br />
+<br />
+The basics of it are this: We all know of programs such as TibiaCamTV which does not get you banned, yet records the coords of your map, what items you're using, your mana, etc. So we set it up to do this:<br />
+<br />
+We work out the x,y,z of where you're standing the same way that TibiaCam does. This gives us a starting point. We want to get from x,y,z to x+2,y+4,z<br />
+<br />
+So we need to walk north 2 sqms, and east 4 sqms. We use the mouse (based on setting the screen resolution) with the knowledge that x,y+1,z is 1sqm north from where we are, so we click. Then we remember that when we click on a square we can't stand on, we get the message from CIP saying <br />
+'Sorry, not possible'. So if we get this message we try going x+1,y,z... And the story goes on. We then have the ability, as does tibiacam, to look at what monsters are on screen recording the packets. So we receive a packet saying that theres a monster on screen. We pause the waypoint walker and stop it, and we now have the 'follow target' button checked. This will walk us to the target, and kill it. From here again we work out that we need to move to x+7,y+10,z. And it goes on. I know it's possible to use a program to control your mouse as it's done for the world of warcraft bot, glider.<br />
+<br />
+This program will then take over the tibia client and hunt, doing EXACTLY what a person would do, whilst tibia would assume that we're using a program to record the packets, perhaps it's tibiacam...<br />
+<br />
+Anyone else think this would be a good idea? Can anyone see any flaws? Of course we can send multiple actions to the mouse so it can click and drag, it can click where a monster dies by reading the packets, and right clicking. We can attack monsters by left clicking battle list or right clicking monster, and we have the option as to which to use.<br />
+<br />
+It's a lot of work, but I think it's the one thing that will stop CIP's anti botting campaign.<br />
+<br />
+Comments?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">drizzox</div><div class="date">05-15-2009, 21:02</div></div><div class="posttext">Clever as always my bro ;p.<br />
+If that would succed it would be no problems at all : D.<br />
+gr8 idea.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hoppah</div><div class="date">05-16-2009, 09:56</div></div><div class="posttext">you got it going, hope somebody see's this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">05-16-2009, 15:11</div></div><div class="posttext">Macros are one of the easiest to detect as they do everything exact ms each time...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">05-16-2009, 16:31</div></div><div class="posttext">Macros are one of the easiest to detect as they do everything exact ms each time...<br />
+<br />
+They are easy to detect, but if the macro isn't executed on the tibia window, but on the mouse, theres plenty of circumstances that will change each and every time you send a click to your cpu, it will take more and/or less time each time depending on lag, and we could even add random timers so we execute it each x ms, but x can be from x-0.1 to x+0.1.<br />
+<br />
+It's possible, and although it will take a lot of work, I may even do it myself if I find enough time to...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">JockeL</div><div class="date">05-16-2009, 20:32</div></div><div class="posttext">This sounds like the program Tasker, a program that controls the mouse and keyboard.<br />
+You can't do anything else while using it though, because it takes total control of the keyboard and mouse</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raoul</div><div class="date">05-18-2009, 11:42</div></div><div class="posttext">smart as hell:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">05-18-2009, 17:45</div></div><div class="posttext">This sounds like the program Tasker, a program that controls the mouse and keyboard.<br />
+You can't do anything else while using it though, because it takes total control of the keyboard and mouse<br />
+<br />
+That's one problem, but most people have a laptop and pc, and if not they shouldn't be botting without watching their screen anyway!<br />
+<br />
+Another idea for the program would be to call it TibiaCam or a common recording program name, although they may not like it, we could make it as similar, in the way that it works, to TibiaCam TV.<br />
+<br />
+@Raoul,<br />
+Love u bro ;***</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fosforo</div><div class="date">05-19-2009, 04:56</div></div><div class="posttext">Another idea for the program would be to call it TibiaCam or a common recording program name, although they may not like it, we could make it as similar, in the way that it works, to TibiaCam TV.<br />
+<br />
+<br />
+<br />
+we already did that, since BDP runs on a random process.<br />
+<br />
+@topic<br />
+<br />
+really nice..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">l is for</div><div class="date">05-19-2009, 06:27</div></div><div class="posttext">Like your idea, but how would we choose what to loot from the monster?<br />
+<br />
+Generate the thinking train :D everyone should input on this and hopefully this would become reality.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Random-j</div><div class="date">05-24-2009, 05:39</div></div><div class="posttext">Do you know how blackd is being dected and elf and ng? untill we figure that out there may be no way around botting</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">05-27-2009, 12:32</div></div><div class="posttext">No, we don't. But we know they can't ban us for doing nothing, and if we makes a bot that does 'nothing' but what a human would do at his computer, we know they can't ban us...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-28-2009, 02:21</div></div><div class="posttext">this is one of the most almost impossible ideas ever, it sounds easy but is really extremely complicated. how would it know when to attack monsters, after it attacks because of the way you want it to work it will lose where it is and be lost if its taken like 5 sqm away, ropes manas health all at the same time just makes this impossible</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">05-28-2009, 19:52</div></div><div class="posttext">Ok, BlackD is detectable (I beleive) because it is injecting to the client still, correct me if i'm wrong, which is (the second you log on) sending blackd's own commands to CIP. Despite it being called a random process name, it's still detectable, and we're aware of this.<br />
+<br />
+The new program would have nothing to do with tibia, and would work on any game that has the same layout.<br />
+<br />
+It would select the loot using the TibiaCam style recorder, which would pick up the packets, and using them to navigate the mouse to the required section of the screen (based again on the screen resolution) - TibiaCam knows where the loot is, so does our new bot program.<br />
+<br />
+As far as the roping etc goes, you'd just have to have your rope in an open backpack, and that backpack opened 100%, so that we can always see it and the automatic mouse function would know exactly where to click via screen coords.<br />
+<br />
+It is very complex, but it is definatly possible.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">05-28-2009, 22:39</div></div><div class="posttext">Ok, BlackD is detectable (I beleive) because it is injecting to the client still, correct me if i'm wrong, which is (the second you log on) sending blackd's own commands to CIP. Despite it being called a random process name, it's still detectable, and we're aware of this.<br />
+<br />
+The new program would have nothing to do with tibia, and would work on any game that has the same layout.<br />
+<br />
+It would select the loot using the TibiaCam style recorder, which would pick up the packets, and using them to navigate the mouse to the required section of the screen (based again on the screen resolution) - TibiaCam knows where the loot is, so does our new bot program.<br />
+<br />
+As far as the roping etc goes, you'd just have to have your rope in an open backpack, and that backpack opened 100%, so that we can always see it and the automatic mouse function would know exactly where to click via screen coords.<br />
+<br />
+It is very complex, but it is definatly possible.<br />
+a very complex idea is even more complex when it comes to programming, do you actually even have an idea what your talking about?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lopht</div><div class="date">05-30-2009, 06:00</div></div><div class="posttext">I went ahead and included this idea(which i think is pretty good) in one of the new MBs, it also no longer tampers with any of the client code segment nor injects a dll</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jagex</div><div class="date">06-17-2009, 00:21</div></div><div class="posttext">Actually, this is exactly how a lot of bots are made for other MMORPG's like WoW etc.  Very smart idea.  Though, it does make the bot a lot more shittier.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Melody</div><div class="date">06-25-2009, 15:43</div></div><div class="posttext">How would making an instable bot with mouse &amp; keayboard events make it any different?<br />
+What happens when you click on a tile in tibia client is basically this:<br />
+<br />
+<br />
+Player.GotoX = GetClickedTileX;<br />
+Player.GotoY = GetClickedTileY;<br />
+Player.GotoZ = GetClickedTileZ;<br />
+Player.Walking = True;<br />
+<br />
+Path p = CalculatePath(CurrentLocation, NewLocation);<br />
+<br />
+while(CurrentLocation &lt;&gt; NewLocation) {<br />
+    Server.SendPacket(Player.MoveToDirection(Whatever) );<br />
+}<br />
+This can all be done programmatically just as well, and just as safe.<br />
+<br />
+What comes to some other stuff that involves sending packets, function hooking will use tibia clients own functions to send them, aka it's indetectable just as well.<br />
+<br />
+PS. If you want to send keyboard / mouse events to a window that isn't visible, have a look into PostMessage() &amp; SendMessage() APIs.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">07-04-2009, 02:15</div></div><div class="posttext">a very complex idea is even more complex when it comes to programming, do you actually even have an idea what your talking about?<br />
+<br />
+I don't design programs, I design websites. I have a knowledge of some programming, but don't know the language behind it. I only know the structure.<br />
+<br />
+I know that the idea is possible, and I would gladly make it if I could. I would also be willing to pay £20 upfront to buy it, with maybe a £5 update fee monthly.<br />
+<br />
+The program can be complex if it is designed in a complex view. The problem with programmers is they like to go into one section at a time, and do it systematically. You need to look at the big picture, and find the problems. Then you must resolve them, then go into the details again. But remember to check what you're doing is compatable and it will work.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Melody</div><div class="date">07-08-2009, 02:02</div></div><div class="posttext">The idea of using keystrokes / mouse events to use tibias own methods to send packets is plain retarded, as function hooking does exactly the same.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ej nie b</div><div class="date">07-22-2009, 09:35</div></div><div class="posttext">Its much work to do this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">07-30-2009, 16:33</div></div><div class="posttext">I personally wouldn't mind being able to bot safely even if it meant not being able to use my computer whilst it is working, as long as it's safe, and it will not be detectable as it would do exactly what you would do... Unless they were to &quot;hack&quot; your computer to search through programs you're running. If they intentionally did this they would have to tell us.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">quim911</div><div class="date">05-24-2010, 22:55</div></div><div class="posttext">Spend less time dreaming about bots and play instead. At this rate you will be better off manual. :) Lots of love :*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Friday</div><div class="date">05-25-2010, 13:10</div></div><div class="posttext">isnt magebot like that? :rolleyes: im using it and i see a mouse pushing the gold from monster to my backpack and mouseclicks each waypoint..<br />
+<br />
+magebot should be more worked out with thinks like avoid front or if 200 mana cast spell..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">12-13-2010, 19:41</div></div><div class="posttext">this is one of the most almost impossible ideas ever, it sounds easy but is really extremely complicated. how would it know when to attack monsters, after it attacks because of the way you want it to work it will lose where it is and be lost if its taken like 5 sqm away, ropes manas health all at the same time just makes this impossible<br />
+ <br />
+Unfortunately, EKX just owned you.<br />
+<br />
+Also, sorry for bumping an old thread!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

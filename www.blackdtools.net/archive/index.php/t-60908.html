@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="waitx, fastexiva, potions, sayintrade, health, potion, saymessage, withdraw, buying, money, store, trade, depends, wrong, trading, starts, needed, bought, suppose, _healthpotionid, _healthpot, script, problem, basically, venore, _idcost, 32971,32085,6, 33001,32073,6, 33007,32060,6, exiva, $numbertohex2$numericalexp$_health$$$, $_healthpotionid$, [help], _hpcost, $numericalexp$_healthpot$-$countitems$_healthpotionid$$$, _health, $numericalexp$_health$$_idcost$$, ongmpause, $_hpcost$, buypotion, closeconnection" />
+	<meta name="description" content="Hello everyone! I have a little problem with health potion buying in Venore :( 
+Basically, I made a script to do so, but my bot char don't want to buy any health potions :( 
+ 
+ 
+fastExiva _healthpotionid = 0A 01 
+fastExiva _healthpot = 5 
+fastExiva _idcost = 45 
+fastExiva _health = $numericalexp:{$_healthpot$}-{$countitems:{$_healthpotionid$}$}$ 
+fastExiva _hpcost = $numericalexp:{$_health$}*{$_idcost$}$ 
+onGMpause" />
+	
+	<title> [Help] Health Potion Buying [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  [Help] Health Potion Buying</div>
+<hr />
+<div class="pda"><a href="t-60908.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60908-Help-Health-Potion-Buying">[Help] Health Potion Buying</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">pixonszn</div><div class="date">08-28-2013, 16:10</div></div><div class="posttext">Hello everyone! I have a little problem with health potion buying in Venore :(<br />
+Basically, I made a script to do so, but my bot char don't want to buy any health potions :(<br />
+<br />
+<br />
+<br />
+fastExiva _healthpotionid = 0A 01<br />
+fastExiva _healthpot = 5<br />
+fastExiva _idcost = 45<br />
+fastExiva _health = $numericalexp:{$_healthpot$}-{$countitems:{$_healthpotionid$}$}$<br />
+fastExiva _hpcost = $numericalexp:{$_health$}*{$_idcost$}$<br />
+onGMpause<br />
+:buypotion<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade withdraw $_hpcost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 1<br />
+move 33007,32060,6<br />
+move 33001,32073,6<br />
+move 32971,32085,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva &gt; 07 00 7A $_healthpotionid$ 00 $numbertohex2:{$numericalexp:{$_health$}$}$ 00<br />
+waitX 2<br />
+closeConnection<br />
+<br />
+My bot char suppose to withdraw money from the bank, go to potion store, say &quot;hi&quot;, &quot;trade&quot;, buy 1-5 potions (depends how many potions do I need) and log out. It gets needed money, goes to store, starts trading and logs out, but when I log in, the potions aren't bought. I have no idea what is wrong. It would be nice if someone could help me :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">pixonszn</div><div class="date">08-30-2013, 20:23</div></div><div class="posttext">Problem solved. Instead of using:<br />
+<br />
+<br />
+ sayMessage exiva &gt; 07 00 7A $_healthpotionid$ 00 $numbertohex2:{$numericalexp:{$_health$}$}$ 00 <br />
+<br />
+I used:<br />
+<br />
+<br />
+fastExiva buy:health potion id:how many potions I need</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

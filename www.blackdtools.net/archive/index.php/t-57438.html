@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, waitx, 32328,31775,8, check, specific, laying, $lastchecktileid$stringcd, $nlineoflabelremoveitemfromtile$, removeitemfromtile, iftrue, fixed, tryin, reply, ammount, spears" />
+	<meta name="description" content="hi =) 
+ 
+i wonder if there is a &quot;general item id&quot; which i can insert into a action like this to move  ANY item: 
+ 
+fastExiva &gt; 78 48 7E 1F 7C 08 CD 0C 02 47 7E 1F 7C 08 01 
+ 
+&quot;it moves a SPEAR (CD 0C)   from   32328,31775,8       to     32329,31775,8&quot; 
+ 
+as said ... is there maybe an id   XX XX   which can be used to move move ANY item ? 
+i tested 00 00 , because thats the ID set in the Trainer to &quot;pick any&quot; .. but that doesnt work" />
+	
+	<title> ID for ANY item ? ... [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  ID for ANY item ? ...</div>
+<hr />
+<div class="pda"><a href="t-57438.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57438-ID-for-ANY-item">ID for ANY item ? ...</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Paddy</div><div class="date">03-05-2012, 21:30</div></div><div class="posttext">hi =)<br />
+<br />
+i wonder if there is a &quot;general item id&quot; which i can insert into a action like this to move  ANY item:<br />
+<br />
+fastExiva &gt; 78 48 7E 1F 7C 08 CD 0C 02 47 7E 1F 7C 08 01<br />
+<br />
+&quot;it moves a SPEAR (CD 0C)   from   32328,31775,8       to     32329,31775,8&quot;<br />
+<br />
+as said ... is there maybe an id   XX XX   which can be used to move move ANY item ?<br />
+i tested 00 00 , because thats the ID set in the Trainer to &quot;pick any&quot; .. but that doesnt work<br />
+<br />
+ideas / knowledge ? =D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-05-2012, 23:50</div></div><div class="posttext">Should work... Not really tested exiva check yet except the important thing which I will show later, and used the $lastcheckresult$ to open doors. :p<br />
+<br />
+<br />
+fastExiva check 32328,31775,8<br />
+waitX 1<br />
+IfTrue ($lastchecktileid$#string&lt;&gt;#CD 0C) Goto $nlineoflabel:nospearstomove$<br />
+:spearstomove<br />
+fastExiva &gt; 78 48 7E 1F 7C 08 CD 0C 02 47 7E 1F 7C 08 01<br />
+waitX 1<br />
+fastExiva check 32328,31775,8<br />
+waitX 1<br />
+IfTrue ($lastchecktileid$#string=#CD 0C) Goto $nlineoflabel:spearstomove$<br />
+:nospearstomove<br />
+<br />
+Will take forever to move alot of spears but no way to tell amount tho, the client used to send hex 64 (100) but now you need exact amount. Sorry.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Paddy</div><div class="date">03-06-2012, 00:42</div></div><div class="posttext">first of all thx for fast reply :)<br />
+<br />
+but thats not exactly what im tryin to find ... its not about the ammount of spears than rather a possible fixed hex which <br />
+is able to move any item laying on that specific tile ... <br />
+<br />
+for example <br />
+fastExiva check 32328,31775,8<br />
+waitX 1<br />
+IfTrue ($lastchecktileid$#string&lt;&gt;#CD 0C) Goto $nlineoflabel:removeitemfromtile$<br />
+waitx 1<br />
+....<br />
+....<br />
+:removeitemfromtile<br />
+fastExiva &gt; 78 48 7E 1F 7C 08 --&gt;CD 0C&lt;-- 02 47 7E 1F 7C 08 01<br />
+...<br />
+so that it moves ANY item, no matter what id, not the spears ... the moving ammount of only 1 by 1 is not the matter<br />
+<br />
+ty anyway :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-06-2012, 01:31</div></div><div class="posttext">Oh, got it now lol. Like wanna move any crap to/from lootbag? just loop checks and movehex xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Paddy</div><div class="date">03-08-2012, 00:10</div></div><div class="posttext">well, i tried it out, but somehow the checkvalue of $lastcheckid§ is not refreshed ... the value stays that of the first item<br />
+(e.g. CD 0C) i did check. <br />
+i checked the other item manually and still no change (still CD 0C) .. i did let it do by the bot again and then it worked ... tried again didnt work ..<br />
+but well gonna test that further lateron.<br />
+<br />
+thx for helping =)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-08-2012, 00:13</div></div><div class="posttext">Tell me more about what it is you want to do. Why do you want to move anything?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

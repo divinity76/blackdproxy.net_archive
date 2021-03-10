@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="cipsoft, proxy, blackd, working, version, afterall, updated, wanted, afternoon, patch, launch, today, outfit, bugged, decided, @malmis, error, worked, smoothly, laughing, people, update, screwed, furious, tibia.com, reading, forums, moment" />
+	<meta name="description" content="&quot;Error with config945 
+tibia.dat missing/unreadable : &quot; 
+Not sure if anyone else has updated and got the error, but I'd love some help. Tried re-installing both Tibia and BlackD Proxy." />
+	
+	<title> BlackD Proxy 22.5 error [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  BlackD Proxy 22.5 error</div>
+<hr />
+<div class="pda"><a href="t-57548.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57548-BlackD-Proxy-22-5-error">BlackD Proxy 22.5 error</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 14:54</div></div><div class="posttext">&quot;Error with config945<br />
+tibia.dat missing/unreadable : &quot;<br />
+Not sure if anyone else has updated and got the error, but I'd love some help. Tried re-installing both Tibia and BlackD Proxy.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-22-2012, 14:59</div></div><div class="posttext">please send me the screenshot of that error message, tell me what was you doing when you got such error, and I will investigate that.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">846246</div><div class="date">03-22-2012, 15:02</div></div><div class="posttext">i get that error too</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Montsubai</div><div class="date">03-22-2012, 15:04</div></div><div class="posttext">Same here. Seems there is no tibia945 folder, might have something to do with it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 15:08</div></div><div class="posttext">WTF now it suddenly worked, but the Proxy main window says &quot;ERROR - Check errors.txt for details&quot; but there is nothing in &quot;errors.txt&quot;.<br />
+<br />
+I can't upload SSes to forum, I get a (!) in the Attachment Manager...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 15:10</div></div><div class="posttext">Same here. Seems there is no tibia945 folder, might have something to do with it?<br />
+<br />
+Oh, smart. Mine suddenly started working but I changed the foldername tibia944 to tibia945... Now I don't get any errors.<br />
+<br />
+EDIT: But I'll wait for an official fix before attempting to login.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-22-2012, 15:12</div></div><div class="posttext">ok, I see what failed, it is an error with the installer script:<br />
+<br />
+Source: &quot;config945\*&quot;; DestDir: &quot;{app}\config944&quot;; Flags: ignoreversion recursesubdirs createallsubdirs<br />
+<br />
+correct:<br />
+<br />
+Source: &quot;config945\*&quot;; DestDir: &quot;{app}\config945&quot;; Flags: ignoreversion recursesubdirs createallsubdirs<br />
+<br />
+<br />
+I will recompile it and I will upload it. Give me 5 minutes...<br />
+<br />
+<br />
+about attaching screenshots in forum... what format of image was you trying to attach?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 15:18</div></div><div class="posttext">about attaching screenshots in forum... what format of image was you trying to attach?<br />
+<br />
+I tried both PNG and JPEG, not just renamed but saved in different formats. Maybe size limit? But the JPEG was less than a 100KB...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-22-2012, 15:18</div></div><div class="posttext">ok, I finished uploading Blackd Proxy again. Just redownload and reinstall now and it should fix the problem.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 15:22</div></div><div class="posttext">Perfect, however did you disable ChatoicMovesON in this version as you were saying?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-22-2012, 15:26</div></div><div class="posttext">Perfect, however did you disable ChatoicMovesON in this version as you were saying?<br />
+<br />
+yes, I disabled it. People should not be able to use it now. If someone loads a script with chatoicmoveson then cavebot will just ignore that line.<br />
+<br />
+btw, I see the error with forum images. I don't know the reason yet. I am investigating it now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 15:28</div></div><div class="posttext">yes, I disabled it. People should not be able to use it now. If someone loads a script with chatoicmoveson then cavebot will just ignore that line.<br />
+<br />
+btw, I see the error with forum images. I don't know the reason yet. I am investigating it now.<br />
+<br />
+My day just got alot better. :)<br />
+Thank you for fast updates and support as always. During Tibia updates atleast... ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-22-2012, 15:41</div></div><div class="posttext">np :)<br />
+The image thing was some kind of problem with ImageMagick... I have changed it to GD and problem solved.<br />
+Now testing attaching an image...<br />
+<br />
+7361<br />
+<br />
+Success! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-22-2012, 16:43</div></div><div class="posttext">IT WORKS LIKE A CHARM!<br />
+<br />
+No but seriously, I'm so glad I came back to BlackD Proxy ... I mean, fast updates, supportive staff, easy to use, well not completely safe (actually none of the bots is), but I really don't care if I get deleted on my accounts.<br />
+<br />
+If you'll ever decide to fully work on bot again Daniel and if you make it payable again, I'm your first customer ... for realzz.<br />
+<br />
+:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-22-2012, 17:41</div></div><div class="posttext">If you'll ever decide to fully work on bot again Daniel and if you make it payable again, I'm your first customer ... for realzz.<br />
+<br />
+:D<br />
+<br />
+No! Me first! &gt;: (</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-22-2012, 21:36</div></div><div class="posttext">thank you.<br />
+However I don't really have plans of selling it again.<br />
+At least I am not going to sell something that it is not 100% undetectable yet, that is sure.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-23-2012, 02:19</div></div><div class="posttext">@Malmis ... :D Oh come on!<br />
+<br />
+@BlackD ... You're welcome! Great job! :D ... Which brings me to my next point ... \/<br />
+<br />
+OT: Is it possible that exp/h rate raised since chaoticmoves are fixed/disabled in latest version? Because I'm getting surprised. For example, I'm currently botting my rookie account (got premmy as a gift) and I usually get up to 6,3k exp/h on premmy side and that's at server's peak hour when the majority of people is online. Currently there are 96 players online, yeah it's 1:15 AM and people went to bed, and surprisingly I'm getting 6,8k exp/h, that's 500 exp more which is around 7,5% better ... D:?! 7k+/h at peak hour?! D: I mean, it makes hell of a lot of difference on Rookgaard. My stamina haven't been completely full for at least a month now, so no, it's not a happy hour and my scripts didn't contain 'ChaotiMovesON' before BlackD Proxy was updated ... If this BlackD Proxy update is the case, which disabled inbuilt 'ChaoticMoves' function then I'm even happier as I was earlier today! \o/<br />
+<br />
+That kicks ass! :D Happy botting to everyone! Cheers!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-23-2012, 11:34</div></div><div class="posttext">@Malmis ... :D Oh come on!<br />
+<br />
+@BlackD ... You're welcome! Great job! :D ... Which brings me to my next point ... \/<br />
+<br />
+OT: Is it possible that exp/h rate raised since chaoticmoves are fixed/disabled in latest version? Because I'm getting surprised. For example, I'm currently botting my rookie account (got premmy as a gift) and I usually get up to 6,3k exp/h on premmy side and that's at server's peak hour when the majority of people is online. Currently there are 96 players online, yeah it's 1:15 AM and people went to bed, and surprisingly I'm getting 6,8k exp/h, that's 500 exp more which is around 7,5% better ... D:?! 7k+/h at peak hour?! D: I mean, it makes hell of a lot of difference on Rookgaard. My stamina haven't been completely full for at least a month now, so no, it's not a happy hour and my scripts didn't contain 'ChaotiMovesON' before BlackD Proxy was updated ... If this BlackD Proxy update is the case, which disabled inbuilt 'ChaoticMoves' function then I'm even happier as I was earlier today! \o/<br />
+<br />
+That kicks ass! :D Happy botting to everyone! Cheers!<br />
+<br />
+They are disabled, and yeah, that increases EXP/h and increases profit. It now follows monsters quicker and also doesn't walk over just killed bodies making it unwilling to loot them, so shouldn't miss bodies.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-23-2012, 12:31</div></div><div class="posttext">@Malmis ... True, it worked so smoothly, too bad CipSoft decided to launch a patch again today due to that bugged outfit ...<br />
+<br />
+I'm laughing my ass off reading forums at the moment on tibia.com ... CipSoft screwed up the update and people are getting furious lol xD ... Well, I wanted to set up the bot and get working out later, it has been over an hour and a half now, I'll just let it go and wait till late afternoon :P. There will probably be a new version (9.46) afterall, so BlackD Proxy will have to be updated as well.<br />
+<br />
+Anyway, have fun! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">pado</div><div class="date">10-08-2012, 09:06</div></div><div class="posttext">PLEASE HELP ME... I HAVE BLACKD PROXY FOR 9.63 AND HAVE ERROR !!! TIBIA.DAT MISSING/UNREADABLE !!<br />
+PLEASE HELP ME EITH ERROR... TIBIA.DAT MISSING :( :(:mad:</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

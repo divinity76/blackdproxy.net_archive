@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="spider, poison, alaram, poision, wrote, found, kazordoons, dwarfs, gexem, thing" />
+	<meta name="description" content="Script tested with Tibia 8.71 &amp; BlackD Proxy 19.1 
+ 
+Another script for dwarfs in kazz. But this one allows you to exp on the main cave (the biggest) in kazz (out of the city). 
+ 
+See at the screenshot where to activate it:  
+ 
+http://blackdtools.net/cavebotimages/script46.jpg 
+ 
+Script is going down the floors, so you need to get a shovel, rope, and some of food, etc, and should have configured autohealer. 
+Monsters that it kill: Dwarfs, Dwarfs Soldiers, Rotworms. If any bug or request to this" />
+	
+	<title> 46. Kazordoon's dwarfs main cave - By GeXeM [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  46. Kazordoon's dwarfs main cave - By GeXeM</div>
+<hr />
+<div class="pda"><a href="t-54451.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54451-46-Kazordoon-s-dwarfs-main-cave-By-GeXeM">46. Kazordoon's dwarfs main cave - By GeXeM</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-22-2011, 13:45</div></div><div class="posttext">Script tested with Tibia 8.71 &amp; BlackD Proxy 19.1<br />
+<br />
+Another script for dwarfs in kazz. But this one allows you to exp on the main cave (the biggest) in kazz (out of the city).<br />
+<br />
+See at the screenshot where to activate it: <br />
+<br />
+http://blackdtools.net/cavebotimages/script46.jpg<br />
+<br />
+Script is going down the floors, so you need to get a shovel, rope, and some of food, etc, and should have configured autohealer.<br />
+Monsters that it kill: Dwarfs, Dwarfs Soldiers, Rotworms. If any bug or request to this script is needed - just send me a PM. I`ll answer soon as possible.<br />
+NOTE: I made this script for low levels, so script is not going to down floors, where are dwarfs guards.<br />
+<br />
+<br />
+<br />
+#SCRIPT START<br />
+fastExiva &lt; B4 11 $hex-tibiastr:Script made by GeXeM. Version  0.0.0.1$<br />
+onGMpause<br />
+setLoot D7 0B<br />
+setLoot F8 16<br />
+setFriendly<br />
+setPriority Dwarf Guard:+1<br />
+setMeleeKill Spider<br />
+setMeleeKill Poision Spider<br />
+setMeleeKill Rotworm<br />
+setMeleeKill Dwarf<br />
+setMeleeKill Dwarf Soldier<br />
+#CAVE HUNT - START POSITION<br />
+move 32530,31913,8<br />
+#CAVE HUNT - START POSITION<br />
+:cave-scr-start<br />
+move 32530,31913,8<br />
+move 32518,31913,8<br />
+move 32514,31895,8<br />
+move 32507,31880,8<br />
+move 32501,31878,8<br />
+move 32501,31878,8<br />
+move 32508,31881,8<br />
+move 32514,31894,8<br />
+move 32521,31891,8<br />
+:cave-down1<br />
+move 32521,31890,9<br />
+#cave up1 POSITION<br />
+move 32521,31890,9<br />
+move 32526,31896,9<br />
+move 32536,31900,9<br />
+move 32536,31900,9<br />
+move 32526,31896,9<br />
+move 32526,31896,9<br />
+move 32528,31909,9<br />
+move 32522,31891,9<br />
+move 32513,31884,9<br />
+move 32488,31890,9<br />
+move 32475,31892,9<br />
+move 32463,31892,9<br />
+move 32449,31899,9<br />
+move 32444,31903,9<br />
+move 32471,31890,9<br />
+move 32487,31890,9<br />
+move 32489,31902,9<br />
+move 32476,31906,9<br />
+:cave-down2<br />
+move 32475,31906,10<br />
+#cave up2 POSITION<br />
+move 32466,31905,10<br />
+move 32463,31900,10<br />
+move 32459,31884,10<br />
+move 32462,31900,10<br />
+move 32471,31906,10<br />
+move 32472,31913,10<br />
+move 32476,31916,10<br />
+move 32479,31912,10<br />
+move 32476,31917,10<br />
+move 32475,31925,10<br />
+move 32475,31936,10<br />
+move 32475,31925,10<br />
+move 32472,31906,10<br />
+move 32464,31901,10<br />
+move 32461,31900,10<br />
+move 32459,31884,10<br />
+move 32461,31882,10<br />
+move 32458,31888,10<br />
+move 32467,31906,10<br />
+move 32472,31913,10<br />
+move 32475,31906,10<br />
+#GO UP CAVE<br />
+move 32475,31907,9<br />
+#WE ARE CAVE UP ;)<br />
+move 32489,31902,9<br />
+move 32488,31892,9<br />
+move 32476,31893,9<br />
+move 32461,31894,9<br />
+move 32448,31900,9<br />
+move 32480,31893,9<br />
+move 32488,31892,9<br />
+move 32476,31906,9<br />
+#AGAIN CAVE DOWN<br />
+move 32475,31906,10<br />
+move 32472,31906,10<br />
+move 32478,31907,10<br />
+move 32472,31906,10<br />
+move 32461,31900,10<br />
+move 32457,31893,10<br />
+sayMessage utevo lux<br />
+waitX 2<br />
+move 32458,31886,10<br />
+move 32458,31882,10<br />
+move 32458,31896,10<br />
+move 32465,31904,10<br />
+move 32466,31907,10<br />
+move 32472,31914,10<br />
+move 32475,31924,10<br />
+move 32475,31934,10<br />
+move 32476,31924,10<br />
+move 32479,31912,10<br />
+move 32475,31906,10<br />
+#UP<br />
+move 32475,31907,9<br />
+move 32489,31898,9<br />
+move 32489,31890,9<br />
+move 32501,31885,9<br />
+sayMessage utevo lux<br />
+move 32514,31882,9<br />
+move 32521,31890,9<br />
+#UP AGAIN TO STR CAVE<br />
+move 32521,31891,8<br />
+move 32511,31898,8<br />
+move 32512,31907,8<br />
+move 32516,31911,8<br />
+move 32522,31913,8<br />
+move 32530,31913,8<br />
+#END AND AGAIN<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">znaniol</div><div class="date">06-09-2011, 01:13</div></div><div class="posttext">this script not working</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gexem</div><div class="date">06-13-2011, 11:06</div></div><div class="posttext">this script not working<br />
+ <br />
+That`s impossible. Could You write what`s happening ? Tibia client is crashing, or something like that ?<br />
+It was working (or still works) perfect for me, I`ll wait for Your answer, and when I get respond, I`ll start making fix for that (if the script realy needs that.) Currently I can`t test it, because my pc is crashed. You can also write a private msg to me, in Your <br />
+native language, because I`m from Poland too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">clorens</div><div class="date">10-17-2011, 02:02</div></div><div class="posttext">Works perfecte for me :)!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Perdition</div><div class="date">01-20-2012, 15:48</div></div><div class="posttext">any possibility of getting a gold depositer and potion refiller added to this script???</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheArabia</div><div class="date">11-21-2012, 09:54</div></div><div class="posttext">there is one thing.. when a poison spider attk me the alaram work i dont know why..<br />
+Thanks.<br />
+<br />
+( i found why cz you wrote Poision Spider instead of Poison Spider )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DarkRoses</div><div class="date">12-27-2012, 06:47</div></div><div class="posttext">Can someone confirm that this still works?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

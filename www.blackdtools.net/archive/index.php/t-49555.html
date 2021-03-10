@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibia, function, addresses, send, proxy, socket, xtea, address, structure, hook, recive, give, memory, important, write" />
+	<meta name="description" content="Hello. Could somebody give me memory addresses for Tibia 7.6 which are important to write hook proxy? I mean Send function, Recive function, Socket structure and Xtea address." />
+	
+	<title> Tibia 7.6 addresses [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 7.6 addresses</div>
+<hr />
+<div class="pda"><a href="t-49555.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?49555-Tibia-7-6-addresses">Tibia 7.6 addresses</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">hlep</div><div class="date">04-01-2010, 23:40</div></div><div class="posttext">Hello. Could somebody give me memory addresses for Tibia 7.6 which are important to write hook proxy? I mean Send function, Recive function, Socket structure and Xtea address.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-02-2010, 03:17</div></div><div class="posttext">Find the adress for 8.55 or so (get it from TibiaAPI)<br />
+then use this method to find it for 7.6,<br />
+<br />
+http://www.tpforums.org/forum/thread-5310.html</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hlep</div><div class="date">04-02-2010, 16:06</div></div><div class="posttext">I tried to do it but with bad results : d Can you check adresses in Tibia 7.6 for me please? : /</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">04-02-2010, 17:49</div></div><div class="posttext">if you don't know how to find those addresses, I highly doubt you're able to write a proxy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-02-2010, 19:39</div></div><div class="posttext">0x5B7608; //8.55<br />
+<br />
+U have to find something that doesnt change with tibia updates, as in the example below, i searched for the 8,55 adress and found <br />
+<br />
+<br />
+  PUSH DWORD PTR SS:[ESP+0Ch]<br />
+  PUSH DWORD PTR SS:[ESP+0Ch]<br />
+  PUSH DWORD PTR SS:[ESP+0Ch]<br />
+  PUSH DWORD PTR DS:[ECX+4h]<br />
+<br />
+<br />
+copy that and search for it on the 7,6 exe. That's how you find the address,<br />
+some are harder than others to find ofc.<br />
+<br />
+Pointer to the WS2_32.Send function<br />
+&lt;-7.6,    8,55-&gt;<br />
+http://www.ladda-upp.com/bilder-a/asdasdasd-437.JPG</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hlep</div><div class="date">04-03-2010, 13:37</div></div><div class="posttext">@up<br />
+Bad url to this image.<br />
+<br />
+<br />
+Ye that's true i won't make hook proxy xd I found someone who will do it for me if i find addresses from 7.6 protocol. So please, can you give me exac addresses, please? : /</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-03-2010, 17:14</div></div><div class="posttext">clicking the image won't work, just copy the url.. anyway, i attached the picture.<br />
+the &lt;- side of the screen is 7,6.. -&gt; is 8.55<br />
+<br />
+As u can see,<br />
+        /// Pointer to the WS2_32.Send function<br />
+        public static uint SendPointer = 0x5B7608; //8.55<br />
+8.55:<br />
+DS:[005B7608]=71AA428A (WS2_32.send)<br />
+<br />
+For 7,6,<br />
+DS:[0047E530]=71AA428A (WS2_32.send)<br />
+<br />
+And the pointer to the recieve function:<br />
+8.55:<br />
+DS:[005B75DC]=71AA615A (WS2_32.recv)<br />
+<br />
+For 7,6:<br />
+DS:[0047E534]=71AA615A (WS2_32.recv)<br />
+<br />
+I'll do some searching and edit this post with the Xtea and the other addresses soon...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hlep</div><div class="date">04-03-2010, 21:15</div></div><div class="posttext">Thank you very much : ] As i see you are good at programming xd Could you make for me application which will be analysing recived packets and if it gets packet of red message (any red message - cleans, gm messages, restarts) it will sending strings &quot;exiva pause&quot; into &quot;exiva testsound&quot;? Blackd Proxy doesn't catch gm messages because my 7.6 ots has changed ot engine : s It's only one way to play alarm on gm - playing alarm on any red message. Now i have only simple code in delphi with getting last packet from Tibia memory address but it doesn't work at all.<br />
+<br />
+@edit<br />
+Red message starts on B6 byte so i think it isn't difficult to write this condition.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hlep</div><div class="date">04-06-2010, 13:56</div></div><div class="posttext">Does somebody have memory address of socket struct for Tibia 7.6? : //<br />
+<br />
+P.S. Sorry for double post : |</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">pater</div><div class="date">04-06-2010, 16:11</div></div><div class="posttext">i guess nvm from tpforums ... am i right ??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nvm</div><div class="date">04-06-2010, 17:19</div></div><div class="posttext">Yes Xd Could you help me? : /</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">04-06-2010, 19:40</div></div><div class="posttext">sadly,                               yes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nvm</div><div class="date">04-06-2010, 20:27</div></div><div class="posttext">I need socket struct memory address for Tibia 7.6, do you have it?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

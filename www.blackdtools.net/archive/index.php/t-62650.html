@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, cavebotmeleesidconnection.existslcasestr, ismelee, minor, cavebot, blackd, official, boolean, source, function, change, modifications, fixed, tibia.exe, proxy, blackds, patch, optimizations, release, variable, $urlencodestr$, scripts, added, folder, monster, scanned, ismeleeidconnection, public, false, integer, byref, string, cavebotmeleesidconnection., modcavebot, https://github.com/blackdtools/blackd-proxy-classic/pull/40, request, target, thing" />
+	<meta name="description" content="I know there were an old command to SetMeleeKill that makes it attack any monster. Don't know if it's still funcional, but it worked in the past, but I can't remember nor find in forum. 
+Anyone knows? 
+ 
+I tried: 
+SetmeleeKill All 
+SetmeleeKill All creatures 
+SetmeleeKill All monsters 
+SetmeleeKill Any 
+SetmeleeKill Any creature 
+SetmeleeKill Any monser" />
+	
+	<title> Help with SetMeleekill to ANY monster [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Help with SetMeleekill to ANY monster</div>
+<hr />
+<div class="pda"><a href="t-62650.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62650-Help-with-SetMeleekill-to-ANY-monster">Help with SetMeleekill to ANY monster</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">01-22-2016, 13:01</div></div><div class="posttext">I know there were an old command to SetMeleeKill that makes it attack any monster. Don't know if it's still funcional, but it worked in the past, but I can't remember nor find in forum.<br />
+Anyone knows?<br />
+<br />
+I tried:<br />
+SetmeleeKill All<br />
+SetmeleeKill All creatures<br />
+SetmeleeKill All monsters<br />
+SetmeleeKill Any<br />
+SetmeleeKill Any creature<br />
+SetmeleeKill Any monser<br />
+<br />
+thanks in advance, It's absolutely nescessary to me right now</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-24-2016, 18:50</div></div><div class="posttext">i just scanned the source code for SetMeleeKill , and there is no such thing :(<br />
+<br />
+very easy to change in source though, <br />
+in modCavebot<br />
+<br />
+<br />
+Public Function isMelee(idConnection As Integer, ByRef str As String) As Boolean<br />
+  ' get the name from an ID<br />
+  Dim res As Boolean<br />
+  If cavebotMelees(idConnection).Exists(LCase(str)) = True Then<br />
+    isMelee = True<br />
+  Else<br />
+    isMelee = False<br />
+  End If<br />
+End Function<br />
+<br />
+<br />
+change <br />
+<br />
+  If cavebotMelees(idConnection).Exists(LCase(str)) = True Then<br />
+to<br />
+<br />
+  If cavebotMelees(idConnection).Exists(LCase(str)) = True Or cavebotMelees(idConnection).Exists(&quot;*&quot;) = True Then<br />
+<br />
+now &quot;SetMeleeKill *&quot; would make everything a target! :)  i might actually make a pull request for this, i need it too<br />
+<br />
+edit: just did, see https://github.com/blackdtools/Blackd-Proxy-CLASSIC/pull/40<br />
+<br />
+and until its part of official blackd proxy, you can use this patch over blackd's tibia.exe , its 37.1 with minor modifications (the &quot;setMeleeKill *&quot; and fixed some 7.6 bugs and a bug with high exp ots and cavebot scripts now have their own folder in &quot;cavebot\&quot; and added $urlencode:str$ variable and some minor optimizations - most of it should be part of the next official blackd release anyway :) )<br />
+7988</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">01-25-2016, 16:38</div></div><div class="posttext">It would be a really good addition. The more variables and functions, the better.<br />
+<br />
+I had a list in mind of a lot of variables (easy and harder ones to make) that I would be glad if Daniel implemented, but I wasn't sure if he was still taking/accepting proposals.<br />
+<br />
+I guess he still takes some on github though...<br />
+<br />
+Maybe I'll make a thread some time later with all the proposals.<br />
+<br />
+Btw, you're helping a lot the community, too bad it's kinda dead and/or with just &quot;readers&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-26-2016, 11:30</div></div><div class="posttext">anyway, &quot;attack everything&quot; is implemented in 37.2  as: SetMeleeAttack *</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="long, function, byval, processhandle, process, hwnd, private, handle, declare, windowname, processid, write, code, kernel32, found, offset, program, string, exit, error, game, customize, manavalue, msgbox, hpvalue, executed, memory, tibia, window, lpnumberofbyteswritten, nsize, lpbuffer, closehandle, lpbaseaddress, healathealth, refillatmana, test, current, mana, hprocess, sendkeys, read, server, getwindowthreadprocessid, heal, auto, send, blackd, focus, postmessage" />
+	<meta name="description" content="Well this was just a fast little bot I made for the current tutor test server: 
+ 
+Memory module... 
+ 
+ 
+ 
+ 
+'//All API declarations we will need to make these functions useful: 
+ 
+'Thanks to Robert Meffe for pointing out this API line because he didn't get it" />
+	
+	<title> Wouldnt this be undetectable? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Wouldnt this be undetectable?</div>
+<hr />
+<div class="pda"><a href="t-45563.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?45563-Wouldnt-this-be-undetectable">Wouldnt this be undetectable?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">killemal</div><div class="date">10-28-2009, 08:36</div></div><div class="posttext">Well this was just a fast little bot I made for the current tutor test server:<br />
+<br />
+Memory module...<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+'//All API declarations we will need to make these functions useful:<br />
+<br />
+'Thanks to Robert Meffe for pointing out this API line because he didn't get it<br />
+'to work properly in his Win XP. Greets!<br />
+Private Const PROCESS_ALL_ACCESS As Long = &amp;H1F0FFF<br />
+<br />
+Private Declare Function GetWindowThreadProcessId Lib &quot;user32&quot; (ByVal hwnd As Long, lpdwProcessId As Long) As Long<br />
+Private Declare Function OpenProcess Lib &quot;kernel32&quot; (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long<br />
+Private Declare Function WriteProcessMemory Lib &quot;kernel32&quot; (ByVal hProcess As Long, ByVal lpBaseAddress As Any, lpBuffer As Any, ByVal nSize As Long, lpNumberOfBytesWritten As Long) As Long<br />
+Private Declare Function ReadProcessMemory Lib &quot;kernel32&quot; (ByVal hProcess As Long, ByVal lpBaseAddress As Any, ByVal lpBuffer As Any, ByVal nSize As Long, lpNumberOfBytesWritten As Long) As Long<br />
+Private Declare Function CloseHandle Lib &quot;kernel32&quot; (ByVal hObject As Long) As Long<br />
+Private Declare Function FindWindow Lib &quot;user32&quot; Alias &quot;FindWindowA&quot; (ByVal Classname As String, ByVal WindowName As String) As Long<br />
+Private Declare Function ReadProcessMem Lib &quot;kernel32&quot; Alias &quot;ReadProcessMemory&quot; (ByVal hProcess As Long, ByVal lpBaseAddress As Any, ByRef lpBuffer As Any, ByVal nSize As Long, lpNumberOfBytesWritten As Long) As Long<br />
+<br />
+'||-------------------------------------------------------------------------------------------------||<br />
+'|| The two next functions read\write LONG values.                                                  ||<br />
+'|| LONG is a 32-bit(4 byte) datatype and can store values from -2,147,483,648 to 2,147,483,647     ||<br />
+'||-------------------------------------------------------------------------------------------------||<br />
+<br />
+Public Function ReadLong(Offset As Long, WindowName As String) As Long<br />
+<br />
+    Dim hwnd As Long<br />
+    Dim ProcessID As Long<br />
+    Dim ProcessHandle As Long<br />
+    Dim value As Long<br />
+    <br />
+    'Try to find the window that was passed in the variable WindowName to this function.<br />
+    hwnd = FindWindow(vbNullString, WindowName)<br />
+    <br />
+    If hwnd = 0 Then<br />
+    <br />
+            'This is executed if the window cannot be found.<br />
+            'You can add or write your own code here to customize your program.<br />
+                        <br />
+            MsgBox &quot;Run The Game First!&quot;, vbOKOnly, &quot;Error Reading Game&quot;<br />
+            <br />
+            Exit Function<br />
+        <br />
+    End If<br />
+    <br />
+    'Get the window's process ID.<br />
+    GetWindowThreadProcessId hwnd, ProcessID<br />
+    <br />
+    'Get a process handle<br />
+    ProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, False, ProcessID)<br />
+    <br />
+    If ProcessHandle = 0 Then<br />
+    <br />
+        'This is executed if a process handle cannot be found.<br />
+        'You can add or write your own code here to customize your program.<br />
+    <br />
+        MsgBox &quot;Could not get a process handle!&quot;, vbCritical, &quot;Read error&quot;<br />
+        <br />
+        Exit Function<br />
+        <br />
+    End If<br />
+    <br />
+    'Read a LONG from the specified memory offset.<br />
+    ReadProcessMem ProcessHandle, Offset, value, 4, 0&amp;<br />
+    <br />
+    'Return the found memory value.<br />
+    ReadLong = value<br />
+    <br />
+    'It is important to close the current process handle.<br />
+    CloseHandle ProcessHandle<br />
+    <br />
+End Function<br />
+<br />
+Public Function WriteLong(Offset As Long, WindowName As String, value As Long) As Boolean<br />
+<br />
+    Dim hwnd As Long<br />
+    Dim ProcessID As Long<br />
+    Dim ProcessHandle As Long<br />
+    <br />
+    'Try to find the window that was passed in the variable WindowName to this function.<br />
+    hwnd = FindWindow(vbNullString, WindowName)<br />
+    <br />
+    If hwnd = 0 Then<br />
+    <br />
+            'This is executed if the window cannot be found.<br />
+            'You can add or write your own code here to customize your program.<br />
+                        <br />
+        MsgBox &quot;Run The Game First!&quot;, vbOKOnly, &quot;Write error&quot;<br />
+            <br />
+            Exit Function<br />
+        <br />
+    End If<br />
+    <br />
+    'Get the window's process ID.<br />
+    GetWindowThreadProcessId hwnd, ProcessID<br />
+    <br />
+    'Get a process handle<br />
+    ProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, False, ProcessID)<br />
+    <br />
+    If ProcessHandle = 0 Then<br />
+    <br />
+        'This is executed if a process handle cannot be found.<br />
+        'You can add or write your own code here to customize your program.<br />
+    <br />
+        MsgBox &quot;Could not get a process handle!&quot;, vbCritical, &quot;Write error&quot;<br />
+        <br />
+        Exit Function<br />
+        <br />
+    End If<br />
+    <br />
+    'Read a LONG from the specified memory offset.<br />
+    WriteProcessMemory ProcessHandle, Offset, value, 4, 0&amp;<br />
+<br />
+    'It is important to close the current process handle.<br />
+    CloseHandle ProcessHandle<br />
+<br />
+End Function<br />
+<br />
+<br />
+<br />
+in a timer<br />
+<br />
+<br />
+<br />
+Dim manavalue As Long<br />
+Dim hpvalue As Long<br />
+Dim thehpadress As Long<br />
+<br />
+Dim thempadress As Long<br />
+'///////<br />
+Dim refillatmana As Long<br />
+Dim healathealth As Long<br />
+<br />
+refillatmana = 1500<br />
+healathealth = 1300<br />
+'//////////<br />
+thehpadress = &quot;&amp;H635F0C&quot;<br />
+<br />
+thempadress = &quot;&amp;H635EF0&quot;<br />
+manavalue = ReadLong(thempadress, &quot;Tibia Testserver&quot;)<br />
+hpvalue = ReadLong(thehpadress, &quot;Tibia Testserver&quot;)<br />
+lblmana.Caption = &quot;Mana: &quot; &amp; manavalue<br />
+lblhealth.Caption = &quot;Health: &quot; &amp; hpvalue<br />
+If manavalue &lt; refillatmana Then<br />
+SendKeys (&quot;{F10}&quot;)<br />
+End If<br />
+If hpvalue &lt; healathealth Then<br />
+SendKeys (&quot;{F11}&quot;)<br />
+End If<br />
+<br />
+<br />
+All this does is send my hotkeys to the game when my mana or health drops below a value. Its kind of a cheap mans auto heal / mana restore made for test server :P.<br />
+<br />
+But it got me to thinking , if this was implemented into a bot like blackd (using postmessage api instead of send keys so it worked when tibia was out of focus) then surely no bot detector can see this.It is simulating a human 100% by pressing the hotkey and not changing any data at all within tibia. <br />
+<br />
+Of course with massive progs like blackd theres other methods that can get you banned but i see no disadvantage to this code , on test server I have been to poi , pharoes , demons and all sorts with this little bot running , it works fine I feel just as safe as blackds auto heal (with the exception of it not working out of focus due to my own lazyness in using sendkeys and not postmessage)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kladden</div><div class="date">10-28-2009, 11:13</div></div><div class="posttext">could you please use the code tags? It's very hard to see..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lopht</div><div class="date">10-29-2009, 07:47</div></div><div class="posttext">Magebot_SAFEMODE functions exactly like this and it is a fully featured bot.  Give the demo a try and see what you think of it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Grodan</div><div class="date">10-29-2009, 10:16</div></div><div class="posttext">nice +1!:)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">10-29-2009, 13:30</div></div><div class="posttext">timers are relatively detectable server sided analysing the frequency they receive packets, but its not likely that this is their method. <br />
+But its still way safer than hooking tibia's functions or using a proxy imo.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">10-29-2009, 18:25</div></div><div class="posttext">sorry for a bit offtopic,<br />
+but can anyone give me a hint how to do the first lines of code in C#?<br />
+I mean to get the process ID and that,<br />
+I think it's something like DWORD but I can't remember ;/<br />
+Im about to make some simple autohealer for an OT.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">l is for</div><div class="date">11-02-2009, 22:45</div></div><div class="posttext">Magebot_SAFEMODE functions exactly like this and it is a fully featured bot.  Give the demo a try and see what you think of it<br />
+<br />
+Have people been complainging about being banned when using Magebot in safe mode?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lopht</div><div class="date">11-03-2009, 21:02</div></div><div class="posttext">None so far that im aware of</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">killemal</div><div class="date">11-08-2009, 20:55</div></div><div class="posttext">Im creating a open source vb6 project with this , but adding some advanced heal options too e.g:<br />
+<br />
+Send f9 (my exura key) when health is above 1000(im injured but not badly) and mana is above 1000(I have plenty of mana to spare) but only if my current health is less than 1300 (my max hp is 1.5k so we make sure that a heal is needed and the mana will not be wasted)<br />
+<br />
+Im using this instead of blackds heal for my main char right now, so I will continue working at it and have some source code soon :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">killemal</div><div class="date">11-08-2009, 20:57</div></div><div class="posttext">Im creating a open source vb6 project with this , but adding some advanced heal options too e.g:<br />
+<br />
+Send f9 (my exura key) when health is above 1000(im injured but not badly) and mana is above 1000(I have plenty of mana to spare) but only if my current health is less than 1300 (my max hp is 1.5k so we make sure that a heal is needed and the mana will not be wasted)<br />
+<br />
+Im using this instead of blackds heal for my main char right now, so I will continue working at it and have some source code soon :). I also added a lighthack to it (just because blackd was down the past few days this script worked on the new game version with no changes what so ever since the test sever version) but generally its intended to be used along side blackd.<br />
+<br />
+Im also working on randomization ;).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">killemal</div><div class="date">01-27-2010, 16:49</div></div><div class="posttext">This is still not got me banned on my level 240 paladin , whats more i recently got made  a senior tutor , so I doubt they have any cheat logs on me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sn1p3r</div><div class="date">01-29-2010, 14:04</div></div><div class="posttext">gratz man!<br />
+<br />
+Just give more ideas to CipSoft how to find botters.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Olzone</div><div class="date">01-29-2010, 20:25</div></div><div class="posttext">gratz man!<br />
+<br />
+Just give more ideas to CipSoft how to find botters.<br />
+<br />
+If so they have to ban everyone using Tibia Hotkeys ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crille</div><div class="date">01-30-2010, 16:35</div></div><div class="posttext">sorry for a bit offtopic,<br />
+but can anyone give me a hint how to do the first lines of code in C#?<br />
+I mean to get the process ID and that,<br />
+I think it's something like DWORD but I can't remember ;/<br />
+Im about to make some simple autohealer for an OT.<br />
+<br />
+here's an exp counter I did (and still is working on), it should give you all the necessary code bits (clientchooser.cs contains getting PID and whatnot) except the sending hotkeys thing, although you just need to import the API through P/Invoke and then call it<br />
+<br />
+it's for 7.4 though:<br />
+http://z6.invisionfree.com/classic_tibia/index.php?showtopic=177</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mega</div><div class="date">02-11-2010, 15:22</div></div><div class="posttext">Perhaps a functional and safe cavebot method would be by reading the player position in memory and calculating to send the &quot;click&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">killemal</div><div class="date">02-11-2010, 17:12</div></div><div class="posttext">This was added to the new safeblackd :D (well not exactly he used sendmessage / postmessage as I hinted in my first post).<br />
+<br />
+p.s the offsets used in this that was made for a test server 4 versions ago , still work fine.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Olzone</div><div class="date">02-13-2010, 13:08</div></div><div class="posttext">Perhaps a functional and safe cavebot method would be by reading the player position in memory and calculating to send the &quot;click&quot;<br />
+<br />
+Probably the only way to do this is either take control of the mouse cursor to mapclick or send api packets to tell the client where to mouse clicked..<br />
+<br />
+or the last option (currently known to me)<br />
+is to send a hell of alot arrow keys to the client<br />
+which would be alot! and i mean alot of waypoints</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Stukka</div><div class="date">03-17-2010, 18:55</div></div><div class="posttext">The thing is that one can quite easy intectept calls to readprocessmemory/writeprocessmemory and see if your own (tibia.exe) is involved in the call. If Cip aint doing that they suck quite bad when it comes to bot-detection. I would never dare to use a bot which use these calls. <br />
+<br />
+rgds<br />
+Stukka</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">killemal</div><div class="date">05-05-2010, 16:07</div></div><div class="posttext">The thing is that one can quite easy intectept calls to readprocessmemory/writeprocessmemory and see if your own (tibia.exe) is involved in the call. If Cip aint doing that they suck quite bad when it comes to bot-detection. I would never dare to use a bot which use these calls. <br />
+<br />
+rgds<br />
+Stukka<br />
+<br />
+I have used this now for many levels and on test servers + if you look at tibia.exe with a debugger (I use softice but ollydbg will do) there is no api reading going on. This would be easy to bypass with a ring 0 (http://en.wikipedia.org/wiki/Ring_%28computer_security%29) driver if it happened but it does not.<br />
+<br />
+P.S new client released about 1 minutes ago , new offsets if you are using this and want a bot until blackd updates are as follows (8.56):<br />
+<br />
+thehpadress = &quot;&amp;H63FE8C&quot;<br />
+<br />
+thempadress = &quot;&amp;H63FE70&quot;<br />
+<br />
+It seems the hp amount is always +1C(h) mana address.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

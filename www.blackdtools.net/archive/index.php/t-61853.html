@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="visual, basic6, disable, function, message, screen, repair, tibiafun.com.pl, proxy, blackd, version" />
+	<meta name="description" content="Good news!  
+Today we released Blackd Proxy NG 1.0 beta. 
+It is a mod of Blackd Proxy made by our forum user Oclipper. He shared all the changes with us. 
+It simplifies Blackd Proxy interface and it adds some powerfull features at same time. 
+I have checked the modified code and I recompiled everything so you can be sure that it is safe. 
+New menus should be intuitive but it would be nice if someone could write a tutorial for each menu of the new interface because we don't have much time for" />
+	
+	<title> Blackd Proxy NG 1.1 beta [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  Blackd Proxy NG 1.1 beta</div>
+<hr />
+<div class="pda"><a href="t-61853.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61853-Blackd-Proxy-NG-1-1-beta">Blackd Proxy NG 1.1 beta</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-19-2014, 19:17</div></div><div class="posttext">Good news! <br />
+Today we released Blackd Proxy NG 1.0 beta.<br />
+It is a mod of Blackd Proxy made by our forum user Oclipper. He shared all the changes with us.<br />
+It simplifies Blackd Proxy interface and it adds some powerfull features at same time.<br />
+I have checked the modified code and I recompiled everything so you can be sure that it is safe.<br />
+New menus should be intuitive but it would be nice if someone could write a tutorial for each menu of the new interface because we don't have much time for that.<br />
+<br />
+Anyways for some time I will keep both versions of Blackd Proxy available for download. You will find 2 versions there: &quot;CLASIC&quot; and &quot;NG&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">09-20-2014, 01:52</div></div><div class="posttext">For those who are interested to proposal or have any doubt you can send me PM. Remember that it is version 1.0 so you can notice something that needs to be improved.<br />
+<br />
+Healing - http://www.blackdtools.net/showthread.php?61854-TUTORIAL-Healer-Blackd-NG&amp;p=446551#post446551<br />
+CaveBot - http://www.blackdtools.net/showthread.php?61855-TUTORIAL-CaveBot-Blackd-NG&amp;p=446552#post446552</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-20-2014, 12:50</div></div><div class="posttext">Thank you again Oclipper! Nice tutorials.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hurriel</div><div class="date">09-21-2014, 00:57</div></div><div class="posttext">How does it work? Does it work by simulating mouse clicks?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marissa</div><div class="date">09-21-2014, 01:27</div></div><div class="posttext">Im getting the same error as occured on the regular BlackD proxy. Havent tried the latest BlackD still though but this one's giving the error.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">09-21-2014, 03:01</div></div><div class="posttext">How does it work? Does it work by simulating mouse clicks?<br />
+Its a modified Blackd Proxy with some new features and another interface, so it still detectable.<br />
+<br />
+https://i.imgur.com/AzUu8zv.png <br />
+<br />
+There is a possible to make a 'safe mode' by including BSC functions, but to do something like will spend much time.<br />
+<br />
+<br />
+Im getting the same error as occured on the regular BlackD proxy. Havent tried the latest BlackD still though but this one's giving the error.<br />
+Whats is the error number/ message ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Maniecki</div><div class="date">09-21-2014, 15:41</div></div><div class="posttext">Hey.<br />
+Ive just downloaded the bot and check it and every few minutes i have an ifnfo on default :<br />
+&quot;14:38 GM detected ( System ). Some cheats are now disabled. Closing in 170 seconds. Cancel with Exiva cancel&quot;<br />
+BOT isnt forbidden on this OT cause i spoke with the owner, he have no idea how i can solve it.<br />
+U guys have any idea?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">09-21-2014, 16:33</div></div><div class="posttext">Hey.<br />
+Ive just downloaded the bot and check it and every few minutes i have an ifnfo on default :<br />
+&quot;14:38 GM detected ( System ). Some cheats are now disabled. Closing in 170 seconds. Cancel with Exiva cancel&quot;<br />
+BOT isnt forbidden on this OT cause i spoke with the owner, he have no idea how i can solve it.<br />
+U guys have any idea?<br />
+<br />
+What OT do you play? Probably I forgot to disable this function in the source, I think this is the problem:<br />
+<br />
+Public Sub CheckIfGM<br />
+<br />
+If (gotGM = True) Then<br />
+            DangerGM(idConnection) = True<br />
+<br />
+<br />
+With time Daniel will fix it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Maniecki</div><div class="date">09-21-2014, 16:38</div></div><div class="posttext">What OT do you play? Probably I forgot to disable this function in the source, I think this is the problem:<br />
+<br />
+Public Sub CheckIfGM<br />
+<br />
+If (gotGM = True) Then<br />
+            DangerGM(idConnection) = True<br />
+<br />
+<br />
+With time Daniel will fix it<br />
+<br />
+tibiafun.com.pl<br />
+<br />
+So i cant repair ir at my own?<br />
+i just need to wait for another NG version?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">09-21-2014, 17:06</div></div><div class="posttext">tibiafun.com.pl<br />
+<br />
+So i cant repair ir at my own?<br />
+i just need to wait for another NG version?<br />
+<br />
+You can do it if you have visual basic6.<br />
+<br />
+Is it just message on screen? I think it wont disable any function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Maniecki</div><div class="date">09-21-2014, 17:17</div></div><div class="posttext">You can do it if you have visual basic6.<br />
+<br />
+Is it just message on screen? I think it wont disable any function<br />
+<br />
+i got this message in game, everytime i go exp and bot heals me or i use mana waste.<br />
+So i need to just wait?<br />
+i have another question, i have normal blackd proxxy on my pc, and when i start the bot -&gt; then tibia and ip changer <br />
+and i try tolog in in the same ots nothing happens, i change ip and everything in the bot, what is going on?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">09-21-2014, 18:23</div></div><div class="posttext">i got this message in game, everytime i go exp and bot heals me or i use mana waste.<br />
+So i need to just wait?<br />
+i have another question, i have normal blackd proxxy on my pc, and when i start the bot -&gt; then tibia and ip changer <br />
+and i try tolog in in the same ots nothing happens, i change ip and everything in the bot, what is going on?<br />
+<br />
+In Classic Blackd Proxy you need to set the proxy manually, its very complicated. <br />
+<br />
+EG with Normal Blackd Proxy<br />
+<br />
+1.) Open BlackD Proxy.<br />
+2.) Open Proxy Section.<br />
+2.1.) [Uncheck] Change all Tibia clients memory so they can login to proxy<br />
+2.2.) [Uncheck] Change character list packets (use proxy for game connection)<br />
+2.3.) [Uncheck] Force login server: ~<br />
+3.) Close Proxy section.<br />
+4.) Open Tibia client.<br />
+5.) Change IP of opened client with an IP changer.<br />
+6.) Open Proxy section.<br />
+6.1.) [Check] Forward to OT server (shadowcores.twifysoft.net, 7171)<br />
+6.2.) [Check] Change all Tibia clients memory so they can login to proxy<br />
+6.3.) [Check] Change character list packets (use proxy for game connection)<br />
+7.) Close Proxy.<br />
+8.) Login.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-21-2014, 18:55</div></div><div class="posttext">I released Blackd Proxy NG 1.1 right now<br />
+- Fixed a remaining bug that happened when another player gets experience nears you in Tibia 10.55<br />
+- I disabled that old &quot;on gm stop&quot; feature. People can optionally reenable it the Config menu, but it is not really usefull feature nowadays so it is better to keep it disabled in most cases.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

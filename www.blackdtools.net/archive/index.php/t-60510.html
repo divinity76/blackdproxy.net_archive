@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="thing, exura, conditionals, action, number=, spell, operator, returns, $myhp$, lines, _exura, blackdproxy, exiva, false, proxy, conditional, reading, terrible, english, number, $check$, checks, $istrue$, condition, $numericalexp$_exura$+1$, functions, $istrue$check$myhp$,number=,20$$, $mymana$, option, reached, percentage, meaning, spells, easiest, potions, start, endlessly, upload, events, tutorials, understand, http://www.blackdtools.com/forum/showthread.php?47680-in-date-understanding-conditional-events-%28in-a-nutshell%29, players, failing, makes, extremely, opening, recommend, suspicious" />
+	<meta name="description" content="I don't know how to heal on BlackdProxy  
+Can someone please tell me how to heal  
+Like 
+At 200HP - Use &quot;exura&quot;            Things like that 
+ 
+ 
+ 
+Thanks in advance : )" />
+	
+	<title> I dont know how to heal on BlackdProxy [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  I dont know how to heal on BlackdProxy</div>
+<hr />
+<div class="pda"><a href="t-60510.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60510-I-dont-know-how-to-heal-on-BlackdProxy">I dont know how to heal on BlackdProxy</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">GreenMean</div><div class="date">06-14-2013, 04:20</div></div><div class="posttext">I don't know how to heal on BlackdProxy <br />
+Can someone please tell me how to heal <br />
+Like<br />
+At 200HP - Use &quot;exura&quot;            Things like that<br />
+<br />
+<br />
+<br />
+Thanks in advance : )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-14-2013, 12:10</div></div><div class="posttext">The easiest way would be the &quot;HP &amp; MANA&quot; tool in Blackdproxy. You can see it when you start Proxy up. In there you can set up the use of potions or spells when a certain percentage is reached (e.g. HP less than 70%, use spell exura). However this thing doesn't keep your mana in mind. Meaning it will endlessly try to cast this spell even when you don't have enough mana. other players can see you failing to cast a spell and that makes it extremely suspicious. I recommend using Conditionals. Its the &quot;?&quot; option when opening Proxy right next to &quot;EVENTS&quot;. In there you can upload conditionals or make them yourself. There are some tutorials about conditionals. Use this (http://www.blackdtools.net/showthread.php?47680-In-date!-Understanding-Conditional-Events-%28In-a-Nutshell%29) one to understand it a little bit better.<br />
+<br />
+After reading that post I can tell you how your conditional should look like:<br />
+Thing 1:   $myhp$<br />
+Operator: #number&lt;=#<br />
+Thing 2:   200<br />
+Action:    exura<br />
+The other boxes remain unchecked or unfilled.<br />
+This conditional however has the same problem as the &quot;HP &amp; MANA&quot; too. It will try to cast endlessly even when out of mana. Therefore you only want the action exura to happen when you also have the mana for it. You'll need something to happen when 2 conditions are true. Read this (http://www.blackdtools.net/showthread.php?4710-Act-only-if-2-conditions-are-true-amp-act-only-once-whenever-a-condition-is-true) post for a little tutorial about it.<br />
+<br />
+In order to make this happen we are gonna add a custom variable (e.g. _exura) that counts 1 up when one of these conditions is true. When it's value reaches 2 or higher it will cast exura. However when one of these conditions becomes false, the custom variable will drop back to value 0:<br />
+<br />
+Thing 1:   $myhp$<br />
+Operator: #number&gt;#<br />
+Thing 2:   200<br />
+Action:    exiva _exura = 0<br />
+<br />
+Thing 1:   $mymana$<br />
+Operator: #number&lt;#<br />
+Thing 2:   20<br />
+Action:    exiva _exura = 0<br />
+<br />
+Thing 1:   $mymana$<br />
+Operator: #number&gt;=#<br />
+Thing 2:   20<br />
+Action:    exiva _exura = $numericalexp:{$_exura$}+1$<br />
+<br />
+Thing 1:   $myhp$<br />
+Operator: #number&lt;=#<br />
+Thing 2:   200<br />
+Action:    exiva _exura = $numericalexp:{$_exura$}+1$<br />
+<br />
+Thing 1:   $_exura$<br />
+Operator: #number&gt;=#<br />
+Thing 2:   2<br />
+Action:    exura<br />
+<br />
+Try it out.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-14-2013, 12:17</div></div><div class="posttext">But since you made this post I can assume you succeeded installing Blackdproxy?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">GreenMean</div><div class="date">06-14-2013, 13:21</div></div><div class="posttext">But since you made this post I can assume you succeeded installing Blackdproxy?<br />
+<br />
+Yup , and you got a very big thanks from me : ) <br />
+<br />
+You really helped me alot , and i am botting now : D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">GreenMean</div><div class="date">06-14-2013, 13:28</div></div><div class="posttext">And , theres one more thing that has been running through me mind<br />
+<br />
+The bot can take spears but in his backpack , how can I make him take the spear in his hand <br />
+<br />
+-I am a paladin 33 , Where can i bot easily?-</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-14-2013, 13:49</div></div><div class="posttext">You can use the &quot;TRAINER&quot; tool in Proxy. Another tutorial here (http://www.blackdtools.net/showthread.php?225-The-trainer-options). Enable it and check the box &quot;Left Hand&quot;. The default ID is for Spears so no need to change that. You can change the &quot;X value&quot; to something like 15. Now you will always have 15 spears in your left hand slot as long as you have spears in your backpack to refill the broken ones. You can probably also use a conditional for this, but I have none at hand.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">GreenMean</div><div class="date">06-14-2013, 21:09</div></div><div class="posttext">Afwasmidd  I appreciate your help so much dude , &lt;3   <br />
+<br />
+But.. , theres one more question i wanna ask  : ) <br />
+ Its hard to find a script on where i wanna bot , soo<br />
+<br />
+How can i make my own script<br />
+Attack monsters ____ , ____<br />
+Set waypoints , how can i do that ?  I tried but i didnt undetstand anything<br />
+<br />
+Thanks ( :</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-14-2013, 21:54</div></div><div class="posttext">Afwasmidd  I appreciate your help so much dude , &lt;3   <br />
+<br />
+But.. , theres one more question i wanna ask  : ) <br />
+ Its hard to find a script on where i wanna bot , soo<br />
+<br />
+How can i make my own script<br />
+Attack monsters ____ , ____<br />
+Set waypoints , how can i do that ?  I tried but i didnt undetstand anything<br />
+<br />
+Thanks ( :<br />
+<br />
+Well setting waypoints and stuff is the most annoying part about making your own script. The recent Tibia updates made it even more annoying. When I made my first script I would start the Cavebot and type exiva addmove ingame when I was on a waypoint. Doing this at every waypoint creates a script that has your hunting spot route. But now it says 'you must first learn this spell' when I try to do it that way and it doesn't add the waypoint at all. So with my newer script I just used pencil and paper and wrote down the waypoints. You can see your current coordination with the &quot;CHEATS&quot; tool from proxy. Make it update every so many ms. To set a waypoint in the Cavebot you just type: move x,y,z (e.g. move 33000,33000,7).  I always make sure there is a main floor where the script goes back to after every action (7 which is ground level). <br />
+<br />
+Attacking monsters can be done by using setMeleeKill monstername (e.g. setMeleeKill Troll). If you want a certain monster to be killed before another kind of monster you can use setPriority monstername +value (e.g. setPriority Troll Champion +2). These are just 2 basic commands that you can use with the cavebot. There are many more, but some are rarely used. Check this tutorial (http://www.blackdtools.net/showthread.php?21374-Cavebot-for-dummies!-%28EVERYTHING-you-need-to-know!%29) for some info about the different commands. <br />
+<br />
+I think the best way to learn scriptwriting is by using already existing scripts and studying them. This way you'll understand how certain commands work and how you can make them work together. When you know how most of the commands work its basically up to you how you put them to use. At this point your own brain comes in to play. Most of the scripts out there are very basic and are not that difficult to understand. That's why I decided to make my own scripts. At first I tried modifying existing scripts, but I soon started on my own project. It's been 2 weeks now and I made lots of progress. I released 2 scripts so far that I think are of better quality than most scripts available for the same hunting spots. You might find them interesting since I described most of my lines. You can find them here (http://www.blackdtools.net/showthread.php?60392-Afwasmiddel-s-Edron-Rotworms-bot-for-Paladins) and here (http://www.blackdtools.net/showthread.php?60490-Cyclopolis-script-for-Knight-and-Paladins-by-Afwasmiddel). Just mess around a little and eventually you'll get the hang of it. I like to make scripts, so if you ever get stuck and need some help I would be glad to assist you. And even though this forum isn't that lively anymore there are still some good old posts that can help you. I definitely learned a lot from exploring the forum, so I surely recommend doing that as well.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">qelsik</div><div class="date">06-15-2013, 23:06</div></div><div class="posttext">The easiest way would be the &quot;HP &amp; MANA&quot; tool in Blackdproxy. You can see it when you start Proxy up. In there you can set up the use of potions or spells when a certain percentage is reached (e.g. HP less than 70%, use spell exura). However this thing doesn't keep your mana in mind. Meaning it will endlessly try to cast this spell even when you don't have enough mana. other players can see you failing to cast a spell and that makes it extremely suspicious. I recommend using Conditionals. Its the &quot;?&quot; option when opening Proxy right next to &quot;EVENTS&quot;. In there you can upload conditionals or make them yourself. There are some tutorials about conditionals. Use this (http://www.blackdtools.net/showthread.php?47680-In-date!-Understanding-Conditional-Events-%28In-a-Nutshell%29) one to understand it a little bit better.<br />
+<br />
+After reading that post I can tell you how your conditional should look like:<br />
+Thing 1:   $myhp$<br />
+Operator: #number&lt;=#<br />
+Thing 2:   200<br />
+Action:    exura<br />
+The other boxes remain unchecked or unfilled.<br />
+This conditional however has the same problem as the &quot;HP &amp; MANA&quot; too. It will try to cast endlessly even when out of mana. Therefore you only want the action exura to happen when you also have the mana for it. You'll need something to happen when 2 conditions are true. Read this (http://www.blackdtools.net/showthread.php?4710-Act-only-if-2-conditions-are-true-amp-act-only-once-whenever-a-condition-is-true) post for a little tutorial about it.<br />
+<br />
+In order to make this happen we are gonna add a custom variable (e.g. _exura) that counts 1 up when one of these conditions is true. When it's value reaches 2 or higher it will cast exura. However when one of these conditions becomes false, the custom variable will drop back to value 0:<br />
+<br />
+Thing 1:   $myhp$<br />
+Operator: #number&gt;#<br />
+Thing 2:   200<br />
+Action:    exiva _exura = 0<br />
+<br />
+Thing 1:   $mymana$<br />
+Operator: #number&lt;#<br />
+Thing 2:   20<br />
+Action:    exiva _exura = 0<br />
+<br />
+Thing 1:   $mymana$<br />
+Operator: #number&gt;=#<br />
+Thing 2:   20<br />
+Action:    exiva _exura = $numericalexp:{$_exura$}+1$<br />
+<br />
+Thing 1:   $myhp$<br />
+Operator: #number&lt;=#<br />
+Thing 2:   200<br />
+Action:    exiva _exura = $numericalexp:{$_exura$}+1$<br />
+<br />
+Thing 1:   $_exura$<br />
+Operator: #number&gt;=#<br />
+Thing 2:   2<br />
+Action:    exura<br />
+<br />
+Try it out.<br />
+<br />
+u should use new functions : d<br />
+$istrue:{$check:{$myhp$},#number&lt;#,200$},{$check:{$mymana$},#number&gt;=#,20$}$<br />
+#number=#<br />
+0<br />
+0<br />
+500<br />
+0<br />
+exura<br />
+<br />
+isn't it better?<br />
+7 lines instead of ~35 lines<br />
+<br />
+Each &quot;$check:$&quot; returns 0 if condition is true, and 1 if it's false.<br />
+$istrue:$ - if all checks are true then returns 0, but if just ONE is false then returns 1<br />
+<br />
+sorry for terrible english :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Afwasmidd</div><div class="date">06-16-2013, 02:53</div></div><div class="posttext">u should use new functions : d<br />
+$istrue:{$check:{$myhp$},#number&lt;#,200$},{$check:{$mymana$},#number&gt;=#,20$}$<br />
+#number=#<br />
+0<br />
+0<br />
+500<br />
+0<br />
+exura<br />
+<br />
+isn't it better?<br />
+7 lines instead of ~35 lines<br />
+<br />
+Each &quot;$check:$&quot; returns 0 if condition is true, and 1 if it's false.<br />
+$istrue:$ - if all checks are true then returns 0, but if just ONE is false then returns 1<br />
+<br />
+sorry for terrible english :(<br />
+<br />
+All right, didn't know there was something like that. That's definitely more convenient than writing all those other lines. Does this also work with the conditional tool from proxy? Or do you have to make it with txt files?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">qelsik</div><div class="date">06-16-2013, 10:21</div></div><div class="posttext">Yes, it work with &quot;conditional tool&quot;<br />
+look:<br />
+http://scr.hu/0bwo/3h5sp</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

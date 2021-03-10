@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, setloot, move, setbot, depot, handed, deposit, swords, dwarf, char, ghoul, skeleton, dragon, cash, wolf, cyclops, setchaoticmoveson, autoeatfood=1, 32361,32000,12, iftrue, $mycap$number, 32375,32010,12, setlootdistance, 32373,31986,12, setavoidfront, smith, mummy, bonelord, shambler, warrior, geomancer, guard, crypt, oldlootmode=1, mindelaytoloot=1, 32389,32003,12, 32381,31996,12, 32371,32002,12, setfollow, script, collect, item, update, depositer, tomb, oski1233, guys, snack, flask, setfriendly" />
+	<meta name="description" content="sorry for my bad english. 
+ 
+Hello guys, i created script to bot in &quot;facc tomb&quot;. It's my first script what i create. 
+I back to game after some months... and i still have a licence ; ) so... what is it? We can bot in mount sterum - facc tomb - with ghouls, crypt shamblers and others. It collect every item to sell like ghoul snack, after we get enough cash (&lt;= 400cap - to edit) us character will back to bank in thais and deposit money, without items and back to hunt... its my first script, if u" />
+	
+	<title> &quot;FACC Tomb&quot; + cash depositer - by oski1233 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  &quot;FACC Tomb&quot; + cash depositer - by oski1233</div>
+<hr />
+<div class="pda"><a href="t-55051.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?55051-quot-FACC-Tomb-quot-cash-depositer-by-oski1233">&quot;FACC Tomb&quot; + cash depositer - by oski1233</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">oski1233</div><div class="date">04-12-2011, 20:03</div></div><div class="posttext">sorry for my bad english.<br />
+<br />
+Hello guys, i created script to bot in &quot;facc tomb&quot;. It's my first script what i create.<br />
+I back to game after some months... and i still have a licence ; ) so... what is it? We can bot in mount sterum - facc tomb - with ghouls, crypt shamblers and others. It collect every item to sell like ghoul snack, after we get enough cash (&lt;= 400cap - to edit) us character will back to bank in thais and deposit money, without items and back to hunt... its my first script, if u want you can repair it : )<br />
+I dont have better idea to bot, so i use here 92kina with 85/83skills. eq:zao helmet, mpa, zao legs, boh, mms.<br />
+Uhhh... i forgot, go to &quot;runemaker&quot; and add ghost as a friend. I did it and ghost is just ignore ; p<br />
+I made this script few minutes ago... if you have any problem... always you can repair script ; )<br />
+<br />
+Please repair this post to perfect english.<br />
+<br />
+script:<br />
+<br />
+setFriendly<br />
+setFollow<br />
+setLoot D7 0B<br />
+setLoot D4 0B<br />
+setLoot 33 28<br />
+setLoot D3 0B<br />
+setLoot CA 2C<br />
+setLoot CB 2C<br />
+setLoot 0A 17<br />
+setLoot F8 2C<br />
+setLoot 19 17<br />
+setChaoticMovesON<br />
+setBot AutoEatFood=1<br />
+setLootDistance 99<br />
+setBot OldLootMode=1<br />
+setBot MINDELAYTOLOOT=1<br />
+setMeleeKill ghoul<br />
+setMeleeKill skeleton<br />
+setMeleeKill dragon<br />
+setAvoidFront dragon<br />
+setMeleeKill skeleton warrior<br />
+setMeleeKill crypt shambler<br />
+setMeleeKill wolf<br />
+setMeleeKill bonelord<br />
+setMeleeKill mummy<br />
+setMeleeKill wolf<br />
+setMeleeKill cyclops<br />
+setMeleeKill cyclops smith<br />
+move 32389,32003,12<br />
+move 32381,31996,12<br />
+move 32373,31986,12<br />
+move 32371,32002,12<br />
+move 32361,32000,12<br />
+move 32375,32010,12<br />
+IfTrue ($mycap$#number&lt;=#40000) Goto $nlineoflabel:deposit$<br />
+move 32368,32022,12<br />
+move 32376,32028,12<br />
+move 32374,32006,12<br />
+move 32386,31988,12<br />
+move 32408,31997,12<br />
+move 32418,32004,12<br />
+move 32440,32006,12<br />
+IfTrue ($mycap$#number&lt;=#40000) Goto $nlineoflabel:deposit$<br />
+move 32444,32018,12<br />
+move 32413,32005,12<br />
+move 32391,31978,12<br />
+move 32371,31967,12<br />
+move 32360,31968,12<br />
+IfTrue ($mycap$#number&lt;=#40000) Goto $nlineoflabel:deposit$<br />
+move 32389,31986,12<br />
+move 32390,32005,12<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 32391,32006,12<br />
+move 32391,32007,11<br />
+move 32391,32011,11<br />
+move 32391,32012,10<br />
+move 32405,32033,10<br />
+move 32405,32034,9<br />
+move 32418,32041,9<br />
+move 32418,32042,8<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32105,7<br />
+move 32430,32142,7<br />
+move 32369,32175,7<br />
+move 32346,32214,7<br />
+move 32344,32229,7<br />
+sayMessage hi<br />
+waitX 3<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+move 32364,32214,7<br />
+move 32368,32182,7<br />
+move 32443,32130,7<br />
+move 32449,32105,7<br />
+move 32449,32069,7<br />
+move 32447,32069,8<br />
+move 32428,32064,8<br />
+move 32418,32042,8<br />
+move 32418,32041,9<br />
+move 32405,32034,9<br />
+move 32405,32033,10<br />
+move 32391,32012,10<br />
+move 32391,32010,11<br />
+move 32391,32006,12<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+where we should start?<br />
+http://img847.imageshack.us/img847/8214/xddy.png</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oski1233</div><div class="date">04-14-2011, 19:48</div></div><div class="posttext">Hello guys ; ) i update this script. Now its better, its also collect two handed swords, go to depot and deposit every item like ghoul snack, two handed swords, flask of em... fluid and others. Before us char deposit all cash to Thais bank. Us char back to depot when have low than 100cap.<br />
+<br />
+setFriendly<br />
+setFollow<br />
+setLoot D7 0B<br />
+setLoot C1 0C<br />
+setLoot D4 0B<br />
+setLoot 33 28<br />
+setLoot D3 0B<br />
+setLoot CA 2C<br />
+setLoot 1A 17<br />
+setLoot CB 2C<br />
+setLoot B1 25<br />
+setLoot 0A 17<br />
+setLoot F8 2C<br />
+setLoot 19 17<br />
+setChaoticMovesON<br />
+setBot AutoEatFood=1<br />
+setLootDistance 99<br />
+setBot OldLootMode=1<br />
+setBot MINDELAYTOLOOT=1<br />
+setMeleeKill ghoul<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf geomancer<br />
+setMeleeKill skeleton<br />
+setMeleeKill dragon<br />
+setAvoidFront dragon<br />
+setMeleeKill skeleton warrior<br />
+setMeleeKill crypt shambler<br />
+setMeleeKill wolf<br />
+setMeleeKill bonelord<br />
+setMeleeKill mummy<br />
+setMeleeKill wolf<br />
+setMeleeKill cyclops<br />
+setMeleeKill cyclops smith<br />
+move 32389,32003,12<br />
+move 32381,31996,12<br />
+move 32373,31986,12<br />
+move 32371,32002,12<br />
+move 32361,32000,12<br />
+move 32375,32010,12<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+move 32368,32022,12<br />
+move 32376,32028,12<br />
+move 32374,32006,12<br />
+move 32386,31988,12<br />
+move 32408,31997,12<br />
+move 32418,32004,12<br />
+move 32440,32006,12<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+move 32444,32018,12<br />
+move 32413,32005,12<br />
+move 32391,31978,12<br />
+move 32371,31967,12<br />
+move 32360,31968,12<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+move 32389,31986,12<br />
+move 32390,32005,12<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 32391,32006,12<br />
+move 32391,32007,11<br />
+move 32391,32011,11<br />
+move 32391,32012,10<br />
+move 32405,32033,10<br />
+move 32405,32034,9<br />
+move 32418,32041,9<br />
+move 32418,32042,8<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32105,7<br />
+move 32430,32142,7<br />
+move 32369,32175,7<br />
+move 32346,32214,7<br />
+move 32344,32229,7<br />
+sayMessage hi<br />
+waitX 3<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade balance<br />
+move 32347,32230,7<br />
+move 32347,32232,8<br />
+move 32349,32222,8<br />
+putLootOnDepot<br />
+move 32364,32214,7<br />
+move 32368,32182,7<br />
+move 32443,32130,7<br />
+move 32449,32105,7<br />
+move 32449,32069,7<br />
+move 32447,32069,8<br />
+move 32428,32064,8<br />
+move 32418,32042,8<br />
+move 32418,32041,9<br />
+move 32405,32034,9<br />
+move 32405,32033,10<br />
+move 32391,32012,10<br />
+move 32391,32010,11<br />
+move 32391,32006,12<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+I hope u enjoy this! ; )<br />
+start place this same what before.<br />
+Please comment.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ban kai</div><div class="date">04-26-2011, 11:46</div></div><div class="posttext">script is ok but deposit not working my char come bank and not deposting gp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">clorens</div><div class="date">10-24-2011, 15:45</div></div><div class="posttext">So far so good!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

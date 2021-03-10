@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="004e8680, short, ds[eax+3],0, ds[eax+2],0, 004e8674, 004e8672, 004e8678, 004e8668, ds[eax+1],0, 004e866c, 004e866e, 004e867a, bytes, eax,1, 01000000, 004e8666, 004e867f, overwrite, 004e8682, eax,eax, portoffset=&amp;h30, ipaddresspointeroffset=&amp;h20, hostnamepointeroffset=&amp;h4, change, numeric, loginserverstep=&amp;h38, loginserverstartpointer=&amp;h80f31c, login, 10.11, system, problem, proxychecker=&amp;h4e8660, solved, server, 004e8660, function, eax,dword, ds[eax+20], tibia, 004e8663, tibia.004e8660guessed, detected, avoid, proxy, ds[eax],0" />
+	<meta name="description" content="All my tools are now updated, except Blackd Proxy. 
+Blackd Proxy will be a bit harder to update because they changed the login server structure. 
+ 
+Now login servers seems to be loaded from this part of the code: 
+ 
+004E8870   8B0D 1CF38000    MOV ECX,DWORD PTR DS:80F31C] 
+004E8876   8B15 20F38000    MOV EDX,DWORD PTR DS: 
+004E887C   3BCA             CMP ECX,EDX 
+004E887E   74 0D            JE SHORT Tibia.004E888D 
+004E8880   8079 32 00       CMP BYTE PTR DS:,0" />
+	
+	<title> Tibia 10.11 - New login system [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a></div>
+<hr />
+<div class="pda"><a href="t-60842.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version: <a href="https://www.blackdtools.net/index.php">Blackdtools Tibia Forum</a></p>
+<div class="floatcontainer"></div><br /><div id="content">
+<strong>Log in</strong>
+<form action="t-60842.html%3Flogin=1.html" method="post">
+User Name: <input type="text" name="username" size="15" />
+Password: <input type="password" name="password" size="15" />
+<input type="submit" name="sbutton" value="Log in" />
+</form>
+</div>
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

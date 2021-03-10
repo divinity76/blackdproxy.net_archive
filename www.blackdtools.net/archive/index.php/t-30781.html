@@ -1,0 +1,1790 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="made, dwarf, cave, lootdrop, guards, dwarves, fran, scripts, inside, miecho, kazordoon, moneymaking, entrance, wagon, good, city, dwarven, called, quest, slimes, depositer, guard, item, floor, insane, smallest, means, rings, i`ll, lord, universe, mine, khuzdul, language, town, salozka, caves, accordance, palladin, soldier, perfect, biggest, tower, horned, killer, west, minotaurs, soldiers, secound, adam" />
+	<meta name="description" content="Hi! 
+ 
+Kazordoon is a dwarven underground settlement with the official status of Empire located inside a big mountain called &quot;The Big Old One&quot;. Obviously its inhabited with all the classes of Dwarves, some Dwarves are pacific persons at stores but other dwarves are aggressive and attack anyone that get into their big city. It also leads entrance to the dwarven prison of Dwacatra. Good for all levels because of Mines are good for skilling, getting level. You can make many lootbags getting 1k/per" />
+	
+	<title> Kazordoon`s Scripts [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Kazordoon`s Scripts</div>
+<hr />
+<div class="pda"><a href="t-30781.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?30781-Kazordoon-s-Scripts">Kazordoon`s Scripts</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-15-2008, 17:04</div></div><div class="posttext">Hi!<br />
+<br />
+Kazordoon is a dwarven underground settlement with the official status of Empire located inside a big mountain called &quot;The Big Old One&quot;. Obviously its inhabited with all the classes of Dwarves, some Dwarves are pacific persons at stores but other dwarves are aggressive and attack anyone that get into their big city. It also leads entrance to the dwarven prison of Dwacatra. Good for all levels because of Mines are good for skilling, getting level. You can make many lootbags getting 1k/per 1000oz, it has a mailbox (only for the ones who have completed The Postman Missions Quest.) In update 8.2 (2.07.2008) Kazordoon was remapped and has new features like a own Ore wagon transport system, you need to buy a ticket for 250 gold coins (it is useful just for 1 week) and go into a wagon, you will be transported to your selected destination. Destinations are: Depot, Entrance, Temple, Shops and The Steamship. New Walls and other furniture were added too, New &quot;Quest&quot; was implemented.<br />
+<br />
+Kazordoon comes of Khazad-dûm, which means &quot;Mine of the Dwarves&quot; in accordance with the Khuzdul, the language of the Dwarves in the universe of Lord of the Rings.<br />
+<br />
+______<br />
+<br />
+Scripts:<br />
+<br />
+First of all I`ll put scripts inside town:<br />
+<br />
+1). Dwarf Soldier and Slimes with depositer - perfect moneymaking! (Made by Salozka)<br />
+<br />
+2). Dwarf Guards 3 caves with lootdrop in the biggest one! Each item on each floor, insane moneymaking! (Made by MieChO)<br />
+<br />
+3). Smallest Dwarf Guard Cave with Slimes made for Palladin with taking spears from ground and loot drop next to it! (Made by MieChO)<br />
+<br />
+Now time to Scripts outside the City:<br />
+<br />
+4) Dwarf Guards - Maze Cave with lootdrop (Made by Fran)<br />
+<br />
+5) Dwarf Guards - Last Cave on the south called Sun`s Cave with lootdrop (Made by Fran)<br />
+<br />
+6) Dwarf Guards - Dwarf Hell with lootdrop (Made by Fran)<br />
+<br />
+7) Dwarf Guards - Cave at the isle inside of two little bridges with lootdrop(Made by Fran)<br />
+<br />
+8) Dwarf Soldiers - Secound cave -3, -4 with lootdrop! (Made by MieChO)<br />
+<br />
+9) Minotaurs - Cave west of all cave with Tower and Horned Fox killer, with lootdrop (Made by Adam)<br />
+<br />
+10) Undeadths under Mount Stermun - 3 floors with depositer in Thais (Made by Przemooz)<br />
+<br />
+<br />
+<br />
+It`ll be updating !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-15-2008, 17:04</div></div><div class="posttext">Adnotation 1<br />
+<br />
+Dwarf Soldier and Slimes with depositer - perfect moneymaking! (Made by Salozka)<br />
+<br />
+Waypoints:<br />
+<br />
+<br />
+onGMpause<br />
+setFriendly<br />
+setPriority dwarf soldier:+1<br />
+setMeleekill bat<br />
+setPriority slime:+1<br />
+setMeleeKill dwarf<br />
+setMeleeKill slime<br />
+setMeleeKill rat<br />
+setMeleeKill rotworm<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill poison spider<br />
+setMeleeKill dwarf guard<br />
+setLoot D7 0B<br />
+setLoot C2 0C<br />
+setLoot 1E 0D<br />
+setLoot 31 0D<br />
+setLoot 17 0D<br />
+setLoot 15 0D<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 61 0D<br />
+setLoot 19 0C<br />
+setLoot 8B 0E<br />
+setLoot 14 0C<br />
+setLoot F8 16<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32667,31939,13<br />
+move 32665,31929,13<br />
+move 32665,31919,13<br />
+move 32667,31904,13<br />
+move 32668,31893,13<br />
+move 32668,31891,14<br />
+move 32668,31887,15<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32666,31882,15<br />
+move 32668,31890,15<br />
+move 32667,31892,14<br />
+move 32668,31899,13<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32667,31915,13<br />
+move 32664,31925,13<br />
+move 32665,31936,13<br />
+move 32657,31939,13<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32647,31939,13<br />
+move 32632,31934,13<br />
+move 32620,31924,13<br />
+move 32605,31916,13<br />
+move 32598,31907,13<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32583,31898,13<br />
+move 32575,31886,13<br />
+move 32565,31885,13<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32576,31894,13<br />
+move 32582,31904,13<br />
+move 32574,31912,13<br />
+move 32558,31918,13<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32566,31917,13<br />
+move 32582,31906,13<br />
+move 32596,31907,13<br />
+move 32604,31915,13<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32619,31922,13<br />
+move 32623,31927,13<br />
+move 32634,31935,13<br />
+IfTrue ($mycap$#number&lt;=#55) Goto $nlineoflabel:deposit$<br />
+move 32645,31937,13<br />
+move 32662,31941,13<br />
+move 32665,31947,13<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 32667,31939,13<br />
+move 32667,31941,12<br />
+move 32666,31940,11<br />
+move 32665,31938,10<br />
+move 32633,31934,10<br />
+move 32628,31937,11<br />
+move 32625,31939,11<br />
+move 32621,31938,11<br />
+move 32617,31936,10<br />
+move 32605,31922,10<br />
+move 32610,31920,9<br />
+move 32612,31921,8<br />
+move 32641,31917,8<br />
+move 32655,31916,8<br />
+stackItems<br />
+resetLoot<br />
+setLoot D7 0B<br />
+setLoot 1E 0D<br />
+setLoot 17 0D<br />
+setLoot 15 0D<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot C2 0C<br />
+setLoot 61 0D<br />
+setLoot 19 0C<br />
+setLoot 8B 0E<br />
+setLoot 14 0C<br />
+setLoot F8 16<br />
+putLootOnDepot<br />
+move 32651,31913,8<br />
+move 32646,31908,8<br />
+move 32648,31913,9<br />
+move 32641,31938,9<br />
+move 32621,31938,9<br />
+move 32608,31921,9<br />
+move 32605,31922,10<br />
+move 32599,31938,10<br />
+move 32620,31936,10<br />
+move 32626,31936,11<br />
+move 32629,31938,10<br />
+move 32658,31937,10<br />
+move 32666,31939,10<br />
+move 32668,31939,11<br />
+move 32667,31940,12<br />
+move 32666,31939,13<br />
+gotoScriptLine 0<br />
+<br />
+Link to main page of this scripts :<br />
+http://www.blackdtools.net/showthread.php?t=23235&amp;highlight=Dwarf+Soldier+Moneymaker<br />
+<br />
+<br />
+<br />
+Adnotation 2:<br />
+<br />
+Dwarf Guards 3 caves with lootdrop in the biggest one! Each item on each floor, insane moneymaking! (Made by MieChO)<br />
+<br />
+Waypoints<br />
+<br />
+<br />
+onGMpause<br />
+setMeleeKill rotworm<br />
+setMeleeKill dwarf<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill Carrion Worm<br />
+setLoot 14 0C<br />
+setLoot 61 0D<br />
+setLoot 76 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot D7 0B<br />
+setLoot 1E 0D<br />
+setLoot CB 0C<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 17 0D<br />
+setLoot 31 0D<br />
+setLoot 8B 0E<br />
+setLoot D9 0B<br />
+setLoot F8 16<br />
+move 32602,31909,13<br />
+move 32603,31904,13<br />
+move 32602,31899,13<br />
+move 32601,31894,13<br />
+move 32598,31889,13<br />
+move 32599,31884,13<br />
+move 32602,31879,13<br />
+move 32609,31876,13<br />
+move 32616,31876,13<br />
+move 32623,31876,13<br />
+move 32628,31877,13<br />
+move 32629,31877,13<br />
+move 32630,31876,14<br />
+move 32631,31876,14<br />
+move 32632,31876,15<br />
+move 32636,31876,15<br />
+move 32640,31880,15<br />
+move 32642,31880,15<br />
+move 32637,31880,15<br />
+move 32630,31884,15<br />
+move 32631,31889,15<br />
+move 32628,31884,15<br />
+move 32632,31878,15<br />
+move 32625,31878,15<br />
+move 32618,31878,15<br />
+move 32612,31878,15<br />
+move 32605,31881,15<br />
+move 32597,31881,15<br />
+move 32591,31881,15<br />
+move 32584,31883,15<br />
+move 32588,31883,15<br />
+move 32595,31882,15<br />
+move 32601,31882,15<br />
+move 32608,31882,15<br />
+move 32615,31879,15<br />
+move 32622,31879,15<br />
+move 32628,31876,15<br />
+move 32631,31875,15<br />
+move 32631,31877,14<br />
+move 32630,31877,14<br />
+move 32628,31877,13<br />
+move 32627,31875,13<br />
+move 32622,31876,13<br />
+move 32615,31876,13<br />
+move 32608,31876,13<br />
+move 32601,31881,13<br />
+move 32596,31886,13<br />
+move 32597,31891,13<br />
+move 32599,31896,13<br />
+move 32601,31901,13<br />
+move 32594,31906,13<br />
+move 32587,31904,13<br />
+move 32583,31899,13<br />
+move 32580,31894,13<br />
+move 32576,31891,13<br />
+move 32576,31887,13<br />
+move 32578,31883,13<br />
+move 32575,31888,13<br />
+move 32568,31890,13<br />
+move 32563,31885,13<br />
+move 32563,31882,13<br />
+move 32564,31887,13<br />
+move 32571,31891,13<br />
+move 32578,31896,13<br />
+move 32583,31901,13<br />
+move 32580,31906,13<br />
+move 32576,31911,13<br />
+move 32569,31907,13<br />
+move 32562,31904,13<br />
+move 32557,31902,13<br />
+move 32556,31902,13<br />
+move 32556,31900,14<br />
+move 32557,31900,14<br />
+move 32552,31896,14<br />
+move 32550,31895,14<br />
+move 32549,31895,14<br />
+move 32550,31893,15<br />
+move 32549,31892,15<br />
+move 32552,31888,15<br />
+move 32554,31884,15<br />
+move 32556,31881,15<br />
+move 32560,31878,15<br />
+move 32557,31880,15<br />
+move 32555,31885,15<br />
+move 32552,31890,15<br />
+move 32550,31895,15<br />
+move 32556,31898,15<br />
+move 32549,31898,15<br />
+move 32547,31901,15<br />
+move 32547,31906,15<br />
+move 32548,31909,15<br />
+move 32546,31904,15<br />
+move 32548,31899,15<br />
+move 32548,31894,15<br />
+move 32548,31895,15<br />
+move 32550,31895,14<br />
+move 32550,31896,14<br />
+move 32555,31900,14<br />
+move 32556,31900,14<br />
+move 32557,31902,13<br />
+move 32558,31903,13<br />
+move 32565,31904,13<br />
+move 32569,31909,13<br />
+move 32573,31914,13<br />
+move 32566,31917,13<br />
+move 32559,31919,13<br />
+move 32555,31922,13<br />
+move 32553,31927,13<br />
+move 32553,31926,13<br />
+move 32553,31928,14<br />
+move 32552,31928,14<br />
+move 32552,31930,15<br />
+move 32554,31928,15<br />
+move 32557,31925,15<br />
+move 32554,31928,15<br />
+move 32554,31933,15<br />
+move 32556,31938,15<br />
+move 32556,31943,15<br />
+move 32554,31948,15<br />
+move 32554,31952,15<br />
+move 32557,31956,15<br />
+move 32562,31960,15<br />
+move 32568,31964,15<br />
+move 32573,31963,15<br />
+move 32568,31968,15<br />
+move 32568,31973,15<br />
+move 32568,31966,15<br />
+move 32562,31960,15<br />
+move 32555,31963,15<br />
+move 32552,31972,15<br />
+move 32552,31977,15<br />
+move 32552,31982,15<br />
+move 32553,31986,15<br />
+move 32553,31988,15<br />
+move 32557,31985,15<br />
+move 32561,31987,15<br />
+move 32563,31987,15<br />
+resetLoot<br />
+setLoot 14 0C<br />
+dropLootOnGround 32562,31986,15<br />
+setLoot 61 0D<br />
+dropLootOnGround 32562,31987,15<br />
+setLoot 76 0D<br />
+dropLootOnGround 32562,31988,15<br />
+setLoot 15 0D<br />
+dropLootOnGround 32562,31989,15<br />
+setLoot C2 0C<br />
+dropLootOnGround 32562,31990,15<br />
+setLoot D7 0B<br />
+dropLootOnGround 32562,31991,15<br />
+setLoot 1E 0D<br />
+dropLootOnGround 32562,31992,15<br />
+setLoot CB 0C<br />
+dropLootOnGround 32563,31992,15<br />
+setLoot E9 0C<br />
+dropLootOnGround 32563,31991,15<br />
+setLoot 55 0D<br />
+dropLootOnGround 32563,31990,15<br />
+setLoot 17 0D<br />
+dropLootOnGround 32563,31989,15<br />
+setLoot 31 0D<br />
+dropLootOnGround 32563,31988,15<br />
+setLoot 8B 0E<br />
+dropLootOnGround 32563,31987,15<br />
+setLoot D9 0B<br />
+dropLootOnGround 32564,31988,15<br />
+move 32556,31984,15<br />
+move 32553,31979,15<br />
+move 32552,31974,15<br />
+move 32553,31969,15<br />
+move 32554,31964,15<br />
+move 32555,31959,15<br />
+move 32555,31954,15<br />
+move 32555,31949,15<br />
+move 32555,31944,15<br />
+move 32556,31938,15<br />
+move 32554,31933,15<br />
+move 32553,31930,15<br />
+move 32552,31930,15<br />
+move 32552,31930,14<br />
+move 32553,31930,14<br />
+move 32552,31928,14<br />
+move 32553,31928,13<br />
+move 32553,31927,13<br />
+move 32555,31922,13<br />
+move 32562,31919,13<br />
+move 32569,31918,13<br />
+move 32576,31914,13<br />
+move 32580,31909,13<br />
+move 32584,31904,13<br />
+move 32591,31907,13<br />
+move 32598,31908,13<br />
+move 32602,31908,13<br />
+gotoScriptLine 0<br />
+<br />
+Link to this script:<br />
+http://www.blackdtools.net/showthread.php?t=25912&amp;highlight=Dwarf+Caves</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-15-2008, 17:10</div></div><div class="posttext">Adnotation 3<br />
+<br />
+Smallest Dwarf Guard Cave with Slimes made for Palladin with taking spears from ground and loot drop next to it! (Made by MieChO<br />
+<br />
+Waypoints<br />
+<br />
+<br />
+onGMpause<br />
+#<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill spider<br />
+setMeleeKill dwarf<br />
+setMeleeKill slime<br />
+setMeleeKill rotworm<br />
+setMeleeKill carrion worm<br />
+#<br />
+setLoot 8B 0E<br />
+setLoot D7 0B<br />
+setLoot DB 0B<br />
+setLoot 1E 0D<br />
+setLoot 76 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot 14 0C<br />
+setLoot 61 0D<br />
+setLoot 06 17<br />
+setLoot 8D 0E<br />
+setLoot F8 16<br />
+setLoot E9 0C<br />
+#<br />
+move 32646,31986,13<br />
+move 32645,31986,13<br />
+move 32644,31986,14<br />
+move 32644,31985,14<br />
+move 32644,31984,15<br />
+move 32639,31984,15<br />
+move 32634,31984,15<br />
+move 32629,31979,15<br />
+move 32629,31975,15<br />
+move 32626,31971,15<br />
+move 32628,31974,15<br />
+move 32627,31979,15<br />
+move 32622,31980,15<br />
+move 32618,31977,15<br />
+move 32615,31974,15<br />
+move 32611,31971,15<br />
+move 32610,31967,15<br />
+move 32610,31970,15<br />
+move 32605,31972,15<br />
+move 32600,31975,15<br />
+#<br />
+stackItems<br />
+setLoot 8B 0E<br />
+setLoot D7 0B<br />
+setLoot DB 0B<br />
+setLoot 1E 0D<br />
+setLoot 76 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot 14 0C<br />
+setLoot 61 0D<br />
+setLoot 06 17<br />
+setLoot 8D 0E<br />
+setLoot F8 16<br />
+dropLootOnGround 32594,31975,15<br />
+waitX 30<br />
+#<br />
+move 32598,31975,15<br />
+move 32604,31973,15<br />
+move 32609,31971,15<br />
+move 32614,31974,15<br />
+move 32617,31977,15<br />
+move 32621,31981,15<br />
+move 32620,31985,15<br />
+move 32617,31987,15<br />
+move 32612,31989,15<br />
+move 32618,31987,15<br />
+move 32620,31991,15<br />
+move 32624,31994,15<br />
+move 32620,31990,15<br />
+move 32621,31985,15<br />
+move 32623,31981,15<br />
+move 32629,31979,15<br />
+move 32635,31984,15<br />
+move 32641,31984,15<br />
+move 32644,31984,15<br />
+move 32644,31985,14<br />
+move 32644,31986,14<br />
+move 32644,31987,13<br />
+move 32649,31985,13<br />
+move 32653,31986,13<br />
+move 32659,31984,13<br />
+move 32662,31981,13<br />
+move 32662,31976,13<br />
+move 32664,31968,13<br />
+move 32664,31961,13<br />
+move 32663,31957,13<br />
+move 32664,31950,13<br />
+move 32666,31945,13<br />
+move 32666,31940,13<br />
+move 32665,31935,13<br />
+move 32664,31929,13<br />
+move 32664,31922,13<br />
+move 32666,31917,13<br />
+move 32667,31910,13<br />
+move 32667,31904,13<br />
+move 32668,31899,13<br />
+move 32668,31894,13<br />
+move 32668,31892,13<br />
+move 32668,31891,14<br />
+move 32668,31890,15<br />
+move 32666,31886,15<br />
+move 32666,31882,15<br />
+move 32666,31886,15<br />
+move 32668,31889,15<br />
+move 32666,31892,15<br />
+move 32665,31895,15<br />
+move 32664,31899,15<br />
+move 32662,31902,15<br />
+move 32659,31901,15<br />
+move 32663,31903,15<br />
+move 32663,31908,15<br />
+move 32663,31912,15<br />
+move 32664,31917,15<br />
+move 32664,31921,15<br />
+move 32661,31925,15<br />
+move 32659,31926,15<br />
+move 32656,31933,15<br />
+move 32651,31937,15<br />
+move 32656,31934,15<br />
+move 32657,31929,15<br />
+move 32661,31925,15<br />
+move 32664,31923,15<br />
+move 32667,31926,15<br />
+move 32667,31931,15<br />
+move 32667,31927,15<br />
+move 32665,31923,15<br />
+move 32664,31919,15<br />
+move 32663,31913,15<br />
+move 32662,31908,15<br />
+move 32663,31902,15<br />
+move 32664,31896,15<br />
+move 32667,31892,15<br />
+move 32668,31890,15<br />
+move 32668,31891,14<br />
+move 32668,31892,13<br />
+move 32668,31895,13<br />
+move 32668,31900,13<br />
+move 32668,31905,13<br />
+move 32668,31908,13<br />
+move 32667,31912,13<br />
+move 32666,31917,13<br />
+move 32664,31922,13<br />
+move 32663,31927,13<br />
+move 32666,31932,13<br />
+move 32665,31936,13<br />
+move 32666,31942,13<br />
+move 32665,31947,13<br />
+move 32663,31951,13<br />
+move 32663,31956,13<br />
+move 32665,31961,13<br />
+move 32665,31966,13<br />
+move 32663,31972,13<br />
+move 32663,31978,13<br />
+move 32662,31982,13<br />
+move 32656,31986,13<br />
+move 32653,31986,13<br />
+move 32647,31985,13<br />
+#<br />
+gotoScriptLine 0<br />
+<br />
+Link to main page of this script:<br />
+http://www.blackdtools.net/showthread.php?t=28108&amp;highlight=Paladin+Guards<br />
+<br />
+<br />
+<br />
+Adnotation 4<br />
+<br />
+<br />
+Dwarf Guards - Maze Cave with lootdrop (Made by Fran)<br />
+<br />
+Waypoints<br />
+<br />
+<br />
+ onGMpause<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setLoot D7 0B<br />
+setLoot 8B 0E<br />
+setLoot 31 0D<br />
+setLoot 1E 0D<br />
+setLoot 55 0D<br />
+setLoot E9 0C<br />
+setLoot 17 0D<br />
+setLoot 14 0C<br />
+setLoot 17 0D<br />
+setLoot CB 0C<br />
+setLoot D9 0B<br />
+move 32485,31878,12<br />
+move 32488,31878,12<br />
+move 32492,31879,12<br />
+move 32494,31882,12<br />
+move 32493,31886,12<br />
+move 32490,31888,12<br />
+move 32487,31891,12<br />
+move 32484,31893,12<br />
+move 32484,31897,12<br />
+move 32490,31900,12<br />
+move 32487,31905,12<br />
+move 32481,31904,12<br />
+move 32475,31903,12<br />
+move 32477,31899,12<br />
+move 32483,31898,12<br />
+move 32479,31889,12<br />
+move 32478,31886,12<br />
+move 32473,31886,12<br />
+move 32466,31888,12<br />
+move 32468,31893,12<br />
+move 32473,31891,12<br />
+move 32473,31885,12<br />
+move 32473,31881,12<br />
+move 32478,31879,12<br />
+move 32484,31879,12<br />
+move 32484,31878,12<br />
+move 32484,31877,12<br />
+move 32483,31877,12<br />
+move 32483,31878,13<br />
+move 32483,31877,13<br />
+move 32484,31877,13<br />
+move 32479,31878,13<br />
+move 32475,31877,13<br />
+move 32470,31877,13<br />
+move 32462,31877,13<br />
+move 32458,31881,13<br />
+move 32463,31878,13<br />
+move 32470,31878,13<br />
+move 32479,31878,13<br />
+move 32476,31891,13<br />
+move 32471,31892,13<br />
+move 32481,31892,13<br />
+move 32487,31892,13<br />
+move 32489,31887,13<br />
+move 32494,31886,13<br />
+move 32502,31886,13<br />
+move 32506,31892,13<br />
+move 32515,31885,13<br />
+move 32521,31882,13<br />
+move 32525,31882,13<br />
+move 32527,31889,13<br />
+dropLootOnGround 32527,31889,13<br />
+move 32527,31885,13<br />
+move 32524,31882,13<br />
+move 32517,31882,13<br />
+move 32504,31881,13<br />
+move 32503,31883,13<br />
+move 32495,31885,13<br />
+move 32489,31891,13<br />
+move 32481,31891,13<br />
+move 32479,31884,13<br />
+move 32480,31878,13<br />
+move 32482,31878,13<br />
+move 32484,31878,13<br />
+move 32483,31878,13<br />
+move 32483,31879,12<br />
+move 32484,31879,12<br />
+move 32484,31880,12<br />
+gotoScriptLine 0 <br />
+<br />
+Link to main page of this script:<br />
+http://www.blackdtools.net/showthread.php?t=66&amp;highlight=Dwarf+Guard+Fran</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-15-2008, 17:24</div></div><div class="posttext">Adnotation 5<br />
+<br />
+Dwarf Guards - Last Cave on the south called Sun`s Cave with lootdrop (Made by Fran)<br />
+<br />
+Waypoints<br />
+<br />
+<br />
+onGMpause<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setLoot 14 0C<br />
+setLoot 61 0D<br />
+setLoot 76 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot D7 0B<br />
+setLoot 1E 0D<br />
+setLoot CB 0C<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 17 0D<br />
+setLoot 31 0D<br />
+setLoot 8B 0E<br />
+setLoot D9 0B<br />
+move 32439,31967,12<br />
+move 32437,31965,12<br />
+move 32437,31961,12<br />
+move 32439,31958,12<br />
+move 32443,31956,12<br />
+move 32446,31953,12<br />
+move 32447,31956,12<br />
+move 32451,31959,12<br />
+move 32454,31962,12<br />
+move 32454,31964,12<br />
+move 32459,31966,12<br />
+move 32463,31968,12<br />
+move 32465,31971,12<br />
+move 32468,31972,12<br />
+move 32469,31973,12<br />
+move 32469,31974,12<br />
+move 32470,31974,12<br />
+move 32470,31973,13<br />
+move 32469,31973,13<br />
+move 32469,31972,13<br />
+move 32476,31971,13<br />
+move 32472,31973,13<br />
+move 32471,31977,13<br />
+move 32465,31980,13<br />
+move 32463,31983,13<br />
+move 32461,31985,13<br />
+move 32458,31988,13<br />
+move 32461,31983,13<br />
+move 32464,31982,13<br />
+move 32469,31979,13<br />
+move 32470,31976,13<br />
+move 32469,31971,13<br />
+move 32467,31968,13<br />
+move 32465,31965,13<br />
+move 32463,31962,13<br />
+move 32459,31959,13<br />
+move 32454,31957,13<br />
+move 32450,31953,13<br />
+move 32447,31952,13<br />
+move 32445,31950,13<br />
+move 32443,31947,13<br />
+move 32444,31946,13<br />
+dropLootOnGround 32444,31946,13<br />
+move 32444,31949,13<br />
+move 32446,31953,13<br />
+move 32451,31954,13<br />
+move 32454,31957,13<br />
+move 32457,31959,13<br />
+move 32462,31958,13<br />
+move 32466,31956,13<br />
+move 32468,31952,13<br />
+move 32464,31956,13<br />
+move 32464,31963,13<br />
+move 32466,31966,13<br />
+move 32467,31970,13<br />
+move 32468,31972,13<br />
+move 32469,31973,13<br />
+move 32470,31973,13<br />
+move 32470,31974,12<br />
+move 32469,31974,12<br />
+move 32463,31970,12<br />
+move 32460,31968,12<br />
+move 32455,31967,12<br />
+move 32450,31970,12<br />
+move 32446,31971,12<br />
+move 32444,31974,12<br />
+move 32444,31979,12<br />
+move 32445,31981,12<br />
+move 32444,31973,12<br />
+move 32440,31970,12<br />
+move 32439,31968,12<br />
+gotoScriptLine 0 <br />
+<br />
+Main link to this script:<br />
+http://www.blackdtools.net/showthread.php?t=66&amp;highlight=Dwarf+Guard+Fran<br />
+<br />
+<br />
+Adnotation 6<br />
+<br />
+Dwarf Guards - Dwarf Hell with lootdrop (Made by Fran)<br />
+<br />
+<br />
+onGMpause<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setLoot 14 0C<br />
+setLoot 61 0D<br />
+setLoot 76 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot D7 0B<br />
+setLoot 1E 0D<br />
+setLoot CB 0C<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 17 0D<br />
+setLoot 31 0D<br />
+setLoot 8B 0E<br />
+setLoot D9 0B<br />
+move 32528,31950,12<br />
+move 32528,31945,12<br />
+move 32528,31941,12<br />
+move 32528,31937,12<br />
+move 32532,31933,12<br />
+move 32532,31928,12<br />
+move 32534,31926,12<br />
+move 32532,31931,12<br />
+move 32525,31934,12<br />
+move 32519,31929,12<br />
+move 32517,31926,12<br />
+move 32521,31931,12<br />
+move 32527,31936,12<br />
+move 32529,31941,12<br />
+move 32536,31942,12<br />
+move 32541,31937,12<br />
+move 32542,31933,12<br />
+move 32540,31938,12<br />
+move 32533,31943,12<br />
+move 32528,31948,12<br />
+move 32528,31953,12<br />
+move 32527,31958,12<br />
+move 32527,31963,12<br />
+move 32533,31965,12<br />
+move 32539,31963,12<br />
+move 32545,31963,12<br />
+move 32551,31966,12<br />
+move 32544,31963,12<br />
+move 32537,31965,12<br />
+move 32538,31970,12<br />
+move 32542,31975,12<br />
+move 32545,31979,12<br />
+move 32551,31984,12<br />
+move 32554,31989,12<br />
+move 32548,31983,12<br />
+move 32541,31978,12<br />
+move 32538,31973,12<br />
+move 32535,31968,12<br />
+move 32528,31965,12<br />
+move 32522,31970,12<br />
+move 32516,31975,12<br />
+move 32511,31980,12<br />
+move 32508,31985,12<br />
+move 32513,31979,12<br />
+move 32519,31974,12<br />
+move 32522,31969,12<br />
+move 32527,31965,12<br />
+move 32525,31964,13<br />
+move 32525,31965,13<br />
+move 32525,31970,13<br />
+move 32522,31973,13<br />
+move 32517,31976,13<br />
+resetLoot<br />
+setLoot 14 0C<br />
+dropLootOnGround 32522,31975,13<br />
+setLoot 61 0D<br />
+dropLootOnGround 32521,31975,13<br />
+setLoot 76 0D<br />
+dropLootOnGround 32520,31975,13<br />
+setLoot 15 0D<br />
+dropLootOnGround 32519,31975,13<br />
+setLoot C2 0C<br />
+dropLootOnGround 32518,31975,13<br />
+setLoot D7 0B<br />
+dropLootOnGround 32517,31975,13<br />
+setLoot 1E 0D<br />
+dropLootOnGround 32516,31975,13<br />
+setLoot CB 0C<br />
+dropLootOnGround 32516,31976,13<br />
+setLoot E9 0C<br />
+dropLootOnGround 32517,31976,13<br />
+setLoot 55 0D<br />
+dropLootOnGround 32518,31976,13<br />
+setLoot 17 0D<br />
+dropLootOnGround 32519,31976,13<br />
+setLoot 31 0D<br />
+dropLootOnGround 32520,31976,13<br />
+setLoot 8B 0E<br />
+dropLootOnGround 32521,31976,13<br />
+setLoot D9 0B<br />
+dropLootOnGround 32522,31976,13<br />
+move 32514,31971,13<br />
+move 32510,31966,13<br />
+move 32510,31960,13<br />
+move 32506,31957,13<br />
+move 32511,31962,13<br />
+move 32514,31967,13<br />
+move 32513,31972,13<br />
+move 32514,31976,13<br />
+move 32517,31980,13<br />
+move 32520,31985,13<br />
+move 32524,31989,13<br />
+move 32518,31984,13<br />
+move 32516,31981,13<br />
+move 32509,31983,13<br />
+move 32502,31988,13<br />
+move 32497,31993,13<br />
+move 32504,31988,13<br />
+move 32509,31983,13<br />
+move 32514,31978,13<br />
+move 32521,31974,13<br />
+move 32525,31970,13<br />
+move 32525,31965,13<br />
+move 32526,31965,13<br />
+move 32527,31965,12<br />
+move 32527,31960,12<br />
+move 32529,31956,12<br />
+move 32528,31952,12<br />
+move 32527,31952,12<br />
+move 32528,31952,12<br />
+move 32527,31952,11<br />
+move 32526,31952,11<br />
+move 32526,31955,11<br />
+move 32523,31960,11<br />
+move 32517,31968,11<br />
+move 32513,31971,11<br />
+move 32512,31976,11<br />
+move 32509,31980,11<br />
+move 32504,31980,11<br />
+move 32498,31979,11<br />
+move 32495,31979,11<br />
+move 32501,31979,11<br />
+move 32508,31981,11<br />
+move 32515,31981,11<br />
+move 32522,31979,11<br />
+move 32526,31984,11<br />
+move 32526,31986,11<br />
+move 32527,31984,11<br />
+move 32527,31979,11<br />
+move 32534,31975,11<br />
+move 32541,31976,11<br />
+move 32548,31976,11<br />
+move 32548,31981,11<br />
+move 32548,31986,11<br />
+move 32548,31991,11<br />
+move 32548,31986,11<br />
+move 32548,31981,11<br />
+move 32541,31977,11<br />
+move 32539,31972,11<br />
+move 32539,31967,11<br />
+move 32539,31962,11<br />
+move 32540,31957,11<br />
+move 32540,31962,11<br />
+move 32539,31967,11<br />
+move 32538,31972,11<br />
+move 32531,31975,11<br />
+move 32524,31976,11<br />
+move 32518,31979,11<br />
+move 32512,31976,11<br />
+move 32515,31971,11<br />
+move 32517,31966,11<br />
+move 32524,31961,11<br />
+move 32527,31956,11<br />
+move 32527,31952,11<br />
+move 32528,31951,11<br />
+move 32528,31951,12<br />
+move 32528,31952,12<br />
+gotoScriptLine 0<br />
+<br />
+Link to main page of this script:<br />
+http://www.blackdtools.net/showthread.php?t=66&amp;highlight=Dwarf+Guard+Fran<br />
+<br />
+<br />
+<br />
+<br />
+Waypoints:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-15-2008, 17:38</div></div><div class="posttext">Adnotation 7<br />
+<br />
+Dwarf Guards - Cave at the isle inside of two little bridges with lootdrop(Made by Fran)<br />
+<br />
+Waypoints:<br />
+<br />
+<br />
+ onGMpause<br />
+setMeleeKill poison spider<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+setLoot 14 0C<br />
+setLoot 61 0D<br />
+setLoot 76 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot D7 0B<br />
+setLoot 1E 0D<br />
+setLoot CB 0C<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 17 0D<br />
+setLoot 31 0D<br />
+setLoot 8B 0E<br />
+setLoot D9 0B<br />
+move 32527,31926,11<br />
+move 32531,31927,11<br />
+move 32532,31930,11<br />
+move 32533,31934,11<br />
+move 32533,31938,11<br />
+move 32533,31934,11<br />
+move 32531,31931,11<br />
+move 32531,31927,11<br />
+move 32526,31928,11<br />
+move 32525,31931,11<br />
+move 32520,31932,11<br />
+move 32518,31935,11<br />
+move 32517,31938,11<br />
+move 32515,31941,11<br />
+move 32512,31942,11<br />
+move 32508,31945,11<br />
+move 32506,31947,11<br />
+move 32503,31949,11<br />
+move 32499,31950,11<br />
+move 32495,31948,11<br />
+move 32492,31945,11<br />
+move 32487,31942,11<br />
+move 32492,31942,11<br />
+move 32493,31947,11<br />
+move 32495,31949,11<br />
+move 32499,31950,11<br />
+move 32502,31950,11<br />
+move 32504,31949,11<br />
+move 32505,31947,11<br />
+move 32508,31945,11<br />
+move 32510,31944,11<br />
+move 32514,31941,11<br />
+move 32516,31939,11<br />
+move 32518,31935,11<br />
+move 32521,31932,11<br />
+move 32525,31930,11<br />
+move 32525,31926,11<br />
+move 32524,31923,11<br />
+move 32520,31921,11<br />
+move 32516,31919,11<br />
+move 32515,31914,11<br />
+move 32513,31911,11<br />
+move 32510,31909,11<br />
+move 32508,31906,11<br />
+move 32508,31901,11<br />
+move 32511,31899,11<br />
+move 32513,31897,11<br />
+move 32514,31894,11<br />
+move 32514,31892,11<br />
+move 32513,31897,11<br />
+move 32509,31900,11<br />
+move 32505,31901,11<br />
+move 32501,31901,11<br />
+move 32506,31901,11<br />
+move 32507,31904,11<br />
+move 32507,31905,11<br />
+move 32509,31906,11<br />
+move 32511,31906,11<br />
+move 32512,31906,11<br />
+move 32512,31905,12<br />
+move 32512,31906,12<br />
+move 32512,31905,12<br />
+move 32514,31903,12<br />
+move 32515,31898,12<br />
+move 32517,31895,12<br />
+move 32520,31894,12<br />
+move 32523,31892,12<br />
+move 32526,31890,12<br />
+move 32530,31889,12<br />
+move 32528,31890,12<br />
+move 32525,31891,12<br />
+move 32519,31894,12<br />
+move 32515,31898,12<br />
+move 32516,31904,12<br />
+move 32520,31905,12<br />
+move 32523,31905,12<br />
+move 32524,31902,12<br />
+move 32527,31899,12<br />
+move 32532,31899,12<br />
+move 32529,31899,12<br />
+move 32524,31900,12<br />
+move 32524,31905,12<br />
+move 32518,31905,12<br />
+move 32512,31905,12<br />
+move 32507,31904,12<br />
+move 32506,31901,12<br />
+move 32506,31896,12<br />
+move 32507,31891,12<br />
+move 32511,31888,12<br />
+move 32512,31884,12<br />
+move 32507,31888,12<br />
+move 32507,31893,12<br />
+move 32506,31897,12<br />
+move 32506,31902,12<br />
+move 32506,31907,12<br />
+move 32505,31911,12<br />
+move 32500,31912,12<br />
+move 32500,31917,12<br />
+move 32499,31921,12<br />
+move 32497,31924,12<br />
+move 32495,31927,12<br />
+move 32490,31930,12<br />
+move 32488,31933,12<br />
+move 32485,31935,12<br />
+move 32488,31933,12<br />
+move 32493,31927,12<br />
+move 32495,31924,12<br />
+move 32497,31921,12<br />
+move 32499,31917,12<br />
+move 32500,31913,12<br />
+move 32504,31911,12<br />
+move 32506,31911,12<br />
+move 32506,31912,12<br />
+move 32507,31912,12<br />
+move 32507,31911,13<br />
+move 32506,31911,13<br />
+move 32501,31912,13<br />
+move 32499,31914,13<br />
+move 32496,31916,13<br />
+move 32492,31917,13<br />
+move 32489,31917,13<br />
+move 32486,31920,13<br />
+move 32483,31918,13<br />
+move 32486,31920,13<br />
+move 32491,31917,13<br />
+move 32497,31916,13<br />
+move 32499,31915,13<br />
+move 32502,31914,13<br />
+move 32504,31916,13<br />
+move 32507,31918,13<br />
+move 32508,31925,13<br />
+move 32508,31929,13<br />
+move 32503,31931,13<br />
+move 32501,31936,13<br />
+move 32497,31937,13<br />
+move 32496,31934,13<br />
+move 32493,31933,13<br />
+move 32492,31931,13<br />
+move 32492,31926,13<br />
+resetLoot<br />
+setLoot 14 0C<br />
+dropLootOnGround 32492,31926,13<br />
+setLoot 61 0D<br />
+dropLootOnGround 32491,31926,13<br />
+setLoot 76 0D<br />
+dropLootOnGround 32491,31927,13<br />
+setLoot 15 0D<br />
+dropLootOnGround 32492,31927,13<br />
+setLoot C2 0C<br />
+dropLootOnGround 32492,31928,13<br />
+setLoot D7 0B<br />
+dropLootOnGround 32491,31928,13<br />
+setLoot 1E 0D<br />
+dropLootOnGround 32491,31929,13<br />
+setLoot CB 0C<br />
+dropLootOnGround 32492,31929,13<br />
+setLoot E9 0C<br />
+dropLootOnGround 32492,31930,13<br />
+setLoot 55 0D<br />
+dropLootOnGround 32491,31930,13<br />
+setLoot 17 0D<br />
+dropLootOnGround 32491,31931,13<br />
+setLoot 31 0D<br />
+dropLootOnGround 32492,31931,13<br />
+setLoot 8B 0E<br />
+dropLootOnGround 32492,31932,13<br />
+setLoot D9 0B<br />
+dropLootOnGround 32491,31932,13<br />
+move 32494,31933,13<br />
+move 32497,31937,13<br />
+move 32501,31938,13<br />
+move 32502,31934,13<br />
+move 32503,31930,13<br />
+move 32508,31929,13<br />
+move 32515,31924,13<br />
+move 32517,31921,13<br />
+move 32521,31919,13<br />
+move 32526,31920,13<br />
+move 32534,31923,13<br />
+move 32537,31920,13<br />
+move 32538,31919,13<br />
+move 32537,31922,13<br />
+move 32533,31924,13<br />
+move 32530,31925,13<br />
+move 32526,31930,13<br />
+move 32520,31931,13<br />
+move 32516,31931,13<br />
+move 32515,31929,13<br />
+move 32513,31927,13<br />
+move 32509,31925,13<br />
+move 32508,31921,13<br />
+move 32507,31918,13<br />
+move 32504,31917,13<br />
+move 32503,31916,13<br />
+move 32502,31914,13<br />
+move 32503,31911,13<br />
+move 32504,31911,13<br />
+move 32506,31911,13<br />
+move 32506,31911,13<br />
+move 32507,31912,12<br />
+move 32506,31912,12<br />
+move 32506,31910,12<br />
+move 32506,31907,12<br />
+move 32508,31906,12<br />
+move 32511,31906,12<br />
+move 32511,31905,12<br />
+move 32512,31906,11<br />
+move 32511,31907,11<br />
+move 32512,31911,11<br />
+move 32515,31914,11<br />
+move 32515,31916,11<br />
+move 32516,31918,11<br />
+move 32518,31920,11<br />
+move 32521,31922,11<br />
+move 32524,31923,11<br />
+move 32525,31927,11<br />
+gotoScriptLine 0<br />
+<br />
+Link to main page of this:<br />
+http://www.blackdtools.net/showthread.php?t=66&amp;highlight=Dwarf+Guard+Fran<br />
+<br />
+Adnotation 8<br />
+<br />
+Dwarf Soldiers - Secound cave -3, -4 with lootdrop! (Made by MieChO)<br />
+<br />
+<br />
+ onGMpause<br />
+setMeleeKill Dwarf Soldier<br />
+setMeleeKill Dwarf<br />
+setMeleeKill Dwarf Guard<br />
+setMeleeKill Rotworm<br />
+setMeleeKill Carrion Worm<br />
+setMeleeKill poison spider<br />
+setLoot 8B 0E<br />
+setLoot 8B 0E<br />
+setLoot DB 0B<br />
+setLoot 1E 0D<br />
+setLoot 76 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot 14 0C<br />
+setLoot 61 0D<br />
+setLoot 06 17<br />
+setLoot 8D 0E<br />
+setLoot F8 16<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 17 0D<br />
+setLoot 31 0D<br />
+setLoot D7 0B<br />
+move 32459,31898,10<br />
+setLoot 14 0C<br />
+move 32475,31906,10<br />
+move 32465,31906,10<br />
+move 32463,31901,10<br />
+move 32457,31895,10<br />
+move 32458,31886,10<br />
+move 32465,31879,10<br />
+move 32471,31879,10<br />
+move 32465,31878,10<br />
+move 32461,31882,10<br />
+move 32458,31888,10<br />
+move 32458,31896,10<br />
+move 32464,31904,10<br />
+move 32471,31906,10<br />
+move 32473,31915,10<br />
+move 32475,31919,10<br />
+move 32476,31925,10<br />
+move 32475,31931,10<br />
+move 32475,31937,10<br />
+move 32475,31942,10<br />
+move 32468,31943,10<br />
+move 32467,31950,10<br />
+move 32466,31956,10<br />
+move 32463,31963,10<br />
+move 32466,31955,10<br />
+move 32467,31949,10<br />
+move 32468,31944,10<br />
+move 32472,31942,10<br />
+move 32476,31941,10<br />
+move 32483,31944,10<br />
+move 32489,31945,10<br />
+move 32495,31946,10<br />
+move 32485,31944,10<br />
+move 32482,31941,10<br />
+move 32476,31941,10<br />
+move 32476,31936,10<br />
+move 32475,31930,10<br />
+move 32475,31924,10<br />
+move 32475,31920,10<br />
+move 32476,31918,10<br />
+move 32479,31914,10<br />
+move 32479,31908,10<br />
+move 32478,31905,10<br />
+move 32477,31905,10<br />
+move 32476,31905,11<br />
+move 32475,31905,11<br />
+move 32479,31909,11<br />
+move 32483,31913,11<br />
+move 32485,31915,11<br />
+move 32488,31916,11<br />
+move 32485,31922,11<br />
+move 32481,31928,11<br />
+move 32478,31931,11<br />
+move 32483,31925,11<br />
+move 32486,31922,11<br />
+move 32493,31919,11<br />
+move 32497,31922,11<br />
+move 32501,31925,11<br />
+move 32503,31926,11<br />
+move 32497,31921,11<br />
+move 32493,31918,11<br />
+move 32487,31915,11<br />
+move 32483,31912,11<br />
+move 32479,31909,11<br />
+move 32475,31904,11<br />
+move 32472,31903,11<br />
+move 32469,31899,11<br />
+move 32464,31898,11<br />
+move 32460,31898,11<br />
+move 32456,31892,11<br />
+move 32454,31890,11<br />
+move 32452,31890,11<br />
+move 32449,31885,11<br />
+move 32455,31892,11<br />
+move 32459,31896,11<br />
+move 32458,31900,11<br />
+move 32454,31902,11<br />
+move 32451,31903,11<br />
+move 32447,31903,11<br />
+move 32443,31903,11<br />
+move 32451,31903,11<br />
+move 32457,31902,11<br />
+move 32461,31907,11<br />
+move 32464,31910,11<br />
+move 32465,31915,11<br />
+move 32466,31917,11<br />
+move 32467,31920,11<br />
+move 32465,31925,11<br />
+move 32460,31928,11<br />
+move 32456,31929,11<br />
+move 32455,31931,11<br />
+move 32454,31932,11<br />
+move 32452,31933,11<br />
+dropLootOnGround 32452,31933,11<br />
+#<br />
+move 32455,31931,11<br />
+move 32462,31927,11<br />
+move 32466,31922,11<br />
+move 32466,31915,11<br />
+move 32465,31911,11<br />
+move 32462,31907,11<br />
+move 32459,31904,11<br />
+move 32459,31899,11<br />
+move 32464,31898,11<br />
+move 32471,31902,11<br />
+move 32473,31903,11<br />
+move 32475,31905,11<br />
+move 32476,31905,11<br />
+move 32476,31906,10<br />
+move 32476,31907,10<br />
+gotoScriptLine 0<br />
+<br />
+Link to main page of this scritp:<br />
+http://www.blackdtools.net/showthread.php?t=28931&amp;highlight=Soldiers+Secound+Cave<br />
+Waypoints:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-15-2008, 17:58</div></div><div class="posttext">Anotation 9<br />
+<br />
+Minotaurs - Cave west of all cave with Tower and Horned Fox killer, with lootdrop (Made by Adam)<br />
+<br />
+Waypoints:<br />
+<br />
+<br />
+ onGMpause<br />
+setMeleeKill minotaur<br />
+setMeleeKill bat<br />
+setMeleeKill minotaur archer<br />
+setMeleeKill minotaur guard<br />
+setLoot 9B 0D<br />
+setLoot 1E 0D<br />
+setLoot 06 17<br />
+setLoot 15 0D<br />
+setLoot 01 0C<br />
+setLoot 17 0D<br />
+setLoot 52 0D<br />
+setLoot 55 0D<br />
+setLoot 76 0D<br />
+setLoot CB 0C<br />
+setLoot C2 0C<br />
+setLoot D6 0C<br />
+setLoot D7 0B<br />
+setLoot CC 0C<br />
+setLoot F6 16<br />
+setLoot 1F 0D<br />
+setLoot 1A 0D<br />
+setLoot E6 0D<br />
+setLoot 18 0D<br />
+setLoot C0 0C<br />
+move 32489,31965,8<br />
+move 32476,31950,8<br />
+move 32473,31945,8<br />
+move 32473,31944,9<br />
+move 32465,31939,9<br />
+move 32451,31962,9<br />
+move 32450,31974,9<br />
+move 32454,31974,9<br />
+move 32453,31988,9<br />
+move 32453,31989,8<br />
+move 32448,31991,8<br />
+move 32448,31992,7<br />
+move 32448,31991,8<br />
+move 32431,31966,8<br />
+move 32449,31962,8<br />
+move 32449,31963,9<br />
+move 32443,31967,9<br />
+move 32434,31974,9<br />
+move 32430,31951,9<br />
+move 32432,31951,9<br />
+move 32432,31952,8<br />
+move 32424,31941,8<br />
+move 32430,31943,8<br />
+move 32432,31950,8<br />
+dropLootOnGround 32418,31938,8<br />
+move 32432,31951,9<br />
+move 32445,31948,9<br />
+move 32443,31935,9<br />
+move 32442,31930,9<br />
+move 32457,31917,9<br />
+move 32459,31916,9<br />
+move 32459,31917,8<br />
+move 32464,31945,8<br />
+move 32458,31943,8<br />
+move 32458,31944,7<br />
+move 32454,31953,7<br />
+move 32458,31944,7<br />
+move 32458,31943,8<br />
+move 32466,31966,8<br />
+move 32466,31967,7<br />
+move 32463,31953,7<br />
+move 32463,31946,7<br />
+move 32463,31947,6<br />
+move 32463,31955,6<br />
+move 32467,31966,6<br />
+move 32467,31967,5<br />
+move 32464,31963,5<br />
+move 32467,31967,5<br />
+move 32467,31966,6<br />
+move 32460,31948,6<br />
+move 32460,31949,5<br />
+move 32460,31948,6<br />
+move 32463,31947,6<br />
+move 32463,31946,7<br />
+move 32465,31966,7<br />
+move 32466,31966,8<br />
+move 32472,31944,8<br />
+move 32473,31944,9<br />
+move 32471,31934,9<br />
+dropLootOnGround 32471,31934,9<br />
+move 32473,31944,9<br />
+move 32473,31945,8<br />
+move 32487,31963,8<br />
+gotoScriptLine 0 <br />
+<br />
+Link to main page of this script:<br />
+http://www.blackdtools.net/showthread.php?t=24007&amp;highlight=Minotaur+Kazordoon<br />
+<br />
+<br />
+Adnotation 10<br />
+<br />
+Undeadths under Mt Sternum<br />
+<br />
+Waypoints:<br />
+<br />
+setFriendly<br />
+setFollow<br />
+onGMpause<br />
+setPriority cyclops smith:+1<br />
+setPriority cyclops drone:+1<br />
+setPriority ghoul:+1<br />
+setPriority rat:-1<br />
+setPriority Poison Spider:-1<br />
+setMeleeKill Cyclops<br />
+setMeleeKill ghoul<br />
+setMeleeKill skeleton<br />
+setMeleeKill snake<br />
+setMeleeKill ghost<br />
+setMeleeKill poison spider<br />
+setMeleeKill cave rat<br />
+setMeleeKill wolf<br />
+setMeleeKill bat<br />
+setMeleeKill rat<br />
+setMeleeKill cyclops drone<br />
+setMeleeKill cyclops smith<br />
+setMeleeKill dwarf guard<br />
+setMeleeKill dwarf soldier<br />
+#gold<br />
+setLoot D7 0B<br />
+#life ring<br />
+setLoot EC 0B<br />
+#brown poc<br />
+setLoot 19 17<br />
+setLoot C5 0C<br />
+#halberd<br />
+setLoot 15 0C<br />
+#bat wing<br />
+setLoot 06 17<br />
+setLoot EC 00<br />
+#meat<br />
+setLoot F9 0D<br />
+setLoot 1C 1D<br />
+#viking helmet<br />
+setLoot 27 0D<br />
+move 32447,32070,8<br />
+move 32432,32065,8<br />
+move 32431,32064,9<br />
+move 32431,32065,8<br />
+move 32412,32065,8<br />
+move 32404,32068,8<br />
+move 32403,32069,8<br />
+move 32418,32064,8<br />
+move 32419,32052,8<br />
+move 32431,32047,8<br />
+move 32418,32042,8<br />
+move 32418,32041,9<br />
+move 32407,32046,9<br />
+move 32394,32059,9<br />
+move 32399,32044,9<br />
+move 32388,32037,9<br />
+move 32379,32035,9<br />
+move 32387,32024,9<br />
+move 32402,32014,9<br />
+move 32388,32006,9<br />
+move 32387,31992,9<br />
+move 32374,31985,9<br />
+move 32363,31970,9<br />
+move 32377,31962,9<br />
+move 32388,31957,9<br />
+move 32399,31962,9<br />
+move 32407,31971,9<br />
+move 32395,31979,9<br />
+move 32402,31987,9<br />
+move 32419,31997,9<br />
+move 32423,32009,9<br />
+move 32419,32019,9<br />
+move 32437,32018,9<br />
+move 32445,32017,9<br />
+move 32448,32028,9<br />
+move 32432,32032,9<br />
+move 32448,32039,9<br />
+move 32456,32047,9<br />
+move 32445,32047,9<br />
+move 32449,32039,9<br />
+move 32428,32031,9<br />
+move 32427,32031,10<br />
+move 32438,32026,10<br />
+move 32451,32034,10<br />
+move 32444,32046,10<br />
+move 32428,32053,10<br />
+move 32411,32063,10<br />
+move 32390,32056,10<br />
+move 32388,32042,10<br />
+move 32376,32038,10<br />
+move 32397,32024,10<br />
+move 32384,32010,10<br />
+move 32368,32003,10<br />
+move 32375,31982,10<br />
+move 32368,31974,10<br />
+move 32360,31964,10<br />
+move 32366,31975,10<br />
+move 32390,31974,10<br />
+move 32409,31976,10<br />
+move 32409,31985,10<br />
+move 32419,32001,10<br />
+move 32408,32010,10<br />
+move 32418,32023,10<br />
+move 32426,32031,10<br />
+move 32427,32032,9<br />
+move 32446,32027,9<br />
+move 32442,32015,9<br />
+move 32424,32021,9<br />
+move 32418,32024,9<br />
+move 32418,32040,9<br />
+move 32418,32042,8<br />
+move 32427,32048,8<br />
+move 32438,32047,8<br />
+move 32449,32055,8<br />
+move 32452,32065,8<br />
+IfTrue ($mycap$#number&lt;=#150) Goto $nlineoflabel:goToTheCity$<br />
+gotoScriptLine 0<br />
+:goToTheCity<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32457,32075,7<br />
+move 32465,32084,7<br />
+move 32467,32095,7<br />
+move 32450,32112,7<br />
+move 32447,32126,7<br />
+move 32441,32137,7<br />
+move 32426,32143,7<br />
+move 32419,32154,7<br />
+move 32409,32158,7<br />
+move 32398,32163,7<br />
+move 32382,32163,7<br />
+move 32373,32165,7<br />
+move 32373,32175,7<br />
+move 32368,32192,7<br />
+move 32368,32206,7<br />
+move 32362,32214,7<br />
+move 32347,32215,7<br />
+move 32338,32228,7<br />
+move 32338,32243,7<br />
+move 32328,32249,7<br />
+move 32319,32252,7<br />
+move 32319,32256,7<br />
+:hi<br />
+sayMessage hi<br />
+waitX 3<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 3<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+:goToTheDepot<br />
+move 32319,32256,7<br />
+move 32328,32249,7<br />
+move 32337,32240,7<br />
+move 32339,32226,7<br />
+move 32343,32223,7<br />
+move 32345,32228,7<br />
+move 32349,32226,7<br />
+move 32350,32225,6<br />
+move 32348,32219,6<br />
+putLootOnDepot<br />
+move 32350,32225,6<br />
+move 32350,32227,7<br />
+move 32346,32216,7<br />
+move 32367,32211,7<br />
+move 32368,32190,7<br />
+move 32370,32166,7<br />
+move 32389,32160,7<br />
+move 32402,32160,7<br />
+move 32417,32153,7<br />
+move 32433,32139,7<br />
+move 32448,32131,7<br />
+move 32449,32110,7<br />
+move 32459,32098,7<br />
+move 32467,32093,7<br />
+move 32463,32080,7<br />
+move 32459,32072,7<br />
+move 32449,32069,7<br />
+move 32447,32069,8<br />
+gotoScriptLine 0<br />
+ <br />
+<br />
+Link to main page of this script:<br />
+http://www.blackdtools.net/showthread.php?t=17219&amp;highlight=Ghouls</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-15-2008, 18:03</div></div><div class="posttext">Its all for now! If any problem feel free to post here or send me private message!<br />
+<br />
+POST YOUR OPINION ABOUT THIS SCRIPTS<br />
+<br />
+<br />
+<br />
+// MieChO</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-17-2008, 16:55</div></div><div class="posttext">Updated 17.10.2008!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kalsjd20</div><div class="date">11-17-2008, 16:56</div></div><div class="posttext">@In polish<br />
+Spieprzy&#322;e&#347; sprawe kole&#347; ... ja pierdole...<br />
+<br />
+You fucked up that. No there won't be sens to bot there. Too many bitchs gonna walk out there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-17-2008, 16:58</div></div><div class="posttext">Those scripts are just from THIS FORUM, I just take all to one Topic.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SimoS</div><div class="date">11-17-2008, 17:25</div></div><div class="posttext">*Instead of flaming like the others*:<br />
+<br />
+Great list, looks nice!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-17-2008, 17:58</div></div><div class="posttext">First normal post, Thanks ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Morphen</div><div class="date">11-17-2008, 18:55</div></div><div class="posttext">very nice good work!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kalsjd20</div><div class="date">11-17-2008, 19:07</div></div><div class="posttext">Instead of ass licking... Anyway I just poste my opinin. Ok thx for sorting scripts now it's EASIER TO DESTROY THOSE BOT PLACES.... In other words thx for scripts...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-17-2008, 21:30</div></div><div class="posttext">Man what`s problem with it ? Peoples post ALL those script on forum i just put it in 1 thread!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Deet</div><div class="date">11-20-2008, 13:55</div></div><div class="posttext">Thanks for the scripts! Modified one of them to sell battle axes/dwarven shields, deposit all gold then put any other loot (ores, rings) in dp. Good moneymaker :-D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-20-2008, 14:58</div></div><div class="posttext">Thanks for the scripts! Modified one of them to sell battle axes/dwarven shields, deposit all gold then put any other loot (ores, rings) in dp. Good moneymaker :-D<br />
+<br />
+No problem ;)<br />
+<br />
+But Battle Axe is better to sell in Venore. Ofc You can give this script I`ll put it in this thread</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Deet</div><div class="date">11-20-2008, 15:18</div></div><div class="posttext">Yeh, 80gp in most other places but I don't really mind at the moment.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kendi</div><div class="date">11-20-2008, 18:11</div></div><div class="posttext">ye its true;/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-20-2008, 20:34</div></div><div class="posttext">What ?xD &lt;10&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kirpic99</div><div class="date">11-20-2008, 22:28</div></div><div class="posttext">thanks for usefull script</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">11-21-2008, 16:28</div></div><div class="posttext">Thanks, all are working ;) (hope so haha)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Klonex</div><div class="date">11-25-2008, 08:43</div></div><div class="posttext">you rox;d ;** i love this script;d big thx;d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tunicow</div><div class="date">12-02-2008, 12:17</div></div><div class="posttext">Really nice<br />
+<br />
+Congratz, may i try some of thoose when my ek get free :p<br />
+<br />
+mainly the horned fox one xD<br />
+<br />
+<br />
+Bb ;**</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">12-03-2008, 16:56</div></div><div class="posttext">Heh thanks ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xinix</div><div class="date">01-11-2009, 17:45</div></div><div class="posttext">@In polish<br />
+Spieprzy&#322;e&#347; sprawe kole&#347; ... ja pierdole...<br />
+<br />
+You fucked up that. No there won't be sens to bot there. Too many bitchs gonna walk out there.<br />
+<br />
+<br />
+What can i say if you do not want share your script with other people from this forum and you want  just download script from other player there is not place for you.<br />
+<br />
+<br />
+Good work Miecho now all script are in 1 place</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MieChO</div><div class="date">01-11-2009, 23:20</div></div><div class="posttext">Ye ;), new scripts will be there soon.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xwclx</div><div class="date">06-10-2009, 20:52</div></div><div class="posttext">this DWARF HELL take slowly..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kicken</div><div class="date">06-11-2009, 00:00</div></div><div class="posttext">This works good. THX</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cofferro</div><div class="date">02-19-2010, 23:41</div></div><div class="posttext">@In polish<br />
+<br />
+W skrypcie na mino tower bot wywala kase!<br />
+<br />
+Eng.<br />
+<br />
+At script with minotaur tower BOT drop CASH on ground , please fix it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Perdition</div><div class="date">01-12-2013, 01:02</div></div><div class="posttext">Thanks for the scripts! Modified one of them to sell battle axes/dwarven shields, deposit all gold then put any other loot (ores, rings) in dp. Good moneymaker :-D<br />
+<br />
+is there any chance of getting a repost of the modified script that has the depositor and loot seller? and updated for the latest version of tibia?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Perdition</div><div class="date">01-12-2013, 03:05</div></div><div class="posttext">The post is from 2008. That script is probably unusable.<br />
+<br />
+renovations can be made to update it for use in the newest client</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

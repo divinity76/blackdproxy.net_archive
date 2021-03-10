@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="staff, banana, medicine, decay, pouch, depositer, banuta, [9.53][06.05.2012]" />
+	<meta name="description" content="Hi, 
+ 
+My name is Alex and this is my 1st script! 
+ 
+First of all, sorry for my english, I'm spanish. I have to admit that I found a bit difficult and I think it may have some errors, but I hope to fix and learn. 
+ 
+This script is for Banuta, it will go around the outside and will go up some towers. 
+ 
+The option setBot LootAll=1 is enabled for better security and all the setLoot ID's aren't collected." />
+	
+	<title> [9.53][06.05.2012] Banuta Apes 0 + Gold Depositer [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  [9.53][06.05.2012] Banuta Apes 0 + Gold Depositer</div>
+<hr />
+<div class="pda"><a href="t-57956.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57956-9-53-06-05-2012-Banuta-Apes-0-Gold-Depositer">[9.53][06.05.2012] Banuta Apes 0 + Gold Depositer</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Near</div><div class="date">05-06-2012, 14:10</div></div><div class="posttext">Hi,<br />
+<br />
+My name is Alex and this is my 1st script!<br />
+<br />
+First of all, sorry for my english, I'm spanish. I have to admit that I found a bit difficult and I think it may have some errors, but I hope to fix and learn.<br />
+<br />
+This script is for Banuta, it will go around the outside and will go up some towers.<br />
+<br />
+The option setBot LootAll=1 is enabled for better security and all the setLoot ID's aren't collected.<br />
+<br />
+Looting:<br />
+<br />
+- Gold (D7 0B)<br />
+- Banana Sash (F7 2C)<br />
+- Health Potion (0A 01)<br />
+- Kongra's Shoulderpad (CF 2C)<br />
+- Small Stone (F5 06)<br />
+- Plate Armor (1D 0D)<br />
+- Banana Staff (14 0D)<br />
+- Wand of Decay (00 0C)<br />
+- ...<br />
+<br />
+Also I'm using this conditional for mana training / small healing:<br />
+<br />
+<br />
+$mymana$<br />
+#number&gt;=#<br />
+510<br />
+0<br />
+300<br />
+1<br />
+exura ico<br />
+$myhp$<br />
+#number&lt;=#<br />
+700<br />
+0<br />
+300<br />
+1<br />
+exiva testsound<br />
+<br />
+<br />
+When mana is at full say 'exura ico' and if u're at 700 hp or less alarm sounds.<br />
+<br />
+This is the cavebot script:<br />
+<br />
+<br />
+#Script by Near<br />
+setFriendly<br />
+setBot LootAll=1<br />
+setLoot FE 0D<br />
+setLoot 17 0E<br />
+setLoot FA 2C<br />
+setLoot 0D 17<br />
+setLoot FA 0D<br />
+setLoot A4 0D<br />
+setLoot 27 28<br />
+setLoot 09 0E<br />
+setLoot 15 0C<br />
+setLoot 06 0E<br />
+setLoot E6 0B<br />
+setLoot 02 0E<br />
+setLoot EA 0B<br />
+setLoot 0C 0C<br />
+setLoot 03 0E<br />
+setMeleeKill Kongra<br />
+setMeleeKill Sibang<br />
+setMeleeKill Slime<br />
+setMeleeKill tiger<br />
+setMeleeKill Merlkin<br />
+setMeleeKill Carniphila<br />
+setMeleeKill Cave Rat<br />
+setMeleeKill Swamp Troll<br />
+setMeleeKill Skunk<br />
+setMeleeKill Snake<br />
+setMeleeKill Spider<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Terror Bird<br />
+setMeleeKill Tarantula<br />
+setMeleeKill Crocodile<br />
+setMeleeKill Cobra<br />
+setMeleeKill Wasp<br />
+setMeleeKill Centipede<br />
+setMeleeKill Bat<br />
+setMeleeKill Bug<br />
+setPriority Kongra:+1<br />
+setPriority Merlkin:+2<br />
+setPriority Carniphila:+3<br />
+move 32664,32707,7<br />
+move 32694,32649,7<br />
+move 32770,32566,7<br />
+move 32787,32582,7<br />
+move 32792,32580,6<br />
+move 32787,32583,6<br />
+move 32789,32585,5<br />
+move 32791,32585,6<br />
+move 32794,32585,7<br />
+move 32808,32585,7<br />
+move 32815,32581,6<br />
+move 32811,32582,5<br />
+move 32813,32582,6<br />
+move 32817,32581,7<br />
+move 32829,32597,7<br />
+move 32832,32595,6<br />
+move 32834,32595,7<br />
+move 32845,32582,7<br />
+move 32847,32585,6<br />
+move 32851,32573,6<br />
+move 32849,32568,5<br />
+move 32849,32570,6<br />
+move 32849,32573,7<br />
+move 32833,32563,7<br />
+move 32837,32548,7<br />
+move 32835,32550,6<br />
+move 32836,32548,5<br />
+move 32836,32550,6<br />
+move 32835,32552,7<br />
+move 32841,32528,7<br />
+move 32843,32532,6<br />
+move 32841,32527,6<br />
+move 32843,32530,5<br />
+move 32841,32526,5<br />
+move 32843,32528,4<br />
+move 32843,32530,5<br />
+move 32843,32532,6<br />
+move 32843,32534,7<br />
+move 32836,32509,7<br />
+move 32820,32519,7<br />
+move 32813,32505,7<br />
+move 32815,32508,6<br />
+move 32815,32510,7<br />
+move 32799,32525,7<br />
+move 32800,32527,6<br />
+move 32780,32521,7<br />
+move 32779,32525,6<br />
+move 32779,32517,6<br />
+move 32780,32518,5<br />
+move 32780,32520,6<br />
+move 32779,32527,7<br />
+move 32769,32535,7<br />
+move 32772,32534,6<br />
+move 32770,32535,6<br />
+move 32774,32534,7<br />
+move 32772,32567,7<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depositer$<br />
+gotoScriptLine 0<br />
+:depositer<br />
+move 32749,32600,7<br />
+move 32696,32653,7<br />
+move 32630,32750,7<br />
+move 32629,32748,6<br />
+move 32632,32739,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 2<br />
+sayInTrade bye<br />
+move 32629,32748,6<br />
+move 32631,32748,7<br />
+gotoScriptLine 0<br />
+<br />
+If u found any error please tell me, thanks.<br />
+<br />
+Greetings and enjoy!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">edek2_193</div><div class="date">05-08-2012, 13:51</div></div><div class="posttext">hello, what level and skills is recommeded? <br />
+How many cash you have per hour and items/h?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Near</div><div class="date">05-08-2012, 19:28</div></div><div class="posttext">Lvl 50+, knight set or better and 5k/h but if u get many kongra's shoulderpads, banana sash and plate armor may be 10k~<br />
+<br />
+First I recommend buying the spell 'utura' for lvl 50 or 'utura gran' if u're lvl 100+, u can avoid many waste with this.<br />
+<br />
+Regards.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">vlado992</div><div class="date">06-12-2012, 11:28</div></div><div class="posttext">Can someone give us conds for utura and utura gran ?? thx :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BoogerKid</div><div class="date">07-24-2012, 04:23</div></div><div class="posttext">anyone test out this script?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">edek2_193</div><div class="date">07-24-2012, 11:43</div></div><div class="posttext">I test it, and all works fine.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BoogerKid</div><div class="date">07-24-2012, 16:25</div></div><div class="posttext">whats ur lvl, eq, skills? and what is your hp &amp; mana set for? like heal at 50% for example</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BoogerKid</div><div class="date">07-24-2012, 16:28</div></div><div class="posttext">Also, I think you guys might want to add this to the loot. <br />
+<br />
+14 0D Banana Staff<br />
+E5 30 Medicine Pouch<br />
+00 0C Wand Of Decay</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

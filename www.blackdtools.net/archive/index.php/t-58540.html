@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, number=, $countitemscd, $hex-equiped-item06$, number, _stonecount, _equipmelee, $randomnumber11001250$, _unequipmelee, $numericalexp$_unequipmelee$+1$, $numericalexp$_stonecount$+1$, $_equipmelee$, $numericalexp$_equipmelee$+1$, $mymana$, $numericalexp$numericalexp$mylevel$$-6$, exura, $_stonecount$, string, $numericalexp$num-equiped-ammount06$-1$, character, conds, $_unequipmelee$, tread, string=, support" />
+	<meta name="description" content="Hi everyone and i make this tread because i dont know how to load 2 conds and the same time in one character. 
+ 
+Please tell me how. 
+ 
+ 
+These cond i want to load at the same time 
+ 
+1 
+#number=# 
+1" />
+	
+	<title> Support Cond [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  Support Cond</div>
+<hr />
+<div class="pda"><a href="t-58540.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58540-Support-Cond">Support Cond</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Qetkut</div><div class="date">07-25-2012, 21:16</div></div><div class="posttext">Hi everyone and i make this tread because i dont know how to load 2 conds and the same time in one character.<br />
+<br />
+Please tell me how.<br />
+<br />
+<br />
+These cond i want to load at the same time<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = 0<br />
+$hex-equiped-item:06$<br />
+#string=#<br />
+E9 0C<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = $numericalexp:{$_unequipmelee$}+1$<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = $numericalexp:{$_unequipmelee$}+1$<br />
+$_unequipmelee$<br />
+#number=#<br />
+2<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 FF FF 03 00 00 01<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = 0<br />
+$countitems:CD 0C$<br />
+#number=#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = $numericalexp:{$_equipmelee$}+1$<br />
+$_equipmelee$<br />
+#number=#<br />
+1<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #E9 0C 06<br />
+$_equipmelee$<br />
+#number&gt;=#<br />
+500<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = 2<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = 0<br />
+$hex-equiped-item:06$<br />
+#string&lt;&gt;#<br />
+CD 0C<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = $numericalexp:{$_stonecount$}+1$<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+$numericalexp:{$num-equiped-ammount:06$}-1$<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = $numericalexp:{$_stonecount$}+1$<br />
+$_stonecount$<br />
+#number=#<br />
+2<br />
+1000<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #CD 0C 06<br />
+<br />
+<br />
+<br />
+and this<br />
+<br />
+<br />
+$mymana$<br />
+#number&gt;=#<br />
+$numericalexp:{$numericalexp:{$mylevel$}*5$}-6$<br />
+0<br />
+2000<br />
+0<br />
+exura</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Qetkut</div><div class="date">07-27-2012, 00:30</div></div><div class="posttext">Come on i need it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-27-2012, 00:41</div></div><div class="posttext">Simple solution would be to use runemaker to cast exura....You need to enter spell name and amount of mana to cast on and tick 3 boxes:<br />
+<br />
+Activate runemaker for this character<br />
+Auto eat food for this character<br />
+If out of runes or out of soul points then waste mana with this spell:</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

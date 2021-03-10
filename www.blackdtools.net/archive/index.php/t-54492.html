@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, waitx, fastexiva, setloot, sayintrade, saymessage, exiva, setmeleekill, potions, 32790,31238,7, shop, depositer, 32790,31238,6, 32789,31238,5, magic, crypt, bank, waypoints, sell$_vialid$100, 32786,31247,6, cemetery, number, skeleton, snowman, ammount, start, refill, pots, trade, 32791,31248,7, putlootondepot, 32788,31248,7, 32745,31216,7, 32781,31244,6, 32786,31247,7, descriptionyou, buy$_potionid$$_potionstobuy$, cave, gold, depositing, _allpotionscost, $numericalexp$_potioncost$-$_cashfromvials$$, deposit, includes, balance, $_allpotionscost$, withdraw, 32745,31192,7, 32757,31169,7, 32778,31112,7" />
+	<meta name="description" content="Description:you can set the ammount of pots to refill,  also ammount of cap to refill and it includes a depositer... 
+where to start: at cave 
+ 
+ 
+########Made by Snowman############## 
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Yalahar Cemetery with depositer and mana potion buyer script!$ 
+waitX 1 
+fastExiva &lt; B4 19 $hex-tibiastr:You must have opened your all bps- with potions and empty bps for cash.$ 
+ 
+###CONFIG####" />
+	
+	<title> Cemetery with depositer - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Cemetery with depositer - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54492.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54492-Cemetery-with-depositer-by-Snowman">Cemetery with depositer - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-24-2011, 14:39</div></div><div class="posttext">Description:you can set the ammount of pots to refill,  also ammount of cap to refill and it includes a depositer...<br />
+where to start: at cave<br />
+<br />
+<br />
+<br />
+########Made by Snowman##############<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Snowman's Yalahar Cemetery with depositer and mana potion buyer script!$<br />
+waitX 1<br />
+fastExiva &lt; B4 19 $hex-tibiastr:You must have opened your all bps- with potions and empty bps for cash.$<br />
+<br />
+###CONFIG####<br />
+#put here number of amount of you potions to refil<br />
+fastExiva _potionsamount = 50<br />
+#put here number of cap to go dp<br />
+fastExiva _captodp = 150<br />
+#how much does you potions cost<br />
+fastExiva _potionscost = 50<br />
+#ID of your potions<br />
+fastExiva _potionID = 0C 01<br />
+#ID of your vials<br />
+fastExiva _vialid = 1D 01<br />
+############<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########<br />
+#Hunt<br />
+:start<br />
+setChaoticMovesON<br />
+onGMpause<br />
+setMeleeKill ghoul<br />
+setMeleeKill crypt shambler<br />
+setPriority crypt shambler:+1<br />
+setMeleeKill demon skeleton<br />
+setmeleekill skeleton<br />
+setLoot D3 0B<br />
+setLoot 0C 01<br />
+setLoot 1A 17<br />
+setLoot 57 0D<br />
+setLoot D7 0B<br />
+setLoot 19 17<br />
+setLoot D4 0B<br />
+setLoot D4 0B<br />
+setLoot C1 0C<br />
+setLoot 25 17<br />
+setLoot E9 0C<br />
+setLoot 1D 0D<br />
+setLoot D7 0C<br />
+IfTrue ($mycap$#number&lt;=#$_captogodp$) Goto $nlineoflabel:deposit$<br />
+IfTrue ($countitems:{$_potionID$}$#number&lt;=#$_potionsamount$) Goto $nlineoflabel:deposit$<br />
+move 32784,31118,9<br />
+move 32775,31117,9<br />
+move 32774,31106,9<br />
+move 32774,31101,9<br />
+move 32768,31093,9<br />
+move 32755,31086,9<br />
+move 32744,31089,9<br />
+move 32739,31083,9<br />
+move 32736,31079,9<br />
+move 32736,31073,9<br />
+move 32733,31070,9<br />
+move 32734,31064,9<br />
+move 32728,31064,9<br />
+move 32733,31070,9<br />
+move 32740,31085,9<br />
+move 32736,31093,9<br />
+move 32736,31098,9<br />
+move 32728,31099,9<br />
+move 32729,31104,9<br />
+move 32732,31111,9<br />
+move 32739,31112,9<br />
+move 32738,31106,9<br />
+move 32737,31095,9<br />
+move 32740,31092,9<br />
+move 32753,31088,9<br />
+move 32757,31088,9<br />
+move 32770,31093,9<br />
+move 32774,31103,9<br />
+move 32775,31110,9<br />
+move 32775,31114,9<br />
+move 32781,31119,9<br />
+move 32790,31124,9<br />
+move 32797,31127,9<br />
+move 32805,31137,9<br />
+move 32805,31143,9<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:deposit<br />
+setChaoticMovesOFF<br />
+sayMessage Exiva &lt; B4 19 $hex-tibiastr:Going to deposit !$<br />
+move 32788,31117,9<br />
+move 32788,31118,8<br />
+move 32789,31119,8<br />
+move 32789,31120,7<br />
+move 32780,31118,7<br />
+move 32777,31113,7<br />
+move 32788,31105,7<br />
+move 32799,31103,7<br />
+sayMessage Hi<br />
+waitX 3<br />
+fastExiva &gt; 96 04 $hex-tibiastr:pass$<br />
+waitX 3<br />
+fastExiva &gt; 96 04 $hex-tibiastr:magician$<br />
+waitX 1<br />
+move 32813,31103,7<br />
+move 32836,31108,7<br />
+move 32837,31127,7<br />
+move 32835,31142,7<br />
+move 32835,31144,6<br />
+move 32835,31146,5<br />
+move 32834,31152,5<br />
+move 32834,31154,6<br />
+move 32834,31156,7<br />
+move 32859,31187,7<br />
+move 32856,31222,7<br />
+move 32841,31248,7<br />
+move 32824,31248,7<br />
+##########################################<br />
+##########################################<br />
+:BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionstobuy = $countitems:{$_vialid$}$<br />
+fastExiva _cashfromvials = $numericalexp:{$countitems:{$_vialid$}$}*5$<br />
+fastExiva _potioncost = $numericalexp:{$_potionstobuy$}*{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp:{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+##WAYPOINTS FROM BANK TO MAGIC SHOP<br />
+move 32790,31238,7 <br />
+move 32790,31238,6 <br />
+move 32789,31238,5<br />
+##########################################<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+##########################################<br />
+################################################## #######<br />
+###WAYPOINTS FROM MAGIC SHOP TO DP<br />
+move 32789,31238,5<br />
+move 32790,31238,6 <br />
+move 32790,31238,7 <br />
+move 32791,31248,7<br />
+move 32786,31247,7<br />
+move 32786,31247,6<br />
+move 32781,31244,6<br />
+#################################################<br />
+putlootondepot<br />
+move 32786,31247,6<br />
+move 32788,31248,7<br />
+move 32790,31238,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+move 32745,31216,7<br />
+move 32745,31192,7<br />
+move 32750,31180,7<br />
+move 32757,31169,7<br />
+move 32767,31159,7<br />
+move 32798,31150,7<br />
+move 32819,31156,7<br />
+move 32833,31156,7<br />
+move 32833,31154,6<br />
+move 32833,31152,5<br />
+move 32834,31146,5<br />
+move 32834,31144,6<br />
+move 32834,31142,7<br />
+move 32840,31125,7<br />
+move 32840,31112,7<br />
+move 32817,31105,7<br />
+move 32804,31103,7<br />
+sayMessage Hi<br />
+waitX 3<br />
+fastExiva &gt; 96 04 $hex-tibiastr:pass$<br />
+waitX 3<br />
+fastExiva &gt; 96 04 $hex-tibiastr:cemetery$<br />
+waitX 1<br />
+move 32795,31103,7<br />
+move 32778,31112,7<br />
+move 32778,31117,7<br />
+sayMessage exiva &gt; 0A 00 82 0A 80 8E 79 07 AA 21 01 0A<br />
+move 32788,31119,7<br />
+move 32789,31119,8<br />
+move 32788,31117,9<br />
+gotoScriptLine $nlineoflabel:start$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-01-2011, 04:50</div></div><div class="posttext">this script debug tibia... I think after this debug cip detect me as cheat...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">03-01-2011, 18:11</div></div><div class="posttext">I told ...<br />
+<br />
+All Snowman's scripts are old ! Don't use them</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">06-14-2012, 00:29</div></div><div class="posttext">I plan on remaking this script, what lvl/skills are needed for a knight?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

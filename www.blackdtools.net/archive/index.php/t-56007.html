@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="scripts, exiva, loadscript, switchchar.txt, goto, iftrue, variables, commands, returns, logout, gotoscriptline, mainchar, return, check, demons.txt, move, prefer, rats, $played$, $expgained$, $charactername$string=mainchar, hours, offline, characters, $nlineoflabelloadmain$, loadnoob, rats.txt, $nlineoflabelloadnoob$, $charactername$string=noobchar, loadmain, stuff, writing, edit, started, great, ideas, lost, realized, proved, point, unnecessary, gained, setmeleekill, switch, $expgained$number2000, make, login, statusbit, spot, $nlineoflabelswitchchar$" />
+	<meta name="description" content="Yep, as the title says. 
+More variables = more cool scripts. 
+Currently we can perfom any action we want with exiva &gt; so the only limit for more advanced scripts is that we dont have the variables we need.. 
+ 
+Let's do some brainstorming, this is what I can think of right now: 
+ 
+ 
+$walkable:XYZ$ - returns 1 if its possible to walk on that sqm, 0 if it's blocking. 
+$floorchange:XYZ$ -returns 1 if its a stair, ladder, hole etc. 
+$monsterPos:ID$ - either this could return the whole coordinates or" />
+	
+	<title> More variables and commands! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-35.html">Proposals</a> &gt;  More variables and commands!</div>
+<hr />
+<div class="pda"><a href="t-56007.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56007-More-variables-and-commands!">More variables and commands!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">08-01-2011, 18:11</div></div><div class="posttext">Yep, as the title says.<br />
+More variables = more cool scripts.<br />
+Currently we can perfom any action we want with exiva &gt; so the only limit for more advanced scripts is that we dont have the variables we need..<br />
+<br />
+Let's do some brainstorming, this is what I can think of right now:<br />
+<br />
+<br />
+ $walkable:XYZ$ - returns 1 if its possible to walk on that sqm, 0 if it's blocking.<br />
+ $floorchange:XYZ$ -returns 1 if its a stair, ladder, hole etc.<br />
+ $monsterPos:ID$ - either this could return the whole coordinates or its position in relation of the own character (X+1, Y+3, Z=0 etc) This could be useful for keepDistance scripts and exori if surrounded etc.<br />
+ $monstersArund$ - this could take use of the above variable. It will simply check every creature on battlelist and return how many of them is standing around you. Could perhaps even be customized to determine how far away monsters should be counted - $monstersAround:4$ = 4sqm away.<br />
+ <br />
+<br />
+<br />
+And as for commands I would really love to see this feature:<br />
+exiva loadScript demons.txt<br />
+which could even be used inside a script. <br />
+also, it would be nice if we could allow scripts to run even while being offline.<br />
+This way we could allow scripts to bot a few hours on different characters. <br />
+Example, switchChar.txt<br />
+<br />
+<br />
+IfTrue ($charactername$#string=#Noobchar) Goto $nlineoflabel:loadNoob$<br />
+IfTrue ($charactername$#string=#Mainchar) Goto $nlineoflabel:loadMain$<br />
+gotoScriptLine 0<br />
+:loadNoob<br />
+exiva loadScript rats.txt<br />
+:loadMain <br />
+loadScript demons.txt<br />
+<br />
+<br />
+and then, in those 2 scripts we could use $played$ or $expgained$ or whatever we prefer<br />
+rats txt could look something like:<br />
+<br />
+<br />
+setMeleeKill and all the other stuff<br />
+move XYZ<br />
+#if we gained 2k exp switch to the mainchar<br />
+IfTrue ($expgained$#number&gt;#2000) Goto $nlineoflabel:switchChar$<br />
+gotoScriptLine 0<br />
+:switchChar<br />
+move XYZ safe spot.<br />
+#check statusbit make sure we can logout.<br />
+exiva logout<br />
+exiva login Mainchar<br />
+exiva loadScript switchChar.txt<br />
+<br />
+<br />
+I had a lot of great ideas but lost them as soon as I started writing here.. Ill edit later :)<br />
+I realized now that the switchChar.txt was very unnecessary but at least I proved my point.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

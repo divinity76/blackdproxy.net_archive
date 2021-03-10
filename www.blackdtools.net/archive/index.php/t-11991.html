@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, counts, counting, script, variables, made, gained, _uhs1, profit, displaying, _yellowpiece, _wastemfs, cash, _cmadetr, round, _mfs1, $numericalexp$numericalexp$_gpc$+$_2handedswordc$$+$_yellowpiecec$$, _wasteuh, count, waste, _cmaderound, _2handedsword, waitx, loot, swords, 2handed, hope, 0c$$_2handed$$, _yellowpiecec, 17$$_yellowpiece$$, cloth, pieces, $numericalexp$countitemsc1, $numericalexp$countitems1a, gold, reset, _gpc, begining, $countitemsd7, _2handedswordc, back, final, cost, $numericalexp$numericalexp$numericalexp$_wasteuh$$+$numericalexp$_wastemfs$$$+$_waste$$, _waste, _cmade, all.$, $hex-tibiastr$_cmaderound$gp, round.$, messages" />
+	<meta name="description" content="Heyho. 
+I'll write this little tutorial, cause I think it's pretty useful to have something like this in the script to let you know how much money you've already made and what you used. 
+It should look like this: 
+The script starts at variables that carry the worth of the loot, eg. 
+:start 
+fastExiva _gp = 1 
+fastExiva _2handedsword = 400 
+fastExiva _yellowpiece = 150 
+then there should be variables that count how many uhs and mfs you have(keep in mind that it will only count the ones in opened" />
+	
+	<title> How to make loot counting adds in script. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  How to make loot counting adds in script.</div>
+<hr />
+<div class="pda"><a href="t-11991.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?11991-How-to-make-loot-counting-adds-in-script">How to make loot counting adds in script.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BlackD User#1</div><div class="date">11-12-2007, 19:45</div></div><div class="posttext">Heyho.<br />
+I'll write this little tutorial, cause I think it's pretty useful to have something like this in the script to let you know how much money you've already made and what you used.<br />
+It should look like this:<br />
+The script starts at variables that carry the worth of the loot, eg.<br />
+<br />
+:start<br />
+fastExiva _gp = 1<br />
+fastExiva _2handedsword = 400<br />
+fastExiva _yellowpiece = 150<br />
+then there should be variables that count how many uhs and mfs you have(keep in mind that it will only count the ones in opened bps), eg.<br />
+<br />
+fastExiva _uhs1 = $countitems:58 0C$<br />
+#counts how many uhs you have<br />
+fastExiva _mfs1 = $countitems:3A 0B 00$<br />
+#counts how many mfs you have<br />
+then you put the whole script, eg.<br />
+<br />
+setVeryFriendly<br />
+setMeleeKill ghoul<br />
+setLoot D7 0B<br />
+move xxxx<br />
+and at the end, before the gotoScriptLine 0(you can put it whereever you like, but I'd rather prefer to know how much I've gained after every single round) you put the counting, the message displaying how much you've gained and what's your profit and the reset of the variables, eg.<br />
+<br />
+:counting<br />
+fastExiva _gpc = $countitems:D7 0B$<br />
+#counts how many gold you have<br />
+fastExiva _2handedswordc = $numericalexp:{$countitems:C1 0C$}*{$_2handed$}$<br />
+#counts how many 2handed swords you have<br />
+fastExiva _yellowpiecec = $numericalexp:{$countitems:1A 17$}*{$_yellowpiece$}$<br />
+#counts how many y pieces of cloth you have<br />
+:counting the waste<br />
+fastExiva _wasteuh = $numericalexp:{$_uhs1$}-{$countitems:58 0C$)$<br />
+#counts how many uhs you used<br />
+fastExiva _wastemfs = $numericalexp:{$_mfs1$}-{$countitems:3A 0B 00$}$<br />
+#counts how many mfs you used<br />
+fastExiva _waste = $numericalexp:{$numericalexp:{$numericalexp:{$_was teuh$}*175$}+{$numericalexp:{$_wastemfs$}*50$}$}+{ $_waste$)$<br />
+#counts how much your waste cost<br />
+:final counting<br />
+fastExiva _cmadetr = $numericalexp:{$numericalexp:{$_gpc$}+{$_2handedsw ordc$}$}+{$_yellowpiecec$}$<br />
+fastExiva _cmaderound = $numericalexp:{$_cmadetr$}-{$_cmade$}$<br />
+#counts how many cash you've made this round<br />
+fastExiva _cmade = $numericalexp:{$numericalexp:{$_gpc$}+{$_2handedsw ordc$}$}+{$_yellowpiecec$}$<br />
+#counts how many cash you've made at all<br />
+:displaying the messages<br />
+fastExiva &lt; B4 11 $hex-tibiastr:{$_cmaderound$}GP this round.$<br />
+waitX 1<br />
+fastExiva &lt; B4 11 $hex-tibiastr:{$_cmade$}GP at all.$<br />
+waitX 1<br />
+fastExiva &lt; B4 11 $hex-tibiastr: Your profit is {$numericalexp:{$_cmade$}-{$_waste$}$}GP$<br />
+:clearing the variables<br />
+fastExiva _gp = 0<br />
+fastExiva _2handedsword = 0<br />
+fastExiva _yellowpiece = 0<br />
+fastExiva _uhs1 = 0<br />
+fastExiva _mfs1 = 0<br />
+fastExiva _wasteuh = 0<br />
+fastExiva _wastemfs = 0<br />
+fastExiva _cmadetr = 0<br />
+fastExiva _cmaderound = 0<br />
+<br />
+and then finally you can get back to the begining of the script : )<br />
+I hope it'll help someone at least.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">11-14-2007, 15:17</div></div><div class="posttext">Count exp each round:<br />
+<br />
+<br />
+<br />
+onGMpause<br />
+fastExiva _oldexp = $myexp$<br />
+#exp so far<br />
+setLoot .....<br />
+setMeleeKill ....<br />
+move .....<br />
+fastExiva _newexp = $myexp$<br />
+fastExiva _roundexp = $numericalexp:{$_newexp$}-{$_oldexp$}$<br />
+#exp this round<br />
+fastExiva &lt; B4 11 $hex-tibiastr:{$_roundexp$} exp this round.$<br />
+fastExiva _oldexp = 0<br />
+fastExiva _newexp = 0<br />
+#reset counters<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+13:25 2350 exp this round.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

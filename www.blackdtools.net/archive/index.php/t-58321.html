@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="iftrue, 0c$number, $countitemscd, spears, returning" />
+	<meta name="description" content="Hey guys, new to the forums. I've been toying with some of these scripts, trying to mod them to work with a paladin rather than a knight, and one issue keeps coming up. Most of the scripts for knights are set to return to town on low cap. As a paladin, that doesn't work so well because your cap increases as your spears break. I can't seem to get the script right to make it return on low spears. This is my attempt at editing Saracene's Mount Sternum script. I basically just stand there when I" />
+	
+	<title> Returning on low spears [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Returning on low spears</div>
+<hr />
+<div class="pda"><a href="t-58321.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58321-Returning-on-low-spears">Returning on low spears</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">tic-tac1</div><div class="date">06-21-2012, 03:42</div></div><div class="posttext">Hey guys, new to the forums. I've been toying with some of these scripts, trying to mod them to work with a paladin rather than a knight, and one issue keeps coming up. Most of the scripts for knights are set to return to town on low cap. As a paladin, that doesn't work so well because your cap increases as your spears break. I can't seem to get the script right to make it return on low spears. This is my attempt at editing Saracene's Mount Sternum script. I basically just stand there when I run it. Nothing happens. I have a feeling it has something to do with the ifTrue line. Does anyone know what's wrong?<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+#By Saracene<br />
+setFriendly<br />
+setMeleeKill cyclops drone<br />
+setMeleeKill cyclops smith<br />
+setMeleeKill cyclops<br />
+setMeleeKill bat<br />
+setPriority cyclops smith:+1<br />
+setPriority cyclops drone:+2<br />
+setLootOn<br />
+setLoot D7 0B<br />
+setLoot 06 17<br />
+setLoot B9 25<br />
+setLoot E6 1C<br />
+setLoot 38 0D<br />
+setLoot 15 0C<br />
+setLoot 0A 01<br />
+setLoot EC 00<br />
+setLoot 1C 1D<br />
+IfTrue ($num-equipped-ammount:06$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+move 32449,32067,8<br />
+move 32407,32065,8<br />
+move 32421,32048,8<br />
+move 32434,32048,8<br />
+move 32453,32057,8<br />
+move 32463,32043,8<br />
+move 32452,32069,8<br />
+move 32447,32092,8<br />
+move 32438,32103,8<br />
+move 32452,32100,8<br />
+move 32461,32113,8<br />
+move 32478,32114,8<br />
+move 32478,32114,8<br />
+move 32476,32089,8<br />
+move 32492,32051,8<br />
+move 32485,32035,8<br />
+move 32475,32035,8<br />
+move 32487,32061,8<br />
+move 32478,32089,8<br />
+move 32450,32095,8<br />
+move 32454,32084,8<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32137,7<br />
+move 32367,32204,7<br />
+move 32344,32230,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">06-21-2012, 16:16</div></div><div class="posttext">To make it run back to depo:<br />
+<br />
+<br />
+IfTrue ($countitems:CD 0C$#number&lt;=#6) Goto $nlineoflabel:depo$<br />
+<br />
+To withdraw the gold from bank:<br />
+<br />
+<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2000$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-1$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*9$<br />
+waitX 1<br />
+sayInTrade withdraw $_spearcost$<br />
+sayInTrade yes<br />
+<br />
+To buy spear's:<br />
+<br />
+<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A CD 0C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 1<br />
+<br />
+See if that help's you and let me know. If it work's feel free to pm me a copy of the script :P</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="backpack, stays, close, makes, question, rebuy, fastexiva, wanna" />
+	<meta name="description" content="Hi, 
+ 
+I have an question, when i buy a new backpack. I can open him with the line 
+fastExiva &gt; 82 FF FF 00 00 00 26 0B 00 00 
+But if i wanna open another backpack, this other bp will close and only the last bp u open stay's open... 
+How can i fix it that it makes 2 bp's open? and stay's open?" />
+	
+	<title> rebuy new backpack [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  rebuy new backpack</div>
+<hr />
+<div class="pda"><a href="t-61905.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61905-rebuy-new-backpack">rebuy new backpack</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-08-2014, 20:16</div></div><div class="posttext">Hi,<br />
+<br />
+I have an question, when i buy a new backpack. I can open him with the line<br />
+fastExiva &gt; 82 FF FF 00 00 00 26 0B 00 00<br />
+But if i wanna open another backpack, this other bp will close and only the last bp u open stay's open...<br />
+How can i fix it that it makes 2 bp's open? and stay's open?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-08-2014, 22:38</div></div><div class="posttext">try different backpack collors<br />
+<br />
+exiva &gt; 82 FF FF 00 00 00 XX XX 00 00  (xx xx = item id, this will perform &quot;use&quot; on it)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-09-2014, 00:01</div></div><div class="posttext">try different backpack collors<br />
+<br />
+exiva &gt; 82 FF FF 00 00 00 XX XX 00 00  (xx xx = item id, this will perform &quot;use&quot; on it)<br />
+<br />
+yea tried that before, but didn't work:(<br />
+That's why i asked here:P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-09-2014, 00:09</div></div><div class="posttext">I found two ways for manage bps:<br />
+<br />
+Opening container from any EQ slot:<br />
+<br />
+82 FF FF AA 00 00 BB BB 00 0C<br />
+A's are the EQ slot, B's the ID ($hex-equiped-item:XX$ is useful) and 0C the ID the container will have.<br />
+<br />
+Opening containers from inside containers:<br />
+<br />
+82 FF FF 4A 00 BB XX XX BB 0Y<br />
+4A is the container's ID, B's are what slot to use, X's the item ID and 0Y the ID the newly opened container will have. If A and Y is the same, the new container will replace the old.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">patrick00</div><div class="date">11-09-2014, 00:24</div></div><div class="posttext">I found two ways for manage bps:<br />
+<br />
+Opening container from any EQ slot:<br />
+<br />
+82 FF FF AA 00 00 BB BB 00 0C<br />
+A's are the EQ slot, B's the ID ($hex-equiped-item:XX$ is useful) and 0C the ID the container will have.<br />
+<br />
+Opening containers from inside containers:<br />
+<br />
+82 FF FF 4A 00 BB XX XX BB 0Y<br />
+4A is the container's ID, B's are what slot to use, X's the item ID and 0Y the ID the newly opened container will have. If A and Y is the same, the new container will replace the old.<br />
+<br />
+oke thanks m8!<br />
+something went wrong in my script, what i have to fix first before i gonna try this. probably trying it tomorrow!<br />
+Thanks. u will hear from me how it went!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

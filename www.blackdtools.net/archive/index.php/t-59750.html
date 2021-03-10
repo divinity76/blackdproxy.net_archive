@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, setmeleekill, scarab, setfollow, scarabs, healing, potions, exana, health, 75%and, exura, recommended, iftrue, $countitemsd2, $nlineoflabeldepo$, ondangergoto, scarab+1, setpriority, 33168,32673,9, alright, check, larva, sandcrawler, guard, 1c$number, honour, http://www.blackdtools.com/forum/showthread.php?59677-larvas-center-for-paladin-100, lavas, script, zhinus, larvas, decent, level, adaptation, meant, paladins, scrit, ankrahmun, north, title, mention, equip, starts, recommend, spears, royal, section, proxy, number=, $statusbit8$" />
+	<meta name="description" content="Scrit is meant for PALADINS, sorry i didn't mention on the title. 
+ 
+This is an adaptation from Zhinu's script for lavas. 
+ 
+It goes to -2 and hunt the scarabs and larvas. 
+-level 25+ with decent equip. 
+-starts at the city's depot. 
+-loots emeralds, sapphires, scarab shells, scarab coins and gold. 
+Makes around 25k exp/h 
+Goes to the city to deposit your gold and buys ROYAL SPEARS." />
+	
+	<title> Scarabs north of ankrahmun [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Scarabs north of ankrahmun</div>
+<hr />
+<div class="pda"><a href="t-59750.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59750-Scarabs-north-of-ankrahmun">Scarabs north of ankrahmun</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">DeadRamza</div><div class="date">11-28-2012, 10:43</div></div><div class="posttext">Scrit is meant for PALADINS, sorry i didn't mention on the title.<br />
+<br />
+This is an adaptation from Zhinu's script (http://www.blackdtools.net/showthread.php?59677-Larvas-Center-for-paladin-100) for lavas.<br />
+<br />
+It goes to -2 and hunt the scarabs and larvas.<br />
+-level 25+ with decent equip.<br />
+-starts at the city's depot.<br />
+-loots emeralds, sapphires, scarab shells, scarab coins and gold.<br />
+Makes around 25k exp/h<br />
+Goes to the city to deposit your gold and buys ROYAL SPEARS.<br />
+<br />
+I recommend you go to the ? section of the proxy and set your condition to $statusbit:8$ #number=# 1 and say exana pox.<br />
+Auto healing is also recommended (i put my exura at 75%and health and pot at 25%)<br />
+<br />
+The bot won't buy potions so it's about 90% afk (check it sometimes to see if it's alright).<br />
+<br />
+<br />
+setFollow<br />
+setMeleeKill larva<br />
+setMeleeKill Scarab<br />
+setMeleeKill honour guard<br />
+setMeleeKill sandcrawler<br />
+setPriority Scarab:+1<br />
+onDangerGoto $nlineoflabel:depo$<br />
+setFollow<br />
+setLoot D7 0B<br />
+setLoot A9 25<br />
+setLoot E2 0B<br />
+setLoot D9 0B<br />
+setLoot D8 0B<br />
+:hunt<br />
+move 33168,32673,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33169,32667,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33171,32664,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33164,32661,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33165,32654,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33168,32651,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33166,32665,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33172,32672,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33180,32673,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33179,32680,9<br />
+move 33185,32685,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33197,32685,9<br />
+move 33200,32677,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33198,32684,9<br />
+move 33200,32691,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33210,32685,9<br />
+move 33224,32681,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33216,32681,9<br />
+move 33209,32686,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33216,32694,9<br />
+move 33206,32691,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33179,32678,9<br />
+move 33169,32673,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33159,32680,9<br />
+move 33153,32672,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33152,32655,9<br />
+move 33159,32688,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33149,32682,9<br />
+move 33143,32686,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33139,32672,9<br />
+move 33139,32665,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33154,32689,9<br />
+move 33146,32702,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33141,32714,9<br />
+move 33128,32708,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33129,32720,9<br />
+move 33121,32691,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33140,32702,9<br />
+move 33145,32701,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33162,32686,9<br />
+move 33163,32700,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33165,32705,9<br />
+move 33171,32710,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33177,32729,9<br />
+move 33179,32718,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33147,32726,9<br />
+move 33143,32726,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33154,32716,9<br />
+move 33164,32698,9<br />
+IfTrue ($countitems:D2 1C$#number&lt;=#5) Goto $nlineoflabel:depo$<br />
+move 33167,32688,9<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+:depo<br />
+move 33164,32684,9<br />
+move 33164,32685,8<br />
+move 33161,32689,8<br />
+move 33157,32688,8<br />
+move 33153,32688,8<br />
+move 33153,32686,8<br />
+move 33153,32687,7<br />
+move 33157,32704,7<br />
+move 33154,32761,7<br />
+move 33154,32763,6<br />
+move 33154,32764,6<br />
+move 33154,32765,6<br />
+move 33153,32768,7<br />
+move 33138,32792,7<br />
+move 33139,32821,7<br />
+move 33137,32821,6	<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+fastExiva _spearneed = $numericalexp:{$mycap$}/2500$<br />
+fastExiva _spearcount = $numericalexp:{$_spearneed$}-3$<br />
+fastExiva _spearcost = $numericalexp:{$_spearcount$}*15$<br />
+waitX 1<br />
+sayInTrade withdraw $_spearcost$<br />
+sayInTrade yes<br />
+move 33144,32810,7<br />
+move 33151,32810,6<br />
+move 33151,32808,5<br />
+move 33156,32812,4<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A D2 1C 00 $numbertohex2:{$_spearcount$}$ 00<br />
+waitX 1<br />
+move 33150,32809,4<br />
+move 33150,32810,5<br />
+move 33146,32810,6<br />
+move 33139,32782,7<br />
+move 33142,32768,7<br />
+move 33153,32767,7<br />
+move 33155,32764,6<br />
+move 33153,32761,7<br />
+move 33153,32759,7<br />
+move 33151,32727,7<br />
+move 33152,32701,7<br />
+move 33153,32687,7<br />
+move 33153,32686,8<br />
+move 33153,32687,8<br />
+move 33159,32689,8<br />
+move 33161,32689,8<br />
+move 33162,32686,8<br />
+move 33163,32685,8<br />
+move 33164,32684,9<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+Props to zhinu who made the depositer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DeadRamza</div><div class="date">11-30-2012, 13:12</div></div><div class="posttext">I'll work on a version for knights/mages with potion buyer, and will try to figure out a path that reduces the chances for the bot to walk through poison fields (can't fully prevent it).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jagex</div><div class="date">11-30-2012, 16:50</div></div><div class="posttext">This thread has helped me out a lot.  I wanted to start making knight scripts and needed help on a checker and on buying items.  Thanks Zihinu and DeadRamza.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DeadRamza</div><div class="date">12-02-2012, 06:58</div></div><div class="posttext">Thank you for the nice feedback.<br />
+The script with the potion buyer is coming out soon, i'm just trying to figure out the bot a little better.<br />
+I'll update the item buyer with the exiva command, thanks for the heads up zhinu.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">slinus</div><div class="date">02-18-2013, 08:13</div></div><div class="posttext">hay, just wondering how it went with that knight version of this script. :P<br />
+i cant wait to try it out.<br />
+<br />
+thanks..</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

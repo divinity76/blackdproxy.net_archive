@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fluids, client, config, message, error, backpack, proxy, advance, blackd, restore, desired, recovery, shouting, started, section, suggestions, alarms, changed, manafluids, exiva, hotkey, setup, manafluid, playing, otserver, reason, otservers, restarting, correct, [7.72], fluid, replace, found, tileid_mana_potion=xxxx, called, tibia" />
+	<meta name="description" content="Hi! 
+ 
+I'm playing on a OtServer and I'm trying to setup a hotkey that uses manafluids on myself. I tried to use exiva mana but didn't work of course because of different IDs. So I went to the 7.72 config and I tried to replace the ID for mana fluid. I found a line in the config called &quot;tileID_mana_potion=xxxx&quot;, so I changed it to the &quot;correct&quot; ID of the OtServers but for some reason it still doesn't work (after restarting both the Tibia client and the BlackD Proxy Client) 
+ 
+The error message" />
+	
+	<title> [7.72] Need help with using manafluid on myself [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  [7.72] Need help with using manafluid on myself</div>
+<hr />
+<div class="pda"><a href="t-57878.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57878-7-72-Need-help-with-using-manafluid-on-myself">[7.72] Need help with using manafluid on myself</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">eliasu</div><div class="date">04-24-2012, 03:21</div></div><div class="posttext">Hi!<br />
+<br />
+I'm playing on a OtServer and I'm trying to setup a hotkey that uses manafluids on myself. I tried to use exiva mana but didn't work of course because of different IDs. So I went to the 7.72 config and I tried to replace the ID for mana fluid. I found a line in the config called &quot;tileID_mana_potion=xxxx&quot;, so I changed it to the &quot;correct&quot; ID of the OtServers but for some reason it still doesn't work (after restarting both the Tibia client and the BlackD Proxy Client)<br />
+<br />
+The error message is: &quot;Can't find fluids, open new bp of fluids!&quot; even though I actually have a backpack of fluids open.<br />
+<br />
+I tried to do the same using the HP &amp; Mana section, didn't get it to work there either, the alarms started shouting and it said it could not restore mana with the desired recovery type.<br />
+<br />
+Any suggestions?<br />
+<br />
+Thanks in advance</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-24-2012, 16:21</div></div><div class="posttext">copy this info here and lets see <br />
+15:16 You see tile ID D6 07  with info  + fluidcontainer=TRUE + pickupable=TRUE + useable=TRUE + haveExtraByte=TRUE<br />
+15:16 You see a vial of manafluid.<br />
+It weighs 1.8 oz.<br />
+<br />
+it could be that the &quot;extra byte&quot; is changed, it should be 7..<br />
+<br />
+go Blackd menu -&gt; Cheats -&gt; backpacks -&gt; open 1 bp and put manafluid at first slot and reload list. and paste what it says here</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">eliasu</div><div class="date">04-24-2012, 21:16</div></div><div class="posttext">copy this info here and lets see <br />
+15:16 You see tile ID D6 07  with info  + fluidcontainer=TRUE + pickupable=TRUE + useable=TRUE + haveExtraByte=TRUE<br />
+15:16 You see a vial of manafluid.<br />
+It weighs 1.8 oz.<br />
+<br />
+it could be that the &quot;extra byte&quot; is changed, it should be 7..<br />
+<br />
+go Blackd menu -&gt; Cheats -&gt; backpacks -&gt; open 1 bp and put manafluid at first slot and reload list. and paste what it says here<br />
+<br />
+Thanks for the reply,<br />
+<br />
+This is what I get from &quot;looking&quot; at the manafluid: 20:14 You see tile ID D6 07  with info  + fluidcontainer=TRUE + pickupable=TRUE + useable=TRUE + haveExtraByte=TRUE<br />
+<br />
+Cheats - Backpack: Container Cap 20/20 Contains: D6 07x7; D6 07x7; D6 07x7; .... (D6 07x7 20 times)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-25-2012, 16:21</div></div><div class="posttext">Hi, just realized you edited the wrong line in the config. Search for<br />
+tileID_flask=<br />
+should be tileID_flask=D6 07<br />
+tileID_mana_potion is for newer clients (mana potions, not mana fluids)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

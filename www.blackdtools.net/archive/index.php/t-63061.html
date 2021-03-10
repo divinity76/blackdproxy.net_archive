@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, fastexiva, waitx, $numbertohex2100$, exiva, saymessage, backpack, $numbertohex250$, dragon, openbp, iftrue, gotoscriptline, sayintrade, $countitems0c, 01$number, backpacks, setmeleekill, hatchling, brown, setavoidfront, dragons, 33217,32403,7, inside, 33254,32279,10, 33238,32292,10, 33212,32265,10, 33227,32289,10, depot, 33262,32275,9, 33265,32277,7, useitem, 33265,32275,8, 33264,32275,8, 33265,32278,7, 33260,32275,9, 33210,32238,10, tower, 33248,32276,10, 33249,32262,10, 33213,32226,10, 33265,32279,7, 33223,32221,10, 33243,32230,10, 33247,32246,10, 33214,32251,10, 33239,32307,7, 33211,32459,8, 33213,32456,8, putlootondepot, 33210,32459,8" />
+	<meta name="description" content="Tested on 64 knight skills 75/70 with Tower Shield and Mystic Blade 
+You need to put backpacks with this same colour and chronological like on the picture 
+8143 
+Brown backpack is backpack used for loot, iside should be a backpacks inside backpack, and bot will be open next after inside will be 1200gp 
+Red backpack is backpack where you store potions, and rope etc. 
+Backpack on backpack slot can be a whatever type. 
+AND ATENTION! THERE CANNOT BE MORE RED AND BROWN BACKPACKS IN YOUR INVENTORY. 
+" />
+	
+	<title> [KNIGHT][Refill][Depositer]Darashia Dragons [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  [KNIGHT][Refill][Depositer]Darashia Dragons</div>
+<hr />
+<div class="pda"><a href="t-63061.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?63061-KNIGHT-Refill-Depositer-Darashia-Dragons">[KNIGHT][Refill][Depositer]Darashia Dragons</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">xstojakes</div><div class="date">12-30-2016, 05:25</div></div><div class="posttext">Tested on 64 knight skills 75/70 with Tower Shield and Mystic Blade<br />
+You need to put backpacks with this same colour and chronological like on the picture<br />
+8143<br />
+Brown backpack is backpack used for loot, iside should be a backpacks inside backpack, and bot will be open next after inside will be 1200gp<br />
+Red backpack is backpack where you store potions, and rope etc.<br />
+Backpack on backpack slot can be a whatever type.<br />
+AND ATENTION! THERE CANNOT BE MORE RED AND BROWN BACKPACKS IN YOUR INVENTORY.<br />
+<br />
+Start in depo or somwhere on the way to dragon lair.<br />
+<br />
+<br />
+<br />
+#Darashia Dragons by www.stojakes@gmail.com<br />
+:exp<br />
+fastExiva &gt; 87<br />
+saymessage exiva openbp<br />
+saymessage exiva &gt; 82 FF FF 00 00 00 33 0B 00 00<br />
+waitX 2<br />
+IFTrue ($countitems:0C 01$#number&lt;=#100) Goto $nlineoflabel:depot$<br />
+fastExiva &gt; 87<br />
+saymessage exiva openbp<br />
+saymessage exiva &gt; 82 FF FF 00 00 00 26 0B 00 00<br />
+IFTrue ($countitems:D7 0B$#number&gt;=#1200) Goto $nlineoflabel:opennext$<br />
+gotoScriptLine 17<br />
+:opennext<br />
+saymessage exiva openbp<br />
+fastExiva &gt; 87<br />
+gotoScriptLine 11<br />
+onGMpause<br />
+SetMeleeKill dragon hatchling<br />
+setAvoidFront dragon hatchling<br />
+SetMeleeKill dragon<br />
+setAvoidFront dragon<br />
+setLoot D7 0B<br />
+setLoot F5 0B<br />
+setLoot FA 0D<br />
+setLoot E1 0C<br />
+setLoot FA 0C<br />
+setLoot 58 0D<br />
+setLoot D4 0B<br />
+setLoot F5 16<br />
+setLoot 20 17<br />
+setLoot FF 0B<br />
+setLoot 06 1D<br />
+setLoot 3A 0D<br />
+setLoot 40 0D<br />
+setLoot D0 0C<br />
+setLoot 64 0D<br />
+setLoot EB 0B<br />
+setLoot D5 0B<br />
+setLoot 7A 0D<br />
+setLoot FA 16<br />
+setLoot 3C 17<br />
+move 33248,32276,10<br />
+move 33249,32262,10<br />
+move 33247,32246,10<br />
+move 33243,32230,10<br />
+move 33223,32221,10<br />
+move 33213,32226,10<br />
+move 33210,32238,10<br />
+move 33214,32251,10<br />
+move 33212,32265,10<br />
+move 33227,32289,10<br />
+move 33238,32292,10<br />
+move 33254,32279,10<br />
+gotoScriptLine 0<br />
+:depot<br />
+move 33260,32275,9<br />
+move 33262,32275,9<br />
+move 33264,32275,8<br />
+move 33265,32275,8<br />
+move 33265,32277,7<br />
+useItem 33265,32278,7<br />
+move 33265,32279,7<br />
+move 33256,32297,7<br />
+move 33239,32307,7<br />
+move 33238,32328,7<br />
+move 33230,32343,7<br />
+move 33230,32356,7<br />
+move 33230,32372,7<br />
+move 33221,32387,7<br />
+waitX 2<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+move 33217,32403,7<br />
+move 33217,32417,7<br />
+move 33216,32428,7<br />
+move 33217,32441,7<br />
+move 33214,32454,7<br />
+move 33214,32456,8<br />
+move 33210,32459,8<br />
+putLootOnDepot<br />
+move 33211,32459,8<br />
+move 33213,32456,8<br />
+move 33213,32454,7<br />
+move 33217,32436,7<br />
+move 33216,32417,7<br />
+move 33217,32403,7<br />
+waitX 2<br />
+:manapotbuy<br />
+fastExiva &gt; 87<br />
+saymessage exiva openbp<br />
+saymessage exiva &gt; 82 FF FF 00 00 00 33 0B 00 00<br />
+IFTrue ($countitems:0C 01$#number&lt;=#100) Goto $nlineoflabel:manapotbuy$<br />
+gotoScriptLine 127<br />
+waitX 2<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 06 00 7B 1D 01 00 $numbertohex2:100$ 01<br />
+fastExiva &gt; 06 00 7B 1D 01 00 $numbertohex2:100$ 01<br />
+fastExiva &gt; 06 00 7B 1D 01 00 $numbertohex2:100$ 01<br />
+fastExiva &gt; 06 00 7B 1D 01 00 $numbertohex2:100$ 01<br />
+fastExiva &gt; 06 00 7B 1D 01 00 $numbertohex2:100$ 01<br />
+fastExiva &gt; 06 00 7B 1D 01 00 $numbertohex2:100$ 01<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:100$ 00<br />
+fastExiva &gt; 06 00 7B 1D 01 00 $numbertohex2:100$ 01<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:100$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:50$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:50$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:50$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:50$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:50$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:50$ 00<br />
+waitX 2<br />
+IFTrue ($countitems:0C 01$#number&lt;=#100) Goto $nlineoflabel:manapotbuy$<br />
+waitX 2<br />
+move 33225,32377,7<br />
+move 33244,32366,7<br />
+move 33248,32340,7<br />
+move 33248,32327,7<br />
+move 33265,32303,7<br />
+move 33265,32288,7<br />
+move 33265,32279,7<br />
+useItem 33265,32278,7<br />
+move 33265,32277,7<br />
+move 33265,32275,8<br />
+move 33264,32275,8<br />
+move 33262,32275,9<br />
+move 33260,32275,9<br />
+move 33258,32275,10<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

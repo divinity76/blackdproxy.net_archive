@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="potions, mana, script, steel, helmet, health, liberty, deposit, money, skills, tarantulas, hitpoints, level, refill, rotworms, potion, sell, knight, depot, character, tested, spiders, feedback, auto, runemaker, sword, serpent, 50/50, 25ish, shield, dragon, exura, blackd, fixed, errors, ways, make, reported, credits, http://blackdtools.com/forum/showthread.php?t=28566&amp;highlight=perfect+liberty, file, thread, waypoints, including, welcomed, place, higher, utevo, beginning, equipment" />
+	<meta name="description" content="Greetings! 
+ 
+This is my third script, I've tested it for a while now so it should be fine! The only part that I haven't tested it the running to depot on danger. 
+ 
+What it does? 
+This script will hunt in all the floors of Liberty Bay Vandura Cave. 
+When full capacity it will go to town sell the maces, swords, tarantula egg, steel helmet and centipede legs, deposit the money and refill manas and health potions to then continue hunting. 
+ 
+How does it work? 
+This script was made for personal" />
+	
+	<title> Great Liberty Bay Script (Seller, Depositor and Refiller) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  Great Liberty Bay Script (Seller, Depositor and Refiller)</div>
+<hr />
+<div class="pda"><a href="t-47602.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?47602-Great-Liberty-Bay-Script-(Seller-Depositor-and-Refiller)">Great Liberty Bay Script (Seller, Depositor and Refiller)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-08-2010, 08:15</div></div><div class="posttext">Greetings!<br />
+<br />
+This is my third script, I've tested it for a while now so it should be fine! The only part that I haven't tested it the running to depot on danger.<br />
+<br />
+What it does?<br />
+This script will hunt in all the floors of Liberty Bay Vandura Cave.<br />
+When full capacity it will go to town sell the maces, swords, tarantula egg, steel helmet and centipede legs, deposit the money and refill manas and health potions to then continue hunting.<br />
+<br />
+How does it work?<br />
+This script was made for personal use, so beware of the settings. It is set to buy 10 mana potions and 10 health potions. If at any point it has less than 5 potions of any kind it will go sell stuff, deposit money and refill. It will always keep a steel helmet (that is because my character uses one and I didn't want it to be sold).<br />
+<br />
+What does it kill?<br />
+ Bugs<br />
+  Wasps<br />
+  Skunks<br />
+  Rats<br />
+  Rotworms<br />
+  Carrion Rotworms<br />
+  Spiders<br />
+  Poison Spiders<br />
+  Centipedes<br />
+  Tarantulas<br />
+<br />
+<br />
+How do I use it?<br />
+I have a knight of level 25ish with skills 50/50 (Knight set, Steel Helmet, Serpent Sword and Dragon shield) and it almost never uses the potions.<br />
+I set Blackd to use 'Exura' when hitpoints below 80%, a health potion when below hitpoints below 30% and a mana potion when mana below 30%.<br />
+I use Runemaker to set auto eat and to say 'Utevo Lux' when mana is higher than 100.<br />
+<br />
+Where should I place my character in the beginning?<br />
+In Liberty Bay depot or near.<br />
+<br />
+Warning<br />
+It can get tough for low level with bad skills or bad equipment due to the tarantulas.<br />
+<br />
+Feedback<br />
+All feedback is welcomed, including ways to make it better.<br />
+If any errors, they will be fixed as soon as reported.<br />
+<br />
+Credits<br />
+The waypoints are from this thread (http://blackdtools.net/showthread.php?t=28566&amp;highlight=perfect+liberty).<br />
+<br />
+The file:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-08-2010, 11:01</div></div><div class="posttext">epic off tomorrow and i will give it a run on my ek</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-08-2010, 11:24</div></div><div class="posttext">Thanks Tippy! You seem to be one of the few who tries my scripts..<br />
+<br />
+Announcement: <br />
+There was an error with some waypoint when leaving the cave from a particular place but it has now been fixed. New version 1.1 uploaded.<br />
+Another similar issue was solved; new version uploaded.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-08-2010, 23:49</div></div><div class="posttext">$statusbit:8$<br />
+#number=#<br />
+1<br />
+0<br />
+3000<br />
+0<br />
+exana pox<br />
+<br />
+<br />
+<br />
+add that to a txt file and add this to the list. its a cond advent to do away with posion... put the txt file in the conds file  in blackd program folder and load it in the ? mark button... for people that dont know how to do this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-08-2010, 23:51</div></div><div class="posttext">@Tippy: It's a great conditional however, I in particular don't use it because its  less mana waste to heal than to cast 'exana pox' and if I cast that spell constantly I am afraid I'll waste more mana potions. But I guess for some people it works (Higher levels)!<br />
+<br />
+Announcement<br />
+Yet another fix, version 1.3 is up.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-09-2010, 01:30</div></div><div class="posttext">whats lvl req? could a 22 sorc do? and whats xp/hr and money/hr</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-09-2010, 01:43</div></div><div class="posttext">whats lvl req? could a 22 sorc do? and whats xp/hr and money/hr<br />
+<br />
+I wish I could tell you about the sorcerer but I'm afraid you got to try it out for yourself. However let me warn you that once my character lured 2 tarantulas to itself so it can get messy for low level characters.<br />
+<br />
+Mine is doing around 12-15k/h and it goes to deposit every like 45-1h to deposit around 1.5-2k.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-09-2010, 03:02</div></div><div class="posttext">currenlty using the 1.2 version<br />
+<br />
+18:58 Jefrey: Alright, we have added the amount of 2576 gold to your balance. You can withdraw your money anytime you want to.<br />
+<br />
+that is about a hour of me not even looking at it i set the health pot to 60 and manas at 40 <br />
+<br />
+19:59 Using one of 57 health potions...19:59 Using one of 35 mana potions...<br />
+just got home from a baggie run and my cap is full so we are gonna watch it go back to town on its own<br />
+<br />
+13k a hour and i have seen 2-3 other people here <br />
+<br />
+great script\<br />
+50 ek<br />
+64/63 skills p set bright sword tower shield  owning ass :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-09-2010, 04:16</div></div><div class="posttext">i seen you added the horns i was about to mention that, could u add a depo depositer while there currenlt have 165 lumps of dirt :D as well as the fangs and legs if its in it i am not stoppin at it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-09-2010, 04:17</div></div><div class="posttext">I will try to add it as soon as I can..<br />
+Regarding the Centipede Legs, is it not selling them? Mine is..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-09-2010, 04:51</div></div><div class="posttext">I will try to add it as soon as I can..<br />
+Regarding the Centipede Legs, is it not selling them? Mine is..<br />
+<br />
+<br />
+if its sells them at the same place as the eggs it noticed it goes up the stairs says hello and if she ant close enough to the stairs it will just keep going. without selling them. did u add a way point to the center of the room in the latest version?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-09-2010, 04:54</div></div><div class="posttext">Yeah I fixed that issue. New version uploaded with depositor of rotworm loot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-09-2010, 08:24</div></div><div class="posttext">i wanan try.. but dont wnana die.. meh we shall see</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-09-2010, 09:04</div></div><div class="posttext">ok well i tried it it goes to hole kills rot if its there then heads back to sell depost and refil.. i got 10 mana and 10hp pots.. im starting in depot.. am i missing something?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-09-2010, 21:34</div></div><div class="posttext">ok well i tried it it goes to hole kills rot if its there then heads back to sell depost and refil.. i got 10 mana and 10hp pots.. im starting in depot.. am i missing something?<br />
+as he states in the post its set up for the way he hunts. so to change this to what u want to it to get when it goes to pot store u have to find these statements all through the script<br />
+<br />
+IfTrue ($countitems:0C 01$#number&lt;#10) Goto $nlineoflabel:buyManas$<br />
+IfTrue ($countitems:0A 01$#number&lt;#10) Goto $nlineoflabel:buyHealth$<br />
+<br />
+and change the ten to what u want it to be to check. i have found that this is fine when it needs tne it will go back to town when it hits this amount<br />
+<br />
+<br />
+fastExiva _mananeeded = $numericalexp:10-{$countitems:0C 01$}$<br />
+fastExiva _healthneeded = $numericalexp:10-{$countitems:0A 01$}$<br />
+near the start of the script u find this and you set the ten to what u want it to buy. and it will buy that amount<br />
+<br />
+<br />
+so finaly run guys  i ran this for about 6 hours <br />
+14:27 Jefrey: Your account balance is 11251 gold.<br />
+started with 40 14:33 Using one of 29 mana potions...<br />
+started with 60 14:33 Using one of 56 health potions...&lt;used 3 myself lol&gt;<br />
+6 fangs <br />
+116 lumps of dirt.. great script myfriend... found my money maker</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 05:54</div></div><div class="posttext">21:50 Welcome to the Automated Liberty Bay Experience.<br />
+21:50 For more scripts visit BlackdTools's forums and search for BldMx's posts.<br />
+21:50 Now going to hunt.<br />
+21:52 Now hunting.<br />
+21:52 Now Leaving Floor -1.<br />
+21:52 Now going to sell, deposit and refill.<br />
+<br />
+<br />
+<br />
+<br />
+i changed them...and still no go thats what i get i have 10 of each pot and sutff and its goes to hole and then down and rite bak up thats it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 06:11</div></div><div class="posttext">It can only be one of two things. <br />
+You have less than 5 manas or health potions or you got less than 10 capacity.<br />
+<br />
+Remember that you need to have the backpacks where the potions are open!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 07:04</div></div><div class="posttext">ohh.. lol yea it works now.. gahh lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 07:12</div></div><div class="posttext">Good to know.. Let me know how it goes.. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 07:34</div></div><div class="posttext">well it works.. but i cant quite get it running rite having issue with the whole mana and hp pot thing.. after i use one it goes bak and it wont buy more</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 07:36</div></div><div class="posttext">Did you modify the script? If so send me  a PM and I'll take a look.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 07:41</div></div><div class="posttext">i tried but still no idea what im doing...i just want it to go bak after like 2 of each<br />
+and 10 aint bad but.. thats alot... sorry im giving u such a hard time</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 07:44</div></div><div class="posttext">So what exactly do you want? You want it to go back when it uses 2? Sorry, I don't understand you..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 07:48</div></div><div class="posttext">well id liek it to go bak after 2.. and actually buy them and not walk bak and forth if it dosent have..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 07:55</div></div><div class="posttext">Ok, so I made this script for you..<br />
+Make sure to:<br />
+-Open all backpacks.<br />
+-Have 10 mana potions<br />
+-Have 10 health potions<br />
+<br />
+<br />
+It should go back and buy new pots after it uses 2 manas or health potions.<br />
+<br />
+~Enjoy</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 07:59</div></div><div class="posttext">thanks..alot i love ur scripts and  scripters who help alot thanks alot alot alot</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 08:00</div></div><div class="posttext">If you got any requests for scripts just let me know ;)<br />
+<br />
+PS. Let me know if it works and if you like it..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 08:03</div></div><div class="posttext">so far so good.. im a lvl 25 sorc great gear...looking for a good place if u got any ideas</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 08:06</div></div><div class="posttext">I also started using this script at 25.. its pretty good.. i used it until 33..after that I went another place (releasing script soon I hope).. But if you want money stay there until 35 I guess.. (not too good with sorcerers)..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 08:09</div></div><div class="posttext">kk thanks i will yea i like my sorc so far... still iffy but i like alot</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-10-2010, 08:14</div></div><div class="posttext">ill be waiitng for ur next script :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-10-2010, 19:38</div></div><div class="posttext">god i love this script. i made 45k yesterday!!!! wootness i can hunt on my main today!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-10-2010, 23:22</div></div><div class="posttext">I made around 30k but ran out of stamina early so had to stop..<br />
+ What gets better is that as you get better level you can hunt for longer without going back so its more money ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 18:00</div></div><div class="posttext">ok.. umm yea ur gonan hate me i ran the script it seemed to be doing well but if i have to use even 1 hp or mana pot it goes to all hell it wont buy anymore period weather it be hp or mana it just wont buy and it keeps going bak and forth to hole then to store   am i missing something?  sorri  but hey i got lvl 27 with ur edron rot one :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-11-2010, 18:49</div></div><div class="posttext">are the bp of mana and hp potions open? you have to have them open for it to refill</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 20:24</div></div><div class="posttext">ok.. umm yea ur gonan hate me i ran the script it seemed to be doing well but if i have to use even 1 hp or mana pot it goes to all hell it wont buy anymore period weather it be hp or mana it just wont buy and it keeps going bak and forth to hole then to store   am i missing something?  sorri  but hey i got lvl 27 with ur edron rot one :P<br />
+<br />
+Make sure the backpacks are open. I should only go back if you have less than 5 manas or healths or no cap.<br />
+<br />
+Did you modify the script in any way?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tippy88</div><div class="date">01-11-2010, 20:56</div></div><div class="posttext">so first time i watched it refill my stuff. i had full hp pots but 0 mana pots. so it went and bought more health pots but didn't get any mana pots and went back to hunting</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 21:02</div></div><div class="posttext">yes the are open no did not modify at all</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 21:09</div></div><div class="posttext">Wierd, for me it works. I'm looking into it now.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 21:29</div></div><div class="posttext">kk thanks alot  idk much about it so yea :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 21:48</div></div><div class="posttext">I uploaded a new version I tested it alright... <br />
+So good luck..<br />
+<br />
+It will go buy when less than 5 mana or health potions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 22:06</div></div><div class="posttext">testing now</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 22:08</div></div><div class="posttext">testing now<br />
+<br />
+Let me know how it goes..<br />
+<br />
+Edit: Did you download new version? (Not your personalized script I made) It still says 0 views...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 22:13</div></div><div class="posttext">i did but apprently  not lol it only had 1 line</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 22:16</div></div><div class="posttext">One line?! I just downloaded it myself and it was fine.. try again maybe?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 22:16</div></div><div class="posttext">its all 1 line no space or nothing.. everything seems to be there but its just 1 line.. lol in cavebot its only on line</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 22:21</div></div><div class="posttext">Fixed.. Try again ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 22:24</div></div><div class="posttext">kk testing now..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 23:15</div></div><div class="posttext">good news it sold the empty vials and bought refils its working and geart too thanks very much u rock</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">01-11-2010, 23:20</div></div><div class="posttext">Glad to hear!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bringr32</div><div class="date">01-11-2010, 23:37</div></div><div class="posttext">im glad to its on round 2 of buying and selling and its worked great thanks for the script</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jnkmaden</div><div class="date">03-16-2010, 11:01</div></div><div class="posttext">Now going to hunt -&gt; Now Hunting -&gt; kills one rotworm -&gt; Now leaving -1 Floor -&gt; now going to sell, deposit, refill.<br />
+<br />
+whats wrong oO<br />
+<br />
+my bags are full of pots, i got a shovel, a rope, magic rope. whats wrong wtf? :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-16-2010, 22:27</div></div><div class="posttext">Now going to hunt -&gt; Now Hunting -&gt; kills one rotworm -&gt; Now leaving -1 Floor -&gt; now going to sell, deposit, refill.<br />
+<br />
+whats wrong oO<br />
+<br />
+my bags are full of pots, i got a shovel, a rope, magic rope. whats wrong wtf? :(<br />
+<br />
+Make sure the backpacks are open.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jnkmaden</div><div class="date">03-18-2010, 15:49</div></div><div class="posttext">Thank you! Workin very nice! 7am lvl 13, going to school, but before i turn on my bot, 1pm i was lvl 17. nice!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sinlak</div><div class="date">03-26-2010, 20:51</div></div><div class="posttext">THanks BldMx your the man, once my knight gets a couple more levels I will use this script!, How do I start it? Should I have X amount of backpacks open? or leave everything closed? and how many empty bps should I start with</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sinlak</div><div class="date">03-26-2010, 21:53</div></div><div class="posttext">How can I change the values for a lower level knight, I need him to use potions at 50% health instead of 30% and use Exura at 75 mana instead of 100. THanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-26-2010, 22:10</div></div><div class="posttext">THanks BldMx your the man, once my knight gets a couple more levels I will use this script!, How do I start it? Should I have X amount of backpacks open? or leave everything closed? and how many empty bps should I start with<br />
+<br />
+Every backpack should be open... take as many empty backpacks as it needs to loot the gold... that depends on every character..<br />
+<br />
+the healing is not done by my script.. check your other settings or use a conditional event if needed..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sinlak</div><div class="date">03-26-2010, 22:23</div></div><div class="posttext">I am real new to this (just started today) Can you explain what to do for a level 16 knight? How to set the healing and exuraing? thanks! sorry to waste ur time great script<br />
+<br />
+EDIT: Sorry, I figured it out. Loving this!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">phon</div><div class="date">04-18-2010, 16:40</div></div><div class="posttext">Hi <br />
+<br />
+Can you do the same for a druid using exori flam ? Like your script of Darashia rotworms.<br />
+Will be nice <br />
+Thx ^^<br />
+<br />
+Edit:<br />
+Its ok. i think i found :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">calviiN</div><div class="date">05-13-2010, 23:07</div></div><div class="posttext">The scripts works fine until I get 0.00 cap, then it throws out my weapon, I've lost a Steel axe and a Dwarven axe, any idea how to fix this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nayaki</div><div class="date">06-29-2012, 14:21</div></div><div class="posttext">it doesnt withdraw gold for the mana potions, whats wrong ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sohji444</div><div class="date">07-07-2012, 02:39</div></div><div class="posttext">Yeah, Im having that problem too..</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, dwarf, cavebot, problem, loses, started, finished, setmeleekill, setnofollow, setretryattacks, setany, simple, attack, hitpoints, dwarfs, blackd, train, monster, attacking, cheat, somethimes" />
+	<meta name="description" content="Hi! 
+I have a problem. I want to train on dwarfs with BlackD. The problem is, that cheat somethimes just stop attacking monster. I don't know what to do. I can see this on chat:  
+ 
+09:31 Cavebot script finished! 
+09:31 Cavebot script started! 
+09:31 A dwarf loses 5 hitpoints due to your attack. 
+ 
+I have simple script, like this: 
+ 
+setMeleeKill dwarf" />
+	
+	<title> I need help. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  I need help.</div>
+<hr />
+<div class="pda"><a href="t-57349.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57349-I-need-help">I need help.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">mose</div><div class="date">02-23-2012, 10:35</div></div><div class="posttext">Hi!<br />
+I have a problem. I want to train on dwarfs with BlackD. The problem is, that cheat somethimes just stop attacking monster. I don't know what to do. I can see this on chat: <br />
+<br />
+09:31 Cavebot script finished!<br />
+09:31 Cavebot script started!<br />
+09:31 A dwarf loses 5 hitpoints due to your attack.<br />
+<br />
+I have simple script, like this:<br />
+<br />
+setMeleeKill dwarf<br />
+setNoFollow<br />
+setRetryAttacks<br />
+setAny</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">griffin</div><div class="date">02-23-2012, 11:09</div></div><div class="posttext">setMeleeKill dwarf<br />
+setNoFollow<br />
+setRetryAttacks<br />
+setAny<br />
+WaitX 10<br />
+gotoScriptLine 4</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mose</div><div class="date">02-23-2012, 12:13</div></div><div class="posttext">And it still doesn't work. Script is OK, but Blackd just stopping to attack. If U want i can give U scrn shots from any windows of bot. Maybe cheat have any blockade of given dmg, osm. Please, help me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Razoor</div><div class="date">02-23-2012, 14:08</div></div><div class="posttext">gotoScriptLine is correct but im pretty sure its gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mose</div><div class="date">02-23-2012, 14:52</div></div><div class="posttext">If i give gotoScriptLine 0 nothing's change</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blade</div><div class="date">02-24-2012, 09:12</div></div><div class="posttext">SetMaxAttackTimeMs 3600000<br />
+SetMaxAttackTimeMs 3600000<br />
+setMeleeKill dwarf<br />
+setNoFollow<br />
+setRetryAttacks<br />
+setAny<br />
+WaitX 10<br />
+gotoScriptLine 4 <br />
+<br />
+I know I put the begining line twice but thats how I do it for monks. That should work for you.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

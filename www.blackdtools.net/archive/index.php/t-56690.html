@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="player_experience, tibia, battlelist_start, $632ec4, player_id, $632f30, distance_name=, distance_between_chars, adresses, battlelist, adress, player" />
+	<meta name="description" content="Hey guys!  
+I need an adresse's of Tibia 9.31 like a battlelist or player exp, it looks like this ;  
+ 
+ 
+have it anyone?  
+thanks" />
+	
+	<title> Adress of Tibia 9.31 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Adress of Tibia 9.31</div>
+<hr />
+<div class="pda"><a href="t-56690.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56690-Adress-of-Tibia-9-31">Adress of Tibia 9.31</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">m4ayhem</div><div class="date">11-11-2011, 18:22</div></div><div class="posttext">Hey guys! <br />
+I need an adresse's of Tibia 9.31 like a battlelist or player exp, it looks like this ; <br />
+<br />
+  Player_Experience = $632EC4;<br />
+  Player_ID = Player_Experience + 12;<br />
+  BATTLELIST_START = $632F30;<br />
+  Distance_Between_Chars = 168;<br />
+  Distance_Name= 4;<br />
+<br />
+have it anyone? <br />
+thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-16-2011, 23:06</div></div><div class="posttext">you can find that in blackd proxy config931 folder.<br />
+<br />
+just download the free blackd proxy update zip if you only want to read that. You don't even need to install blackd proxy.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">maozao</div><div class="date">12-21-2011, 01:32</div></div><div class="posttext">Hey Daniel, can you tell us what changed in the Tibia.Dat ?! Because the old flags isn't working.<br />
+<br />
+Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">12-31-2011, 20:41</div></div><div class="posttext">some tiles now include his item name as new property.<br />
+<br />
+that is the new property &amp;H21<br />
+<br />
+Just have a look at modTiles.bas , open it with a notepad, then search the function LoadDatFile6<br />
+<br />
+<br />
+<br />
+      Case &amp;H21 ' item group, something, and name (tibia 9.4)<br />
+        Get fn, , b1 ' item group (byte 1)<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' item group (byte 2)<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' size of text (byte 1)<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b2 ' size of text (byte 2)<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b2)<br />
+        #End If<br />
+        <br />
+        tmpSize = GetTheLong(b1, b2)<br />
+        tmpName = &quot;&quot;<br />
+        For tmpI = 1 To tmpSize<br />
+            Get fn, , b1 ' size of text<br />
+            #If TileDebug = 1 Then<br />
+              tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+            #End If<br />
+            tmpName = tmpName &amp; Chr(b1)<br />
+        Next tmpI<br />
+        DatTiles(i).haveName = True<br />
+        DatTiles(i).itemName = tmpName<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; (&quot; &amp; tmpName &amp; &quot;)&quot;<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If<br />
+        Get fn, , b1 ' unknown meaning<br />
+        #If TileDebug = 1 Then<br />
+          tileLog = tileLog &amp; &quot; &quot; &amp; GoodHex(b1)<br />
+        #End If</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

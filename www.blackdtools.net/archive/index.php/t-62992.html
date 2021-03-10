@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="string, memory, part0, qstring, important, zanera, place, positions, tibia, means, offset, part5, number, references, part2, bigger, implementation, allocated, places, moment, write, search, start, character, part4, understand, part3, compiler, part1, qstrings, tasks, strings, modify, enginering, change, understanding, reverse, unicode, trash, aware, zeroes, point, part2-part1, address, check, content, cases, future, extra, ignore" />
+	<meta name="description" content="Ok, we need to get used to deal with this new kind of String. It is the one used by QT, the new system that Tibia 11 client uses now. The implementation of a QString is probably different depending OS and compiler. However, for us the only important implementation is the Windows implementation for the compiler that Cipsoft have choosen. 
+In our case, this is how a Tibia QString look: 
+ 
+08 00 00 00 06 00 00 00 07 00 00 00 10 00 00 00 5A 00 61 00 6E 00 65 00 72 00 61 00 00 00  
+Here we can read" />
+	
+	<title> Tibia 11 - Understanding QStrings in memory [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - Understanding QStrings in memory</div>
+<hr />
+<div class="pda"><a href="t-62992.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62992-Tibia-11-Understanding-QStrings-in-memory">Tibia 11 - Understanding QStrings in memory</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-10-2016, 12:51</div></div><div class="posttext">Ok, we need to get used to deal with this new kind of String. It is the one used by QT, the new system that Tibia 11 client uses now. The implementation of a QString is probably different depending OS and compiler. However, for us the only important implementation is the Windows implementation for the compiler that Cipsoft have choosen.<br />
+In our case, this is how a Tibia QString look:<br />
+<br />
+08 00 00 00 06 00 00 00 07 00 00 00 10 00 00 00 5A 00 61 00 6E 00 65 00 72 00 61 00 00 00 <br />
+Here we can read &quot;Zanera&quot;<br />
+Now, let's divide our example in parts:<br />
+PART0 = 08 00 00 00<br />
+PART1 = 06 00 00 00<br />
+PART2 = 07 00 00 00<br />
+PART3 = 10 00 00 00<br />
+PART4 = 5A 00 61 00 6E 00 65 00 72 00 61 00<br />
+PART5 = 00 00<br />
+You should understand the meaning of each part:<br />
+PART0 is usually the number of references at this moment.<br />
+- If PART0 is 0 then it means you are reading a destroyed string (invalid memory).<br />
+- Not confirmed: If PART0 is bigger than 1000 then it means this QString was moved to other memory place and then you should read PART0 as a pointer to the new start of the QString.<br />
+- In our example, we have a valid string and there are 8 memory structures that references this string.<br />
+- I only had 1 char in Zanera in my character list, however there must be 7 other places that reference it.<br />
+- For example: the structure that holds the current server that you are playing (&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 320 &gt; 18 &gt; 60 &gt; C)<br />
+- We still miss 6 places that references Zanera, but well, this is not really important here.<br />
+- However PART0 might be important in a future moment of your reverse enginering tasks.<br />
+<br />
+PART1 is the size of the string. Well, this is easy to understand. In the case of Zanera the size = 6. This number is important so we can know how many positions we should try to read.<br />
+<br />
+PART2 is the number of allocated positions. In this case it is 7. It means we can do an easy change of the string to something else with max size of 7 before we need to search a bigger place in memory to place the string. If you need to modify strings then you will have to check this.<br />
+<br />
+PART3 is the offset. We should search the content at QString start address + offset. In our case offset = HEX 10 = 16 positions later. In most cases this is HEX 10.<br />
+<br />
+PART4 is the string. It is unicode and Tibia does not really use it so you can ignore the 00 after each char.<br />
+<br />
+PART5 are extra allocated memory positions (not part of the string) in this case PART2-PART1 = 1, that is, we still have enough memory to write 1 more character before this QString need a bigger memory place. Please be aware that we could have trash instead zeroes. Whatever you write in PART5 is not important because it is never read until PART2 says we should read up to this point.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-10-2016, 13:07</div></div><div class="posttext">My VB6 function to read a QString:<br />
+<br />
+<br />
+<br />
+Public Function QMemory_ReadString(ByVal pid As Long, ByVal address As Long, Optional maxSize As Long = 2048) As String<br />
+    Dim msg_size As Long<br />
+    Dim msg_offset As Long<br />
+    Dim msg_start As Long<br />
+    Dim msg_lastc As Long<br />
+    Dim msg_refs As Long<br />
+    Dim allbytes() As Byte<br />
+    Dim b As Byte<br />
+    Dim res As String<br />
+    Dim i As Long<br />
+    Dim auxRes As Long<br />
+    res = &quot;&quot;<br />
+    msg_refs = QMemory_Read4Bytes(pid, address)<br />
+    If (msg_refs &gt; 1000) Then<br />
+        ' This QString was moved to a different place<br />
+        QMemory_ReadString = QMemory_ReadString(pid, msg_refs, maxSize)<br />
+        Exit Function<br />
+    End If<br />
+    msg_size = QMemory_Read4Bytes(pid, address + 4) ' Size of the QString<br />
+    msg_offset = QMemory_Read4Bytes(pid, address + 12) ' Offset that we should use to find the String start<br />
+    msg_start = address + msg_offset<br />
+    If msg_size &gt; maxSize Then ' Only read up to maxSize characters<br />
+        msg_size = maxSize<br />
+    End If<br />
+    msg_lastc = msg_size - 1<br />
+    If msg_lastc &lt; 0 Then<br />
+        QMemory_ReadString = &quot;&quot;<br />
+        Exit Function<br />
+    End If<br />
+    ReDim allbytes((msg_size * 2) - 1)<br />
+    auxRes = QMemory_ReadNBytes(pid, msg_start, allbytes)<br />
+    If (auxRes = -1) Then<br />
+        QMemory_ReadString = &quot;&quot;<br />
+        Exit Function<br />
+    End If<br />
+    For i = 0 To msg_lastc<br />
+        res = res &amp; Chr(allbytes(i * 2))<br />
+    Next i<br />
+    QMemory_ReadString = res<br />
+End Function<br />
+<br />
+<br />
+Aux functions:<br />
+<br />
+<br />
+Private Const PROCESS_VM_READ = (&amp;H10)<br />
+Private Declare Function OpenProcess Lib &quot;kernel32&quot; (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long<br />
+Private Declare Function CloseHandle Lib &quot;kernel32&quot; (ByVal hObject As Long) As Long<br />
+Private Declare Function ReadProcessMemory Lib &quot;kernel32&quot; (ByVal hProcess As Long, ByVal lpBaseAddress As Any, ByRef lpBuffer As Any, ByVal nSize As Long, lpNumberOfBytesWritten As Long) As Long<br />
+<br />
+Public Function QMemory_ReadNBytes(ByVal pid As Long, ByVal finalAddress As Long, ByRef Rbuff() As Byte) As Long<br />
+    Dim usize As Long<br />
+    Dim TibiaHandle As Long<br />
+    Dim readtotal As Long<br />
+    On Error GoTo gotErr<br />
+    readtotal = 0<br />
+    usize = UBound(Rbuff) + 1<br />
+    If (usize &lt; 1) Then<br />
+        Exit Function<br />
+    End If<br />
+    TibiaHandle = OpenProcess(PROCESS_VM_READ, 0, pid)<br />
+    ReadProcessMemory TibiaHandle, finalAddress, Rbuff(0), usize, readtotal<br />
+    CloseHandle (TibiaHandle)<br />
+    If (readtotal = 0) Then<br />
+        QMemory_ReadNBytes = -1<br />
+    Else<br />
+        QMemory_ReadNBytes = 0<br />
+    End If<br />
+    Exit Function<br />
+gotErr:<br />
+    QMemory_ReadNBytes = -1<br />
+    Debug.Print (&quot;Error at QMemory_ReadNBytes:&quot; &amp; Err.Description)<br />
+End Function<br />
+Public Function QMemory_Read4Bytes(ByVal pid As Long, ByVal finalAddress As Long) As Long<br />
+    Dim res As Long<br />
+    Dim TibiaHandle As Long<br />
+    On Error GoTo gotErr<br />
+    TibiaHandle = OpenProcess(PROCESS_VM_READ, 0, pid)<br />
+    ReadProcessMemory TibiaHandle, finalAddress, res, 4, 0<br />
+    CloseHandle (TibiaHandle)<br />
+    QMemory_Read4Bytes = res<br />
+    Exit Function<br />
+gotErr:<br />
+    QMemory_Read4Bytes = -1<br />
+End Function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jo3Bingham</div><div class="date">12-15-2016, 11:39</div></div><div class="posttext">How do you get a pointer path to a QString? I'm able to locate my desired string in memory by searching for it's UTF-16 equivalent as an array of bytes, but doing a pointer scan yields zero results.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

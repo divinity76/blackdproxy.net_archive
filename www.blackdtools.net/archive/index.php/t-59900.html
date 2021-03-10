@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="backpack, means, packet, copy/paste, vials, scripts, opened, cheers, commands, similar, works, script, packets, ground, unique, record, dropped, tricky, thought" />
+	<meta name="description" content="Hello, this is my first post and I'd like to ask you if there's any way that I can make my char pick up X item from the sqm where he stands. 
+ 
+Thanks in advance." />
+	
+	<title> Pick up X item from the ground? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Pick up X item from the ground?</div>
+<hr />
+<div class="pda"><a href="t-59900.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59900-Pick-up-X-item-from-the-ground">Pick up X item from the ground?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-13-2013, 06:47</div></div><div class="posttext">Hello, this is my first post and I'd like to ask you if there's any way that I can make my char pick up X item from the sqm where he stands.<br />
+<br />
+Thanks in advance.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-13-2013, 16:18</div></div><div class="posttext">Hm, do you mean like 'amount' or item 'ID'. Well, there's a way to do this with a trainer though:<br />
+<br />
+http://i.imgur.com/MP4OB.png<br />
+<br />
+Red square: Select tiles you want to pick up from around you. Works as well if you move your character.<br />
+<br />
+Yellow square: Item ID, quite self explanatory. Put '00 00' to pick up any pickupable item, or change to a specific ID like 'D7 0B' which would pick up gold coins.<br />
+<br />
+Green square: Destination, place where you'd want your items to be carried to, usually backpack or hand if you're training and picking up spears or small stones.<br />
+<br />
+Blue square: Max items you can carry, I usually just put 999999999 there.<br />
+<br />
+Orange square: Timer, usually you don't need to set it up, but if you want bot to pick up items faster, then set it to lower values. I don't know how safe this function is, because it picks up items quite fast, so try to have higher values, because normal human being isn't able to pick items at a high speed. Useful for OT servers though, to put timer at 20ms. Items fly like hell with that.<br />
+<br />
+White square: Once you set up everything right, enable trainer and watch items fly!<br />
+<br />
+<br />
+Is that what you had in mind? If not, please post again! ^___^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-14-2013, 07:23</div></div><div class="posttext">Is there any function to pick up an item from the sqm where you stand on the cavebot? Because I need to pick up the flasks before I drop the loot on the ground, then I'd throw them over the loot again to hide it, next round I pick up the flasks again, throw the loot on the ground and hide it with flasks again... I have it all figured out already, but I have no clue how to pick up ONLY the flasks before I set the bot to throw the loot on the sqm.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-14-2013, 11:44</div></div><div class="posttext">It is possible if you're moving the same amount of flask everytime you 'hide' your loot under them.<br />
+<br />
+Totally possible with recording packets. A bit more advanced, but if that's the case, you moving the exact amount of flasks everytime, then I'm more than excited to show you how it's done. It's nothing hard really.<br />
+<br />
+Post here if you're up for it, and perhaps just post a section of your script where you'd want that command to be.<br />
+<br />
+^___^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-14-2013, 18:37</div></div><div class="posttext">Is there any function to pick up an item from the sqm where you stand on the cavebot? Because I need to pick up the flasks before I drop the loot on the ground, then I'd throw them over the loot again to hide it, next round I pick up the flasks again, throw the loot on the ground and hide it with flasks again... I have it all figured out already, but I have no clue how to pick up ONLY the flasks before I set the bot to throw the loot on the sqm.<br />
+<br />
+Just put 00 00 as the ID of the flasks, then it will only pick up the flasks...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-15-2013, 10:35</div></div><div class="posttext">It is possible if you're moving the same amount of flask everytime you 'hide' your loot under them.<br />
+<br />
+Totally possible with recording packets. A bit more advanced, but if that's the case, you moving the exact amount of flasks everytime, then I'm more than excited to show you how it's done. It's nothing hard really.<br />
+<br />
+Post here if you're up for it, and perhaps just post a section of your script where you'd want that command to be.<br />
+<br />
+^___^<br />
+<br />
+Thank you! I'd appreciate if you'd have the patience to explain to me how it works! what I had in mine is just to throw a normal flask, then a strong potion flask, then another normal flask and so on... Then I'd need to grab one normal flask, then grab a strong potion flask, etc etc...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-15-2013, 10:37</div></div><div class="posttext">Just put 00 00 as the ID of the flasks, then it will only pick up the flasks...<br />
+<br />
+the item ID isn't a problem, sir... I just need to know how to grab an specific item from the ground(as a cavebot function, not trainer), no matter which is the ID of the item... ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-17-2013, 06:36</div></div><div class="posttext">I took a look around for this packets thing and found this thread explaining how to create those stuff, I managed to make my char pick up the item from the ground but everytime he does that a &quot;blue wave&quot; (like when you relog or when you're teleported) appears but the char picks up the item... no matter where I use this command exiva &gt; 0F 00 78 5D 7E DE 7D 08 25 0B 02 FF FF 40 00 04 01  the blue thing appears even if the bag isn't there or if I'm in some other sqm... the sqm where the char stands is 32349,32222,8 in case anyone wanna try it out.<br />
+<br />
+I took the first 2 digits (0F) and changed it to 01 and the char picks up the bag but the blue wave doesn't appear... I'm trying it all on a noob character so in case I'm doing something risky I'll just lose a char lvl 8 anyway<br />
+<br />
+One more information, the blue wave doesn't appear only on my client, but to everyone in game, as I got an MC and went there to see and the char would still show the blue wave thing.<br />
+<br />
+Any hint about it? is it safe if I just change the 0F to 01 to get rid of the blue wave? lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-17-2013, 06:50</div></div><div class="posttext">btw I tried to use the tools to send Hex and it crashed the client, tried to debug and got this error<br />
+<br />
+02:47 BlackdProxy [255]: Unexpected tileID at ptype 78 ( 56958 ) please report blackd<br />
+02:47 Blackd [255]: Proxy got critical error! Safe mode ON . Alarm on. Report log details (errors.txt) to daniel@blackdtools.com . Relog to reactivate cheats</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-17-2013, 07:04</div></div><div class="posttext">Alright, I guess I have it working now, I haven't had deleted the header(first 4 digits) I hope it's safe now lol</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">01-17-2013, 12:44</div></div><div class="posttext">Dang, I don't think it would be that safe. D: Copy/paste the part of the script you used packets in and post it here or send me a PM.<br />
+<br />
+I gave it a thought and it is possible, but quite tricky! I mean, if you record a packet, that packet is UNIQUE! That means if you dropped vial from the first slot of your backpack, it will only work for the first slot of the backpack, that means you'd always have to have vials in the first slot of opened backpack.<br />
+<br />
+Hum. Just copy/paste that part and post it here, and if you don't mind, would you post IDs of vials you're trying to drop?<br />
+<br />
+With that I'm sure I can get it to work as it works for me in my other scripts with similar commands.<br />
+<br />
+Cheers!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">01-19-2013, 08:04</div></div><div class="posttext">I haven't started making the script yet, I'm just trying to get it all figured out before starting hehe that line that I posted before was just about picking up a normal bag from the ground in thais dp -1... my plan is to hide the loot with &quot;droplootonground&quot; command and then pick up when I want to hide more loot with exiva &gt; command...<br />
+<br />
+Anyway, I have another question. Is there any way that I can config an alarm to go off when I loot X item? I've been hunting on dworcs and yesterday I was checking the server log of my char and I saw that there was 3 drops of voodoo dolls and my char picked up only one, I noticed that the bot has some hard time looting sometimes, either because they paralyze me or maybe because the loot range of my exori hur(I set the loot range to the range of exori hur, but still the char kind of stumble when he goes to loot) or maybe it's just about my lag and the weird way that the char walks. In any case, a loot alarm would fix my problem, as I'm most of the time near my computer, if I hear the alarm I'll come to check if the bot looted the rare, if not, I can just do it by myself. (I'm not sure if I should post it on script request or make a new thread here)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lalelol</div><div class="date">02-01-2013, 06:59</div></div><div class="posttext">Nothing? :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wampi</div><div class="date">04-15-2013, 03:42</div></div><div class="posttext">and for example if I wanted to pick up 2 or 3 items at a time<br />
+one that small stones and gold as you do<br />
+<br />
+plx</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

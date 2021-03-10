@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, number=, $countitemscd, _stonecount, number, _unequipmelee, $hex-equiped-item06$, $randomnumber11001250$, _equipmelee, $numericalexp$_unequipmelee$+1$, $_equipmelee$, $numericalexp$_stonecount$+1$, $_stonecount$, $numericalexp$num-equiped-ammount06$-1$, $_unequipmelee$, string, $numericalexp$_equipmelee$+1$, looted, conditional, events, weapon, stones, spears, small, dindt, string=" />
+	<meta name="description" content="This conditional will use small stones or spears when you loot them. 
+This means it will unequip your melee weapon and use the ranged one instead. 
+The difference between this one and the old one is with this one you can still loot other stuff with this one! Nifty, huh? 
+Edit C7 0C to your melee weapon. 
+Edit CD 0C to small stones or anything else you use, this is normal spears. 
+ 
+1 
+#number=# 
+1 
+0" />
+	
+	<title> Use looted Small Stones or Spears instead of Weapon [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-49.html">Conditional Events Miniscripts</a> &gt;  Use looted Small Stones or Spears instead of Weapon</div>
+<hr />
+<div class="pda"><a href="t-57409.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57409-Use-looted-Small-Stones-or-Spears-instead-of-Weapon">Use looted Small Stones or Spears instead of Weapon</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-02-2012, 18:06</div></div><div class="posttext">This conditional will use small stones or spears when you loot them.<br />
+This means it will unequip your melee weapon and use the ranged one instead.<br />
+The difference between this one and the old one is with this one you can still loot other stuff with this one! Nifty, huh?<br />
+Edit C7 0C to your melee weapon.<br />
+Edit CD 0C to small stones or anything else you use, this is normal spears.<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = 0<br />
+$hex-equiped-item:06$<br />
+#string=#<br />
+C7 0C<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = $numericalexp:{$_unequipmelee$}+1$<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = $numericalexp:{$_unequipmelee$}+1$<br />
+$_unequipmelee$<br />
+#number=#<br />
+2<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 FF FF 03 00 00 01<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = 0<br />
+$countitems:CD 0C$<br />
+#number=#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = $numericalexp:{$_equipmelee$}+1$<br />
+$_equipmelee$<br />
+#number=#<br />
+1<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #C7 0C 06<br />
+$_equipmelee$<br />
+#number&gt;=#<br />
+500<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = 2<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = 0<br />
+$hex-equiped-item:06$<br />
+#string&lt;&gt;#<br />
+CD 0C<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = $numericalexp:{$_stonecount$}+1$<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+$numericalexp:{$num-equiped-ammount:06$}-1$<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = $numericalexp:{$_stonecount$}+1$<br />
+$_stonecount$<br />
+#number=#<br />
+2<br />
+1000<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #CD 0C 06</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-03-2012, 08:48</div></div><div class="posttext">Is it safe to send packets with the exiva command, like &quot;exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 FF FF 03 00 00 01&quot;.<br />
+<br />
+I know that package is updated and not invalid but is it still safe?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-03-2012, 11:04</div></div><div class="posttext">Yes, this is safe. This script never sends an unnecessary packet unless you lag.<br />
+Oh, alright, it will use exiva move #XX XX 06 always when zero throwables but BlackD doesn't send if it doesn't find weapon. :p<br />
+But I'll fix that now, I just wanted to make it work for my pala and then I released it, now I have time to edit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-03-2012, 12:39</div></div><div class="posttext">Glad too see the quick feedback and quick updates! Keep it coming..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soplas</div><div class="date">03-12-2012, 13:31</div></div><div class="posttext">i'm new in this progran you can show me to active with the waypoint? sorry my english is bad i need help plz</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-12-2012, 16:11</div></div><div class="posttext">i'm new in this progran you can show me to active with the waypoint? sorry my english is bad i need help plz<br />
+<br />
+You save it in a .txt file in your Conds folder where you have installed BlackD Proxy. Then load it in the &quot;?&quot; window of the program, remember Reloading the file-list before.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soplas</div><div class="date">03-13-2012, 03:59</div></div><div class="posttext">You save it in a .txt file in your Conds folder where you have installed BlackD Proxy. Then load it in the &quot;?&quot; window of the program, remember Reloading the file-list before.<br />
+<br />
+friend the script works as I mentioned, but I have a problem when collecting the spear begins to rise and fall and not let the attack char</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-13-2012, 11:39</div></div><div class="posttext">I made a small change to it, copy it, edit it and try it again please. I think it should work, if I understood your problem right.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kigane</div><div class="date">03-14-2012, 00:59</div></div><div class="posttext">imk new in this so, how do i use this thing? i just copy and paste it in my script or what?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-14-2012, 02:16</div></div><div class="posttext">imk new in this so, how do i use this thing? i just copy and paste it in my script or what?<br />
+<br />
+Copy it to a textfile in your &quot;Conds&quot; folder where you installed BlackD Proxy and then load the file from the dropdown-menu in the &quot;Conditional Events&quot; window of the bot, found by pressing &quot;?&quot; in the main window.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Soplas</div><div class="date">03-14-2012, 05:56</div></div><div class="posttext">I made a small change to it, copy it, edit it and try it again please. I think it should work, if I understood your problem right.<br />
+<br />
+thanks now it works perfectly friend, i can +Rep you</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-14-2012, 08:33</div></div><div class="posttext">thanks now it works perfectly friend, i can +Rep you<br />
+<br />
+Good to hear. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">emre135</div><div class="date">03-18-2012, 16:31</div></div><div class="posttext">@You save it in a .txt file in your Conds folder where you have installed BlackD Proxy. Then load it in the &quot;?&quot; window of the program, remember Reloading the file-list before. <br />
+<br />
+I Do not understand, Should i Open Blackd Proxy ---&gt;Event or what? <br />
+Need help<br />
+srry for my bad english.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Near</div><div class="date">03-27-2012, 22:47</div></div><div class="posttext">Does not working for me with this cavebot safe script, Venore Swamp Trolls with Potion Buyer (http://www.blackdtools.net/showthread.php?57461-Venore-Swamp-Trolls-with-Potion-Buyer).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Qetkut</div><div class="date">04-20-2012, 02:13</div></div><div class="posttext">i must load this in conditional events?<br />
+<br />
+<br />
+I have made this with mace and dindt work, can you tell me why??<br />
+<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = 0<br />
+$hex-equiped-item:06$<br />
+#string=#<br />
+D6 0C<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = $numericalexp:{$_unequipmelee$}+1$<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = $numericalexp:{$_unequipmelee$}+1$<br />
+$_unequipmelee$<br />
+#number=#<br />
+2<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva &gt; 78 FF FF 06 00 00 $hex-equiped-item:06$ 00 FF FF 03 00 00 01<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = 0<br />
+$countitems:CD 0C$<br />
+#number=#<br />
+0<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = $numericalexp:{$_equipmelee$}+1$<br />
+$_equipmelee$<br />
+#number=#<br />
+1<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #D6 0C 06<br />
+$_equipmelee$<br />
+#number&gt;=#<br />
+500<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = 2<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = 0<br />
+$hex-equiped-item:06$<br />
+#string&lt;&gt;#<br />
+CD 0C<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = $numericalexp:{$_stonecount$}+1$<br />
+$countitems:CD 0C$<br />
+#number&gt;#<br />
+$numericalexp:{$num-equiped-ammount:06$}-1$<br />
+0<br />
+0<br />
+0<br />
+exiva _stonecount = $numericalexp:{$_stonecount$}+1$<br />
+$_stonecount$<br />
+#number=#<br />
+2<br />
+1000<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #CD 0C 06</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Patrick</div><div class="date">06-03-2012, 16:22</div></div><div class="posttext">For me it's working great!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

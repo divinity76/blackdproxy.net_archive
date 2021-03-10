@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="mains, number, operator, $mymanapercent$, condition, completely" />
+	<meta name="description" content="I'm new to the whole BLACKDTOOLS world and i'm kinda lost.  
+ 
+How can I Auto utani gran hur please D: ?" />
+	
+	<title> How to Auto Gran Hur ? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  How to Auto Gran Hur ?</div>
+<hr />
+<div class="pda"><a href="t-60080.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60080-How-to-Auto-Gran-Hur">How to Auto Gran Hur ?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">handkill</div><div class="date">02-25-2013, 21:26</div></div><div class="posttext">I'm new to the whole BLACKDTOOLS world and i'm kinda lost. <br />
+<br />
+How can I Auto utani gran hur please D: ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">02-25-2013, 22:26</div></div><div class="posttext">Well, welcome! :) Anyway, I'll explain the long way and the short way, okay? Let's get started!<br />
+<br />
+Long way:<br />
+1.) Open BlackD Proxy.<br />
+2.) Click on '?' (red square) section of the bot. That section is called 'Conditional Events' by the way.<br />
+3.) Yellow square = Select your character name on which you'd want to set auto 'utani gran hur'.<br />
+4.) Orange square = Write '$statusbit:2$' in thing1 field.<br />
+5.) Green square = Choose '#number=#' in operator field.<br />
+6.) Blue square = Write '0' in thing2 field.<br />
+7.) Pink square = Set timer (in ms). Usually I put 1000ms, which is 1 second, but I mean it doesn't even matter since there are cool downs in Tibia.<br />
+8.) Purple square = Write 'utani gran hur' in Action: field.<br />
+9.) White square = Click on 'Add as new conditional event'.<br />
+10.) Watch your selected character cast 'utani gran hur' everytime it runs out of it.<br />
+<br />
+See the pictures below to fully understand what I just said. Below I'll explain easier, faster way of setting this up.<br />
+<br />
+http://i.imgur.com/j7pVgVs.png<br />
+<br />
+http://i.imgur.com/eFAGA9V.png<br />
+<br />
+<br />
+And now the shorter way. It may seem longer according to number of steps, but it's far more easier to do.<br />
+<br />
+Short way:<br />
+1.) Open up new text document (notepad).<br />
+2.) Copy and paste the code posted below in the notepad.<br />
+3.) Save file on your desktop. Name doesn't matter. But something like 'utani gran hur' is useful, so you know what conditional event is inside.<br />
+4.) Open your BlackD Proxy folder (wherever you've installed it).<br />
+5.) Open folder named 'conds' inside BlackD Proxy folder.<br />
+6.) Drag saved file on your desktop to 'conds' folder.<br />
+7.) Open BlackD Proxy.<br />
+8.) Open '?' aka 'Conditional Events' section of the bot.<br />
+9.) Select your character name.<br />
+10.) Click on '&lt;-Reload'.<br />
+11.) Search for your script.<br />
+12.) Once you've selected it, click on 'Load conds'.<br />
+13.) Watch your selected character cast 'utani gran hur' everytime it runs out of it.<br />
+<br />
+Code aka conditional event for 'utani gran hur':<br />
+<br />
+$statusbit:2$<br />
+#number=#<br />
+0<br />
+0<br />
+1000<br />
+0<br />
+utani gran hur<br />
+<br />
+It's pretty much the same thing as longer tutorial above. But this one saves this on your hard drive, so you don't have to set it up manually everytime you start the bot.<br />
+<br />
+<br />
+And one last thing. I wouldn't use any kind of bot on my main character. No one knows what CipSoft's detection tool detects. Use bot on your moneymaking accounts or so.<br />
+<br />
+I hope I've helped. :) Just post here again, if there's something you didn't understand.<br />
+<br />
+Cheers!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">handkill</div><div class="date">02-26-2013, 23:21</div></div><div class="posttext">Fu**ing perfect ! Really, thank you :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">02-27-2013, 05:35</div></div><div class="posttext">A completely safe way I use on my mains even is the following ; <br />
+<br />
+Condition: $mymanapercent$   Operator: #number&lt;=#   Thing2: 100   Action: utani gran hur<br />
+<br />
+as for the &quot;pink&quot; box provocate refers to is the delay before this action could be cast again, he has this set to 1000 which is every second, generally on a HEAL conditional I have it set as minimal 1500 = 1.5 seconds, but as for a spell that has a duration, set it too the duration of the spell 22 seconds, ie 22000 ms. <br />
+<br />
+The way provocate uses checks the &quot;statusbit:x&quot; I have wanted to try this out for a simple anti-paralyze script but like he himself suggests its not worth using on your main account for I do not know what sort of packets checking status constantly sends.<br />
+<br />
+Very great tutorial provocate, I enjoy seeing a different angle on how to use BlackD. <br />
+<br />
+-Lith<br />
+<br />
+edit ; Handkill as I re-read the post I see you are new to BlackD. The way I have suggested I have used on my free accounts and on my premium. This way also works with $myhppercent$ #number&lt;=# 50 Action: exura ico for example! there is a many ways to use BlackD but reading is half of the battle! Also: there is an auto-eat function in the &quot;Runemaker&quot; tab select your character, check the box that says auto-eat and voila.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

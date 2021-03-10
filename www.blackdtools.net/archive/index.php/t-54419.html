@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="logout, delete, setpriority, valkyrie+2, depositer, amazon, saracene, waypoints, activate" />
+	<meta name="description" content="- great script for lv 10-20. will attack 1 valkyrie and lots of amazons. I avoided too many valkyries because it might be troublesome for low levels. 
+and ofcourse, witches are avoided. average exp of 8k~ per hour.  
+it will deposit when your got 10 cap(or less)left.  
+- Start script at Amazon camp 
+ 
+ 
+setChaoticMovesOFF 
+#By Saracene 
+setFriendly 
+setMeleeKill Amazon" />
+	
+	<title> 28. Amazon camp  + depositer - by Saracene [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  28. Amazon camp  + depositer - by Saracene</div>
+<hr />
+<div class="pda"><a href="t-54419.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54419-28-Amazon-camp-depositer-by-Saracene">28. Amazon camp  + depositer - by Saracene</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-21-2011, 12:52</div></div><div class="posttext">- great script for lv 10-20. will attack 1 valkyrie and lots of amazons. I avoided too many valkyries because it might be troublesome for low levels.<br />
+and ofcourse, witches are avoided. average exp of 8k~ per hour. <br />
+it will deposit when your got 10 cap(or less)left. <br />
+- Start script at Amazon camp<br />
+<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+#By Saracene<br />
+setFriendly<br />
+setMeleeKill Amazon<br />
+setMeleeKill bug<br />
+setMeleeKill bear<br />
+setMeleeKill bat<br />
+setMeleeKill valkyrie<br />
+setPriority valkyrie:+2<br />
+setLootOn<br />
+setLoot D7 0B<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:depo$<br />
+move 32825,31935,7<br />
+move 32831,31925,7<br />
+move 32819,31918,7<br />
+move 32839,31923,7<br />
+move 32854,31915,7<br />
+move 32864,31930,7<br />
+move 32871,31930,7<br />
+useItem 32871,31930,7<br />
+move 32871,31931,6<br />
+move 32871,31930,7<br />
+move 32870,31928,7<br />
+move 32870,31927,8<br />
+move 32843,31914,8<br />
+move 32844,31917,8<br />
+useItem 32844,31917,8<br />
+move 32840,31925,7<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32808,31956,7<br />
+move 32827,31960,7<br />
+move 32835,31992,7<br />
+move 32866,32032,7<br />
+move 32867,32031,6<br />
+move 32924,32053,6<br />
+move 32991,32052,6<br />
+move 33019,32053,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+move 32919,32054,6<br />
+move 32868,32032,6<br />
+move 32867,32033,7<br />
+move 32834,31991,7<br />
+move 32827,31960,7<br />
+move 32812,31938,7<br />
+move 32827,31933,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Spinewal</div><div class="date">02-23-2011, 05:33</div></div><div class="posttext">Is this the Venore camp or the Carlin camp?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Riven</div><div class="date">12-01-2011, 10:19</div></div><div class="posttext">Is this the Venore camp or the Carlin camp?<br />
+<br />
+Venore Camp, but it's shit.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kyla</div><div class="date">01-12-2012, 21:17</div></div><div class="posttext">When I activate this waypoints, my char will logout. <br />
+WTF?!<br />
+<br />
+/ed<br />
+Ok, i fix this, delete setPriority valkyrie:+2, but this wpt is shit.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

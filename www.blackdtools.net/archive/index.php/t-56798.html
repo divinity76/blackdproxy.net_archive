@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, fastexiva, ruszac, setmeleekill, waitx, config, spearow, carlin, $hex-tibiastryes$, 32335,31784,7, amazon, small, 32338,31783,7, $countitems$_spear$$number, speara, script, 32338,31781,6, kupic, $hex-tibiastrwithdraw, iftrue, _odejmujemyspear, _iloscdokupnaspear, $numericalexp$_spearliczba$$_spearkoszt$$, _sumaspear, $countitems$_spear$$, _aktualnaliczbaspear, $hex-tibiastrtrade$, 32305,31789,7, 32323,31788,7, 32327,31782,7, $_laczniespear$$, 32294,31789,7, 32295,31786,7, $numericalexp$_spearliczba$-$_aktualnaliczbaspear$$, _laczniespear, $hex-tibiastrhello$, $numericalexp$_iloscdokupnaspear$$_spearkoszt$$, 32341,31751,7, start, money, deposit, spear, gotoscriptline, 32333,31733,7, 32335,31715,7, 32337,31696,7, $_lacznie$$, 32341,31763,7, $numbertohex2$_iloscdokupnaspear$$, 32341,31780,7" />
+	<meta name="description" content="fastExiva &lt; B4 12 $hex-tibiastr:Amazon Camp nad Carlin by Spodzio.$ 
+###############################################Config 
+#######################Config 
+##### Id speara, ktorego ma kupic 
+fastExiva _spear = CD 0C 
+##### Ilosc spearow (ile ma ich byc po uzupelnieniu) 
+fastExiva _spearliczba = 17 
+##### Koszt 1 speara 
+fastExiva _spearkoszt = 10 
+##### Przy jakiej liczbie spearow skrypt ma isc kupic nowe" />
+	
+	<title> :Amazon Camp Carlin Paladin ! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  :Amazon Camp Carlin Paladin !</div>
+<hr />
+<div class="pda"><a href="t-56798.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56798-Amazon-Camp-Carlin-Paladin-!">:Amazon Camp Carlin Paladin !</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Moris</div><div class="date">12-06-2011, 02:33</div></div><div class="posttext">fastExiva &lt; B4 12 $hex-tibiastr:Amazon Camp nad Carlin by Spodzio.$<br />
+###############################################Con fig<br />
+#######################Config<br />
+##### Id speara, ktorego ma kupic<br />
+fastExiva _spear = CD 0C<br />
+##### Ilosc spearow (ile ma ich byc po uzupelnieniu)<br />
+fastExiva _spearliczba = 17<br />
+##### Koszt 1 speara<br />
+fastExiva _spearkoszt = 10<br />
+##### Przy jakiej liczbie spearow skrypt ma isc kupic nowe<br />
+fastExiva _spearucieczka = 5<br />
+#######################Config<br />
+###############################################Con fig<br />
+SetMaxAttackTimeMs 4000000<br />
+onGMpause<br />
+setMeleeKill wolf<br />
+setMeleeKill poacher<br />
+setMeleeKill amazon<br />
+setMeleeKill valkyrie<br />
+setMeleeKill wasp<br />
+setMeleeKill bug<br />
+setMeleeKill bear<br />
+setMeleeKill snake<br />
+setMeleeKill spider<br />
+#gold coin<br />
+setLoot D7 0B<br />
+#meat<br />
+setLoot F9 0D<br />
+#ham<br />
+setLoot FE 0D<br />
+#wolf paw<br />
+setLoot 09 17<br />
+#bear paw<br />
+setLoot 08 17<br />
+#honeycomb<br />
+setLoot 0E 17<br />
+#small ruby<br />
+setLoot D6 0B<br />
+#small diamond<br />
+setLoot D4 0B<br />
+#brown bread<br />
+setLoot 12 0E<br />
+#double axe<br />
+setLoot CB 0C<br />
+#plate armor<br />
+setLoot 1D 0D<br />
+#health potion<br />
+setLoot 0A 01<br />
+#apple<br />
+setLoot 01 0E<br />
+################################################## ############################################<br />
+move 32335,31784,7<br />
+#sprawdza ile ma spearow<br />
+ifTrue ($countitems:{$_spear$}$#number&lt;=#{$_spearucieczka$}) Goto $nlineoflabel:kupujespear$<br />
+gotoScriptLine $nlineoflabel:exp$<br />
+:kupujespear<br />
+move 32335,31784,7<br />
+move 32330,31789,7<br />
+move 32327,31782,7<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+#######NIE RUSZAC<br />
+fastExiva _suma = $numericalexp:{$_liczba$}*{$_koszt$}$<br />
+#######NIE RUSZAC<br />
+fastExiva _aktualnaliczba = $countitems:{$_potion$}$<br />
+#######NIE RUSZAC<br />
+fastExiva _odejmujemy = -1<br />
+#######NIE RUSZAC<br />
+fastExiva _iloscdokupna = $numericalexp:{$_liczba$}-{$_aktualnaliczba$}$<br />
+#######NIE RUSZAC<br />
+fastExiva _lacznie = $numericalexp:{$_iloscdokupna$}*{$_koszt$}$<br />
+#######NIE RUSZAC<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:withdraw {$_lacznie$}$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+#######NIE RUSZAC<br />
+fastExiva _sumaspear = $numericalexp:{$_spearliczba$}*{$_spearkoszt$}$<br />
+#######NIE RUSZAC<br />
+fastExiva _aktualnaliczbaspear = $countitems:{$_spear$}$<br />
+#######NIE RUSZAC<br />
+fastExiva _odejmujemyspear = -1<br />
+#######NIE RUSZAC<br />
+fastExiva _iloscdokupnaspear = $numericalexp:{$_spearliczba$}-{$_aktualnaliczbaspear$}$<br />
+#######NIE RUSZAC<br />
+fastExiva _laczniespear = $numericalexp:{$_iloscdokupnaspear$}*{$_spearkoszt $}$<br />
+#######NIE RUSZAC<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:withdraw {$_laczniespear$}$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+move 32327,31782,7<br />
+move 32323,31788,7<br />
+move 32305,31789,7<br />
+move 32294,31789,7<br />
+move 32295,31786,7<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Hello$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Trade$<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A $_spear$ 00 $numbertohex2:{$_iloscdokupnaspear$}$ 00<br />
+waitX 2<br />
+################################################## ############################################<br />
+:exp<br />
+move 32335,31784,7<br />
+move 32341,31780,7<br />
+move 32341,31763,7<br />
+move 32341,31751,7<br />
+move 32333,31733,7<br />
+move 32335,31715,7<br />
+move 32337,31696,7<br />
+move 32340,31676,7<br />
+move 32340,31660,7<br />
+move 32342,31651,7<br />
+move 32348,31651,7<br />
+move 32356,31650,7<br />
+################################################## ############################################<br />
+:hunt<br />
+ifTrue ($countitems:{$_spear$}$#number&lt;=#{$_spearucieczka$}) Goto $nlineoflabel:depot$<br />
+move 32355,31646,7<br />
+move 32353,31643,7<br />
+move 32353,31644,6<br />
+move 32354,31642,6<br />
+move 32354,31643,5<br />
+move 32354,31643,5<br />
+move 32353,31644,4<br />
+move 32354,31642,4<br />
+move 32354,31643,3<br />
+move 32353,31643,3<br />
+move 32354,31643,3<br />
+move 32354,31642,4<br />
+move 32354,31642,4<br />
+move 32353,31643,5<br />
+move 32354,31642,6<br />
+move 32353,31643,7<br />
+move 32373,31635,7<br />
+move 32399,31638,7<br />
+ifTrue ($countitems:{$_spear$}$#number&lt;=#{$_spearucieczka$}) Goto $nlineoflabel:depot$<br />
+move 32411,31625,7<br />
+move 32429,31601,7<br />
+move 32431,31595,7<br />
+move 32434,31598,6<br />
+move 32431,31593,6<br />
+move 32431,31594,5<br />
+move 32431,31593,6<br />
+move 32434,31597,7<br />
+move 32426,31592,7<br />
+move 32426,31579,7<br />
+move 32421,31590,7<br />
+move 32420,31590,8<br />
+move 32430,31578,8<br />
+move 32416,31579,8<br />
+move 32420,31586,8<br />
+move 32414,31591,8<br />
+move 32420,31592,7<br />
+move 32411,31611,7<br />
+move 32401,31634,7<br />
+move 32369,31638,7<br />
+move 32360,31648,7<br />
+ifTrue ($countitems:{$_spear$}$#number&lt;=#{$_spearucieczka$}) Goto $nlineoflabel:depot$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+################################################## ############################################<br />
+:depot<br />
+move 32430,31623,7<br />
+move 32420,31677,7<br />
+move 32389,31731,7<br />
+move 32342,31746,7<br />
+move 32326,31788,7<br />
+move 32325,31782,7<br />
+waitX 1<br />
+fastExiva &lt; B4 12 $hex-tibiastr:Deponuje kase :)$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 2<br />
+move 32338,31783,7<br />
+move 32338,31781,6<br />
+move 32336,31778,6<br />
+resetLoot<br />
+setLoot D7 0B<br />
+setLoot F9 0D<br />
+setLoot FE 0D<br />
+setLoot 09 17<br />
+setLoot 08 17<br />
+setLoot 0E 17<br />
+setLoot D6 0B<br />
+setLoot D4 0B<br />
+setLoot 12 0E<br />
+setLoot CB 0C<br />
+setLoot 1D 0D<br />
+setLoot 01 0E<br />
+putLootOnDepot<br />
+move 32338,31781,6<br />
+move 32338,31783,7<br />
+move 32335,31784,7<br />
+gotoScriptLine 0<br />
+################################################## ############################################<br />
+<br />
+Who can make good script? This script is ok but he dont want buy spear and deposit money :/  Who can help?<br />
+<br />
+Start : Depo Carlin.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lobob</div><div class="date">03-16-2012, 11:34</div></div><div class="posttext">shitty script,it's walking on fire and collecting food, bad for low lvls, but here you are if you want without spears buying:<br />
+<br />
+fastExiva _leavecap = 150<br />
+SetMaxAttackTimeMs 4000000<br />
+onGMpause<br />
+setMeleeKill wolf<br />
+setMeleeKill poacher<br />
+setMeleeKill amazon<br />
+setMeleeKill valkyrie<br />
+setMeleeKill wasp<br />
+setMeleeKill bug<br />
+setMeleeKill bear<br />
+setMeleeKill snake<br />
+setMeleeKill spider<br />
+#gold coin<br />
+setLoot D7 0B<br />
+#wolf paw<br />
+setLoot 09 17<br />
+#bear paw<br />
+setLoot 08 17<br />
+#honeycomb<br />
+setLoot 0E 17<br />
+#small ruby<br />
+setLoot D6 0B<br />
+#small diamond<br />
+setLoot D4 0B<br />
+#double axe<br />
+setLoot CB 0C<br />
+#plate armor<br />
+setLoot 1D 0D<br />
+#health potion<br />
+setLoot 0A 01<br />
+:exp<br />
+move 32335,31784,7<br />
+move 32341,31780,7<br />
+move 32341,31763,7<br />
+move 32341,31751,7<br />
+move 32333,31733,7<br />
+move 32335,31715,7<br />
+move 32337,31696,7<br />
+move 32340,31676,7<br />
+move 32340,31660,7<br />
+move 32342,31651,7<br />
+move 32348,31651,7<br />
+move 32356,31650,7<br />
+################################################## ############################################<br />
+:hunt<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depot$<br />
+move 32355,31646,7<br />
+move 32353,31643,7<br />
+move 32353,31644,6<br />
+move 32354,31642,6<br />
+move 32354,31643,5<br />
+move 32354,31643,5<br />
+move 32353,31644,4<br />
+move 32354,31642,4<br />
+move 32354,31643,3<br />
+move 32353,31643,3<br />
+move 32354,31643,3<br />
+move 32354,31642,4<br />
+move 32354,31642,4<br />
+move 32353,31643,5<br />
+move 32354,31642,6<br />
+move 32353,31643,7<br />
+move 32373,31635,7<br />
+move 32399,31638,7<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depot$<br />
+move 32411,31625,7<br />
+move 32429,31601,7<br />
+move 32431,31595,7<br />
+move 32434,31598,6<br />
+move 32431,31593,6<br />
+move 32431,31594,5<br />
+move 32431,31593,6<br />
+move 32434,31597,7<br />
+move 32426,31592,7<br />
+move 32426,31579,7<br />
+move 32421,31590,7<br />
+move 32420,31590,8<br />
+move 32430,31578,8<br />
+move 32416,31579,8<br />
+move 32420,31586,8<br />
+move 32414,31591,8<br />
+move 32420,31592,7<br />
+move 32411,31611,7<br />
+move 32401,31634,7<br />
+move 32369,31638,7<br />
+move 32360,31648,7<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depot$<br />
+gotoScriptLine $nlineoflabel:hunt$<br />
+################################################## ############################################<br />
+:depot<br />
+move 32430,31623,7<br />
+move 32420,31677,7<br />
+move 32389,31731,7<br />
+move 32342,31746,7<br />
+move 32326,31788,7<br />
+move 32325,31782,7<br />
+waitX 1<br />
+fastExiva &lt; B4 12 $hex-tibiastr:Deponuje kase :)$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 2<br />
+move 32338,31783,7<br />
+move 32338,31781,6<br />
+move 32336,31778,6<br />
+resetLoot<br />
+setLoot D7 0B<br />
+setLoot 09 17<br />
+setLoot 08 17<br />
+setLoot 0E 17<br />
+setLoot D6 0B<br />
+setLoot D4 0B<br />
+setLoot CB 0C<br />
+setLoot 1D 0D<br />
+putLootOnDepot<br />
+move 32338,31781,6<br />
+move 32338,31783,7<br />
+move 32335,31784,7<br />
+gotoScriptLine 0<br />
+################################################## ############################################</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

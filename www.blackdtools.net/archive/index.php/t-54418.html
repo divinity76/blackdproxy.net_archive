@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="update, saracene, sternum, mount, hunts, knight" />
+	<meta name="description" content="- A mount sternum underground script. for lv35+  
+tested on my lv 36 knight(67/65) with knight set, bright sword and guardian shield. 
+got an average of 16-18k~ per hour along with 2 other people in cave. 
+Make sure you bring some hp/mana pots with you. 
+- Start script at DP or Mount sternum (your choice) 
+ 
+ 
+setChaoticMovesOFF 
+#By Saracene 
+setFriendly" />
+	
+	<title> 27. Mount sternum - by Saracene [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  27. Mount sternum - by Saracene</div>
+<hr />
+<div class="pda"><a href="t-54418.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54418-27-Mount-sternum-by-Saracene">27. Mount sternum - by Saracene</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-21-2011, 12:50</div></div><div class="posttext">- A mount sternum underground script. for lv35+ <br />
+tested on my lv 36 knight(67/65) with knight set, bright sword and guardian shield.<br />
+got an average of 16-18k~ per hour along with 2 other people in cave.<br />
+Make sure you bring some hp/mana pots with you.<br />
+- Start script at DP or Mount sternum (your choice)<br />
+<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+#By Saracene<br />
+setFriendly<br />
+setMeleeKill cyclops drone<br />
+setMeleeKill cyclops smith<br />
+setMeleeKill cyclops<br />
+setMeleeKill bat<br />
+setPriority cyclops smith:+1<br />
+setPriority cyclops drone:+2<br />
+setLootOn<br />
+setLoot D7 0B<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:depo$<br />
+move 32449,32067,8<br />
+move 32407,32065,8<br />
+move 32421,32048,8<br />
+move 32434,32048,8<br />
+move 32453,32057,8<br />
+move 32463,32043,8<br />
+move 32452,32069,8<br />
+move 32447,32092,8<br />
+move 32438,32103,8<br />
+move 32452,32100,8<br />
+move 32461,32113,8<br />
+move 32478,32114,8<br />
+move 32478,32114,8<br />
+move 32476,32089,8<br />
+move 32492,32051,8<br />
+move 32485,32035,8<br />
+move 32475,32035,8<br />
+move 32487,32061,8<br />
+move 32478,32089,8<br />
+move 32450,32095,8<br />
+move 32454,32084,8<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32137,7<br />
+move 32367,32204,7<br />
+move 32344,32230,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+move 32369,32179,7<br />
+move 32431,32142,7<br />
+move 32457,32102,7<br />
+move 32449,32069,7<br />
+move 32447,32069,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Heman</div><div class="date">02-29-2012, 08:01</div></div><div class="posttext">Well, I tried it out on my lvl 40 knight with the same eq as nemtioned and the problem is that its not that profitable... It runs into the mess where there are Cyclop Smiths and lots of cylops and looses too many potions to be afk for a longer time, so it should be more waypoints. The set friendly function where you don't attack others monsters clearly doesn't work and you go around like a douche killing everyones monsters and naturally you get killed for that behaviour.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">theboobx</div><div class="date">03-20-2012, 08:58</div></div><div class="posttext">There is no way --'<br />
+Knight 59 hunts fine but have one line with bug.<br />
+I try to find, if i fix i update.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Reki</div><div class="date">03-20-2012, 11:34</div></div><div class="posttext">For advanced knights here is a different version of the script. I give the lvl 80 knight I use with 175 manas, Heal with exura ico and replenish mana, It loots club rings, Strongs, Light healths, Gold, Cyc toes, and Spiked squelcher.<br />
+<br />
+Code : <br />
+#Created by Reki<br />
+setChaoticMovesOFF<br />
+setFriendly<br />
+setMeleeKill cyclops drone<br />
+setMeleeKill cyclops smith<br />
+setMeleeKill cyclops<br />
+setMeleeKill bat<br />
+setPriority cyclops smith:+1<br />
+setPriority cyclops drone:+2<br />
+setLootOn<br />
+setLoot 0A 01<br />
+setLoot EC 00<br />
+setLoot 15 0C<br />
+setLoot B9 25<br />
+setLoot 1C 1D<br />
+setLoot D7 0B<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:depo$<br />
+move 32425,32064,8<br />
+move 32404,32068,8<br />
+move 32403,32068,9<br />
+move 32412,32079,9<br />
+move 32403,32068,9<br />
+move 32403,32069,8<br />
+move 32421,32052,8<br />
+move 32419,32043,8<br />
+move 32444,32049,8<br />
+move 32466,32037,8<br />
+move 32456,32054,8<br />
+move 32452,32073,8<br />
+move 32447,32091,8<br />
+move 32451,32100,8<br />
+move 32438,32096,8<br />
+move 32438,32095,9<br />
+move 32437,32084,9<br />
+move 32436,32085,9<br />
+move 32438,32095,9<br />
+move 32438,32096,8<br />
+move 32457,32102,8<br />
+move 32460,32089,8<br />
+move 32460,32088,9<br />
+move 32460,32088,9<br />
+move 32471,32087,9<br />
+move 32474,32042,9<br />
+move 32488,32056,9<br />
+move 32488,32056,9<br />
+move 32473,32042,9<br />
+move 32473,32043,8<br />
+move 32486,32036,8<br />
+move 32496,32048,8<br />
+move 32482,32058,8<br />
+move 32474,32090,8<br />
+move 32468,32073,8<br />
+move 32475,32072,8<br />
+move 32476,32071,9<br />
+move 32478,32069,9<br />
+move 32476,32067,9<br />
+move 32476,32065,8<br />
+move 32468,32063,8<br />
+move 32476,32067,9<br />
+move 32476,32071,9<br />
+move 32476,32073,8<br />
+move 32476,32090,8<br />
+move 32498,32085,8<br />
+move 32479,32101,8<br />
+move 32479,32117,8<br />
+move 32464,32101,8<br />
+move 32461,32111,8<br />
+move 32449,32067,8<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32137,7<br />
+move 32367,32204,7<br />
+move 32476,32065,8<br />
+move 32344,32230,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+move 32369,32179,7<br />
+move 32431,32142,7<br />
+move 32457,32102,7<br />
+move 32449,32069,7<br />
+move 32447,32069,8<br />
+gotoScriptLine 0<br />
+<br />
+This is my first attempt at scripting. Works well. 30k xp/ hr. Depending in skills and armor for the knight determines profit. I have 75/75 with hive scythe, RH, Zao arm + legs, + zao boots. Demon shield.<br />
+Profit is 8k+ per round.<br />
+<br />
+You have to manually deposit the Cyc toes and other unwanted loot, and manually by potions. Would be great if someone could edit that in for me. Thanks !!<br />
+<br />
+Kind regards~~~ Reki</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kechup</div><div class="date">04-05-2012, 07:05</div></div><div class="posttext">At what capacity does the bot go back to put gold in bank?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">679alex</div><div class="date">07-23-2012, 22:07</div></div><div class="posttext">Sorry for bumping a old thread,<br />
+Does anyone know if this still work ?<br />
+Do you think my Knight lvl 37 skill 75/75 with crusader helmet/crown armor/demon shield/knight legs/Noble Axe    can handle this ?<br />
+Thanks for the answer because i dont want to find it out myself and kill my char :P</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

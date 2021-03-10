@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="forums, requesting, tarantula, mage/knight, people" />
+	<meta name="description" content="I seen someone ask for this script somewhere and i was doing tarantula task on a mage so i thought i'd make a script for it to release....This is made for a mage but you can use it on a knight if you delete &quot;setExoriMort tarantula&quot; It cost me like 10k in mana's so was a waste of like 7k to complete the task. This script just hunt's 3 tarantula cave's it does not talk to grizzly adam's or even go and kill hide. 
+ 
+PLEASE TEST AND COMMENT" />
+	
+	<title> PH Tarantula Mage/Knight [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  PH Tarantula Mage/Knight</div>
+<hr />
+<div class="pda"><a href="t-58460.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58460-PH-Tarantula-Mage-Knight">PH Tarantula Mage/Knight</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-12-2012, 02:21</div></div><div class="posttext">I seen someone ask for this script somewhere and i was doing tarantula task on a mage so i thought i'd make a script for it to release....This is made for a mage but you can use it on a knight if you delete &quot;setExoriMort tarantula&quot; It cost me like 10k in mana's so was a waste of like 7k to complete the task. This script just hunt's 3 tarantula cave's it does not talk to grizzly adam's or even go and kill hide.<br />
+<br />
+PLEASE TEST AND COMMENT<br />
+<br />
+<br />
+#Created by Vinnie<br />
+#How many potions to bring<br />
+fastExiva _pots = 100<br />
+#ItemID of the potion to bring<br />
+fastExiva _potid = 0C 01<br />
+#Price of potion<br />
+fastExiva _potprice = 50<br />
+#Empty potion ID<br />
+fastExiva _emptypotid = 1D 01<br />
+#Leave when potions less than<br />
+fastExiva _leavepots = 40<br />
+#<br />
+setMeleeKill bug<br />
+setMeleeKill snake<br />
+setMeleeKill skunk<br />
+setMeleeKill wasp<br />
+setMeleeKill cobra<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill centipede<br />
+setMeleeKill tarantula<br />
+setExoriMort tarantula<br />
+setPriority tarantula:+1<br />
+setLoot 29 28<br />
+setLoot F7 16<br />
+setLoot 2A 0D<br />
+setLoot 2B 0D<br />
+setLoot 0E 17<br />
+setLoot D7 0B<br />
+setLoot 17 0D<br />
+move 32725,32792,8<br />
+move 32699,32782,8<br />
+move 32689,32789,8<br />
+move 32698,32782,8<br />
+move 32725,32792,8<br />
+move 32726,32794,7<br />
+IfTrue ($countitems:0C 01$#number&lt;#40) Goto $nlineoflabel:Depo$<br />
+move 32752,32788,7<br />
+move 32757,32791,7<br />
+move 32758,32791,8<br />
+move 32755,32800,8<br />
+move 32747,32811,8<br />
+move 32749,32834,8<br />
+move 32748,32808,8<br />
+move 32758,32791,8<br />
+move 32758,32792,7<br />
+IfTrue ($countitems:0C 01$#number&lt;#40) Goto $nlineoflabel:Depo$<br />
+move 32758,32808,7<br />
+move 32779,32810,7<br />
+move 32800,32814,7<br />
+move 32817,32809,7<br />
+move 32818,32809,8<br />
+move 32800,32812,8<br />
+move 32805,32832,8<br />
+move 32787,32839,8<br />
+move 32784,32835,8<br />
+move 32801,32830,8<br />
+move 32818,32809,8<br />
+move 32818,32810,7<br />
+IfTrue ($countitems:0C 01$#number&lt;#40) Goto $nlineoflabel:Depo$<br />
+move 32791,32814,7<br />
+move 32763,32810,7<br />
+move 32740,32802,7<br />
+move 32726,32794,7<br />
+move 32726,32793,8<br />
+gotoScriptLine 0<br />
+:Depo<br />
+move 32714,32791,7<br />
+move 32705,32782,7<br />
+move 32663,32787,7<br />
+move 32646,32783,7<br />
+move 32646,32784,6<br />
+move 32630,32784,6<br />
+move 32630,32773,6<br />
+move 32638,32773,6<br />
+move 32638,32770,6<br />
+move 32638,32769,7<br />
+move 32629,32750,7<br />
+move 32629,32748,6<br />
+move 32632,32738,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+move 32629,32748,6<br />
+move 32629,32750,7<br />
+move 32634,32741,7<br />
+waitX 1<br />
+putLootOnDepot<br />
+move 32629,32750,7<br />
+move 32629,32748,6<br />
+move 32632,32738,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$<br />
+waitX 1<br />
+sayInTrade yes<br />
+move 32630,32742,6<br />
+move 32630,32743,5<br />
+move 32621,32742,5<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+waitX 1<br />
+move 32625,32742,5<br />
+move 32626,32742,6<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+move 32638,32769,7<br />
+move 32638,32770,6<br />
+move 32630,32773,6<br />
+move 32630,32784,6<br />
+move 32646,32784,6<br />
+move 32646,32783,7<br />
+move 32699,32786,7<br />
+move 32716,32788,7<br />
+move 32726,32794,7<br />
+move 32726,32793,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-19-2012, 14:48</div></div><div class="posttext">Dont people look through these forum's before requesting!?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dkanon1</div><div class="date">07-23-2012, 08:30</div></div><div class="posttext">where do i start it, and how i do i change it to health potions im an EK lvl 44 plz confused :x</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-23-2012, 13:29</div></div><div class="posttext">Just curios why you would want to use health potion's when most of the time it work's out cheaper to use mana's and it also improves magic level at the same time....<br />
+<br />
+Edit these:<br />
+<br />
+<br />
+#How many potions to bring<br />
+fastExiva _pots = 100<br />
+#ItemID of the potion to bring<br />
+fastExiva _potid = 0C 01<br />
+#Price of potion<br />
+fastExiva _potprice = 50</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dkanon1</div><div class="date">07-24-2012, 06:34</div></div><div class="posttext">ok thnks its because i already had bought like 400 of those :x so i wanna spend them hehe ^^ ok now where i start the script</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

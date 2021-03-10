@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="blackd, traditional, prefer, tools, runemaker, things, autofood, loaded, commandsmanually, scripts, subzero, careful, detected, mastercraft, script, times, advertises" />
+	<meta name="description" content="Hello everybody 
+ 
+Well I decided now to post all my scripts for free. 
+From time to time I will improve them and add more. 
+ 
+Today I will upload a simple script for Rotworms &amp; Trolls. The Cave is located north of Thais and the entrance is a mountain leading to trolls. 
+ 
+Feel free to change the &quot;Leave&quot; &amp; &quot;Start&quot; options section. 
+ 
+NOTE: The Cavebot Script is adjusted for Mages." />
+	
+	<title> MasterCraft Scripts by subzero [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  MasterCraft Scripts by subzero</div>
+<hr />
+<div class="pda"><a href="t-62896.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62896-MasterCraft-Scripts-by-subzero">MasterCraft Scripts by subzero</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-14-2016, 20:48</div></div><div class="posttext">Hello everybody<br />
+<br />
+Well I decided now to post all my scripts for free.<br />
+From time to time I will improve them and add more.<br />
+<br />
+Today I will upload a simple script for Rotworms &amp; Trolls. The Cave is located north of Thais and the entrance is a mountain leading to trolls.<br />
+<br />
+Feel free to change the &quot;Leave&quot; &amp; &quot;Start&quot; options section.<br />
+<br />
+NOTE: The Cavebot Script is adjusted for Mages.<br />
+Please change the values in the Leave &amp; Start Option Section before starting the Cavebot !<br />
+<br />
+805080628045NORTH THAIS TROLL CAVE804680498048<br />
+<br />
+LOOT: <br />
+805180528053805480558056<br />
+<br />
+Exp:  18k/h<br />
+Cash:  3k/h<br />
+<br />
+<br />
+Cavebot Script:<br />
+8074<br />
+<br />
+Condition Scripts:<br />
+8077<br />
+8078<br />
+8076<br />
+<br />
+Character cast desired spell if mana over 90%.<br />
+Mana %<br />
+Spell to cast<br />
+<br />
+$mymanapercent$<br />
+#number&gt;=#90<br />
+0<br />
+100<br />
+0<br />
+utevo lux<br />
+<br />
+<br />
+Character eats automaticly desired food if found 1 or more. <br />
+Only from your Backpacks not from Corpse. Eats the food without opened backpack.<br />
+Food ID <br />
+Insectoid Eggs: 31 44<br />
+Meat: 8D 0E<br />
+Brown Mushroom: 8D 0E<br />
+hex-command to eat food<br />
+<br />
+<br />
+$countitems:31 44$<br />
+#number&gt;#0<br />
+0<br />
+$numericalexp:{$randomnumber:100&gt;120$}*1000$<br />
+0<br />
+exiva &gt; 82 FF FF 00 00 00 31 44 00 00<br />
+<br />
+$countitems:F9 0D$<br />
+#number&gt;#0<br />
+0<br />
+$numericalexp:{$randomnumber:160&gt;180$}*1000$<br />
+0<br />
+exiva &gt; 82 FF FF 00 00 00 F9 0D 00 00<br />
+<br />
+$countitems:8D 0E$<br />
+#number&gt;#0<br />
+0<br />
+$numericalexp:{$randomnumber:240&gt;264$}*1000$<br />
+0<br />
+exiva &gt; 82 FF FF 00 00 00 8D 0E 00 00<br />
+<br />
+Character drinks desired Potion if Health below desired % HP.<br />
+Health %<br />
+Potion ID<br />
+Small Health Potion: C4 1E<br />
+Normal Health Potion: 0A 01<br />
+hex-command to drink potion<br />
+Alternative hex-command:<br />
+exiva &gt; health_potion<br />
+exiva &gt; small_health_potion   &lt;&lt;&lt; doesn't exist so far :/<br />
+<br />
+$myhppercent$<br />
+#number&lt;=#80<br />
+0<br />
+100<br />
+0<br />
+exiva &gt; 84 FF FF 00 00 00 C4 1E 00 54 12 7B 03 <br />
+<br />
+$myhppercent$<br />
+#number&lt;=#50<br />
+0<br />
+100<br />
+0<br />
+exiva &gt; 84 FF FF 00 00 00 0A 01 00 54 12 7B 03<br />
+<br />
+Enjoy :cool:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-15-2016, 01:20</div></div><div class="posttext">I experienced several errors in my script so I reuploaded the script.<br />
+The waypoints still jump from one point to another, so I will improve them later and reupload again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-15-2016, 18:55</div></div><div class="posttext">Ok Guys,<br />
+I improved the hunting waypoints.<br />
+For me the script works fine now. Please tell me if the script works good for you aswell or if any problems appears.<br />
+I'm always up for help :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">valkoros</div><div class="date">06-16-2016, 19:12</div></div><div class="posttext">nice script, but i added an eat food option to it :) hope to see more</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-17-2016, 00:21</div></div><div class="posttext">Good idea with the auto eat food option. <br />
+I will add it tomorrow in my script.<br />
+Today I improved the Leave Cave Waypoints. They work now 100%.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">valkoros</div><div class="date">06-17-2016, 05:40</div></div><div class="posttext">Good idea with the auto eat food option. <br />
+I will add it tomorrow in my script.<br />
+Today I improved the Leave Cave Waypoints. They work now 100%.<br />
+<br />
+good stuff mate :)<br />
+<br />
+i only know the basics like how to add loot and priorities ect, waypoints are not my thing i never get them right. are you gonna do pacc and facc scripts?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-17-2016, 14:21</div></div><div class="posttext">Thank you for reply :)<br />
+<br />
+Only a few weeks ago I started to script in Blackdproxy NG, so before i am going to buy pacc I will gather some more experience with this bot. But don't worry I will post soon some new scripts.<br />
+<br />
+I will tell you already about my further script plans:<br />
+<br />
+<br />
+1) Scan backpack slots and get item ids<br />
+<br />
+2) Change Equipment ( boots, ring , rod/wand/sword etc.) if special monster (Ghost,Poisen spider, etc.) appears<br />
+<br />
+3) Scan map for NPC, Craeture, Player, Item <br />
+<br />
+This 3 points would change my scripts a lot, (makes them shorter, easier to read, etc.)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">valkoros</div><div class="date">06-17-2016, 17:08</div></div><div class="posttext">yeah sounds good <br />
+to switch to a different monster add a priority rule such as : setPriority carrion worm:+1<br />
+the more urgent the monster is to kill then use a higher number if there is more than 1 priority<br />
+<br />
+dont know if that what what you mean</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">alfredomt</div><div class="date">08-19-2016, 17:48</div></div><div class="posttext">Be careful of using hex commands(manually) with BlackD bro, this is the most detected tool of Blackd, times ago Blackd advertises by itself when you loaded a script that used hex, because it can be a high risk, so, prefer to use the traditional tools of blackd like autofood from Runemaker, these things, you know? Keep with your nice work!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bmvr</div><div class="date">09-20-2016, 01:24</div></div><div class="posttext">After the update 10.80 the script bugs when goes from DP to the Cave. It goes down to the entrace of the cave and comes up again in the stairs. I've tried to fix it but no luck.<br />
+It can't recover the waypoints because it starts :hunt and it can't go in the cave again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Backala</div><div class="date">10-27-2016, 15:20</div></div><div class="posttext">Sry im a noob how to u use the script</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

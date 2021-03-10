@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="hours, script, potion, health, calculated, modify, include, shield, brass, draconia, standard, wizard, cloak, nightmare, exura, needing, draconian, reduces, potions, xp/gold, reduced, slightly, improvised, non-knights, hit/poisoned, enemy, avoid, hoping, bring, runemaker, rarely, deposit, floor, ankrahmun, larvas, changed, insolent, larva, scarab, great, gp/hr, xp/hr, 10684, started, ended, change, possibly" />
+	<meta name="description" content="OldLoot Mode 
+Food Looter (delete line &quot;setLoot F9 0D&quot; if you don't want it) 
+Bank depositer 
+ 
+Should start at Ankrahmun Temple or Ankrahmun Bank. 
+ 
+ 
+Ankrahmun Larvas 1st floor by Insolent 
+onGMpause 
+setFriendly" />
+	
+	<title> 47. Ankrahmun Larvas 1st floor + bank - By Insolent [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  47. Ankrahmun Larvas 1st floor + bank - By Insolent</div>
+<hr />
+<div class="pda"><a href="t-54452.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54452-47-Ankrahmun-Larvas-1st-floor-bank-By-Insolent">47. Ankrahmun Larvas 1st floor + bank - By Insolent</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-22-2011, 13:50</div></div><div class="posttext">OldLoot Mode<br />
+Food Looter (delete line &quot;setLoot F9 0D&quot; if you don't want it)<br />
+Bank depositer<br />
+<br />
+Should start at Ankrahmun Temple or Ankrahmun Bank.<br />
+<br />
+<br />
+<br />
+Ankrahmun Larvas 1st floor by Insolent<br />
+onGMpause<br />
+setFriendly<br />
+setBot OldLootMode=1<br />
+#gold<br />
+setLoot D7 0B<br />
+#food<br />
+setLoot F9 0D<br />
+setMeleeKill Larva<br />
+move 33072,32760,8<br />
+move 33078,32757,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33085,32762,8<br />
+move 33097,32759,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33093,32763,8<br />
+move 33086,32763,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33085,32763,8<br />
+move 33081,32759,8<br />
+move 33078,32755,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33079,32752,8<br />
+move 33090,32755,8<br />
+move 33083,32745,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33086,32743,8<br />
+move 33090,32742,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33092,32742,8<br />
+move 33086,32742,8<br />
+move 33083,32733,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33085,32730,8<br />
+move 33089,32730,8<br />
+move 33083,32729,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33083,32735,8<br />
+move 33077,32740,8<br />
+move 33073,32742,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33066,32737,8<br />
+move 33069,32731,8<br />
+move 33071,32728,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33065,32735,8<br />
+move 33063,32726,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33059,32725,8<br />
+move 33061,32733,8<br />
+move 33068,32739,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33069,32745,8<br />
+move 33064,32748,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33058,32741,8<br />
+move 33056,32739,8<br />
+move 33055,32733,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33053,32728,8<br />
+move 33057,32742,8<br />
+move 33056,32743,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33061,32751,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33056,32752,8<br />
+move 33047,32756,8<br />
+move 33047,32760,8<br />
+move 33051,32751,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33063,32759,8<br />
+move 33063,32761,8<br />
+move 33064,32765,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33065,32771,8<br />
+move 33064,32776,8<br />
+move 33063,32779,8<br />
+move 33065,32785,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33060,32787,8<br />
+move 33052,32784,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33052,32776,8<br />
+move 33064,32775,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33069,32777,8<br />
+move 33073,32785,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33078,32782,8<br />
+move 33081,32779,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33075,32769,8<br />
+move 33082,32770,8<br />
+move 33087,32777,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33082,32770,8<br />
+move 33077,32765,8<br />
+IfTrue ($countitems:D7 0B$#number&gt;=#1000) Goto $nlineoflabel:bank$<br />
+move 33072,32762,8<br />
+move 33072,32761,8<br />
+gotoScriptLine 0<br />
+:bank<br />
+move 33072,32760,8<br />
+move 33072,32761,7<br />
+move 33086,32783,7<br />
+sayMessage exiva &gt; 67<br />
+sayMessage exiva &gt; 67<br />
+move 33086,32785,6<br />
+move 33087,32786,6<br />
+sayMessage exiva &gt; 67<br />
+waitX 1<br />
+sayMessage exiva &gt; 67<br />
+waitX 1<br />
+sayMessage exiva &gt; 67<br />
+move 33087,32788,7<br />
+move 33122,32816,7<br />
+move 33124,32816,6<br />
+move 33134,32818,6<br />
+move 33137,32821,6<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 33124,32818,6<br />
+move 33122,32818,7<br />
+move 33087,32788,7<br />
+sayMessage exiva &gt; 65<br />
+sayMessage exiva &gt; 65<br />
+move 33087,32786,6<br />
+move 33085,32785,6<br />
+sayMessage exiva &gt; 65<br />
+sayMessage exiva &gt; 65<br />
+move 33085,32783,7<br />
+move 33085,32776,7<br />
+move 33072,32761,7<br />
+move 33072,32760,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">noelblom</div><div class="date">04-21-2013, 23:59</div></div><div class="posttext">wtf worst ever , why loot food ffs ? and why not put so you eat the food ... -_-'</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">swamer</div><div class="date">05-31-2013, 00:43</div></div><div class="posttext">noelblom use runemaker to eat the food, and he said if you didnt whant to loot food delete the loot food line</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-03-2013, 00:11</div></div><div class="posttext">I took off loot food, changed it to deposit at 1500 gold, and use runemaker to eat food. I bring 10 mana pots and 10 health pots just in case, and rarely use any. Maybe one mana potion per 3 hours, 1 health potion per 5 hours. <br />
+<br />
+Lvl 25 MS <br />
+ML 20<br />
+10684 xp/hr<br />
+1268 gp/hr.<br />
+<br />
+This is over 6 hours, I started at lvl 23 and some change, ended at 26 nearly 27. Great script thank you very much :)  I was hoping for a larva and scarab script if anyone has one or knows where to get a good one. Or possibly could help me modify this one to include it.<br />
+<br />
+Btw this is using nightmare shield, brass legs, and draconia wand. Standard wizard hat and cloak.<br />
+<br />
+EDIT: I used it for more than 6 hours, only calculated the xp and gold per hour for 6 hours though. Also, this script could be even better if improvised to stay a tile away from enemy to avoid getting hit/poisoned. (for non-knights)<br />
+<br />
+EDIT AGAIN: Using the fire wand before draconian reduces mana loss and you can use exura to heal, needing 0 potions at the cost of slightly reduced xp/gold per hr.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ryan1169</div><div class="date">06-03-2013, 01:03</div></div><div class="posttext">ran for another hour.<br />
+<br />
+Lvl 27 MS with ML 23.<br />
+Draconian wand, decent armor<br />
+<br />
+13,156 xp/hr <br />
+1562 gp/hr<br />
+<br />
+1 Health and 1 Mana potion used.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

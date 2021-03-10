@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="$hdll, _ispressed36, include, flash, mouseclickleft, sleep1, hotkeys, dllopenuser32.dll, client, $hdllreset, dllclose$hdll, endfunc, http://www.angelfire.com/mn3/pokegirls/windowgirl.html, sleep1000, autoit, local, default, beats, stuff, check, autoitsetoptionmouseclickdelay,0, autoitsetoptionmouseclickdowndelay,0, blackd, hotkeyset5,clickfunction, clickfunction, autoitsetoptionmustdeclarevars,1, autoitsetoptionwinwaitdelay,0, autoitsetoptionmouseclickdragdelay,0, autoitsetoptionsendkeydelay,0, autoitsetoptionsendkeydowndelay,0" />
+	<meta name="description" content="It is posible to release a Program like The hotkeys one but one that ignores if u have tibia client open...just presing X hotkey every Y time period..so in this way we could use it on flash as well. 
+ 
+ 
+thanks... bd forever xD" />
+	
+	<title> BlackD hotkeys for Flash client..... [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-14.html">Old tools for Tibia 10.99 and below</a> &gt; <a href="f-76.html">Blackd Hotkeys</a> &gt;  BlackD hotkeys for Flash client.....</div>
+<hr />
+<div class="pda"><a href="t-57844.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57844-BlackD-hotkeys-for-Flash-client">BlackD hotkeys for Flash client.....</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Next--&gt;</div><div class="date">04-19-2012, 21:45</div></div><div class="posttext">It is posible to release a Program like The hotkeys one but one that ignores if u have tibia client open...just presing X hotkey every Y time period..so in this way we could use it on flash as well.<br />
+<br />
+<br />
+thanks... bd forever xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Next--&gt;</div><div class="date">04-30-2012, 00:54</div></div><div class="posttext">hey hey nobody there?<br />
++</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-27-2015, 20:44</div></div><div class="posttext">AutoIt is good for this stuff, check out<br />
+<br />
+<br />
+<br />
+;why this isn't the default beats me...<br />
+AutoItSetOption(&quot;MouseClickDelay&quot;,0);<br />
+AutoItSetOption(&quot;MouseClickDownDelay&quot;,0);<br />
+AutoItSetOption(&quot;MouseClickDragDelay&quot;,0);<br />
+AutoItSetOption(&quot;SendKeyDelay&quot;,0);<br />
+AutoItSetOption(&quot;SendKeyDownDelay&quot;,0);<br />
+AutoItSetOption(&quot;WinWaitDelay&quot;,0);<br />
+AutoItSetOption(&quot;MustDeclareVars&quot;,1);<br />
+#include &lt;Misc.au3&gt;<br />
+#include &lt;GDIPlus.au3&gt;<br />
+<br />
+HotKeySet(&quot;5&quot;,&quot;clickfunction&quot;);<br />
+<br />
+Func clickfunction()<br />
+   Local $hDLL = DllOpen(&quot;user32.dll&quot;);'<br />
+<br />
+_IsPressed(36, $hDLL);reset...4<br />
+   While  Not _IsPressed(36, $hDLL)<br />
+	  	  MouseClick(&quot;left&quot;);<br />
+		  Sleep(1);<br />
+	  WEnd<br />
+	  DllClose($hDLL);<br />
+EndFunc<br />
+<br />
+<br />
+<br />
+While 1<br />
+   Sleep(1000);<br />
+WEnd<br />
+<br />
+<br />
+it's what i use for (NSFW!!) this flash game (http://www.angelfire.com/mn3/pokegirls/windowgirl.html)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

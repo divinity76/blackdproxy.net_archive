@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="cyclops, setmeleekill, setloot, fastexiva, setpriority, rafeq, saracene, iftrue, smith, drone, setfriendly, $mycap$number, smith+1, setfollow, setlooton, drone+2, _potionid, _manas, _idcost, script, settings, [thais], mount, sterrum, health, setchaoticmovesoff, potions" />
+	<meta name="description" content="This is settings: 
+ 
+fastExiva _potionid = 0A 01 
+fastExiva _manas = 60 
+fastExiva _idcost = 45 
+ 
+This script buy 60 health potions( 0A 01)  who cost 45 gp each. It's full afk. 
+ 
+setChaoticMovesOFF 
+#By Saracene &amp; edit by Rafeq" />
+	
+	<title> 100% AFK [Thais] mount sterrum By Saracene &amp; Rafeq [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  100% AFK [Thais] mount sterrum By Saracene &amp; Rafeq</div>
+<hr />
+<div class="pda"><a href="t-56604.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56604-100-AFK-Thais-mount-sterrum-By-Saracene-amp-Rafeq">100% AFK [Thais] mount sterrum By Saracene &amp; Rafeq</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">rafek1241</div><div class="date">10-23-2011, 13:30</div></div><div class="posttext">This is settings:<br />
+<br />
+<br />
+fastExiva _potionid = 0A 01<br />
+fastExiva _manas = 60<br />
+fastExiva _idcost = 45<br />
+<br />
+This script buy 60 health potions( 0A 01)  who cost 45 gp each. It's full afk.<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+#By Saracene &amp; edit by Rafeq<br />
+setFollow<br />
+setFriendly<br />
+setMeleeKill cyclops drone<br />
+setMeleeKill cyclops smith<br />
+setMeleeKill cyclops<br />
+setMeleeKill bat<br />
+setPriority cyclops smith:+1<br />
+setPriority cyclops drone:+2<br />
+setLootOn<br />
+setLoot C5 0C<br />
+setLoot D7 0B<br />
+setLoot B9 25<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:depo$<br />
+IfTrue ($countitems:0A 01#number&lt;=#11) Goto $nlineoflabel:depo$<br />
+setLoot 0A 01<br />
+move 32449,32067,8<br />
+move 32407,32065,8<br />
+move 32421,32048,8<br />
+move 32434,32048,8<br />
+move 32453,32057,8<br />
+move 32463,32043,8<br />
+move 32452,32069,8<br />
+move 32447,32092,8<br />
+move 32438,32103,8<br />
+move 32452,32100,8<br />
+move 32461,32113,8<br />
+move 32478,32114,8<br />
+move 32478,32114,8<br />
+move 32476,32089,8<br />
+move 32492,32051,8<br />
+move 32485,32035,8<br />
+move 32475,32035,8<br />
+move 32487,32061,8<br />
+move 32478,32089,8<br />
+move 32450,32095,8<br />
+move 32454,32084,8<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32447,32069,8<br />
+move 32449,32069,7<br />
+move 32444,32137,7<br />
+move 32367,32204,7<br />
+move 32344,32230,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+fastExiva _potionid = 0A 01<br />
+fastExiva _manas = 60<br />
+fastExiva _idcost = 45<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_potionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+move 32367,32214,7<br />
+move 32400,32216,7<br />
+move 32399,32220,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+sayInTrade vial<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade bye<br />
+move 32400,32216,7<br />
+move 32367,32177,7<br />
+move 32409,32157,7<br />
+move 32443,32137,7<br />
+move 32447,32112,7<br />
+move 32462,32096,7<br />
+move 32455,32070,7<br />
+move 32448,32069,7<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+Ps: It's script by Saracene. I edit there depositer and add potion refill :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Patrick</div><div class="date">02-06-2012, 23:46</div></div><div class="posttext">I will test this script tomorrow :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zesty</div><div class="date">02-16-2012, 21:15</div></div><div class="posttext">skills needed for knight?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lokito</div><div class="date">08-05-2014, 07:50</div></div><div class="posttext">souns nice.. a recc lvl for knight? thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fearless</div><div class="date">01-28-2015, 05:37</div></div><div class="posttext">Works great, level 40 knight with 55/55 skills and a decent set breaks even. Should start gaining profit beyond that. Thanks for the script!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

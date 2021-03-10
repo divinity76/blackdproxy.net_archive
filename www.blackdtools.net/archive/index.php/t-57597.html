@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="brown, mushroom, exiva, conditional, seconds, $numericalexp$randomnumber263267$$, regenerates, helped, check, hungry, depends, $mymana$, hotkey, simple, proxy, continuously, actions, number, random, $numericalexp$randomnumber264266$$, testing, recorded" />
+	<meta name="description" content="Hi there - I'm running BlackD on my 7.72 client - and the thing is it doesnt eat any food. I have the settings &quot;Auto eat food for this character&quot; in the runemake, it didnt work so i also put &quot;setBot AutoEatFood=1&quot; in the cavebot scripts but it doesnt eat neither. 
+ 
+Thats why I think the ID may be wrong? cuz i tried brown mushroom, fish and ham. 
+ 
+Does anyone know where I can change the ID? or how to solve this? Thank you." />
+	
+	<title> Auto eat food [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Auto eat food</div>
+<hr />
+<div class="pda"><a href="t-57597.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57597-Auto-eat-food">Auto eat food</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Abbe</div><div class="date">03-28-2012, 13:38</div></div><div class="posttext">Hi there - I'm running BlackD on my 7.72 client - and the thing is it doesnt eat any food. I have the settings &quot;Auto eat food for this character&quot; in the runemake, it didnt work so i also put &quot;setBot AutoEatFood=1&quot; in the cavebot scripts but it doesnt eat neither.<br />
+<br />
+Thats why I think the ID may be wrong? cuz i tried brown mushroom, fish and ham.<br />
+<br />
+Does anyone know where I can change the ID? or how to solve this? Thank you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-28-2012, 14:14</div></div><div class="posttext">I recorded actions in Proxy, this came out:<br />
+<br />
+exiva &gt; 82 FF FF 00 00 00 XX XX 00 00<br />
+<br />
+XX XX = ID of the food you want to eat.<br />
+<br />
+You can use this as a hotkey or you can make a simple conditional that will eat that food continuously.<br />
+<br />
+For example (I'm testing this on OT):<br />
+<br />
+Brown mushroom ID: 8D 0E<br />
+<br />
+\/<br />
+<br />
+exiva &gt; 82 FF FF 00 00 00 8D 0E 00 00<br />
+<br />
+Then I made a random conditional:<br />
+<br />
+<br />
+$mymana$<br />
+#number&gt;#<br />
+10<br />
+0<br />
+$numericalexp:{$randomnumber:264&gt;266$}*1000$<br />
+0<br />
+exiva &gt; 82 FF FF 00 00 00 8D 0E 00 00<br />
+<br />
+If my mana is above value 10, it will eat brown mushroom every '$numericalexp:{$randomnumber:263&gt;267$}*1000$' seconds.<br />
+<br />
+(1 brown mushroom regenerates mana for 264 seconds, so with this one it'll never be hungry. :) Of course, it depends on every OT for itself, so just check IDs and you're good to go.)<br />
+<br />
+Hope, I helped. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Abbe</div><div class="date">03-28-2012, 17:15</div></div><div class="posttext">Hi there!<br />
+<br />
+Thanks for helping me but it doesnt seems to work..<br />
+<br />
+This is the BM on OT;<br />
+16:13 You see tile ID E5 0A  with info  + pickupable=TRUE + stackeable=TRUE + haveExtraByte=TRUE<br />
+16:13 You see 38 brown mushrooms.<br />
+It weighs 7.6 oz.<br />
+<br />
+So I test to write in tibia chat:   exiva &gt; 82 FF FF 00 00 00 E5 0A 00 00<br />
+<br />
+but nothing is happening, the bot isnt using UH neither, guess thats the wrong ID too..<br />
+<br />
+ideas?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">03-28-2012, 20:11</div></div><div class="posttext">Of course lol, my bad, if it's 7.72 then there's no hotkeys ... I recorded that having brown mushrooms on hotkey.<br />
+<br />
+Hum, maybe you could just record packets being sent to server in proxy while you eat (ctrl + click on mushies) food in your backpack ... Of course, then you would have to have the exact food you were eating in the exact opened backpack and in the exact backpack slot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-28-2012, 20:33</div></div><div class="posttext">The server uses a custom DAT so nothing will work unless you change it in BlackD config files.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Abbe</div><div class="date">03-28-2012, 21:17</div></div><div class="posttext">The server uses a custom DAT so nothing will work unless you change it in BlackD config files.<br />
+<br />
+lol ur still around? i remember you 5 years ago xDD<br />
+<br />
+and could you name the blackD config files? cuz theres alot, and in there i think i could find it myself ;o or if theres a list of IDs or something?<br />
+<br />
+well thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Abbe</div><div class="date">03-29-2012, 03:14</div></div><div class="posttext">Nvm, solved it - close thread :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">03-29-2012, 16:23</div></div><div class="posttext">Nvm, solved it - close thread :)<br />
+<br />
+Share the solution for future people</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Curbe</div><div class="date">03-30-2012, 11:38</div></div><div class="posttext">Yea,can you please post the solution - im having the same problem!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

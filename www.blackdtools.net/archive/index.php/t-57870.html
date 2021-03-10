@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exura, drink, potion, percentage, drops, spell, blackd, lower, potions, spells, waste, event, http://i.imgur.com/5w5ev.png, burning, hp&amp;mana, section, amount, number=, $mymanapercent$, number, $mymana$, conditions, conditional" />
+	<meta name="description" content="Hi does anyone knwo how to make it so I can use a mana potion and say exura ico to heal instead of using just regular health potions? 
+ 
+or with my mana being less than XX hitpoints, use exura ico? 
+ 
+pls + ty 
+ 
+edit: also is there a way to make blackd make it so i make sure i use enough mana before using a mana pot to heal with my spells? i dont want to waste mana from potions" />
+	
+	<title> Conditions [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  Conditions</div>
+<hr />
+<div class="pda"><a href="t-57870.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57870-Conditions">Conditions</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">jaywhy</div><div class="date">04-23-2012, 02:43</div></div><div class="posttext">Hi does anyone knwo how to make it so I can use a mana potion and say exura ico to heal instead of using just regular health potions?<br />
+<br />
+or with my mana being less than XX hitpoints, use exura ico?<br />
+<br />
+pls + ty<br />
+<br />
+edit: also is there a way to make blackd make it so i make sure i use enough mana before using a mana pot to heal with my spells? i dont want to waste mana from potions</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-23-2012, 14:36</div></div><div class="posttext">Hum, why wouldn't use just HP&amp;MANA section of the bot? <br />
+<br />
+Example: It will heal you with exura ico when your HP drops under 80% of your all HP and will drink a mana potion when your MANA drops under 50% of your all MANA.<br />
+<br />
+http://i.imgur.com/5w5eV.png<br />
+<br />
+And for 'mana burning', so your mana will never be full you can use this conditional event:<br />
+<br />
+<br />
+$mymana$<br />
+#number&gt;=#<br />
+200<br />
+0<br />
+1000<br />
+0<br />
+exura ico<br />
+<br />
+200 = mana amount<br />
+<br />
+OR<br />
+<br />
+<br />
+$mymanapercent$<br />
+#number&gt;#<br />
+95<br />
+0<br />
+1000<br />
+0<br />
+exura ico<br />
+<br />
+95 = percentage of your mana<br />
+<br />
+EDIT: &quot;edit: also is there a way to make blackd make it so i make sure i use enough mana before using a mana pot to heal with my spells? i dont want to waste mana from potions &quot;<br />
+<br />
+Just set to drink a mana potion at lower percentage, but enough so you'll have enough mana for 'exura ico' or any other spell.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">barlok</div><div class="date">10-30-2012, 02:28</div></div><div class="posttext">can i add a conector for example<br />
+<br />
+$mymanapercent$<br />
+#number&gt;#<br />
+95<br />
+<br />
+and<br />
+<br />
+$myhp$<br />
+#number&lt;=#<br />
+200<br />
+0<br />
+1000<br />
+0<br />
+exura ico</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

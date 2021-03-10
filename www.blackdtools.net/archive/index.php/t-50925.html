@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, $myx$,$myy$,$myz$, place, number, fishing, script, water, places, depents, variables, choose, point, floor, conds, depot, 12123,123123,123123, _fishspot1, spots, _fishtimes2, _finalspotmais, _fishspot2, _fishtimes1, _inpz2, _inpz1, total, everyday, times, everytime, city/spots/depot, diferent, preferentiabily, %%%%%%%%%%%%%, running, naked, condfishcarlin.txt, http://www.gamezmoney.com, __fishtimesx, tibia, 23423,234,23434, positions/numbertimesfishing/depotpositions, fisrt, steps$$$$$$, timesx, placex, times3, $_fishspotx$, $_fishtimesx$, $$$$$$fastmode, $_inpz2$, $_inpz1$" />
+	<meta name="description" content="hehe 
+heres a noob script, hope usefull to anyone 
+i dont reme,ber how it work well, neither know if still work, because i modified from other scrip, so ill try explain  
+test and reply plx 
+ 
+---- 
+ 
+setLootOff 
+onDangerGoto $nlineoflabel:pk$ 
+setChaoticMovesOFF" />
+	
+	<title> free fishing script [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  free fishing script</div>
+<hr />
+<div class="pda"><a href="t-50925.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?50925-free-fishing-script">free fishing script</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">06-14-2010, 05:12</div></div><div class="posttext">hehe<br />
+heres a noob script, hope usefull to anyone<br />
+i dont reme,ber how it work well, neither know if still work, because i modified from other scrip, so ill try explain <br />
+test and reply plx<br />
+<br />
+----<br />
+<br />
+setLootOff<br />
+onDangerGoto $nlineoflabel:pk$<br />
+setChaoticMovesOFF<br />
+setloot FA 0D<br />
+#<br />
+#<br />
+#needvars\/<br />
+#fishspot1 - 10  e   fishtimes1- 10     e   $_finalspotmais$ (total de lugares+1)<br />
+#<br />
+#<br />
+fastexiva _spot = 0<br />
+:nextspot<br />
+fastExiva _spot = $numericalexp:{$_spot$}+1$<br />
+IfTrue ($_spot$#number=#$_finalspotmais$) Goto 0<br />
+#<br />
+:fish<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:dp$<br />
+fastExiva _passada = 0<br />
+stackItems<br />
+move $_fishspot{$_spot$}$<br />
+<br />
+waitx 3<br />
+#<br />
+:fishing<br />
+<br />
+fastExiva fish<br />
+waitX 0,5<br />
+fastExiva _passada = $numericalexp:{$_passada$}+1$<br />
+IfTrue ($_passada$#number&gt;=#$_fishtimes{$_spot$}$) Goto $nlineoflabel:nextspot$<br />
+gotoScriptLine $nlineoflabel:fishing$<br />
+#<br />
+:dp<br />
+move $_inpz1$<br />
+<br />
+move $_inpz2$<br />
+move $_inpz3$<br />
+pu<br />
+tLootOnDepot<br />
+move $_inpz3$<br />
+move $_inpz2$<br />
+<br />
+move $_inpz1$<br />
+<br />
+gotoScriptLine $nlineoflabel:fish$<br />
+:pk<br />
+move $_inpz1$<br />
+waitx 600<br />
+fastexiva cancel<br />
+gotoScriptLine 0<br />
+<br />
+----</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">06-14-2010, 05:29</div></div><div class="posttext">what i have to do is, i think:<br />
+<br />
+set as many variables places the char must go to fishing, and how many times he must fish in each place variables, and how many places u have in total added by 1, it will (should)go 1 by 1<br />
+<br />
+$_fishspot1$  $_fishtimes1$ = placewherefish1 / timestofish1<br />
+$_fishspot2$  $_fishtimes2$ = place2 times2<br />
+$_fishspot3$  $_fishtimes3$ = place3 times3<br />
+...<br />
+$_fishspotx$  $_fishtimesx$ = placex timesx<br />
+<br />
+<br />
+$_finalspotmais$ = total Nº of places + 1 (x+1)<br />
+<br />
+and<br />
+<br />
+some variables for<br />
+depot<br />
+<br />
+$_inpz1$ = point 1 in dp<br />
+$_inpz2$ = point 3 in dp<br />
+$_inpz3$ = point 3 in dp (must have a depot box in sight)<br />
+<br />
+-----------------------<br />
+HOW DO SET THESE VARIABLES?<br />
+<br />
+$$$$$$FASTMODE fast one time steps$$$$$$<br />
+<br />
+go to dp fisrt floor<br />
+say exiva _inpz1 = $myx$,$myy$,$myz$<br />
+go to dp second floor<br />
+say exiva _inpz2 = $myx$,$myy$,$myz$<br />
+o to dp trid floor<br />
+say exiva _inpz3 = $myx$,$myy$,$myz$<br />
+<br />
+go to fishing place 1<br />
+say exiva _fishspot1 = $myx$,$myy$,$myz$<br />
+say exiva _fishtimes1 = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+go to fishing place 2<br />
+say exiva _fishspot2 = $myx$,$myy$,$myz$<br />
+say exiva _fishtimes2 = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+go to fishing place 3<br />
+say exiva _fishspot2 = $myx$,$myy$,$myz$<br />
+say exiva _fishtimes2 = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+go to fishing place X (last one of how many places u want X is the number, not the letter X, just say X as 132 if u have 132 different spots)<br />
+say exiva _fishspotX = $myx$,$myy$,$myz$<br />
+say exiva __fishtimesX = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+say _finalspotmais = X+1 (again its a number, if u have 132 diferent spots, will be saying 133, ok?)<br />
+<br />
+then play script<br />
+<br />
+<br />
+<br />
+BETTER MODE EVERYDAY MODE<br />
+<br />
+make a cond for the city/spots/depot the char will fish, sabe the conds, then load it everytime u want fish the same place<br />
+<br />
+like<br />
+<br />
+condfishcarlin.txt<br />
+<br />
+if 1 = 1<br />
+_inpz1 = 12123,123123,123123<br />
+<br />
+if 1 = 1<br />
+_inpz2 = 12123,123123,123123<br />
+<br />
+if 1 = 1<br />
+exiva _fishspot1 = 23423,234,23434<br />
+<br />
+if 1 = 1<br />
+exiva _fishtimes1 = 50<br />
+<br />
+if 1 = 1<br />
+exiva _finalspotmais = 9<br />
+<br />
+<br />
+save the conds with the positions/numbertimesfishing/depotpositions in a file, and load before running the script, then run script<br />
+<br />
+<br />
+%%%%%%%%%%%%%<br />
+<br />
+<br />
+PREFERENTIABILY RUN THIS SCRIPT WITH A LVL 8 CHAR NAKED FOR CAP</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">provocate</div><div class="date">04-11-2013, 23:24</div></div><div class="posttext">I'd be forever grateful, if someone would explain all of this a bit more clearly to me, since I'm trying to get onto highscores at the moment and it would be extremely useful, if everything was as automatic as it can possibly be.<br />
+<br />
+Cheers! :3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tio</div><div class="date">04-14-2013, 04:13</div></div><div class="posttext">what i have to do is, i think:<br />
+<br />
+set as many variables places the char must go to fishing, and how many times he must fish in each place variables, and how many places u have in total added by 1, it will (should)go 1 by 1<br />
+<br />
+$_fishspot1$  $_fishtimes1$ = placewherefish1 / timestofish1<br />
+$_fishspot2$  $_fishtimes2$ = place2 times2<br />
+$_fishspot3$  $_fishtimes3$ = place3 times3<br />
+...<br />
+$_fishspotx$  $_fishtimesx$ = placex timesx<br />
+<br />
+<br />
+$_finalspotmais$ = total Nº of places + 1 (x+1)<br />
+<br />
+and<br />
+<br />
+some variables for<br />
+depot<br />
+<br />
+$_inpz1$ = point 1 in dp<br />
+$_inpz2$ = point 3 in dp<br />
+$_inpz3$ = point 3 in dp (must have a depot box in sight)<br />
+<br />
+-----------------------<br />
+HOW DO SET THESE VARIABLES?<br />
+<br />
+$$$$$$FASTMODE fast one time steps$$$$$$<br />
+<br />
+go to dp fisrt floor<br />
+say exiva _inpz1 = $myx$,$myy$,$myz$<br />
+go to dp second floor<br />
+say exiva _inpz2 = $myx$,$myy$,$myz$<br />
+o to dp trid floor<br />
+say exiva _inpz3 = $myx$,$myy$,$myz$<br />
+<br />
+go to fishing place 1<br />
+say exiva _fishspot1 = $myx$,$myy$,$myz$<br />
+say exiva _fishtimes1 = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+go to fishing place 2<br />
+say exiva _fishspot2 = $myx$,$myy$,$myz$<br />
+say exiva _fishtimes2 = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+go to fishing place 3<br />
+say exiva _fishspot2 = $myx$,$myy$,$myz$<br />
+say exiva _fishtimes2 = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+go to fishing place X (last one of how many places u want X is the number, not the letter X, just say X as 132 if u have 132 different spots)<br />
+say exiva _fishspotX = $myx$,$myy$,$myz$<br />
+say exiva __fishtimesX = (a number u will choose, depents how much water have in this spot)<br />
+<br />
+say _finalspotmais = X+1 (again its a number, if u have 132 diferent spots, will be saying 133, ok?)<br />
+<br />
+then play script<br />
+<br />
+<br />
+<br />
+BETTER MODE EVERYDAY MODE<br />
+<br />
+make a cond for the city/spots/depot the char will fish, sabe the conds, then load it everytime u want fish the same place<br />
+<br />
+like tibia gold (http://www.gamezmoney.com)<br />
+condfishcarlin.txt<br />
+<br />
+if 1 = 1<br />
+_inpz1 = 12123,123123,123123<br />
+<br />
+if 1 = 1<br />
+_inpz2 = 12123,123123,123123<br />
+<br />
+if 1 = 1<br />
+exiva _fishspot1 = 23423,234,23434<br />
+<br />
+if 1 = 1<br />
+exiva _fishtimes1 = 50<br />
+<br />
+if 1 = 1<br />
+exiva _finalspotmais = 9<br />
+<br />
+<br />
+save the conds with the positions/numbertimesfishing/depotpositions in a file, and load before running the script, then run script<br />
+<br />
+<br />
+%%%%%%%%%%%%%<br />
+<br />
+<br />
+PREFERENTIABILY RUN THIS SCRIPT WITH A LVL 8 CHAR NAKED FOR CAP<br />
+<br />
+nice work, thx!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="attack, packets, blackd, incorrect, select, monster, client, target, things, running, avoid, square, individual, banned, makes, people, original, position, packet, strange, server, manners, randomised, 200ms, wrong, randomisation, variation, pretty, vanish, events, times" />
+	<meta name="description" content="Why do some people get caught and deleted for using blackdtools (happened to me before) and others don't? Are there some sort of survival techniques that allow people to cavebot without being detected? Cause it can't all be luck, I can't get past level 30 without getting caught somehow.:confused:" />
+	
+	<title> Why do people get banned? And How can I avoid it? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  Why do people get banned? And How can I avoid it?</div>
+<hr />
+<div class="pda"><a href="t-61752.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61752-Why-do-people-get-banned-And-How-can-I-avoid-it">Why do people get banned? And How can I avoid it?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Silk</div><div class="date">07-02-2014, 04:39</div></div><div class="posttext">Why do some people get caught and deleted for using blackdtools (happened to me before) and others don't? Are there some sort of survival techniques that allow people to cavebot without being detected? Cause it can't all be luck, I can't get past level 30 without getting caught somehow.:confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TeamSurge</div><div class="date">07-04-2014, 21:11</div></div><div class="posttext">there are so many rumors about how ppl get detected. i think the detection system looks more into the packets sent to it then in the movements of the char. but changing scripts out with more random Way-points has proved to yield better loot. I don't think stamina on its own matters all that much, but im sure it is used as an extra determining factor. also being premy gives you a little extra exceptions<br />
+<br />
+.randomize everything<br />
+.stop botting after -22hr<br />
+.randomize everything you randomized<br />
+.and still get banned<br />
+<br />
+;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Silk</div><div class="date">07-05-2014, 03:21</div></div><div class="posttext">there are so many rumors about how ppl get detected. i think the detection system looks more into the packets sent to it then in the movements of the char. but changing scripts out with more random Way-points has proved to yield better loot. I don't think stamina on its own matters all that much, but im sure it is used as an extra determining factor. also being premy gives you a little extra exceptions<br />
+<br />
+.randomize everything<br />
+.stop botting after -22hr<br />
+.randomize everything you randomized<br />
+.and still get banned<br />
+<br />
+;)<br />
+<br />
+<br />
+Yeah, I heard about the packets sending problem, didn't hear of any possible solution till now though. So I should have random waypoints? Is there a command for that? Like every 3 steps my character does something random or w/e, if not how would I do it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Silk</div><div class="date">07-21-2014, 06:10</div></div><div class="posttext">Bump (short).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TeamSurge</div><div class="date">07-21-2014, 11:07</div></div><div class="posttext">well for a start setchaoticmovesON, should be on by default. i randomize the path the bot gos by giving each cave area a number and then use $randomnumber:#&gt;#$.<br />
+<br />
+example:<br />
+:cavemain<br />
+main hunting waypoints...then<br />
+gotoscriptline $nlineoflabel:hole{$randomnumber:1&gt;3$}$<br />
+:hole1<br />
+waypoints<br />
+gotoscriptline $nlineoflabel:cavemain$<br />
+:hole2<br />
+waypoints<br />
+gotoscriptline $nlineoflabel:cavemain$<br />
+:hole3<br />
+waypoints<br />
+gotoscriptline $nlineoflabel:cavemain$<br />
+<br />
+I use that type of setup anywhere there are multiple chose holes/ladders/or combination. just as long as they return to the main area of the cave.<br />
+<br />
+to take it even further if i am moving to an open area I use this...<br />
+move 1234$randomnumber:3&gt;7$,1234$randomnumber:3&gt;7$,#<br />
+I only do that in open areas because i try not to have the bot telling me its not possible to move there.<br />
+<br />
+k i got to get back to the scripting. check-out the scripts i will be releasing soon. http://www.blackdtools.net/showthread.php?61790-Surge</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-02-2014, 23:57</div></div><div class="posttext">It used to be due to lack of variation between events, such as always doing things exactly 200ms apart. But now these are all randomised, it is mainly incorrect or bad packets being sent to the server. BlackD acts very strange in some manners because of these bad packets.<br />
+<br />
+When things seem to go wrong randomisation also seems to vanish, I can see the bot spam 50 times in a second with only &quot;sorry not possible&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TeamSurge</div><div class="date">08-05-2014, 22:14</div></div><div class="posttext">nice xHellsx, i feel this is why we need to have tibia version for script posted next to all uploaded scripts. I know there is a area for old and new scripts, but new quickly becomes old. <br />
+<br />
+solution: {10.5}ver<br />
+this will allow users to identify what scripts have been updated to what version<br />
+of course this would only matter if there is hex in the script<br />
+<br />
+also; scripters need to try to turn off allow reposition at trap<br />
+this is for me the most common resin for the &quot;sorry not possible&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-06-2014, 00:01</div></div><div class="posttext">I'm pretty sure the attack packet we use is incorrect. As it doesn't select the red square around the target and seems to send individual attack packets rather than just a select attack and let the client do the rest.<br />
+<br />
+The bot just runs around the target like it is using it (so if a monster is running towards you, you run past the monster to its original position, and then back to where it was when u past it.. etc)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">08-20-2014, 19:51</div></div><div class="posttext">It used to be due to lack of variation between events, such as always doing things exactly 200ms apart. But now these are all randomised, it is mainly incorrect or bad packets being sent to the server. BlackD acts very strange in some manners because of these bad packets.<br />
+<br />
+When things seem to go wrong randomisation also seems to vanish, I can see the bot spam 50 times in a second with only &quot;sorry not possible&quot;.<br />
+<br />
+<br />
+I'm pretty sure the attack packet we use is incorrect. As it doesn't select the red square around the target and seems to send individual attack packets rather than just a select attack and let the client do the rest.<br />
+<br />
+The bot just runs around the target like it is using it (so if a monster is running towards you, you run past the monster to its original position, and then back to where it was when u past it.. etc)<br />
+<br />
+<br />
+<br />
+This, very much this. Too much this! BlackD makes client say &quot;Sorry not possible&quot; A LOT. Wonder what it's really doing x)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

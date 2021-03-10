@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="final, collection, address, tibia, battle, returns, values, trouble, visible, protobuf, number, thing, advance, outiftcolors/outfit/mounts, managed, outfit, encoded, finding, funcions, block, readcurrentaddress, threads, start, skills, collections, server, findcollectionitembykey, addresspath, adress, return, numbers, usefull, memory, valid, current, client, instance, strings" />
+	<meta name="description" content="Ok, I just finished another important piece of this big puzzle of Tibia 11. 
+ 
+Below I am posting my highly optimized VB6 function to read Tibia full tibia collection (Qt5 structure). 
+It is almost as fast as reading a classic list of items. 
+ 
+ 
+Public Sub ReadTibia11CollectionMIN(ByRef pid As Long, adrPath As AddressPath, _ 
+                                      ByRef dict As Scripting.Dictionary) 
+                                     
+    Dim adrCOLLECTION_START As Long" />
+	
+	<title> Code to read Tibia 11 collections (skills, server info, etc) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Code to read Tibia 11 collections (skills, server info, etc)</div>
+<hr />
+<div class="pda"><a href="t-62980.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62980-Code-to-read-Tibia-11-collections-(skills-server-info-etc)">Code to read Tibia 11 collections (skills, server info, etc)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-27-2016, 14:07</div></div><div class="posttext">Ok, I just finished another important piece of this big puzzle of Tibia 11.<br />
+<br />
+Below I am posting my highly optimized VB6 function to read Tibia full tibia collection (Qt5 structure).<br />
+It is almost as fast as reading a classic list of items.<br />
+<br />
+<br />
+<br />
+Public Sub ReadTibia11CollectionMIN(ByRef pid As Long, adrPath As AddressPath, _<br />
+                                      ByRef dict As Scripting.Dictionary)<br />
+                                    <br />
+    Dim adrCOLLECTION_START As Long<br />
+    Dim totalItems As Long<br />
+    Dim adrSTARTER_ITEM As Long<br />
+    Dim maxDepth As Long<br />
+    Dim p0, p1, p2 As Long<br />
+    Dim item As Variant<br />
+    Dim iterCount As Long<br />
+    Dim c0, c1, c2 As Long<br />
+    Dim adrRoot As Long<br />
+    iterCount = 0<br />
+    Set dict = New Scripting.Dictionary<br />
+    adrCOLLECTION_START = ReadCurrentAddress(pid, adrPath, -1, False)<br />
+    totalItems = QMemory_Read4Bytes(pid, adrCOLLECTION_START + 4)<br />
+    If (totalItems = 0) Then<br />
+        Exit Sub<br />
+    End If<br />
+    maxDepth = totalItems<br />
+    adrSTARTER_ITEM = QMemory_Read4Bytes(pid, adrCOLLECTION_START)<br />
+    adrRoot = adrSTARTER_ITEM<br />
+    p0 = QMemory_Read4Bytes(pid, adrSTARTER_ITEM)<br />
+    p1 = QMemory_Read4Bytes(pid, adrSTARTER_ITEM + 4)<br />
+    p2 = QMemory_Read4Bytes(pid, adrSTARTER_ITEM + 8)<br />
+    c0 = fillCollectionDictionaryMIN(pid, p0, adrSTARTER_ITEM, dict, 0, maxDepth, adrRoot)<br />
+    c1 = fillCollectionDictionaryMIN(pid, p1, adrSTARTER_ITEM, dict, 0, maxDepth, adrRoot)<br />
+    c2 = fillCollectionDictionaryMIN(pid, p2, adrSTARTER_ITEM, dict, 0, maxDepth, adrRoot)<br />
+    iterCount = c0 + c1 + c2<br />
+    Debug.Print &quot;Collection size &quot; &amp; CStr(totalItems) &amp; &quot; took &quot; &amp; CStr(iterCount) &amp; &quot; iterations&quot;<br />
+    '  For Each item In dict<br />
+    '   Debug.Print CStr(item) &amp; &quot; (&quot; &amp; CStr(Hex(item)) &amp; &quot;) found at &quot; &amp; CStr(Hex(dict(item)))<br />
+    '  Next item<br />
+End Sub<br />
+<br />
+Private Function fillCollectionDictionaryMIN(ByRef pid As Long, ByVal adrCurrentItem As Long, _<br />
+                                     ByVal adrPrev As Long, _<br />
+                                     ByRef dict As Scripting.Dictionary, _<br />
+                                     ByVal currentDepth As Long, _<br />
+                                     ByRef maxDepth As Long, ByRef adrRoot As Long) As Long<br />
+    On Error GoTo gotErr<br />
+        Dim id As Long<br />
+        Dim c0, c1, c2 As Long<br />
+        Dim Count As Long<br />
+        Count = 1<br />
+        id = QMemory_Read4Bytes(pid, adrCurrentItem + &amp;H10)<br />
+        If (dict.Exists(id) = False) Then<br />
+            dict(id) = adrCurrentItem<br />
+            If (currentDepth &lt; maxDepth) Then<br />
+                  Dim p0, p1, p2 As Long<br />
+                  p0 = QMemory_Read4Bytes(pid, adrCurrentItem)<br />
+                  p1 = QMemory_Read4Bytes(pid, adrCurrentItem + 4)<br />
+                  p2 = QMemory_Read4Bytes(pid, adrCurrentItem + 8)<br />
+                  If Not ((p0 = adrPrev) Or (p0 = adrRoot)) Then<br />
+                    c0 = fillCollectionDictionaryMIN(pid, p0, adrCurrentItem, dict, currentDepth + 1, maxDepth, adrRoot)<br />
+                    Count = Count + c0<br />
+                  End If<br />
+                  If Not ((p1 = adrPrev) Or (p1 = adrRoot)) Then<br />
+                    c1 = fillCollectionDictionaryMIN(pid, p1, adrCurrentItem, dict, currentDepth + 1, maxDepth, adrRoot)<br />
+                    Count = Count + c1<br />
+                  End If<br />
+                  If Not ((p2 = adrPrev) Or (p2 = adrRoot)) Then<br />
+                   c2 = fillCollectionDictionaryMIN(pid, p2, adrCurrentItem, dict, currentDepth + 1, maxDepth, adrRoot)<br />
+                   Count = Count + c2<br />
+                  End If<br />
+            End If<br />
+        End If<br />
+        fillCollectionDictionaryMIN = Count<br />
+        Exit Function<br />
+gotErr:<br />
+        fillCollectionDictionaryMIN = 0<br />
+        Debug.Print (&quot;Something failed: &quot; + Err.Description)<br />
+End Function</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-29-2016, 11:01</div></div><div class="posttext">And today I finally finished my function to find a collection item by KEY, supposing that this Qt5 collection will not have 2 items with same key. It would be possible in Qt5, but we should not see that case in any Tibia collection.<br />
+<br />
+My current search is optimized enough to search any KEY with few iterations. However, I am sure it could improved up to x2 faster by someone with better knowledge about this Qt5 structure. It looks like a very complex red-black binary tree.<br />
+<br />
+<br />
+<br />
+Public Function FindCollectionItemByKey(ByRef pid As Long, adrPath As AddressPath, ByRef keyToSearch As Long) As Long<br />
+    Dim res As Long<br />
+    Dim adrCOLLECTION_START As Long<br />
+    Dim totalItems As Long<br />
+    Dim pLeft As Long<br />
+    Dim pRight As Long<br />
+    Dim val0 As Long<br />
+    Dim val1 As Long<br />
+    Dim val2 As Long<br />
+    Dim maxDepth As Long<br />
+    Dim adrSTARTER_ITEM As Long<br />
+    Dim p(5) As Long<br />
+    Dim isGoal As Boolean<br />
+    Dim isFail As Boolean<br />
+    Dim currentDepth As Long<br />
+    Const rootval As Long = -1<br />
+    currentDepth = 1<br />
+    adrCOLLECTION_START = ReadCurrentAddress(pid, adrPath, -1, False)<br />
+    totalItems = QMemory_Read4Bytes(pid, adrCOLLECTION_START + 4)<br />
+    If (totalItems = 0) Then<br />
+        FindCollectionItemByKey = -1<br />
+        Exit Function<br />
+    End If<br />
+    maxDepth = 1 + (totalItems / 2)<br />
+    adrSTARTER_ITEM = QMemory_Read4Bytes(pid, adrCOLLECTION_START)<br />
+    p(0) = QMemory_Read4Bytes(pid, adrSTARTER_ITEM)<br />
+    p(1) = QMemory_Read4Bytes(pid, adrSTARTER_ITEM + 4)<br />
+    p(2) = QMemory_Read4Bytes(pid, adrSTARTER_ITEM + 8)<br />
+    p(3) = p(0)<br />
+    p(4) = p(1)<br />
+    p(5) = p(2)<br />
+    q_nextIteration pid, adrSTARTER_ITEM, keyToSearch, p, pLeft, pRight, isGoal, isFail<br />
+    If (isGoal) Then<br />
+        res = pLeft<br />
+    End If<br />
+    If (isFail) Then<br />
+        currentDepth = maxDepth + 1<br />
+    End If<br />
+    If (isGoal = False) And (isFail = False) Then<br />
+        'Debug.Print &quot;...&quot;<br />
+        Do<br />
+            currentDepth = currentDepth + 1<br />
+            p(0) = QMemory_Read4Bytes(pid, pLeft)<br />
+            p(1) = QMemory_Read4Bytes(pid, pLeft + 4)<br />
+            p(2) = QMemory_Read4Bytes(pid, pLeft + 8)<br />
+            p(3) = QMemory_Read4Bytes(pid, pRight)<br />
+            p(4) = QMemory_Read4Bytes(pid, pRight + 4)<br />
+            p(5) = QMemory_Read4Bytes(pid, pRight + 8)<br />
+            q_nextIteration pid, adrSTARTER_ITEM, keyToSearch, p, pLeft, pRight, isGoal, isFail<br />
+            If (isGoal) Then<br />
+                res = pLeft<br />
+                Exit Do<br />
+            End If<br />
+            If (isFail) Then<br />
+                currentDepth = maxDepth + 1<br />
+                Exit Do<br />
+            End If<br />
+            ' Debug.Print &quot;...&quot;<br />
+        Loop Until currentDepth &gt; maxDepth<br />
+    End If<br />
+    If (currentDepth &gt; maxDepth) Then<br />
+      ' Debug.Print &quot;WARNING at FindCollectionItemByKey: Key not found (With size=&quot; &amp; CStr(totalItems) &amp; &quot;) Key = &quot; &amp; CStr(keyToSearch) &amp; &quot; (&quot; &amp; CStr(Hex(keyToSearch)) &amp; &quot;)&quot;<br />
+      FindCollectionItemByKey = -1<br />
+    Else<br />
+      ' Debug.Print &quot;(With size=&quot; &amp; CStr(totalItems) &amp; &quot;) Key &quot; &amp; CStr(keyToSearch) &amp; &quot; (&quot; &amp; CStr(Hex(keyToSearch)) &amp; &quot;) found after &quot; &amp; CStr(currentDepth) &amp; &quot; iterations at &quot; &amp; CStr(Hex(res))<br />
+      FindCollectionItemByKey = res<br />
+    End If<br />
+End Function<br />
+<br />
+Private Sub q_nextIteration(ByRef pid As Long, ByRef adrSTARTER_ITEM As Long, _<br />
+ ByRef keyToSearch As Long, ByRef p() As Long, _<br />
+ ByRef pLeft As Long, ByRef pRight As Long, _<br />
+ ByRef isGoal As Boolean, ByRef isFail As Boolean)<br />
+    Const rootval_min As Long = -2147483648#<br />
+    Const rootval_max As Long = 2147483647<br />
+    Dim val_min(5) As Long<br />
+    Dim val_max(5) As Long<br />
+    Dim best_min_v As Long<br />
+    Dim best_min_i As Long<br />
+    Dim best_max_v As Long<br />
+    Dim best_max_i As Long<br />
+    Dim i As Long<br />
+    isGoal = False<br />
+    isFail = False<br />
+    best_min_i = 0<br />
+    best_min_v = rootval_min<br />
+    best_max_i = 0<br />
+    best_max_v = rootval_max<br />
+    For i = 0 To 5<br />
+        If (p(i) = adrSTARTER_ITEM) Then<br />
+            val_min(i) = rootval_min<br />
+            val_max(i) = rootval_max<br />
+        Else<br />
+            val_min(i) = QMemory_Read4Bytes(pid, p(i) + &amp;H10)<br />
+            val_max(i) = val_min(i)<br />
+        End If<br />
+    Next i<br />
+    'Debug.Print &quot;q_nextIteration options: &quot; &amp; CStr(val(0)) &amp; &quot;,&quot; &amp; CStr(val(1)) &amp; &quot;,&quot; &amp; CStr(val(2)) &amp; &quot;,&quot; &amp; CStr(val(3)) &amp; &quot;,&quot; &amp; CStr(val(4)) &amp; &quot;,&quot; &amp; CStr(val(5))<br />
+    For i = 0 To 5<br />
+        If (val_min(i) = keyToSearch) Then<br />
+               ' Debug.Print &quot;Goal found at q_nextIteration p(&quot; &amp; CStr(i) &amp; &quot;)&quot;<br />
+                isGoal = True<br />
+                pLeft = p(i)<br />
+                pRight = p(i)<br />
+                Exit Sub<br />
+        End If<br />
+        ' Pick best left<br />
+        If (val_min(i) &gt; best_min_v) And (val_min(i) &lt;= keyToSearch) Then<br />
+            best_min_v = val_min(i)<br />
+            best_min_i = i<br />
+        End If<br />
+        ' Pick best right<br />
+        If (val_max(i) &lt; best_max_v) And (val_max(i) &gt;= keyToSearch) Then<br />
+            best_max_v = val_max(i)<br />
+            best_max_i = i<br />
+        End If<br />
+    Next i<br />
+    pLeft = p(best_min_i)<br />
+    pRight = p(best_max_i)<br />
+    'Debug.Print &quot;Next iteration will search between &quot; &amp; CStr(val_min(best_min_i)) &amp; &quot; and &quot; &amp; CStr(val_max(best_max_i))<br />
+    If (val_min(best_min_i) &gt; keyToSearch) Or (val_max(best_max_i) &lt; keyToSearch) Then<br />
+        isFail = True<br />
+    End If<br />
+End Sub</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-30-2016, 08:18</div></div><div class="posttext">Can you please give a short explanation of the algorithm, for the less VB-inclined?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-30-2016, 10:56</div></div><div class="posttext">I wrote my functions based on some facts I discovered:<br />
+- This structure seems to use some kind of red black logic. Each node have color Red, Black or Special. The logic is somehow related in the logic that you might have to follow for the optimal algorithm. I don't fully understand this so my algorithm will analyze ALL the possible logic decisions in each iteration.<br />
+- The starter item is special. It does not contain data. It only contains 3 pointers and the Special color flag.<br />
+- ALL the items have 3 pointers. P0, P1 and P2.<br />
+- For all the items (except MAYBE for the starter item) the meaning of each pointer will be different (maybe depending color and/or iteration step?) And -whatever is the logic behind this hell- I know that each pointer should take one of the following roles: LEFT, RIGHT and PARENT.<br />
+- The PARENT pointer will point to the previous collection item. This is an interesting fact when you only want to gather full collection because in that case you only want to follow LEFT and RIGHT, avoiding parents and avoiding items that you already gathered. However, we should not discard PARENT when searching for a key. Sometimes following parent is the fastest step.<br />
+- The tree is somehow sorted in LEFT - RIGHT. The only special case seems to be the starter item. <br />
+- In the starter item I think you can read pointers as LEFT, MIDDLE and RIGHT. When searching a key you should start choosing the 2 pointers that better fit for your key. Then, in each iteration, you should try to obtain a smaller interval, you should decide the best pointer that follow to each of them, always keeping your goal key between LEFT and RIGHT, and choosing best pointer option depending their pointed item key values. You should consider that the key value of the root item is SPECIAL (min or max value depending if you are checking best left or best right). You should consider the value of each pointer as the key of the item it is pointing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">10-30-2016, 15:06</div></div><div class="posttext">I have some issues with some of your points. Referring back to linky-link (http://cpettitt.github.io/project/dagre-d3/latest/demo/interactive-demo.html?graph=digraph%20%7B%0A%20%20%20%20A%20%5 Blabel%3D%22root%5B0101%5D%22%5D%3B%0A%20%20%20%20 B%20%5Blabel%3D%2256030737%5B0000%5D%22%5D%3B%0A%2 0%20%20%20C%20%5Blabel%3D%221074154386%5B0001%5D%2 2%5D%3B%0A%20%20%20%20D%20%5Blabel%3D%221074201871 %5B0001%5D%22%5D%3B%0A%20%20%20%20E%20%5Blabel%3D% 221073741884%5B0001%5D%22%5D%3B%0A%20%20%20%20F%20 %5Blabel%3D%221073742123%5B0001%5D%22%5D%3B%0A%20% 20%20%20G%20%5Blabel%3D%221074159815%5B0001%5D%22% 5D%3B%0A%20%20%20%20H%20%5Blabel%3D%221074181788%5 B0000%5D%22%5D%3B%0A%09I%20%5Blabel%3D%22107374188 5%5B0000%5D%22%5D%3B%0A%09J%20%5Blabel%3D%22107374 1920%5B0000%5D%22%5D%3B%0A%09K%20%5Blabel%3D%22107 3742717%5B0000%5D%22%5D%3B%0A%09L%20%5Blabel%3D%22 1074158718%5B0000%5D%22%5D%3B%0A%09M%20%5Blabel%3D %221074160803%5B0001%5D%22%5D%3B%0A%09N%20%5Blabel %3D%221073741998%5B0001%5D%22%5D%3B%0A%09O%20%5Bla bel%3D%221073742314%5B0001%5D%22%5D%3B%0A%09P%20%5 Blabel%3D%221074153284%5B0001%5D%22%5D%3B%0A%09Q%2 0%5Blabel%3D%221074154701%5B0001%5D%22%5D%3B%0A%09 R%20%5Blabel%3D%221074159255%5B0001%5D%22%5D%3B%0A %09S%20%5Blabel%3D%221074164080%5B0000%5D%22%5D%3B %0A%09T%20%5Blabel%3D%221073741964%5B0000%5D%22%5D %3B%0A%09U%20%5Blabel%3D%221073742136%5B0000%5D%22 %5D%3B%0A%09V%20%5Blabel%3D%221073742489%5B0000%5D %22%5D%3B%0A%09W%20%5Blabel%3D%221074153415%5B0000 %5D%22%5D%3B%0A%09X%20%5Blabel%3D%221074154564%5B0 000%5D%22%5D%3B%0A%09Y%20%5Blabel%3D%221074154871% 5B0000%5D%22%5D%3B%0A%0A%20%20%20%20A%20-%3E%20B%20%5Blabel%3D%22p0%22%5D%3B%0A%09A%20-%3E%20C%20%5Blabel%3D%22p1%22%5D%3B%0A%09A%20-%3E%20D%20%5Blabel%3D%22p2%22%5D%3B%0A%09B%20-%3E%20A%20%5Blabel%3D%22p0%22%5D%3B%0A%09B%20-%3E%20E%20%5Blabel%3D%22p1%22%5D%3B%0A%09B%20-%3E%20A%20%5Blabel%3D%22p2%22%5D%3B%0A%09C%20-%3E%20F%20%5Blabel%3D%22p0%22%5D%3B%0A%09C%20-%3E%20G%20%5Blabel%3D%22p2%22%5D%3B%0A%09D%20-%3E%20H%20%5Blabel%3D%22p1%22%5D%3B%0A%09E%20-%3E%20I%20%5Blabel%3D%22p2%22%5D%3B%0A%09F%20-%3E%20J%20%5Blabel%3D%22p0%22%5D%3B%0A%09F%20-%3E%20K%20%5Blabel%3D%22p2%22%5D%3B%0A%09G%20-%3E%20L%20%5Blabel%3D%22p0%22%5D%3B%0A%09G%20-%3E%20H%20%5Blabel%3D%22p2%22%5D%3B%0A%09H%20-%3E%20M%20%5Blabel%3D%22p0%22%5D%3B%0A%09J%20-%3E%20E%20%5Blabel%3D%22p0%22%5D%3B%0A%09J%20-%3E%20N%20%5Blabel%3D%22p2%22%5D%3B%0A%09K%20-%3E%20O%20%5Blabel%3D%22p0%22%5D%3B%0A%09K%20-%3E%20P%20%5Blabel%3D%22p2%22%5D%3B%0A%09L%20-%3E%20Q%20%5Blabel%3D%22p0%22%5D%3B%0A%09L%20-%3E%20R%20%5Blabel%3D%22p2%22%5D%3B%0A%09M%20-%3E%20S%20%5Blabel%3D%22p2%22%5D%3B%0A%09N%20-%3E%20T%20%5Blabel%3D%22p0%22%5D%3B%0A%09O%20-%3E%20U%20%5Blabel%3D%22p0%22%5D%3B%0A%09O%20-%3E%20V%20%5Blabel%3D%22p2%22%5D%3B%0A%09P%20-%3E%20W%20%5Blabel%3D%22p2%22%5D%3B%0A%09Q%20-%3E%20X%20%5Blabel%3D%22p0%22%5D%3B%0A%09Q%20-%3E%20Y%20%5Blabel%3D%22p2%22%5D%3B%0A%09%0A%09%0A %7D), which is a single example, and thus cannot tell us how EVERY case works, but can tell us if an algorithm is NOT RIGHT, here is some stuff I do not agree with:<br />
+<br />
+-The PARENT pointer will point to the previous collection item -- this is NOT true for the special item's P0, since that is the MIN element in my example, and his P1 points to the SECOND SMALLEST item, meaning, his next item.<br />
+-Sometimes following parent is the fastest step -- while true for a small subset of items, in general this is bad practice. It is not worth following the parent if the item we want is not there, since it will lead to a full (O(log n)) search anyways. Until we understand the logic behind MAX and MIX's parents, I think this is a very wasteful step.<br />
+<br />
+<br />
+Another issue we might want to investigate- tibia caches battlelist entries. If I have your entry, and you log out, it will still be present in the structure. When you log back in, it will update the entry you had before. This means several things:<br />
+-We could use this info to avoid searching the tree altogether. Once you found an item, just store its address.<br />
+-We could view cached copies as &quot;live&quot; ones. This would throw off any logic that reads the battlelist to assume your surrounding.<br />
+And on this note, I could not identify any changes in a cached entry from a live one. I have no idea how tibia keeps track of them (to filter the battlelist UI), but the memory image of an entry (and its info block) stayed the exact same for several tests I ran.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sydek</div><div class="date">11-18-2016, 06:27</div></div><div class="posttext">Hello, <br />
+<br />
+Im trying to understand the algorithm and I have some questions that will clarify things alot, I hope its not a burden... Ive been dying to debug this code with hope to achieve deeper understanding.<br />
+<br />
+1. What exactly is being returned out of [Public Function FindCollectionItemByKey] ? Do you think could post a representative short example of usage?<br />
+<br />
+2. [Public Function ReadCurrentAddress] vs [QMemory_Read4Bytes] , does the first check the legacy client? Im confused on why use the first one. <br />
+<br />
+Thanks  hope not to bother too much and thanks for all.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-21-2016, 00:18</div></div><div class="posttext">There is no sense in a cache.<br />
+Collections should be fast enough, specially for Cipsoft code.<br />
+Visual battlelist might be independient but it gets data from the main battlelist. I am almost sure about it.<br />
+Battlelist keeps death creatures, but marks their entries with a special byte at the end of the usefull information block.<br />
+And of course I don&#8217;t know the exact algorithm but I am sure my functions are optimal besides the fact that each iteration takes probably x2 cpu instructions than the native algorithms. The O(thing) does not suffer at all because this.<br />
+About parents in each node: I only mean that each node A contains at least 1 pointer to P where P contains at least 1 pointer to A.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">11-21-2016, 00:27</div></div><div class="posttext">FindCollectionItemByKey returns the address of the start of the collection item block. You can look how they look in other threads<br />
+<br />
+ReadCurrentAddress uses AddressPath and returns a final address only valid for your current instance of the tibia 11 client.<br />
+<br />
+My other memory funcions just read final adress and return usefull values: numbers or strings.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sydek</div><div class="date">12-11-2016, 03:47</div></div><div class="posttext">FindCollectionItemByKey returns the address of the start of the collection item block. You can look how they look in other threads<br />
+<br />
+ReadCurrentAddress uses AddressPath and returns a final address only valid for your current instance of the tibia 11 client.<br />
+<br />
+My other memory funcions just read final adress and return usefull values: numbers or strings.<br />
+<br />
+Thanks , I managed to read the battle list, I did find x, y, z, hp and visible . I am having alot of trouble finding the values for outiftColors/outfit/mounts/ do you think its somehow encoded?<br />
+<br />
+Is the outfit (the one on the battle list) a collection itself? or is it the protobuf number thing?<br />
+ <br />
+<br />
+Thanks for all in advance.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

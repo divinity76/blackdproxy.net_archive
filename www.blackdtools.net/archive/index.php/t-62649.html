@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="active, members, senior, topic, creating, proxy, blackd, compile, source, tutorial" />
+	<meta name="description" content="This tutorial will teach you how to compile BlackD Proxy from source. 
+ 
+First, you need to disable / &quot;Never Notify&quot; on User Account Control, because it doesn't 
+play well with Visual Basic 6. learn how to do that here: http://www.howtogeek.com/howto/windows-vista/disable-user-account-control-uac-the-easy-way-on-windows-vista/ 
+ 
+then, you'll need a Torrent client, like Transmission-qt: http://goo.gl/XjDC9d  
+ 
+In your torrent client, click &quot;Open URI&quot; or &quot;Open URL&quot; or &quot;Open Magnet Link&quot; (it has" />
+	
+	<title> (Tutorial) How to compile BlackD Proxy from source (incl Win 7 x64) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  (Tutorial) How to compile BlackD Proxy from source (incl Win 7 x64)</div>
+<hr />
+<div class="pda"><a href="t-62649.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62649-(Tutorial)-How-to-compile-BlackD-Proxy-from-source-(incl-Win-7-x64)">(Tutorial) How to compile BlackD Proxy from source (incl Win 7 x64)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-19-2016, 05:42</div></div><div class="posttext">This tutorial will teach you how to compile BlackD Proxy from source.<br />
+<br />
+First, you need to disable / &quot;Never Notify&quot; on User Account Control, because it doesn't<br />
+play well with Visual Basic 6. learn how to do that here: http://www.howtogeek.com/howto/windows-vista/disable-user-account-control-uac-the-easy-way-on-windows-vista/<br />
+<br />
+then, you'll need a Torrent client, like Transmission-qt: http://goo.gl/XjDC9d <br />
+<br />
+In your torrent client, click &quot;Open URI&quot; or &quot;Open URL&quot; or &quot;Open Magnet Link&quot; (it has slightly different names in different clients),<br />
+and download the &quot;magnet link&quot; found inside this URL: http://paste.debian.net/plain/366563 <br />
+(I can't inline the url because the forum is retarded and mess with &quot;%&quot; characters :( )<br />
+<br />
+http://i.imgur.com/lSS58Tn.png<br />
+http://i.imgur.com/Kc9qUFV.png<br />
+http://i.imgur.com/Zm13V2o.png<br />
+when that has finished,<br />
+if you run Windows 7 or older, you will need a ISO mounter, <br />
+like Virtual CloneDrive: http://static.slysoft.com/SetupVirtualCloneDrive.exe<br />
+If you get this warning during setup, say &quot;Install&quot;<br />
+http://i.imgur.com/9tSzpFx.png<br />
+<br />
+When the torrent file has downloaded, go to the &quot;visual basic 6&quot; folder <br />
+http://i.imgur.com/4WaCxAE.png<br />
+then right-click on &quot;MS VS 6.0.iso&quot;, and click &quot;Mount&quot; button <br />
+http://i.imgur.com/zEXynfM.png<br />
+now go to Computer, you should now see a new drive called &quot;MS VS 6.0&quot;<br />
+http://i.imgur.com/8FhO9bw.png<br />
+<br />
+right-click on it and press &quot;Install or run program from your media&quot;<br />
+http://i.imgur.com/yGHNaIt.png<br />
+<br />
+now you might get this warning:<br />
+http://i.imgur.com/YvSMumM.png<br />
+just press &quot;Run program&quot;<br />
+<br />
+this window will pop up: <br />
+http://i.imgur.com/NmMXGKG.png<br />
+<br />
+press Next<br />
+<br />
+http://i.imgur.com/1OloPrj.png<br />
+<br />
+press &quot;I Accept&quot;, then press Next<br />
+<br />
+http://i.imgur.com/HvdAuZy.png<br />
+<br />
+in Product Number, write<br />
+450 - 6623317<br />
+<br />
+then press Next<br />
+<br />
+http://i.imgur.com/mD4FSMw.png<br />
+<br />
+press Next again<br />
+<br />
+http://i.imgur.com/NLIzuFV.png<br />
+if you get this warning, press Run Program<br />
+<br />
+http://i.imgur.com/qDt2Jd0.png<br />
+if you get this warning, press Run Program. <br />
+<br />
+then you will get a warning &quot;will now restart&quot;, press OK, then restart the computer.<br />
+<br />
+you may now get some error about &quot;could not find E:\foo.bar&quot;, press OK and ignore it.<br />
+<br />
+http://i.imgur.com/N8yvdBs.png<br />
+now you need to &quot;mount the ISO&quot; again, same like last time.<br />
+<br />
+http://i.imgur.com/Y0045dk.png<br />
+then go to Computer, and press &quot;Install or run program from media&quot; again,<br />
+<br />
+http://i.imgur.com/Bq90LAs.png<br />
+you may get this warning again, press &quot;Run program&quot;<br />
+<br />
+http://i.imgur.com/BqBbOem.png<br />
+<br />
+press Next<br />
+<br />
+http://i.imgur.com/4TzD76R.png<br />
+<br />
+press &quot;I accept&quot;, then &quot;Next&quot;<br />
+<br />
+http://i.imgur.com/ZUrlFNC.png<br />
+<br />
+in Product Number, write<br />
+450 - 6623317<br />
+<br />
+then press Next<br />
+<br />
+http://i.imgur.com/klAefSo.png<br />
+<br />
+press &quot;Custom&quot;, then press &quot;Next&quot;<br />
+<br />
+http://i.imgur.com/UfelXl0.png<br />
+<br />
+write<br />
+&quot;C:\vb6\Microsoft Visual Studio\Common&quot; in choose folder<br />
+then press Next<br />
+<br />
+http://i.imgur.com/maJswZo.png<br />
+if you get this warning, press &quot;Run program&quot;<br />
+<br />
+http://i.imgur.com/xr3Dy5d.png<br />
+<br />
+press &quot;Continue&quot;<br />
+<br />
+http://i.imgur.com/alccF2W.png<br />
+<br />
+press &quot;OK&quot;<br />
+<br />
+http://i.imgur.com/uMbpx8f.png<br />
+<br />
+uncheck &quot;Visual C++&quot; and &quot;Visual FoxPro&quot; and &quot;Visual SourceSafe&quot;, but not<br />
+anything else. then press Continue.<br />
+<br />
+http://i.imgur.com/If758V6.png<br />
+<br />
+press &quot;Restart windows&quot;, <br />
+then wait until windows restarts (or alternatively, restart it yourself)<br />
+<br />
+http://i.imgur.com/Z9Zs7nK.png<br />
+if you get this error, just press OK<br />
+http://i.imgur.com/I39Z2Da.png<br />
+<br />
+Now download &quot;Service Pack 6 for Visual Basic 6.0&quot; at https://www.microsoft.com/en-us/download/details.aspx?id=5721<br />
+ http://i.imgur.com/I39Z2Da.png<br />
+ http://i.imgur.com/kojCOi0.png<br />
+<br />
+http://i.imgur.com/X1lg9ne.png<br />
+<br />
+start it, and write C:\vb6\sp6\ and press OK<br />
+<br />
+http://i.imgur.com/uG1grE9.png<br />
+<br />
+press Yes<br />
+<br />
+When it has finished, <br />
+http://i.imgur.com/DLeqani.png<br />
+press the Windows button + R and write<br />
+C:\vb6\sp6\setupsp6.exe<br />
+and press OK<br />
+<br />
+http://i.imgur.com/WKY0JsQ.png<br />
+<br />
+press Continue<br />
+<br />
+<br />
+http://i.imgur.com/mJVhA9M.png<br />
+<br />
+press &quot;I Agree&quot;<br />
+<br />
+http://i.imgur.com/FBTF3qK.png<br />
+<br />
+press OK<br />
+<br />
+http://i.imgur.com/kCMYCVj.png<br />
+then go to https://github.com/blackdtools/Blackd-Proxy-CLASSIC<br />
+and press the &quot;Download ZIP&quot; button<br />
+<br />
+(Actually i recommend getting a github.com account and installing &quot;Github For Windows&quot;, <br />
+but that is out of scope for this tutorial.), <br />
+http://i.imgur.com/CmYMNCX.png<br />
+<br />
+open the ZIP file, and drag the folder to desktop (IT is very important that you drag the folder OUTSIDE the zip file)<br />
+<br />
+http://i.imgur.com/nvmzjWw.png<br />
+<br />
+open the new folder, and find &quot;BlackdProxy.vbp&quot;, and double click it.<br />
+<br />
+if everything is ok now you should see something like this: <br />
+http://i.imgur.com/3zpjelS.png<br />
+<br />
+http://i.imgur.com/mesD2vX.png<br />
+<br />
+... now press &quot;Run&quot; and &quot;Start with Full Compile&quot;, <br />
+<br />
+and you should see BlackD Proxy starting. <br />
+Congratulations! you have just compiled BlackD Proxy from the source code! <br />
+http://i.imgur.com/lTyiIws.png<br />
+you can now start playing with the source code :-)<br />
+<br />
+Any questions/problems?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-19-2016, 05:49</div></div><div class="posttext">can an moderator/admin inline the rest of the images? im getting the error<br />
+<br />
+&gt;&gt;&gt;You have included a total of 8 images in your message. The maximum number that you may include is 4. Please correct the problem and then continue again. <br />
+<br />
+Images include use of smilies, the BB code [img] tag, and HTML &lt;img&gt; tags. The use of these is all subject to them being enabled by the administrator.&lt;&lt;&lt;<br />
+<br />
+:confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">01-21-2016, 08:47</div></div><div class="posttext">I got this error too, I guess you could split the post up in multiple messages for ease of use. (ill delete this msg if it is in the middle of it)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">01-21-2016, 15:25</div></div><div class="posttext">I increased that limit from 4 to 100.<br />
+However it looks like prntscr .com does not allow image hotlinking so it will just not load such images here. You will need to move the images to other server. Or maybe you can upload them as attachments and then reference them inlined</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">01-21-2016, 16:03</div></div><div class="posttext">I increased that limit from 4 to 100.<br />
+However it looks like prntscr .com does not allow image hotlinking so it will just not load such images here. You will need to move the images to other server. Or maybe you can upload them as attachments and then reference them inlined<br />
+<br />
+actually prntscr.com does not host the images themselves, they upload to imgur.com, which allows hotlinking, then they link to imgur ^^<br />
+anyway, i added all the pictures now</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">01-31-2016, 22:07</div></div><div class="posttext">Nice to see senior members still active here. Also for creating such topic.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipe199</div><div class="date">08-19-2016, 07:47</div></div><div class="posttext">@Hans Henrik Where  the new exe appears in which folder? pls helpi have compiled succefully butdunno what happens where it appears xd</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hans Henrik</div><div class="date">08-20-2016, 00:37</div></div><div class="posttext">@Hans Henrik Where  the new exe appears in which folder? pls helpi have compiled succefully butdunno what happens where it appears xd it appears in the same folder as your &quot;BlackdProxy.vbp&quot; file, called &quot;Tibia.exe&quot;</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

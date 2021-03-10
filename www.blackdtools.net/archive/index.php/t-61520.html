@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, fastexiva, setmeleekill, script, potion, bring, potions, leave, mucho, capacity, iftrue, $countitems$_potid$$number, empty, _emptypotid, _leavecap, depositer, _potprice, poacher, mushrooms, white, _white, mushroom, refill, _leavepots, itemid, muchos, consigo, black, forum, funcione, espero, usando, tiempo, spanish, speak, decidido, tengo, porque, compartirlo, _pots, _potid, profit, servido, recomiendo, tener, banco, price" />
+	<meta name="description" content="Profit with kina 45 with good set! 
+I Speak Spanish! 
+( Este script he decidido compartirlo porque tengo mucho tiempo usando black y no consigo muchos script en el forum, asi que espero que este script les funcione, ami me ha servido de mucho, les recomiendo tener 30k en banco y un buen set! ) 
+ 
+ 
+ 
+ 
+#How many potions to bring 
+fastExiva _pots = 150 
+#ItemID of the potion to bring" />
+	
+	<title> &quot;Rorc Script (Depositer, Bank , Refill) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  &quot;Rorc Script (Depositer, Bank , Refill)</div>
+<hr />
+<div class="pda"><a href="t-61520.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61520-quot-Rorc-Script-(Depositer-Bank-Refill)">&quot;Rorc Script (Depositer, Bank , Refill)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">frederiik</div><div class="date">04-01-2014, 03:02</div></div><div class="posttext">Profit with kina 45 with good set!<br />
+I Speak Spanish!<br />
+( Este script he decidido compartirlo porque tengo mucho tiempo usando black y no consigo muchos script en el forum, asi que espero que este script les funcione, ami me ha servido de mucho, les recomiendo tener 30k en banco y un buen set! )<br />
+<br />
+<br />
+<br />
+<br />
+#How many potions to bring<br />
+fastExiva _pots = 150<br />
+#ItemID of the potion to bring<br />
+fastExiva _potid = 0C 01<br />
+#Price of potion<br />
+fastExiva _potprice = 50<br />
+#Empty potion ID<br />
+fastExiva _emptypotid = 1D 01<br />
+#Leave when capacity less than<br />
+fastExiva _leavecap = 50<br />
+#Leave when potions less than<br />
+fastExiva _leavepots = 10<br />
+#How white mushrooms to bring<br />
+fastExiva _white mushroom = 100<br />
+#<br />
+setMeleeKill Rorc<br />
+setMeleeKill Poacher<br />
+setMeleeKill Wolf<br />
+setMeleeKill wasp<br />
+setMeleeKill wisp<br />
+setMeleeKill war wolf<br />
+setLoot 31 4A<br />
+setLoot 35 4A <br />
+setLoot 34 4A<br />
+setLoot C4 0B<br />
+setLoot 84 25<br />
+setLoot F4 0C<br />
+setLoot 0E 17<br />
+setLoot D7 0B<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32791,31821,7<br />
+move 32796,31822,7<br />
+move 32799,31831,7<br />
+move 32804,31846,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32803,31849,7<br />
+move 32807,31855,7<br />
+move 32807,31860,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32808,31865,7<br />
+move 32819,31865,7<br />
+move 32823,31856,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32821,31846,7<br />
+move 32818,31839,7<br />
+move 32814,31827,7<br />
+move 32813,31812,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32817,31800,7<br />
+move 32810,31799,7<br />
+move 32796,31795,7<br />
+move 32794,31784,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32796,31770,7<br />
+move 32795,31761,7<br />
+move 32798,31753,7<br />
+move 32792,31739,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32789,31736,7<br />
+move 32781,31729,7<br />
+move 32774,31728,7<br />
+move 32772,31737,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32775,31755,7<br />
+move 32768,31767,7<br />
+move 32765,31782,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32772,31795,7<br />
+move 32775,31805,7<br />
+move 32779,31810,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32783,31816,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+resetLoot <br />
+setLoot  1D 01 <br />
+dropLootOnGround 32783,31816,7<br />
+gotoScriptLine 0<br />
+:depositer<br />
+move 32791,31821,7<br />
+move 32784,31828,7<br />
+move 32770,31835,7<br />
+move 32766,31846,7<br />
+move 32761,31858,7<br />
+move 32751,31864,7<br />
+move 32745,31879,7<br />
+move 32723,31889,7<br />
+move 32709,31892,7<br />
+move 32692,31890,7<br />
+move 32679,31887,7<br />
+move 32676,31877,7<br />
+move 32676,31865,7<br />
+move 32677,31854,7<br />
+move 32677,31844,7<br />
+move 32680,31832,7<br />
+move 32685,31827,7<br />
+move 32686,31817,7<br />
+move 32685,31809,7<br />
+move 32681,31805,6<br />
+move 32672,31799,6<br />
+move 32668,31797,7<br />
+move 32656,31805,7<br />
+move 32650,31814,7<br />
+move 32644,31820,7<br />
+move 32642,31814,7<br />
+move 32640,31803,7<br />
+move 32640,31792,7<br />
+move 32640,31781,7<br />
+move 32640,31773,7<br />
+move 32640,31758,7<br />
+move 32640,31746,7<br />
+move 32640,31733,7<br />
+move 32640,31722,7<br />
+move 32641,31707,7<br />
+move 32646,31695,7<br />
+move 32653,31676,7<br />
+move 32655,31678,8<br />
+move 32667,31685,8<br />
+move 32677,31681,8<br />
+move 32681,31681,8<br />
+move 32681,31682,8<br />
+move 32684,31688,8<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$<br />
+sayInTrade yes<br />
+sayInTrade balance<br />
+resetLoot<br />
+setLoot 31 4A<br />
+setLoot 35 4A <br />
+setLoot 34 4A<br />
+setLoot C4 0B<br />
+setLoot 84 25<br />
+setLoot F4 0C<br />
+setLoot 0E 17<br />
+putLootOnDepot<br />
+move 32684,31687,8<br />
+move 32681,31688,7<br />
+move 32681,31687,7<br />
+move 32681,31686,6<br />
+move 32681,31678,6<br />
+move 32681,31668,6<br />
+move 32675,31664,6<br />
+move 32670,31659,6<br />
+move 32671,31659,6<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+setChaoticMovesON<br />
+move 32670,31660,6<br />
+move 32679,31663,6<br />
+move 32681,31672,6<br />
+move 32681,31678,6<br />
+move 32681,31686,6<br />
+move 32682,31688,7<br />
+move 32681,31692,7<br />
+move 32674,31692,7<br />
+move 32670,31692,7<br />
+move 32657,31692,7<br />
+move 32642,31697,7<br />
+move 32641,31712,7<br />
+move 32641,31726,7<br />
+move 32642,31738,7<br />
+move 32640,31754,7<br />
+move 32641,31770,7<br />
+move 32641,31787,7<br />
+move 32641,31796,7<br />
+move 32642,31807,7<br />
+move 32642,31816,7<br />
+move 32648,31820,7<br />
+move 32654,31812,7<br />
+move 32660,31803,7<br />
+move 32663,31799,7<br />
+move 32667,31797,7<br />
+move 32672,31797,6<br />
+move 32677,31804,6<br />
+move 32684,31807,7<br />
+move 32679,31823,7<br />
+move 32675,31833,7<br />
+move 32678,31846,7<br />
+move 32676,31856,7<br />
+move 32677,31866,7<br />
+move 32681,31868,7<br />
+move 32686,31876,7<br />
+move 32695,31887,7<br />
+move 32705,31890,7<br />
+move 32708,31881,7<br />
+move 32713,31870,7<br />
+move 32728,31870,7<br />
+move 32746,31868,7<br />
+move 32752,31865,7<br />
+move 32761,31859,7<br />
+move 32763,31851,7<br />
+move 32767,31843,7<br />
+move 32770,31837,7<br />
+move 32775,31833,7<br />
+move 32782,31828,7<br />
+move 32786,31826,7<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">frederiik</div><div class="date">08-01-2014, 03:33</div></div><div class="posttext">ESTE ANDERSONN....<br />
+<br />
+<br />
+<br />
+#How many potions to bring<br />
+fastExiva _pots = 150<br />
+#ItemID of the potion to bring<br />
+fastExiva _potid = 0C 01<br />
+#Price of potion<br />
+fastExiva _potprice = 50<br />
+#Empty potion ID<br />
+fastExiva _emptypotid = 1D 01<br />
+#Leave when capacity less than<br />
+fastExiva _leavecap = 50<br />
+#Leave when potions less than<br />
+fastExiva _leavepots = 10<br />
+#How white mushrooms to bring<br />
+fastExiva _white mushroom = 100<br />
+#<br />
+setMeleeKill Rorc<br />
+setMeleeKill Poacher<br />
+setMeleeKill Wolf<br />
+setMeleeKill wasp<br />
+setMeleeKill wisp<br />
+setMeleeKill war wolf<br />
+setLoot 31 4A<br />
+setLoot 35 4A <br />
+setLoot 34 4A<br />
+setLoot C4 0B<br />
+setLoot 84 25<br />
+setLoot F4 0C<br />
+setLoot 0E 17<br />
+setLoot D7 0B<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32791,31821,7<br />
+move 32796,31822,7<br />
+move 32799,31831,7<br />
+move 32804,31846,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32803,31849,7<br />
+move 32807,31855,7<br />
+move 32807,31860,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32808,31865,7<br />
+move 32819,31865,7<br />
+move 32823,31856,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32821,31846,7<br />
+move 32818,31839,7<br />
+move 32814,31827,7<br />
+move 32813,31812,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32817,31800,7<br />
+move 32810,31799,7<br />
+move 32796,31795,7<br />
+move 32794,31784,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32796,31770,7<br />
+move 32795,31761,7<br />
+move 32798,31753,7<br />
+move 32792,31739,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32789,31736,7<br />
+move 32781,31729,7<br />
+move 32774,31728,7<br />
+move 32772,31737,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32775,31755,7<br />
+move 32768,31767,7<br />
+move 32765,31782,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32772,31795,7<br />
+move 32775,31805,7<br />
+move 32779,31810,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+move 32783,31816,7<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;#$_leavepots$) Goto $nlineoflabel:depositer$<br />
+IfTrue ($mycap$#number&lt;#$numericalexp:{$_leavecap$}*100$) Goto $nlineoflabel:depositer$<br />
+resetLoot <br />
+setLoot  1D 01 <br />
+dropLootOnGround 32783,31816,7<br />
+gotoScriptLine 0<br />
+:depositer<br />
+move 32791,31821,7<br />
+move 32784,31828,7<br />
+move 32770,31835,7<br />
+move 32766,31846,7<br />
+move 32761,31858,7<br />
+move 32751,31864,7<br />
+move 32745,31879,7<br />
+move 32723,31889,7<br />
+move 32709,31892,7<br />
+move 32692,31890,7<br />
+move 32679,31887,7<br />
+move 32676,31877,7<br />
+move 32676,31865,7<br />
+move 32677,31854,7<br />
+move 32677,31844,7<br />
+move 32680,31832,7<br />
+move 32685,31827,7<br />
+move 32686,31817,7<br />
+move 32685,31809,7<br />
+move 32681,31805,6<br />
+move 32672,31799,6<br />
+move 32668,31797,7<br />
+move 32656,31805,7<br />
+move 32650,31814,7<br />
+move 32644,31820,7<br />
+move 32642,31814,7<br />
+move 32640,31803,7<br />
+move 32640,31792,7<br />
+move 32640,31781,7<br />
+move 32640,31773,7<br />
+move 32640,31758,7<br />
+move 32640,31746,7<br />
+move 32640,31733,7<br />
+move 32640,31722,7<br />
+move 32641,31707,7<br />
+move 32646,31695,7<br />
+move 32653,31676,7<br />
+move 32655,31678,8<br />
+move 32667,31685,8<br />
+move 32677,31681,8<br />
+move 32681,31681,8<br />
+move 32681,31682,8<br />
+move 32684,31688,8<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw 7500<br />
+sayInTrade yes<br />
+sayInTrade balance<br />
+resetLoot<br />
+setLoot 31 4A<br />
+setLoot 35 4A <br />
+setLoot 34 4A<br />
+setLoot C4 0B<br />
+setLoot 84 25<br />
+setLoot F4 0C<br />
+setLoot 0E 17<br />
+putLootOnDepot<br />
+move 32684,31687,8<br />
+move 32681,31688,7<br />
+move 32681,31687,7<br />
+move 32681,31686,6<br />
+move 32681,31678,6<br />
+move 32681,31668,6<br />
+move 32675,31664,6<br />
+move 32670,31659,6<br />
+move 32671,31659,6<br />
+sayMessage hi<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+setChaoticMovesON<br />
+move 32670,31660,6<br />
+move 32679,31663,6<br />
+move 32681,31672,6<br />
+move 32681,31678,6<br />
+move 32681,31686,6<br />
+move 32682,31688,7<br />
+move 32681,31692,7<br />
+move 32674,31692,7<br />
+move 32670,31692,7<br />
+move 32657,31692,7<br />
+move 32642,31697,7<br />
+move 32641,31712,7<br />
+move 32641,31726,7<br />
+move 32642,31738,7<br />
+move 32640,31754,7<br />
+move 32641,31770,7<br />
+move 32641,31787,7<br />
+move 32641,31796,7<br />
+move 32642,31807,7<br />
+move 32642,31816,7<br />
+move 32648,31820,7<br />
+move 32654,31812,7<br />
+move 32660,31803,7<br />
+move 32663,31799,7<br />
+move 32667,31797,7<br />
+move 32672,31797,6<br />
+move 32677,31804,6<br />
+move 32684,31807,7<br />
+move 32679,31823,7<br />
+move 32675,31833,7<br />
+move 32678,31846,7<br />
+move 32676,31856,7<br />
+move 32677,31866,7<br />
+move 32681,31868,7<br />
+move 32686,31876,7<br />
+move 32695,31887,7<br />
+move 32705,31890,7<br />
+move 32708,31881,7<br />
+move 32713,31870,7<br />
+move 32728,31870,7<br />
+move 32746,31868,7<br />
+move 32752,31865,7<br />
+move 32761,31859,7<br />
+move 32763,31851,7<br />
+move 32767,31843,7<br />
+move 32770,31837,7<br />
+move 32775,31833,7<br />
+move 32782,31828,7<br />
+move 32786,31826,7<br />
+gotoScriptLine 0[/QUOTE]</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

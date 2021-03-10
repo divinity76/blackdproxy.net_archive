@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="number=, exiva, exana, exura, script, _var2, $numericalexp$_var2$+1$, change, _var1, delete, $statusbit8$, $_var1$, $mymana$, $numericalexp$_var1$+1$, amount, percent, 10000, $_var2$, yellow, $myhppercent$, function, personally, poisoned, decided, clear, botting, knight, spells, spamming, matter, $myhp$" />
+	<meta name="description" content="I decided to make a little script to cast exura ico when you are low on hp and have enough mana, and also cast exana pox when you are poisoned and have enough mana. I personally think this is better than the HP &amp; Mana function since it keeps spamming the spells no matter if you have hp or not, which may be a clear sign to others that you are botting. 
+ 
+1 
+#number=# 
+1 
+0 
+300 
+0 
+exiva _var1 = 0 
+$myhp$" />
+	
+	<title> Knight Exura Ico and Exana Pox Script ;) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-49.html">Conditional Events Miniscripts</a> &gt;  Knight Exura Ico and Exana Pox Script ;)</div>
+<hr />
+<div class="pda"><a href="t-58522.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58522-Knight-Exura-Ico-and-Exana-Pox-Script-)">Knight Exura Ico and Exana Pox Script ;)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Gabrola</div><div class="date">07-23-2012, 00:49</div></div><div class="posttext">I decided to make a little script to cast exura ico when you are low on hp and have enough mana, and also cast exana pox when you are poisoned and have enough mana. I personally think this is better than the HP &amp; Mana function since it keeps spamming the spells no matter if you have hp or not, which may be a clear sign to others that you are botting.<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var1 = 0<br />
+$myhp$<br />
+#number&lt;#<br />
+360<br />
+0<br />
+300<br />
+0<br />
+exiva _var1 = $numericalexp:{$_var1$}+1$<br />
+$mymana$<br />
+#number&gt;=#<br />
+40<br />
+0<br />
+300<br />
+0<br />
+exiva _var1 = $numericalexp:{$_var1$}+1$<br />
+$_var1$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exura ico<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var2 = 0<br />
+$statusbit:8$<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var2 = $numericalexp:{$_var2$}+1$<br />
+$mymana$<br />
+#number&gt;=#<br />
+30<br />
+0<br />
+300<br />
+0<br />
+exiva _var2 = $numericalexp:{$_var2$}+1$<br />
+$_var2$<br />
+#number=#<br />
+2<br />
+0<br />
+10000<br />
+0<br />
+exana pox<br />
+<br />
+<br />
+Change what's in yellow to &quot;$myhppercent$&quot; if you want to use hp percent instead and what's in red change it the amount of hp you want.<br />
+Delete line 29 and all what's below it if you just want the exura ico script or delete all above line 29 if you just want the exana pox script.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

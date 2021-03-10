@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="message, gold, waitx, deposit, goto, saymessage, script, iftrue, move, $lastmsg$string=-insert, charactername, $charactername$-, explanation, replace, x,y,z, wait, $nlineoflabeldeposit$, good, $nlineoflabelwait$, bank, coins, created, platinum, http://www.blackdtools.com/forum/showthread.php?t=6961, thread, hope, waiting, helps, write, $countitems, $numericalexp$countitemsdb, 0b$$, 0b$00+$countitemsd7, post-, give, talks, greeting, gotoscriptline, gold$, $nlineoflabeldeposit, turn, message-, sqaure, edited, changer, credits, remember, outdated, webber, depositer" />
+	<meta name="description" content="Webber says: this is outdated! 
+ 
+I'll show you the script I use to deposit gold and platinum coins to the bank. I believe I found it in a Liberty Bay rotworms script... I don't remember who created the first script, but I believe it was just a gold changer, I think I edited it to deposit. If you are or you believe you know who created that script, please tell me se he or she may get the credits they deserve. 
+ 
+First off you need to move to the bank, I usually do like this: 
+ 
+move x,y,z" />
+	
+	<title> Gold depositer [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  Gold depositer</div>
+<hr />
+<div class="pda"><a href="t-6964.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?6964-Gold-depositer">Gold depositer</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-07-2007, 22:43</div></div><div class="posttext">Webber says: this is outdated!<br />
+<br />
+I'll show you the script I use to deposit gold and platinum coins to the bank. I believe I found it in a Liberty Bay rotworms script... I don't remember who created the first script, but I believe it was just a gold changer, I think I edited it to deposit. If you are or you believe you know who created that script, please tell me se he or she may get the credits they deserve.<br />
+<br />
+First off you need to move to the bank, I usually do like this:<br />
+<br />
+<br />
+move x,y,z<br />
+waitX 1<br />
+move x,y,z<br />
+<br />
+because then it always starts in the right position, sometimes I have seen the bot stop a sqaure away, possibly because of too fast execution or lag.<br />
+Then you use this code, just edit it with the right details, explanation is at the end of the post.<br />
+<br />
+:Deposit Gold<br />
+sayMessage hi<br />
+waitX 1<br />
+IfTrue ($lastmsg$#string=#-here insert the wait message, replace your charactername with $charactername$-) Goto $nlineoflabel:wait$<br />
+IfTrue ($lastmsg$#string=#-insert the &quot;hello&quot; message from th NPC, replace your charactername with $charactername$-) Goto $nlineoflabel:deposit$<br />
+:wait<br />
+waitX 4<br />
+IfTrue ($lastmsg$#string=#-insert the good bye message-) Goto $nlineoflabel:Deposit Gold$<br />
+IfTrue ($lastmsg$#string=#-insert the &quot;hello&quot; message from th NPC, replace your charactername with $charactername$-) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine $nlineoflabel:wait$<br />
+:deposit<br />
+waitX 3<br />
+sayMessage deposit -explanation further down in post-<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 1<br />
+sayMessage bye<br />
+<br />
+When you say &quot;hi&quot; while someone else talks to the NPC he or she will give you a message, put that here<br />
+<br />
+This is the greeting message when you say &quot;hi&quot; to the NPC and it's your turn<br />
+<br />
+This is the good bye message from the NPC, useful because sometimes you wont get the &quot;waiting&quot; message<br />
+<br />
+To deposit just gold write: <br />
+$countitems D7 0B$ but if you have both platinum and gold coins use: <br />
+$numericalexp:{$countitems:DB 0B$00}+{$countitems:D7 0B$}$ (explanation in  this thread (http://www.blackdtools.net/showthread.php?t=6961)).<br />
+<br />
+I hope this helps. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">07-09-2007, 00:00</div></div><div class="posttext">I made the gold changer you mention.<br />
+Well I think so.<br />
+<br />
+EDIT:<br />
+Found this topic, dunno if this is the one you were thinking. <br />
+http://www.blackdtools.net/showthread.php?t=2935&amp;highlight=Liberty+bay<br />
+I made it change gold instead of deposit.<br />
+<br />
+EDIT 2:<br />
+Ok, I read again and it has nothing to do with what you said. This was just a liberty bay depositer/gold changer and you said something about liberty bay ROTS.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-09-2007, 00:19</div></div><div class="posttext">It was probarly someone that used the one you linked to in his/her script, and then I got that script... Oh well, the author hase done a great job anyhow. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">07-09-2007, 01:32</div></div><div class="posttext">The script chunk about the NPC dialogs was originally made by mod Tom, a looong time ago.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">07-09-2007, 01:42</div></div><div class="posttext">The script chunk about the NPC dialogs was originally made by mod Tom, a looong time ago.<br />
+<br />
+Alright, thank you for telling me the origins. :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">07-09-2007, 01:44</div></div><div class="posttext">NP :D &lt;short&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fukoshima</div><div class="date">07-23-2007, 00:38</div></div><div class="posttext">Very nice i'm going to try this :) :) :) I hope more people can make scripts with depoisitors</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rose Daredo</div><div class="date">07-24-2007, 16:31</div></div><div class="posttext">i used it in my kazodwarfs script with gold depositer and... it worked perfectly, <br />
+by the way i am going to public this script and i hope you will enjoy it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">skuzam</div><div class="date">08-14-2007, 03:43</div></div><div class="posttext">i have some questions, if someone can answer it i will be really gratz =D:<br />
+<br />
+1- i need to put more then one cordineted or just one is good??<br />
+<br />
+2- what i need to do to make the bot go to dp when my cap go to 150 (for example).<br />
+<br />
+3- and if i need to use rope or up one stair what i need to do to bot do it?<br />
+<br />
+PS: i'm new with blackd it's because that i am is &quot;noob&quot; in blackd<br />
+<br />
+really thx :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BUg</div><div class="date">08-14-2007, 04:02</div></div><div class="posttext">1 - make waypoints every 10 steps or so<br />
+2- add  &quot;IfTrue ($mycap$#number&gt;=#150) Goto X&quot;<br />
+3- if you need to go up a stairs make a waypoint near the stars on the floor your on and make a waypoint near the stairs on the floor upstairs.<br />
+Same goes for ropes</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kungen</div><div class="date">08-27-2007, 22:42</div></div><div class="posttext">Nice guide mate, gonna try this out.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Forge</div><div class="date">09-15-2007, 11:53</div></div><div class="posttext">May be known that you can now say deposit all instead of counting everything.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Corkavish</div><div class="date">10-26-2007, 01:30</div></div><div class="posttext">Hi, i made a pretty good script but i need the depositer and the cap :confused:... i want that if my cap &lt; number do the way of the depositer... how can i do it?? <br />
+<br />
+im new in doing scripts so i really appreciate any help :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Coke_01</div><div class="date">10-26-2007, 01:40</div></div><div class="posttext">Hi, i made a pretty good script but i need the depositer and the cap :confused:... i want that if my cap &lt; number do the way of the depositer... how can i do it?? <br />
+<br />
+im new in doing scripts so i really appreciate any help :p<br />
+<br />
+<br />
+something like this?<br />
+<br />
+IfTrue ($mycap$#number&lt;=#XXX) Goto XXX</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Corkavish</div><div class="date">10-27-2007, 00:51</div></div><div class="posttext">something like this?<br />
+<br />
+IfTrue ($mycap$#number&lt;=#XXX) Goto XXX<br />
+<br />
+Something like that but IfTrue ($mycap$#number&lt;=#XXX) go to another line to do the exit roud, and there do the depositer...<br />
+<br />
+Spanish:<br />
+Algo asi pero cuando esa condicion sea verdad, que empiece a hacer el recorrido de salida, y ahi hacer el depositer...<br />
+<br />
+Srry my english... :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ninkobi</div><div class="date">11-30-2007, 19:25</div></div><div class="posttext">Just make it go to the npc (banker) and say deposit all is so much easier and less buggy..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Allen</div><div class="date">12-18-2007, 15:57</div></div><div class="posttext">Can you explain how to add items using in script? I mean in way to depot i need to destroy Wooden Bar using sword. How to do it?<br />
+I founded just one topic with question without any answer.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Uporter</div><div class="date">05-05-2008, 00:00</div></div><div class="posttext">Just make it go to the npc (banker) and say deposit all is so much easier and less buggy..<br />
+<br />
+Yeah Can this be try out?? FastMessage Hi<br />
+                                    FartMessage Deposit all <br />
+                                    Move to............<br />
+<br />
+<br />
+Just curius</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xinek</div><div class="date">05-05-2008, 13:15</div></div><div class="posttext">Nice, Wasent really sure how to do depositer before :P<br />
+<br />
+Regards<br />
+Xinek</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">buginho</div><div class="date">10-16-2008, 15:48</div></div><div class="posttext">u can edit for version3.81 ?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="change, config.ini, specific, tileid_mana_potion=62, tileid_mana_potion=0c, refill, potion, modify, version, manarune, refilling, potions, replace, folder, cprogram, filesblackd, toolsblackd, rnues, proxyconfig857" />
+	<meta name="description" content="Hello i play on ot server 8.57 and here we have manarunes for hp/mana refil but i dont get how to put i to auto using for healing mana  on myself. when i try to put ID of rune  it says , not blackd proxy track. help please ! 
+ 
+ 
+08:19 You see tile ID 62 0C  with info  + usable2=TRUE + multiCharge=TRUE + pickupable=TRUE + haveExtraByte=TRUE 
+08:20 You see a MagCirc: Warrior Spirit(Charges:1). 
+It weighs 1.20 oz. 
+It's a spirit focus circuit of healing." />
+	
+	<title> How to use manarune for refilling ? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  How to use manarune for refilling ?</div>
+<hr />
+<div class="pda"><a href="t-56900.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56900-How-to-use-manarune-for-refilling">How to use manarune for refilling ?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">perica</div><div class="date">12-24-2011, 09:30</div></div><div class="posttext">Hello i play on ot server 8.57 and here we have manarunes for hp/mana refil but i dont get how to put i to auto using for healing mana  on myself. when i try to put ID of rune  it says , not blackd proxy track. help please !<br />
+<br />
+<br />
+08:19 You see tile ID 62 0C  with info  + usable2=TRUE + multiCharge=TRUE + pickupable=TRUE + haveExtraByte=TRUE<br />
+08:20 You see a MagCirc: Warrior Spirit(Charges:1).<br />
+It weighs 1.20 oz.<br />
+It's a spirit focus circuit of healing.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">naya</div><div class="date">12-29-2011, 02:56</div></div><div class="posttext">You can modify the config.ini file for the version 8.57 and change the ID of the mana potions and replace it for the ID if your mana rnues. Something like this<br />
+<br />
+Go to this folder and look for the file config.ini<br />
+<br />
+C:\Program Files\Blackd Tools\Blackd Proxy\config857   <br />
+<br />
+Open the file and look for this very specific line<br />
+<br />
+tileID_mana_potion=0C 01<br />
+<br />
+and change it to this<br />
+<br />
+tileID_mana_potion=62 0C<br />
+<br />
+After that, just set the bot to refill your mana with a mana potion in the HP &amp; MANA menu, and it should work.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

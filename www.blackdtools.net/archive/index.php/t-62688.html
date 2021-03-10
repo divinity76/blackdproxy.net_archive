@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="meant, $mycap$number, iftrue, understand, variable, mewith, proxy" />
+	<meta name="description" content="hey programming folks 
+ 
+I asked in support few mins ago: 
+how to use blackd's variable $if$? 
+ 
+I really need it right now for my lame tibian goals 
+Because almost nothing is working on my blackd proxy, but I found that &quot;exiva &gt; code&quot; and variables, are working, so I need a variable that will show either nothing or the code command I desire, depending on other variable result. 
+ 
+Just like conds, but inside an &quot;exiva &gt; code&quot; command" />
+	
+	<title> Help  mewith $if$ variable of bd proxy [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Help  mewith $if$ variable of bd proxy</div>
+<hr />
+<div class="pda"><a href="t-62688.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62688-Help-mewith-if-variable-of-bd-proxy">Help  mewith $if$ variable of bd proxy</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">02-14-2016, 02:06</div></div><div class="posttext">hey programming folks<br />
+<br />
+I asked in support few mins ago:<br />
+how to use blackd's variable $if$?<br />
+<br />
+I really need it right now for my lame tibian goals<br />
+Because almost nothing is working on my blackd proxy, but I found that &quot;exiva &gt; code&quot; and variables, are working, so I need a variable that will show either nothing or the code command I desire, depending on other variable result.<br />
+<br />
+Just like conds, but inside an &quot;exiva &gt; code&quot; command<br />
+<br />
+Thanks in advance Muahaha</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">02-14-2016, 14:35</div></div><div class="posttext">I didn't quite understand what you meant.<br />
+<br />
+ Do you mean &quot;if&quot; as in IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:depot$ etc etc ?<br />
+<br />
+ Or really the variable between dollar symbols $lf$ ? If it's the latter, then the variable is $LF$ and it's one of the few variables that I don't understand and have never seen it used in any script.<br />
+<br />
+ And how come almost nothing is working ? Are you playing OTs ? If so, that's probably the reason.<br />
+<br />
+ Tell me exactly what you want to do in game and I'll help you.<br />
+<br />
+edit1: Apparently $lf$ (not $if$) is used to finish/start a line, just so the line doesn't get too long or perhaps for a better looking message. It's used for instance when you're messaging yourself, just like when you use the command &quot;exiva exp&quot;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">02-15-2016, 00:14</div></div><div class="posttext">hello mate, thanks for the offer of help!<br />
+<br />
+Nothing is working on my blackd proxy on the vps I installed it, I tried running in adminstrator mode, opening firewall to blackd. <br />
+<br />
+but exiva &gt; commands, sent in tibia window, still works, so I'm trying to do:<br />
+<br />
+I'm making a character send the nickname of whoever passes on my screen by private message to my other char. I added all characters in enemylist, and am trying to use an exiva &gt; command that have $bestenemy$ in it, it works fine, I have another program that will send a hotkey with the exiva&gt;command, but when there are no characters on screen, $bestenemy$ results on &quot;NOENEMYFOUND&quot; and I thought that the variable $if$ described in Events might work with that, by when $bestenemy$ is NOENEMYFOUND it will send nothing, like:<br />
+I tried and thought of answers to this, but none yet, I don't know what to do to make my blackd proxy work, so I am trying to workaround<br />
+<br />
+but thanks, I just think that $if$ might be an undescribed usable variable</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">02-15-2016, 06:53</div></div><div class="posttext">Lemme see if I understood it. You're at some place with a noobchar checking for all your enemies that pass by there and you have all their names in your enemylist and you want the noobchar to message you with their names when they pass there, but the char keeps PM'ing your NOENEMYFOUND where no one's there ?<br />
+<br />
+ I think this would work<br />
+<br />
+$bestenemy$<br />
+#string&lt;&gt;#<br />
+NOENEMYFOUND<br />
+0<br />
+5000<br />
+0<br />
+*YourCharName* $bestenemy$ is here.<br />
+<br />
+This will make the noobchar PM your char when an enemy is on your noobchar's screen. 5000 means it will only trigger consecute actions each 5s, so if it PM'ed you NOW, it will only PM you again in 5s (if needed), even if the person is still on screen. This would avoid getting spammed too much if that person stands for too long on your screen (keep PMing the same name), but it could also miss someone if he passes too fast, so you should adjust to see how many seconds fits your needs. Make sure to put the name of the other char between the * *, otherwise it will say your name on default chat, or you can just use the custom exiva you're already using.<br />
+<br />
+ Lemme know if it worked (or if that wasn't what you were looking for).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">02-15-2016, 10:35</div></div><div class="posttext">yeah bro, but conds aint working, so is cavebot</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">02-15-2016, 12:54</div></div><div class="posttext">Then I guess your best bet is to ask the support of your VPS or from Daniel (you need to buy gold to get this kind of support) to see what's causing blackd to not work.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

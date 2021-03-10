@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="waitx, sayintrade, part, $_allpotionscost$, withdraw, deposit, saymessage, gold, depositing" />
+	<meta name="description" content="Just say if u see any bug of this part....Because i am stuck with counting money to withdraw... 
+ 
+###CONFIG#### 
+#put here number of amount of you potions to refil 
+fastExiva _potionsamount = 600 
+#put here number of cap to go dp 
+fastExiva _captodp = 100 
+#how much does you potions cost 
+fastExiva _potionscost = 50 
+#ID of your potions" />
+	
+	<title> Help with one part [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Help with one part</div>
+<hr />
+<div class="pda"><a href="t-54608.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54608-Help-with-one-part">Help with one part</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-04-2011, 06:31</div></div><div class="posttext">Just say if u see any bug of this part....Because i am stuck with counting money to withdraw...<br />
+<br />
+###CONFIG####<br />
+#put here number of amount of you potions to refil<br />
+fastExiva _potionsamount = 600<br />
+#put here number of cap to go dp<br />
+fastExiva _captodp = 100<br />
+#how much does you potions cost<br />
+fastExiva _potionscost = 50<br />
+#ID of your potions<br />
+fastExiva _potionID = 0C 01<br />
+#ID of your vials<br />
+fastExiva _vialid = 1D 01<br />
+############<br />
+:cap *100<br />
+fastExiva _captogodp = $numericalexp:{$_captodp$}*100$<br />
+##########################################<br />
+##########################################<br />
+:BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionsleft = $countitems:{$_potionID$}$<br />
+fastExiva _potionstobuy = $numericalexp: {$_potionsamount$}-{$_potionsleft$}$<br />
+fastExiva _cashfromvials = $numericalexp:{$countitems:{$_vialid$}$}*5$<br />
+fastExiva _potioncost = $numericalexp:{$_potionstobuy$}*{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp:{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-04-2011, 06:33</div></div><div class="posttext">This is following part<br />
+<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade Bye</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-04-2011, 17:10</div></div><div class="posttext">Dead forum... never find what u need...............................</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shadow1</div><div class="date">03-04-2011, 18:22</div></div><div class="posttext">i dont know how to script anymore or id help you. sorry ;\ u cant get auto responses from people. were not here to serve u im willing to prolly bet tho if u looked at tutorials or something. ud find ur problem..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-05-2011, 17:25</div></div><div class="posttext">I know this should work... Maybe after update blackd can't count mana pots because they are 100 in one place...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shadow1</div><div class="date">03-05-2011, 17:36</div></div><div class="posttext">Im pretty sure thats not the problem if so he would of fixed it.. msg like hmm bldmx i think is his name.. if not its somethin close to that.. or xhells or so :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-07-2011, 11:35</div></div><div class="posttext">Who knows good script service?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shadow1</div><div class="date">03-07-2011, 12:09</div></div><div class="posttext">Bldmx for the second time.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

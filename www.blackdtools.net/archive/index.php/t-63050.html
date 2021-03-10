@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="random, randomize, randomize waypoints, waypoint, waypoints, safety, responder, botter, generate, script, caves, arrays, mechanism, multiple" />
+	<meta name="description" content="so i made this script with random waypoints. The bot picks one of the three waypoints and goes there. 
+Question: Is there a easyier way of doing this? 
+ 
+setMeleeKill wild warrior 
+setMeleeKill snake 
+setMeleeKill wolf 
+setMeleeKill bear 
+setMeleeKill valkyrie 
+setLoot D7 0B" />
+	
+	<title> randomize waypoints [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  randomize waypoints</div>
+<hr />
+<div class="pda"><a href="t-63050.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?63050-randomize-waypoints">randomize waypoints</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">bubu</div><div class="date">12-15-2016, 19:39</div></div><div class="posttext">so i made this script with random waypoints. The bot picks one of the three waypoints and goes there.<br />
+Question: Is there a easyier way of doing this?<br />
+<br />
+setMeleeKill wild warrior<br />
+setMeleeKill snake<br />
+setMeleeKill wolf<br />
+setMeleeKill bear<br />
+setMeleeKill valkyrie<br />
+setLoot D7 0B<br />
+<br />
+gotoscriptline $nlineoflabel:node{$randomnumber:1&gt;3$}$<br />
+:node1<br />
+move 32283,32123,7<br />
+gotoscriptline $nlineoflabel:nextarray$<br />
+:node2<br />
+move 32281,32124,7<br />
+gotoscriptline $nlineoflabel:nextarray$<br />
+:node3<br />
+move 32283,32127,7<br />
+gotoscriptline $nlineoflabel:nextarray$<br />
+<br />
+:nextarray<br />
+gotoscriptline $nlineoflabel:wtf{$randomnumber:1&gt;3$}$<br />
+:wtf1<br />
+move 32287,32134,7<br />
+gotoscriptline $nlineoflabel:nextarray1$<br />
+:wtf2  <br />
+move 32283,32135,7<br />
+gotoscriptline $nlineoflabel:nextarray1$<br />
+:wtf3<br />
+move 32286,32138,7<br />
+gotoscriptline $nlineoflabel:nextarray1$<br />
+<br />
+:nextarray1<br />
+gotoscriptline $nlineoflabel:ftw{$randomnumber:1&gt;3$}$<br />
+:ftw1<br />
+move 32258,32149,7<br />
+gotoscriptline 0<br />
+:ftw2  <br />
+move 32259,32150,7<br />
+gotoscriptline 0<br />
+:ftw3<br />
+move 32257,32149,7<br />
+gotoscriptline 0<br />
+<br />
+You should be north of thais (wild warrior, valkyrie) and the script should work fine</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pilon</div><div class="date">12-15-2016, 21:04</div></div><div class="posttext">it's nice to see new posts :P i thought the forum was dead :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bubu</div><div class="date">12-15-2016, 22:52</div></div><div class="posttext">time to bring some life back ;)<br />
+<br />
+you script aswell?<br />
+<br />
+for the waypoints i was thinking of something like this:<br />
+<br />
+move 32258,32149,7 or move 32259,32150,7 or move 32257,32149,7<br />
+<br />
+would be all in one line<br />
+<br />
+are there such operators?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">12-16-2016, 03:53</div></div><div class="posttext">time to bring some life back ;)<br />
+<br />
+you script aswell?<br />
+<br />
+for the waypoints i was thinking of something like this:<br />
+<br />
+move 32258,32149,7 or move 32259,32150,7 or move 32257,32149,7<br />
+<br />
+would be all in one line<br />
+<br />
+are there such operators?<br />
+<br />
+No; if you wanted to randomise the movements for each waypoint in the script you'd need an individual randomiser and 3~ waypoints.<br />
+<br />
+But its the attacking hex that is detectable (clearly) with blackdproxy at this time; so it isn't the unrandomised walking paths (especially considering that blackds walking method is much more random than that of other bots)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bubu</div><div class="date">12-16-2016, 16:03</div></div><div class="posttext">Is the attacking hex better in blackd for tibia 11?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xstojakes</div><div class="date">12-30-2016, 05:59</div></div><div class="posttext">I think your mechanism will not loop a cpu much, this is good way to make a multiple caves botter with responder. ++Safety. But here must be some tool to generate this arrays. Some script in bash?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

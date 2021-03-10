@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="32064,32233,9, 32125,32207,9, resetloot, 32125,32208,8, 32034,32214,8, 32063,32218,8, 32044,32225,8, 32049,32245,9, 32038,32235,9, 32069,32206,8, 32064,32234,8, gotoscriptline, 32039,32223,9, 32103,32201,8, 32081,32193,8, 32076,32229,8, droploot, setloot, 32111,32205,8, ground, 32106,32216,9, 32064,32232,8, 32082,32233,9, 32070,32212,8, 32107,32214,8, 32090,32210,8, 32055,32224,9" />
+	<meta name="description" content="move 32111,32205,8 
+move 32125,32208,8 
+move 32125,32207,9 
+resetLoot 
+setLoot 51 0D 15 0D 
+dropLoot 51 0D 15 0D 
+resetLoot 51 0D 15 0D D5 0B 
+move 32106,32216,9 
+move 32125,32207,9 
+move 32125,32208,8" />
+	
+	<title> Loot on ground! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Loot on ground!</div>
+<hr />
+<div class="pda"><a href="t-59202.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59202-Loot-on-ground!">Loot on ground!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Qetkut</div><div class="date">09-29-2012, 22:02</div></div><div class="posttext">move 32111,32205,8<br />
+move 32125,32208,8<br />
+move 32125,32207,9<br />
+resetLoot<br />
+setLoot 51 0D 15 0D<br />
+dropLoot 51 0D 15 0D<br />
+resetLoot 51 0D 15 0D D5 0B<br />
+move 32106,32216,9<br />
+move 32125,32207,9<br />
+move 32125,32208,8<br />
+move 32107,32214,8<br />
+move 32090,32210,8<br />
+move 32070,32212,8<br />
+move 32076,32229,8<br />
+move 32064,32232,8<br />
+move 32064,32233,9<br />
+move 32082,32233,9<br />
+move 32055,32224,9<br />
+move 32039,32223,9<br />
+move 32038,32235,9<br />
+move 32049,32245,9<br />
+move 32064,32233,9<br />
+move 32064,32234,8<br />
+move 32044,32225,8<br />
+move 32034,32214,8<br />
+move 32063,32218,8<br />
+move 32069,32206,8<br />
+move 32081,32193,8<br />
+move 32103,32201,8<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+<br />
+<br />
+Why it doesn't work??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">09-29-2012, 23:56</div></div><div class="posttext">move 32125,32207,9<br />
+resetLoot<br />
+setLoot 51 0D 15 0D<br />
+dropLoot 51 0D 15 0D<br />
+resetLoot 51 0D 15 0D D5 0B<br />
+<br />
+An ID is only ever 00 00 format. So 51 0D 15 0D isn't an ID of an item.<br />
+<br />
+Setloot 51 0D<br />
+setloot 15 0D<br />
+<br />
+<br />
+There is also no command &quot;droploot ID&quot; <br />
+<br />
+You set the loot with &quot;SET LOOT&quot; then you set &quot;droplootonground&quot; command. Don't reset your loot settings before otherwise you will have 0 loot to drop.<br />
+<br />
+So in short<br />
+<br />
+#1 SET LOOT YOU WANT TO LOOT<br />
+#2 RESET LOOT<br />
+#3 SET LOOT YOU WANT TO DROP<br />
+#4 DROPLOOTONGROUND<br />
+#5 SET LOOT YOU WANT TO LOOT</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

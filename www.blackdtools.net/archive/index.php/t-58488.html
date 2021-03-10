@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="depositer, script, scripts, working, darashia" />
+	<meta name="description" content="Here is a quick script I whipped together for A darashia rot cave. I don't see many waypoints perferable for sorcerers or druids so here is one with roughly 15k an hour if the cave is empty. Start at the bank in darashia. Please leave feedback! 
+ 
+#madeby sohji444 
+setBot OldLootMode=1 
+setMeleeKill rotworm queen 
+setMeleeKill carrion worm 
+setPriority rotworm queen:+5 
+setMeleeKill rotworm 
+setMeleeKill wasp 
+setMeleeKill lion" />
+	
+	<title> Darashia Rots + Depositer [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Darashia Rots + Depositer</div>
+<hr />
+<div class="pda"><a href="t-58488.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58488-Darashia-Rots-Depositer">Darashia Rots + Depositer</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">sohji444</div><div class="date">07-17-2012, 08:15</div></div><div class="posttext">Here is a quick script I whipped together for A darashia rot cave. I don't see many waypoints perferable for sorcerers or druids so here is one with roughly 15k an hour if the cave is empty. Start at the bank in darashia. Please leave feedback!<br />
+<br />
+<br />
+#madeby sohji444<br />
+setBot OldLootMode=1<br />
+setMeleeKill rotworm queen<br />
+setMeleeKill carrion worm<br />
+setPriority rotworm queen:+5<br />
+setMeleeKill rotworm<br />
+setMeleeKill wasp<br />
+setMeleeKill lion<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill Sandcrawler<br />
+setMeleeKill wolf<br />
+setFriendly<br />
+setLoot D7 0B<br />
+setLoot DC 25<br />
+:From Bank To Cave<br />
+move 33217,32389,7<br />
+move 33180,32404,7<br />
+move 33139,32408,7<br />
+useItem 33138,32408,7<br />
+:cave<br />
+move 33140,32406,8<br />
+move 33140,32405,8<br />
+move 33143,32405,9<br />
+move 33168,32421,9<br />
+move 33177,32473,9<br />
+move 33170,32462,9<br />
+move 33151,32442,9<br />
+move 33121,32446,9<br />
+move 33118,32482,9<br />
+move 33106,32423,9<br />
+move 33125,32389,9<br />
+move 33122,32369,9<br />
+move 33124,32417,9<br />
+useItem 33140,32405,9<br />
+move 33132,32414,8<br />
+move 33116,32432,8<br />
+move 33130,32442,8<br />
+move 33119,32454,8<br />
+move 33148,32429,8<br />
+move 33166,32424,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:gobank$<br />
+gotoScriptLine $nlineoflabel:cave$<br />
+:gobank<br />
+useItem 33138,32408,8<br />
+move 33138,32409,7<br />
+move 33181,32407,7<br />
+move 33216,32394,7<br />
+move 33222,32387,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:From Bank To Cave$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sohji444</div><div class="date">07-19-2012, 10:05</div></div><div class="posttext">Here is another script for a cave next to the previous one, if the previous cave is preoccupied. =/ This script is also equipped with an auto depositer. Start at the bank!<br />
+<br />
+<br />
+#made by sohji444<br />
+setBot OldLootMode=1<br />
+setMeleeKill rotworm queen<br />
+setMeleeKill carrion worm<br />
+setPriority rotworm queen:+5<br />
+setMeleeKill rotworm<br />
+setMeleeKill wasp<br />
+setMeleeKill lion<br />
+setMeleeKill nomad<br />
+setMeleeKill hyaena<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill Sandcrawler<br />
+setMeleeKill wolf<br />
+setFriendly<br />
+:Gold<br />
+setLoot D7 0B<br />
+:Lump Of Dirt<br />
+setLoot DC 25<br />
+:Bank to Cave<br />
+move 33221,32387,7<br />
+move 33203,32403,7<br />
+move 33177,32401,7<br />
+move 33150,32401,7<br />
+move 33123,32394,7<br />
+move 33100,32394,7<br />
+move 33080,32384,7<br />
+move 33065,32378,7<br />
+useItem 33058,32375,7<br />
+:Cave<br />
+move 33057,32374,8<br />
+move 33049,32370,8<br />
+move 33035,32372,8<br />
+move 33018,32359,8<br />
+move 33014,32352,8<br />
+move 33015,32373,8<br />
+move 33014,32373,8<br />
+move 33014,32374,8<br />
+move 33014,32372,9<br />
+move 33001,32350,9<br />
+move 33006,32344,9<br />
+move 33010,32343,9<br />
+move 33018,32339,9<br />
+move 33041,32331,9<br />
+move 33068,32335,9<br />
+move 33057,32352,9<br />
+move 33068,32361,9<br />
+move 33063,32372,9<br />
+move 33036,32376,9<br />
+move 33020,32370,9<br />
+move 33033,32358,9<br />
+move 33038,32355,9<br />
+useItem 33008,32343,9<br />
+move 33009,32346,8<br />
+move 33017,32355,8<br />
+move 33027,32371,8<br />
+IfTrue ($mycap$#number&lt;=#1000) Goto $nlineoflabel:Cavetobank$<br />
+gotoScriptLine $nlineoflabel:Cave$<br />
+:Cavetobank<br />
+useItem 33058,32375,8<br />
+move 33059,32376,7<br />
+move 33087,32395,7<br />
+move 33123,32405,7<br />
+move 33161,32404,7<br />
+move 33204,32403,7<br />
+move 33222,32387,7<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+gotoScriptLine $nlineoflabel:Bank to Cave$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vinnie</div><div class="date">07-19-2012, 14:55</div></div><div class="posttext">Which script gives more gp an hour.....I have a new cash maker i could try this out on.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sohji444</div><div class="date">07-20-2012, 06:49</div></div><div class="posttext">I'd be willing to bet the second one, because the caver is bigger and there is more to respawn when you walk to town. :) Let me know how they work out for you!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raggaren</div><div class="date">12-31-2012, 17:52</div></div><div class="posttext">the depositer isn't working on any of the scripts. Other than that, it's a nice script.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

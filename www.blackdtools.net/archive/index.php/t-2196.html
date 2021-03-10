@@ -1,0 +1,954 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, waitx, saymessage, exiva, setmeleekill, script, copy, pages, permission, compatible, fran, 32186,32442,8, tibia, 32179,32368,7, 100%, bank, depositer, cash, 32272,32353,7, 32260,32383,7, 32270,32376,7, 32275,32301,7, rots, 32316,32249,7, 32300,32256,7, all$, $hex-tibiastryes$, 32282,32264,7, 32273,32321,7, 32318,32256,7, 32255,32378,8, 32260,32383,8, 32261,32385,7, 32244,32371,8, 32243,32371,9, 32221,32370,10, 32235,32371,10, 32236,32371,9, 32271,32361,7, 32273,32326,7, 32261,32384,8, edited, 32320,32251,7, 32274,32268,7, 32288,32258,7, 32306,32252,7, $hex-tibiastrdeposit, 32198,32368,8, 32189,32429,8, 32190,32430,9" />
+	<meta name="description" content="Today at 2009-01-17 13:25 PM 
+ 
+ 
+I've released new script, compatible with newest Tibia 8.4 and 100% working cash depositer in bank (you have to have key in arrow slot as before, but this time is much more better). 
+ 
+Thread name is wrong now, because of old days when it was script by Fran, now is 100% mine. 
+ 
+Features: 
+ 
+-Opening all door, wont get stucked by any of them." />
+	
+	<title> [Script] Fibula rots by Fran -&gt; Edited by me [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  [Script] Fibula rots by Fran -&gt; Edited by me</div>
+<hr />
+<div class="pda"><a href="t-2196.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?2196-Script-Fibula-rots-by-Fran-gt-Edited-by-me">[Script] Fibula rots by Fran -&gt; Edited by me</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">01-17-2007, 12:34</div></div><div class="posttext">Today at 2009-01-17 13:25 PM<br />
+<br />
+<br />
+I've released new script, compatible with newest Tibia 8.4 and 100% working cash depositer in bank (you have to have key in arrow slot as before, but this time is much more better).<br />
+<br />
+Thread name is wrong now, because of old days when it was script by Fran, now is 100% mine.<br />
+<br />
+Features:<br />
+<br />
+-Opening all door, wont get stucked by any of them.<br />
+-Depositer cash to a bank<br />
+-Quite new and compatible waypoints with Tibia 8.4<br />
+<br />
+Please do not copy script to another pages without permission, you have to just send me PM, nothing else and I will let you.<br />
+<br />
+Here is the script:<br />
+<br />
+<br />
+##By Bolek aka .3lite<br />
+##Without permission please<br />
+##do not copy this script<br />
+##To other pages.<br />
+##Thank you<br />
+setMeleeKill bat<br />
+setMeleeKill carrion worm<br />
+setMeleeKill cave rat<br />
+setMeleeKill wolf<br />
+setMeleeKill rotworm<br />
+setMeleeKill poison spider<br />
+setLoot D7 0B<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:depot$<br />
+move 32164,32427,9<br />
+move 32153,32421,9<br />
+move 32150,32433,9<br />
+move 32134,32429,9<br />
+move 32128,32423,9<br />
+move 32136,32413,9<br />
+move 32126,32400,9<br />
+move 32118,32384,9<br />
+move 32106,32382,9<br />
+move 32108,32367,9<br />
+move 32105,32361,9<br />
+move 32113,32349,9<br />
+move 32104,32326,9<br />
+move 32115,32319,9<br />
+move 32128,32317,9<br />
+move 32138,32319,9<br />
+move 32126,32325,9<br />
+move 32126,32332,9<br />
+move 32123,32339,9<br />
+move 32106,32335,9<br />
+move 32123,32346,9<br />
+move 32132,32352,9<br />
+move 32142,32348,9<br />
+move 32144,32339,9<br />
+move 32162,32327,9<br />
+move 32164,32338,9<br />
+move 32182,32343,9<br />
+move 32164,32353,9<br />
+move 32182,32362,9<br />
+move 32196,32347,9<br />
+move 32178,32369,9<br />
+move 32162,32355,9<br />
+move 32160,32360,9<br />
+move 32144,32370,9<br />
+move 32135,32376,9<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:depot$<br />
+move 32130,32392,9<br />
+move 32130,32408,9<br />
+move 32144,32422,9<br />
+IfTrue ($mycap$#number&lt;=#2000) Goto $nlineoflabel:depot$<br />
+gotoScriptLine 0<br />
+:depot<br />
+move 32171,32428,9<br />
+move 32182,32427,9<br />
+waitX 2<br />
+sayMessage exiva &gt; 82 B8 7D AC 7E 09 5D 06 01 02<br />
+waitX 2<br />
+move 32189,32428,9<br />
+move 32190,32428,8<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 98 0B 00 BE 7D B0 7E 08 5F 06 01<br />
+waitX 3<br />
+sayMessage exiva &gt; 82 BE 7D B0 7E 08 60 06 01 02<br />
+waitX 3<br />
+move 32189,32435,8<br />
+move 32186,32442,8<br />
+move 32178,32455,8<br />
+move 32173,32442,8<br />
+move 32172,32439,8<br />
+move 32172,32440,7<br />
+move 32168,32410,7<br />
+move 32168,32404,7<br />
+move 32180,32381,7<br />
+move 32179,32368,7<br />
+move 32179,32367,8<br />
+move 32196,32367,8<br />
+move 32198,32367,9<br />
+move 32207,32369,9<br />
+move 32208,32370,10<br />
+move 32221,32370,10<br />
+move 32235,32371,10<br />
+move 32236,32371,9<br />
+move 32243,32371,9<br />
+move 32244,32371,8<br />
+move 32255,32378,8<br />
+move 32260,32383,8<br />
+move 32261,32385,7<br />
+move 32271,32361,7<br />
+move 32273,32326,7<br />
+move 32274,32268,7<br />
+move 32288,32258,7<br />
+move 32306,32252,7<br />
+move 32320,32251,7<br />
+waitX 2<br />
+move 32318,32256,7<br />
+sayMessage hi<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 2<br />
+sayMessage exiva &gt; 82 3F 7E FD 7D 07 60 06 01 02<br />
+waitX 2<br />
+move 32316,32249,7<br />
+move 32300,32256,7<br />
+move 32282,32264,7<br />
+move 32275,32301,7<br />
+move 32273,32321,7<br />
+move 32272,32353,7<br />
+move 32270,32376,7<br />
+move 32260,32383,7<br />
+move 32261,32384,8<br />
+move 32245,32371,8<br />
+move 32244,32370,9<br />
+move 32237,32370,9<br />
+move 32236,32370,10<br />
+move 32223,32372,10<br />
+move 32212,32369,10<br />
+move 32209,32369,10<br />
+move 32208,32371,9<br />
+move 32198,32368,9<br />
+move 32198,32368,8<br />
+move 32185,32368,8<br />
+move 32179,32368,8<br />
+move 32179,32368,7<br />
+move 32178,32380,7<br />
+move 32168,32401,7<br />
+move 32168,32420,7<br />
+move 32171,32438,7<br />
+waitX 2<br />
+sayMessage exiva &gt; 82 AB 7D B7 7E 07 8A 07 01 02<br />
+move 32173,32443,8<br />
+move 32177,32455,8<br />
+move 32184,32447,8<br />
+move 32184,32444,8<br />
+move 32186,32442,8<br />
+move 32188,32438,8<br />
+move 32189,32433,8<br />
+waitX 2<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 98 0B 00 BE 7D B0 7E 08 5F 06 01<br />
+waitX 2<br />
+sayMessage exiva &gt; 82 BE 7D B0 7E 08 60 06 01 02<br />
+move 32189,32429,8<br />
+move 32190,32430,9<br />
+move 32185,32429,9<br />
+waitX 2<br />
+sayMessage exiva &gt; 82 B8 7D AC 7E 09 5D 06 01 02 <br />
+waitX 1<br />
+move 32183,32428,9<br />
+move 32161,32428,9<br />
+move 32155,32429,9<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Morke</div><div class="date">01-17-2007, 15:53</div></div><div class="posttext">How much exp, and the waste on  ds... ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">01-17-2007, 15:57</div></div><div class="posttext">there's no ds after update (since 7.8 ? dont remember)<br />
+<br />
+I dont know what exp/h, in my world there's many ppl so i get 6-7k/h<br />
+<br />
+U can easy get there 16k/h.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nikolas</div><div class="date">07-02-2007, 18:06</div></div><div class="posttext">Can u give me the part with only the hunting inside fibula ?<br />
+<br />
+The rest i can control by myself.<br />
+I will hunt there with druid maker only for souls and make uhs at the same time.<br />
+<br />
+Ty.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aster</div><div class="date">07-03-2007, 07:31</div></div><div class="posttext">onGMpause<br />
+setVeryFriendly<br />
+#by Fran<br />
+#edited by Bolek<br />
+setLoot D7 0B<br />
+setMeleeKill rotworm<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Wolf<br />
+setMeleeKill carrion worm<br />
+move 32163,32425,9<br />
+move 32144,32432,9<br />
+move 32126,32426,9<br />
+move 32124,32416,9<br />
+move 32128,32399,9<br />
+move 32134,32382,9<br />
+move 32174,32368,9<br />
+#next point is eastern<br />
+move 32196,32348,9<br />
+move 32163,32356,9<br />
+move 32164,32332,9<br />
+move 32149,32329,9<br />
+move 32123,32314,9<br />
+move 32105,32323,9<br />
+move 32136,32339,9<br />
+move 32138,32352,9<br />
+move 32116,32351,9<br />
+move 32106,32364,9<br />
+move 32110,32370,9<br />
+move 32123,32388,9<br />
+move 32135,32408,9<br />
+move 32153,32421,9<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wasbo</div><div class="date">07-31-2007, 15:54</div></div><div class="posttext">this script is amazing xD i make 13k exp/h and im a lvl 18 druid, if ur a knight u can easily get much more this is so good! &lt;3!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Robin1</div><div class="date">08-07-2007, 16:27</div></div><div class="posttext">Can you make it so it goes to DP when cap less than 15~? <br />
+PLEASE</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">omggg</div><div class="date">08-07-2007, 17:47</div></div><div class="posttext">this script is amazing xD i make 13k exp/h and im a lvl 18 druid, if ur a knight u can easily get much more this is so good! &lt;3!<br />
+<br />
+Using what weapon?<br />
+<br />
+Nice script but it would be better if you change it to only go to depot if cap is less than X, you will need to use sayMessage $countitems:D7 0B$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gonzaga</div><div class="date">08-31-2007, 03:31</div></div><div class="posttext">im using that, i didnt test if search the bank depositer but im hunting and i attack monsters  of other people, so i gonna be hunted.. its a pvp world.<br />
+i wanna attack just the rots that attack me, what can i do?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Coldhardkill</div><div class="date">08-31-2007, 06:28</div></div><div class="posttext">Just put setFriendly on your script poster above me, it wont attack other's mobs</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gonzaga</div><div class="date">08-31-2007, 18:56</div></div><div class="posttext">12:55 You need 3978 exp<br />
+for level 16<br />
+Average session speed:<br />
+5500 exp/h<br />
+Estimated time left for level up:<br />
+0h 43m 24s<br />
+Played this session:<br />
+0h 36m 25s<br />
+Gained this session:<br />
+3338 exp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">JacobZZoN</div><div class="date">09-11-2007, 14:35</div></div><div class="posttext">This didn't really work for me :/. It didn't walk out from the cave and deposit in the bank even though I had over 3600 gps... It wasn't able to open the door neither so I had to open the door manual... Otherwise it's a great script :).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luddey</div><div class="date">10-16-2007, 15:10</div></div><div class="posttext">oh yeah, this is just what i needed for my pk knight :D  hope the depositer works :)<br />
+<br />
+Edit; Doh, I have the same problem as ^ it wont open the door when it is going to deposit... some1 knows whats wrong? :s</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zimel</div><div class="date">10-17-2007, 14:18</div></div><div class="posttext">Great script, but last night i must wake up, bcus when mine noob was going deposit cash, i got atacked by bear, so mine BD was alarmed me...(i hate this sound).<br />
+But this script owns :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kriss</div><div class="date">11-03-2007, 10:38</div></div><div class="posttext">09:34 Unknown command at line 0 : <br />
+What's wrong and how to fix it?<br />
+@edit<br />
+<br />
+This didn't really work for me :/. It didn't walk out from the cave and deposit in the bank even though I had over 3600 gps... It wasn't able to open the door neither so I had to open the door manual.<br />
+the same problem</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jakoeb</div><div class="date">11-04-2007, 17:12</div></div><div class="posttext">16:11 You need 4161 exp<br />
+for level 2*<br />
+Average session speed:<br />
+7221 exp/h<br />
+Estimated time left for level up:<br />
+0h 34m 34s<br />
+Played this session:<br />
+2h 46m 22s<br />
+Gained this session:<br />
+20022 exp<br />
+<br />
+and something around 1 k cash/h <br />
+I´ll post if it goes and deposit or not. great script, ty!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jakoeb</div><div class="date">11-04-2007, 18:26</div></div><div class="posttext">now I got 3.8 k and the deposit doesnt work fure sure. My character runs around like an idiot after going up the stairs..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">11-05-2007, 10:25</div></div><div class="posttext">It's sooo old script, i will release new soon.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kriss</div><div class="date">11-21-2007, 11:33</div></div><div class="posttext">This script rox ;)<br />
+<br />
+10:31 You need 3956 exp<br />
+for level 29<br />
+Average session speed:<br />
+13144 exp/h<br />
+Estimated time left for level up:<br />
+0h 18m 4s<br />
+Played this session:<br />
+1h 27m 7s<br />
+Gained this session:<br />
+19084 exp<br />
+i was alone and 150~ players online</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alexer</div><div class="date">11-21-2007, 21:06</div></div><div class="posttext">I get 6k/hour and the script isn't depositting, edit it please :( I need fibula + depositer</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">falcon2009</div><div class="date">11-29-2007, 15:14</div></div><div class="posttext">A realy good script i like it! xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">falcon2009</div><div class="date">11-29-2007, 15:17</div></div><div class="posttext">Realy nice Script xD.!!!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sepon</div><div class="date">12-20-2007, 15:51</div></div><div class="posttext">For me work fine. I dont know about deposit work because my char not get the money yet, but i'll post later it work or not.;p Great script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kraszer</div><div class="date">12-28-2007, 02:43</div></div><div class="posttext">01:41 You need 1605 exp<br />
+for level 30<br />
+Average session speed:<br />
+14535 exp/h<br />
+Estimated time left for level up:<br />
+0h 7m 7s<br />
+Played this session:<br />
+2h 12m 36s<br />
+Gained this session:<br />
+34422 exp<br />
+:eek:<br />
+29 kina with skill 65/60, I love this script &lt;3 <br />
+I will edit in the morning, how much get exp etc ;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kraszer</div><div class="date">12-28-2007, 09:46</div></div><div class="posttext">08:34 You need 37698 exp<br />
+for level 32<br />
+Average session speed:<br />
+8755 exp/h<br />
+Estimated time left for level up:<br />
+4h 18m 21s<br />
+Played this session:<br />
+9h 26m 18s<br />
+Gained this session:<br />
+82629 exp<br />
+<br />
+08:46 Using one of 5732 gold coins...<br />
+_/<br />
+Lovin' it &lt;3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sierzput</div><div class="date">12-29-2007, 23:08</div></div><div class="posttext">Extra script, but depositer was spaming when was queque. I do depositer with Malmis Tutorial<br />
+<br />
+<br />
+IfEnoughItemsGoto D7 0B,2500,$nlineoflabel:dp$<br />
+onGMpause<br />
+setVeryFriendly<br />
+#by Fran<br />
+#edited by Bolek<br />
+#depositer edited by Inve<br />
+setLoot D7 0B<br />
+setPriority carrion worm:+1<br />
+setMeleeKill rotworm<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Wolf<br />
+setMeleeKill bear<br />
+setMeleeKill carrion worm<br />
+move 32163,32425,9<br />
+move 32144,32432,9<br />
+move 32126,32426,9<br />
+move 32124,32416,9<br />
+move 32128,32399,9<br />
+move 32134,32382,9<br />
+move 32174,32368,9<br />
+#next point is eastern<br />
+move 32196,32348,9<br />
+move 32163,32356,9<br />
+move 32164,32332,9<br />
+move 32149,32329,9<br />
+move 32123,32314,9<br />
+move 32105,32323,9<br />
+move 32136,32339,9<br />
+move 32138,32352,9<br />
+move 32116,32351,9<br />
+move 32106,32364,9<br />
+move 32110,32370,9<br />
+move 32123,32388,9<br />
+move 32135,32408,9<br />
+move 32153,32421,9<br />
+gotoScriptLine 0<br />
+:dp<br />
+move 32131,32400,9<br />
+move 32133,32410,9<br />
+move 32147,32417,9<br />
+move 32161,32424,9<br />
+move 32176,32428,9<br />
+move 32181,32428,9<br />
+move 32187,32430,9<br />
+move 32189,32428,9<br />
+move 32189,32428,8<br />
+move 32187,32433,8<br />
+:repeat<br />
+useItem 32190,32432,8<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 98 0B 00 BE 7D B0 7E 08 5F 06 01<br />
+move 32187,32433,8<br />
+IfTrue ($myx$#number=#32190) Goto $nlineoflabel:repeat$<br />
+move 32187,32436,8<br />
+move 32184,32446,8<br />
+move 32179,32456,8<br />
+move 32173,32451,8<br />
+move 32172,32443,8<br />
+move 32172,32440,7<br />
+move 32168,32429,7<br />
+move 32168,32410,7<br />
+move 32169,32404,7<br />
+move 32172,32390,7<br />
+move 32180,32381,7<br />
+move 32180,32372,7<br />
+move 32180,32367,7<br />
+move 32179,32367,8<br />
+move 32186,32368,8<br />
+move 32197,32368,8<br />
+move 32198,32367,9<br />
+move 32203,32370,9<br />
+move 32207,32371,9<br />
+move 32208,32370,10<br />
+move 32211,32370,10<br />
+move 32218,32371,10<br />
+move 32223,32372,10<br />
+move 32230,32372,10<br />
+move 32235,32371,10<br />
+move 32236,32371,9<br />
+move 32243,32371,9<br />
+move 32244,32371,8<br />
+move 32250,32377,8<br />
+move 32256,32382,8<br />
+move 32260,32383,8<br />
+move 32261,32385,7<br />
+move 32267,32378,7<br />
+move 32269,32367,7<br />
+move 32275,32349,7<br />
+move 32275,32331,7<br />
+move 32273,32312,7<br />
+move 32274,32295,7<br />
+move 32276,32284,7<br />
+move 32277,32274,7<br />
+move 32277,32267,7<br />
+move 32284,32265,7<br />
+move 32287,32258,7<br />
+move 32300,32258,7<br />
+move 32308,32254,7<br />
+move 32312,32250,7<br />
+move 32317,32252,7<br />
+move 32318,32255,7<br />
+move 32321,32256,7<br />
+:Deposit Gold<br />
+sayMessage hi<br />
+waitX 1<br />
+IfTrue ($lastmsg$#string=#Sorry $charactername$, I am already talking to a customer. Please wait.) Goto $nlineoflabel:wait$<br />
+IfTrue ($lastmsg$#string=#Welcome $charactername$! What can I do for you?) Goto $nlineoflabel:deposit$<br />
+:wait<br />
+waitX 4<br />
+IfTrue ($lastmsg$#string=#Good bye.) Goto $nlineoflabel:Deposit Gold$<br />
+IfTrue ($lastmsg$#string=#Welcome $charactername$! What can I do for you?) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine $nlineoflabel:wait$<br />
+:deposit<br />
+waitX 3<br />
+sayMessage deposit all<br />
+waitX 2<br />
+sayMessage yes<br />
+waitX 1<br />
+sayMessage bye<br />
+move 32316,32251,7<br />
+move 32300,32257,7<br />
+move 32287,32259,7<br />
+move 32279,32267,7<br />
+move 32275,32284,7<br />
+move 32275,32304,7<br />
+move 32273,32319,7<br />
+move 32272,32336,7<br />
+move 32271,32365,7<br />
+move 32270,32378,7<br />
+move 32262,32383,7<br />
+move 32261,32384,8<br />
+move 32251,32378,8<br />
+move 32245,32371,8<br />
+move 32244,32370,9<br />
+move 32237,32370,9<br />
+move 32236,32370,10<br />
+move 32229,32371,10<br />
+move 32218,32371,10<br />
+move 32212,32370,10<br />
+move 32208,32371,9<br />
+move 32201,32367,9<br />
+move 32199,32366,9<br />
+move 32198,32368,8<br />
+move 32191,32368,8<br />
+move 32181,32368,8<br />
+move 32179,32368,7<br />
+move 32179,32382,7<br />
+move 32178,32390,7<br />
+move 32168,32396,7<br />
+move 32168,32403,7<br />
+move 32168,32409,7<br />
+move 32168,32415,7<br />
+move 32168,32422,7<br />
+move 32169,32429,7<br />
+move 32171,32435,7<br />
+move 32171,32438,7<br />
+useItem 32172,32439,7<br />
+move 32173,32451,8<br />
+move 32173,32456,8<br />
+move 32181,32454,8<br />
+move 32184,32448,8<br />
+move 32185,32442,8<br />
+move 32189,32439,8<br />
+move 32188,32434,8<br />
+move 32190,32433,8<br />
+:as<br />
+useItem 32190,32432,8<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 98 0B 00 BE 7D B0 7E 08 5F 06 01<br />
+move 32190,32428,8<br />
+IfTrue ($myx$#number=#32190) Goto $nlineoflabel:as$<br />
+move 32190,32430,9<br />
+move 32185,32428,9<br />
+move 32183,32428,9<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nel</div><div class="date">01-02-2008, 21:33</div></div><div class="posttext">Sry for the bump, but can someone edit it, I want to go to deposit gold when cap is lower than 25 :S</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">neverminder</div><div class="date">01-09-2008, 20:32</div></div><div class="posttext">Door opening still doesnt work. Can anyone do something with thaT? If the door is closed (not locked!), blackd doesnt open.....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">phonomenon</div><div class="date">01-15-2008, 16:45</div></div><div class="posttext">i need help with health potion, where do i set it so it can heal my knight?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wino3</div><div class="date">01-23-2008, 00:10</div></div><div class="posttext">i need help with health potion, where do i set it so it can heal my knight?<br />
+<br />
+you should push the last button on blackd 'HP&amp;MANA&quot; next you must change in hp settings heal with life potion and push ADD AS NEW SETTINGS :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vian</div><div class="date">02-08-2008, 20:37</div></div><div class="posttext">i can go here with my druid? 10 lvl xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">wojtassio</div><div class="date">03-06-2008, 02:07</div></div><div class="posttext">01:05 You need 13089 exp<br />
+for level 25<br />
+Average session speed:<br />
+12726 exp/h<br />
+Estimated time left for level up:<br />
+1h 1m 43s<br />
+Played this session:<br />
+0h 42m 4s<br />
+Gained this session:<br />
+8922 exp<br />
+<br />
+And 1,2/1,3k gp/h<br />
+<br />
+On my 24 knight with sux skills and without many ppl on server. Thanks a lot! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Warlord Shadow</div><div class="date">03-09-2008, 11:46</div></div><div class="posttext">Could you change place where character stands in bank? It's a bit too far at it keeps spamming &quot;hi&quot; and so on. One sqm to the left and one sqm down will be a perfect adjustment.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lolzan</div><div class="date">03-15-2008, 22:18</div></div><div class="posttext">still working?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dark1992</div><div class="date">03-27-2008, 20:49</div></div><div class="posttext">Ymh... Good but ... That open only door where we need key. <br />
+<br />
+It dont open door that on the left of the stairs. We must open it manual ...<br />
+<br />
+Can some one fix it ? REPAIR ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Watchdog</div><div class="date">04-10-2008, 11:25</div></div><div class="posttext">What a piece of crap.<br />
+<br />
+And I thought NG had issues.<br />
+<br />
+Every single Script I run into barely works properly, corrupt bot?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Smoked</div><div class="date">04-10-2008, 15:30</div></div><div class="posttext">13:29 You need 387 exp<br />
+for level 15<br />
+Average session speed:<br />
+4191 exp/h<br />
+Estimated time left for level up:<br />
+0h 5m 32s<br />
+Played this session:<br />
+5h 2m 28s<br />
+Gained this session:<br />
+21126 exp<br />
+<br />
+nice :) shareing with liek 5+ other ppl so is good :*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Inve</div><div class="date">04-14-2008, 22:28</div></div><div class="posttext">IfTrue ($mycap$#number&lt;=#30) Goto $nlineoflabel:dp$<br />
+onGMpause<br />
+#by Fran<br />
+#edited by Bolek<br />
+setLoot D7 0B<br />
+setMeleeKill rotworm<br />
+setMeleeKill Poison Spider<br />
+setMeleeKill Wolf<br />
+setMeleeKill carrion worm<br />
+move 32163,32425,9<br />
+move 32144,32432,9<br />
+move 32126,32426,9<br />
+move 32124,32416,9<br />
+move 32128,32399,9<br />
+move 32134,32382,9<br />
+move 32174,32368,9<br />
+#next point is eastern<br />
+move 32196,32348,9<br />
+move 32163,32356,9<br />
+move 32164,32332,9<br />
+move 32149,32329,9<br />
+move 32123,32314,9<br />
+move 32105,32323,9<br />
+move 32136,32339,9<br />
+move 32138,32352,9<br />
+move 32116,32351,9<br />
+move 32106,32364,9<br />
+move 32110,32370,9<br />
+move 32123,32388,9<br />
+move 32135,32408,9<br />
+move 32153,32421,9<br />
+gotoScriptLine 0<br />
+:dp<br />
+move 32131,32400,9<br />
+move 32133,32410,9<br />
+move 32147,32417,9<br />
+move 32161,32424,9<br />
+move 32176,32428,9<br />
+move 32181,32428,9<br />
+move 32187,32430,9<br />
+move 32189,32428,9<br />
+move 32190,32431,8<br />
+:door<br />
+useItem 32190,32432,8<br />
+sayMessage exiva &gt; 11 00 83 FF FF 0A 00 00 98 0B 00 BE 7D B0 7E 08 5F 06 01<br />
+sayMessage exiva &gt; 0A 00 82 BE 7D B0 7E 08 60 06 01 03 <br />
+IfTrue ($myx$#number=#32189) Goto $nlineoflabel:door$<br />
+move 32190,32433,8<br />
+waitX 1<br />
+move 32187,32436,8<br />
+move 32184,32446,8<br />
+move 32179,32456,8<br />
+move 32173,32451,8<br />
+move 32172,32443,8<br />
+move 32172,32440,7<br />
+move 32168,32429,7<br />
+move 32168,32410,7<br />
+move 32169,32404,7<br />
+move 32172,32390,7<br />
+move 32180,32381,7<br />
+move 32180,32372,7<br />
+move 32180,32367,7<br />
+move 32179,32367,8<br />
+move 32186,32368,8<br />
+move 32197,32368,8<br />
+move 32198,32367,9<br />
+move 32203,32370,9<br />
+move 32207,32371,9<br />
+move 32208,32370,10<br />
+move 32211,32370,10<br />
+move 32218,32371,10<br />
+move 32223,32372,10<br />
+move 32230,32372,10<br />
+move 32235,32371,10<br />
+move 32236,32371,9<br />
+move 32243,32371,9<br />
+move 32244,32371,8<br />
+move 32250,32377,8<br />
+move 32256,32382,8<br />
+move 32260,32383,8<br />
+move 32261,32385,7<br />
+move 32267,32378,7<br />
+move 32269,32367,7<br />
+move 32275,32349,7<br />
+move 32275,32331,7<br />
+move 32273,32312,7<br />
+move 32274,32295,7<br />
+move 32276,32284,7<br />
+move 32277,32274,7<br />
+move 32277,32267,7<br />
+move 32284,32265,7<br />
+move 32287,32258,7<br />
+move 32300,32258,7<br />
+move 32308,32254,7<br />
+move 32312,32250,7<br />
+move 32317,32252,7<br />
+move 32319,32252,7<br />
+sayMessage exiva exiva &gt; 0A 00 82 3F 7E FD 7D 07 60 06 01 03<br />
+move 32321,32256,7<br />
+sayMessage hi<br />
+waitX 1<br />
+IfTrue ($lastmsg$#string=#Welcome $charactername$! What can I do for you?) Goto $nlineoflabel:deposit$<br />
+IfTrue ($lastmsg$#string=#Sorry $charactername$, I am already talking to a customer. Please wait.) Goto $nlineoflabel:wait$<br />
+:wait<br />
+waitX 1<br />
+IfTrue ($lastmsg$#string=#Hiho, Hiho, $charactername$! What can I do for you?) Goto $nlineoflabel:deposit$<br />
+IfTrue ($lastmsg$#string=#Good bye.) Goto $nlineoflabel:hello$<br />
+move 32320,32256,7<br />
+gotoScriptLine $nlineoflabel:wait$<br />
+:deposit<br />
+move 32320,32256,7<br />
+sayMessage deposit all<br />
+waitx 1<br />
+saymessage yes<br />
+move 32320,32256,7<br />
+waitX 1<br />
+saymessage balance<br />
+move 32319,32254,7<br />
+sayMessage exiva &gt; 0A 00 82 3F 7E FD 7D 07 60 06 01 03<br />
+move 32316,32251,7<br />
+move 32300,32257,7<br />
+move 32287,32259,7<br />
+move 32279,32267,7<br />
+move 32275,32284,7<br />
+move 32275,32304,7<br />
+move 32273,32319,7<br />
+move 32272,32336,7<br />
+move 32271,32365,7<br />
+move 32270,32378,7<br />
+move 32262,32383,7<br />
+move 32261,32384,8<br />
+move 32251,32378,8<br />
+move 32245,32371,8<br />
+move 32244,32370,9<br />
+move 32237,32370,9<br />
+move 32236,32370,10<br />
+move 32229,32371,10<br />
+move 32218,32371,10<br />
+move 32212,32370,10<br />
+move 32208,32371,9<br />
+move 32201,32367,9<br />
+move 32199,32366,9<br />
+move 32198,32368,8<br />
+move 32191,32368,8<br />
+move 32181,32368,8<br />
+move 32179,32368,7<br />
+move 32179,32382,7<br />
+move 32178,32390,7<br />
+move 32168,32396,7<br />
+move 32168,32403,7<br />
+move 32168,32409,7<br />
+move 32168,32415,7<br />
+move 32168,32422,7<br />
+move 32169,32429,7<br />
+move 32171,32435,7<br />
+move 32171,32438,7<br />
+useItem 32172,32439,7<br />
+move 32173,32451,8<br />
+move 32173,32456,8<br />
+move 32181,32454,8<br />
+move 32184,32448,8<br />
+move 32185,32442,8<br />
+move 32189,32439,8<br />
+move 32188,32434,8<br />
+move 32190,32433,8<br />
+:door2<br />
+useItem 32190,32432,8<br />
+sayMessage exiva &gt; 11 00 83 FF FF 0A 00 00 98 0B 00 BE 7D B0 7E 08 5F 06 01<br />
+sayMessage exiva &gt; 0A 00 82 3F 7E FD 7D 07 60 06 01 03<br />
+move 32190,32431,8<br />
+waitX 1<br />
+IfTrue ($myx$#number=#32190) Goto $nlineoflabel:door2$<br />
+move 32190,32430,9<br />
+move 32185,32428,9<br />
+move 32183,32428,9<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+I added open doors in bank, and edited open doors at fibula !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Chm!elu</div><div class="date">05-07-2008, 15:29</div></div><div class="posttext">Hi !<br />
+Can somone add to this script spear buyer?<br />
+Some like little edit for paladins ;]<br />
+I will be very glad for do this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">miro71</div><div class="date">05-30-2008, 02:37</div></div><div class="posttext">Two problems:<br />
+<br />
+1. While my character arrived to the doors, it started to open and close them like idiot.<br />
+<br />
+2. It doesn't back when already collect 3.6k</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thinking</div><div class="date">06-10-2008, 21:58</div></div><div class="posttext">Hmm, I will try this one!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Apausfo</div><div class="date">07-27-2008, 16:03</div></div><div class="posttext">great! its cool script ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">007przem</div><div class="date">08-26-2008, 13:13</div></div><div class="posttext">Omg n1  script ;D<br />
+<br />
+<br />
+12:12 You need 108195 exp<br />
+for level 50<br />
+Average session speed:<br />
+19101 exp/h<br />
+Estimated time left for level up:<br />
+5h 39m 52s<br />
+Played this session:<br />
+0h 44m 43s<br />
+Gained this session:<br />
+14233 exp<br />
+<br />
+12:13 Using one of 2150 gold coins...<br />
+<br />
+With semi-rare eq and 74 skill and 2 noobs around me =]<br />
+THX !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">poohz</div><div class="date">11-09-2008, 10:54</div></div><div class="posttext">Where I have to start this script and this the cave where i need fibula key? screen shot please i never have been there ;/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tkfrango</div><div class="date">01-12-2009, 16:08</div></div><div class="posttext">My char goes to the bank and talk: exiva exiva &gt; 0A 00 82 3F 7E FD 7D 07 60 06 01 03, and soon after finalizing the script does it all wrong and that the basement does not make things right!  :mad:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">01-12-2009, 20:35</div></div><div class="posttext">Hello, It was one old script, but if you really want I can rewrite it and make it much bettter.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tkfrango</div><div class="date">01-12-2009, 21:06</div></div><div class="posttext">Please if you can do that for me I will be very grateful</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">01-12-2009, 21:07</div></div><div class="posttext">I will do it tomorrow on my knight.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tkfrango</div><div class="date">01-14-2009, 21:56</div></div><div class="posttext">script please :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">01-17-2009, 14:30</div></div><div class="posttext">updated, fresh new script!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tralfaz</div><div class="date">01-18-2009, 01:11</div></div><div class="posttext">I go test your script but i need for the key... :( <br />
+<br />
+I play on Secura, it's a good exp/h?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">bolek</div><div class="date">01-19-2009, 17:36</div></div><div class="posttext">bump it up</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Satanás</div><div class="date">02-08-2009, 22:36</div></div><div class="posttext">Going to test it soon.<br />
+<br />
+I'll post here the results.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eddini</div><div class="date">02-10-2009, 23:10</div></div><div class="posttext">22:05 You need 7111 exp<br />
+for level 21<br />
+Average session speed:<br />
+4259 exp/h<br />
+Estimated time left for level up:<br />
+1h 40m 11s<br />
+Played this session:<br />
+12h 39m 10s<br />
+Gained this session:<br />
+53892 exp<br />
+<br />
+<br />
+Dunno why so shit exp maybe couse non pvp world and many player there dunno was afk all day</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">verblade</div><div class="date">02-24-2009, 20:29</div></div><div class="posttext">Can it be used by me?<br />
+30+ sorc<br />
+medusa shield + scull staff? ;&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Savage</div><div class="date">02-24-2009, 20:39</div></div><div class="posttext">yep. &lt;short&gt;.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">d_chrost</div><div class="date">03-03-2009, 00:29</div></div><div class="posttext">23:27 You need 9065 exp<br />
+for level 25<br />
+Average session speed:<br />
+6509 exp/h<br />
+Estimated time left for level up:<br />
+1h 23m 34s<br />
+Played this session:<br />
+0h 43m 3s<br />
+Gained this session:<br />
+4670 exp<br />
+on my druid<br />
+with 3+ other player there</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Surus</div><div class="date">03-05-2009, 02:27</div></div><div class="posttext">I'm testing atm<br />
+i'll sleep now, tomorrow i say if it works</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Invec</div><div class="date">03-10-2009, 13:57</div></div><div class="posttext">Great Script Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gangrel</div><div class="date">06-11-2009, 14:00</div></div><div class="posttext">When does it go to dp?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xzander</div><div class="date">06-14-2009, 22:54</div></div><div class="posttext">21:54 Using one of 3366 gold coins... <br />
+<br />
+And still not going to DP. Anyone know whats wrong?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pliszka</div><div class="date">09-18-2010, 05:00</div></div><div class="posttext">04:00 You need 2159 exp<br />
+for level 30<br />
+Average session speed:<br />
+10151 exp/h<br />
+Estimated time left for level up:<br />
+0h 12m 46s<br />
+Played this session:<br />
+0h 25m 57s<br />
+Gained this session:<br />
+4390 exp<br />
+<br />
+LoL</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exori, _var, exiva, monsters, spell, $numericalexp$_var$+1$, wand, number=, string=, $nameofhex-id$hex-lastattackedid$$, monster, barbarian, setspellkill, kill, casting, strike, waste, attack, names, colorion, works, created, stop, change, shot, $hpofhex-id$hex-lastattackedid$$, incredible, optimize, tutorials, pro-tibia.com, conditionals, tibia, dead, scripts, text, gameplay, latest, copy, changing, update$, 9999999999, needed, times, line, visit, $hex-tibiastrcond, blackd, enjoy, future, breakthrough" />
+	<meta name="description" content="It started with me being bored on the barb spawn. It ended with an incredible, break-through invention! 
+ 
+More incredible scripts, update news and Tibia tutorials at Pro-Tibia.com 
+ 
+My Exori strike conditionals work perfectly with wands and rods. They don't waste mana casting the spell when monster is already dead. You can kill the monster with one shot of wand and one exori, which was impossible with SetSpellKill function. 
+ 
+ATTENTION: It works only if you delete SetSpellKill commands for" />
+	
+	<title> EPIC Cond Exori Strike! NO EXHAUST FOR WAND! NO WASTE WHEN MONSTER DIES! 100% WORKS! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt; <a href="f-46.html">Scripts for exori vis bot!</a> &gt;  EPIC Cond Exori Strike! NO EXHAUST FOR WAND! NO WASTE WHEN MONSTER DIES! 100% WORKS!</div>
+<hr />
+<div class="pda"><a href="t-33533.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?33533-EPIC-Cond-Exori-Strike!-NO-EXHAUST-FOR-WAND!-NO-WASTE-WHEN-MONSTER-DIES!-100-WORKS!">EPIC Cond Exori Strike! NO EXHAUST FOR WAND! NO WASTE WHEN MONSTER DIES! 100% WORKS!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Colorion</div><div class="date">12-26-2008, 10:40</div></div><div class="posttext">It started with me being bored on the barb spawn. It ended with an incredible, break-through invention!<br />
+<br />
+More incredible scripts, update news and Tibia tutorials at Pro-Tibia.com (http://www.pro-tibia.com)<br />
+<br />
+My Exori strike conditionals work perfectly with wands and rods. They don't waste mana casting the spell when monster is already dead. You can kill the monster with one shot of wand and one exori, which was impossible with SetSpellKill function.<br />
+<br />
+ATTENTION: It works only if you delete SetSpellKill commands for the same monsters you want to kill with conditional Exori.<br />
+<br />
+<br />
+The Cavebot SetSpellKill spams Exori Vis like crazy and your mage doesn't shoot with wand/rod and it casts 1 more spell when monster is already dead. If you kill your monsters with 1-2 Exori, THIS WILL SAVE YOU 20-40% OF THE HUNTING COST <br />
+<br />
+You stop casting Exori when the monster is below X hp. This way you will finish them off with your wand and NEVER waste a spell again. <br />
+<br />
+You can optimize the amount of Exori Vis/Frigo/Terra/Mort you use on the monsters. You can kill monsters with 1 wand shot and 1 Exori, or 2 wand shots and 1 Exori. This is extremely cheaper than traditional SetSpellKill. <br />
+<br />
+The RED VALUE is the %hp below which you want to stop casting Exori spell. Change it depending on the strength of your wand and monster's hp.<br />
+<br />
+The Blue Text is the spell you want to attack the monsters with.<br />
+<br />
+The Green Text are names of monsters you want to attack with exori. You can copy this line as many times as needed, changing just the names of monsters.<br />
+<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+9999999999<br />
+0<br />
+Exiva &lt; B4 11 $hex-tibiastr:Cond Exori Strike created by Colorion. Visit Pro-Tibia.com for more scripts and tutorials about BlackD and Tibia gameplay and the latest update!$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+barbarian skullhunter<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+barbarian headsplitter<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+barbarian brutetamer<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+barbarian bloodwalker<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+mammoth<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number&gt;=#<br />
+30<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number=#<br />
+100<br />
+0<br />
+250<br />
+0<br />
+exiva _var = 0<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+500<br />
+0<br />
+exori mort<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+250<br />
+0<br />
+exiva _var = 0<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Enjoy the script and give me some feedback! I really have a feeling that I created something breakthrough here. In the future I might optimize it with more variables.<br />
+<br />
+If you want to attack  different monsters with different exori spell, just create the next set of conditionals next to the first one, with different names and different _var name, for example change _var into _var1<br />
+<br />
+<br />
+Cheers<br />
+Colorion</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nuboterich</div><div class="date">12-26-2008, 12:22</div></div><div class="posttext">forget i'm a tard</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">L33Twarrior</div><div class="date">12-26-2008, 12:56</div></div><div class="posttext">sounds nice, ill save and test</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mars</div><div class="date">12-26-2008, 13:18</div></div><div class="posttext">Very nice ;] maybe next Malmis ;P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">12-26-2008, 15:07</div></div><div class="posttext">Impressive :D<br />
+I have to test as soon as possible.<br />
+<br />
+#Edit<br />
+Tested ...:confused:<br />
+<br />
+It works great ! Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Starry_Dreams</div><div class="date">12-26-2008, 22:22</div></div><div class="posttext">Really good job man, would like to see this hard-coded into setSpellKill itself :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oyce</div><div class="date">12-26-2008, 22:56</div></div><div class="posttext">Fucking good dude , hate seeing the bot making e-vis after another drag is dead :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hayro</div><div class="date">12-27-2008, 18:19</div></div><div class="posttext">wow, really you are a hacker of this (in the good sound of the world)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dazzler</div><div class="date">12-27-2008, 18:25</div></div><div class="posttext">Got something similar. Also makes you look less like an obvious botter.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alien</div><div class="date">12-28-2008, 02:32</div></div><div class="posttext">doesn't work for me</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">^^FERFI^^</div><div class="date">12-28-2008, 23:01</div></div><div class="posttext">Thanks for it!<br />
+<br />
+Your scripts are fucking nice man!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Colorion</div><div class="date">12-29-2008, 13:14</div></div><div class="posttext">doesn't work for me<br />
+<br />
+Go Barbarians. It only works for Barbarians. It's the demo release. If you want other monsters than Barbarians, pay 10 euro and I'll give you the full version.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+just kidding ofc :D:D:D<br />
+<br />
+Did you change the monster names in the conds?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lxl HaLo lxl</div><div class="date">12-30-2008, 22:10</div></div><div class="posttext">Really thanks, it will be very usefull<br />
+btw you rox at scripting x)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alien</div><div class="date">01-03-2009, 17:00</div></div><div class="posttext">Go Barbarians. It only works for Barbarians. It's the demo release. If you want other monsters than Barbarians, pay 10 euro and I'll give you the full version.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+just kidding ofc :D:D:D<br />
+<br />
+Did you change the monster names in the conds?<br />
+<br />
+ye I did, I wanted this for pirates in nargor, but doesn't work, tried 10000 times already, I need it but it doesn't work for me. Can you try to make one for pirate ghost, pirate skeleton, ghoul, tarantula and slime? I'll be very thankful</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hello</div><div class="date">01-04-2009, 10:17</div></div><div class="posttext">ye I did, I wanted this for pirates in nargor, but doesn't work, tried 10000 times already, I need it but it doesn't work for me. Can you try to make one for pirate ghost, pirate skeleton, ghoul, tarantula and slime? I'll be very thankful<br />
+<br />
+Ok first off just a rant <br />
+Alien, you dont NEED this, im sure you managed to hunt just fine up to this point and will hunt just fine with or without this script. And you say you tried it 10000 times, I would honestly be surprised if you tried it more than 4 times. So if i were you, i would be kissing Colorion's feet and posting your edited condition and asking him if he would please tell you where you went wrong. <br />
+<br />
+@Colorion<br />
+thanks for the script,<br />
+can i set it to work with all monsters like the long exori condition? after editing the max cond value ofc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Colorion</div><div class="date">01-04-2009, 13:36</div></div><div class="posttext">Ok first off just a rant <br />
+Alien, you dont NEED this, im sure you managed to hunt just fine up to this point and will hunt just fine with or without this script. And you say you tried it 10000 times, I would honestly be surprised if you tried it more than 4 times. So if i were you, i would be kissing Colorion's feet and posting your edited condition and asking him if he would please tell you where you went wrong. <br />
+<br />
+@Colorion<br />
+thanks for the script,<br />
+can i set it to work with all monsters like the long exori condition? after editing the max cond value ofc<br />
+<br />
+Lol :P you got some imagination running dude :p:p <br />
+<br />
+I'm not sure if it wouldn't cause delay. If not, go for it! So much more convenient to have one cond for all. Also, if you were nice enough to publish it, I'd be grateful.<br />
+<br />
+<br />
+<br />
+As for the pirate script, IMO you're just looking for someone external to blame. If this still doesn't work, you can say that MY script doesn't work, not YOUR edit of my script. Anyways, here it is and keep in mind that you need to attack with wand/rod too, else it just doesn't work.<br />
+<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+9999999999<br />
+0<br />
+Exiva &lt; B4 11 $hex-tibiastr:Cond Exori Strike created by Colorion. Visit Pro-Tibia.com for more scripts and tutorials about BlackD and Tibia gameplay and the latest update!$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+barbarian skullhunter<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+pirate marauder<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+pirate buccaneer<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+pirate cutthroat<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+tarantula<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+slime<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$nameofhex-id:{$hex-lastattackedid$}$<br />
+#string=#<br />
+smuggler<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number&gt;=#<br />
+30<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$hpofhex-id:{$hex-lastattackedid$}$<br />
+#number=#<br />
+100<br />
+0<br />
+250<br />
+0<br />
+exiva _var = 0<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+750<br />
+0<br />
+exori mort<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+250<br />
+0<br />
+exiva _var = 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zangetso</div><div class="date">01-04-2009, 14:00</div></div><div class="posttext">Questions for a noob user ;p<br />
+<br />
+where i put that on cave bot (inside of my usually scrip)?? ty and i tried it some times and it start spaming (my char talks exiva etc....&quot; <br />
+<br />
+ty for the help</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zangetso</div><div class="date">01-04-2009, 14:10</div></div><div class="posttext">kk ty i foudn the answer myselft jejej ;) ty anyway<br />
+<br />
+<br />
+<br />
+Questions for a noob user ;p<br />
+<br />
+where i put that on cave bot (inside of my usually scrip)?? ty and i tried it some times and it start spaming (my char talks exiva etc....&quot;<br />
+<br />
+ty for the help</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alien</div><div class="date">01-04-2009, 14:25</div></div><div class="posttext">Ok first off just a rant <br />
+Alien, you dont NEED this, im sure you managed to hunt just fine up to this point and will hunt just fine with or without this script. And you say you tried it 10000 times, I would honestly be surprised if you tried it more than 4 times. So if i were you, i would be kissing Colorion's feet and posting your edited condition and asking him if he would please tell you where you went wrong. <br />
+<br />
+yes I need this,because I am wasting much everytime I go here, and this cond would help me much, + I asked him to make one for pirates and then I wrote &quot;I will be very thankful&quot;, my english isn't best maybe, tho it seems you can't read.<br />
+<br />
+and @Colorion, thanks for changing I'll try later today or tommorow, and ye I tried it with wand ofc. And no, it's not like I am looking someone to blame, I just find the cond useful, I changed it myself and it just didn't work so I asked if you can make one for me with pirates, but the cond I changed is  the same as the one you just wrote for me, but I'll still check it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hello</div><div class="date">01-04-2009, 17:59</div></div><div class="posttext">yes I need this,because I am wasting much everytime I go here, and this cond would help me much, + I asked him to make one for pirates and then I wrote &quot;I will be very thankful&quot;, my english isn't best maybe, tho it seems you can't read.<br />
+<br />
+and @Colorion, thanks for changing I'll try later today or tommorow, and ye I tried it with wand ofc. And no, it's not like I am looking someone to blame, I just find the cond useful, I changed it myself and it just didn't work so I asked if you can make one for me with pirates, but the cond I changed is  the same as the one you just wrote for me, but I'll still check it<br />
+<br />
+Your still Missing the difference between need and want.<br />
+<br />
+1. Starving children need food.<br />
+2. You want to buy a new hat.<br />
+Do you see the difference now?<br />
+<br />
+<br />
+@ Colorion<br />
+If i can combine the 2 scripts i will post it, considering it is your work just expanded <br />
+off topic - awesome holiday scripts</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Colorion</div><div class="date">01-04-2009, 18:10</div></div><div class="posttext">Just instead of pirates add craploads of names :P rest of conditionals stay the same</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rysiek.</div><div class="date">01-06-2009, 21:16</div></div><div class="posttext">it's minus of blackd for like 1-2 years then Colorion comes and fixs it xD POWAH MAN !!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">01-13-2009, 21:35</div></div><div class="posttext">Can someone please help me? I don't get it. I want it to exori vis ghost and pirate skeleton, and I want to flam pirate ghost. I'm just to tierd now. So please help me ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">01-13-2009, 21:37</div></div><div class="posttext">Can someone please help me? I don't get it. I want it to exori vis ghost and pirate skeleton, and I want to flam pirate ghost. I'm just to tierd now. So please help me ^^<br />
+<br />
+If you need to use different spells on different monsters I'd suggest using this script (http://www.blackdtools.net/showthread.php?t=34182) instead, as it's made for that purpose.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nytrouz</div><div class="date">01-13-2009, 22:07</div></div><div class="posttext">how could i add this cond to another cond?<br />
+i mean, i wanna use this cond and use a cond that put and put off my soft, is it possible?<br />
+<br />
+@script<br />
+it works, rly thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">01-19-2009, 10:03</div></div><div class="posttext">If you need to use different spells on different monsters I'd suggest using this script (http://www.blackdtools.net/showthread.php?t=34182) instead, as it's made for that purpose.<br />
+<br />
+Great! Thanks! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raphimac</div><div class="date">01-23-2009, 05:48</div></div><div class="posttext">i put this on cheats?<br />
+or the condicional events?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Colorion</div><div class="date">01-30-2009, 19:59</div></div><div class="posttext">i put this on cheats?<br />
+or the condicional events?<br />
+<br />
+How do you put ANYTHING on cheats?<br />
+<br />
+<br />
+Conds ofc</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xygen</div><div class="date">02-01-2009, 19:42</div></div><div class="posttext">Doest work at all. It keeps spamming friggin exori flams and wastes mana</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kalsjd20</div><div class="date">02-01-2009, 20:34</div></div><div class="posttext">Your still Missing the difference between need and want.<br />
+<br />
+1. Starving children need food.<br />
+2. You want to buy a new hat.<br />
+Do you see the difference now?<br />
+<br />
+<br />
+@ Colorion<br />
+If i can combine the 2 scripts i will post it, considering it is your work just expanded <br />
+off topic - awesome holiday scripts<br />
+<br />
+Yes but stupid example.<br />
+<br />
+<br />
+Colorion great work ! Would test it but... You know bannished xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">elbow</div><div class="date">07-15-2009, 22:48</div></div><div class="posttext">awsome.<br />
+im looking for that. thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kamerz</div><div class="date">03-08-2010, 23:50</div></div><div class="posttext">works great man. i added my soft boots cond to it bc i dont think you can load more then 1 cond? maybe im wrong but it works great. use it on my mage hunting rots to frigo carrion worms xD</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

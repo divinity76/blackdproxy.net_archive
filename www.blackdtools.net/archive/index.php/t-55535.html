@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, $mymanapercent$, shield, runemaker, blank, works, number=, adori, shield/weapon, dwarven, number, remove, smooth, forgot, multiple, problems, updated, working, http://www.blackdtools.com/forum/showthread.php?47680-in-date-understanding-conditional-events-in-a-nutshell, soulpoint, equipped, weapon, weapon/shield, percent, lower" />
+	<meta name="description" content="Having a few problems with runemaker. Not that I am a complete noob, I usually use it to make hmms/IHs on alt characters, But for some reason since yesterday It has decided not to work. Also ive seen another post saying the Mana waste is not working either. Also had that problem right from install. Even after installing/re installing this has not fixed the problem. Characters will not make rune when Activate runemaker is checked, BUT will eat food! So it is semi-working :S Anywho, any advice" />
+	
+	<title> Runemaker not working? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Runemaker not working?</div>
+<hr />
+<div class="pda"><a href="t-55535.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?55535-Runemaker-not-working">Runemaker not working?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">06-09-2011, 04:54</div></div><div class="posttext">Having a few problems with runemaker. Not that I am a complete noob, I usually use it to make hmms/IHs on alt characters, But for some reason since yesterday It has decided not to work. Also ive seen another post saying the Mana waste is not working either. Also had that problem right from install. Even after installing/re installing this has not fixed the problem. Characters will not make rune when Activate runemaker is checked, BUT will eat food! So it is semi-working :S Anywho, any advice would be appreciated. <br />
+<br />
+ps If the guy who is looking for a second option to mana waste, i put in a conditional event that if $mymanapercent$ = 100 action; exura vita</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-09-2011, 21:35</div></div><div class="posttext">You could probably use a conditional event to make runes aswell,<br />
+this is not tested, but should work. XX XX = id of blank rune,<br />
+<br />
+<br />
+$mymana$<br />
+#number&gt;=#<br />
+60<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$countitems:XX XX$<br />
+#number&gt;=#<br />
+1<br />
+0<br />
+250<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+250<br />
+0<br />
+exiva #XX XX 05<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+1000<br />
+0<br />
+adura gran<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+250<br />
+0<br />
+exiva _var = 0<br />
+<br />
+<br />
+<br />
+red = how much mana to make rune<br />
+blue = blank rune id, also 05 and 06 is hands, i dont know which one is right/left, but its easy to test it. leave both hands free first.<br />
+green = spell to make rune, im not sure if its audra gran? xd</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">03-22-2012, 01:24</div></div><div class="posttext">I know this is a very, very, very old thread, but I just gotta say thanks. The runemaker wasnt working on 7.72, even doh I changed the blank rune and the rune I'm making ID in the config, it still refused to pick up the runes to my selected hand. This cond have helped me and hopefully it will help someone else aswell. Thanks!<br />
+<br />
+EDIT: Damn.. Doesn't work when having multiple bp's of blanks.. It gets &quot;stuck&quot; after one backpack is completed. Any way to fix it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Curbe</div><div class="date">03-30-2012, 11:44</div></div><div class="posttext">Can someone please explain how to make a proper Cond event?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-22-2012, 17:36</div></div><div class="posttext">@up, have a look here:<br />
+http://www.blackdtools.net/showthread.php?47680-In-date!-Understanding-Conditional-Events-(In-a-Nutshell)<br />
+<br />
+The first cond I posted probably work, but Ive got and updated one that works better if you're using a weapon/shield also.<br />
+<br />
+Will make a rune if mana percent above 90, if mana is lower it will always make sure your weapon or shield is equipped (works about the same as the runemaker does, without soulpoint bug)<br />
+<br />
+exiva #D4 08 05 - blank rune ID and hand (05 right, 06 for left hand)<br />
+exiva #DD 09 05 - id of your shield/weapon (dwarven shield in this case) and hand, use the same as above<br />
+<br />
+And oh! almost forgot, for it work work smooth just remove 1 blank rune from every rune bp. Should work with multiple bps without problems although I usually just got 1 bp open at a time.<br />
+<br />
+<br />
+<br />
+$mymanapercent$<br />
+#number&gt;=#<br />
+90<br />
+0<br />
+5000<br />
+0<br />
+exiva #D4 08 05<br />
+$mymanapercent$<br />
+#number&gt;=#<br />
+90<br />
+0<br />
+5000<br />
+0<br />
+adori gran<br />
+$mymanapercent$<br />
+#number&lt;=#<br />
+89<br />
+0<br />
+1000<br />
+0<br />
+exiva #DD 09 05</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rock</div><div class="date">04-08-2013, 04:34</div></div><div class="posttext">And pleeeeeease can u add a way to eat food in conditional events ???</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

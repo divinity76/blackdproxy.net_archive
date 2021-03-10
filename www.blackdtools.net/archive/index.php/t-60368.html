@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, number=, paralyzed, replace, amulet, stone, script, returns, $istrue$check$statusbit3$,number=,1$,$check$hex-equiped-item09$,string,yy, $statusbit3$, $istrue$check$statusbit3$,number=,1$,$check$hex-equiped-item02$,string,xx" />
+	<meta name="description" content="so as the tittle say, im asking for that cond, it can be 2 conds i believe, just cant find the &quot;paralyzed blablabla&quot; 
+:| thanks to whoever do it" />
+	
+	<title> When paralyzed -&gt; put 1ssa &amp; might ring [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-49.html">Conditional Events Miniscripts</a> &gt;  When paralyzed -&gt; put 1ssa &amp; might ring</div>
+<hr />
+<div class="pda"><a href="t-60368.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?60368-When-paralyzed-gt-put-1ssa-amp-might-ring">When paralyzed -&gt; put 1ssa &amp; might ring</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">rcedrick</div><div class="date">05-16-2013, 20:49</div></div><div class="posttext">so as the tittle say, im asking for that cond, it can be 2 conds i believe, just cant find the &quot;paralyzed blablabla&quot;<br />
+:| thanks to whoever do it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">qelsik</div><div class="date">05-22-2013, 03:05</div></div><div class="posttext">$statusbit:3$  - if you are paralyzed then it returns - 1, if not - 0<br />
+<br />
+ex. Cond<br />
+<br />
+<br />
+$istrue:{$check:{$statusbit:3$},#number=#,1$},{$ch eck:{$hex-equiped-item:02$},#string&lt;&gt;#,XX XX$}$<br />
+#number=#<br />
+0<br />
+0<br />
+500<br />
+0<br />
+exiva #XX XX 02<br />
+$istrue:{$check:{$statusbit:3$},#number=#,1$},{$ch eck:{$hex-equiped-item:09$},#string&lt;&gt;#,YY YY$}$<br />
+#number=#<br />
+0<br />
+0<br />
+500<br />
+0<br />
+exiva #YY YY 09<br />
+<br />
+Its just an example.<br />
+Replace this in script:<br />
+XX XX - ID of stone skin amulet<br />
+YY YY - ID of might ring</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rcedrick</div><div class="date">05-22-2013, 05:47</div></div><div class="posttext">$statusbit:3$  - if you are paralyzed then it returns - 1, if not - 0<br />
+<br />
+ex. Cond<br />
+<br />
+<br />
+$istrue:{$check:{$statusbit:3$},#number=#,1$},{$ch eck:{$hex-equiped-item:02$},#string&lt;&gt;#,XX XX$}$<br />
+#number=#<br />
+1<br />
+0<br />
+500<br />
+0<br />
+exiva #XX XX 02<br />
+$istrue:{$check:{$statusbit:3$},#number=#,1$},{$ch eck:{$hex-equiped-item:09$},#string&lt;&gt;#,YY YY$}$<br />
+#number=#<br />
+1<br />
+0<br />
+500<br />
+0<br />
+exiva #YY YY 09<br />
+<br />
+Its just an example.<br />
+Replace this in script:<br />
+XX XX - ID of stone skin amulet<br />
+YY YY - ID of might ring<br />
+you are fuckin' awesome, thanks man i though this forum was dead :d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">qelsik</div><div class="date">05-22-2013, 12:48</div></div><div class="posttext">you are fuckin' awesome, thanks man i though this forum was dead :d<br />
+whoops...actually, i made a mistake.<br />
+use this one:<br />
+<br />
+$istrue:{$check:{$statusbit:3$},#number=#,1$},{$ch eck:{$hex-equiped-item:02$},#string&lt;&gt;#,XX XX$}$<br />
+#number=#<br />
+0<br />
+0<br />
+500<br />
+0<br />
+exiva #XX XX 02<br />
+$istrue:{$check:{$statusbit:3$},#number=#,1$},{$ch eck:{$hex-equiped-item:09$},#string&lt;&gt;#,YY YY$}$<br />
+#number=#<br />
+0<br />
+0<br />
+500<br />
+0<br />
+exiva #YY YY 09<br />
+ ; /</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

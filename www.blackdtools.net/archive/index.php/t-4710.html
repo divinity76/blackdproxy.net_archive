@@ -1,0 +1,735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="variable, exiva, custom, true, $_var$, $lastmsg$, make, _var, events, condition, john, ding, returns, number=, $lastsender$, conditions, $_variable$, testding, string=, false, action, conditional, $numericalexp$_var$+1$, number, string, _variable, called, happen, types, event, combination, case, message, avoid, back, long, high, tutorial, equal, checks, figured, views, edit, suit, comment, greatly, appreciated, feedback, state, complex" />
+	<meta name="description" content="After reading this tutorial you will be able to make conditional events with the following characteristics: 
+Make something happen only if 2 conditions are true. 
+Make something happen only once when a condition is true and only can happen again after the condition becomes false and true again. 
+Combination of both 
+ 
+Events that require 2 conditions to be true. 
+ 
+The following example will make a ding ONLY if the last msg is &quot;hi&quot; and was sent by &quot;John&quot; 
+ 
+1" />
+	
+	<title> Act only if 2 conditions are true &amp; act only once whenever a condition is true [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-42.html">13. Conditional Events</a> &gt;  Act only if 2 conditions are true &amp; act only once whenever a condition is true</div>
+<hr />
+<div class="pda"><a href="t-4710.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?4710-Act-only-if-2-conditions-are-true-amp-act-only-once-whenever-a-condition-is-true">Act only if 2 conditions are true &amp; act only once whenever a condition is true</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-07-2007, 10:01</div></div><div class="posttext">After reading this tutorial you will be able to make conditional events with the following characteristics:<br />
+Make something happen only if 2 conditions are true.<br />
+Make something happen only once when a condition is true and only can happen again after the condition becomes false and true again.<br />
+Combination of both<br />
+<br />
+Events that require 2 conditions to be true.<br />
+<br />
+The following example will make a ding ONLY if the last msg is &quot;hi&quot; and was sent by &quot;John&quot;<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$lastsender$<br />
+#string=#<br />
+John<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$lastmsg$<br />
+#string=#<br />
+hi<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva testding<br />
+<br />
+<br />
+Basically we set 4 conditional events here.<br />
+1. This event is always true (1=1). This one sets the custom variable $_var$ to &quot;0&quot;.<br />
+2. This is actually the first condition that triggers our action. If the variable $lastsender$ returns &quot;John&quot; it will add +1 to our custom variable $_var$.<br />
+3. This is our second condition for the action to get done. If the variable $lastmsg$ returns &quot;hi&quot; it will add +1 to our custom variable $_var$.<br />
+4. This final event checks the current value of our custom variable called $_var$. If the value is &quot;2&quot; (both conditions were true, so each one added +1 to the variable) then it executes the action we want to get done. Which in this case is to make a ding using exiva testding. <br />
+<br />
+Note: In this one as long as the 2 conditions keep being true it will spam dings. Later on this post I will explain how to avoid this.<br />
+<br />
+Events that only are true once and can only be true again after they became false<br />
+<br />
+The following example will ding ONLY ONCE whenever you get a message saying &quot;hi&quot;. It can only ding again if you get a message different than &quot;hi&quot; and then &quot;hi&quot; again.<br />
+<br />
+<br />
+<br />
+$lastmsg$<br />
+#string&lt;&gt;#<br />
+hi<br />
+0<br />
+300<br />
+0<br />
+exiva _variable = 0<br />
+$lastmsg$<br />
+#string=#<br />
+hi<br />
+0<br />
+500<br />
+0<br />
+exiva _variable = $numericalexp:{$_variable$}+1$<br />
+$_variable$<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva testding<br />
+$_variable$<br />
+#number&gt;=#<br />
+500<br />
+0<br />
+300<br />
+0<br />
+exiva _variable = 2<br />
+<br />
+<br />
+<br />
+We set four conditional events here too, but actually the last one is not totally necessary.<br />
+1. If the variable $lastmsg$ is something DIFFERENT than &quot;hi&quot; then it will set our custom variable &quot;$_variable$&quot; to &quot;0&quot;.<br />
+2. If the variable $lastmsg$ is the same as &quot;hi&quot;. It will add +1 to a custom variable called $_variable$.<br />
+3. If our custom variable is equal to 1. Then it will ding.<br />
+4. This is not actually necessary but if the variable $lastmsg$ keeps being &quot;hi&quot;. The count can go very high so to avoid this, we set this event that checks if the custom variable called $_variable$ has reached 500. If so, it will  make it go back to 2. I chose 2 because it must be a number that's after the one that we set to make the action (in this case 1) so the condition number 3 keeps being false.<br />
+<br />
+Combination of both types of events.<br />
+<br />
+Now that you know how to make this 2 types of events. You may have already figured out by yourself how to combine them.<br />
+<br />
+The following example combined the 2 types we have seen.<br />
+<br />
+<br />
+$lastsender$<br />
+#string&lt;&gt;#<br />
+John<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$lastmsg$<br />
+#string&lt;&gt;#<br />
+hi<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$lastsender$<br />
+#string=#<br />
+John<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$lastmsg$<br />
+#string=#<br />
+hi<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva testding<br />
+$_var$<br />
+#number&gt;=#<br />
+500<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 3<br />
+<br />
+<br />
+<br />
+1. If the variable $lastsender$ returns something different than &quot;John&quot; then it will set custom variable $_var$ to 0.<br />
+2. If the variable $lastmsg$ returns something different than &quot;hi&quot; then it will set custom variable $_var$ to 0.<br />
+3. If variable $lastsender$ returns &quot;John&quot; it will add +1 to custom variable $_var$.<br />
+4. If variable $lastmsg$ returns &quot;hi&quot; it will add +1 to custom variable $_var$.<br />
+5. If custom variable $_var$ is equal to 2, then it will ding using &quot;exiva testding&quot;<br />
+6. If custom variable went too high (500) because both conditions kept being true for a long time, then it will reset it back to 3. (Must be a number above 2 so that condition number 5 keeps being false.)<br />
+<br />
+I hope that with this little tutorial you are able to make more complex conditional events that suit your needs.<br />
+<br />
+EDIT: 30 views and no comment? I would like to state that feedback is greatly appreciated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fanaticuser</div><div class="date">05-08-2007, 00:03</div></div><div class="posttext">extremely useful for me ty!!!<br />
+<br />
+<br />
+one question what do i have to do then if i want to use the spell exura gran when i have 150 hp or less and also 40 or more mana and if i have less than 40 mana when i have 150hp or less to drink a mana fluid</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-08-2007, 07:25</div></div><div class="posttext">I would use the Runemaker for the mana fluid's and the cheats section for healing. It's way easier.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Goodfellow</div><div class="date">05-08-2007, 08:35</div></div><div class="posttext">yeeee....now I want fucking 2 variables:<br />
+<br />
+1. $playeronscreen:name$  &lt; that would check if player with certain name is in battle list. Just think, you could do auto sd combo on him or auto shoot paralyze as soon as this is possible<br />
+<br />
+2. Possibility of shooting paralyze rune on target with exiva(trust me, that's really useful)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-08-2007, 18:37</div></div><div class="posttext">You don't need to have 2 conditions to be true for this, neither you need them to have them done just once. so maybe your post belongs to the variable proposal thread.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Goodfellow</div><div class="date">05-12-2007, 22:38</div></div><div class="posttext">I wanted to make an event which change SSA non-stop after my mana is below 200 and amulet slot is empty. It doesn't work because it's changing amulet even if there is an aol in the slot. Can you tell me what's wrong with that?<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$mymana$<br />
+#number&lt;=#<br />
+200<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$hex-equiped-item:02$<br />
+#number=#<br />
+0<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva #09 0C 02</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-13-2007, 22:48</div></div><div class="posttext">1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$mymana$<br />
+#number&lt;=#<br />
+200<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$hex-equiped-item:02$<br />
+#string=#<br />
+00 00<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva #09 0C 02<br />
+<br />
+<br />
+Try this one.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Goodfellow</div><div class="date">05-14-2007, 09:52</div></div><div class="posttext">Thanks ! It's working. I find this script very interesting during battles (for sorcerers, If my mana below 1k and amulet slot empty put SSA)<br />
+<br />
+This one would rox for paladins: (change ssa if hp drops under 60% and no amulet in slot)<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$myhppercent$<br />
+#number&lt;=#<br />
+60<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$hex-equiped-item:02$<br />
+#string=#<br />
+00 00<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva #09 0C 02</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">05-14-2007, 10:04</div></div><div class="posttext">Yes it is, enjoy!<br />
+There are lots of uses for this kind of cond. events.<br />
+Any other feedback? Has anybody used it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sequelado</div><div class="date">07-13-2007, 13:00</div></div><div class="posttext">hello weeper<br />
+can u check my thread on script requests about a cond, even that give u an alarm when trapped<br />
+=]<br />
+<br />
+<br />
+ty!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Jack</div><div class="date">07-13-2007, 13:56</div></div><div class="posttext">hello weeper<br />
+can u check my thread on script requests about a cond, even that give u an alarm when trapped<br />
+=]<br />
+<br />
+<br />
+ty!<br />
+<br />
+theirs a feature in the cavebot called &quot;OnTrapGiveAlarm&quot; just use that in ur script</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fintarn</div><div class="date">07-18-2007, 07:01</div></div><div class="posttext">How about puttin a life ring up when you got a certain amount of hp/mana and taking of when you've got a certain amount of hp/mana? I tried doing one pretty quick, but it ended up switching rings as I had more than one life ring in the bp, and that wastes the mins like a mafaka. Anyway so, I'm going to read that tutorial tomorrow and try to do one myself. I'm too tired now &gt;;p But anyway I'd appriciate if you made one aswell :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ninus</div><div class="date">07-20-2007, 17:31</div></div><div class="posttext">I've made a paralize cond, that uses exura only if I have 25 mana or more, thanks to this guide. This way I don't puff alot when I'm paralized and have no mana, which slows moving speed by alot.<br />
+<br />
+Thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Meryn</div><div class="date">09-26-2007, 15:29</div></div><div class="posttext">Is it possible to set an alarm if a player pops-up in your vip list? or even better, logg out if the players pops-up in vip? If so, HOW? :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jugglypiff</div><div class="date">10-28-2007, 10:04</div></div><div class="posttext">Hi, I find these conditions very interesting. But I have a problem with a situation which I am trying to adapt this to:<br />
+<br />
+What I want is a script that puts on a life ring whenever my hp is below 90% of my maximum, and when it's above 95% of my maximum it will put on a crystal ring.<br />
+<br />
+Now the problem is, I have this script already, but what it does, is constantly change the life ring whenever my hp if below 90%, so is cycles through all my life rings, causing lags and waste of packets. This is where the &quot;only once&quot; condition would be nice.<br />
+<br />
+HOWEVER; When I try to use this condition with it, it puts on the life ring when it goes below 90%hp, but if the life ring ends before the hp gets above 95%, then the script will NEVER put on a new life ring, since the condition won't get false and true again.<br />
+<br />
+Can you guys think of a solution to this?<br />
+Maybe a condition like &quot;if ring slot is empty =&gt; equip lifering&quot; or something would fix it. But I dont know how to do that.<br />
+<br />
+Cheers, Jigglypuff</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">10-28-2007, 20:14</div></div><div class="posttext">I suggest to use the first one &quot;Act only if 2 conditions are true&quot; instead of using the &quot;act only once&quot;. <br />
+<br />
+Make your first condition be: $myhppercent$ &lt; 90<br />
+<br />
+and second condition to be: $hex-equiped-item:09$ String&lt;&gt;  (life ring ID)<br />
+<br />
+That way it will ONLY  equip the life ring, if your hp is &lt; 90% AND you have something in your ring slot that is NOT a life ring.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Farsa</div><div class="date">10-29-2007, 03:45</div></div><div class="posttext">i think this will fit jugglypiff's request<br />
+<br />
+$myhppercent$<br />
+#number&gt;=#<br />
+95<br />
+0<br />
+0<br />
+0<br />
+exiva _hp = 3<br />
+$hex-equiped-item:09$<br />
+#string=#<br />
+ID OF LIFE RING WHEN EQUIPED<br />
+0<br />
+0<br />
+0<br />
+exiva _hp = $numericalexp:{$_hp$}+1$<br />
+$_hp$<br />
+#number&gt;=#<br />
+4<br />
+0<br />
+0<br />
+0<br />
+exiva #BF 0B 09<br />
+$myhppercent$<br />
+#number&lt;#<br />
+90<br />
+0<br />
+0<br />
+0<br />
+exiva _hp = 2<br />
+$hex-equiped-item:09$<br />
+#string=#<br />
+BF 0B<br />
+0<br />
+0<br />
+0<br />
+exiva _hp = $numericalexp:{$_hp$}-1$<br />
+$_hp$<br />
+#number&lt;=#<br />
+1<br />
+0<br />
+0<br />
+0<br />
+exiva #EC 0B 09<br />
+$hex-equiped-item:09$<br />
+#string=#<br />
+00 00<br />
+0<br />
+0<br />
+0<br />
+exiva #BF 0B 09</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jakoeb</div><div class="date">11-03-2007, 11:31</div></div><div class="posttext">If I D/L a cond event where should I put the .txt file?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">11-03-2007, 21:34</div></div><div class="posttext">In the &quot;conds&quot; folder that is inside the bot's folder.<br />
+Default is c:/program files/blackd tools/blackd proxy/conds</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oxm</div><div class="date">11-04-2007, 09:49</div></div><div class="posttext">Hello. I want only one take off exura from message alarm.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oxm</div><div class="date">11-04-2007, 13:00</div></div><div class="posttext">It is good script to conditional events to take off exura from message alarm ???? :<br />
+<br />
+<br />
+$lastmsg$<br />
+#string&lt;&gt;#<br />
+exura<br />
+0<br />
+300<br />
+0<br />
+exiva _variable = 0<br />
+$lastmsg$<br />
+#string=#<br />
+exura<br />
+0<br />
+500<br />
+0<br />
+exiva _variable = $numericalexp:{$_variable$}+1$<br />
+$_variable$<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _variable = 0<br />
+$_variable$<br />
+#number&gt;=#<br />
+500<br />
+0<br />
+300<br />
+0<br />
+exiva _variable = 2</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">educorgozinho</div><div class="date">04-27-2008, 21:53</div></div><div class="posttext">Combination of both types of events.<br />
+<br />
+Now that you know how to make this 2 types of events. You may have already figured out by yourself how to combine them.<br />
+<br />
+The following example combined the 2 types we have seen.<br />
+<br />
+<br />
+$lastsender$<br />
+#string&lt;&gt;#<br />
+John<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$lastmsg$<br />
+#string&lt;&gt;#<br />
+hi<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$lastsender$<br />
+#string=#<br />
+John<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$lastmsg$<br />
+#string=#<br />
+hi<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva testding<br />
+$_var$<br />
+#number&gt;=#<br />
+500<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 3<br />
+<br />
+<br />
+<br />
+1. If the variable $lastsender$ returns something different than &quot;John&quot; then it will set custom variable $_var$ to 0.<br />
+2. If the variable $lastmsg$ returns something different than &quot;hi&quot; then it will set custom variable $_var$ to 0.<br />
+3. If variable $lastsender$ returns &quot;John&quot; it will add +1 to custom variable $_var$.<br />
+4. If variable $lastmsg$ returns &quot;hi&quot; it will add +1 to custom variable $_var$.<br />
+5. If custom variable $_var$ is equal to 2, then it will ding using &quot;exiva testding&quot;<br />
+6. If custom variable went too high (500) because both conditions kept being true for a long time, then it will reset it back to 3. (Must be a number above 2 so that condition number 5 keeps being false.)<br />
+<br />
+I dont understand why you make reset to 3 instead of reset to 0. Becauese if you reset to 3 the $_var$ will never result equal to 2 again, then you will never testding to John+hi again...<br />
+<br />
+<br />
+Edited: nvm, I did read it again and now unterstand why reset to 3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xamxu</div><div class="date">10-07-2008, 01:54</div></div><div class="posttext">I've tried to search on the forums for some kind of a cap alert, but I can't find one..<br />
+Anyone knows a good one to share? :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wojtek19</div><div class="date">10-12-2008, 09:58</div></div><div class="posttext">I try edit to avoid spam script ... <br />
+I dont know why this script dont change orther than energy mystic blade weapon to Mystic if last attacked monster is ghost.<br />
+Colored text is part of script added by me. Say me please what is wrong and fix it. I change it with reading Weeper tutorial.<br />
+<br />
+Here is link to thead<br />
+http://www.blackdtools.net/showthread.php?t=28529<br />
+<br />
+or here code:<br />
+<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _bs = 0<br />
+$hex-lastattackedid$<br />
+#string&lt;&gt;#<br />
+$hex-idofname:ghost$<br />
+0<br />
+300<br />
+0<br />
+exiva _bs = $numericalexp:{$_bs$}+1$<br />
+$hex-lastattackedid$<br />
+#string&lt;&gt;#<br />
+$hex-idofname:dragon$<br />
+0<br />
+300<br />
+0<br />
+exiva _bs = $numericalexp:{$_bs$}+1$<br />
+$hex-equiped-item:06$<br />
+#string&lt;&gt;#<br />
+$hex-idofname:DF 0C$<br />
+0<br />
+300<br />
+0<br />
+exiva _bs = $numericalexp:{$_bs$}+1$<br />
+$_bs$<br />
+#number=#<br />
+3<br />
+0<br />
+300<br />
+0<br />
+exiva #DF 0C 06<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _MB = 0<br />
+$hex-lastattackedid$<br />
+#string=#<br />
+$hex-idofname:ghost$<br />
+0<br />
+300<br />
+0<br />
+exiva _MB = $numericalexp:{$_MB$}+1$<br />
+$hex-equiped-item:06$<br />
+#string&lt;&gt;#<br />
+$hex-idofname:1C 03$<br />
+0<br />
+300<br />
+0<br />
+exiva _MB = $numericalexp:{$_MB$}+1$<br />
+$_MB$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva #1C 03 06<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _ammo = 0<br />
+$hex-lastattackedid$<br />
+#string=#<br />
+$hex-idofname:dragon$<br />
+0<br />
+500<br />
+0<br />
+exiva _ammo = $numericalexp:{$_ammo$}+1$<br />
+$hex-equiped-item:0A$<br />
+#string=#<br />
+$hex-idofname:00 00$<br />
+0<br />
+300<br />
+0<br />
+exiva _ammo = $numericalexp:{$_ammo$}+1$<br />
+$_ammo$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva &gt; 78 FF FF 05 00 00 61 0D 00 FF FF 0A 00 00 01<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _2h sword = 0<br />
+$hex-lastattackedid$<br />
+#string=#<br />
+$hex-idofname:dragon$<br />
+200<br />
+500<br />
+0<br />
+exiva _2h sword = $numericalexp:{$_2h sword$}+1$<br />
+$hex-equiped-item:06$<br />
+#string&lt;&gt;#<br />
+$hex-idofname:D6 1C$<br />
+0<br />
+300<br />
+0<br />
+exiva _2h sword = $numericalexp:{$_2h sword$}+1$<br />
+$_2h sword$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva #D6 1C 06<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _shield = 0<br />
+$hex-equiped-item:05$<br />
+#string=#<br />
+$hex-idofname:00 00$<br />
+0<br />
+300<br />
+0<br />
+exiva _shield = $numericalexp:{$_shield$}+1$<br />
+$hex-lastattackedid$<br />
+#string&lt;&gt;#<br />
+$hex-idofname:dragon$<br />
+0<br />
+300<br />
+0<br />
+exiva _shield = $numericalexp:{$_shield$}+1$<br />
+$_shield$<br />
+#number=#<br />
+2<br />
+0<br />
+300<br />
+0<br />
+exiva &gt; 78 FF FF 0A 00 00 61 0D 00 FF FF 05 00 00 01<br />
+<br />
+<br />
+Thanks a lot.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">h0tlines</div><div class="date">03-09-2009, 18:05</div></div><div class="posttext">I found this tutorial very useful weeper. I used it to make my first own conditional event, and I thought I should post it here since it might be useful. What it does is that it sounds the danger alarm whenever a player is on the screen only if you are on the 8th level. I use it when hunting in larva caves with a depositer so that the alarm won't go off on the way to the bank.<br />
+<br />
+<br />
+<br />
+1<br />
+#number=#<br />
+1<br />
+0<br />
+300<br />
+0<br />
+exiva _var = 0<br />
+$pksonrelativefloor:0$<br />
+#number&lt;&gt;#<br />
+0<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$myz$<br />
+#number=#<br />
+8<br />
+0<br />
+300<br />
+0<br />
+exiva _var = $numericalexp:{$_var$}+1$<br />
+$_var$<br />
+#number=#<br />
+2<br />
+0<br />
+10000<br />
+0<br />
+exiva testsound</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Godlyyo</div><div class="date">10-09-2009, 17:44</div></div><div class="posttext">im sorry i have no idea how to use black d, could you explain in detail for a noob with computers/bots how to do this..<br />
+<br />
+so the elf bot has something called &quot;immortal&quot; basically when someones hp drops below 60% or so it puts on a mana ring (death ring on my OT server) and takes it off when its above 60% again<br />
+<br />
+i was wondering how to do this with black d? someone told me to record the hex of me doing it then set the conditions to when my hp is below 60% but i dont know how to record the hex or whatever... any help please?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">schizzo</div><div class="date">02-20-2017, 18:35</div></div><div class="posttext">hey guys <br />
+can someone try to help me make a condition that turns the blueaura on if more than x monsters on screen / battle and turns it back off if there are 2 left ?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

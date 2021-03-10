@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="years, played, letters/numbers, string, blackd, stop, give, presume, $_manapotionid$, earlier, deposit, work, script, magic" />
+	<meta name="description" content="After two weeks of testing and asking help in forum i finally created my own script with depositer and mana refiler. I even bought skype credits for skype alert to my cell phone (not working properly). But now i give up.. I can say that i don't understand blackdt cave bot at all. It's work properly buy manas etc but after some time script starts doing bugs. He don't buy manas or something other problems apear.... Looks everything ok i have open bp's  have money with  me (like others times" />
+	
+	<title> I give up.... [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-10.html">Blackd Proxy General Chat</a> &gt;  I give up....</div>
+<hr />
+<div class="pda"><a href="t-54793.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54793-I-give-up">I give up....</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-19-2011, 18:49</div></div><div class="posttext">After two weeks of testing and asking help in forum i finally created my own script with depositer and mana refiler. I even bought skype credits for skype alert to my cell phone (not working properly). But now i give up.. I can say that i don't understand blackdt cave bot at all. It's work properly buy manas etc but after some time script starts doing bugs. He don't buy manas or something other problems apear.... Looks everything ok i have open bp's  have money with  me (like others times before) but still he commes to shop and buy 2 mana potions instead 300 (more or less). Looks like after long time of boting he gets tired....... I starts hate tibia when after so many woking wasted and still everything wrong.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shadow1</div><div class="date">03-19-2011, 18:55</div></div><div class="posttext">man that shit happens. i think its cause of tibia updates or somethin. just have to send msgs and ask for help. sadly im like the only one here who checks every possible thread. but i dont kno how to help some people.  or try redoing the scripts or try making new ones. the more u make the better u will get</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">03-20-2011, 00:06</div></div><div class="posttext">what is wrong with this part? It was working for a few h and now started doing everything wrong...<br />
+<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+fastExiva _manas = 500<br />
+fastExiva _idcost = 50<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw 100<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+#WAYPOINTS FROM BANK TO MAGIC SHOP<br />
+move 32832,31243,7<br />
+move 32829,31234,7<br />
+move 32820,31233,7<br />
+move 32809,31233,7<br />
+move 32799,31233,7<br />
+move 32790,31232,7<br />
+move 32790,31237,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+##########################################<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+##########################################<br />
+##########################################<br />
+################################################## #######<br />
+###WAYPOINTS FROM MAGIC SHOP TO DP<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32776,31233,7<br />
+move 32773,31237,7<br />
+move 32773,31244,7<br />
+move 32777,31244,7<br />
+#################################################<br />
+putlootondepot</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RaPoZaUm</div><div class="date">03-20-2011, 01:13</div></div><div class="posttext">For this, we all miss Malmis.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Wiotki</div><div class="date">03-20-2011, 08:15</div></div><div class="posttext">#Depositing gold<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+fastExiva _manapotionid = 0C 01 (put mana potions id , OC 01 - normal potion)<br />
+fastExiva _manas = 500<br />
+fastExiva _idcost = 50<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+##########################################<br />
+##########################################<br />
+#WAYPOINTS FROM BANK TO MAGIC SHOP<br />
+move 32832,31243,7<br />
+move 32829,31234,7<br />
+move 32820,31233,7<br />
+move 32809,31233,7<br />
+move 32799,31233,7<br />
+move 32790,31232,7<br />
+move 32790,31237,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+##########################################<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+##########################################<br />
+##########################################<br />
+################################################## #######<br />
+###WAYPOINTS FROM MAGIC SHOP TO DP<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32776,31233,7<br />
+move 32773,31237,7<br />
+move 32773,31244,7<br />
+move 32777,31244,7<br />
+#################################################<br />
+putlootondepot<br />
+<br />
+<br />
+BlackD is easy :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">03-31-2011, 00:37</div></div><div class="posttext">I didn't look the rest of the script, but...<br />
+ <br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+<br />
+...is wrong. you should not include the packet length in my commands.<br />
+ <br />
+fastExiva &gt; 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+<br />
+*might* be ok (I didn't really tested it)<br />
+ <br />
+Anyways I consider it dangerous. If you only want to buy/sell things in npc there are safe blackd proxy commands that already do that:<br />
+ <br />
+exiva sell:XX XX:N (sell N items with ID XX XX)<br />
+exiva buy:XX XX:N (buy N items with ID XX XX)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">BldMx</div><div class="date">03-31-2011, 00:45</div></div><div class="posttext">What happens if I do put the packet length?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zihinu</div><div class="date">06-11-2011, 08:56</div></div><div class="posttext">I presume you've set the right ID for $_manapotionid$ earlier in the script, else it won't work.<br />
+ Why &quot;deposit all&quot; at the magic stop? (might be something new, haven't played in 2 years now).<br />
+ And as BlackD says, don't use the 4 first letters/numbers in the string.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

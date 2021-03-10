@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="working, https://blackdtools.com/images/tibia11beta.png, tested, tibia" />
+	<meta name="description" content="Ok, I am now working on this part, required for my proxy. 
+For now I found a method to locate it: 
+IMPORTANT: You should disable &quot;Fast scan&quot; and you should enable &quot;Executable memory&quot; 
+ 
+Just search the XTEA const called delta (please check XTEA C implementation at this wikipedia article: https://en.wikipedia.org/wiki/XTEA ). 
+Using Cheat Engine, just search 4 bytes HEX: 61C88647 in executable memory and you should find it in 2-5 places. You can do an initial bet for the second one. If xtea" />
+	
+	<title> Tibia 11 - XTEA key [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - XTEA key</div>
+<hr />
+<div class="pda"><a href="t-62993.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62993-Tibia-11-XTEA-key">Tibia 11 - XTEA key</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-12-2016, 00:53</div></div><div class="posttext">Ok, I am now working on this part, required for my proxy.<br />
+For now I found a method to locate it:<br />
+IMPORTANT: You should disable &quot;Fast scan&quot; and you should enable &quot;Executable memory&quot;<br />
+<br />
+Just search the XTEA const called delta (please check XTEA C implementation at this wikipedia article: https://en.wikipedia.org/wiki/XTEA ).<br />
+Using Cheat Engine, just search 4 bytes HEX: 61C88647 in executable memory and you should find it in 2-5 places. You can do an initial bet for the second one. If xtea function is not there then just try the rest.<br />
+<br />
+Go to Memory View &gt; right click &gt; Go to address &gt; enter your choosen address.<br />
+If it is the correct address then it should point to client.exe + something. <br />
+If it is the correct address then you should be reading the function to cipher/decipher packets with XTEA. Right click, select current function and you will see it better:<br />
+<br />
+<br />
+<br />
+client.exe+2E6A6D - 55                    - push ebp<br />
+client.exe+2E6A6E - 8B EC                 - mov ebp,esp<br />
+client.exe+2E6A70 - 51                    - push ecx<br />
+client.exe+2E6A71 - 51                    - push ecx<br />
+client.exe+2E6A72 - 53                    - push ebx<br />
+client.exe+2E6A73 - 56                    - push esi<br />
+client.exe+2E6A74 - 8B 35 50030C01        - mov esi,[client.exe+330350]<br />
+client.exe+2E6A7A - 57                    - push edi<br />
+client.exe+2E6A7B - 8B 7D 08              - mov edi,[ebp+08]<br />
+client.exe+2E6A7E - 89 4D FC              - mov [ebp-04],ecx<br />
+client.exe+2E6A81 - FF 37                 - push [edi]<br />
+client.exe+2E6A83 - FF D6                 - call esi<br />
+client.exe+2E6A85 - FF 77 04              - push [edi+04]<br />
+client.exe+2E6A88 - 8B D8                 - mov ebx,eax<br />
+client.exe+2E6A8A - FF D6                 - call esi<br />
+client.exe+2E6A8C - 8B D0                 - mov edx,eax<br />
+client.exe+2E6A8E - 33 F6                 - xor esi,esi<br />
+client.exe+2E6A90 - 8B 45 FC              - mov eax,[ebp-04]<br />
+client.exe+2E6A93 - 59                    - pop ecx<br />
+client.exe+2E6A94 - 59                    - pop ecx<br />
+client.exe+2E6A95 - 8B 48 2C              - mov ecx,[eax+2C]<br />
+client.exe+2E6A98 - 89 4D 08              - mov [ebp+08],ecx<br />
+client.exe+2E6A9B - 85 C9                 - test ecx,ecx<br />
+client.exe+2E6A9D - 74 49                 - je client.exe+2E6AE8<br />
+client.exe+2E6A9F - 8B 78 28              - mov edi,[eax+28]<br />
+client.exe+2E6AA2 - 8B CA                 - mov ecx,edx<br />
+client.exe+2E6AA4 - 8B C2                 - mov eax,edx<br />
+client.exe+2E6AA6 - C1 E0 04              - shl eax,04<br />
+client.exe+2E6AA9 - C1 E9 05              - shr ecx,05<br />
+client.exe+2E6AAC - 33 C8                 - xor ecx,eax<br />
+client.exe+2E6AAE - 8B C6                 - mov eax,esi<br />
+client.exe+2E6AB0 - 83 E0 03              - and eax,03<br />
+client.exe+2E6AB3 - 03 CA                 - add ecx,edx<br />
+client.exe+2E6AB5 - 8B 04 87              - mov eax,[edi+eax*4] &lt;&lt; XTEA KEY HERE!<br />
+client.exe+2E6AB8 - 03 C6                 - add eax,esi<br />
+client.exe+2E6ABA - 81 EE 4786C861        - sub esi,61C88647<br />
+client.exe+2E6AC0 - 33 C8                 - xor ecx,eax<br />
+client.exe+2E6AC2 - 03 D9                 - add ebx,ecx<br />
+client.exe+2E6AC4 - 8B CB                 - mov ecx,ebx<br />
+client.exe+2E6AC6 - 8B C3                 - mov eax,ebx<br />
+client.exe+2E6AC8 - C1 E0 04              - shl eax,04<br />
+client.exe+2E6ACB - C1 E9 05              - shr ecx,05<br />
+client.exe+2E6ACE - 33 C8                 - xor ecx,eax<br />
+client.exe+2E6AD0 - 8B C6                 - mov eax,esi<br />
+client.exe+2E6AD2 - C1 E8 0B              - shr eax,0B<br />
+client.exe+2E6AD5 - 03 CB                 - add ecx,ebx<br />
+client.exe+2E6AD7 - 83 E0 03              - and eax,03<br />
+client.exe+2E6ADA - 8B 04 87              - mov eax,[edi+eax*4]<br />
+client.exe+2E6ADD - 03 C6                 - add eax,esi<br />
+client.exe+2E6ADF - 33 C8                 - xor ecx,eax<br />
+client.exe+2E6AE1 - 03 D1                 - add edx,ecx<br />
+client.exe+2E6AE3 - 3B 75 08              - cmp esi,[ebp+08]<br />
+client.exe+2E6AE6 - 75 BA                 - jne client.exe+2E6AA2<br />
+client.exe+2E6AE8 - 8B 45 0C              - mov eax,[ebp+0C]<br />
+client.exe+2E6AEB - 8D 4D F8              - lea ecx,[ebp-08] : (float)18940.7500<br />
+client.exe+2E6AEE - 52                    - push edx<br />
+client.exe+2E6AEF - 89 45 F8              - mov [ebp-08],eax<br />
+client.exe+2E6AF2 - 8B 45 10              - mov eax,[ebp+10]<br />
+client.exe+2E6AF5 - 53                    - push ebx<br />
+client.exe+2E6AF6 - 89 45 FC              - mov [ebp-04],eax<br />
+client.exe+2E6AF9 - E8 D2010000           - call client.exe+2E6CD0<br />
+client.exe+2E6AFE - 8B C8                 - mov ecx,eax<br />
+client.exe+2E6B00 - E8 CB010000           - call client.exe+2E6CD0<br />
+client.exe+2E6B05 - 5F                    - pop edi<br />
+client.exe+2E6B06 - 5E                    - pop esi<br />
+client.exe+2E6B07 - 5B                    - pop ebx<br />
+client.exe+2E6B08 - 8B E5                 - mov esp,ebp<br />
+client.exe+2E6B0A - 5D                    - pop ebp<br />
+client.exe+2E6B0B - C2 0C00               - ret 000C<br />
+<br />
+<br />
+2 lines above we have the key, inside EDI. Just select that line, right click, Find out what addresses this instruction accesses.<br />
+<br />
+client.exe+2E6AB5 - 8B 04 87              - mov eax,[edi+eax*4] &lt;&lt; XTEA KEY HERE!<br />
+client.exe+2E6AB8 - 03 C6                 - add eax,esi<br />
+client.exe+2E6ABA - 81 EE 4786C861        - sub esi,61C88647<br />
+<br />
+And then you will see a window called &quot;Changed Addresses&quot; that will show a lot of activity in 4 addresses. It is really the same address (just split in 4 parts of 4 bytes each) That is, the lower address is the start of the XTEA key. <br />
+<br />
+Now we only need to search path to this place.<br />
+<br />
+We obtain several paths. The best looking one is this:<br />
+&quot;Qt5Gui.dll&quot;+00482EE4 &gt; 28 &gt; 0 &gt; 1D8 &gt; 2F0 &gt; 7C &gt; B8<br />
+And we know we can safely translate it to this shorter one:<br />
+&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 2F0 &gt; 7C &gt; B8<br />
+<br />
+That is:<br />
+(Tibia 11.00) adrConnectionKey=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 2F0 &gt; 7C &gt; B8<br />
+<br />
+(Tibia 11.01) adrConnectionKey=&quot;Qt5Core.dll&quot; + 004555C8 &gt; 8 &gt; 1D8 &gt; 2F8 &gt; 7C &gt; B8</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-12-2016, 12:22</div></div><div class="posttext">Tested, working :cool:<br />
+<br />
+https://blackdtools.com/images/tibia11beta.png</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">DiegoTV</div><div class="date">10-20-2016, 05:06</div></div><div class="posttext">Also, another method where you can obtain is through the login routine, the xtea is rsa encrypted sent right after you select the character, once decrypted you can just store it and use it as you please :)<br />
+<br />
+The structure hasn't really changed since the Legacy client.<br />
+<br />
+                <br />
+<br />
+                p.SkipHeaders();<br />
+                Console.WriteLine(&quot;Packet Type: &quot; + p.read_byte());<br />
+                Console.WriteLine(&quot;Client Type: &quot; + p.read_ushort());<br />
+                Console.WriteLine(&quot;protocolVersion: &quot; + p.read_ushort());<br />
+                Console.WriteLine(&quot;Client Version: &quot; + p.read_uint());<br />
+                Console.WriteLine(&quot;contentRevision: &quot; + p.read_ushort());<br />
+                Console.WriteLine(&quot;Preview State: &quot; + p.read_byte());<br />
+<br />
+                byte[] rsaBlock = p.PeekAt(p.position, 128);<br />
+                Rsa.RsaOTDecrypt(ref rsaBlock, 0, 128, Tibia);<br />
+                p.replace_bytes(rsaBlock);<br />
+                if (p.read_byte() != 1) throw new Exception(&quot;Invalid RSA&quot;);<br />
+<br />
+                xtea_key[0] = p.read_uint();<br />
+                xtea_key[1] = p.read_uint();<br />
+                xtea_key[2] = p.read_uint();<br />
+                xtea_key[3] = p.read_uint();<br />
+<br />
+                p.read_byte();<br />
+                Console.WriteLine(p.read_string()); // token string<br />
+                Console.WriteLine(p.read_string()); // character name</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-20-2016, 16:09</div></div><div class="posttext">Yes, however you can't decipher it directly in real servers because the private rsa key of cipsoft is unknown.<br />
+The only solution would be doing a small modification to the client so it uses ot server rsa keys and then you can decipher using ot server private key and then cipher again using cipsoft public rsa key. <br />
+<br />
+If you know where is XTEA key in memory then you can skip the whole RSA part.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ashwalker</div><div class="date">10-24-2016, 13:46</div></div><div class="posttext">The only solution would be doing a small modification to the client<br />
+<br />
+What about modifying it inside login packet?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">10-24-2016, 23:52</div></div><div class="posttext">In order to modify that initial login packet you would need to modify RSA key in first place. It requires a modification to the client executable -or- launching the client in frozen status, modify it in memory and then unfreeze it.<br />
+<br />
+There is no way to modify a encrypted packet unless you are able to decipher it and cipher it again after that.<br />
+That is, you only can modify packets while they are not encrypted.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

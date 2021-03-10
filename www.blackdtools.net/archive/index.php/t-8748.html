@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="door, exiva, move, saymessage, open, make, useitem, 32655,31656,9, 32655,31655,9, client, locked, script, cavebot, line, proxy, waitx, closed, packets, copy, iftrue, click, window, working, code, melmis, goto, part, called, 32655,31654,9, label, waypoint, find, position, step, adds, past, comand, yellow, http://img468.imageshack.us/img468/1852/proxyth4.jpg, copied, selected, thing, xxxxx, $myy$, cords, beggining, $myy$number=xxxxx, $nlineoflabellabelname$, labelname, moving" />
+	<meta name="description" content="Hello! 
+ 
+I read Melmis tutorial and use it, but it wasn't always working properly. That's why I decided to make my own script, and show you how to make your cavebot to open door everytime. 
+ 
+What was the problem. The position of doors can be different.. they can be opened, closed, closed and locked. Thats why you have to use different HEX codes to go through. 
+ 
+Put your key into arrow slot. You have to wear it there whenever you're runing this script. 
+ 
+Here i wrote a numbers of sqm that" />
+	
+	<title> [how to] open door with cavebot (100% working) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  [how to] open door with cavebot (100% working)</div>
+<hr />
+<div class="pda"><a href="t-8748.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?8748-how-to-open-door-with-cavebot-(100-working)">[how to] open door with cavebot (100% working)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Al Capone</div><div class="date">08-22-2007, 15:39</div></div><div class="posttext">Hello!<br />
+<br />
+I read Melmis tutorial (http://www.blackdtools.net/showthread.php?t=6966) and use it, but it wasn't always working properly. That's why I decided to make my own script, and show you how to make your cavebot to open door everytime.<br />
+<br />
+What was the problem. The position of doors can be different.. they can be opened, closed, closed and locked. Thats why you have to use different HEX codes to go through.<br />
+<br />
+Put your key into arrow slot. You have to wear it there whenever you're runing this script.<br />
+<br />
+Here i wrote a numbers of sqm that will be used:<br />
+http://img528.imageshack.us/img528/531/doornb6.png<br />
+<br />
+To start a part with door opening in your script make a label, e.g.<br />
+<br />
+:door<br />
+<br />
+Now you have to stand exactly in front of the door you want to open (sqm 1, and make a waypoint there.<br />
+<br />
+<br />
+:door<br />
+move 32655,31656,9<br />
+<br />
+<br />
+Open the door, step on sqm 2 and click &quot;useItem &lt;curent x,y,z&gt;&quot; in your Cavebot window.<br />
+<br />
+<br />
+:door<br />
+move 32655,31656,9<br />
+useItem 32655,31655,9<br />
+<br />
+<br />
+Step back on sqm 1 and close the door using a key, they have to be locked.<br />
+http://img468.imageshack.us/img468/7637/door2gj2.jpg<br />
+<br />
+Now you have to get first HEX.<br />
+Melmis describes it perfectly so i quote him (i removed some unnecessary parts):<br />
+<br />
+It is recomended you only are using one client when you try to do this. But if you have several clients online, first find out what ID your client has in the Proxy. To do this, I don't know if there is a better way, but I go to &quot;tools&quot; and use the &quot;Fake messages to self&quot; function and try different IDs there.<br />
+<br />
+When you know what ID the right client is open the &quot;Proxy&quot; window. Here you check the small box called &quot;log packets&quot; and then you open [...] the door, then you uncheck the box. Now you should have a bunch of logged packets.<br />
+<br />
+The ones we are interested in are the ones that have the prefix &quot;GAMCLIENT-ID-&gt;( hex )&quot;. Try to find the first line that is sent FROM your client ( &gt; ) and copy only the hex. But remove the first four characters from the hex, they're called headers and the &quot;exiva&quot; command automatically adds them.<br />
+http://img468.imageshack.us/img468/1852/proxyth4.jpg<br />
+<br />
+Now you add the copied part (selected on yellow) and past it behind the comand &quot;sayMessage exiva &gt; &quot;, like in an example:<br />
+<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 33 18 01<br />
+now add it to your code.<br />
+<br />
+<br />
+:door<br />
+move 32655,31656,9<br />
+useItem 32655,31655,9<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 33 18 01<br />
+<br />
+<br />
+The thing is, that when you use key on &quot;not locked&quot; door, the OTHER HEX are used. That's why you need to get this hex too. You have to lock door to unlock them in next try.<br />
+<br />
+And here you go, door are not locked.<br />
+http://img528.imageshack.us/img528/1570/door1bx3.jpg<br />
+<br />
+Run &quot;PROXY&quot; again, click on &quot;clear logs&quot;, than log packets and use key on unlocked, but closed door (image) and copy the new HEX as you did it before.<br />
+make line like this:<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+and modify your code.<br />
+<br />
+<br />
+<br />
+:door<br />
+move 32655,31656,9<br />
+useItem 32655,31655,9<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 33 18 01<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+<br />
+<br />
+Now open the door, walk to sqm 3 and make a waypoint, after that you should wait 1 sec (waitX 1)<br />
+<br />
+<br />
+:door<br />
+move 32655,31656,9<br />
+useItem 32655,31655,9<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 33 18 01<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+move 32655,31654,9<br />
+waitX 1<br />
+<br />
+<br />
+Under this, paste a line like that one:<br />
+IfTrue ($myy$#number=#XXXXX) Goto $nlineoflabel:LABELNAME$<br />
+<br />
+:LABELNAME - this is the name of label you use at the beggining<br />
+XXXXX - this is the &quot;Y&quot; of your position on sqm 1. You should use $myy$ cords when you're moving south&lt;-&gt;north and $myx$ if you move west&lt;-&gt;east. through the door.<br />
+<br />
+And here you go, the complete script to move through Ab'dendriiel Troll Cave first door.<br />
+<br />
+<br />
+:door<br />
+move 32655,31656,9<br />
+useItem 32655,31655,9<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 33 18 01<br />
+sayMessage exiva &gt; 83 FF FF 0A 00 00 99 0B 00 8F 7F A7 7B 09 32 18 01<br />
+move 32655,31654,9<br />
+waitX 1<br />
+IfTrue ($myy$#number=#31656) Goto $nlineoflabel:door$<br />
+<br />
+<br />
+Good Luck!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ernie</div><div class="date">08-22-2007, 16:49</div></div><div class="posttext">Really usefull for me!:D<br />
+<br />
+Does this also works with the stone at edron orcs?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tito</div><div class="date">08-22-2007, 17:22</div></div><div class="posttext">yup, but i dunno what for all this use item etc<br />
+<br />
+i just send packet for openin door with key and opening door without key if the door are lcoked the first one will open and if not the second one will 100% working :)<br />
+<br />
+@script: ye its good, very good :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tescik2</div><div class="date">08-22-2007, 19:37</div></div><div class="posttext">I know about it since loooonger time, but it's very good for begginers and others :)<br />
+<br />
+Very nice tutorial with images.<br />
+<br />
+Regards,<br />
+Tescik2</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Al Capone</div><div class="date">08-22-2007, 23:20</div></div><div class="posttext">Thanks for posts. Im glad you like it :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tobbes</div><div class="date">08-23-2007, 02:18</div></div><div class="posttext">what about closing the door after you went trow it? :P<br />
+<br />
+ps: for them who want to open several doors just need to switch the key by putting a other key into ammunition slot with exiva commands =)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kocz</div><div class="date">08-24-2007, 20:03</div></div><div class="posttext">Good, it'll help lots.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zygfryd</div><div class="date">04-26-2008, 20:59</div></div><div class="posttext">Hello:). Some1 can help me, I need  edit my script because  he open the door, but if door is open he closed  and w8. Some1 can help my, please<br />
+<br />
+<br />
+Sorry for maine english:):p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">04-26-2008, 21:06</div></div><div class="posttext">looks good, only one thing i can tell you to make it better:<br />
+when locking/unlocking door, use hotkeys, this way you don't need to have the key in ammo slot.<br />
+<br />
+in the script, use the &quot;hotkey-packet&quot; instead of &quot;ammo-to-door-packet&quot;<br />
+I hope you understand what I mean.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zygfryd</div><div class="date">04-26-2008, 21:26</div></div><div class="posttext">Heh, If u can change this srept??:p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xinek</div><div class="date">04-27-2008, 11:51</div></div><div class="posttext">Very useful tutorial ;)<br />
+<br />
+Thanks<br />
+Xinek</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zygfryd</div><div class="date">04-30-2008, 23:58</div></div><div class="posttext">Some1 can helpp, and change this script plsssss</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

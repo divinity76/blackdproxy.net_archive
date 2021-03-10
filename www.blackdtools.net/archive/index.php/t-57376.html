@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="phòng, &amp;7843nh, trong, khách, gi&amp;7843i, &amp;7903, trung, &amp;273&amp;7883a, ph&amp;7889, khach, http://www.mayanahotel.com/vi/accommodation/phong-o.redbrand, t&amp;7871, s&amp;7889, thành, t&amp;7915, không, doanh, m&amp;7897t, hotel, nikon, ti&amp;7879n, chu&amp;7849n, &amp;273&amp;7847y, &amp;273&amp;7911, n&amp;7873n, c&amp;7853p, vuông, internet, r&amp;7897ng, c&amp;7905, &amp;273&amp;432&amp;7907c, nhi&amp;7879m, b&amp;7893, &amp;273áo, ch&amp;259m, ti&amp;7879c, d&amp;7883ch, v&amp;7909, n&amp;259ng, truy&amp;7873n, t&amp;7911, thanh, l&amp;7841nh, &amp;273i&amp;7873u, h&amp;7885p, trang, qu&amp;7847y, t&amp;432, b&amp;7883, h&amp;7897i" />
+	<meta name="description" content="Does Anyone have a good script for a lv 50 knight with 60/57 skills (bad skills i no) Like dara minos or something. 
+Please someone give me a hand as well i suck at makin my own scripts so just pm me please and thank you" />
+	
+	<title> 50 Knight Please Help me out [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  50 Knight Please Help me out</div>
+<hr />
+<div class="pda"><a href="t-57376.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57376-50-Knight-Please-Help-me-out">50 Knight Please Help me out</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">hinsy</div><div class="date">02-27-2012, 01:26</div></div><div class="posttext">Does Anyone have a good script for a lv 50 knight with 60/57 skills (bad skills i no) Like dara minos or something.<br />
+Please someone give me a hand as well i suck at makin my own scripts so just pm me please and thank you</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">theboobx</div><div class="date">03-01-2012, 20:40</div></div><div class="posttext">onGMpause<br />
+setFollow<br />
+setBot OldLootMode=1<br />
+setLoot 0B 17<br />
+setLoot D7 0B<br />
+setPriority carniphila:+2<br />
+setPriority Blood Crab:+1<br />
+setMeleeKill carniphila<br />
+setMeleeKill tortoise<br />
+setMeleeKill carrion worm<br />
+setMeleeKill snake<br />
+setMeleeKill cave rat<br />
+setMeleeKill centipede<br />
+setMeleeKill blood crab<br />
+setMeleeKill crab<br />
+setMeleeKill crocodile<br />
+setMeleeKill swamp troll<br />
+setMeleeKill slime<br />
+move 32611,32703,8<br />
+move 32604,32694,8<br />
+move 32595,32704,8<br />
+move 32608,32679,8<br />
+move 32595,32654,8<br />
+move 32585,32673,8<br />
+move 32579,32683,8<br />
+move 32590,32666,8<br />
+move 32609,32674,8<br />
+move 32611,32674,8<br />
+move 32611,32673,9<br />
+move 32591,32671,9<br />
+move 32587,32657,9<br />
+move 32583,32678,9<br />
+move 32564,32695,9<br />
+move 32545,32713,9<br />
+move 32538,32725,9<br />
+move 32524,32728,9<br />
+move 32533,32711,9<br />
+move 32531,32709,9<br />
+move 32531,32708,10<br />
+move 32548,32693,10<br />
+move 32571,32670,10<br />
+move 32585,32654,10<br />
+move 32594,32664,10<br />
+move 32577,32661,10<br />
+move 32574,32678,10<br />
+move 32591,32718,10<br />
+move 32622,32718,10<br />
+move 32639,32719,10<br />
+move 32583,32726,10<br />
+move 32583,32733,10<br />
+move 32599,32746,10<br />
+move 32621,32759,10<br />
+move 32621,32758,10<br />
+move 32621,32759,9<br />
+move 32603,32749,9<br />
+move 32578,32732,9<br />
+move 32600,32735,9<br />
+move 32620,32719,9<br />
+move 32604,32706,9<br />
+move 32589,32716,9<br />
+move 32601,32696,9<br />
+move 32595,32680,9<br />
+move 32609,32672,9<br />
+move 32611,32673,9<br />
+move 32611,32674,8<br />
+move 32606,32683,8<br />
+move 32610,32701,8<br />
+IfTrue ($mycap$#number&lt;=#6000) Goto $nlineoflabel:deposit$<br />
+IfTrue ($countitems:0A 01$#number&lt;=#15) Goto $nlineoflabel:refill$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move 32613,32703,8<br />
+move 32613,32704,7<br />
+move 32612,32711,7<br />
+move 32613,32727,7<br />
+move 32617,32742,7<br />
+move 32625,32750,7<br />
+move 32625,32748,6<br />
+move 32625,32746,6<br />
+move 32632,32739,6<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit $countitems:D7 0B$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+move 32626,32744,6<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+move 32622,32747,7<br />
+move 32622,32741,7<br />
+move 32620,32741,7<br />
+stackItems<br />
+resetLoot<br />
+setLoot D7 0B<br />
+putLootOnDepot<br />
+move 32623,32744,7<br />
+move 32622,32750,7<br />
+move 32617,32749,7<br />
+move 32616,32741,7<br />
+move 32613,32721,7<br />
+move 32612,32707,7<br />
+move 32613,32704,7<br />
+move 32613,32703,8<br />
+IfTrue ($countitems:0A 01$#number&lt;=#15) Goto $nlineoflabel:refill$<br />
+gotoScriptLine 0<br />
+:refill<br />
+move 32613,32703,8<br />
+move 32613,32704,7<br />
+move 32613,32732,7<br />
+move 32618,32751,7<br />
+move 32625,32750,7<br />
+move 32625,32748,6<br />
+move 32632,32739,6<br />
+fastExiva _healthneeded = $numericalexp:80-{$countitems:0A 01$}$<br />
+fastExiva _costhealth = $numericalexp:45*{$_healthneeded$}$<br />
+waitX 1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade withdraw $_costhealth$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32626,32742,6<br />
+useItem 32626,32742,6<br />
+move 32626,32743,5<br />
+move 32624,32741,5<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva &gt; A2 $hex-idofname:Tandros$<br />
+waitX 1<br />
+fastExiva &gt; 7B 1D 01 00 $numbertohex1:{$countitems:0A 01$}$<br />
+waitX 1<br />
+fastExiva &gt; 07 00 7A 0A 01 00 $numbertohex2:{$_healthneeded$}$<br />
+waitX 1<br />
+sayInTrade bye<br />
+waitX 1<br />
+move 32626,32741,5<br />
+move 32626,32742,6<br />
+move 32625,32747,6<br />
+move 32625,32748,6<br />
+move 32625,32750,7<br />
+move 32617,32750,7<br />
+move 32616,32743,7<br />
+move 32612,32730,7<br />
+move 32611,32711,7<br />
+move 32613,32704,7<br />
+move 32613,32703,8<br />
+gotoScriptLine 0<br />
+<br />
+<br />
+I guess it can help you, i use on a 43 knight and if you get the cave empyt make more than 22-25k/h<br />
+repot health potions and deposit gold.<br />
+Start on port hope dp.<br />
+<br />
+I hope I have helped.<br />
+<br />
+PS:also use this script because I did not find better scripts :/ (that works)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hinsy</div><div class="date">03-04-2012, 16:30</div></div><div class="posttext">ill try it out right now</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hinsy</div><div class="date">03-05-2012, 03:31</div></div><div class="posttext">works great man thanks alot but i do need something to lv faster haha</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">theboobx</div><div class="date">03-06-2012, 22:30</div></div><div class="posttext">it's all i got, if you find anything better msg me i need too.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-06-2012, 22:41</div></div><div class="posttext">Dworcs or elf arcanists in Shadowthorn maybe? Maybe not super exp but good loot. :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Donjuan</div><div class="date">07-03-2012, 17:38</div></div><div class="posttext">Does a shadowthorn script exist for blackd??</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

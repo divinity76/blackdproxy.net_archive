@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="script, $time$, 093000, label, logout" />
+	<meta name="description" content="Hello, I'm playing an OT 8.0, and I don't know if it is my internet or the server, it always freeze at 9am. 
+Is it possible to make an script to logout at 9am and relog at 9:30 for example?" />
+	
+	<title> Script to Logout at x hour [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Script to Logout at x hour</div>
+<hr />
+<div class="pda"><a href="t-61911.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61911-Script-to-Logout-at-x-hour">Script to Logout at x hour</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">chronoss</div><div class="date">11-17-2014, 15:35</div></div><div class="posttext">Hello, I'm playing an OT 8.0, and I don't know if it is my internet or the server, it always freeze at 9am.<br />
+Is it possible to make an script to logout at 9am and relog at 9:30 for example?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">11-17-2014, 20:06</div></div><div class="posttext">do something like this into your script<br />
+<br />
+if true $time$ = 09:30:00 goto label XXXX<br />
+<br />
+:XXXX &lt;-- your labe<br />
+sayMessage exiva close<br />
+<br />
+<br />
+-------------------------<br />
+<br />
+variables:<br />
+<br />
+$time$<br />
+Returns current time in HH:MM:SS. Only string I believe.<br />
+<br />
+<br />
+$shorttime$<br />
+Returns current time in HH:MM. This might be both string and number.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">chronoss</div><div class="date">11-18-2014, 08:53</div></div><div class="posttext">Thanks, it works like a charm...<br />
+Just in case anyone needs this is what I did:<br />
+- Created conditional event with 100ms &quot;few time ago&quot;: if $shorttime$ #string=# 08:50 action: &quot;exiva _exitnow=1&quot;<br />
+- Before the gotoscriptline 0 of I added &quot;IfTrue ($_exitnow$#number=#1) Goto $nlineoflabel:logout$&quot;.<br />
+- After the gotoscriptline 0 of all my cavebot script I added the label &quot;logout&quot;.<br />
+- Added waitX 30<br />
+- Added fastExiva Close<br />
+<br />
+Thank you very much oclipper</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hartnett</div><div class="date">05-22-2019, 14:50</div></div><div class="posttext">We have to use that tricks and tips from getting out time about the looking really be perfect as well in the conditions. That is not be only hours to be depending from my assignment help Australia (https://aussiessayservices.com/myassignmenthelp-com-review/) it will only be depend by the whole day and version of the subject.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

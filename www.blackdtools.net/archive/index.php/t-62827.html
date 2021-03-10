@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, _pickup, condition, $numbertohex12$, button, thiss, pressed, commands, treiner, ideas, hotkey, $numbertohex2$numericalexp$myy$+0$$, on/off, position, custom, easier, thought, ground, trainer, $numbertohex2$numericalexp$myx$+1$$, $numbertohex1$myz$$, pickup, number=, create, $_pickup$" />
+	<meta name="description" content="Hello. Im new here but i have work on blackd for few months. Im wondering now is there any way to use trainer only when i press hotkey. I mean - i dont wanna to use exiva pause and exiva play 
+ 
+Well, now i see i made topic in wrong place. I apologize" />
+	
+	<title> Trainer on hotkey [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-29.html">7. Trainer</a> &gt;  Trainer on hotkey</div>
+<hr />
+<div class="pda"><a href="t-62827.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62827-Trainer-on-hotkey">Trainer on hotkey</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Shreder</div><div class="date">05-25-2016, 22:38</div></div><div class="posttext">Hello. Im new here but i have work on blackd for few months. Im wondering now is there any way to use trainer only when i press hotkey. I mean - i dont wanna to use exiva pause and exiva play<br />
+<br />
+Well, now i see i made topic in wrong place. I apologize</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">05-26-2016, 00:20</div></div><div class="posttext">its possible by changing its source. what fuction are you using from trainer?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shreder</div><div class="date">05-27-2016, 01:09</div></div><div class="posttext">Auto pickup from ground.<br />
+<br />
+Honestly i have never even downloaded source of blackd. Is this hard to do if i have no knowledge about that?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">05-27-2016, 02:40</div></div><div class="posttext">you can make conditional events and use a custom var to set on/off pick up item from ground.. but its complicated anyways</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shreder</div><div class="date">05-30-2016, 01:58</div></div><div class="posttext">Well, thats not good news. I hoped there is some easy way. Thanks anyway for answer :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">05-30-2016, 03:49</div></div><div class="posttext">what item (id) do you want to pickup from ground? and what position, one sqm to your right? <br />
+<br />
+i think its easier than i thought, you make an custom var (_pickup) to turn on/off the condition<br />
+<br />
+example:<br />
+set on F1 to turn on: exiva _pickup = 1<br />
+set on F2 to turn off: exiva _pickup = 0<br />
+<br />
+create this condition =<br />
+<br />
+<br />
+<br />
+$_pickup$<br />
+#number=#<br />
+1<br />
+0<br />
+1000<br />
+1<br />
+Exiva &gt; 78 $numbertohex2:{$numericalexp:{$myx$}+1$}$ $numbertohex2:{$numericalexp:{$myy$}+0$}$ $numbertohex1:{$myz$}$ XX XX 01 FF FF 06 00 00 $numbertohex1:2$<br />
+<br />
+<br />
+/\ thiss will take the item from the sqm of your right every 1s if the F1 button is pressed, and F2 will stop the condition<br />
+<br />
+XX XX = item ID<br />
+06 = &lt; hand<br />
+<br />
+<br />
+--------------------<br />
+<br />
+you gave me good ideas, new commands like &quot;exiva stop cave&quot;, &quot;exiva stop treiner&quot; etc..</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

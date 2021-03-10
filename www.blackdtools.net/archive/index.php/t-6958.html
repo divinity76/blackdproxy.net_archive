@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="bolts, guard, kill, normal, world, 10+k/h, 7k/h, non-pvp, http://img261.imageshack.us/img261/8145/mapeb8.jpg, servers, harmonia, 100+, hmms, skills, waste, full, 60/60, deposit, script, looting, maces, sword, soldiers, dwarf, inside, kazo, maker, money, chain, armors, knights, loot, [script], good, piercing, dwarven, shields, ores, iron, hunt" />
+	<meta name="description" content="hello, this is my script - looting all ( sword, maces, chain armors, gps, bolts, piercing bolts, dwarven shields, iron ores ... ) Good for knights 
+ 
+When cap &lt;100 go to bank, deposit gp -&gt; go to dp, deposit loot -&gt; go hunt 
+ 
+On full non-pvp servers ( like harmonia ) 7k/h,  
+on normal pvp world 10+k/h 
+ 
+--------------- 
+ 
+-Lvl 10+" />
+	
+	<title> [script] dwarf soldiers inside kazo - money maker [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  [script] dwarf soldiers inside kazo - money maker</div>
+<hr />
+<div class="pda"><a href="t-6958.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?6958-script-dwarf-soldiers-inside-kazo-money-maker">[script] dwarf soldiers inside kazo - money maker</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">hoxiu</div><div class="date">07-07-2007, 19:50</div></div><div class="posttext">hello, this is my script - looting all ( sword, maces, chain armors, gps, bolts, piercing bolts, dwarven shields, iron ores ... ) Good for knights<br />
+<br />
+When cap &lt;100 go to bank, deposit gp -&gt; go to dp, deposit loot -&gt; go hunt<br />
+<br />
+On full non-pvp servers ( like harmonia ) 7k/h, <br />
+on normal pvp world 10+k/h<br />
+<br />
+---------------<br />
+<br />
+-Lvl 10+<br />
+-Cap 100+<br />
+-Sometimes u need kill guard - some hmms or uhs ( if skills +60/60 u can kill guard without waste )<br />
+<br />
+Here is the map:<br />
+<br />
+http://img261.imageshack.us/img261/8145/mapeb8.jpg</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hoxiu</div><div class="date">07-07-2007, 19:52</div></div><div class="posttext">setAny<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill Rat<br />
+setMeleeKill Bat<br />
+setMeleeKill Slime<br />
+setMeleeKill Dwarf<br />
+setMeleeKill Dwarf Soldier<br />
+setMeleeKill Dwarf Guard<br />
+setMeleeKill Rotworm<br />
+setMeleeKill Carrion Worm<br />
+setLootOn<br />
+setLoot D7 0B<br />
+setLoot 76 0D<br />
+setLoot F8 16<br />
+setLoot 8B 0E<br />
+setLoot 61 0D<br />
+setLoot 15 0D<br />
+setLoot C2 0C<br />
+setLoot 1E 0D<br />
+setLoot 19 0C<br />
+setLoot 14 0C<br />
+setLoot 55 0D<br />
+setLoot E9 0C<br />
+setLoot 17 0D<br />
+setLoot CB 0C<br />
+setLoot D9 0B<br />
+setLoot A4 0D<br />
+setLoot C3 1C<br />
+setLoot C0 0C<br />
+setLoot D6 0C<br />
+:start<br />
+IfTrue ($mycap$#number&lt;=#100) Goto 50<br />
+move 32666,31941,13<br />
+move 32664,31923,13<br />
+move 32668,31900,13<br />
+move 32663,31927,13<br />
+IfTrue ($mycap$#number&lt;=#100) Goto 50<br />
+move 32649,31939,13<br />
+move 32629,31930,13<br />
+move 32616,31922,13<br />
+move 32602,31908,13<br />
+IfTrue ($mycap$#number&lt;=#100) Goto 50<br />
+move 32632,31934,13<br />
+move 32666,31941,13<br />
+move 32664,31960,13<br />
+move 32662,31980,13<br />
+IfTrue ($mycap$#number&lt;=#100) Goto 50<br />
+move 32654,31991,13<br />
+move 32665,31962,13<br />
+move 32667,31940,13<br />
+move 32667,31940,12<br />
+move 32668,31941,11<br />
+move 32667,31940,10<br />
+IfTrue ($mycap$#number&lt;=#100) Goto $nlineoflabel:depo$<br />
+move 32667,31940,11<br />
+move 32668,31940,12<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32664,31935,10<br />
+move 32644,31939,10<br />
+move 32629,31936,10<br />
+move 32628,31937,11<br />
+move 32622,31937,11<br />
+move 32621,31939,10<br />
+move 32604,31921,10<br />
+move 32605,31919,9<br />
+move 32625,31938,9<br />
+move 32653,31922,9<br />
+:bank<br />
+move 32654,31923,9<br />
+move 32654,31921,9<br />
+sayMessage hi<br />
+waitX 1<br />
+sayMessage deposit $countitems:D7 0B$<br />
+waitX 1<br />
+sayMessage yes<br />
+IfTrue ($countitems:D7 0B$#number&lt;=#1) Goto $nlineoflabel:go$<br />
+waitX 4<br />
+gotoScriptLine $nlineoflabel:bank$<br />
+:go<br />
+move 32646,31909,9<br />
+move 32645,31907,8<br />
+move 32659,31911,8<br />
+:one<br />
+move 32662,31912,8<br />
+stackItems<br />
+putLootOnDepot<br />
+waitX 3<br />
+IfTrue ($mycap$#number&gt;=#400) Goto $nlineoflabel:back$<br />
+:two<br />
+move 32662,31916,8<br />
+putLootOnDepot<br />
+waitX 3<br />
+move 32651,31916,8<br />
+:back<br />
+move 32614,31922,8<br />
+move 32613,31922,9<br />
+move 32606,31921,9<br />
+move 32605,31921,10<br />
+move 32620,31937,10<br />
+move 32621,31938,11<br />
+move 32628,31937,11<br />
+move 32628,31938,10<br />
+move 32646,31939,10<br />
+move 32666,31938,10<br />
+move 32667,31939,11<br />
+move 32668,31940,12<br />
+move 32667,31939,13<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vini</div><div class="date">07-07-2007, 22:40</div></div><div class="posttext">hehe, thank you =]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tito</div><div class="date">07-07-2007, 22:51</div></div><div class="posttext">i did same script few weeks ago ;) well actually i edited script of someone, but i dont remember name look for &quot;kazz cave heavy edited&quot;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dragoon</div><div class="date">07-07-2007, 23:24</div></div><div class="posttext">/\<br />
+<br />
+That script is made by JiLi</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tito</div><div class="date">07-08-2007, 00:22</div></div><div class="posttext">/\<br />
+<br />
+That script is made by JiLi<br />
+<br />
+right \o/, but i edited it a bit and posted here as 'edited'</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zjawineq</div><div class="date">07-08-2007, 10:44</div></div><div class="posttext">i did same script few weeks ago ;) well actually i edited script of someone, but i dont remember name look for &quot;kazz cave heavy edited&quot;<br />
+<br />
+so dont say if you DID beacuse u just change 1 line of script or made some shits that's JiLi script is perfect<br />
+<br />
+Have fun .<br />
+<br />
+@topic<br />
+<br />
+Waste stamina ) :</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hoxiu</div><div class="date">07-08-2007, 15:39</div></div><div class="posttext">where is better place for 20-30 knight ? Fibula - far from dp, DC - far from dp ...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tito</div><div class="date">07-09-2007, 15:00</div></div><div class="posttext">so dont say if you DID beacuse u just change 1 line of script or made some shits that's JiLi script is perfect<br />
+<br />
+Have fun .<br />
+<br />
+@topic<br />
+<br />
+Waste stamina ) :<br />
+<br />
+well actually i did not change one line of script but 'some' more ;) and i said i edited it so please dont flame me in this way ok? first checkout my script and then talk if you want to flame me so much</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tito</div><div class="date">07-09-2007, 15:01</div></div><div class="posttext">where is better place for 20-30 knight ? Fibula - far from dp, DC - far from dp ...<br />
+<br />
+well in fibula its ok if you got house there like i did ;) theres script here made by me on fibula<br />
+<br />
+i dont know the facc places for cavebot well but anyway ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aloha.ok</div><div class="date">07-29-2007, 10:33</div></div><div class="posttext">i thought it was worth a try<br />
+<br />
+23:55 You need 122235 exp<br />
+for level 64<br />
+Average session speed:<br />
+8823 exp/h<br />
+Estimated time left for level up:<br />
+13h 51m 15s<br />
+Played this session:<br />
+24h 0m 47s<br />
+Gained this session:<br />
+211864 exp<br />
+<br />
+79 swording /dragon slayer<br />
+no uhs/manas used<br />
+<br />
+2103 bolts<br />
+682 mushrooms<br />
+10123 gold<br />
+2 bat wings<br />
+8 iron ore<br />
+1 dwarven ring<br />
+2 axe rings<br />
+49 dwarven shields = 4900<br />
+54 crossbows = 8640<br />
+42 battle axes = 3150<br />
+104 chain armors = 7280<br />
+<br />
+34093 gold<br />
+1.4k gold/h</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">owLa</div><div class="date">07-30-2007, 20:44</div></div><div class="posttext">Hello!  i cant find this place.. Plz tell me=)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">polar</div><div class="date">07-31-2007, 16:22</div></div><div class="posttext">When my character going to depot it depositing items in dp but not in bags which are inside of dp? Why and how can I change it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luxbartek</div><div class="date">08-11-2007, 10:37</div></div><div class="posttext">My character doesn't go to dp... So I die because bot when get &lt;100cap, stand and don't move. Noobs lure guards and block me... WTF I doing wrong?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kocz</div><div class="date">08-11-2007, 17:23</div></div><div class="posttext">where is better place for 20-30 knight ? Fibula - far from dp, DC - far from dp ...<br />
+<br />
+Fibula = mailbox ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RaPoZaUm</div><div class="date">10-29-2007, 18:44</div></div><div class="posttext">My depot gets filled with those items..<br />
+<br />
+What do I have to do? :&lt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lukecake</div><div class="date">11-12-2007, 15:53</div></div><div class="posttext">ye, how are you supposed to fix the loot-thingy in depot? i tried it with backpacks, but it only opens the first one, and if that one is full it doesnt know what to do.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jaaraargh</div><div class="date">11-12-2007, 23:16</div></div><div class="posttext">botted a f-acc project from level 25-55 there XD<br />
+Got like 1500 items in chain arms, dwarfs shields,battle axes &amp; crossbows<br />
+Already sold 1000 before that XD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">size</div><div class="date">12-19-2007, 20:09</div></div><div class="posttext">how you can fix the depot problem? :///</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SimoS</div><div class="date">12-19-2007, 21:09</div></div><div class="posttext">But bp inside bp if I am right, not sure though!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">size</div><div class="date">12-19-2007, 21:40</div></div><div class="posttext">ok i will get some lvls on my money maker and try this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">chickenfeather</div><div class="date">04-06-2008, 22:36</div></div><div class="posttext">How can i fix it to put the items in backpacks?? Be couse he put items in depot chest and its not enought place<br />
+<br />
+i put bp inside bp in depo - thats good ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">New50</div><div class="date">12-02-2008, 06:13</div></div><div class="posttext">You can fix for Tibia 8.31? Deposit Gold and Itens on depot!<br />
+Thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">squach</div><div class="date">01-20-2009, 00:59</div></div><div class="posttext">Got same script for pally ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dorcik</div><div class="date">02-01-2009, 14:23</div></div><div class="posttext">can someone refresh this script? it's old and doesn't make many of options</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hassi</div><div class="date">02-01-2009, 15:36</div></div><div class="posttext">To make deposit work:<br />
+Put bp in dp, then just bp in bp, how many you want..<br />
+<br />
+Works for me 100%<br />
+Picks up:<br />
+Chain armor<br />
+Battle axe<br />
+Crossbow<br />
+Dwarven shield<br />
+What I know, maybe more items...<br />
+<br />
+Like 40k/24h<br />
+11kexp/h<br />
+This on my 35 Knight whit p-set and dwaven axe and dwarven shield.<br />
+<br />
+<br />
+<br />
+onGMpause<br />
+setFriendly<br />
+setPriority dwarf soldier:+1<br />
+setMeleekill bat<br />
+setPriority slime:+1<br />
+setMeleeKill dwarf<br />
+setMeleeKill slime<br />
+setMeleeKill rat<br />
+setMeleeKill rotworm<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill poison spider<br />
+setMeleeKill dwarf guard<br />
+setLoot D7 0B<br />
+setLoot C2 0C<br />
+setLoot 1E 0D<br />
+setLoot 31 0D<br />
+setLoot 17 0D<br />
+setLoot 15 0D<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 61 0D<br />
+setLoot 19 0C<br />
+setLoot 8B 0E<br />
+setLoot 14 0C<br />
+setLoot F8 16<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32667,31939,13<br />
+move 32665,31929,13<br />
+move 32665,31919,13<br />
+move 32667,31904,13<br />
+move 32668,31893,13<br />
+move 32668,31891,14<br />
+move 32668,31887,15<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32666,31882,15<br />
+move 32668,31890,15<br />
+move 32667,31892,14<br />
+move 32668,31899,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32667,31915,13<br />
+move 32664,31925,13<br />
+move 32665,31936,13<br />
+move 32657,31939,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32647,31939,13<br />
+move 32632,31934,13<br />
+move 32620,31924,13<br />
+move 32605,31916,13<br />
+move 32598,31907,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32583,31898,13<br />
+move 32575,31886,13<br />
+move 32565,31885,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32576,31894,13<br />
+move 32582,31904,13<br />
+move 32574,31912,13<br />
+move 32558,31918,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32566,31917,13<br />
+move 32582,31906,13<br />
+move 32596,31907,13<br />
+move 32604,31915,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32619,31922,13<br />
+move 32623,31927,13<br />
+move 32634,31935,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32645,31937,13<br />
+move 32662,31941,13<br />
+move 32665,31947,13<br />
+gotoScriptLine 0<br />
+:deposit<br />
+fastExiva &lt; B4 13 $hex-tibiastr:Going to deposit.$<br />
+move 32667,31939,13<br />
+move 32667,31941,12<br />
+move 32666,31940,11<br />
+move 32665,31938,10<br />
+move 32633,31934,10<br />
+move 32628,31937,11<br />
+move 32625,31939,11<br />
+move 32621,31938,11<br />
+move 32617,31936,10<br />
+move 32605,31922,10<br />
+move 32610,31920,9<br />
+move 32612,31921,8<br />
+move 32641,31917,8<br />
+move 32655,31916,8<br />
+stackItems<br />
+resetLoot<br />
+setLoot 1E 0D<br />
+setLoot 17 0D<br />
+setLoot 15 0D<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot C2 0C<br />
+setLoot 61 0D<br />
+setLoot 19 0C<br />
+setLoot 8B 0E<br />
+setLoot 14 0C<br />
+setLoot F8 16<br />
+putLootOnDepot<br />
+fastExiva &lt; B4 13 $hex-tibiastr:Deposit cash.$<br />
+move 32646,31908,8<br />
+move 32645,31909,9<br />
+move 32654,31922,9<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Deposit All$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Bye$<br />
+fastExiva &lt; B4 13 $hex-tibiastr:Going back cave.$<br />
+move 32646,31908,9<br />
+move 32648,31913,9<br />
+move 32641,31938,9<br />
+move 32621,31938,9<br />
+move 32608,31921,9<br />
+move 32605,31922,10<br />
+move 32599,31938,10<br />
+move 32620,31936,10<br />
+move 32626,31936,11<br />
+move 32629,31938,10<br />
+move 32658,31937,10<br />
+move 32666,31939,10<br />
+move 32668,31939,11<br />
+move 32667,31940,12<br />
+move 32666,31939,13<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Rzyt</div><div class="date">04-17-2009, 19:01</div></div><div class="posttext">why go to dp if low than 4000 cap O_o?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">serababy</div><div class="date">04-17-2009, 23:34</div></div><div class="posttext">Thats 40oz..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rockzman</div><div class="date">04-19-2009, 02:41</div></div><div class="posttext">someone pls confirm if this script works for this version?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tralfaz</div><div class="date">06-04-2009, 21:51</div></div><div class="posttext">To make deposit work:<br />
+Put bp in dp, then just bp in bp, how many you want..<br />
+<br />
+Works for me 100%<br />
+Picks up:<br />
+Chain armor<br />
+Battle axe<br />
+Crossbow<br />
+Dwarven shield<br />
+What I know, maybe more items...<br />
+<br />
+Like 40k/24h<br />
+11kexp/h<br />
+This on my 35 Knight whit p-set and dwaven axe and dwarven shield.<br />
+<br />
+<br />
+<br />
+onGMpause<br />
+setFriendly<br />
+setPriority dwarf soldier:+1<br />
+setMeleekill bat<br />
+setPriority slime:+1<br />
+setMeleeKill dwarf<br />
+setMeleeKill slime<br />
+setMeleeKill rat<br />
+setMeleeKill rotworm<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill poison spider<br />
+setMeleeKill dwarf guard<br />
+setLoot D7 0B<br />
+setLoot C2 0C<br />
+setLoot 1E 0D<br />
+setLoot 31 0D<br />
+setLoot 17 0D<br />
+setLoot 15 0D<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot 61 0D<br />
+setLoot 19 0C<br />
+setLoot 8B 0E<br />
+setLoot 14 0C<br />
+setLoot F8 16<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32667,31939,13<br />
+move 32665,31929,13<br />
+move 32665,31919,13<br />
+move 32667,31904,13<br />
+move 32668,31893,13<br />
+move 32668,31891,14<br />
+move 32668,31887,15<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32666,31882,15<br />
+move 32668,31890,15<br />
+move 32667,31892,14<br />
+move 32668,31899,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32667,31915,13<br />
+move 32664,31925,13<br />
+move 32665,31936,13<br />
+move 32657,31939,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32647,31939,13<br />
+move 32632,31934,13<br />
+move 32620,31924,13<br />
+move 32605,31916,13<br />
+move 32598,31907,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32583,31898,13<br />
+move 32575,31886,13<br />
+move 32565,31885,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32576,31894,13<br />
+move 32582,31904,13<br />
+move 32574,31912,13<br />
+move 32558,31918,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32566,31917,13<br />
+move 32582,31906,13<br />
+move 32596,31907,13<br />
+move 32604,31915,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32619,31922,13<br />
+move 32623,31927,13<br />
+move 32634,31935,13<br />
+IfTrue ($mycap$#number&lt;=#4000) Goto $nlineoflabel:deposit$<br />
+move 32645,31937,13<br />
+move 32662,31941,13<br />
+move 32665,31947,13<br />
+gotoScriptLine 0<br />
+:deposit<br />
+fastExiva &lt; B4 13 $hex-tibiastr:Going to deposit.$<br />
+move 32667,31939,13<br />
+move 32667,31941,12<br />
+move 32666,31940,11<br />
+move 32665,31938,10<br />
+move 32633,31934,10<br />
+move 32628,31937,11<br />
+move 32625,31939,11<br />
+move 32621,31938,11<br />
+move 32617,31936,10<br />
+move 32605,31922,10<br />
+move 32610,31920,9<br />
+move 32612,31921,8<br />
+move 32641,31917,8<br />
+move 32655,31916,8<br />
+stackItems<br />
+resetLoot<br />
+setLoot 1E 0D<br />
+setLoot 17 0D<br />
+setLoot 15 0D<br />
+setLoot E9 0C<br />
+setLoot 55 0D<br />
+setLoot C2 0C<br />
+setLoot 61 0D<br />
+setLoot 19 0C<br />
+setLoot 8B 0E<br />
+setLoot 14 0C<br />
+setLoot F8 16<br />
+putLootOnDepot<br />
+fastExiva &lt; B4 13 $hex-tibiastr:Deposit cash.$<br />
+move 32646,31908,8<br />
+move 32645,31909,9<br />
+move 32654,31922,9<br />
+fastExiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Deposit All$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Yes$<br />
+waitX 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:Bye$<br />
+fastExiva &lt; B4 13 $hex-tibiastr:Going back cave.$<br />
+move 32646,31908,9<br />
+move 32648,31913,9<br />
+move 32641,31938,9<br />
+move 32621,31938,9<br />
+move 32608,31921,9<br />
+move 32605,31922,10<br />
+move 32599,31938,10<br />
+move 32620,31936,10<br />
+move 32626,31936,11<br />
+move 32629,31938,10<br />
+move 32658,31937,10<br />
+move 32666,31939,10<br />
+move 32668,31939,11<br />
+move 32667,31940,12<br />
+move 32666,31939,13<br />
+gotoScriptLine 0<br />
+<br />
+I love your script! He is very good!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">volter</div><div class="date">06-06-2009, 16:15</div></div><div class="posttext">I love to ^^. Thanks ; )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">calif</div><div class="date">03-27-2010, 19:10</div></div><div class="posttext">Can somebody give me updated version?<br />
+<br />
+First script is not for new version of Tibia.<br />
+<br />
+And I've question. <br />
+Second script goes to floor with dwarfs guard?<br />
+<br />
+Bless.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Braydos</div><div class="date">11-29-2012, 12:13</div></div><div class="posttext">I go to the wrong NPC to deposite gold. Is there a way to fix this? (In the script it leads you to the old DP but it should make you go to Lokur to deposite gold. A fast reply/fix would be very appreciated. :)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

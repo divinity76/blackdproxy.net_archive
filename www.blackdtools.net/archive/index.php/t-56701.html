@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="change, picking" />
+	<meta name="description" content="Bot is not picking up the loot, can any one tell me what to do, or what to change?" />
+	
+	<title> Please Help - Loot Drop [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Please Help - Loot Drop</div>
+<hr />
+<div class="pda"><a href="t-56701.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?56701-Please-Help-Loot-Drop">Please Help - Loot Drop</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">kacper033</div><div class="date">11-14-2011, 15:05</div></div><div class="posttext">Bot is not picking up the loot, can any one tell me what to do, or what to change?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kacper033</div><div class="date">11-14-2011, 15:16</div></div><div class="posttext">Ok its working now, but there is another problem, after when bot reach  the last waypoint, its stop. how to make it go all the time?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">11-14-2011, 18:04</div></div><div class="posttext">Add everything you want to loot to the cavebot<br />
+<br />
+add gotoscriptline 0 at the bottom of your script for it to run infinately</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kacper033</div><div class="date">11-14-2011, 18:45</div></div><div class="posttext">Thank you :) i got other problem, bot is attacking monsters but when they are red, and run away, bot just goes away. what to do?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">11-15-2011, 00:04</div></div><div class="posttext">Thank you :) i got other problem, bot is attacking monsters but when they are red, and run away, bot just goes away. what to do?<br />
+<br />
+This and general following is a major problem in BlackD atm. The only way to fix it is to set follow in the client itself (green man) but this will be taken off by blackproxy so: go into your options on tibia and tick &quot;auto chase&quot; or something like this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kacper033</div><div class="date">11-15-2011, 19:34</div></div><div class="posttext">ok, thanks :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Qpido</div><div class="date">11-28-2011, 18:18</div></div><div class="posttext">Hey man,<br />
+<br />
+Actually had the same problem and figured out why it happened. There is actually a default time activated for long it will consider an enemy, after that time it will get ignored.<br />
+<br />
+In Cavebot you do this: SetMaxAttackTimeMs 86400000<br />
+That's exactly a day so you can attack for 24hours before it stops attacking. <br />
+<br />
+Hope this helps.<br />
+<br />
+Q~</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

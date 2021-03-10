@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tutorial, step, iftrue, $mycap$number, gotoscriptline, waypoints, asked, made, make, lootdrop, loot, drop" />
+	<meta name="description" content="I just made this tutorial for a guy that asked how to make the bot drop loot, and I think other ppl may need some help to. 
+ 
+Step 1 
+ 
+Do like this in the end of your waypoints before &quot;gotoscriptline 0&quot;: 
+ 
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$ 
+ 
+that will go to a line that says ':deposit' if your cap is 100 or less" />
+	
+	<title> Lootdrop tutorial. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-25.html">3. Cavebot</a> &gt;  Lootdrop tutorial.</div>
+<hr />
+<div class="pda"><a href="t-33957.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?33957-Lootdrop-tutorial">Lootdrop tutorial.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">TheJagNG</div><div class="date">01-02-2009, 03:50</div></div><div class="posttext">I just made this tutorial for a guy that asked how to make the bot drop loot, and I think other ppl may need some help to.<br />
+<br />
+Step 1<br />
+<br />
+Do like this in the end of your waypoints before &quot;gotoscriptline 0&quot;:<br />
+<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+<br />
+that will go to a line that says ':deposit' if your cap is 100 or less<br />
+<br />
+Step 2<br />
+<br />
+now you need to do a line that says ':deposit' after goto scriptline 0.<br />
+<br />
+like this:<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+<br />
+<br />
+Step 3<br />
+<br />
+And after :deposit you make your waypoints to the lootdrop place<br />
+example<br />
+<br />
+<br />
+<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+<br />
+Step 4<br />
+<br />
+If you wanna drop all loot, you just put &quot;dropLootOnGround 32789,31140,10<br />
+<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+waitX 1 (wait 1 second, not needed)<br />
+dropLootOnGround 32789,31140,10<br />
+waitX 1<br />
+<br />
+continue to step 5 if you wanna drop all your loot (gold too)<br />
+<br />
+Step 4.1<br />
+<br />
+and if you don't wanna drop all loot on your lootlist you will need the command &quot;resetloot&quot;<br />
+<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+resetloot<br />
+<br />
+<br />
+Step 4.2<br />
+<br />
+<br />
+then you put all the items you wanna drop<br />
+<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+resetloot<br />
+setLoot (viking helpmet)<br />
+setLoot (brass helmet)<br />
+setLoot (whatever)<br />
+<br />
+Step 4.3<br />
+<br />
+and then you put put 'dropLootOnGround 32789,31140,10'<br />
+<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+resetloot<br />
+setLoot (viking helpmet)<br />
+setLoot (brass helmet)<br />
+setLoot (whatever)<br />
+waitX 1 (wait 1 second, not needed)<br />
+dropLootOnGround 32789,31140,10<br />
+waitX 1<br />
+<br />
+<br />
+Step 4.4<br />
+<br />
+<br />
+and then you gotta put 'resetloot' again, and put ALL the ID's you had in the beginning<br />
+<br />
+<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+resetloot<br />
+setLoot (viking helpmet)<br />
+setLoot (brass helmet)<br />
+setLoot (whatever)<br />
+waitX 1 (wait 1 second, not needed)<br />
+dropLootOnGround 32789,31140,10<br />
+waitX 1<br />
+resetloot<br />
+setLoot D6 0C<br />
+setLoot C0 0C<br />
+setLoot 53 0D<br />
+setLoot 27 0D<br />
+setLoot D7 0B<br />
+setLoot 71 90<br />
+setLoot 31 0D<br />
+<br />
+Step 5<br />
+<br />
+<br />
+That is how you make the bot drop loot on x sqm, now you just gotta make waypoints back to where your script starts<br />
+<br />
+<br />
+<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+resetloot<br />
+setLoot (viking helpmet)<br />
+setLoot (brass helmet)<br />
+setLoot (whatever)<br />
+waitX 1 (wait 1 second, not needed)<br />
+dropLootOnGround 32789,31140,10<br />
+waitX 1<br />
+setLoot D6 0C<br />
+setLoot C0 0C<br />
+setLoot 53 0D<br />
+setLoot 27 0D<br />
+setLoot D7 0B<br />
+setLoot 71 90<br />
+setLoot 31 0D<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+gotoscriptline 0<br />
+<br />
+<br />
+and don't forget gotoscriptline 0.<br />
+<br />
+<br />
+And the final script will be:<br />
+<br />
+<br />
+onGMpause<br />
+setMeleeKill ghoul<br />
+setMeleeKill skeleton<br />
+setMeleeKill crypt shambler<br />
+setPriority crypt shambler:+1<br />
+setLoot D6 0C<br />
+setLoot C0 0C<br />
+setLoot 53 0D<br />
+setLoot 27 0D<br />
+setLoot D7 0B<br />
+setLoot 71 90<br />
+setLoot 31 0D<br />
+move 32782,31142,9<br />
+move 32767,31128,9<br />
+move 32768,31128,9<br />
+move 32763,31128,9<br />
+move 32757,31137,9<br />
+move 32757,31136,9<br />
+move 32754,31146,9<br />
+move 32754,31145,9<br />
+move 32757,31145,9<br />
+move 32758,31157,9<br />
+move 32756,31160,9<br />
+move 32757,31161,9<br />
+move 32754,31161,9<br />
+move 32752,31145,9<br />
+move 32752,31144,9<br />
+move 32761,31128,9<br />
+move 32761,31115,9<br />
+move 32753,31103,9<br />
+move 32753,31108,9<br />
+move 32761,31124,9<br />
+move 32777,31131,9<br />
+move 32781,31140,9<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:deposit$<br />
+gotoScriptLine 0<br />
+:deposit<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move 32789,31140,10 (&lt;-DROP LOOT HERE)<br />
+resetloot<br />
+setLoot (viking helpmet)<br />
+setLoot (brass helmet)<br />
+setLoot (whatever)<br />
+waitX 1 (wait 1 second, not needed)<br />
+dropLootOnGround 32789,31140,10<br />
+waitX 1<br />
+resetloot<br />
+setLoot D6 0C<br />
+setLoot C0 0C<br />
+setLoot 53 0D<br />
+setLoot 27 0D<br />
+setLoot D7 0B<br />
+setLoot 71 90<br />
+setLoot 31 0D<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+move xyz<br />
+gotoscriptline 0<br />
+<br />
+<br />
+Example made from this script:<br />
+http://blackdtools.net/showthread.php?p=266193#post266193<br />
+<br />
+<br />
+hope it helped</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheJagNG</div><div class="date">01-02-2009, 03:58</div></div><div class="posttext">You can tell me if the tutorial is good or bad, if it is missing something, if you need help, or if I explain something bad.<br />
+<br />
+Idk if I missed something, this was made 3:00 in my country =)<br />
+<br />
+ty</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ericks</div><div class="date">01-02-2009, 19:05</div></div><div class="posttext">Really good! :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheJagNG</div><div class="date">01-04-2009, 13:49</div></div><div class="posttext">^^           ty <br />
+<br />
+hope noobs will stop telling other ppl to add it to their scripts now</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PikaBoo</div><div class="date">01-08-2009, 18:18</div></div><div class="posttext">Thanks, damn easy to understand for newbies and to recreate / modify ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">n00barN^</div><div class="date">01-17-2009, 17:53</div></div><div class="posttext">Very nice turorial dude ;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Guigozer</div><div class="date">01-20-2009, 01:05</div></div><div class="posttext">Very nice tutorial<br />
+<br />
+help me a lot ! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Piottumi</div><div class="date">01-26-2009, 12:22</div></div><div class="posttext">It will be perfect, when you edit it &quot;setLoot (viking helpmet)&quot;. ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">TheJagNG</div><div class="date">01-29-2009, 17:34</div></div><div class="posttext">=        )</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lille12</div><div class="date">02-03-2009, 16:17</div></div><div class="posttext">This is a very nice tutorial you made, thanks !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jacobed</div><div class="date">02-17-2009, 01:10</div></div><div class="posttext">it helped me thx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Robinioo</div><div class="date">02-20-2009, 02:58</div></div><div class="posttext">yea thanks  :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">St12fags</div><div class="date">04-28-2009, 22:30</div></div><div class="posttext">This is my tutorial, check the IP and delete the thread please, either that or correct your mistake and unbann me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luazinhu</div><div class="date">05-02-2009, 06:17</div></div><div class="posttext">to separate the loot so<br />
+<br />
+x sqm only loot to sell darashia<br />
+x sqm only loot to sell carlin<br />
+x sqm only golds<br />
+??<br />
+<br />
+is more or less so?<br />
+<br />
+<br />
+resetLoot<br />
+waitX 1<br />
+setLoot x<br />
+setLoot x<br />
+setLoot x<br />
+waitX 1<br />
+droplootground xx4,xx4,x (darashia only)<br />
+waitX 1<br />
+resetloot<br />
+waitX 1<br />
+setLoot x<br />
+setLoot x<br />
+setLoot x<br />
+waitX 1<br />
+droplootground xx5,xx4,x (carlin only)<br />
+waitX 1<br />
+resetloot<br />
+waitX 1<br />
+setLoot x<br />
+waitX 1<br />
+droplootground xx5,xx5,x (golds only)<br />
+waitX 1<br />
+resetloot<br />
+setLoot x<br />
+setLoot x<br />
+setLoot x<br />
+setLoot x<br />
+setLoot x<br />
+setLoot x<br />
+gotoline 0</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

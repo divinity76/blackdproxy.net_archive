@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setloot, setmeleekill, fastexiva, script, amazon, venore, small, valkyrie, itemid, _potprice, empty, price, _emptypotid, _potid, charm, check, armor, plate, $countitems$_potid$$number, iftrue, refill, diamond, decoration, girlish, protective, tested, advanced, questions, witches, depositer, depositer/refiller, refiller, tower, problem, credz, bring, start, message, bank/small, suggestion, _pots" />
+	<meta name="description" content="Made a Venore Amazon Camp script with loot depositer and Pots refiller. 
+ 
+It will go up Valkyrie Tower but not to the witches 
+ 
+This is my first &quot;Advanced&quot; script but I have tested it and it seems to work but if you have any questions or problem please message me! 
+ 
+Start it in Venore Bank/Small Dp. 
+ 
+If you liked this one and have a suggestion for another script, tell me and I will try to make it!" />
+	
+	<title> Venore Amazon camp Depositer/refiller [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Venore Amazon camp Depositer/refiller</div>
+<hr />
+<div class="pda"><a href="t-59215.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59215-Venore-Amazon-camp-Depositer-refiller">Venore Amazon camp Depositer/refiller</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">credz</div><div class="date">10-01-2012, 18:59</div></div><div class="posttext">Made a Venore Amazon Camp script with loot depositer and Pots refiller.<br />
+<br />
+It will go up Valkyrie Tower but not to the witches<br />
+<br />
+This is my first &quot;Advanced&quot; script but I have tested it and it seems to work but if you have any questions or problem please message me!<br />
+<br />
+Start it in Venore Bank/Small Dp.<br />
+<br />
+If you liked this one and have a suggestion for another script, tell me and I will try to make it!<br />
+<br />
+<br />
+#Made By Credz<br />
+#How many pots do you want to bring<br />
+fastExiva _pots = 40<br />
+#ItemID of the pots<br />
+fastExiva _potid = 0A 01<br />
+#Price of pots<br />
+fastExiva _potprice = 45<br />
+#Empty pots ID<br />
+fastExiva _emptypotid = 1D 01<br />
+setmeleekill Amazon<br />
+setmeleekill Bug<br />
+setmeleekill Bat<br />
+setmeleekill Valkyrie<br />
+setmeleekill bear<br />
+#Gold<br />
+setLoot D7 0B<br />
+#Girlish Hair decoration<br />
+setLoot B3 2C<br />
+#Protective Charm<br />
+setLoot B4 2C<br />
+#Small Ruby<br />
+setLoot D6 0B<br />
+#Small Diamond<br />
+setLoot D4 0B<br />
+#Plate Armor<br />
+setLoot 1D 0D<br />
+#Check to see if you need to refill<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#15) Goto $nlineoflabel:refill$<br />
+IfTrue ($mycap$#number&lt;=#100) Goto $nlineoflabel:refill$<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#15) Goto $nlineoflabel:refill$<br />
+IfTrue ($mycap$#number&lt;=#100) Goto $nlineoflabel:refill$<br />
+move 33015,32054,6<br />
+move 32919,32052,6<br />
+move 32868,32031,6<br />
+move 32867,32033,7<br />
+move 32834,32011,7<br />
+move 32836,31993,7<br />
+move 32828,31983,7<br />
+move 32828,31978,7<br />
+move 32822,31971,7<br />
+move 32826,31958,7<br />
+move 32808,31958,7<br />
+move 32814,31946,7<br />
+move 32816,31935,7<br />
+move 32823,31935,7<br />
+move 32821,31933,6<br />
+move 32824,31933,7<br />
+move 32829,31928,7<br />
+move 32827,31927,6<br />
+move 32830,31927,7<br />
+move 32835,31921,7<br />
+move 32843,31930,7<br />
+move 32855,31918,7<br />
+move 32865,31929,7<br />
+move 32870,31929,7<br />
+move 32871,31931,6<br />
+move 32871,31930,7<br />
+move 32866,31935,7<br />
+move 32865,31937,6<br />
+move 32868,31937,5<br />
+move 32865,31937,4<br />
+move 32867,31938,3<br />
+move 32867,31937,4<br />
+move 32865,31936,5<br />
+move 32868,31936,6<br />
+move 32865,31936,7<br />
+move 32841,31928,7<br />
+#Check to see if you need to refill<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#15) Goto $nlineoflabel:refill$<br />
+IfTrue ($mycap$#number&lt;=#100) Goto $nlineoflabel:refill$<br />
+IfTrue ($countitems:{$_potid$}$#number&lt;=#15) Goto $nlineoflabel:refill$<br />
+IfTrue ($mycap$#number&lt;=#100) Goto $nlineoflabel:refill$<br />
+gotoScriptLine 44<br />
+:refill<br />
+move 32823,31936,7<br />
+move 32814,31935,7<br />
+move 32810,31939,7<br />
+move 32806,31945,7<br />
+move 32814,31946,7<br />
+move 32813,31951,7<br />
+move 32812,31958,7<br />
+move 32825,31958,7<br />
+move 32822,31972,7<br />
+move 32822,31979,7<br />
+move 32828,31981,7<br />
+move 32828,31983,7<br />
+move 32833,31990,7<br />
+move 32837,31996,7<br />
+move 32835,32002,7<br />
+move 32835,32009,7<br />
+move 32839,32024,7<br />
+move 32857,32030,7<br />
+move 32866,32031,7<br />
+move 32867,32031,6<br />
+move 32898,32032,6<br />
+move 32918,32036,6<br />
+move 32919,32052,6<br />
+move 33007,32052,6<br />
+move 33019,32054,6<br />
+waitX 1<br />
+sayMessage Hi<br />
+waitX 1<br />
+sayInTrade Deposit all<br />
+waitX 1<br />
+sayInTrade Yes<br />
+waitX 1<br />
+sayInTrade Balance<br />
+waitX 1<br />
+sayInTrade withdraw $numericalexp:{$numericalexp:{$numericalexp:{$_pot s$}-{$countitems:{$_potid$}$}$}*{$_potprice$}$}-{$numericalexp:{$countitems:{$_emptypotid$}$}*5$}$<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade Balance<br />
+sayInTrade Bye<br />
+waitX 1<br />
+move 33013,32054,6<br />
+move 33005,32072,6<br />
+move 32976,32074,6<br />
+move 32971,32085,6<br />
+waitX 1<br />
+sayMessage Hi<br />
+waitX 1<br />
+sayInTrade vial<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+#Potion buyer<br />
+fastExiva sell:$_emptypotid$:$countitems:{$_emptypotid$}$<br />
+waitX 1<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+fastExiva buy:$_potid$:$numericalexp:{$_pots$}-{$countitems:{$_potid$}$}$<br />
+sayInTrade Bye<br />
+move 32977,32074,6<br />
+move 33007,32071,6<br />
+move 33019,32054,6<br />
+move 33009,32054,6<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade bye<br />
+move 33019,32058,6<br />
+move 33014,32052,7<br />
+waitX 1<br />
+putLootOnDepot<br />
+waitX 1<br />
+move 33019,32058,7<br />
+move 33019,32058,6<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Prescot</div><div class="date">05-17-2013, 17:20</div></div><div class="posttext">It's shit.. my character is acting like moron and it goes to places with witches but you didn't included them..</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

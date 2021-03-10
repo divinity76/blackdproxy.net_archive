@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="custom client, instant, functions, blackdbot, undetectable, shoot, oldwar, enable, custom, client, hopto.org, blackd" />
+	<meta name="description" content="I know I supose to buy some gold to have support but.. 
+ 
+Many players like blackd bot cuz it works in any Tibia version, speacialy old versions (7.x) 
+ 
+Most ot servers 7.x has anti bot protection or custom client to avoid botters. Custom client is an edited client that &quot;class name&quot; is changed, so many bots will not inject on it. Fortunately blackd bot is open source, so you can change the conf.txt inside blackd folder to custom client class (tibiaclassname=tibiaclient). (you can have custom" />
+	
+	<title> Blackd Custom Client [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Blackd Custom Client</div>
+<hr />
+<div class="pda"><a href="t-61734.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?61734-Blackd-Custom-Client">Blackd Custom Client</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">05-31-2014, 08:38</div></div><div class="posttext">I know I supose to buy some gold to have support but..<br />
+<br />
+Many players like blackd bot cuz it works in any Tibia version, speacialy old versions (7.x)<br />
+<br />
+Most ot servers 7.x has anti bot protection or custom client to avoid botters. Custom client is an edited client that &quot;class name&quot; is changed, so many bots will not inject on it. Fortunately blackd bot is open source, so you can change the conf.txt inside blackd folder to custom client class (tibiaclassname=tibiaclient). (you can have custom client class name with a program like &quot;WinId&quot;).<br />
+<br />
+I already did it on original tibia ot and worked (it was necessary to set ot ip and correct port at proxy). Now im having trouble to inject it on another otservers old versions like &quot;classicus&quot; or &quot;oldwar.hopto.org/oldwar&quot;.<br />
+<br />
+I cant figure out how to inject. it should be helpful for a lot of blackd bot users</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">06-21-2014, 20:27</div></div><div class="posttext">I discovered how to inject blackd bot on edited clients, follow the tutorial:<br />
+<br />
+Originaltibia.com<br />
+<br />
+Tutorial - how to inject on original tibia server 2<br />
+<br />
+Inside your instalation folder &quot;conf772&quot;, open the .txt and edit the client &quot;class&quot;  (default is TibiaClient);<br />
+<br />
+ctrl+f and insert the new class (u can also find it with program like WinID for another custom clients):<br />
+tibiaclassname=Tmmm¬mmm&#338;mmm<br />
+<br />
+Go to &quot;Proxy&quot; option and set &quot;forward to bouncer&quot;<br />
+proxy ip: originaltibia.com (ur otserver IP)<br />
+login port: 7172 (default is 7171)<br />
+gameport: 7072 (default is 7172)<br />
+<br />
+unmark<br />
+[ ] Change all tibia clients memory<br />
+[ ] Change character list packets<br />
+<br />
+Open Tibia custom client, back to &quot;Proxy&quot; and mark:<br />
+<br />
+[x] Change all tibia clients memory<br />
+[x] Change character list packets<br />
+<br />
+It will work in any tibia custom client, you need to know &quot;class&quot;, &quot;ip&quot;, &quot;login port&quot; and &quot;game port&quot;. If the server has anti bot protection many functions may ban ur account</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">timzur</div><div class="date">06-25-2014, 01:44</div></div><div class="posttext">Its will work in any tibia custom client, you need to know &quot;class&quot;, &quot;ip&quot;, &quot;login port&quot; and &quot;game port&quot;. If the server has anti bot protection many functions may ban ur account<br />
+<br />
+How do you find out these?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">06-26-2014, 08:42</div></div><div class="posttext">How do you find out these?<br />
+<br />
+Class = with WinId or spy++<br />
+7895<br />
+<br />
+Ip = otserver ip or cmd\netstat-n<br />
+<br />
+Login Port = brute force? (default is 7171)<br />
+<br />
+Game Port = cmd\netstat -n (default is 7172)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Giozin</div><div class="date">07-31-2014, 14:52</div></div><div class="posttext">Man i have one problem to do this on classic server.<br />
+u can help me to make blackd work on this server?<br />
+www.tibiaclassic.com<br />
+<br />
+The class name is ÙbiaClient but i cant make it work.<br />
+<br />
+<br />
+<br />
+Class = with WinId or spy++<br />
+7895<br />
+<br />
+Ip = otserver ip or cmd\netstat-n<br />
+<br />
+Login Port = brute force? (default is 7171)<br />
+<br />
+Game Port = cmd\netstat -n (default is 7172)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">gabriel28</div><div class="date">08-03-2014, 05:06</div></div><div class="posttext">I need help in this ot oldwar.hopto.org/oldwar</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jordyroos</div><div class="date">01-31-2015, 02:16</div></div><div class="posttext">ÙbiaClient is in unicode does this matter for blackdtools ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">drez</div><div class="date">09-02-2015, 23:53</div></div><div class="posttext">Can u help to edit Oldera Client, i made all like in tutorial, but its dont work =(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hora25</div><div class="date">03-08-2016, 23:09</div></div><div class="posttext">Hi!<br />
+<br />
+I'm trying to get this thing to work on a custom ot, but the bot can't find the client. When I try &quot;tibia mc&quot; it opens one, but it doesn't connect with the client. I used cmd to find out the ip and the game port like explained but I get stuck. <br />
+Anyone able to help? I'm willing to pay for it to work.<br />
+thanks in advance</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">03-09-2016, 18:43</div></div><div class="posttext">Hi!<br />
+<br />
+I'm trying to get this thing to work on a custom ot, but the bot can't find the client. When I try &quot;tibia mc&quot; it opens one, but it doesn't connect with the client. I used cmd to find out the ip and the game port like explained but I get stuck. <br />
+Anyone able to help? I'm willing to pay for it to work.<br />
+thanks in advance<br />
+<br />
+probably custom ot has different classname also anti bot protection then most of functions lead you to instant account delet. If you want just a simple tool such as light and healer:<br />
+<br />
+http://www.speedyshare.com/yXfGZ/Blackd-Mage-darkot.7z</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hora25</div><div class="date">03-09-2016, 20:16</div></div><div class="posttext">Well I changed the classname to the one I found using WinID so it shouldn't be that.. I know and it doesn't matter if my acc gets deleted or not, I'm not playing there seriously anyways! I just want to get it to work so I know what could be wrong next time.<br />
+<br />
+So... I have change the classname in config.txt in the 772 folder. I have found the IP and the game port using command netstat -n. What I don't know is the login port, which from what I can read is found by simple brute force. I've tried a few combos, but im not really sure &quot;How many&quot; it could be. like ive tried 7171, 7172, 7272, 7070.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">03-10-2016, 18:55</div></div><div class="posttext">Well I changed the classname to the one I found using WinID so it shouldn't be that.. I know and it doesn't matter if my acc gets deleted or not, I'm not playing there seriously anyways! I just want to get it to work so I know what could be wrong next time.<br />
+<br />
+So... I have change the classname in config.txt in the 772 folder. I have found the IP and the game port using command netstat -n. What I don't know is the login port, which from what I can read is found by simple brute force. I've tried a few combos, but im not really sure &quot;How many&quot; it could be. like ive tried 7171, 7172, 7272, 7070.<br />
+<br />
+the problem in such servers they have bot protection (NOT in client). and this instantly delet your character, just before you try any function.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hora25</div><div class="date">03-14-2016, 15:39</div></div><div class="posttext">I don't really care if I get deleted or not, the thing is I just want to try it out to see if I have done things right :p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">abizaria</div><div class="date">08-11-2016, 20:07</div></div><div class="posttext">i managed to do what the guy said, but when i check the 2 options the client instant crashes</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">felipe199</div><div class="date">03-18-2017, 03:02</div></div><div class="posttext">im enable the bot to work in oldwar hopto.org but when the bot going to hel me or shoot sd iget instant kick<br />
+how i can do to make the functions undetectable? i know there are guys using blackdbot too</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">chochex</div><div class="date">09-19-2018, 00:58</div></div><div class="posttext">hello, could you help me how can I configure it for classictibia?</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

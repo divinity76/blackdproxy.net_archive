@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, potions, fastexiva, training, strong, script, weapon, place, health, stealth, x,y,z, bright, skeleton, idhex, blade, iftrue, slime, mystic, sword, slimetraining, spider, be06=, _hand, 32555, 32111, _weaponid, poison, demon, scorpion, snake, rotworm, $nlineoflabeldanger$, $countitems$_potionid$$number, $myx$,$myy$,$myz$string$_myx$,$_myy$,$_myz$, $_myx$,$_myy$,$_myz$, setpriority, slime+1, setfriendly, ongmpause, monsters, _amount, amount, _potionid, 1000000000, setnofollow, setmaxattacktimems, setchaoticmovesoff, $hex-tibiastrstarts, training.$, takes" />
+	<meta name="description" content="Hiho! 
+I would to share with you my slimetraining script.  It's 100% safe, cause if someone will move you, or your potions ammount will be less than XX it: puts your strong weapon, stealth ring on, goes back to your training place, takes a screenshot and logs out..  
+ 
+I tested it- I BOT ALMOST EVERYNIGHT ON IT! It's not buggy anywhere!  
+ 
+ 
+ 
+EVERYTHING YOU NEED: 
+Stealth ring.http://images.tibia.pl/static/items/ring/stealth.gif 
+Your strong weapon(like bright sword, mystic blade, heroic axe" />
+	
+	<title> 100% safe afk slimetraining script by Byczarz [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  100% safe afk slimetraining script by Byczarz</div>
+<hr />
+<div class="pda"><a href="t-32508.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?32508-100-safe-afk-slimetraining-script-by-Byczarz">100% safe afk slimetraining script by Byczarz</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-12-2008, 21:38</div></div><div class="posttext">Hiho!<br />
+I would to share with you my slimetraining script.  It's 100% safe, cause if someone will move you, or your potions ammount will be less than XX it: puts your strong weapon, stealth ring on, goes back to your training place, takes a screenshot and logs out.. <br />
+<br />
+<br />
+I tested it- I BOT ALMOST EVERYNIGHT ON IT! It's not buggy anywhere! <br />
+<br />
+<br />
+<br />
+<br />
+EVERYTHING YOU NEED:<br />
+ Stealth ring.http://images.tibia.pl/static/items/ring/stealth.gif<br />
+ Your strong weapon(like bright sword, mystic blade, heroic axe etc.).<br />
+ Some potions.(like mana potions, health potions etc.)<br />
+ X,Y,Z of your training spot.(just stand on place where you'll stay and say 'exiva pos'. You'll see your X,Y,Z.)<br />
+ You strong weapon's ID. Take a look here: http://itemid.wikispaces.com/ , find your weapon (like bright sword, mystic blade etc.) and put ID(hex) into right place in script.<br />
+ ID(hex) of potions you use to heal(mana potions, health potions, strong health potions etc.)<br />
+<br />
+<br />
+<br />
+SCRIPT:<br />
+<br />
+setMeleeKill slime<br />
+########################################<br />
+##Put your X from your training spot here:<br />
+fastExiva _myx = 32111<br />
+##Put your Y from your training spot here:<br />
+fastExiva _myy = 32555<br />
+##Put your Z from your training spot here:<br />
+fastExiva _myz = 8<br />
+##Put your strong weapon id here:<br />
+fastExiva _weaponid = D8 1C<br />
+##To which hand your strong weapon should be(06= left.  05= right.):<br />
+fastExiva _hand = 05<br />
+##Put here ID of potions you useL<br />
+fastExiva _potionid = 0C 01<br />
+##Amount of potions to kill monsters:<br />
+fastExiva _amount = 20<br />
+########################################<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Starts training.$<br />
+:training<br />
+setChaoticMovesOFF<br />
+setMaxAttackTimeMs 1000000000<br />
+setNoFollow<br />
+onGMpause<br />
+setFriendly<br />
+setMeleeKill scorpion<br />
+setMeleeKill snake<br />
+setMeleeKill cave rat<br />
+setMeleeKill wasp<br />
+setMeleeKill rat<br />
+setMeleeKill bat<br />
+setMeleeKill poison spider<br />
+setMeleeKill demon skeleton<br />
+setMeleeKill rotworm<br />
+setMeleeKill bug<br />
+setMeleeKill skeleton<br />
+setMeleeKill spider<br />
+setPriority slime:+1<br />
+setMeleeKill slime<br />
+move $_myx$,$_myy$,$_myz$<br />
+IfTrue ($myx$,$myy$,$myz$#string&lt;&gt;#$_myx$,$_myy$,$_myz$) Goto $nlineoflabel:danger$<br />
+IfTrue ($countitems:{$_potionid$}$#number&lt;=#$_amount$) Goto $nlineoflabel:danger$<br />
+gotoScriptLine $nlineoflabel:training$<br />
+:danger<br />
+sayMessage exiva testsound<br />
+sayMessage exiva &lt; B4 19 $hex-tibiastr:Training stopped!$<br />
+sayMessage exiva &lt; B4 19 $hex-tibiastr:.DANGER! Going to logout!$<br />
+waitX 2<br />
+##Put strong weapon on.<br />
+sayMessage exiva #$_weaponid$ $_hand$<br />
+waitX 1<br />
+move $_myx$,$_myy$,$_myz$<br />
+##Put stealth ring on.<br />
+sayMessage exiva #E9 0B 09<br />
+waitX 2<br />
+sayMessage exiva screenshot<br />
+waitX 3<br />
+sayMessage exiva close<br />
+<br />
+<br />
+<br />
+<br />
+INSTRUCTION(how to cinfigure script):<br />
+<br />
+1. Put your X and put it into right place in script. (it's coloured white in script)<br />
+<br />
+2.Put your Y into right place in script.(it's yellow in script)<br />
+<br />
+3.Put your Z into right place in script.(it's green in script)<br />
+<br />
+4. Put IID(hex) of your strong weapon into right place in script.(it's orange in script)<br />
+<br />
+5.Put to wich hand script have to put your strong weapon in case of danger. (06= left.  05= right.) [it's pink in script]<br />
+<br />
+6.Put ID(hex) of your potions into right place in script. (it's blue in script)<br />
+<br />
+7.Put amount of potions to logout into right place in script.(it's red in script) If you put there '20'- if your amount of your potions will be less than 20, you character will put on strong weapon, put on stealth ring, take a screenshot and logout.<br />
+<br />
+8.Add all monsters that can be above using 'setMeleeKill'.<br />
+<br />
+<br />
+<br />
+<br />
+INSTRUCTION(how to use it):<br />
+1.Lure your slime into your training place and make bot don't attack it using trainer.<br />
+<br />
+2.Configure you script like i said in 'INSTRUCTION(how to configure script)'.<br />
+<br />
+<br />
+3.Open all your bps:<br />
+ With food.<br />
+ With strong weapon.<br />
+ With stealth ring.<br />
+ With atleast 10 potions you use(like mana potions, health potions etc.)<br />
+<br />
+<br />
+<br />
+4.Enable my script. <br />
+<br />
+<br />
+5.Have fun hours of training! :D<br />
+<br />
+I tested it- I BOT ALMOST EVERYNIGHT ON IT! It's not buggy anywhere! <br />
+<br />
+<br />
+<br />
+I hope you'll enjoy it!<br />
+<br />
+@Edit<br />
+Changed position check.<br />
+Thanks Malmis :D<br />
+<br />
+<br />
+@Edit 2<br />
+<br />
+To all Polish users! Don't spam me with your questions like 'how to configure script?'! Here's the polish translation for this:<br />
+http://blackdproxy.pl/showthread.php?t=3816<br />
+My nick on blackdproxy.pl is 'Kisiu153' ; )<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Grzyb_jr</div><div class="date">12-12-2008, 21:44</div></div><div class="posttext">A nice step for afk training bro, it seems okey, good job ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-12-2008, 22:04</div></div><div class="posttext">@Up<br />
+Thanks! ; d<br />
+<br />
+<br />
+@Topic<br />
+Cmon.. Test it and post here you opinion ; d<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Centurio</div><div class="date">12-12-2008, 22:42</div></div><div class="posttext">byczarz my english is too bad so... i thing you are from poland? can i have your gg?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-12-2008, 22:53</div></div><div class="posttext">@Centurio<br />
+PMed<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Gregory</div><div class="date">12-14-2008, 00:52</div></div><div class="posttext">Wwhen danger it runs to depot??<br />
+<br />
+where I put the place to run to pz?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-14-2008, 01:02</div></div><div class="posttext">It's not going to depot. It just puts your strong weapon and stealth ring on, takes a screenshot and logs out.<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kyku_x</div><div class="date">12-14-2008, 08:19</div></div><div class="posttext">Can I afk whole night with this script?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hubertpo</div><div class="date">12-14-2008, 12:39</div></div><div class="posttext">@up<br />
+If you have enough food yes : P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kyku_x</div><div class="date">12-14-2008, 13:08</div></div><div class="posttext">But after 2 hours slim can hit really hard. You sure I wont die ?:p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">zDko</div><div class="date">12-14-2008, 13:23</div></div><div class="posttext">OMG!!<br />
+<br />
+<br />
+Thanks!!<br />
+<br />
+It works perfect ;&gt;<br />
+<br />
+thanks alot ;**<br />
+<br />
+Now i can have the best skills ;&gt; XD<br />
+<br />
+<br />
+Thanks alot.<br />
+<br />
+<br />
+10</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oyce</div><div class="date">12-14-2008, 13:58</div></div><div class="posttext">But after 2 hours slim can hit really hard. You sure I wont die ?:p<br />
+<br />
+They won't hit &quot;really hard&quot; after 2h, try standing with'em 20h afk.<br />
+<br />
+Then you wake up in the morning when they're hiting 120 etc on you :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-14-2008, 15:52</div></div><div class="posttext">But after 2 hours slim can hit really hard. You sure I wont die ?<br />
+If your potions amount will become under amount that you put in script, your character is doing the same as someone is trying to kill you.<br />
+So:<br />
+If your your position will get changed or you potions amount will become under $_amount$ your character will:<br />
+ Put on your strong weapon.<br />
+ Put on stealth ring.<br />
+ Take a screenshot.<br />
+ Logout.<br />
+<br />
+You won't die anyway ; d<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Polako</div><div class="date">12-14-2008, 21:29</div></div><div class="posttext">But if someone starts pking you, your dead. (If your afk , ofc)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kraszer</div><div class="date">12-14-2008, 22:55</div></div><div class="posttext">But if someone starts pking you, your dead. (If your afk , ofc)<br />
+<br />
+On no-pvp world it's not possible xD<br />
+<br />
+No(ob) PVP POWAH  :O</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">12-15-2008, 00:27</div></div><div class="posttext">A slight concern. You're only checking the X position, not Y. Which means someone can push you north or south, and nothing will happen.<br />
+You could use 'IfTrue ($myx$,$myy$,$myz$#string&lt;&gt;#$_myx$,$_myy$,$_myz$)'  or 'IfTrue ($myx$$myy$$myz$#number&lt;&gt;#$_myx$$_myy$$_myz$)' instead.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Polako</div><div class="date">12-15-2008, 12:08</div></div><div class="posttext">On no-pvp world it's not possible xD<br />
+<br />
+No(ob) PVP POWAH  :O<br />
+<br />
+Ill just script in a ondangergoto dp for myself, then. thanks newayz.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-15-2008, 16:20</div></div><div class="posttext">A slight concern. You're only checking the X position, not Y. Which means someone can push you north or south, and nothing will happen.<br />
+You could use 'IfTrue ($myx$,$myy$,$myz$#string&lt;&gt;#$_myx$,$_myy$,$_myz$)'  or 'IfTrue ($myx$$myy$$myz$#number&lt;&gt;#$_myx$$_myy$$_myz$)' instead.<br />
+I wanted to make it but I thought it won't work ; p <br />
+Edited the script now.<br />
+Thanks ; )<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kozack</div><div class="date">12-15-2008, 16:59</div></div><div class="posttext">@Polako<br />
+lol are You training on pvp world on slime? monk is better.<br />
+<br />
+@Byczarz<br />
+Dobra roboto kolo ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hubertpo</div><div class="date">12-15-2008, 17:07</div></div><div class="posttext">Hyh &quot;kolo&quot; : p Nice work yeah ;d  Love it in non pvp:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-15-2008, 20:22</div></div><div class="posttext">Thanks all ; d<br />
+i dzieki wszystkim ; * xd<br />
+<br />
+I worked rly hard to make it but.. i was worth hours of afk training ; dd<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Polako</div><div class="date">12-15-2008, 20:40</div></div><div class="posttext">@Polako<br />
+lol are You training on pvp world on slime? monk is better.<br />
+<br />
+@Byczarz<br />
+Dobra roboto kolo ;)<br />
+<br />
+No, its not. Its much more conspicuous if i want to afk for alotttt of time for the train, and much less mobile. Slimes I can train at PH tower and just run into dp incase of danger, it might be a bit slower on the skilling, but its definitely better for afking.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Persson</div><div class="date">12-16-2008, 04:20</div></div><div class="posttext">i suck on this..did edit X Y and Z position and strong weapon...<br />
+Did put script to cavebot, but when i start script bot just start kill all slimes, even mother slime...what do i make wrong?<br />
+<br />
+Edit: I found out what i did wrong :) Thanks for this nice scipt!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Botain</div><div class="date">12-16-2008, 07:11</div></div><div class="posttext">Now give us good place to afk with slilme. Please :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-16-2008, 16:50</div></div><div class="posttext">@Up<br />
+Here are many of nice spots ; d <br />
+Just search some ; )<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Em3ryt</div><div class="date">12-20-2008, 18:12</div></div><div class="posttext">Perfect one!<br />
+with 40lvl i can easily night-afk skill !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Botain</div><div class="date">12-20-2008, 19:29</div></div><div class="posttext">I dont understand one part.<br />
+Do I need bp with potions open to make script heal me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">cop1980</div><div class="date">12-21-2008, 21:41</div></div><div class="posttext">Thanks :)) Good script i botting 12h +/- and i don't die.<br />
+<br />
+Its rl good script</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-21-2008, 23:23</div></div><div class="posttext">Perfect one!<br />
+with 40lvl i can easily night-afk skill !<br />
+Thanks! ; D<br />
+<br />
+<br />
+<br />
+I dont understand one part.<br />
+Do I need bp with potions open to make script heal me? <br />
+You don't need opened bps with potions to heal. You need it opened because bot won't see how many potions you have if they won't be opened and it won't logout yourself when potions will be gone. ; )<br />
+<br />
+<br />
+<br />
+Thanks :)) Good script i botting 12h +/- and i don't die.<br />
+<br />
+Its rl good script <br />
+Thanks ; )<br />
+<br />
+<br />
+<br />
+Btw. Imma famous bcuz of this script:D<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Botain</div><div class="date">12-21-2008, 23:41</div></div><div class="posttext">Aha, thank you for answer. <br />
+Gonna try it very soon then post results.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tabaluga</div><div class="date">12-22-2008, 00:55</div></div><div class="posttext">Do I have to put ring and weapon in other bps or can I put them in main bp, just take bps for food and potions?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-22-2008, 01:07</div></div><div class="posttext">Do I have to put ring and weapon in other bps or can I put them in main bp, just take bps for food and potions?<br />
+You can put them to any OPENED container ; d It can be even dead rat. It just have to be opened; p<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hrichi</div><div class="date">12-22-2008, 12:19</div></div><div class="posttext">nice job, I'll check it on my character</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kraszer</div><div class="date">12-22-2008, 13:43</div></div><div class="posttext">Good job bro</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Oijoi</div><div class="date">12-22-2008, 15:28</div></div><div class="posttext">soon i'll be facc and might try this script then :D<br />
+<br />
+looking good</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">emili000</div><div class="date">12-22-2008, 21:03</div></div><div class="posttext">I'm not posting here too often but it's kicking ass.<br />
+<br />
+Big gratz dude! This will help me a lot :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nytrouz</div><div class="date">12-26-2008, 16:41</div></div><div class="posttext">i take many hits from slime after 2h training...<br />
+ek65<br />
+<br />
+72/66<br />
+k set<br />
+crus helmet<br />
+vamp shield<br />
+<br />
+but anyway thats good :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SimoS</div><div class="date">12-26-2008, 18:24</div></div><div class="posttext">But if I am with my weak weapon and a for example a DS comes it will keep hitting the ds with the weak weapon?<br />
+<br />
+Edit: Wont work 100% for pvp, you've written OnDangerGoto (line 42) not correct.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kaczor7</div><div class="date">12-26-2008, 18:58</div></div><div class="posttext">Thenks i ryly need this</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-27-2008, 01:16</div></div><div class="posttext">But if I am with my weak weapon and a for example a DS comes it will keep hitting the ds with the weak weapon?<br />
+<br />
+Edit: Wont work 100% for pvp, you've written OnDangerGoto (line 42) not correct.<br />
+I wrote:<br />
+onDanger Goto $nlineoflabel:danger$<br />
+it means if something outta 'setMeleeKill' list will atk you it'll change weapon, put on stealth ring and logout. It won't kill DS!<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xoltro</div><div class="date">12-27-2008, 14:43</div></div><div class="posttext">I found bug.<br />
+<br />
+If i`m botting on that a information like that is showing:<br />
+<br />
+13:42 Unknown command at line 41 : ondanger</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">12-28-2008, 14:29</div></div><div class="posttext">I found bug.<br />
+<br />
+If i`m botting on that a information like that is showing:<br />
+<br />
+13:42 Unknown command at line 41 : ondanger<br />
+Fixed ; d<br />
+<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HunterekPL</div><div class="date">12-29-2008, 01:01</div></div><div class="posttext">It's not working for me :/<br />
+When slime(non-mother) have low yellow or high red hp, it is stop attack it...<br />
+Help please ;P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hubertpo</div><div class="date">12-29-2008, 01:06</div></div><div class="posttext">U must put: setMaxAttackTimeMs 1000000000 &lt;- this ;&gt;<br />
+<br />
+@down<br />
+np, np</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HunterekPL</div><div class="date">12-29-2008, 01:13</div></div><div class="posttext">But where? on start or...?<br />
+@Edit,<br />
+Kk i did it, it work great! Thanks ;*</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tibia Player</div><div class="date">01-08-2009, 18:21</div></div><div class="posttext">The weakness are monsters like elf arcas or orc shaman that can see invisible.<br />
+Else its uber perfekt :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">01-09-2009, 14:12</div></div><div class="posttext">The weakness are monsters like elf arcas or orc shaman that can see invisible.<br />
+Else its uber perfekt :D<br />
+Just add them to 'SetMeleeKill ' ; d<br />
+If you will and someone will lure you to them, your character will wear strong weapon and kill them before saying 'exiva close' ; )<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Guardian</div><div class="date">01-09-2009, 18:15</div></div><div class="posttext">Awesome Script! I needed that! Thanks alot :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pastuch</div><div class="date">01-09-2009, 23:20</div></div><div class="posttext">really good script, thanks dude</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">01-09-2009, 23:59</div></div><div class="posttext">Thanks ; d<br />
+You can also use my scripting service if you want some more of my 'awesome' scripts:D (look into my signature)<br />
+<br />
+I've got for sale:<br />
+ Yalahar Cemetery with depositer &amp; potion buyer<br />
+ Oasis Tomb -1 and -2 with depositer &amp; potion buyer<br />
+ Yalahar Minotaurs with depositer, potion buyer &amp; anti bot floors avoider<br />
+ And many more! ; D <br />
+If i don't have a script you wanna get i can make it rly fastly ^^<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hultin</div><div class="date">01-10-2009, 01:43</div></div><div class="posttext">Nice one tbh :O<br />
+<br />
+Will definatley use it once i need to train my next pala/kina</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eragon</div><div class="date">01-10-2009, 09:56</div></div><div class="posttext">I'm going to use it. Thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blatten</div><div class="date">01-11-2009, 00:58</div></div><div class="posttext">Could you give more detailed instructions?<br />
+<br />
+Cuz I get the last atked id number by trainer it trains a bit then suddenly logging out dont get why.. I am using trainer anti idle function + last id of the mother slime and something must be wrong I dont know...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hunterek</div><div class="date">01-11-2009, 13:37</div></div><div class="posttext">Thanks, a lot for this script =]<br />
+Can you do Fisher to this scirpt?:P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Sous</div><div class="date">01-11-2009, 14:36</div></div><div class="posttext">Ou its very well ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vispeen</div><div class="date">01-23-2009, 18:03</div></div><div class="posttext">Ill test it soon hehe, if you would've got money for this you would've been a millionary;D<br />
+<br />
+Signed,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">01-28-2009, 01:37</div></div><div class="posttext">epic script, works perfectly... I made a few mistakes setting it up at first... Forgot to put train pos in, then weapon id, then open bps of potions, so I got logged out a few times but oh well it's absolutely epic XD<br />
+<br />
+Only problem is that to avoid the mother you can't kill it... You just gotta log with stealth :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cz3slav</div><div class="date">02-05-2009, 14:26</div></div><div class="posttext">Nice script, thx :))</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Qbee</div><div class="date">02-05-2009, 17:53</div></div><div class="posttext">Great way to waste alot of cash on rings</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">02-06-2009, 02:09</div></div><div class="posttext">Great way to waste alot of cash on rings<br />
+Waste?<br />
+Is it better to waste 100k for aol and blesses everynight than buy some ring 1-2k each? :D<br />
+Ofc those rings will let you logout safely for like 2-3 times...<br />
+<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Boltsss</div><div class="date">02-18-2009, 03:03</div></div><div class="posttext">Great job men. :eek:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cocoras*</div><div class="date">03-04-2009, 02:02</div></div><div class="posttext">mmmh, it seems very awesome but there is one thing I still don't understand after reading everything. when you play pvp and someone's trying to kill you, you say it put stealth ring on and just logs out? How? the player can still atk you at some ways isn't it ? your invisble for creatures but not for human players or has it changed?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ConquerOnline</div><div class="date">03-04-2009, 23:23</div></div><div class="posttext">nice script~ works perfect</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shahz</div><div class="date">03-25-2009, 20:57</div></div><div class="posttext">Thanks but now when I set up the way points and all that, why does the move and atk the slime, like follow?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">03-25-2009, 21:46</div></div><div class="posttext">Thanks but now when I set up the way points and all that, why does the move and atk the slime, like follow?<br />
+It shouldn't move to attack slime, cuz there's 'setNoFollow'.<br />
+Are you sure this green guy isn't training with you:http://img132.imageshack.us/img132/9995/83050945id1.png? xd<br />
+<br />
+<br />
+<br />
+Btw. Added 'setChaoticMovesOFF' to script. ; )<br />
+<br />
+<br />
+<br />
+Yours<br />
+/Byczarz;]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mimas</div><div class="date">04-29-2009, 06:08</div></div><div class="posttext">what if your strong weapon is 2 handed?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Refur</div><div class="date">06-03-2009, 20:36</div></div><div class="posttext">The problem is the script will check the pot amount and pos when killed slimes.<br />
+So if 3 slimes are attacking you and you set if 20pots logout you must wait intill kill the slimes and after the bots will check your pot amount :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Niko B</div><div class="date">12-19-2009, 23:38</div></div><div class="posttext">Fuc*ing good job man.!<br />
+Where the escape character?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Borubar</div><div class="date">01-01-2010, 12:00</div></div><div class="posttext">Where should i train when slimes are to weak? Slimes are dying when i am attacking on full def with knife...?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">m4teush</div><div class="date">01-19-2010, 10:59</div></div><div class="posttext">This SHIT Not a perfect! When i started this fucking script kill mother slime...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">POUSER</div><div class="date">01-19-2010, 20:18</div></div><div class="posttext">The only think i don't understand is if the script detect which slime is the zummoner, and do not kill it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Snejku</div><div class="date">02-22-2010, 00:03</div></div><div class="posttext">Wszystko zrobilem ok, zostawilem afk na 20 min koles mnie wypchnol a bot zamiast wrzucic stealth ringa i uciec to stal i padl, w dodatku nie leczyl sie potami ... Chyba nie dla mnie ten bot..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">raoul</div><div class="date">02-22-2010, 11:46</div></div><div class="posttext">The only think i don't understand is if the script detect which slime is the zummoner, and do not kill it<br />
+<br />
+its simple you attack it and it remebers the motherslime's ID<br />
+<br />
+thats it;) you can even see it yourself, just put on item id: look@motherslime remeber ip and you can see it;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Snejku</div><div class="date">02-22-2010, 18:35</div></div><div class="posttext">Bot automaticly leave the spot training idk why..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ElkyZ</div><div class="date">06-11-2011, 21:54</div></div><div class="posttext">I wish i could get a reply so fast you guys can. Ehm, I do everything you say but i can't find my axe in the ID list and when i &quot;load script&quot; i get a crash report. Reply please!?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MarcinuS</div><div class="date">07-30-2011, 01:00</div></div><div class="posttext">I wish i could get a reply so fast you guys can. Ehm, I do everything you say but i can't find my axe in the ID list and when i &quot;load script&quot; i get a crash report. Reply please!? I have too thsi problem..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jabade</div><div class="date">08-01-2011, 00:01</div></div><div class="posttext">Well it isnt 100% safe i think;/ Because it all the time attack slime and after 5 min check potions, so if u have less potions what is required from check to next check u will die witohut equping stealth ring. I think to put only these text<br />
+- in cavebot:<br />
+:training<br />
+setChaoticMovesOFF<br />
+SetMaxAttackTimeMs 1000000000<br />
+setNoFollow<br />
+onGMpause<br />
+setFriendly<br />
+setMeleeKill scorpion<br />
+setMeleeKill snake<br />
+setMeleeKill cave rat<br />
+setMeleeKill rat<br />
+setMeleeKill bat<br />
+setMeleeKill terror bird<br />
+setMeleeKill centipede<br />
+setMeleeKill crocodile<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill bug<br />
+setMeleeKill cobra<br />
+setMeleeKill wasp<br />
+setMeleeKill smuggler<br />
+setPriority slime:+1<br />
+setMeleeKill slime<br />
+gotoScriptLine $nlineoflabel:training$<br />
+<br />
+<br />
+- in conditional events:<br />
+$mymana$<br />
+#number&gt;=#<br />
+290<br />
+0<br />
+300<br />
+0<br />
+exura<br />
+$countitems:FA 0D$<br />
+#number&lt;=#<br />
+2<br />
+0<br />
+1000<br />
+0<br />
+exiva fish<br />
+$countitems:0A 01$<br />
+#number&lt;=#<br />
+8<br />
+0<br />
+1000<br />
+0<br />
+exiva #E9 0B 09<br />
+$countitems:0C 01$<br />
+#number&lt;=#<br />
+10<br />
+0<br />
+1000<br />
+0<br />
+exiva #E9 0B 09<br />
+$countitems:F5 06$<br />
+#number&lt;=#<br />
+2<br />
+0<br />
+1000<br />
+0<br />
+exiva #E9 0B 09<br />
+$countitems:A4 0D$<br />
+#number&lt;=#<br />
+10<br />
+0<br />
+1000<br />
+0<br />
+exiva #E9 0B 09<br />
+$statusbit:1$<br />
+#number=#<br />
+0<br />
+0<br />
+1000<br />
+0<br />
+exiva close<br />
+<br />
+<br />
+But it isnt great, there is no position check (i dont know how to do that in conditional events) and also u can die if soemone keep monsters all the time near you because it dont stop attack and logout only if u get no battle, so basically if someone push you and stay near with slime and your stealth ring finish you die;/<br />
+Here is my request:<br />
+- Does someone know how to logout when stealth ring is equiped? Or how to stop attack when stealth ring is equpied?<br />
+- How to make position check in conditional events?<br />
+- Or how to do two actions if less than 10 manapotions for example, i mean put stealth ring on and exiva close:P<br />
+I hope soemone know and would share this on forum or pm me, conditional events seems be better method that cavebot script - for sure faster. Thank all for reading.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MarcinuS</div><div class="date">08-15-2011, 16:22</div></div><div class="posttext">I wish i could get a reply so fast you guys can. Ehm, I do everything you say but i can't find my axe in the ID list and when i &quot;load script&quot; i get a crash report. Reply please!?HELp ME ..!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MarcinuS</div><div class="date">08-17-2011, 16:19</div></div><div class="posttext">Help please.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kird</div><div class="date">10-12-2011, 20:24</div></div><div class="posttext">uppppppppppppppp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kird</div><div class="date">10-12-2011, 20:24</div></div><div class="posttext">uppppppppppppp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jotal-</div><div class="date">11-17-2011, 00:45</div></div><div class="posttext">its doesnt work for me, i dont know why.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczarz</div><div class="date">11-22-2011, 23:16</div></div><div class="posttext">Try deleting this:<br />
+<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Byczarz's 100% safe slime training script!$<br />
+waitX 1<br />
+fastExiva &lt; B4 19 $hex-tibiastr:You must have opened your all bps- with potions, food, stealth ring and with strong weapon.$<br />
+waitX 1<br />
+<br />
+It should work then.<br />
+<br />
+If not, I can't help you. I haven't used blackD since cipsoft started their auto-detection tool. ;d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Exile Inc</div><div class="date">01-12-2012, 04:03</div></div><div class="posttext">doesnt work anyways make a script that works or dont make one at all you fuckin worthless piece of shit thanks for making it bug my client and i almost died thanks alot fagg get a life instead of ruining everyone elses botting expierience.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

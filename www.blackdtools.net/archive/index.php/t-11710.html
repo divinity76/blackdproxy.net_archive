@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="exiva, saymessage, fastexiva, move, setloot, setmeleekill, _steelhelmet2, _chainarm2, setpriority, _halberd2, _obsidian2, _parm2, empty, flasks, _gp2, 32912,31755,9, skills/lvl, useitem, _scalearmor2, _morningstar2, _templarscythe2, hunt, _battleaxe2, _scimitar2, gotoscriptline, _newresp, 32931,31751,8, east, south, 32922,31751,8, 32957,31752,7, 32931,31752,7, 32966,31755,7, 32910,31756,8, 32968,31780,7, 32966,31796,7, $hex-tibiastr$_allcash$gp, sellable, totalresp, $numericalexp$_allcash$+$_newresp$$, $numericalexp$numericalexp$numericalexp$numericalexp$numericalexp$numericalexp$_gp2$+$_parm2$$+$numericalexp$_chainarm2$+$_steelhelmet2$$$+$numericalexp$_obsidian2$+$_halberd2$$$+$numericalexp$_battleaxe2$+$_scimitar2$$$+$numericalexp$_templarscythe2$+$_scalearmor2$$$+$_morningstar2$+$_gp2$$, _allcash, total.$, understand, hospital, $hex-tibiastr$_newresp$gp, round.$, droplootonground, gp/hr, 65~80k" />
+	<meta name="description" content="It will hunt OF(...). Your loot will disappear under some empty flasks, all you need is 9~10 empty flasks(...) here: 
+http://uploads.tibiabr.com/allfiles/119436379089.JPG 
+exiva plot 32912,31755,9 
+never reset sqm 
+counter included 
+incredible midlvl/highlvl moneymaker/xpmaker 
+ 
+setFollow 
+onGMpause 
+fastExiva _gp = 1" />
+	
+	<title> [advanced script] Orc Fortress [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-83.html">Cavebot - Old scripts</a> &gt;  [advanced script] Orc Fortress</div>
+<hr />
+<div class="pda"><a href="t-11710.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?11710-advanced-script-Orc-Fortress">[advanced script] Orc Fortress</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">syntaxe</div><div class="date">11-06-2007, 17:48</div></div><div class="posttext">It will hunt OF(...). Your loot will disappear under some empty flasks, all you need is 9~10 empty flasks(...) here:<br />
+http://uploads.tibiabr.com/allfiles/119436379089.JPG<br />
+exiva plot 32912,31755,9<br />
+never reset sqm<br />
+counter included<br />
+incredible midlvl/highlvl moneymaker/xpmaker<br />
+<br />
+<br />
+setFollow<br />
+onGMpause<br />
+fastExiva _gp = 1<br />
+fastExiva _parm = 400<br />
+fastExiva _chainarm = 70<br />
+fastExiva _steelhelmet = 293<br />
+fastExiva _obsidian = 500<br />
+fastExiva _halberd = 400<br />
+fastExiva _battleaxe = 80<br />
+fastExiva _scimitar = 150<br />
+fastExiva _templarscythe = 200<br />
+fastExiva _scalearmor = 70<br />
+fastExiva _morningstar = 100<br />
+setPriority orc berserker:+1<br />
+setPriority snake:-1<br />
+setMeleeKill snake<br />
+setMeleeKill Wolf<br />
+setMeleeKill Orc Berserker<br />
+setMeleeKill Bear<br />
+setMeleeKill Orc Leader<br />
+setMeleeKill Orc Shaman<br />
+setMeleeKill orc Spearman<br />
+setMeleeKill orc<br />
+setMeleeKill orc Warrior<br />
+setLoot 1E 0D<br />
+setLoot D7 0B<br />
+setLoot 1D 0D<br />
+setLoot C2 0C<br />
+setLoot 09 17<br />
+setLoot 08 17<br />
+setLoot EB 0C<br />
+setLoot 52 0D<br />
+setLoot E5 0C<br />
+setLoot 29 0D<br />
+setLoot E5 0D<br />
+setLoot C5 0C<br />
+setLoot 13 0C<br />
+setLoot 00 0C<br />
+setLoot AC 0C<br />
+move 32980,31782,7<br />
+move 32980,31782,8<br />
+move 32979,31783,7<br />
+move 32975,31767,7<br />
+move 32980,31755,7<br />
+move 32971,31739,7<br />
+useItem 32956,31739,7<br />
+move 32958,31739,6<br />
+move 32981,31739,6<br />
+move 32974,31750,6<br />
+move 32960,31761,6<br />
+move 32950,31757,6<br />
+move 32931,31750,6<br />
+move 32931,31750,7<br />
+move 32931,31751,8<br />
+move 32911,31755,8<br />
+move 32910,31755,9<br />
+resetLoot<br />
+fastExiva _gp2 = $countitems:D7 0B$<br />
+fastExiva _parm2 = $numericalexp:{$countitems:1D 0D$}*{$_parm$}$<br />
+fastExiva _chainarm2 = $numericalexp:{$countitems:1E 0D$}*{$_chainarm$}$<br />
+fastExiva _steelhelmet2 = $numericalexp:{$countitems:17 0D$}*{$_steelhelmet$}$<br />
+fastExiva _obsidian2 = $numericalexp:{$countitems:F1 0C$}*{$_obsidian$}$<br />
+fastExiva _halberd2 = $numericalexp:{$countitems:C5 0C$}*{$_halberd$}$<br />
+fastExiva _battleaxe2 = $numericalexp:{$countitems:C2 0c$}*{$_battleaxe$}$<br />
+fastExiva _scimitar2 = $numericalexp:{$countitems:75 0D$}*{$_scimitar$}$<br />
+fastExiva _templarscythe2 = $numericalexp:{$countitems:11 0D$}*{$_templarscythe$}$<br />
+fastExiva _scalearmor2 = $numericalexp:{$countitems:EB 0C$}*{$_scalearmor$}$<br />
+fastExiva _morningstar2 = $numericalexp:{$countitems:D2 0C$}*{$_morningstar$}$<br />
+gotoScriptLine $nlineoflabel:vars$<br />
+:vars<br />
+fastExiva _newresp = $numericalexp:{$numericalexp:{$numericalexp:{$nume ricalexp:{$numericalexp:{$numericalexp:{$_gp2$}+{$ _parm2$}$}+{$numericalexp:{$_chainarm2$}+{$_steelh elmet2$}$}$}+{$numericalexp:{$_obsidian2$}+{$_halb erd2$}$}$}+{$numericalexp:{$_battleaxe2$}+{$_scimi tar2$}$}$}+{$numericalexp:{$_templarscythe2$}+{$_s calearmor2$}$}$}+{$_morningstar2$}+{$_gp2$}$<br />
+fastExiva _allcash = $numericalexp:{$_allcash$}+{$_newresp$}$<br />
+:totalresp<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+fastExiva &lt; B4 16 $hex-tibiastr:{$_newresp$}GP this round.$<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+fastExiva &lt; B4 16 $hex-tibiastr:{$_allcash$}GP as total.$<br />
+fastExiva _newresp = 0<br />
+fastExiva _gp2 = 0<br />
+fastExiva _parm2 = 0<br />
+fastExiva _chainarm2 = 0<br />
+fastExiva _steelhelmet2 = 0<br />
+fastExiva _obsidian2 = 0<br />
+fastExiva _halberd2 = 0<br />
+fastExiva _battleaxe2 = 0<br />
+fastExiva _scimitar2 = 0<br />
+fastExiva _templarscythe2 = 0<br />
+fastExiva _scalearmor2 = 0<br />
+fastExiva _morningstar2 = 0<br />
+setLoot 1E 0D<br />
+setLoot D7 0B<br />
+setLoot 1D 0D<br />
+setLoot C2 0C<br />
+setLoot 52 0D<br />
+setLoot 13 0C<br />
+setLoot E5 0D<br />
+setLoot EB 0C<br />
+setLoot E5 0C<br />
+setLoot C5 0C<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 90 80 0B 7C 09 3A 0B 03 8F 80 0B 7C 09 01<br />
+dropLootOnGround 32912,31755,9<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+sayMessage exiva &gt; 78 8F 80 0B 7C 09 3A 0B 01 90 80 0B 7C 09 01<br />
+setLoot 00 0C<br />
+setLoot AC 0C<br />
+setLoot EB 0C<br />
+setLoot E5 0D<br />
+setLoot 13 0C<br />
+setLoot 08 17<br />
+setLoot 09 17<br />
+setLoot 29 0D<br />
+move 32910,31756,8<br />
+move 32922,31751,8<br />
+move 32931,31751,8<br />
+move 32931,31752,7<br />
+move 32957,31752,7<br />
+move 32966,31755,7<br />
+move 32968,31780,7<br />
+move 32966,31796,7<br />
+#South east of hospital<br />
+move 32951,31793,7<br />
+move 32948,31797,7<br />
+#before guildhouse<br />
+move 32948,31795,6<br />
+move 32936,31793,6<br />
+move 32936,31795,7<br />
+move 32934,31786,7<br />
+move 32958,31801,7<br />
+move 32975,31803,7<br />
+useItem 32976,31802,7<br />
+move 32977,31802,6<br />
+move 32978,31802,7<br />
+stackItems<br />
+gotoScriptLine 0<br />
+<br />
+Elite Knight level 110~120<br />
+93 Axe Fighting<br />
+92 Shielding<br />
+12~15k GP/HR<br />
+65~80k XP/HR<br />
+<br />
+PS: You dont need these skills/lvl to hunt there, I just started there with this skills/lvl.<br />
+PS2: Loots all rares(sams bp, wand of plague broadsword etc)/worth npc sellable items.<br />
+PS3: You need A LOT of cap, understand a lot by 1.5 or 2k.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">11-06-2007, 19:17</div></div><div class="posttext">What do you mean by all you need is 9-10 empty flasks? Do you need the mana fluid backpack open?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syntaxe</div><div class="date">11-06-2007, 19:25</div></div><div class="posttext">you need to leave 9~10 empty flasks here: 32912,31755,9</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Drin xD</div><div class="date">11-06-2007, 20:12</div></div><div class="posttext">nice script gonna test it tomorrow :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">kefa</div><div class="date">11-06-2007, 20:20</div></div><div class="posttext">you think a level 55~ with crus helm, dsm, k legs, boh/sb, demon shield and f axe can hunt with this script... or shall i wait untill level 60?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syntaxe</div><div class="date">11-06-2007, 20:27</div></div><div class="posttext">@kefa<br />
+<br />
+I have no clue, test it by yourself</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">11-06-2007, 20:59</div></div><div class="posttext">Well, I don't understand the whole &quot;9-10 vials&quot; because it doesn't cover anything up. I don't quite understand what you're supposed to do with those vials. Have them on you? Put them down on the spot where you put loot?<br />
+<br />
+Otherwise with this script I only make about 45k/hr here on a high populated world. It's kinda a nice script but I really don't get that vial thing<br />
+<br />
+Average session speed:<br />
+37131 exp/h<br />
+Estimated time left for level up:<br />
+2h 0m 22s<br />
+Played this session:<br />
+0h 34m 51s<br />
+Gained this session:<br />
+21562 exp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syntaxe</div><div class="date">11-06-2007, 21:27</div></div><div class="posttext">dude, just throw 9~10 empty vials here 32912,31755,9<br />
+tell me what you got after doing this and waiting a respawn<br />
+<br />
+btw<br />
+<br />
+17:26 You need XX exp<br />
+for level XX<br />
+Average session speed:<br />
+79522 exp/h<br />
+Played this session:<br />
+3h 33m 47s<br />
+<br />
+17:22 4309GP this round.<br />
+17:22 43730GP as total.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">11-06-2007, 21:47</div></div><div class="posttext">dude, just throw 9~10 empty vials here 32912,31755,9<br />
+tell me what you got after doing this and waiting a respawn<br />
+<br />
+Yeah it didn't do anything. It just put the loot ontop of the empty vials</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syntaxe</div><div class="date">11-06-2007, 21:52</div></div><div class="posttext">It might be because you started the script near the lootdrop sqm, try activating the script far from there</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Luki</div><div class="date">11-06-2007, 22:04</div></div><div class="posttext">Your scripts are incredible!!! If you can do so like the most or you can make new thread with your all advanced script. All I will test for a few days.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vini</div><div class="date">11-07-2007, 07:18</div></div><div class="posttext">you are 1337</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nerdies</div><div class="date">11-07-2007, 10:34</div></div><div class="posttext">nice, in some levels if I get 85 or so ill try this script :p it owns that he is mving flasks.. noone will see your loot, but I guess alot of people will got to know this spot..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">11-07-2007, 17:09</div></div><div class="posttext">Okay it's working now.<br />
+Kinda cool :P<br />
+Anyway of changing where you do the lootdrop? Do you just edit the &quot;Droplootat~&quot; bit?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">11-07-2007, 17:29</div></div><div class="posttext">15:32 3078GP as total.<br />
+<br />
+15:32 You need 323764 exp<br />
+for level 105<br />
+Average session speed:<br />
+55670 exp/h<br />
+Estimated time left for level up:<br />
+5h 48m 57s<br />
+Played this session:<br />
+0h 32m 38s<br />
+Gained this session:<br />
+30275 exp<br />
+<br />
+<br />
+At level 100~ with full rare and 87/84</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Drin xD</div><div class="date">11-07-2007, 22:42</div></div><div class="posttext">I love this script dude <br />
+<br />
+Average session speed:<br />
+61777 exp/h<br />
+Played this session:<br />
+4h 1m 50s<br />
+Gained this session:<br />
+248998 exp<br />
+<br />
+and fucking nice moneymaker<br />
+<br />
+thank you to sharing it! :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">YahWek</div><div class="date">11-08-2007, 00:50</div></div><div class="posttext">20:49 You need 157512 exp<br />
+for level 97<br />
+Average session speed:<br />
+46244 exp/h<br />
+Estimated time left for level up:<br />
+3h 24m 22s<br />
+Played this session:<br />
+0h 22m 16s<br />
+Gained this session:<br />
+17166 exp<br />
+3887GP as total.<br />
+<br />
+900 ppl on..<br />
+OF very full on this momment :(<br />
+NICE SCRIPTTTTTTTTT DUDEEEEE :***</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nerdies</div><div class="date">11-08-2007, 13:28</div></div><div class="posttext">can I level 90 do this? <br />
+<br />
+80/75 :(<br />
+<br />
+normall avarage equip, and how much will he waste?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Matroseni</div><div class="date">11-08-2007, 14:50</div></div><div class="posttext">14:23 You need 363387 exp<br />
+for level 10X<br />
+Average session speed:<br />
+63829 exp/h<br />
+Estimated time left for level up:<br />
+6h 45m 3s<br />
+Played this session:<br />
+0h 22m 54s<br />
+Gained this session:<br />
+20550 exp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nerdies</div><div class="date">11-08-2007, 14:58</div></div><div class="posttext">I'm going to try it now on a low populated world. I'll post the exp/h in a hour.<br />
+<br />
+could you also give your skills, eq and level +- ? <br />
+<br />
+and what waste you have :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Matroseni</div><div class="date">11-08-2007, 15:29</div></div><div class="posttext">could you also give your skills, eq and level +- ? <br />
+<br />
+and what waste you have :)<br />
+<br />
+<br />
+Rare set, went there with Avenger. 84/78 and wasted like 4 uh's and 3 manas because of the full spawn when I arrived.<br />
+<br />
+14:36 You see 64 platinum coins.<br />
+They weigh 6.40 oz.   A Scimitar and one sword ring.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">11-10-2007, 14:31</div></div><div class="posttext">really cool script, made 100k and 500k exp yesterday =D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">CheaterOnSaphira</div><div class="date">11-10-2007, 15:22</div></div><div class="posttext">really cool script, made 100k and 500k exp yesterday =D<br />
+<br />
+lvl? Time? Skills? Eq?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Klockrent</div><div class="date">11-10-2007, 15:50</div></div><div class="posttext">Awesome script, I love it!<br />
+<br />
+15:26 You need 660208 exp<br />
+for level 128<br />
+Average session speed:<br />
+62774 exp/h<br />
+Estimated time left for level up:<br />
+10h 31m 2s<br />
+Played this session:<br />
+0h 59m 53s<br />
+Gained this session:<br />
+62651 exp<br />
+<br />
+Looted gold and items worth 10-11k~ and I've used around 50 minutes of softboots and uno manafluid</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">11-10-2007, 17:29</div></div><div class="posttext">lvl? Time? Skills? Eq?<br />
+<br />
+Was about 9 hours perhaps, lvl 82 ek rareset(avenger) 75 sword</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">11-10-2007, 22:00</div></div><div class="posttext">20:58 You need 267953 exp<br />
+for level 84<br />
+Average session speed:<br />
+54403 exp/h<br />
+Estimated time left for level up:<br />
+4h 55m 31s<br />
+Played this session:<br />
+6h 6m 39s<br />
+Gained this session:<br />
+332438 exp<br />
+<br />
+20:58 1435GP this round.<br />
+20:58 61875GP as total.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Saff</div><div class="date">11-10-2007, 22:34</div></div><div class="posttext">21:32 You need 375734 exp<br />
+for level 10X<br />
+Average session speed:<br />
+61188 exp/h<br />
+Estimated time left for level up:<br />
+6h 8m 26s<br />
+Played this session:<br />
+1h 23m 53s<br />
+Gained this session:<br />
+85548 exp<br />
+<br />
+21:32 2186GP this round.<br />
+21:32 19095GP as total.<br />
+<br />
+Softs all the time and like 1½bp mana 2 UH first round. Rare set, decent skills<br />
+<br />
+First it feelt like it just runned around totally random but it's a nice script. Could add some more places to go down/up and sometimes it skips to go down to the 3x berserk place, dunno why. The gold count/mana fluid part is great tho :)   Keep up the good work man!<br />
+<br />
+EDIT: You forgot to add Wand to drop and count money thing<br />
+EDIT2: 19:02 You see an old and used backpack (Vol:20). It weighs 18.00 oz. A label on the backpack reads: Property of Sam, Thais.     &lt;3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Cezarius</div><div class="date">11-13-2007, 21:42</div></div><div class="posttext">yeah thats really nice script thanks alot<br />
+<br />
+Saff gratz for backpack ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fe'Ihren</div><div class="date">11-21-2007, 21:11</div></div><div class="posttext">I was skilling a char for a friend, then i died when some randomass dude killed me. i lost boh and some levels and decided to take them back for him with this script. then i got a kick and died again and lost 2 levels. I then paid him ahellofalot for these incidents.<br />
+<br />
+In conclusion, your script sucks, man :/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alexer</div><div class="date">11-21-2007, 21:20</div></div><div class="posttext">When can I hunt there?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lolzan</div><div class="date">11-21-2007, 22:11</div></div><div class="posttext">Attack<br />
+Warrior<br />
+Empty vial<br />
+Spearman<br />
+Orc fortress<br />
+Monster<br />
+Equipment<br />
+<br />
+lol :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Saff</div><div class="date">11-21-2007, 22:11</div></div><div class="posttext">I was skilling a char for a friend, then i died when some randomass dude killed me. i lost boh and some levels and decided to take them back for him with this script. then i got a kick and died again and lost 2 levels. I then paid him ahellofalot for these incidents.<br />
+<br />
+In conclusion, your script sucks, man :/<br />
+<br />
+What does the script have to do if u got killed and kicked?<br />
+but last time the char went up in the big tower 1 floor like 3 times without reason :S. But i like the script anyway =). gogogo pg when 2x exp week? ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blackyy88</div><div class="date">12-18-2007, 13:46</div></div><div class="posttext">It's the best script I have  ever seen !<br />
+<br />
+Cogratulations, I really njoy it, thanks ALOT !<br />
+<br />
+12:48 You need 918139 exp<br />
+for level 1XX<br />
+Average session speed:<br />
+83855 exp/h</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blackyy88</div><div class="date">12-18-2007, 13:50</div></div><div class="posttext">I'm wondering if you could extend it  abit.... it would be great for low populated worlds.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kocz</div><div class="date">12-18-2007, 15:52</div></div><div class="posttext">Who knows what it is like at non-pvps???<br />
+I would try this at higher lvl...<br />
+And wow... 10k/h gp~~... rly awesome guess?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alexer</div><div class="date">12-18-2007, 16:02</div></div><div class="posttext">level 50 EK, 67/63 on a nonpvp world. Possible? I can waste some bp of mp.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kocz</div><div class="date">12-18-2007, 16:21</div></div><div class="posttext">Its meant for 75/75+ and 80+ lvls, guess .</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blackyy88</div><div class="date">12-18-2007, 21:25</div></div><div class="posttext">20:25 You need 367078 exp<br />
+for level 1**<br />
+Average session speed:<br />
+72539 exp/h<br />
+Estimated time left for level up:<br />
+5h 3m 38s<br />
+Played this session:<br />
+7h 44m 23s<br />
+Gained this session:<br />
+561437 exp<br />
+<br />
+20:24 1481GP this round.<br />
+20:24 84079GP as total.<br />
++ 2 warrior helmets and wand of decay<br />
+<br />
+I'll keep on hunting for 10 h more. Let's see how much I loot. So far 35 bps loot. - low populated world I guess<br />
+<br />
+@ I recommand having  90/90 skills to have no waste like I do.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kocz</div><div class="date">12-18-2007, 22:45</div></div><div class="posttext">20:25 You need 367078 exp<br />
+for level 1**<br />
+Average session speed:<br />
+72539 exp/h<br />
+Estimated time left for level up:<br />
+5h 3m 38s<br />
+Played this session:<br />
+7h 44m 23s<br />
+Gained this session:<br />
+561437 exp<br />
+<br />
+20:24 1481GP this round.<br />
+20:24 84079GP as total.<br />
++ 2 warrior helmets and wand of decay<br />
+<br />
+I'll keep on hunting for 10 h more. Let's see how much I loot. So far 35 bps loot. - low populated world I guess<br />
+<br />
+@ I recommand having  90/90 skills to have no waste like I do.<br />
+<br />
+WOW, What type of world is it, pvp or non-pvp??, also saw some ppl there?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blackyy88</div><div class="date">12-18-2007, 23:38</div></div><div class="posttext">It's pvp world, and it's kinda dead-world.<br />
+I have seen only one person running inside, but I kicked him out ;]<br />
+<br />
+PS. After 8 h of running my bot started to crash, dunno why. Firstly everything got paused and character stopped walking in south east part of OF, then it went TWICE up to the place with War wolfs (luckily I removed them from my safelist). Well I hope it won't happen again.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blackyy88</div><div class="date">12-18-2007, 23:39</div></div><div class="posttext">And unfortunatelly I had to reset my blackd and now dunno how long I'm hunting .. :( .... 100k in loot so far ..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blackyy88</div><div class="date">12-19-2007, 07:48</div></div><div class="posttext">06:34 114GP this round.<br />
+06:34 166197GP as total.<br />
+<br />
+<br />
+I guess it was like ... 18h in OF with one break which last 30 min ~~</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jacke_123</div><div class="date">12-19-2007, 14:15</div></div><div class="posttext">Script works sweet, but dident get the flask part ^^,</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blomberg</div><div class="date">12-20-2007, 18:33</div></div><div class="posttext">Nice script!<br />
+<br />
+17:31 You need 90150 exp<br />
+for level 109<br />
+Average session speed:<br />
+65784 exp/h<br />
+Estimated time left for level up:<br />
+1h 22m 13s<br />
+Played this session:<br />
+3h 56m 47s<br />
+Gained this session:<br />
+259606 exp<br />
+<br />
+<br />
+17:31 3652GP this round.<br />
+17:31 45873GP as total.<br />
+<br />
+<br />
+Wasted a pair brand new softies</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Piesek</div><div class="date">12-21-2007, 14:08</div></div><div class="posttext">Used 50 mins of softs, 5bp MP...loot ~17k+13:06 You see a dwarven armor (Arm:10).<br />
+It weighs 130.00 oz. ;D<br />
+<br />
+And 75k/h exp <br />
+<br />
+&lt;3333</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aoyux</div><div class="date">12-22-2007, 06:38</div></div><div class="posttext">Great<br />
+<br />
+<br />
+22:37 You need 216001 exp<br />
+for level 12X<br />
+Average session speed:<br />
+70513 exp/h<br />
+Estimated time left for level up:<br />
+3h 3m 48s<br />
+Played this session:<br />
+3h 11m 0s<br />
+Gained this session:<br />
+224466 exp</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Crossfire</div><div class="date">12-22-2007, 07:36</div></div><div class="posttext">Hmm...<br />
+<br />
+Seems like I'm going to have to try this :D<br />
+<br />
+I'll post my results after I try it.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">weeper</div><div class="date">12-22-2007, 08:57</div></div><div class="posttext">Syntaxe, have you changed the hex of the empty vials for the ones of the empty mana potions?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Piesek</div><div class="date">12-23-2007, 00:12</div></div><div class="posttext">Used 50 mins of softs, 5bp MP...loot ~17k+13:06 You see a dwarven armor (Arm:10).<br />
+It weighs 130.00 oz. ;D<br />
+<br />
+And 75k/h exp <br />
+<br />
+&lt;3333<br />
+<br />
+HAHA 23:10 You see an old and used backpack (Vol:20).<br />
+It weighs 18.00 oz.<br />
+A label on the backpack reads: Property of Sam, Thais. Tommorow I'm fucking lucker:DDD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Trigun</div><div class="date">12-23-2007, 00:42</div></div><div class="posttext">fuck you dude ur so fucking lucky 2x dwarven armors lol xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">martank</div><div class="date">01-11-2008, 10:16</div></div><div class="posttext">This script own I will later post exiva exp because now like 130ppl on mine server xD<br />
+<br />
+Also I want to ask if its there any possibility of reseting cash stats?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">boppan</div><div class="date">01-22-2008, 21:41</div></div><div class="posttext">It doesn¨t work for me, with the flasks.<br />
+<br />
+It just drop loot on vials.. and i've tried to put the vials beside the lootdrop sqm but it doesn't work, i have tried to start the scripy far from there, whats wrong?<br />
+<br />
+THanks ~¨</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Trigun</div><div class="date">01-22-2008, 21:49</div></div><div class="posttext">vials id changed ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Vesherr</div><div class="date">01-22-2008, 22:20</div></div><div class="posttext">1 of the better scripts here</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">boppan</div><div class="date">01-22-2008, 23:36</div></div><div class="posttext">1 of the better scripts here<br />
+<br />
+<br />
+Not if the ids not changed..... :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">diesel</div><div class="date">01-23-2008, 23:32</div></div><div class="posttext">remake the id:s please.. im a noob on making script.. can someone make it for us n000bs? :P:P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ta_jasne</div><div class="date">01-24-2008, 00:16</div></div><div class="posttext">remake the id:s please.. im a noob on making script.. can someone make it for us n000bs? :P:P<br />
+<br />
+why wont u use the old flasks then? noob</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kurb</div><div class="date">01-27-2008, 03:58</div></div><div class="posttext">Its a good script, but im sure it can be modifed to get better, any pro who takes the job?!:) Would be GREAT...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syntaxe</div><div class="date">01-27-2008, 19:44</div></div><div class="posttext">what do u want? im editing the flasks right now but what else do u want?<br />
+<br />
+ps: can someone give me the new flasks id</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">01-28-2008, 02:03</div></div><div class="posttext">If I wanted to set the lootdrop to a completely different spot and use the flasks, would I just set the lootdrop to a different place and copy paste the hex thingies in?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Loki</div><div class="date">01-28-2008, 06:51</div></div><div class="posttext">what do u want? im editing the flasks right now but what else do u want?<br />
+<br />
+ps: can someone give me the new flasks id<br />
+<br />
+you can just buy some flask of water in edron and drink all water... those still work perfect... btw you rox again!!!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">RandomBlackDUser</div><div class="date">01-28-2008, 16:07</div></div><div class="posttext">Its a good script, but im sure it can be modifed to get better, any pro who takes the job?!:) Would be GREAT...<br />
+<br />
+<br />
+Do it urself, its not hard xD I remade one and I'm getting a steady 80k/h when my server only had like 130 ppl on :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">NeoN91</div><div class="date">01-28-2008, 18:54</div></div><div class="posttext">Really nice script. I use it on my 120+ ek. 55k exp /h and 10k cash /h ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">01-28-2008, 19:57</div></div><div class="posttext">If I wanted to set the lootdrop to a completely different spot and use the flasks, would I just set the lootdrop to a different place and copy paste the hex thingies in?<br />
+<br />
+~~~~~~~~~~~~~~~</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">syntaxe</div><div class="date">01-28-2008, 21:00</div></div><div class="posttext">no.<br />
+<br />
+v nnnnnnnnnmj76r m</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Loki</div><div class="date">01-29-2008, 02:28</div></div><div class="posttext">i have a suggestion... maybe you can add looting the brown bps from leader and  dropping on floor near the lootpile so that when you stop the bot to gather lootbag... you can just put in those bps.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pitrx</div><div class="date">01-29-2008, 16:52</div></div><div class="posttext">VERY NICE SCRYPT but how you trage LOOT BAG...<br />
+<br />
+Is there any MAILBOX?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">fifty123</div><div class="date">02-05-2008, 21:23</div></div><div class="posttext">how to make the gps and sword ring stop dropping on the ground? can soem 1 tell me?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tuneup</div><div class="date">02-06-2008, 16:07</div></div><div class="posttext">my rl geting<br />
+57k hr</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">diddi</div><div class="date">02-06-2008, 20:37</div></div><div class="posttext">Tortoises is 65k/h for me on 130+ ek and its no waste and only profit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dzanox</div><div class="date">02-07-2008, 09:29</div></div><div class="posttext">Do u think 100 paladin (facc- only gran or shp) can use that? 90 dist, full set without soft boots?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pasek</div><div class="date">02-08-2008, 11:32</div></div><div class="posttext">I love this script but why it doesnt clear whole of ;/ I know i am a bit annoying cuz i should be satisfied with this script but i think if it will clean whole of it can be better exp~ and more loot :)<br />
+<br />
+But ofc i love it !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Thie</div><div class="date">02-26-2008, 18:16</div></div><div class="posttext">Because of to much zerks I guess<br />
+<br />
+Anyways havent tested it yet since im afraid that this script sucks after update<br />
+<br />
+Could anyone tell me what he waste after update?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Idonthaveanyname</div><div class="date">02-27-2008, 15:41</div></div><div class="posttext">I love this script but why it doesnt clear whole of ;/ I know i am a bit annoying cuz i should be satisfied with this script but i think if it will clean whole of it can be better exp~ and more loot :)<br />
+<br />
+But ofc i love it !<br />
+<br />
+<br />
+try to use mine, im getting 80+k/h on it, just look on my threads ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Neophytes</div><div class="date">02-27-2008, 20:46</div></div><div class="posttext">ad orc warlord to kill if someone lure.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Hairy Bob</div><div class="date">02-28-2008, 07:09</div></div><div class="posttext">Flasks is still not working.<br />
+<br />
+Can an updated script please be posted :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Conax</div><div class="date">03-03-2008, 13:19</div></div><div class="posttext">how can we change place to drop loot at? I bet this is widely known now so no good to drop loot at that place? :-/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Conax</div><div class="date">03-03-2008, 14:07</div></div><div class="posttext">Could someone help me.. am I supposed to start this script inside the fortress, or outside? I don't really understand &gt;.&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dadoo</div><div class="date">04-16-2008, 02:30</div></div><div class="posttext">I am using a 170+ pally with 100+ distance here.. the script is fine especially the loot drop thingy...<br />
+But it doesnt cover the whole place.. i had 65k/h the best and it didnt kill all the orcs on the surface... do u start it on a &quot;somewhere special place&quot; or is it something else..?<br />
+<br />
+btw. could u make a little more better script with covering some parts of the underground and whole surface and ADD the same spot for loot drop?<br />
+<br />
+Answer on my request if u can :&gt;<br />
+<br />
+thx.. :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Saff</div><div class="date">04-16-2008, 15:54</div></div><div class="posttext">For thoose who doesnt know where to start. I always start at lootdrop place aka the toilet. I go there, set everything up and run it. Works perfect. It have act kinda weird and wlaked up to the tower a couple of times, i have alarm so it's np but just abit weird</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">dadoo</div><div class="date">04-17-2008, 02:15</div></div><div class="posttext">I run it in the same spot.. but still it doesnt cover the whole surface.. :S but its good exp anyway.. 1:15 now and i got 61k ^^</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">alexteban</div><div class="date">04-18-2008, 18:46</div></div><div class="posttext">Wondering if it's better avenger or mystic blade on a lvl 91 ek :p<br />
+<br />
+Help me !!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Trigun</div><div class="date">04-18-2008, 19:31</div></div><div class="posttext">dunno try it out for urself id say avenger coz u need to kill zerkers in 1 hit to make good profit</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">FirLegend</div><div class="date">06-08-2008, 14:20</div></div><div class="posttext">Rofl Insane profit 15 mins of doing this script:<br />
+<br />
+9 halberds, 500 gp cash, and a warrior helmet O.O</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Szyna</div><div class="date">06-17-2008, 14:58</div></div><div class="posttext">Very nice script i make 150k in two days. 103 ek 88.85 :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Byczek12</div><div class="date">11-29-2008, 21:23</div></div><div class="posttext">20:22 1515GP this round.<br />
+20:22 102980GP as total.<br />
+<br />
+<br />
+Really nice ! :)))</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bman</div><div class="date">01-21-2009, 14:30</div></div><div class="posttext">Does this script still works? I mean with the lootcounter etc..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">p0pas</div><div class="date">01-21-2009, 20:48</div></div><div class="posttext">yes!!! IT WORKS</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ManInTheCave</div><div class="date">03-26-2009, 15:06</div></div><div class="posttext">I reccomend leevl 60+ with 90/90 or 80+ with 80/80 no worse than 80 skills or you will waste</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blatten</div><div class="date">03-27-2009, 02:11</div></div><div class="posttext">Does it still work? how much cash per hour + xp/h?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nirchuky</div><div class="date">03-27-2009, 10:49</div></div><div class="posttext">just perfect, thx</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">IRHidden</div><div class="date">03-29-2009, 16:34</div></div><div class="posttext">I was skilling a char for a friend, then i died when some randomass dude killed me. i lost boh and some levels and decided to take them back for him with this script. then i got a kick and died again and lost 2 levels. I then paid him ahellofalot for these incidents.<br />
+<br />
+In conclusion, your script sucks, man :/<br />
+<br />
+you got a kick?<br />
+<br />
+how the fuck is that his fault?<br />
+<br />
+u one stupid fucker<br />
+<br />
+omg go die</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blatten</div><div class="date">03-29-2009, 19:33</div></div><div class="posttext">Can someone change the pot trower to the new ids , cuz I cant see the old ones thats why I cant make it myself</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nidareu</div><div class="date">03-20-2010, 19:19</div></div><div class="posttext">Lol its not possible to reach 70k/h here, i have 38k/h max lol. 83 knight rare set + soft boots 80/75</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

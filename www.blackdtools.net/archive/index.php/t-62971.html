@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibia, cheat, engine, reader, address, battleye" />
+	<meta name="description" content="For external: 
+ 
+Get HWND 
+hwnd = FindWindow(&quot;Qt5QWindowOwnDCIcon&quot;, 0); 
+hwnd = FindWindow(, &quot;Tibia - Charactername&quot;); 
+http://stackoverflow.com/questions/16530871/findwindow-does-not-find-the-a-window#answer-16531276 
+ 
+Get QTCore.dll Base adress. 
+ 
+LPVOID GetModule()" />
+	
+	<title> Tibia 11 - Address path reader code in C++ [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  Tibia 11 - Address path reader code in C++</div>
+<hr />
+<div class="pda"><a href="t-62971.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62971-Tibia-11-Address-path-reader-code-in-C">Tibia 11 - Address path reader code in C++</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">maxibaby</div><div class="date">09-18-2016, 21:45</div></div><div class="posttext">For external:<br />
+<br />
+Get HWND<br />
+<br />
+hwnd = FindWindow(&quot;Qt5QWindowOwnDCIcon&quot;, 0);<br />
+<br />
+hwnd = FindWindow(, &quot;Tibia - Charactername&quot;);<br />
+http://stackoverflow.com/questions/16530871/findwindow-does-not-find-the-a-window#answer-16531276<br />
+<br />
+Get QTCore.dll Base adress.<br />
+<br />
+<br />
+LPVOID GetModule()<br />
+{<br />
+    HMODULE hMods[1024];<br />
+    HANDLE pHandle = GetHandle(); //Tibia process Handle<br />
+    DWORD cbNeeded;<br />
+    unsigned int i;<br />
+<br />
+    if (EnumProcessModules(pHandle, hMods, sizeof(hMods), &amp;cbNeeded))<br />
+        {<br />
+        for (i = 0; i &lt; (cbNeeded / sizeof(HMODULE)); i++)<br />
+        {<br />
+            TCHAR szModName[MAX_PATH];<br />
+            if (GetModuleFileNameEx(pHandle, hMods[i], szModName, sizeof(szModName) / sizeof(TCHAR)))<br />
+            {<br />
+                string wstrModName = szModName;<br />
+                string wstrModContain = &quot;Qt5Core.dll&quot;; <br />
+<br />
+                if (wstrModName.find(wstrModContain) != string::npos)<br />
+                {<br />
+                    return getBaseAdress(pHandle, hMods[i]);<br />
+                }<br />
+            }<br />
+        }<br />
+    }<br />
+    return NULL;<br />
+}<br />
+<br />
+<br />
+<br />
+Follow offsets chain:<br />
+<br />
+<br />
+<br />
+DWORD healthOffset[] = {0x004555C8, 0x8, 0x134, 0x2C, 0x24}; <br />
+<br />
+//oLevel = sizeof(healthOffset)/sizeof(DWORD)<br />
+<br />
+DWORD getAdress(int oLevel, HANDLE pHandle, DWORD Offsets[], DWORD BaseAdress){<br />
+    DWORD CurrentAdress = BaseAdress;<br />
+    for ( int i = 0; i &lt; oLevel - 1; i++){<br />
+        cout &lt;&lt; &quot;Current: &quot; &lt;&lt; CurrentAdress &lt;&lt; &quot; adding: &quot; &lt;&lt; Offsets[i] &lt;&lt; endl;<br />
+        CurrentAdress = CurrentAdress + Offsets[i];<br />
+        cout &lt;&lt; &quot;Ended in &quot; &lt;&lt; CurrentAdress &lt;&lt; endl;<br />
+        if ( ReadProcessMemory(pHandle, (LPVOID)CurrentAdress, &amp;CurrentAdress,sizeof(CurrentAdress),NULL) == 0) {<br />
+            cout &lt;&lt; GetLastError() &lt;&lt; endl ;<br />
+                   }<br />
+    }<br />
+    return CurrentAdress + Offsets[oLevel - 1] ;<br />
+}<br />
+<br />
+hpAdress = getAdress(5, handle, healthOffset, baseAdress) ;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-20-2016, 15:42</div></div><div class="posttext">Thank you for sharing! It looks good.<br />
+I will build it in Visual Basic soon. Of course, it will be a bit slower. Anyways I will share it as soon I have it working.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dovahkiin</div><div class="date">01-29-2017, 04:46</div></div><div class="posttext">Can you tell me how to do this in c#, im trying with TibiaProcess.Modules but qt5core isn't there</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mahatesh</div><div class="date">02-06-2017, 20:24</div></div><div class="posttext">_Tibia = value; // 'value' is the tibia Process object<br />
+foreach (ProcessModule module in _Tibia.Modules){<br />
+	string name = module.FileName;<br />
+	if (name.Contains(&quot;Qt5Core.dll&quot;))<br />
+	{<br />
+		_BaseAddress = Convert.ToUInt32(module.BaseAddress.ToInt32());<br />
+		break;<br />
+	}<br />
+}<br />
+_Handle = value.MainWindowHandle;<br />
+<br />
+<br />
+Hope this helps.<br />
+<br />
+For the base address reading, here is a sample code that loops:<br />
+<br />
+<br />
+// address is the base address (in my case, tibia's base), and offsets is the offset array<br />
+// for example, the offset list for HP would be: (values are not up to date)<br />
+// public static UInt32[] Hp = { 0x4555C8, 0x8, 0x1D8, 0x60, 0x8 };<br />
+private static UInt32 GetUInt32Value(UInt32[] offsets, UInt32 address)<br />
+{<br />
+	for (int i = 0; i &lt; offsets.Length; i++)<br />
+	{<br />
+		address = ReadUInt32(address + offsets[i]);<br />
+	}<br />
+	return address;<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">lokuxd</div><div class="date">03-22-2017, 20:40</div></div><div class="posttext">If I can, how to turn off BattlEye? I can't use Cheat Engine;/ one week ago i can read all in tibia 10 and something in 11 now I can use CE</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

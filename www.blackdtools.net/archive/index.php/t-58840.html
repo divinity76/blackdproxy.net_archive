@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, waitx, sayintrade, cyclops, saymessage, 32344,32229,7, potion, setmeleekill, potions, works, 32368,32178,7, $hex-tibiastryes$, 32449,32069,7, 32451,32070,8, 32433,32141,7, setpriority, exiva, change, gotoscriptline, deposit, 32478,32114,8, setloot, buying, sells, refil, script, _manapotionid, fixed, capacity, 01$number, $countitems0c, iftrue, $hex-tibiastrbye$, manas, simplified, $_manacost$, 32400,32220,7, withdraw, $numericalexp$_mana$$_idcost$$, $numericalexp$_manas$-$countitems$_manapotionid$$$, _manacost, trade, $hex-tibiastrvial$, $numbertohex1$_mana$$, $hex-tibiastrtrade$, _mana, _idcost, _manas, 32454,32084,8, 32478,32089,8" />
+	<meta name="description" content="I trying do my script to do refill and deposit but he dont work very good, someone can find me error plis :P" />
+	
+	<title> Plis someone help me in my script.... [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Plis someone help me in my script....</div>
+<hr />
+<div class="pda"><a href="t-58840.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58840-Plis-someone-help-me-in-my-script">Plis someone help me in my script....</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">aleff25</div><div class="date">08-25-2012, 18:08</div></div><div class="posttext">I trying do my script to do refill and deposit but he dont work very good, someone can find me error plis :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">sharpie</div><div class="date">08-31-2012, 19:49</div></div><div class="posttext">Ok I fixed the potion buying part. I didnt test the part where it sells after you come back for no capacity, but all of the potion buying works. I simplified the code with it, hope thats fine. With as little as you're carrying for potions, you don't need to split it up into smaller portions. Hope it works for you. Also, when it buys potions, I took out the part where it puts the potion ID into the exiva command. It NEVER works for me and always comes across as an invalid packet format. I just change the ID when I change potions. <br />
+<br />
+<br />
+<br />
+setChaoticMovesOFF<br />
+#By Saracene<br />
+setFollow<br />
+setFriendly<br />
+setMeleeKill cyclops drone<br />
+setMeleeKill cyclops smith<br />
+setMeleeKill cyclops<br />
+setMeleeKill bat<br />
+setPriority cyclops smith:+1<br />
+setPriority cyclops drone:+2<br />
+setLootOn<br />
+setLoot 55 OD<br />
+setLoot D7 0B<br />
+move 32449,32067,8<br />
+move 32407,32065,8<br />
+move 32421,32048,8<br />
+move 32434,32048,8<br />
+move 32453,32057,8<br />
+move 32463,32043,8<br />
+move 32452,32069,8<br />
+move 32447,32092,8<br />
+move 32438,32103,8<br />
+move 32452,32100,8<br />
+move 32461,32113,8<br />
+move 32478,32114,8<br />
+move 32478,32114,8<br />
+move 32476,32089,8<br />
+move 32492,32051,8<br />
+move 32485,32035,8<br />
+move 32475,32035,8<br />
+move 32487,32061,8<br />
+move 32478,32089,8<br />
+move 32450,32095,8<br />
+move 32454,32084,8<br />
+IfTrue ($countitems:0C 01$#number&lt;#5) Goto $nlineoflabel:refil$<br />
+IfTrue ($mycap$#number&lt;=#2500) Goto $nlineoflabel:depo$<br />
+gotoScriptLine 0<br />
+:depo<br />
+move 32451,32070,8<br />
+move 32449,32069,7<br />
+move 32433,32141,7<br />
+move 32368,32178,7<br />
+move 32362,32199,7<br />
+sayMessage hi<br />
+waitX 3<br />
+sayInTrade trade<br />
+waitX 3<br />
+sayInTrade exiva &gt; 7B D6 0C 00 $numbertohex1:{$countitems:55 OD$}$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:bye$<br />
+move 32344,32229,7<br />
+sayMessage hi<br />
+waitX 3<br />
+sayInTrade deposit all<br />
+waitX 3<br />
+sayInTrade Yes<br />
+move 32344,32229,7<br />
+move 32368,32178,7<br />
+move 32433,32141,7<br />
+move 32449,32069,7<br />
+move 32451,32070,8<br />
+gotoScriptLine 0<br />
+:refil<br />
+fastExiva _manapotionid = 0C 01<br />
+# How many manas do you have?<br />
+fastExiva _manas = 50<br />
+# How much does 1 potion cost? MP = 50, SMP = 80, GMP = 120<br />
+fastExiva _idcost = 50<br />
+move 32451,32070,8<br />
+move 32449,32069,7<br />
+move 32433,32141,7<br />
+move 32368,32178,7<br />
+move 32344,32229,7<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+saymessage hi<br />
+sayInTrade deposit all<br />
+sayInTrade yes<br />
+sayInTrade withdraw $_manacost$<br />
+sayInTrade yes<br />
+waitx 1<br />
+move 32400,32220,7<br />
+saymessage hi<br />
+waitx 2<br />
+sayInTrade trade<br />
+fastExiva &gt; 96 04 $hex-tibiastr:vial$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 1<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+fastExiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitx 2<br />
+fastExiva &gt; 96 04 $hex-tibiastr:trade$<br />
+waitx 2<br />
+sayMessage exiva &gt; 7A 0C 01 00 $numbertohex1:{$_mana$}$ 00 00<br />
+waitx 1<br />
+move 32344,32229,7<br />
+move 32368,32178,7<br />
+move 32433,32141,7<br />
+move 32449,32069,7<br />
+move 32451,32070,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">aleff25</div><div class="date">09-06-2012, 00:13</div></div><div class="posttext">Thx man :p</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

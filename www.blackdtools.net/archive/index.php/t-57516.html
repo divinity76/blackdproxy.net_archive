@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="number, exiva, violet, $hex-equiped-item06$, string=, seconds, conditional, weapon, blood, _equipmelee, approx, $randomnumber11001250$, _unequipmelee, minus, average, explained, 175-225, default, timer, count, $numericalexp$_unequipmelee$+1$, $_unequipmelee$, 400-600, $numericalexp$_equipmelee$+1$, events, $_equipmelee$, 150-250, safetys, times, yellow, meant, event, monster, green, equiped, sequence, break, probarly, delay, small, difference" />
+	<meta name="description" content="This conditional event will have the green weapon id equiped for approx 5 seconds which meant it hits two times for safety's sake, if you are sure you will blood it in one hit set the yellow number to 3. 
+It will then use red weapon for approx 25 seconds, 12 hits. This is the blue number. To edit it set it to (hits*2)+1, as you hit once every 2 seconds. The +1 is just to try to make sure it's between hits. PROBARLY does not break sequence when not having delay and having a good conditional tick" />
+	
+	<title> Blood monster with other weapon every 12~ hits [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-49.html">Conditional Events Miniscripts</a> &gt;  Blood monster with other weapon every 12~ hits</div>
+<hr />
+<div class="pda"><a href="t-57516.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57516-Blood-monster-with-other-weapon-every-12-hits">Blood monster with other weapon every 12~ hits</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-16-2012, 02:02</div></div><div class="posttext">This conditional event will have the green weapon id equiped for approx 5 seconds which meant it hits two times for safety's sake, if you are sure you will blood it in one hit set the yellow number to 3.<br />
+It will then use red weapon for approx 25 seconds, 12 hits. This is the blue number. To edit it set it to (hits*2)+1, as you hit once every 2 seconds. The +1 is just to try to make sure it's between hits. PROBARLY does not break sequence when not having delay and having a good conditional tick (with small difference, maybe 175-225 and violet at default) and violet number.<br />
+The violet number should be the 1000 minus the average of your conditional events timer tick, ie if it is 150-250 violet should be 800, 400-600 violet 500. To make it count about every second.<br />
+<br />
+<br />
+$hex-equiped-item:06$<br />
+#string=#<br />
+XX XX<br />
+0<br />
+0<br />
+0<br />
+exiva _unequipmelee = 0<br />
+$hex-equiped-item:06$<br />
+#string=#<br />
+5E 1E<br />
+0<br />
+800<br />
+0<br />
+exiva _unequipmelee = $numericalexp:{$_unequipmelee$}+1$<br />
+$_unequipmelee$<br />
+#number&gt;#<br />
+5<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #XX XX 06<br />
+$hex-equiped-item:06$<br />
+#string=#<br />
+5E 1E<br />
+0<br />
+0<br />
+0<br />
+exiva _equipmelee = 0<br />
+$hex-equiped-item:06$<br />
+#string=#<br />
+XX XX<br />
+0<br />
+800<br />
+0<br />
+exiva _equipmelee = $numericalexp:{$_equipmelee$}+1$<br />
+$_equipmelee$<br />
+#number&gt;#<br />
+25<br />
+0<br />
+$randomnumber:1100&gt;1250$<br />
+0<br />
+exiva #5E 1E 06<br />
+<br />
+I hope I explained it well enough, if not post!</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

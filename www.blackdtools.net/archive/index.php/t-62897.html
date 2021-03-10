@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="conds, eater, healing, fixed, problems, manually, train, levels, exura, infir, tested, moment, subzero, dawnport, script, logging, great, works, oressa, times" />
+	<meta name="description" content="Hello guys, 
+ 
+I created a new script for Dawnport. 
+ 
+What does the Cavebot do? 
+&gt; Level up to 8 
+&gt; Do &quot;Mountain Troll Task&quot; &amp; &quot;Torn Log Book Task&quot; and finish them with level 8 at NPC Mr Morris 
+&gt; Walk to NPC Oressa and decide to be a sorcerer 
+&gt; Walk into Sorcerer Reward Room 
+&gt; Opening Reward Chest after opening Reward Room door" />
+	
+	<title> Full AFK Dawnport Script by subzero [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Full AFK Dawnport Script by subzero</div>
+<hr />
+<div class="pda"><a href="t-62897.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62897-Full-AFK-Dawnport-Script-by-subzero">Full AFK Dawnport Script by subzero</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-19-2016, 17:04</div></div><div class="posttext">Hello guys,<br />
+<br />
+I created a new script for Dawnport.<br />
+<br />
+What does the Cavebot do?<br />
+&gt; Level up to 8<br />
+&gt; Do &quot;Mountain Troll Task&quot; &amp; &quot;Torn Log Book Task&quot; and finish them with level 8 at NPC Mr Morris<br />
+&gt; Walk to NPC Oressa and decide to be a sorcerer<br />
+&gt; Walk into Sorcerer Reward Room<br />
+&gt; Opening Reward Chest after opening Reward Room door<br />
+&gt; Walk to Bank &amp; deposit all money<br />
+&gt; Walk to boat &amp; sail to defined city <br />
+&gt; Logout<br />
+<br />
+Cavebot:<br />
+8086<br />
+<br />
+<br />
+<br />
+# --------------NOTE-----------------<br />
+# Just create new character,login and directly start the cavebot<br />
+# After death just start the Cavebot again<br />
+# If no Vocation is set Cavebot logout at NPC Oressa with level 8<br />
+# You can change value of $_tornlogbook$ to 1 so cavebot skip the chest (recommended if you already got a character in dawnport and done this quest) but anyways if the values stays 0 the cavebot will only use once the chest.<br />
+# <br />
+#<br />
+# open backpack<br />
+saymessage exiva openbp<br />
+#<br />
+# --- Kill -----------------------------<br />
+setMeleeKill Mountain Troll<br />
+setMeleeKill Troll Marauder<br />
+setMeleeKill troll-trained salamander<br />
+setMeleeKill Woodling<br />
+# --------------------------------------<br />
+#<br />
+# --- Loot -----------------------------<br />
+setLoot D7 0B<br />
+#---------------------------------------<br />
+#<br />
+# --- City Goal ---------------------------------------------------<br />
+#<br />
+fastExiva _city = Thais<br />
+fastExiva _vocation = sorcerer<br />
+fastExiva _tornlogbook = 0<br />
+#<br />
+# --- Script Master Option ----------------------------------------<br />
+# Change it to '1' if you just want to start the Hunt<br />
+#<br />
+fastExiva _simplywaypoints = 0<br />
+#<br />
+#<br />
+IfTrue ($_simplywaypoints$#number&gt;=#1) Goto $nlineoflabel:Hunt$<br />
+# ------------------------------------------------------------------<br />
+<br />
+IfTrue ($mylevel$#number&gt;=#3) Goto $nlineoflabel:WalkToHuntAfterDeath$<br />
+<br />
+# move from begin to knight equiper<br />
+:Outbreak<br />
+move 32070,31901,6<br />
+move 32073,31901,6<br />
+move 32075,31899,6<br />
+move 32074,31898,5<br />
+<br />
+# Walk through Knight Equip and to Cave Start<br />
+move 32071,31896,5<br />
+move 32065,31879,5<br />
+gotoScriptLine $nlineoflabel:Hunt$<br />
+<br />
+:WalkToHuntAfterDeath<br />
+move 32065,31893,6<br />
+move 32065,31889,6<br />
+move 32065,31887,5<br />
+move 32065,31878,5<br />
+<br />
+# Hunting waypoints<br />
+:Hunt<br />
+#<br />
+move 32065,31875,6<br />
+move 32063,31872,6<br />
+move 32048,31867,6<br />
+move 32057,31865,6<br />
+move 32062,31862,6<br />
+move 32060,31861,5<br />
+move 32062,31861,6<br />
+move 32070,31871,6<br />
+move 32084,31880,6<br />
+move 32086,31896,6<br />
+move 32078,31896,6<br />
+move 32074,31893,7<br />
+move 32073,31893,8<br />
+move 32075,31897,9<br />
+move 32076,31895,10<br />
+move 32079,31888,10<br />
+move 32084,31880,10<br />
+move 32081,31884,10<br />
+move 32075,31887,10<br />
+move 32068,31890,10<br />
+move 32057,31891,10<br />
+move 32048,31881,10<br />
+move 32039,31877,10<br />
+move 32035,31882,10<br />
+move 32024,31884,10<br />
+move 32013,31885,10<br />
+move 32014,31878,10<br />
+move 32023,31880,10<br />
+move 32032,31881,10<br />
+move 32037,31875,10<br />
+move 32036,31865,10<br />
+move 32032,31853,10<br />
+move 32032,31844,10<br />
+move 32041,31841,10<br />
+move 32044,31834,10<br />
+move 32042,31827,10<br />
+move 32039,31823,10<br />
+move 32031,31822,10<br />
+move 32031,31816,10<br />
+move 32038,31812,10<br />
+move 32045,31799,10<br />
+move 32046,31792,10<br />
+move 32053,31800,10<br />
+<br />
+# Check if chestbox was used once<br />
+IfTrue ($_tornlogbook$#number=#1) Goto $nlineoflabel:skipchest$<br />
+<br />
+# Check if a tornlogbook is already in your backpack<br />
+IfTrue ($countitems:82 53$#number&gt;=#1) Goto $nlineoflabel:skipChestBox$<br />
+<br />
+# Open the Chest for Torn Log Book<br />
+fastExiva &gt; 0A 00 82 3B 7D 38 7C 0A A8 09 02 01<br />
+# marks _tornlogbook = 1 so the character don't use the chest box again<br />
+fastExiva _tornlogbook = 1<br />
+<br />
+:skipChestBox<br />
+move 32054,31802,10<br />
+move 32046,31806,10<br />
+move 32040,31820,10<br />
+move 32047,31828,10<br />
+move 32044,31839,10<br />
+move 32042,31851,10<br />
+move 32039,31861,10<br />
+move 32039,31874,10<br />
+move 32049,31881,10<br />
+move 32055,31893,10<br />
+useItem 32055,31898,10<br />
+useItem 32057,31900,9<br />
+useItem 32058,31902,8<br />
+useItem 32057,31900,7<br />
+move 32057,31902,6<br />
+move 32057,31911,6<br />
+move 32045,31907,6<br />
+move 32041,31902,6<br />
+move 32046,31890,6<br />
+move 32051,31890,5<br />
+move 32060,31887,5<br />
+move 32065,31879,5<br />
+<br />
+IfTrue ($mylevel$#number&gt;=#8) Goto $nlineoflabel:Stop$<br />
+gotoscriptline $nlineoflabel:Hunt$<br />
+<br />
+:Stop<br />
+move 32065,31886,5<br />
+move 32070,31889,5<br />
+move 32072,31895,5<br />
+move 32072,31899,4<br />
+sayinTrade hi<br />
+waitx 1<br />
+sayinTrade Troll<br />
+waitx 1<br />
+sayinTrade Log Book<br />
+waitx 1<br />
+sayinTrade yes<br />
+waitx1<br />
+sayinTrade Log Book<br />
+waitx 1<br />
+sayinTrade bye<br />
+move 32073,31896,4<br />
+move 32071,31896,5<br />
+move 32069,31890,5<br />
+move 32064,31888,5<br />
+move 32064,31892,6<br />
+<br />
+# If no Vocation is definied $_vocation$ character logout<br />
+IfTrue ($_vocation$#string=#sorcerer) Goto $nlineoflabel:decidedVocation$<br />
+IfTrue ($_vocation$#string=#druid) Goto $nlineoflabel:decidedVocation$<br />
+IfTrue ($_vocation$#string=#knight) Goto $nlineoflabel:decidedVocation$<br />
+IfTrue ($_vocation$#string=#paladin) Goto $nlineoflabel:decidedVocation$<br />
+gotoScriptLine $nlineoflabel:Logout$<br />
+<br />
+<br />
+:decidedVocation<br />
+sayinTrade hi<br />
+waitx 1<br />
+sayinTrade decided<br />
+waitx 1<br />
+sayinTrade $_vocation$<br />
+waitx 1<br />
+sayinTrade yes<br />
+waitx 1<br />
+sayinTrade bye<br />
+<br />
+<br />
+:sorcererPath<br />
+move 32060,31889,6<br />
+move 32057,31888,6<br />
+move 32055,31886,6<br />
+<br />
+# Open the door leading to Sorcerer Reward Room<br />
+useItem 32055,31885,6<br />
+<br />
+# Open the Chest Box for Sorcerer Equipment<br />
+fastExiva &gt; 82 36 7D 8A 7C 06 A8 09 02 01<br />
+<br />
+# move left<br />
+saymessage exiva &gt; 68<br />
+# move up<br />
+saymessage exiva &gt; 65<br />
+# move up<br />
+saymessage exiva &gt; 65<br />
+# move right<br />
+saymessage exiva &gt; 66<br />
+# move up<br />
+saymessage exiva &gt; 65<br />
+<br />
+# Walk to Bank<br />
+move 32056,31879,6<br />
+move 32064,31879,6<br />
+<br />
+# Deposit all Money<br />
+sayinTrade hi<br />
+waitx 1<br />
+sayinTrade deposit all<br />
+waitx 1<br />
+sayinTrade yes<br />
+<br />
+# Walk from Bank to Boat<br />
+move 32061,31878,6<br />
+move 32057,31878,6<br />
+move 32049,31878,6<br />
+move 32046,31878,7<br />
+move 32038,31878,7<br />
+move 32035,31878,6<br />
+move 32033,31874,6<br />
+gotoScriptLine $nlineofLabel:sailaway$<br />
+<br />
+:sailaway<br />
+# Sail to the defined _city<br />
+sayinTrade hi<br />
+waitx 1<br />
+sayinTrade sail<br />
+waitx 1<br />
+sayinTrade $_city$<br />
+waitx 1<br />
+sayinTrade yes<br />
+<br />
+<br />
+:Logout<br />
+fastExiva close<br />
+<br />
+<br />
+Condition:<br />
+8084<br />
+<br />
+Mana %<br />
+Spell to cast<br />
+Health Points<br />
+Small Health Potion<br />
+hex-command to drink potion<br />
+<br />
+<br />
+<br />
+$mymanapercent$<br />
+#number&gt;=#90<br />
+0<br />
+200<br />
+0<br />
+exura infir ico<br />
+<br />
+$myhp$<br />
+#number&lt;=#50<br />
+0<br />
+100<br />
+0<br />
+exiva &gt; 84 FF FF 00 00 00 C4 1E 00 54 12 7B 03 <br />
+<br />
+<br />
+Enjoy :cool:<br />
+<br />
+PS: <br />
+If somebody finds the right hex-command for opening the Sorcerer Reward Room, please write it in your reply here :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Beggari</div><div class="date">06-19-2016, 21:47</div></div><div class="posttext">&quot;useItem x,y,z&quot; should work to open the door. It's just like the ingame &quot;use&quot;, so you can use it for basically everything on the ground.<br />
+<br />
+Looks good though.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-20-2016, 00:29</div></div><div class="posttext">Thank you Beggari for the hint !<br />
+It worked and now I could fully complete my script how I planed.<br />
+I re-uploaded again the Cavebot script. For some reason it's not possible using waypoints in the Sorcerer Reward Room so i used exiva hex-commands to move. <br />
+Tested the script twice and it works full afk :)<br />
+Enjoy :cool:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-21-2016, 00:15</div></div><div class="posttext">Hey all together !<br />
+<br />
+Small Update<br />
+&gt; Torn Log Book Quest improved<br />
+<br />
+Walk only once to the chest box or skip it from begin if torn log book found in backpack or already used the chest box<br />
+<br />
+Coming soon...<br />
+&gt; Different Vocation creation<br />
+<br />
+I will add soon the possiblity to change the vocation in the script.<br />
+So the character walk into other reward rooms if you choosed an other vocation.<br />
+Currently it doesn't work because the 4 different waypoints in the same small room bugs a lot and the waypoints jumps around and a wrong script line starts... :confused:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Progenosi</div><div class="date">06-21-2016, 01:26</div></div><div class="posttext">I'm not sure if this happened to some others but when I use this script, at a certain point of the hunt, the character stops attacking creatures and just follows waypoints. I solved this by listing the setmeleekill list just at the begining of the script, same fort the loot. Now it is working good.<br />
+<br />
+Thanks for this script, greetings!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-21-2016, 16:58</div></div><div class="posttext">Ye good idea to place the loot &amp; kill list at beginning of the script. It's necessary if you start the script not at the start waypoint.<br />
+I reuploaded it again and updated code wrap.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Esharify</div><div class="date">07-30-2016, 14:33</div></div><div class="posttext">I've tested it to the moment when bot is logging out by Oressa and need to say it works great. I died few times on levels 2-4 (with conds ofc) but when I turn on auto food eater, mana train and healing with exura infir ico manually that fixed any problems.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

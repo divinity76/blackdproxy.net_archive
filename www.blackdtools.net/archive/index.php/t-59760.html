@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="waitx, sayintrade, _indp, fastexiva, 32359,32222,8, wastemana, 32395,32214,7, buy0c, 01200, 01$number0, $countitems0c, exiva, iftrue, gotoscriptline, $nlineoflabelwastemana$, 10000, 32359,32228,8, 32344,32230,7, allowrepositionatstart=0, setbot, level, boost, withdraw, magic, flask, trade, 32400,32220,7, 32345,32220,7, saymessage" />
+	<meta name="description" content="I have recently became a member of Blackd tools forum and would like to share an idea i have, i was thinking about buying 5kk gold from this website and putting it all into mana pots, sounds stupid right? but i think not , anyways i was wondering if someone could make me a script to where it goes from : the top level of ankrahmun cast exura and uses mana pots repeatidly untill gone and goes down to the bank withdraws enough cash for 200 mana pots then buys manas then goes back up to the depot" />
+	
+	<title> magic level boost! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  magic level boost!</div>
+<hr />
+<div class="pda"><a href="t-59760.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?59760-magic-level-boost!">magic level boost!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">11-30-2012, 04:43</div></div><div class="posttext">I have recently became a member of Blackd tools forum and would like to share an idea i have, i was thinking about buying 5kk gold from this website and putting it all into mana pots, sounds stupid right? but i think not , anyways i was wondering if someone could make me a script to where it goes from : the top level of ankrahmun cast exura and uses mana pots repeatidly untill gone and goes down to the bank withdraws enough cash for 200 mana pots then buys manas then goes back up to the depot space and reapeats the process i kno i didnt explain my self very well but this is what i want to do and frankly i do not know how to operate this bot to the point where i can make a script my self :/ thank you very much in advance im looking forward to and replys ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-02-2012, 21:10</div></div><div class="posttext">I tired out the cavebot script but there is a few problems on line exiva buy:0C 01:200, when i go to mana shop its asking to sell flasks instead. and when it gets back to the dp it just sits there and doesn't switch back up to the first line and restart the cavebot process. Thank you very much for taking the time and helping me.<br />
+joes~</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-02-2012, 22:24</div></div><div class="posttext">never mind i figured it out you had to put sayMessage then put exiva 0C 01:200 it was not working previously to what u put but im still haveing problems with it jumping back to the first wavepoints and also how do i add in the conditional script? i only tested out your first script.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-03-2012, 01:36</div></div><div class="posttext">its still not doing a full loop, can u look over it? the cavebot script iv been working on this all day im not good at this stuff i managed a small amount.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-03-2012, 02:06</div></div><div class="posttext">setBot AllowRepositionAtStart=0<br />
+fastExiva _indp = 0<br />
+move 32359,32228,8<br />
+...walk from DP to Bank<br />
+move 32344,32230,7<br />
+waitX 2<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade withdraw 10000<br />
+waitX 2<br />
+sayInTrade yes<br />
+move 32345,32220,7<br />
+...walk from Bank to Mana Shop<br />
+move 32400,32220,7<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade flask<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva buy:0C 01:200<br />
+move 32395,32214,7<br />
+...walk to dp<br />
+move 32359,32222,8<br />
+waitX 4<br />
+fastExiva _indp = 1<br />
+:wastemana<br />
+waitX 5<br />
+IfTrue (($countitems:0C 01$#number&lt;&gt;#0) Goto $nlineoflabel:wastemana$<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-03-2012, 02:56</div></div><div class="posttext">the wavepoints are in there</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-03-2012, 02:56</div></div><div class="posttext">there is 6 wavepoints</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-03-2012, 05:32</div></div><div class="posttext">im telling you the number one concern is it doesn't restart over the cycle... after its done using all the mana potions it justs sits there.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">12-03-2012, 18:21</div></div><div class="posttext">Maybe your waypoints are generally shit and it can't find the next one</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-04-2012, 01:14</div></div><div class="posttext">but their is only a couple of wavepoints, and it goes from downstairs to up stairs to the bank inside the dp to the mana shop back to the dp and heads downstairs in a dp space, and wastes mana like it should but does not repeat the process and i just changed that out and still not re cycleing and its in thais is you want to try it out your self.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-05-2012, 01:54</div></div><div class="posttext">hey forget this script i have a better idea that is more simplistic, i was wondering if u can make a script where it just puts 200 manas in my backpack. I will have a back pack lying on the floor full of mana potions 5kk worth,  while doing (exura vita) at the same time so i will never have to move at all.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">12-05-2012, 11:21</div></div><div class="posttext">If you can stop spamming the forums that would be great! <br />
+<br />
+Post the script you made here and then someone can test it.<br />
+<br />
+I still believe you forgot to put gotoscriptline 0 at the end...<br />
+<br />
+Taking items from backpacks and shit require hexes (bigger risks) and is more complicated.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">joes</div><div class="date">12-05-2012, 16:11</div></div><div class="posttext">i can assure you i did't forget to put gotoscriptline 0 at the end u seen my script with the wavepoints i posted on this thread, why dont u try this script yourself and tell me if it works, starts in thais dp. thanks !</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Lithium</div><div class="date">12-11-2012, 11:07</div></div><div class="posttext">sorry Joes, I doubt anyone is going to try this.. zihinu was trying to help and when he said ..add waypoints here he actually meant remove his text, and put the waypoints that you need in ankrahmun.. instead you switched to Thais. First lesson is creating waypoints, way points need to be exact, especially when going up and down stairs/ladders/holes. Do a little more practice and learn the bot a little. The conditional events ( ? ) in BlackD is phenominal and Its an excellent way to mana train ( I do it all the time even on my main premium accounts ) so stick around, learn a little and be patient. People are here to help and offer advice, not spoon feed you and make every script so you can play Tibia AFK you also need to put in a little time and effort yourself friend, hope you get your mana training working.<br />
+<br />
+-Lith</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

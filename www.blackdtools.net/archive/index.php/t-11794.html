@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="amount, discard, remember, comand, $numbertohex2$myy$$, click, spear, hexes, activate, trainer, exiva, $numbertohex2$myx$$, $numbertohex1$myz$$, container, ground, character" />
+	<meta name="description" content="This will be a guide describing every hex I can find and how it works. It is not intended for dummies, but for those that already have some knowledge about hexes and how to use them. 
+ 
+First off, the basics. The first four characters in a hex are the headers. They are a sort of checksum for the packet, saying how long it is. The two characters after that is the type of the hex. After that is the data the hex contains, if any. Some hexes have alot of data, some just a byte of it. 
+ 
+The headers" />
+	
+	<title> All hexes. [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-33.html">11. The proxy (connection and logs)</a> &gt;  All hexes.</div>
+<hr />
+<div class="pda"><a href="t-11794.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?11794-All-hexes">All hexes.</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 15:48</div></div><div class="posttext">This will be a guide describing every hex I can find and how it works. It is not intended for dummies, but for those that already have some knowledge about hexes and how to use them.<br />
+<br />
+First off, the basics. The first four characters in a hex are the headers. They are a sort of checksum for the packet, saying how long it is. The two characters after that is the type of the hex. After that is the data the hex contains, if any. Some hexes have alot of data, some just a byte of it.<br />
+<br />
+The headers will not be included in the examples I use or the hexes I show here, they are automatically added to a hex when sent using the exiva &gt; and exiva &lt; functions.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 15:48</div></div><div class="posttext">Container numbers<br />
+First off, we got the equipment slots:<br />
+<br />
+01: Head<br />
+02: Necklace<br />
+03: Backpack<br />
+04: Armor<br />
+05: Right hand<br />
+06:Left hand<br />
+07: Legs<br />
+08: Boots<br />
+09: Ring<br />
+0A: Ammo<br />
+<br />
+But containers has three different numbers you need to consider when moving to, from and using items in them or opening new ones. When you open a container the hex contains a number starting at 00 telling you what number the new container will have. But when you move and use items it isn't that but another number starting at hex 40 that you need to use.<br />
+And finally there is a number for the slot that the item is moved to or from or used from.<br />
+<br />
+The first container you open will have number 00 as container ID and use 40 for moving and using items, the next one 01 and 41 and so on. The first slot in a container starts at hex 00 and the last one depends on how many slots there are. A regular backpack has 19 as the last slot.<br />
+<br />
+As the container IDs start at 00, a good idea when deciding what ID the hex will open is to just make a $numbertohex1:X$, where X is the current amount of containers open. You could also use a very high value, even though BlackD Proxy doesn't support higher than 15 containers, which is 0F and 4F.<br />
+<br />
+Opening container on ground:<br />
+<br />
+fastExiva &gt; 82 XX XX YY YY ZZ AA AA 01 0B<br />
+X, Y and Z's are the position, A's the item ID and 0B the ID the container will have.<br />
+<br />
+Opening container from any EQ slot:<br />
+<br />
+82 FF FF AA 00 00 BB BB 00 0C<br />
+A's are the EQ slot, B's the ID ($hex-equiped-item:XX$ is useful) and 0C the ID the container will have.<br />
+<br />
+Opening containers from inside containers:<br />
+<br />
+82 FF FF 4A 00 BB XX XX BB 0Y<br />
+4A is the container's ID, B's are what slot to use, X's the item ID and 0Y the ID the newly opened container will have. If A and Y is the same, the new container will replace the old.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 15:48</div></div><div class="posttext">Any rune shoot with a hotkey:<br />
+<br />
+84 FF FF 00 00 00 XX XX 00 YY YY YY YY<br />
+<br />
+X's are the rune ID, Y's the target ID.<br />
+<br />
+Any rune shoot manually, trough battle list or game window:<br />
+<br />
+84 FF FF AA 00 BB XX XX BB YY YY YY YY <br />
+A's are the container, B's are the slot.<br />
+<br />
+Fieldrunes shoot at nothing:<br />
+<br />
+83 FF FF 00 00 00 XX XX 00 AA AA BB BB CC YY YY 00<br />
+A, B and C are the coordinates, Y's are the ID of the ground tile<br />
+<br />
+Credits to Syntaxe for getting the data for me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 15:48</div></div><div class="posttext">Moving from one EQ slot to another:<br />
+<br />
+78 FF FF 0X 00 00 $hex-equiped-item:0X$ 00 FF FF 0B 00 00 ZZ<br />
+0X is the slot to move from, 0Y to slot to move to. ZZ is the amount of items in the 0X slot. You can either use $hex-equiped-ammount:0X$ or simply write 64 to move any amount of items.<br />
+<br />
+Moving from EQ slot to ground:<br />
+<br />
+78 FF FF 0X 00 00 $hex-equiped-item:0X$ 00 XX XX YY YY ZZ CC<br />
+0X is the slot to move from and X, Y and Z's are the position to drop at. CC is the amount.<br />
+<br />
+Moving from ground to EQ slot:<br />
+<br />
+78 XX XX YY YY ZZ AA AA 01 FF FF 0X 00 00 CC<br />
+X, Y and Z's are the position, A's the item ID, 0X the slot and CC the amount.<br />
+<br />
+Moving from ground to ground:<br />
+<br />
+78 XX XX YY YY ZZ AA AA 01 XX XX YY YY ZZ CC<br />
+The first X, Y and Z's are the position to move from, the next are the one to move to. A's are the item ID and CC the amount.<br />
+<br />
+Moving from ground to container:<br />
+<br />
+78 XX XX YY YY ZZ AA AA 01 FF FF 4X 00 BB CC<br />
+Moving from container to ground:<br />
+<br />
+78 FF FF 4X 00 BB AA AA BB XX XX YY YY ZZ CC<br />
+X, Y and Z's are the position, A's the item ID, 4X the container ID, BB the slot in the container and CC the amount.<br />
+<br />
+Moving from container to another container:<br />
+<br />
+78 FF FF 4A 00 AA XX XX AA FF FF 4B 00 BB CC<br />
+4A and AA are the container and slot to move from, 4B and BB are the container and slot to move to. X's are the item ID and CC the amount.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 19:40</div></div><div class="posttext">Moving a single step:<br />
+<br />
+65 = North<br />
+66 = East<br />
+67 = South<br />
+68 = West<br />
+6A = North-east<br />
+6B = South-east<br />
+6C = South-west<br />
+6D = North-west<br />
+The hex contains nothing more than this single command.<br />
+<br />
+When walking using the mouse, the hex instead looks like this:<br />
+<br />
+64 XX Y1 Y2 Y3 Y4 etc...<br />
+XX is the number in hex on how many of the commands coming after it it will execute. If you write 01 but have two movement commands after it, it will only execute one of them. I don't know if there is a maximum number for it, the built in walking in Tibia seems to use up to 9 commands at most, but I constructed one containing 18 that executed without problems.<br />
+<br />
+The Y values in the hex used are the following:<br />
+<br />
+01 = East<br />
+02 = North-east<br />
+03 = North<br />
+04 = North-west<br />
+05 = West<br />
+06 = South-west<br />
+07 = South<br />
+08 = South-east<br />
+<br />
+Moving five steps to the east and then two to the south would look like this:<br />
+<br />
+64 07 01 01 01 01 01 07 07<br />
+<br />
+Turning:<br />
+<br />
+6F = North<br />
+70 = East<br />
+71 = South<br />
+6B = West</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 19:40</div></div><div class="posttext">Spaceholder 2</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 19:40</div></div><div class="posttext">Spaceholder 3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 19:41</div></div><div class="posttext">Spaceholder 4</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-08-2007, 19:41</div></div><div class="posttext">Spaceholder 5</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">11-14-2007, 11:14</div></div><div class="posttext">I wish to use this function,<br />
+<br />
+Moving from ground to ground:<br />
+Code:<br />
+<br />
+78 XX XX YY YY ZZ AA AA 01 XX XX YY YY ZZ CC<br />
+<br />
+The first X, Y and Z's are the position to move from, the next are the one to move to. A's are the item ID and CC the amount.<br />
+<br />
+But I dont understand how to get the X, Y and Z except for &quot;exiva pos&quot;, can someone help me out please</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-14-2007, 11:19</div></div><div class="posttext">I wish to use this function,<br />
+<br />
+Moving from ground to ground:<br />
+Code:<br />
+<br />
+78 XX XX YY YY ZZ AA AA 01 XX XX YY YY ZZ CC<br />
+<br />
+The first X, Y and Z's are the position to move from, the next are the one to move to. A's are the item ID and CC the amount.<br />
+<br />
+But I dont understand how to get the X, Y and Z except for &quot;exiva pos&quot;, can someone help me out please<br />
+<br />
+What do you want to make?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">11-14-2007, 11:23</div></div><div class="posttext">I want to put knives with id(DB 0C) over my loot that I dropped on ground on my cavebotscript</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Alan</div><div class="date">11-17-2007, 20:18</div></div><div class="posttext">The first X, Y and Z's are the position to move from, the next are the one to move to. A's are the item ID and CC the amount.<br />
+<br />
+Moving from ground to container:<br />
+<br />
+78 XX XX YY YY ZZ AA AA 01 FF FF 4X 00 BB CC<br />
+[/QUOTE]<br />
+<br />
+hey man... i don't undarstand this....i want to take gold and put on Backpack<br />
+how i can make this?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">11-18-2007, 10:57</div></div><div class="posttext">I had trouble with it aswell, but it has an easy solution.<br />
+<br />
+Find the tutorial of how to find all hexes and there will be no problem</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">11-18-2007, 13:03</div></div><div class="posttext">The first X, Y and Z's are the position to move from, the next are the one to move to. A's are the item ID and CC the amount.<br />
+<br />
+Moving from ground to container:<br />
+<br />
+78 XX XX YY YY ZZ AA AA 01 FF FF 4X 00 BB CC<br />
+<br />
+<br />
+hey man... i don't undarstand this....i want to take gold and put on Backpack<br />
+how i can make this?[/QUOTE]<br />
+<br />
+I had trouble with it aswell, but it has an easy solution.<br />
+<br />
+Find the tutorial of how to find all hexes and there will be no problem<br />
+<br />
+As I stated in the first post, this is really just a reference for people who already have some knowledge about hexes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Dru</div><div class="date">11-21-2007, 08:41</div></div><div class="posttext">use the $numbertohex2:$ function for the position to make the pos to a hex</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">knownname</div><div class="date">12-08-2007, 13:00</div></div><div class="posttext">How do i decide my loots destination ? do i use hex because i want gold to go to one bp and stones to go to another, is it possible ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">12-08-2007, 15:19</div></div><div class="posttext">no that u can change in your cavebot script<br />
+<br />
+resetLoot<br />
+setLoot stoneid<br />
+dropLoot z,x,y<br />
+resetLoot<br />
+setLoot goldid<br />
+dropLoot z,x,y(another one)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">knownname</div><div class="date">12-08-2007, 15:47</div></div><div class="posttext">droploot z,x,y whats that the backpacks id ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">nerdies</div><div class="date">12-10-2007, 09:56</div></div><div class="posttext">I got a script, just cant get the hexes work, <br />
+<br />
+i want to hide loot under a normal brown bag, <br />
+<br />
+08:55 Your position is : 31111,32222,10<br />
+<br />
+what I have to do with XX,YY,ZZ? <br />
+<br />
+thanks</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">inblackone</div><div class="date">01-15-2008, 12:32</div></div><div class="posttext">I got a script, just cant get the hexes work, <br />
+<br />
+i want to hide loot under a normal brown bag, <br />
+<br />
+08:55 Your position is : 31111,32222,10<br />
+<br />
+what I have to do with XX,YY,ZZ? <br />
+<br />
+thanks<br />
+<br />
+$numbertohex2:31111$ $numbertohex2:32222$ $numbertohex2:10$<br />
+<br />
+If You want to code Your current position, just use<br />
+<br />
+<br />
+$numbertohex2:{$myx$}$ $numbertohex2:{$myy$}$ $numbertohex2:{$myz$}$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">inblackone</div><div class="date">01-15-2008, 12:35</div></div><div class="posttext">Malmis, sorry, but it sux a little bit.<br />
+<br />
+<br />
+<br />
+78 FF FF 4X 00 BB $hex-equiped-item:0X$ BB XX XX YY YY ZZ CC<br />
+<br />
+X, Y and Z's are the position, A's the item ID, 4X the container ID, BB the slot in the container and CC the amount.<br />
+<br />
+<br />
+Where do You have A in this code?<br />
+I don't completely understand it...<br />
+<br />
+I wanted to help my friend and be the luggager.<br />
+He says me 'bolts' then conds get activated and I put per 100 bolts on the ground till he says 'enough' or something like that (message different from bolts).</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Kjeld</div><div class="date">01-18-2008, 07:25</div></div><div class="posttext">Malmis, sorry, but it sux a little bit.<br />
+<br />
+<br />
+<br />
+Where do You have A in this code?<br />
+I don't completely understand it...<br />
+<br />
+I wanted to help my friend and be the luggager.<br />
+He says me 'bolts' then conds get activated and I put per 100 bolts on the ground till he says 'enough' or something like that (message different from bolts).<br />
+<br />
+Malmis is right. You're just mistaken.<br />
+<br />
+you can't find the A's because of this. '$hex-equiped-item:0X$' since that will display the AA AA's.<br />
+<br />
+Kjeld~</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">01-18-2008, 07:55</div></div><div class="posttext">Malmis is right. You're just mistaken.<br />
+<br />
+you can't find the A's because of this. '$hex-equiped-item:0X$' since that will display the AA AA's.<br />
+<br />
+Kjeld~<br />
+<br />
+Kjeld is wrong. He's mistaken.<br />
+<br />
+Edited the hex.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aha</div><div class="date">02-15-2008, 17:55</div></div><div class="posttext">can you add &quot;use&quot; and &quot;use with&quot;<br />
+for example, ropeing, eating, destroying ice blocks with o knife</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xD Ima lol</div><div class="date">03-21-2008, 00:56</div></div><div class="posttext">Hey can you tell me how can i use these rune on me? im playing ots and i want to use it with hotkeys because i play in a ot with no hotkeys the id of the rune is these 6D 0C and i want to use it with me could anyone tell me what i have to put please?<br />
+<br />
+its mr</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">educorgozinho</div><div class="date">06-27-2008, 02:07</div></div><div class="posttext">I make this to drop any item from arrow slot<br />
+<br />
+Exiva &gt; 78 FF FF 0A 00 00 $hex-equiped-item:0A$ 00 $numbertohex2:{$myx$}$ $numbertohex2:{$myy$}$ $numbertohex1:{$myz$}$ 64<br />
+Now I want know how to put item X from any backpck slot in arrow, can you help?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Zmulan</div><div class="date">06-27-2008, 02:34</div></div><div class="posttext">I make this to drop any item from arrow slot<br />
+<br />
+Exiva &gt; 78 FF FF 0A 00 00 $hex-equiped-item:0A$ 00 $numbertohex2:{$myx$}$ $numbertohex2:{$myy$}$ $numbertohex1:{$myz$}$ 64<br />
+Now I want know how to put item X from any backpck slot in arrow, can you help?<br />
+<br />
+exiva #XX XX 0A (i think 0A is arrow slot, not 100% sure)<br />
+<br />
+xx xx = item id of course</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">educorgozinho</div><div class="date">06-27-2008, 03:16</div></div><div class="posttext">I got one different in another conds, but worked for my script, thanks anyways...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ayuki</div><div class="date">07-31-2008, 02:43</div></div><div class="posttext">How to make it use ( machete EC 0C ) from (arrow slot 0A ) on ( bamboo F8 08 ) ??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">mooth</div><div class="date">02-16-2009, 20:40</div></div><div class="posttext">Moving from container to ground:<br />
+<br />
+78 FF FF 4X 00 BB AA AA BB XX XX YY YY ZZ CC<br />
+X, Y and Z's are the position, A's the item ID, 4X the container ID, BB the slot in the container and CC the amount.<br />
+.<br />
+<br />
+ok i try it and i get :<br />
+<br />
+sayMessage exiva &gt; 78 FF FF 4B 00 00 C2 0C 00 $numbertohex2:32733$ $numbertohex2:32066$ $numbertohex1:7$ 64<br />
+<br />
+what is wrong ? i have message in tibia &quot; sory its not posible &quot;  i dont understand parth with &quot;4X the container &quot; maybe its wrong.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">thegrass</div><div class="date">02-02-2013, 05:17</div></div><div class="posttext">Thanks so much, really helped clear things up. Seeking such a huge list all together really helps when trying to spot patterns as well.<br />
+<br />
+:-D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">MartinG</div><div class="date">11-17-2013, 21:52</div></div><div class="posttext">I need hex that is using tile that im staindong on, usegrounditem doesnt work for me  for some reason.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">08-27-2014, 00:50</div></div><div class="posttext">How can I do an pick up items, that collect any items at my sqm and arround me?<br />
+<br />
+(i tried to do it using &quot;trainer&quot; but id = 00 00 doesnt collect any items)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-27-2014, 00:53</div></div><div class="posttext">How can I do an pick up items, that collect any items at my sqm and arround me?<br />
+<br />
+(i tried to do it using &quot;trainer&quot; but id = 00 00 doesnt collect any items)<br />
+<br />
+Remember to tick the sqms (so theres a spear on each spot)<br />
+<br />
+and remember to click activate trainer for your character</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">08-27-2014, 15:54</div></div><div class="posttext">Remember to tick the sqms (so theres a spear on each spot)<br />
+<br />
+and remember to click activate trainer for your character<br />
+<br />
+<br />
+I did this but it doesnt work.<br />
+<br />
+Inside the source:<br />
+<br />
+chkEnableTrainer = true /checked<br />
+cmdPickup(index) = true /checked<br />
+<br />
+It take items by ID but doesnt work for 00 00 (pick up all)<br />
+<br />
+If i put &quot;D7 08&quot; (gold) it will take it, thats mean its working. I didnt find anywhere in the source that &quot;00 00&quot; = &quot;all items ID&quot; or something like</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">oclipper</div><div class="date">09-03-2014, 21:39</div></div><div class="posttext">Remember to tick the sqms (so theres a spear on each spot)<br />
+<br />
+and remember to click activate trainer for your character<br />
+<br />
+<br />
+from ground to container:<br />
+<br />
+Exiva &gt; 78 $numbertohex2:{$myx$}$ $numbertohex2:{$myy$}$ $numbertohex1:{$myz$}$ D7 0B 01 FF FF 40 00 01 01<br />
+<br />
+red = amount <br />
+blue = item ID<br />
+<br />
+Is there a way to:<br />
+<br />
+1- discard &quot;amount&quot; or &quot;item ID&quot; using hex comand?<br />
+2- take any amount (discard amount) ?<br />
+3- take any item (discard item id)? remember that id = 00 00 doesnt take any item</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

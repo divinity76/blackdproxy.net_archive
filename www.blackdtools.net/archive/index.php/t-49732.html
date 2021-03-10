@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="training, slime, $countitemsf5, number, script, problem, conds" />
+	<meta name="description" content="It is my script for slime training. 
+ 
+$countitems:F5 06$ 
+#number&lt;=# 
+98 
+0 
+10000 
+0 
+exiva testsound" />
+	
+	<title> Conds problem [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-13.html">Support</a> &gt;  Conds problem</div>
+<hr />
+<div class="pda"><a href="t-49732.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?49732-Conds-problem">Conds problem</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Szala00</div><div class="date">04-11-2010, 10:39</div></div><div class="posttext">It is my script for slime training.<br />
+<br />
+$countitems:F5 06$<br />
+#number&lt;=#<br />
+98<br />
+0<br />
+10000<br />
+0<br />
+exiva testsound<br />
+<br />
+setNoFollow<br />
+onGMpause<br />
+setMeleeKill slime<br />
+setMaxAttackTimeMs 400000<br />
+waitX 10<br />
+gotoScriptLine 0<br />
+<br />
+There is, if less 98 small stones  - alarm<br />
+<br />
+I wanna do when I have less than x small stones there is sound alarm.<br />
+When I copy that script which I write above I hear alarm. Whats wrong with it ?<br />
+<br />
+And, can someone explain me how use conds ? I really don`t know where should I paste that ;/</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">05-21-2010, 20:30</div></div><div class="posttext">hello!!!<br />
+<br />
+first of all run proxy, then tibia, then type:<br />
+exiva !F5 06<br />
+bp should appear with a small stone inside, close the bp<br />
+<br />
+these are conds\/ , you will put them in a file in &quot; \urfolder\blackdtools\conds\stonesalarm.txt&quot;    !!!must be .txt or it wont show up in conds window!!! then u go to condicionals(&gt;&gt;&gt; in proxy) and RELOAD -&gt; SELECT FILE(stonesalarm.txt) -&gt; LOAD CONDS  ---|-|----       and its done, now everytime u have less than 98 stones(bp and ekips summed) u will get ur alarm<br />
+<br />
+$countitems:F5 06$<br />
+#number&lt;=#<br />
+98<br />
+0<br />
+10000<br />
+0<br />
+exiva testsound<br />
+<br />
+this script for cavebot\/ , save it in \urfolder\blackdtools\slimetrainer.txt, open proxy, go to cavebot, update file list, select slimetrainer.txt, load script, and activate cavbot, now it will atack(if script is ok) a slime for 400 seconds, and change target(other slime), aka training.<br />
+<br />
+setNoFollow<br />
+onGMpause<br />
+setMeleeKill slime<br />
+setMaxAttackTimeMs 400000<br />
+waitX 10<br />
+gotoScriptLine 0<br />
+<br />
+!remeber:!<br />
+u must put on trainer on a option similar to this: NOT ATACK TARGET WITH THIS ID:   &quot;ID OF THE MOTHER SLIME&quot;<br />
+check out tutorials to discover the &quot;ID OF THE MOTHER SLIME&quot;<br />
+<br />
+good luck i hope thats what u needed</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

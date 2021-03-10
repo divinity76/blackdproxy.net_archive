@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="33133,32433,8, floor, script, carrion, 33155,32429,8, deposit, 33145,32423,8, setmeleekill, setloot, 33127,32444,8, 33133,32436,8, 33140,32429,8, 33126,32376,9, 33145,32427,8, 33143,32449,8, 33122,32432,8, 33141,32446,8, 33135,32440,8, 33149,32432,8, 33148,32456,8, enter, setup, 33132,32431,8, 33149,32456,9, 33147,32396,9, 33172,32413,9, 33170,32417,9, 33168,32419,9, 33134,32402,9, 33139,32406,9, 33170,32416,9, 33162,32419,9, 33168,32420,9, 33135,32405,9, 33143,32404,9, 33148,32407,9, 33143,32405,9, 33146,32399,9, 33145,32403,9, 33169,32425,9, 33146,32400,9, 33147,32395,9, 33157,32411,9, 33152,32410,9, 33160,32413,9, 33176,32464,9, 33148,32455,8, 33153,32459,9, 33156,32462,9, 33165,32466,9" />
+	<meta name="description" content="Hi... 
+I don't know english very well, then, let's go to the script. 
+It's my first script i guess... 
+ 
+First, i didn't test this. I only did the script. 
+ 
+Setup: 
+Loot: 
+Gold 
+Carrion Worm Fang" />
+	
+	<title> Darashia Rotworm[Depositer/Banker] [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  Darashia Rotworm[Depositer/Banker]</div>
+<hr />
+<div class="pda"><a href="t-58997.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?58997-Darashia-Rotworm-Depositer-Banker">Darashia Rotworm[Depositer/Banker]</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Asjtarot</div><div class="date">09-12-2012, 01:31</div></div><div class="posttext">Hi...<br />
+I don't know english very well, then, let's go to the script.<br />
+It's my first script i guess...<br />
+<br />
+First, i didn't test this. I only did the script.<br />
+<br />
+Setup:<br />
+Loot:<br />
+Gold<br />
+Carrion Worm Fang<br />
+<br />
+Deposit:<br />
+Cap &lt; 100 go to deposit and bank<br />
+<br />
+Start in DP Door.<br />
+7518<br />
+<br />
+1° Floor<br />
+7515<br />
+<br />
+2°Floor<br />
+7516<br />
+<br />
+Bank<br />
+7517<br />
+<br />
+<br />
+The code:<br />
+<br />
+#Setup Begin ~~ By: Thiago<br />
+setFollow<br />
+#___________________<br />
+#Loot<br />
+#Gold<br />
+setLoot D7 0B<br />
+#Carrion Worn Fang<br />
+setLoot 23 28<br />
+#Monsters to kill<br />
+setMeleeKill Rotworm<br />
+setMeleeKill Carrion Worm<br />
+#SetupEnd<br />
+#___________________<br />
+#Go to cave<br />
+move 33214,32453,7<br />
+move 33213,32449,7<br />
+move 33209,32447,7<br />
+move 33202,32447,7<br />
+move 33197,32447,7<br />
+move 33189,32447,7<br />
+move 33182,32447,7<br />
+move 33169,32446,7<br />
+move 33162,32445,7<br />
+move 33153,32445,7<br />
+move 33143,32443,7<br />
+move 33135,32439,7<br />
+move 33133,32437,7<br />
+move 33133,32434,7<br />
+#Enter in the cave<br />
+move 33133,32433,8<br />
+move 33132,32431,8<br />
+move 33130,32427,8<br />
+move 33130,32423,8<br />
+move 33130,32418,8<br />
+move 33132,32413,8<br />
+move 33135,32410,8<br />
+move 33137,32407,8<br />
+move 33134,32410,8<br />
+move 33131,32412,8<br />
+move 33131,32417,8<br />
+move 33129,32420,8<br />
+move 33130,32424,8<br />
+move 33132,32428,8<br />
+move 33132,32431,8<br />
+move 33126,32432,8<br />
+move 33122,32432,8<br />
+move 33119,32433,8<br />
+move 33116,32433,8<br />
+move 33113,32432,8<br />
+move 33112,32430,8<br />
+move 33115,32432,8<br />
+move 33118,32433,8<br />
+move 33122,32432,8<br />
+move 33127,32431,8<br />
+move 33133,32431,8<br />
+move 33132,32434,8<br />
+move 33132,32436,8<br />
+move 33132,32439,8<br />
+move 33130,32440,8<br />
+move 33129,32443,8<br />
+move 33127,32444,8<br />
+move 33124,32445,8<br />
+move 33124,32447,8<br />
+move 33121,32448,8<br />
+move 33121,32449,8<br />
+move 33118,32451,8<br />
+move 33118,32453,8<br />
+move 33118,32455,8<br />
+move 33113,32454,8<br />
+move 33119,32456,8<br />
+move 33119,32452,8<br />
+move 33121,32450,8<br />
+move 33123,32446,8<br />
+move 33127,32444,8<br />
+move 33129,32442,8<br />
+move 33131,32440,8<br />
+move 33133,32436,8<br />
+move 33134,32432,8<br />
+move 33138,32431,8<br />
+move 33140,32429,8<br />
+move 33143,32428,8<br />
+move 33145,32427,8<br />
+move 33145,32423,8<br />
+move 33144,32420,8<br />
+move 33145,32423,8<br />
+move 33145,32427,8<br />
+move 33147,32430,8<br />
+move 33149,32431,8<br />
+move 33153,32430,8<br />
+move 33155,32429,8<br />
+move 33158,32426,8<br />
+move 33160,32424,8<br />
+move 33163,32424,8<br />
+move 33166,32425,8<br />
+move 33169,32428,8<br />
+move 33166,32426,8<br />
+move 33165,32424,8<br />
+move 33162,32424,8<br />
+move 33159,32426,8<br />
+move 33157,32427,8<br />
+move 33155,32429,8<br />
+move 33153,32431,8<br />
+move 33149,32432,8<br />
+move 33150,32435,8<br />
+move 33149,32438,8<br />
+move 33149,32440,8<br />
+move 33149,32436,8<br />
+move 33149,32432,8<br />
+move 33147,32429,8<br />
+move 33144,32427,8<br />
+move 33140,32429,8<br />
+move 33136,32430,8<br />
+move 33133,32432,8<br />
+move 33133,32436,8<br />
+move 33134,32438,8<br />
+move 33135,32440,8<br />
+move 33137,32443,8<br />
+move 33139,32444,8<br />
+move 33141,32446,8<br />
+move 33143,32449,8<br />
+move 33145,32451,8<br />
+move 33148,32453,8<br />
+move 33148,32455,8<br />
+#Enter in the 2 floor<br />
+move 33149,32456,9<br />
+move 33149,32456,9<br />
+move 33153,32459,9<br />
+move 33156,32462,9<br />
+move 33162,32464,9<br />
+move 33165,32466,9<br />
+move 33167,32463,9<br />
+move 33171,32460,9<br />
+move 33174,32461,9<br />
+move 33176,32464,9<br />
+move 33178,32469,9<br />
+move 33177,32471,9<br />
+move 33178,32466,9<br />
+move 33176,32462,9<br />
+move 33173,32459,9<br />
+move 33170,32459,9<br />
+move 33171,32451,9<br />
+move 33173,32446,9<br />
+move 33176,32442,9<br />
+move 33175,32437,9<br />
+move 33174,32432,9<br />
+move 33172,32429,9<br />
+move 33169,32425,9<br />
+move 33168,32420,9<br />
+move 33170,32416,9<br />
+move 33172,32413,9<br />
+move 33170,32417,9<br />
+move 33168,32419,9<br />
+move 33162,32419,9<br />
+move 33160,32413,9<br />
+move 33157,32411,9<br />
+move 33152,32410,9<br />
+move 33148,32407,9<br />
+move 33143,32405,9<br />
+move 33145,32403,9<br />
+move 33146,32399,9<br />
+move 33147,32396,9<br />
+move 33147,32395,9<br />
+move 33146,32400,9<br />
+move 33143,32404,9<br />
+move 33139,32406,9<br />
+move 33135,32405,9<br />
+move 33134,32402,9<br />
+move 33132,32400,9<br />
+move 33129,32397,9<br />
+move 33126,32394,9<br />
+move 33124,32390,9<br />
+move 33126,32387,9<br />
+move 33127,32384,9<br />
+move 33129,32382,9<br />
+move 33131,32379,9<br />
+move 33133,32378,9<br />
+move 33136,32376,9<br />
+move 33134,32377,9<br />
+move 33132,32379,9<br />
+move 33129,32380,9<br />
+move 33126,32376,9<br />
+move 33124,32373,9<br />
+move 33120,32370,9<br />
+move 33123,32373,9<br />
+move 33126,32376,9<br />
+move 33129,32379,9<br />
+move 33128,32382,9<br />
+move 33127,32385,9<br />
+move 33125,32387,9<br />
+move 33123,32390,9<br />
+move 33122,32392,9<br />
+move 33119,32393,9<br />
+move 33118,32396,9<br />
+move 33117,32398,9<br />
+move 33115,32402,9<br />
+move 33113,32404,9<br />
+move 33112,32406,9<br />
+move 33111,32409,9<br />
+move 33111,32413,9<br />
+move 33110,32417,9<br />
+move 33109,32419,9<br />
+move 33120,32418,9<br />
+move 33127,32418,9<br />
+move 33128,32425,9<br />
+move 33130,32429,9<br />
+move 33130,32432,9<br />
+move 33125,32434,9<br />
+move 33123,32437,9<br />
+move 33122,32441,9<br />
+move 33121,32445,9<br />
+move 33119,32450,9<br />
+move 33118,32454,9<br />
+move 33118,32457,9<br />
+move 33122,32460,9<br />
+move 33125,32465,9<br />
+move 33131,32466,9<br />
+move 33135,32469,9<br />
+move 33138,32465,9<br />
+move 33142,32464,9<br />
+move 33145,32462,9<br />
+move 33148,32460,9<br />
+move 33149,32457,9<br />
+move 33150,32457,9<br />
+#Leave to 1 floor<br />
+move 33148,32456,8<br />
+move 33148,32456,8<br />
+move 33147,32454,8<br />
+move 33146,32451,8<br />
+move 33143,32449,8<br />
+move 33141,32446,8<br />
+move 33138,32444,8<br />
+move 33135,32440,8<br />
+move 33133,32438,8<br />
+move 33133,32433,8<br />
+move 33133,32433,8<br />
+#Check cap<br />
+IfTrue ($mycap$#number&lt;=#100) Goto 239<br />
+gotoScriptLine 29<br />
+#Sair da cave<br />
+move 33133,32433,8<br />
+#Ir para a cidade<br />
+move 33133,32433,7<br />
+move 33135,32434,7<br />
+move 33137,32434,7<br />
+move 33141,32434,7<br />
+move 33145,32435,7<br />
+move 33150,32435,7<br />
+move 33154,32436,7<br />
+move 33159,32438,7<br />
+move 33165,32438,7<br />
+move 33170,32439,7<br />
+move 33174,32440,7<br />
+move 33180,32441,7<br />
+move 33184,32442,7<br />
+move 33189,32442,7<br />
+move 33194,32442,7<br />
+move 33193,32447,7<br />
+move 33198,32448,7<br />
+move 33202,32448,7<br />
+move 33205,32448,7<br />
+move 33208,32448,7<br />
+move 33212,32448,7<br />
+move 33213,32450,7<br />
+move 33213,32451,7<br />
+move 33213,32452,7<br />
+#Chegar no dp<br />
+move 33213,32454,7<br />
+#Dp 2 floor<br />
+move 33213,32457,8<br />
+move 33212,32458,8<br />
+move 33210,32458,8<br />
+move 33208,32458,8<br />
+waitX 2<br />
+#Deposit<br />
+putLootOnDepot<br />
+waitX 2<br />
+#Leaving 2 floor<br />
+move 33209,32458,8<br />
+move 33211,32458,8<br />
+move 33213,32458,8<br />
+move 33213,32456,8<br />
+#Leaving dp/going to bank<br />
+move 33213,32454,7<br />
+move 33213,32452,7<br />
+move 33214,32449,7<br />
+move 33216,32446,7<br />
+move 33218,32444,7<br />
+move 33218,32439,7<br />
+move 33219,32436,7<br />
+move 33220,32432,7<br />
+move 33223,32430,7<br />
+move 33226,32430,7<br />
+move 33229,32430,7<br />
+move 33228,32426,7<br />
+move 33228,32423,7<br />
+move 33227,32420,7<br />
+move 33225,32419,7<br />
+move 33224,32417,7<br />
+move 33224,32415,7<br />
+move 33227,32415,7<br />
+move 33229,32414,7<br />
+move 33230,32415,7<br />
+move 33230,32410,7<br />
+move 33230,32408,7<br />
+move 33230,32404,7<br />
+move 33227,32402,7<br />
+move 33226,32401,7<br />
+move 33225,32398,7<br />
+move 33225,32398,7<br />
+move 33223,32398,7<br />
+move 33222,32397,7<br />
+move 33221,32395,7<br />
+move 33221,32392,7<br />
+#Bank<br />
+move 33221,32391,7<br />
+waitX 2<br />
+#Depositing the gold<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+#Going to dp for start<br />
+move 33221,32392,7<br />
+move 33221,32393,7<br />
+move 33221,32395,7<br />
+move 33222,32397,7<br />
+move 33223,32398,7<br />
+move 33225,32398,7<br />
+move 33227,32400,7<br />
+move 33228,32401,7<br />
+move 33228,32403,7<br />
+move 33230,32404,7<br />
+move 33230,32407,7<br />
+move 33230,32409,7<br />
+move 33230,32410,7<br />
+move 33230,32414,7<br />
+move 33230,32414,7<br />
+move 33227,32414,7<br />
+move 33224,32415,7<br />
+move 33223,32417,7<br />
+move 33220,32419,7<br />
+move 33215,32419,7<br />
+move 33214,32422,7<br />
+move 33214,32425,7<br />
+move 33210,32425,7<br />
+move 33209,32425,7<br />
+move 33206,32425,7<br />
+move 33204,32425,7<br />
+move 33201,32426,7<br />
+move 33198,32426,7<br />
+move 33195,32427,7<br />
+move 33196,32430,7<br />
+move 33196,32433,7<br />
+move 33196,32437,7<br />
+move 33196,32442,7<br />
+move 33197,32445,7<br />
+move 33197,32448,7<br />
+move 33201,32448,7<br />
+move 33205,32448,7<br />
+move 33211,32448,7<br />
+move 33214,32448,7<br />
+move 33213,32450,7<br />
+move 33213,32451,7<br />
+#Dp<br />
+move 33213,32452,7<br />
+#Repeat Script<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="setmeleekill, 32343,32122,10, 32356,32122,9, setloot, 32339,32122,10, troll, iftrue, 32335,32174,8, 32332,32122,9, 32339,32123,9, 32353,32123,8, 32283,32127,8, 32314,32134,8, 32319,32136,8, 32289,32127,8, 32340,32137,8, 32325,32127,9, 32336,32135,8, 32326,32154,9, $countitems$d7, 32351,32152,8, 32352,32141,8, 0bnumber=1000, $mycap$number, $nlineoflabelbank$, 32345,32137,8, 32348,32124,8, 32316,32137,9, 32355,32137,8, 32325,32146,9, 32317,32128,9, 32334,32122,9, 32356,32123,8, 32343,32123,9, 32325,32137,9, tryed, north, thais, [9.44], setlooton, [request], spider, setchaoticmoveson, script, 32342,32148,8" />
+	<meta name="description" content="Hello :&gt; 
+ 
+Im a new boter and im looking for a script to farm cash / Skill / Lvl with my (currently) level 10 KNIGHT (FACC) 
+ 
+Can some one give me a script to hunt at North thais trolls with bank banking / eat&amp;loot food ? 
+ 
+Thanks in advance :) 
+:rolleyes:" />
+	
+	<title> [REQUEST] Thais north Troll [9.44] [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  [REQUEST] Thais north Troll [9.44]</div>
+<hr />
+<div class="pda"><a href="t-57072.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57072-REQUEST-Thais-north-Troll-9-44">[REQUEST] Thais north Troll [9.44]</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">679alex</div><div class="date">01-18-2012, 04:39</div></div><div class="posttext">Hello :&gt;<br />
+<br />
+Im a new boter and im looking for a script to farm cash / Skill / Lvl with my (currently) level 10 KNIGHT (FACC)<br />
+<br />
+Can some one give me a script to hunt at North thais trolls with bank banking / eat&amp;loot food ?<br />
+<br />
+Thanks in advance :)<br />
+:rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">679alex</div><div class="date">01-18-2012, 14:43</div></div><div class="posttext">Any One Please ? :(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">679alex</div><div class="date">01-18-2012, 17:11</div></div><div class="posttext">Ok guys i tryed to make one but it doesnt work can you help me to fix it ? :D<br />
+<br />
+<br />
+There the script :<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+setChaoticMovesON<br />
+setMeleeKill Spider<br />
+setMeleeKill Bug<br />
+setMeleeKill Troll<br />
+setLootOn<br />
+setLoot D7 0B<br />
+setLoot D9 25<br />
+##############################################<br />
+::HUNT<br />
+move 32342,32148,8<br />
+move 32335,32174,8<br />
+move 32355,32137,8<br />
+move 32319,32136,8<br />
+move 32314,32134,8<br />
+move 32289,32127,8<br />
+move 32340,32137,8<br />
+move 32283,32127,8<br />
+move 32336,32135,8<br />
+move 32353,32123,8<br />
+move 32356,32122,9<br />
+move 32343,32122,10<br />
+move 32339,32122,10<br />
+move 32339,32123,9<br />
+move 32332,32122,9<br />
+move 32325,32127,9<br />
+move 32325,32137,9<br />
+move 32325,32146,9<br />
+move 32326,32154,9<br />
+move 32316,32137,9<br />
+move 32317,32128,9<br />
+move 32334,32122,9<br />
+move 32339,32122,10<br />
+move 32343,32122,10<br />
+move 32343,32123,9<br />
+move 32356,32122,9<br />
+move 32356,32123,8<br />
+move 32348,32124,8<br />
+move 32345,32137,8<br />
+move 32352,32141,8<br />
+move 32351,32152,8<br />
+move 32335,32174,8<br />
+IfTrue ($countitems$:D7 0B#number&gt;=#1000) Goto $nlineoflabel::BANK$<br />
+IfTrue ($mycap$#number&lt;=#10) Goto $nlineoflabel::BANK$<br />
+########################################<br />
+::BANK<br />
+move 32335,32174,8<br />
+move 32335,32175,7<br />
+move 32344,32230,7<br />
+sayMessage Hi<br />
+WaitX 2<br />
+sayInTrade deposit all<br />
+WaitX 2<br />
+sayInTrade yes<br />
+IfTrue ($countitems$:D7 0B#number&lt;=#10) Goto $nlineoflabel::HUNT$<br />
+gotoScriptLine $nlineoflabel::HUNT$<br />
+<br />
+<br />
+<br />
+Srry the smiley are Capital d.<br />
+and what are the thing to take the spear in my BP and pu it in my hand ?<br />
+Thanks if you help me out :D<br />
+<br />
+<br />
+Can a mod move this to the good section ?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tavok151</div><div class="date">02-07-2012, 05:43</div></div><div class="posttext">=)<br />
+:)<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Srry the smiley are Capital d.<br />
+and what are the thing to take the spear in my BP and pu it in my hand ?<br />
+Thanks if you help me out :D<br />
+<br />
+<br />
+Can a mod move this to the good section ?[/QUOTE]</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Spirit</div><div class="date">01-25-2013, 15:07</div></div><div class="posttext">Good Script :D i go use to train my moneymaker</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

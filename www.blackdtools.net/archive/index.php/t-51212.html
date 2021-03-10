@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="client, delay, command, making, items, screen, send, botter, normal, walking, chase, sending, server, item, secretly, move/use, kick, surpassed, creature, defense, suposed, thinking, automatic, exemple, commands, speed, things, hexes, graphic, receive, cliking, detected, packet, kicked, atacking, made, clicking, monsters, atack, auto, sends, dunno, moves, time, ignore, movement, programmed, stupid, delays, summed/calculated" />
+	<meta name="description" content="this is a fact, the client can easily know that u bot without any deep investigation into ur software set 
+how can a creature receive damage if theres only u and it on the screen for few seconds and hits are taken from it without any atacking clicking on console was made or tryed? 
+how can a you send 2 consecutive &quot;change to defense mode&quot; one time by hex, second by cliking, if the defense button gets pushed after clicking it? 
+how can atack monsters consecvely(deactivated SetRetryAtacks) if" />
+	
+	<title> noob thoughts [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-3.html">General Chat</a> &gt;  noob thoughts</div>
+<hr />
+<div class="pda"><a href="t-51212.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?51212-noob-thoughts">noob thoughts</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Shanera</div><div class="date">06-30-2010, 21:07</div></div><div class="posttext">this is a fact, the client can easily know that u bot without any deep investigation into ur software set<br />
+how can a creature receive damage if theres only u and it on the screen for few seconds and hits are taken from it without any atacking clicking on console was made or tryed?<br />
+how can a you send 2 consecutive &quot;change to defense mode&quot; one time by hex, second by cliking, if the defense button gets pushed after clicking it?<br />
+how can atack monsters consecvely(deactivated SetRetryAtacks) if when you atack then cancels with ESC or unatack the creature, you will send a &quot;cancel hex&quot;?<br />
+<br />
+well seems easy to be detected with packet injection in any bot, but i dunno how the client sends the &quot;this guys is botting&quot; command secrectly to our eyes(i think it can only be done secretly not counting updating times, i dunno much about sever&gt;client comunication)<br />
+<br />
+ive been thinking a little based on few ive learned from blackd using hex and some views on my hex logs<br />
+<br />
+<br />
+maybe:<br />
+the most obvious possibility would be bot bug, when inadevtadly you send a illegal command you arent suposed to be able to send anytime, or at the circustance your char is at. exemples of this is dashing trough walls, re-atacking monsters hexes, looking far from screen or below/above in certain dungeons places, buy/selling 100 items hexes when you dont have money/enought items<br />
+<br />
+maybe some client secret code is being used, like, your client has 2 or more options to send the command you ordered(by hands or bot), and command 1 is normal, command 2 is normal but and says also you are botter.<br />
+its hard to me thinking some exemple of this, i will try<br />
+<br />
+walking: i know that the walking commands by cliking on minimap and screen(not arrows) is defined by the walking speed of each sqm, sending the movement making the fastest way to reach the clicked point, can then some trick be being made, like 2 ways with similar speed in which 1 is preferential and 2 is botter teller?<br />
+<br />
+delays<br />
+programmed graphic delay + packet timing: for exemple, in certain sqm you stand at, or after receiving some hex that secretly is summed/calculated, makes: after receive normal &quot;items in screen hex&quot; make a proposital delay of certain miliseconds to actualize client graphics, making it impossible to you to move/use certain item that has been already said to be on &quot;items in screen hex&quot; for a short time, while if you are identified as botter this graphic delay will be surpassed making you able to move/use the item, then if you move/use it and the delay was surpassed will be detected by the diference at server sending &quot;items in screen hex&quot; and receiving&quot;move/use item hex&quot;; requires a great ping tho<br />
+any answering delay: i only know automatic hex sending of the &quot;are you there?&quot; hex, when client asks and client answers, maybe if theres is some delay suposed to be done in it and other automatic uncontrolable serverask-clientanswer or vice versa, and this delay is not done says u are botter<br />
+<br />
+self kick: i used to get kicked a lot, maybe sometimes the server secretly sends you a &quot;kick yourself(stop conetcion to server)&quot; command between normal commands, and its expected to tibia to be kicked, and the client ignore this command and dont kick itself to indicate im using bot<br />
+<br />
+possible auto chase off bug? maybe if when you put auto chase off, it will tell the server(easy to know, just test), then while making moves after atacking and making moves and not cancling the chase = bot, very improbable sry<br />
+<br />
+<br />
+<br />
+sry i cant think of many things, neither know if im saying stupid things</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

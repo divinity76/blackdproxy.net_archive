@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="fastexiva, saymessage, waitx, exiva, setmeleekill, script, setloot, sayintrade, iftrue, stones, trade, $countitems$_potionid$$number=$_potionsamount$, potions, buy$_potionid$$_potionstobuy$, sell$_vialid$100, $nlineoflabelkupione$, dwarf, magic, follow, amount, found, character, sword, weapon, critical, error, attacked, training, spider, great, potion, folder, config, 32613,31922,8, 32603,31926,8, 32584,31973,9, 32603,31923,6, 32602,31924,7, 32613,31922,9, 32606,31920,9, 32585,31973,10, 32578,31895,9, 32605,31921,10, 32580,31928,9, $numericalexp$_capek$$, 32579,31894,8, drzwi, $nlineoflabelknight$, $_prof$number=2, otwieranie" />
+	<meta name="description" content="Hey! I found a great script to blackd but it gets critical error when i run it ... : ( Someone knows where's the problem? 
+ 
+ 
+########Made by Byczarz############## 
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Byczarz's Kazordoon training script! Script has: potion buyer, depositer, stones refiller, run on danger!$ 
+waitX 1 
+fastExiva &lt; B4 19 $hex-tibiastr:Remember to edit config and active putting stones to hand in trainer!!$ 
+########################################## 
+:start" />
+	
+	<title> Great script but get critical error... [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-44.html">Script request</a> &gt;  Great script but get critical error...</div>
+<hr />
+<div class="pda"><a href="t-57435.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?57435-Great-script-but-get-critical-error">Great script but get critical error...</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">slayer123</div><div class="date">03-05-2012, 15:08</div></div><div class="posttext">Hey! I found a great script to blackd but it gets critical error when i run it ... : ( Someone knows where's the problem?<br />
+<br />
+<br />
+########Made by Byczarz##############<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Welcome to Byczarz's Kazordoon training script! Script has: potion buyer, depositer, stones refiller, run on danger!$<br />
+waitX 1<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Remember to edit config and active putting stones to hand in trainer!!$<br />
+##########################################<br />
+:start<br />
+#############CONFIG#######################<br />
+#######EDIT HERE!!########################<br />
+#Should script drop hams and meats on ground? (1= yes     0= no)<br />
+fastExiva _drop = 1<br />
+#####################################<br />
+#What's your vocation? (paladin= 1    knight= 2)<br />
+fastExiva _prof = 1<br />
+#####################################<br />
+#Put here amount of stones to go depot(optional- for paladins)<br />
+fastExiva _stonestodp = 20<br />
+#####################################<br />
+#Under how many cap should script go depot? (do not make it *100!!)<br />
+fastExiva _capek = 5<br />
+#####################################<br />
+##put here number of amount of you potions to refil<br />
+fastExiva _potionsamount = 4<br />
+#####################################<br />
+#pu here how much does you potions cost<br />
+fastExiva _potionscost = 45<br />
+#####################################<br />
+#put here ID of your potions<br />
+fastExiva _potionid = 0A 01<br />
+#####################################<br />
+#put here ID of your empty potion flasks:<br />
+fastExiva _vialid = 0A 01<br />
+#####################################<br />
+#Put here ID of your training weapon:<br />
+fastExiva _skill = F5 06<br />
+#####################################<br />
+#Put here ID of your strong weapon(like serpent sword, bright sword etc.)<br />
+fastExiva _exp =  CD 0C<br />
+#####################################<br />
+#To wich hand should script put the weapon (06= left.  05= right.):<br />
+fastExiva _hand = 06<br />
+#####################################<br />
+#####################################<br />
+setBot OldLootMode=1<br />
+setFriendly<br />
+onGMpause<br />
+onDangerGoto $nlineoflabel:danger$<br />
+#White Mushroom<br />
+setLoot 8B 0E<br />
+#Meat<br />
+setLoot F9 0D<br />
+#Ham<br />
+setLoot FE 0D<br />
+#Cash<br />
+setLoot D7 0B<br />
+#Iron Ore<br />
+setLoot F8 16<br />
+#Lump of a Dirt<br />
+setLoot DC 25<br />
+#Bear Paw<br />
+setLoot 08 17<br />
+#######################<br />
+SetMaxAttackTimeMs 150000<br />
+setChaoticMovesON<br />
+#######################<br />
+setMeleeKill bat<br />
+setMeleeKill rat<br />
+setMeleeKill wolf<br />
+setMeleeKill spider<br />
+setMeleeKill poison spider<br />
+setMeleeKill bear<br />
+setMeleeKill goblin<br />
+setMeleeKill dwarf<br />
+setMeleeKill dwarf soldier<br />
+setMeleeKill rotworm<br />
+#######################<br />
+setPriority dwarf soldier:+2<br />
+##############################<br />
+###DO NOT TOUCH IT!##########<br />
+##cap*100<br />
+fastExiva _cap = $numericalexp:{$_capek$}*100$<br />
+#ID stones<br />
+fastExiva _idstones = F5 06<br />
+##############################<br />
+#<br />
+IfTrue ($_prof$#number=#2) Goto $nlineoflabel:knight$<br />
+IfTrue ($countitems:{$_idstones$}$#number&lt;=#$_stonestodp$) Goto $nlineoflabel:dp$<br />
+:knight<br />
+IfTrue ($mycap$#number&lt;=#$_cap$) Goto $nlineoflabel:dp$<br />
+IfTrue ($countitems:{$_potionid$}$#number&lt;=#$_potionsamount$) Goto $nlineoflabel:dp$<br />
+#putting training weapon on<br />
+sayMessage exiva #$_skill$ $_hand$<br />
+move 32549,31906,8<br />
+move 32543,31899,8<br />
+move 32529,31881,8<br />
+move 32546,31876,8<br />
+move 32551,31877,9<br />
+move 32546,31884,9<br />
+move 32529,31875,9<br />
+move 32485,31875,9<br />
+move 32442,31877,9<br />
+move 32424,31909,9<br />
+move 32421,31920,9<br />
+move 32442,31877,9<br />
+move 32484,31876,9<br />
+move 32545,31876,9<br />
+move 32546,31876,8<br />
+IfTrue ($_drop$#number=#0) Goto $nlineoflabel:nope$<br />
+resetLoot<br />
+#Meat<br />
+setLoot F9 0D<br />
+#Ham<br />
+setLoot FE 0D<br />
+dropLootOnGround 32545,31876,9<br />
+:nope<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:dp<br />
+setNoFollow<br />
+setChaoticMovesOFF<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Script is going to depot!$<br />
+sayMessage exiva #$_exp$ $_hand$<br />
+move 32544,31907,8<br />
+move 32545,31908,7<br />
+move 32555,31924,7<br />
+move 32557,31924,6<br />
+move 32566,31940,6<br />
+move 32567,31940,7<br />
+move 32581,31920,7<br />
+move 32584,31904,7<br />
+move 32579,31893,7<br />
+move 32579,31891,8<br />
+move 32579,31894,8<br />
+move 32579,31896,9<br />
+move 32584,31973,9<br />
+move 32584,31971,10<br />
+move 32595,31938,10<br />
+move 32605,31921,10<br />
+move 32605,31919,9<br />
+move 32648,31928,9<br />
+move 32646,31908,9<br />
+move 32645,31907,8<br />
+##########################################<br />
+##########################################<br />
+:BANK<br />
+###POTS CONFIGS###<br />
+fastExiva _potionstobuy = $countitems:{$_vialid$}$<br />
+fastExiva _cashfromvials = $numericalexp:{$countitems:{$_vialid$}*5$<br />
+fastExiva _potioncost = $numericalexp:{$_potionstobuy$}*{$_potionscost$}$<br />
+fastExiva _allpotionscost = $numericalexp:{$_potioncost$}-{$_cashfromvials$}$<br />
+##########################################<br />
+##########################################<br />
+move 32649,31907,8<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw $_allpotionscost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade balance<br />
+waitX 1<br />
+sayInTrade bye<br />
+move 32664,31914,8<br />
+resetLoot<br />
+#White Mushroom<br />
+setLoot 8B 0E<br />
+#Meat<br />
+setLoot F9 0D<br />
+#Ham<br />
+setLoot FE 0D<br />
+putLootOnDepot<br />
+move 32664,31914,8<br />
+move 32624,31921,8<br />
+move 32624,31919,7<br />
+move 32625,31920,7<br />
+move 32626,31919,6<br />
+move 32608,31925,6<br />
+move 32607,31924,5<br />
+:npc<br />
+move 32617,31929,5<br />
+#follow npc<br />
+sayMessage exiva &gt;05 00 A2 68 00 00 40<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+IfTrue ($countitems:{$_potionid$}$#number&gt;=#$_potionsamount$) Goto $nlineoflabel:kupione$<br />
+move 32627,31929,5<br />
+:npc2<br />
+#follow npc<br />
+sayMessage exiva &gt;05 00 A2 68 00 00 40<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+IfTrue ($countitems:{$_potionid$}$#number&gt;=#$_potionsamount$) Goto $nlineoflabel:kupione$<br />
+move 32629,31925,5<br />
+#otwieranie drzwi<br />
+sayMessage exiva &gt;0A 00 82 74 7F B4 7C 05 20 1E 01 01<br />
+:npc3<br />
+#follow npc<br />
+sayMessage exiva &gt;05 00 A2 68 00 00 40<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+IfTrue ($countitems:{$_potionid$}$#number&gt;=#$_potionsamount$) Goto $nlineoflabel:kupione$<br />
+move 32629,31920,5<br />
+:npc4<br />
+#follow npc<br />
+sayMessage exiva &gt;05 00 A2 68 00 00 40<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 2<br />
+sayMessage exiva sell:$_vialid$:100<br />
+waitX 1<br />
+sayMessage exiva buy:$_potionid$:$_potionstobuy$<br />
+waitX 2<br />
+sayInTrade bye<br />
+##########################################<br />
+IfTrue ($countitems:{$_potionid$}$#number&gt;=#$_potionsamount$) Goto $nlineoflabel:kupione$<br />
+:kupione<br />
+move 32607,31926,5<br />
+move 32607,31926,6<br />
+move 32603,31923,6<br />
+move 32602,31924,7<br />
+move 32603,31926,8<br />
+move 32613,31922,8<br />
+move 32613,31922,9<br />
+move 32606,31920,9<br />
+move 32605,31921,10<br />
+move 32585,31973,10<br />
+move 32584,31973,9<br />
+move 32580,31928,9<br />
+move 32578,31895,9<br />
+move 32579,31894,8<br />
+move 32580,31892,8<br />
+move 32579,31893,7<br />
+move 32567,31940,7<br />
+move 32567,31941,6<br />
+move 32557,31924,6<br />
+move 32555,31924,7<br />
+move 32545,31908,7<br />
+move 32543,31908,8<br />
+gotoScriptLine $nlineoflabel:start$<br />
+:danger<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Your character became attacked by:{$lastpkname$}! Going to ab'dendriel depot!$<br />
+sayMessage exiva log $shorttime$ Your character became attacked by $lastpkname$!<br />
+fastExiva &lt; B4 19 $hex-tibiastr:Name of PK and time can be found in 'mylogs' folder in main BlackD's folder. Files name is: log_{$charactername$}.txt$<br />
+setChaoticMovesOFF<br />
+setNoFollow<br />
+sayMessage exiva #$_exp$ $_hand$<br />
+IfTrue ($myx$#number=#8) Goto $nlineoflabel:8$<br />
+move 32475,31878,9<br />
+move 32529,31875,9<br />
+move 32543,31879,9<br />
+move 32545,31876,8<br />
+:8<br />
+move 32544,31908,8<br />
+move 32546,31908,7<br />
+move 32568,31870,7<br />
+move 32605,31846,7<br />
+move 32632,31823,7<br />
+move 32641,31764,7<br />
+move 32640,31728,7<br />
+move 32647,31700,7<br />
+move 32654,31675,7<br />
+move 32655,31674,8<br />
+move 32680,31679,8<br />
+move 32681,31685,8<br />
+move 32682,31685,7<br />
+move 32682,31684,6<br />
+move 32682,31684,5<br />
+move 32682,31684,4<br />
+move 32682,31684,3<br />
+closeConnection</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">slayer123</div><div class="date">03-21-2012, 01:09</div></div><div class="posttext">Refreshing... Can someone repair it?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Malmis</div><div class="date">03-21-2012, 16:00</div></div><div class="posttext">Remove all lines beginning with &quot;fastExiva &lt; B4 19 &quot;.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

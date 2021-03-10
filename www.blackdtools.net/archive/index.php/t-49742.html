@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="tibia, packets, string, send, script, packet, protocol, write, receiving, application, server, receive" />
+	<meta name="description" content="Who knows how to write application which will be receive packets from server for Tibia 7.6 protocol? I need bot to send string when it gets specified in script packet." />
+	
+	<title> [C#] Receiving packets Tibia 7.6 [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-7.html">Programmer's corner</a> &gt;  [C#] Receiving packets Tibia 7.6</div>
+<hr />
+<div class="pda"><a href="t-49742.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?49742-C-Receiving-packets-Tibia-7-6">[C#] Receiving packets Tibia 7.6</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Nvm</div><div class="date">04-11-2010, 22:55</div></div><div class="posttext">Who knows how to write application which will be receive packets from server for Tibia 7.6 protocol? I need bot to send string when it gets specified in script packet.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">04-11-2010, 23:09</div></div><div class="posttext">Who knows how to write application which will be receive packets from server for Tibia 7.6 protocol? I need bot to send string when it gets specified in script packet.<br />
+<br />
+To get data from server you can choose to use, reading memory at lastrecivedpacket addresses wich is easiest but not the most acurate. Or you can make a proxy, that handles all data between your client and server, you need some good programming skills to manage to get a proxy going.<br />
+<br />
+Or you can inject a dll that hooks tibias own function, this require alot of programming skills to manage. <br />
+<br />
+I prefere Proxy, becouse it's not req so much skill to make, and its realy realy acurate. And you can also modify incomming packets.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nvm</div><div class="date">04-11-2010, 23:16</div></div><div class="posttext">I tried with last received packet in delphi but my bot was showing only a part of all value from lastrcvpacket address ; s Can you make proxy for tibia 7.6 for me? Xd</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">04-12-2010, 00:43</div></div><div class="posttext">I tried with last received packet in delphi but my bot was showing only a part of all value from lastrcvpacket address ; s Can you make proxy for tibia 7.6 for me? Xd<br />
+<br />
+if im not wrong the 2byte is the packet lenght, so you need to read so many bytes as how long the packet is.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nvm</div><div class="date">04-12-2010, 00:53</div></div><div class="posttext">However i checked value from memory addres of last received packet and it's no match with proxy form Blackd : ss Do you have any idea how to write proxy for Tibia 7.6? I have only recv and sender pointers ; ss Any sources? : d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">04-12-2010, 11:08</div></div><div class="posttext">I have the a proxy project done for 7.7, you can find it here or on tp or on tug<br />
+But it's vb.net<br />
+http://blackdtools.net/showthread.php?t=45757</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nvm</div><div class="date">04-13-2010, 20:58</div></div><div class="posttext">Is's special for RealOt : ss Could you change code for Tibia 7.6, please? : &gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">04-14-2010, 20:29</div></div><div class="posttext">updating addresses and some structures is the effort you need to take if you wanna do this, I can´t expect anyone to solve only your money. Im willing to do it for tibia cash or rl cash</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nvm</div><div class="date">04-14-2010, 20:53</div></div><div class="posttext">Server? : d</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">klusbert</div><div class="date">04-18-2010, 13:31</div></div><div class="posttext">Server? : d<br />
+<br />
+I accept morgana cash, and I wont start work untill I got my cash. :)</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, waitx, sayintrade, setmeleekill, setloot, fastexiva, saymessage, useitem, haunted, iftrue, $numbertohex2$_mana$$, soft, 32777,31244,7, treeling, scorpion, health, goto, ring, 32834,31271,6, passage, 32824,31249,7, warrior, wild, gotoscriptline, potion, tarantula, time, boots, 32803,31254,7, 32955,32022,6, 32953,32108,6, potions, 32817,31275,6, $nlineoflabelalreadyopened$, $nlineoflabelbank1$, 32836,31365,7, 32837,31343,7, 32819,31253,7, 32831,31326,7, alreadyopened, door, 32773,31244,7, setnofollow, $lastcheckresult$stringyou, 32773,31237,7, closed, 32834,31297,7, 32834,31273,7, 32833,31262,7, yalahar" />
+	<meta name="description" content="If you post a request in the &quot;scripts area&quot; not the script request area i will give you a 7 day ban if you do it a second time your ban will be longer 
+ 
+There is a request subforum. USE IT FFS" />
+	
+	<title> READ BEFORE POSTING. ONLY SCRIPTS ON THIS SECTION. If You Request = BAN! [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  READ BEFORE POSTING. ONLY SCRIPTS ON THIS SECTION. If You Request = BAN!</div>
+<hr />
+<div class="pda"><a href="t-18074.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?18074-READ-BEFORE-POSTING-ONLY-SCRIPTS-ON-THIS-SECTION-If-You-Request-BAN!">READ BEFORE POSTING. ONLY SCRIPTS ON THIS SECTION. If You Request = BAN!</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">Blade</div><div class="date">03-21-2008, 09:44</div></div><div class="posttext">If you post a request in the &quot;scripts area&quot; not the script request area i will give you a 7 day ban if you do it a second time your ban will be longer<br />
+<br />
+There is a request subforum. USE IT FFS</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">05-22-2008, 17:25</div></div><div class="posttext">Harder moderation.<br />
+<br />
+I have coded a bot today, that will let me ban a lot of accounts, and keep script forum clean. Keep in mind that:<br />
+<br />
+IF YOUR FIRST POST ON THE THREAD DOES NOT CONTAIN A FULL WORKING SCRIPT YOU WILL BE BANNED.<br />
+<br />
+Use the script request or the script factory sub-forums for that. Thank you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">02-14-2011, 16:41</div></div><div class="posttext">Question regarding this new script part of the forum. What will happen to the exori vis scripts section? Move them to old scripts and still keep the thread where it is? Or will a new sub-forum be placed in here?<br />
+<br />
+NVM, Just noticed you already moved them. lol. My bad!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Bronka</div><div class="date">05-17-2011, 04:30</div></div><div class="posttext">Dead forum :) So i have criminal record in my main char. Enjoy my 100% afk script.   Have no time for more info.<br />
+Soft boots, mana, potions,  refiler. depositer etc. Full loot list.<br />
+<br />
+fastExiva _manapotionid = 0C 01<br />
+fastExiva _manas = 500<br />
+fastExiva _idcost = 50<br />
+#<br />
+setChaoticMovesOFF<br />
+setBot OldLootMode=1<br />
+setFollow<br />
+setVeryFriendly<br />
+setMeleeKill Haunted Treeling<br />
+setMeleeKill slime<br />
+setMeleeKill demon skeleton<br />
+setMeleeKill scorpion<br />
+setMeleeKill tarantula<br />
+setAvoidFront Haunted Treeling<br />
+#sweet smelling bait<br />
+setLoot 20 30<br />
+#bulseye potion<br />
+setLoot 13 1D<br />
+#gp<br />
+setLoot D7 0B<br />
+#tarantula egg<br />
+setLoot 29 28<br />
+#haunted peaces of wood<br />
+setLoot D3 25<br />
+#strong health  potions<br />
+setLoot EC 00<br />
+#health potion<br />
+setLoot 0A 01<br />
+#small emerald<br />
+setLoot D8 0B<br />
+#guardian shield<br />
+setLoot 57 0D<br />
+#scorpion tail<br />
+setLoot B3 25<br />
+#time ring<br />
+setLoot ED 0B<br />
+#dwarven ring<br />
+setLoot 19 0C<br />
+#demonic hand<br />
+setLoot AF 25<br />
+IfTrue ($hex-equiped-item:08$#string=#82 19) Goto $nlineoflabel:SOFT$<br />
+IfTrue ($countitems:0C 01$#number&lt;=#100) Goto $nlineoflabel:BANK$<br />
+IfTrue ($mycap$#number&lt;=#10000) Goto $nlineoflabel:BANK$<br />
+move 32867,31548,7<br />
+move 32876,31542,7<br />
+move 32881,31530,7<br />
+move 32885,31521,7<br />
+move 32910,31519,7<br />
+move 32922,31516,7<br />
+move 32930,31521,7<br />
+move 32937,31530,7<br />
+move 32926,31528,7<br />
+move 32919,31527,7<br />
+move 32909,31537,7<br />
+move 32888,31546,7<br />
+move 32878,31545,7<br />
+gotoScriptLine 0<br />
+:BANK<br />
+setNoFollow<br />
+SetMaxAttackTimeMs 40000<br />
+setMeleeKill wild warrior<br />
+setMeleeKill Bandit<br />
+setMeleeKill Crocodile<br />
+setMeleeKill Wild Warrior<br />
+setMeleeKill Poacher<br />
+setMeleeKill Smuggler<br />
+setMeleeKill Valkyrie<br />
+setMeleeKill Amazon<br />
+setMeleeKill Gang Member<br />
+setMeleeKill Nomad<br />
+setMeleeKill Crazed Beggar<br />
+move 32858,31548,7<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade passage<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayMessage Utani hur<br />
+move 32836,31355,7<br />
+move 32836,31345,7<br />
+move 32837,31336,7<br />
+move 32837,31329,7<br />
+move 32834,31317,7<br />
+move 32834,31305,7<br />
+move 32835,31292,7<br />
+move 32836,31284,7<br />
+move 32836,31273,7<br />
+move 32836,31271,6<br />
+move 32834,31271,6<br />
+move 32834,31269,5<br />
+move 32833,31269,5<br />
+useItem 32832,31269,5<br />
+move 32834,31264,6<br />
+move 32834,31262,7<br />
+move 32832,31252,7<br />
+move 32824,31249,7<br />
+#Depositing gold<br />
+:BANK1<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+fastExiva _manas = 500<br />
+fastExiva _idcost = 50<br />
+fastExiva _mana = $numericalexp:{$_manas$}-{$countitems:{$_manapotionid$}$}$<br />
+fastExiva _manacost = $numericalexp:{$_mana$}*{$_idcost$}$<br />
+sayInTrade withdraw $_manacost$<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw 100<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade Bye<br />
+##########################################<br />
+##########################################<br />
+#WAYPOINTS FROM BANK TO MAGIC SHOP<br />
+move 32832,31243,7<br />
+move 32829,31234,7<br />
+move 32820,31233,7<br />
+move 32809,31233,7<br />
+move 32799,31233,7<br />
+move 32790,31232,7<br />
+move 32790,31237,7<br />
+move 32790,31238,6<br />
+move 32789,31238,5<br />
+##########################################<br />
+##########################################<br />
+#MAGIC SHOP<br />
+sayMessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade trade<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+waitX 2<br />
+fastExiva &gt; 07 00 7A 0C 01 00 $numbertohex2:{$_mana$}$ 00<br />
+##########################################<br />
+##########################################<br />
+################################################## #######<br />
+###WAYPOINTS FROM MAGIC SHOP TO DP<br />
+move 32789,31238,5<br />
+move 32789,31240,6<br />
+move 32790,31240,7<br />
+move 32776,31233,7<br />
+move 32773,31237,7<br />
+move 32773,31244,7<br />
+move 32777,31244,7<br />
+#################################################<br />
+putlootondepot<br />
+move 32777,31244,7<br />
+move 32773,31240,7<br />
+move 32786,31233,7<br />
+move 32809,31233,7<br />
+move 32829,31238,7<br />
+move 32833,31262,7<br />
+move 32833,31264,6<br />
+move 32833,31266,5<br />
+useItem 32832,31266,5<br />
+move 32834,31271,6<br />
+move 32834,31273,7<br />
+move 32834,31297,7<br />
+move 32831,31326,7<br />
+move 32837,31343,7<br />
+move 32836,31365,7<br />
+sayInTrade Hi<br />
+waitX 3<br />
+sayInTrade passage<br />
+waitX 3<br />
+sayInTrade yes<br />
+waitX 1<br />
+gotoScriptLine 0<br />
+:SOFT<br />
+setNoFollow<br />
+SetMaxAttackTimeMs 40000<br />
+setMeleeKill wild warrior<br />
+setMeleeKill Bandit<br />
+setMeleeKill Crocodile<br />
+setMeleeKill Wild Warrior<br />
+setMeleeKill Poacher<br />
+setMeleeKill Smuggler<br />
+setMeleeKill Valkyrie<br />
+setMeleeKill Amazon<br />
+setMeleeKill Gang Member<br />
+setMeleeKill Nomad<br />
+setMeleeKill Crazed Beggar<br />
+move 32858,31548,7<br />
+sayInTrade hi<br />
+waitX 2<br />
+sayInTrade passage<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayMessage Utani hur<br />
+move 32836,31355,7<br />
+move 32836,31345,7<br />
+move 32837,31336,7<br />
+move 32837,31329,7<br />
+move 32834,31317,7<br />
+move 32834,31305,7<br />
+move 32835,31292,7<br />
+move 32836,31284,7<br />
+move 32836,31273,7<br />
+move 32836,31271,6<br />
+move 32834,31271,6<br />
+move 32834,31269,5<br />
+move 32833,31269,5<br />
+useItem 32832,31269,5<br />
+move 32834,31264,6<br />
+move 32834,31262,7<br />
+move 32832,31252,7<br />
+move 32824,31249,7<br />
+#Depositing gold<br />
+sayMessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+sayInTrade withdraw 11000<br />
+waitX 2<br />
+sayInTrade yes<br />
+waitX 2<br />
+move 32828,31253,7<br />
+move 32803,31254,7<br />
+move 32802,31257,6<br />
+move 32817,31274,6<br />
+waitX 5<br />
+IfTrue ($lastcheckresult$#string&lt;&gt;#You see a closed door.) Goto $nlineoflabel:alreadyopened$<br />
+useItem 32817,31275,6<br />
+:alreadyopened<br />
+move 32817,31278,5<br />
+saymessage hi<br />
+waitX 1<br />
+sayintrade venore<br />
+waitX 1<br />
+sayintrade yes<br />
+waitX 1<br />
+move 32953,32108,6<br />
+waitX 1<br />
+move 32953,32108,6<br />
+:recharge2<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade soft boots<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 1<br />
+saymessage exiva #81 19 08<br />
+waitX 1<br />
+move 32955,32022,6<br />
+waitX 1<br />
+move 32955,32022,6<br />
+waitX 1<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade Yalahar<br />
+waitX 1<br />
+sayInTrade yes<br />
+waitX 2<br />
+move 32803,31257,6<br />
+move 32803,31254,7<br />
+move 32819,31253,7<br />
+move 32824,31249,7<br />
+gotoScriptLine $nlineoflabel:BANK1$</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Anonymous</div><div class="date">08-05-2015, 05:54</div></div><div class="posttext">can we get some bans? there are tons of requests on here! If you want you could make me a moderator, and i could move some posts to the appropriate sections</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">xHellsx</div><div class="date">08-05-2015, 09:09</div></div><div class="posttext">The first page is completely scripts... no requests</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

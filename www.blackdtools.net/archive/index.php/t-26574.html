@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="damage, defense, armor, formula, mlvl, shield, average, spellbook, values, means, mage, demon, found, boost, position, helmet, blue, substract, attack, skill, work, part, difference, mages, immagine, given], conclusions, equips, added, official, hits, minimum, blocked, ammount, extra, absorbed, equipment, [formulas, crown, formulas, practice, post, creature, normal, thread, start, poof, level, deal, lose" />
+	<meta name="description" content="I have a question about armor and defense values. 
+ 
+We know each part of our set has an armor value, and the shield has a defense value. Whats the difference between each one? 
+ 
+I would like to know if, for example, its better to hunt with demon shield than with a spellbook (while being a mage) in solo hunts. If armor and defense changes are not that radical on the practice (while hunting) then it should be obviously that the spellbooks are better than normal shields in the case of mages. 
+" />
+	
+	<title> [Formulas Given] Armor and Defense Values... How do they work? [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-4.html">General</a> &gt; <a href="f-37.html">The dark library</a> &gt;  [Formulas Given] Armor and Defense Values... How do they work?</div>
+<hr />
+<div class="pda"><a href="t-26574.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?26574-Formulas-Given-Armor-and-Defense-Values-How-do-they-work">[Formulas Given] Armor and Defense Values... How do they work?</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-07-2008, 04:05</div></div><div class="posttext">I have a question about armor and defense values.<br />
+<br />
+We know each part of our set has an armor value, and the shield has a defense value. Whats the difference between each one?<br />
+<br />
+I would like to know if, for example, its better to hunt with demon shield than with a spellbook (while being a mage) in solo hunts. If armor and defense changes are not that radical on the practice (while hunting) then it should be obviously that the spellbooks are better than normal shields in the case of mages.<br />
+<br />
+But I don't have the armor and defense values nor formulas, if someone has or has seen em around, please post them here.<br />
+<br />
+This topic should be interesting enough to be filled and start a debate :)<br />
+__________________________________________________<br />
+<br />
+Edit: Found out the Defense formulas, using Defense and Armor values. Here are my findings:<br />
+<br />
+http://tibia.wikia.com/wiki/Defense  --&gt; We will use this formula as reference.<br />
+<br />
+Defense Formula.<br />
+<br />
+To calculate the average damage a creature will make to you, you have to use this formula:<br />
+<br />
+Attack of Creature: a<br />
+Defense: b<br />
+Armor: c<br />
+Skill: d<br />
+Defense factor: e<br />
+<br />
+now use this formula:<br />
+<br />
+a - b(d*e/100) - a/100 * c = average damage<br />
+<br />
+<br />
+Here are the defense factors:<br />
+Attack position: 5<br />
+Balanced Position: 7<br />
+Defense Position: 10<br />
+<br />
+For a mage, the formula will ALWAYS be (unless you are stupid enough to use full attack):<br />
+<br />
+a - b(d*0.1) - (0.1 * c) = average damage<br />
+<br />
+So if you use your brain, you can see that Armor doesnt really matter at all, since its multipplied by 0.1 only. So immagine you are using Crown Helmet and Blue Set. That gives you 26 Armor value. Multipply it by 0.1, that gives you 2.6. That means those equips will only substract 2.6 of the WHOLE damage. That's not much...<br />
+<br />
+But! I found out that bit of formula was wrong. The correct one should be: <br />
+<br />
+Damage Reduction:<br />
+Min Damage: (c*0.475)<br />
+Max Damage: ((c*0.95)-1)<br />
+<br />
+So using our ol' set mentioned before, that means our max damage absorbed thanks to our armor will be of:<br />
+<br />
+(26*0.95)-1= 23.7<br />
+<br />
+And our minimum damage will be:<br />
+<br />
+(26*0.475) = 12.35<br />
+<br />
+* ALL VALUES ROUNDED DOWN *<br />
+<br />
+So our OFFICIAL DAMAGE FORMULA will be:<br />
+<br />
+a - b(d*0.1) - (c*0.475)  --&gt; For the Minimum Damage Blocked<br />
+a - b(d*0.1) - ((c*0.95)-1) --&gt; For the Maximum Damage Blocked<br />
+<br />
+Now using a spellbook means loads of less Defense, which is IMPORTANT for a mage, since the damage we will substract is directly proportional to the defense value of the shield. Which means that having 35 of shielding using a Demon Shield will absorbe much more damage than a normal spellbook with, lets say, 18 defense. To see the differences of damage absorbed:<br />
+We take the part of the formula were the defense value takes part:<br />
+<br />
+b(d*0.1)<br />
+<br />
+Where:<br />
+b = Defense Value<br />
+d = Our mage's defense skill<br />
+<br />
+Immagine we have 25 skill of defense (the average amongst mages). And we are using a Demon Shield to block the attacks. We will substract:<br />
+<br />
+35(2.5) = 87.5 of the damage given. Thats monstruos.<br />
+<br />
+Whereas using a Spellbook of Lost Souls (which in my opinion outbests the other ones in terms of defense and mlvl provided):<br />
+<br />
+20(2.5) = 50 of the damage given. This is quite good, but the difference between using Demon Shield and this Spellbook is abysmal.<br />
+<br />
+Now, I bet you will start thinking &quot;Hey you are forgetting the mlvl boost from the Spellbook&quot;. And yeah, I had forgotten before now. Official Magic Damage formula is unknown to me (will be thankful if someone provides it), but on the practice, a friend and I found out that having 63 mlvl, and level 99, will deal (x) damage. Well, per Mlvl obtained in the boosts, there was a significant ammount of damage added, ranging from 7 to 12 in the hits. That would mean an average of 9.5 extra damage per mlvl. <br />
+And intuitive formula would be:<br />
+<br />
+(b*9.5) + (x) <br />
+<br />
+Where x was the average damage dealt before the boost and b is the new boost of mlvls. But there is a limitation, since with higher mlvl, we have found out that the damage is not getting added in the same ammount as before. Hence this formula will only work within a range of 50-60~ mlvl.<br />
+<br />
+Personal Conclusions:<br />
+Ok Im releasing my conclusions... You can take off all your ol' equipment from your mage, and get him equips that boost mlvl EXCEPT for the shield. Keep a high defense shield, and get a low armor equipment with mlvl boosting. That way the difference WONT be big at all in damage taken. If you had, for example, Blue Set + Crown Helmet, and you changed the Blue Robe and the Helmet for Focus Cape and Hat of the Mad, you will only lose 5~ extra damage in those hits that dont poof on you. And you will gain +2 mlvl, which, as said before, means ~18+ damage using exori spells. <br />
+<br />
+And yes, this took a while... If you think we should have this thread stickied post so xD.<br />
+<br />
+Also visit: <br />
+http://www.blackdtools.net/showthread.php?t=26566<br />
+<br />
+Also I would like to ask a moderator to change this Thread Name to: [Formulas Given] Armor and Defense Values... How do they work?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Xavious</div><div class="date">09-07-2008, 11:40</div></div><div class="posttext">This is a good question, I don't really know how it works more than when you &quot;break&quot; someones shield - by getting 3rd hit. The armor value stands the same while defensive value doesn't count.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PlayHard</div><div class="date">09-07-2008, 12:30</div></div><div class="posttext">http://tibia.wikia.com/wiki/Formula</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-07-2008, 23:16</div></div><div class="posttext">BUMP<br />
+<br />
+Changes done, hope you like them ;)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">LostraC</div><div class="date">09-07-2008, 23:43</div></div><div class="posttext">HavokD r0x &lt;3</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Mafew</div><div class="date">09-08-2008, 00:20</div></div><div class="posttext">Havok is Nerd :D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Satanás</div><div class="date">09-08-2008, 00:49</div></div><div class="posttext">I must say that I'm really impressed on how HavokD is helping the community with this calculations.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-08-2008, 01:15</div></div><div class="posttext">I must say that I'm really impressed on how HavokD is helping the community with this calculations.<br />
+<br />
+Thanks Satanas xD<br />
+<br />
+Even tho my calculations are strictly for mages, I will try to expand this.<br />
+<br />
+If you have any doubt or want some kind of calculations done, send me a PM and I will do what I can as soon as possible.<br />
+<br />
+And so we dont lose this kind of Threads, raise your hand if you want this stickied xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-08-2008, 02:16</div></div><div class="posttext">[Update]<br />
+<br />
+Conclusions where made simpler, so you can understand what these formulas were meant to xD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Webber</div><div class="date">09-08-2008, 03:50</div></div><div class="posttext">changed the name on request</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-08-2008, 03:52</div></div><div class="posttext">changed the name on request<br />
+<br />
+Thanks Webber &lt;short pwning&gt;</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Fry</div><div class="date">09-08-2008, 09:26</div></div><div class="posttext">Personal Conclusions:<br />
+Ok Im releasing my conclusions... You can take off all your ol' equipment from your mage, and get him equips that boost mlvl EXCEPT for the shield. Keep a high defense shield, and get a low armor equipment with mlvl boosting. That way the difference WONT be big at all in damage taken. If you had, for example, Blue Set + Crown Helmet, and you changed the Blue Robe and the Helmet for Focus Cape and Hat of the Mad, you will only lose 5~ extra damage in those hits that dont poof on you. And you will gain +2 mlvl, which, as said before, means ~18+ damage using exori spells. <br />
+<br />
+I do agree with this conclusions. And I don't think it's needed to think that much (formulas etc) I've had a lot of knights and I know that it's better to have a plate set and a MMS than rareset with demon/vampire shield.<br />
+<br />
+Shielding counts a lot more than defense. <br />
+<br />
+I'm going to read the whole post now lol<br />
+<br />
+I'm a bit oldschool. Could somebody tell me what are those mlvl boosting items (not spellwands since they seem to have very low def). Thanks (yeah, lol for oldschool, I play like if i was on 7.1 yet.)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-08-2008, 21:30</div></div><div class="posttext">Hi Fry, well apart from the Spellbooks (which suck because of the rly low defense), there are some cool new capes and some old items got a mlvl boost.<br />
+<br />
+The best for me are Focus Cape, with 8 arm and +1 mlvl boost, and hat of the mad, with 3 arm and +1 mlvl boost. That increases damage received by 5~ hitpoints in average, if you were using a Blue set with crown helmet. And receive a +18~ hitpoints in average in vising, flaming, etc :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">PlayHard</div><div class="date">09-09-2008, 14:19</div></div><div class="posttext">&quot;Some people say that I must be a terrible person, but it’s not true. I have the heart of a young boy in a jar over my desk&quot; -Stephen King :cool:It remined me of some rasist joke. <br />
+- Do you have anything against black people?<br />
+- No, I bought one last week.<br />
+<br />
+I didn't ment to offence anyone. Polacks also like jokes about us, most of them are true lol.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">snakemortal</div><div class="date">09-10-2008, 04:00</div></div><div class="posttext">Something flies in my mind... How does the defense value of the weapon inflict the total defense?<br />
+Cause it's well known that a pally using spears takes more damage than a knight with same skills and same equip, but with a weapon (and if you didnt know it, I'm explaining it).<br />
+<br />
+This also goes for two handed weapons.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-10-2008, 04:27</div></div><div class="posttext">Something flies in my mind... How does the defense value of the weapon inflict the total defense?<br />
+Cause it's well known that a pally using spears takes more damage than a knight with same skills and same equip, but with a weapon (and if you didnt know it, I'm explaining it).<br />
+<br />
+This also goes for two handed weapons.<br />
+<br />
+If you could explain it longer, I will take my time to investigate. I need you to tell me if you are receiving an attack, the vocation, or if you are giving an attack.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">snakemortal</div><div class="date">09-10-2008, 04:40</div></div><div class="posttext">nvm, i think i just found out myself... Defense from weapon &quot;should&quot; be added to defense of your shield to get the total defense for the formula.<br />
+<br />
+I was asking for the influence of the weapon's defense in the formula.<br />
+And for the example... leave vocations, and just focus on shielding+weapon or shielding+nothing(wand/spears here). Someone with a weapon takes less damage than someone without, counting they got same equips and skills.<br />
+<br />
+Still, there's more to find out about the defense on weapons, cause they shouldnt be affected by your shielding skill but by your melee skill (or there's no sense on using 2 handeds)<br />
+<br />
+hope its clearer now</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-10-2008, 05:10</div></div><div class="posttext">As far as Im concerned, if you take a shield with you, the defense counting is the one of the shield. If you use a two hander, or one hander without shield, then the weapon's defense gets &quot;activated&quot;.<br />
+<br />
+It makes sense to the formulas :rolleyes:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">snakemortal</div><div class="date">09-11-2008, 15:30</div></div><div class="posttext">I'm taking more damage with an avenger on me than with a MMS, at least this is the impression it gives me</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">09-11-2008, 21:22</div></div><div class="posttext">Yes, if you get more than 1 monster attacking you, you dont have a &quot;shield&quot; to stop the attacks, so the damage will count as if the shield was broken. That means you will be barely able to block one attack, and the second one will &quot;enter&quot; directly, tho you might block it sometimes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Aboez</div><div class="date">10-24-2008, 16:42</div></div><div class="posttext">I love people who are sharing this kind of knowlegde with the rest of us! Thank you for sharing and i hope the rest of the community shares there info to about all kind of things about tibia :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">10-24-2008, 21:01</div></div><div class="posttext">Np np :P<br />
+<br />
+eeny meeny miny moe :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">jaaraargh</div><div class="date">10-31-2008, 19:22</div></div><div class="posttext">Really great, time to start use a HoTM when i bot instead of a c-helm, haha :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Marx</div><div class="date">02-05-2009, 02:32</div></div><div class="posttext">really useful ty XD can sell ma old blue robe now XD</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Nzonic</div><div class="date">02-09-2009, 11:30</div></div><div class="posttext">Though you still earn exp/h on using a spellbook over a shield, and the difference is not really noteable when hunting monsters like warlocks, dragons, demons etc etc that does more magical damage to you than physical...?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Belakk</div><div class="date">02-28-2009, 15:57</div></div><div class="posttext">Hey, I was looking at these formulas for my knight, and I was wondering if you could tell me if I have this correctly. To find how much 1 armor and 1 defense benefits you, you would:<br />
+<br />
+Armor:<br />
+(((10 x 0.475) + ((10 x 0.95)-1)) / 2) /10<br />
+I used 10 because of the -1 in the formula<br />
+<br />
+Defense:<br />
+1(skill x 0.07)   (0.07 depending on which stance you use most commonly)<br />
+<br />
+I got that the average would be 0.65 from armor, and with a shielding skill of 10, 0.7 from defense.<br />
+<br />
+Is this correct? That even if your shielding skill is only 10... 1 defense is still better than 1 armor when it comes to raw damage reduction? Does defense work the same way as armor in the sense of being constant damage reduction, or is it a % chance?<br />
+<br />
+If not, I would love a correction. If so, time to sell all my armor and buy MMS...</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Harpagan</div><div class="date">02-28-2009, 16:58</div></div><div class="posttext">Attack of Creature: a<br />
+Defense: b<br />
+Armor: c<br />
+Skill: d<br />
+Defense factor: e<br />
+<br />
+a - b(d*e/100) - a/100 * c = average damage<br />
+<br />
+<br />
+Here are the defense factors:<br />
+Attack position: 5<br />
+Balanced Position: 7<br />
+Defense Position: 10<br />
+<br />
+For a mage, the formula will ALWAYS be (unless you are stupid enough to use full attack):<br />
+<br />
+a - b(d*0.1) - (0.1 * c) = average damage<br />
+<br />
+So if you use your brain, you can see that Armor doesnt really matter at all, since its multipplied by 0.1 only. So immagine you are using Crown Helmet and Blue Set. That gives you 26 Armor value. Multipply it by 0.1, that gives you 2.6. That means those equips will only substract 2.6 of the WHOLE damage. That's not much...<br />
+<br />
+Shouldn't it be:<br />
+<br />
+a - b(d*0,1) - a/100*c<br />
+<br />
+a - b*d - 0,1*b - a/100*c<br />
+<br />
+According to this formula, creature would need to have around 900 attack to make any damage to my little sorcerer...I can still agree that both defense and skill counts much more than armor according to this formula.<br />
+<br />
+It's like: defense &gt; skill &gt; armor (defense the most important, armor the least important). Difference between armor and skill is kinda big, but difference between skill and defense seems rather unnoticable.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">02-28-2009, 18:30</div></div><div class="posttext">Shouldn't it be:<br />
+<br />
+a - b(d*0,1) - a/100*c<br />
+<br />
+a - b*d - 0,1*b - a/100*c<br />
+<br />
+According to this formula, creature would need to have around 900 attack to make any damage to my little sorcerer...I can still agree that both defense and skill counts much more than armor according to this formula.<br />
+<br />
+It's like: defense &gt; skill &gt; armor (defense the most important, armor the least important). Difference between armor and skill is kinda big, but difference between skill and defense seems rather unnoticable.<br />
+<br />
+Nope, for a mage always use the latter formula:<br />
+<br />
+a - b(d*0.1) - (0.1 * c) = average damage<br />
+<br />
+All you do in your formula is substituting &quot;e&quot; with a value of one, and that wont work that way.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Pacific</div><div class="date">04-27-2009, 18:23</div></div><div class="posttext">Looks great mate, thanks for sharing it with us!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">07-01-2009, 06:32</div></div><div class="posttext">Hey thanks! and sorry for the really late reply :o</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Tony32</div><div class="date">12-20-2009, 23:32</div></div><div class="posttext">Havok, maybe you can mail cip and ask for the real formulas? Tell them that you're gonna make a calculator out of it or something.. Or is the formulas classified? :P</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">okitpokit</div><div class="date">12-20-2009, 23:58</div></div><div class="posttext">http://www.tibia-stats.com/index.php?akcja=armorCalc<br />
+<br />
+this one s accurate, its a formula you can read how they did it its alot of work.. Cip linking this site from their website also.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">HavokD</div><div class="date">01-28-2010, 22:50</div></div><div class="posttext">Havok, maybe you can mail cip and ask for the real formulas? Tell them that you're gonna make a calculator out of it or something.. Or is the formulas classified? :P<br />
+<br />
+I remember theres a guy that makes a lot of research for Tibia news, so my guess is that Shitsoft is keeping the formulas for themselves :rolleyes:</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

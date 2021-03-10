@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="iftrue, fastexiva, waitx, scripts, sayintrade, $nlineoflabeldepositstartloot$, setloot, gotoscriptline, script, start, conditions, $nlineoflabelendcheckstartpotion$, $nlineoflabelendopenbp$, exiva, option, check, $nlineoflabelnobuystarthmpot$, saymessage, openbp, $_mympot$number=$_startmpot$, trade, $nlineoflabelendcheckstartstamina$, sell$_emptypotid$$_myemptypot$, $countitems$_lootbpid$$, leave, piece, 32346,32221,7, cloth, _countbp, master, $_gp$number=1, $_countbp$number=$_startbp$, write, _starthpot, finish, $nlineoflabeldepositstartgold$, share, $nlineoflabelendcheckstartcap$, resetloot, $nlineoflabelhunt$, $_f$number=1, depositstartloot, $nlineoflabelendcheckstartitems$, $_startstamina$number=x, endopenbp, stamina, _mystamina, $nlineoflabelopenbp$, $_i$number$_startbp$, $_startbp$number=x" />
+	<meta name="description" content="Hello community! 
+ 
+Short story why I post this thread: 
+I searched long time for a very good scripts but I found none. 
+So I decided it's time for a change. I will create my own scripts and I will share them with you from time to time. 
+I won't share the full scripts because it takes me so much time until it works 100% without any mistakes. 
+You can take my uploaded scripts here and finish them by your own. There are many possibilities to finish it so keep thinking about it. If you anyways" />
+	
+	<title> FULL AFK Script Example (50% of Script) [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  FULL AFK Script Example (50% of Script)</div>
+<hr />
+<div class="pda"><a href="t-62877.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?62877-FULL-AFK-Script-Example-(50-of-Script)">FULL AFK Script Example (50% of Script)</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">subzero</div><div class="date">06-13-2016, 21:31</div></div><div class="posttext">Hello community!<br />
+<br />
+Short story why I post this thread:<br />
+I searched long time for a very good scripts but I found none.<br />
+So I decided it's time for a change. I will create my own scripts and I will share them with you from time to time.<br />
+I won't share the full scripts because it takes me so much time until it works 100% without any mistakes.<br />
+You can take my uploaded scripts here and finish them by your own. There are many possibilities to finish it so keep thinking about it. If you anyways interested in my full scripts you can send me a private message.<br />
+<br />
+Please leave a comment if you got a question, ideas or any other reason !<br />
+<br />
+Sorry for my bad english :D<br />
+<br />
+Download:<br />
+8040<br />
+<br />
+<br />
+#--------------------------------------<br />
+# MightyCraft Scripts by Andreas Klein (c) 2016<br />
+#--------------------------------------<br />
+# --------------------------------------<br />
+# If you don't need some conditions <br />
+# just write a cross 'x' and the script<br />
+# fully ignores the 'x-marked' conditions.<br />
+# The Script Master Option gives the possibility<br />
+# to use only the Hunting Waypoints without any Scripts.<br />
+# Write '0' for deactivate or '1' for activate this option.<br />
+# --------------------------------------<br />
+<br />
+# Item IDs<br />
+fastExiva _lootbpid = 34 0B<br />
+fastExiva _hpotid = 0A 01<br />
+fastExiva _mpotid = 0c 01<br />
+fastExiva _emptypotid = 1D 01<br />
+<br />
+# Item Prices<br />
+fastExiva _hpotprice = 45<br />
+fastExiva _mpotprice = 50<br />
+<br />
+# Start Conditions minimum<br />
+fastExiva _startstamina = x<br />
+fastExiva _startcap = 100<br />
+fastExiva _starthpot = 20<br />
+fastExiva _startmpot = 5<br />
+fastExiva _startbp = 5<br />
+<br />
+# Leave Conditions<br />
+fastExiva _leavestamina = 20<br />
+fastExiva _leavecap = 10<br />
+fastExiva _leavehpot = 2<br />
+fastExiva _leavempot = x<br />
+<br />
+# Script Master Option<br />
+fastExiva _simplywaypoints = 0<br />
+IfTrue ($_simplywaypoints$#number=#1) Goto $nlineoflabel:Hunt$<br />
+<br />
+# One-Time Backpack Check<br />
+fastExiva _i = 0<br />
+fastExiva _countbp = $countitems:{$_lootbpid$}$<br />
+IfTrue ($_startbp$#number=#x) Goto $nlineoflabel:endopenbp$<br />
+IfTrue ($_countbp$#number=&gt;#$_startbp$) Goto $nlineoflabel:endopenbp$<br />
+:openbp<br />
+fastExiva _countbp = $countitems:{$_lootbpid$}$<br />
+IfTrue ($_countbp$#number&gt;=#$_startbp$) Goto $nlineoflabel:endopenbp$<br />
+saymessage exiva openbp<br />
+fastExiva _i = $numericalexp:{$_i$}+1$<br />
+IfTrue ($_i$#number&gt;#$_startbp$) Goto $nlineoflabel:endopenbp$<br />
+gotoScriptLine $nlineoflabel:openbp$<br />
+:endopenbp<br />
+saymessage exiva openbp<br />
+<br />
+# Check Start Stamina<br />
+fastExiva _mystamina = $numericalexp:{$mystamina$}/60$<br />
+IfTrue ($_startstamina$#number=#x) Goto $nlineoflabel:endCheckStartStamina$<br />
+IfTrue ($_mystamina$#number&gt;=#$_startstamina$) Goto $nlineoflabel:endCheckStartStamina$<br />
+IfTrue ($_mystamina$#number&lt;#$_startstamina$) Goto $nlineoflabel:End$<br />
+:endCheckStartStamina<br />
+<br />
+# Check Start Items<br />
+#Pile of Grave Earth<br />
+fastExiva _a = $countitems:DC 2C$<br />
+#Ghoul Snack<br />
+fastExiva _b = $countitems:CB 2C$<br />
+#Rotten Piece of Cloth<br />
+fastExiva _c = $countitems:33 28$<br />
+#Brown Piece of Cloth<br />
+fastExiva _d = $countitems:19 17$<br />
+#Life Ring<br />
+fastExiva _e = $countitems:EC 0B$<br />
+#Pelvis Bone<br />
+fastExiva _f = $countitems:D9 2C$<br />
+#Gold Coin<br />
+fastExiva _gp = $countitems:D7 0B$<br />
+IfTrue ($_a$#number&gt;=#1) Goto $nlineoflabel:depositStartLoot$<br />
+IfTrue ($_b$#number&gt;=#1) Goto $nlineoflabel:depositStartLoot$<br />
+IfTrue ($_c$#number&gt;=#1) Goto $nlineoflabel:depositStartLoot$<br />
+IfTrue ($_d$#number&gt;=#1) Goto $nlineoflabel:depositStartLoot$<br />
+IfTrue ($_e$#number&gt;=#1) Goto $nlineoflabel:depositStartLoot$<br />
+IfTrue ($_f$#number&gt;=#1) Goto $nlineoflabel:depositStartLoot$<br />
+IfTrue ($_gp$#number&gt;=#1) Goto $nlineoflabel:depositStartGold$<br />
+gotoScriptLine $nlineoflabel:endCheckStartItems$<br />
+:depositStartLoot<br />
+resetLoot<br />
+#Pile of Grave Earth<br />
+setLoot DC 2C<br />
+#Ghoul Snack<br />
+setLoot CB 2C<br />
+#Rotten Piece of Cloth<br />
+setLoot 33 28<br />
+#Brown Piece of Cloth<br />
+setLoot 19 17<br />
+#Life Ring<br />
+setLoot EC 0B<br />
+#Pelvis Bone<br />
+setLoot D9 2C<br />
+move 32346,32221,7<br />
+move 32350,32226,7<br />
+putLootOnDepot<br />
+IfTrue ($_gp$#number&gt;=#1) Goto $nlineoflabel:depositStartGold$<br />
+IfTrue ($_gp$#number&lt;#1) Goto $nlineoflabel:endCheckStartItems$<br />
+:depositStartGold<br />
+move 32346,32222,7<br />
+move 32344,32230,7<br />
+waitX 1<br />
+saymessage hi<br />
+waitX 1<br />
+sayInTrade deposit all<br />
+waitX 1<br />
+sayInTrade yes	<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:endCheckStartItems$<br />
+:endCheckStartItems<br />
+<br />
+# Check Start Potions<br />
+fastExiva _myhpot = $countitems:{$_hpotid$}$<br />
+fastExiva _mympot = $countitems:{$_mpotid$}$<br />
+fastExiva _myemptypot = $countitems:{$_emptypotid$}$<br />
+IfTrue ($_starthpot$#number=#x) Goto $nlineoflabel:nostarthpot$<br />
+IfTrue ($_startmpot$#number=#x) Goto $nlineoflabel:nostartmpot$<br />
+# _starthpot (True) , _startmpot (True)<br />
+IfTrue ($_myhpot$#number&gt;=#$_starthpot$) Goto $nlineoflabel:enoughStartHpot$<br />
+IfTrue ($_myhpot$#number&lt;#$_starthpot$) Goto $nlineoflabel:notenoughStartHPot$<br />
+:notenoughStartHPot<br />
+IfTrue ($_mympot$#number&gt;=#$_startmpot$) Goto $nlineoflabel:buyStartHPot$<br />
+IfTrue ($_mympot$#number&lt;#$_startmpot$) Goto $nlineoflabel:buyStartHMPot$<br />
+:enoughStartHpot<br />
+IfTrue ($_mympot$#number&gt;=#$_startmpot$) Goto $nlineoflabel:noBuyStartHMPot$<br />
+IfTrue ($_mympot$#number&lt;#$_startmpot$) Goto $nlineoflabel:buyStartMPot$<br />
+:nostarthpot<br />
+# _starthpot (False) , _startmpot (False)<br />
+IfTrue ($_startmpot$#number=#x) Goto $nlineoflabel:noBuyStartHMPot$<br />
+# _starthpot (False) , Enough Mana Potions on Start<br />
+IfTrue ($_mympot$#number&gt;=#$_startmpot$) Goto $nlineoflabel:noBuyStartHMPot$<br />
+# _starthpot (False) , Not Enough Mana Potions on Start<br />
+IfTrue ($_mympot$#number&lt;#$_startmpot$) Goto $nlineoflabel:buyStartMPot$<br />
+:nostartmpot<br />
+# _starthpot (True) , _startmpot (False)<br />
+IfTrue ($_myhpot$#number&gt;=#$_starthpot$) Goto $nlineoflabel:noBuyStartHMPot$<br />
+IfTrue ($_myhpot$#number&lt;#$_starthpot$) Goto $nlineoflabel:buyStartHPot$<br />
+:buyStartHMPot<br />
+fastExiva _missstarthpot = $numericalexp:{$_starthpot$}-{$_myhpot$}$<br />
+fastExiva _missstartmpot = $numericalexp:{$_startmpot$}-{$_mympot$}$<br />
+fastExiva _starthpotcost = $numericalexp:{$_missstarthpot$}*{$_hpotprice$}$<br />
+fastExiva _startmpotcost = $numericalexp:{$_missstartmpot$}*{$_mpotprice$}$<br />
+fastExiva _starthmpotcost = $numericalexp:{$_starthpotcost$}+{$_startmpotcost$ }$<br />
+move 32346,32222,7<br />
+move 32344,32230,7<br />
+waitX 2<br />
+saymessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes	<br />
+waitX 2<br />
+sayInTrade withdraw $_starthmpotcost$<br />
+waitX 2<br />
+sayInTrade yes	<br />
+#move to Potion Shop<br />
+move 32346,32221,7<br />
+move 32366,32214,7<br />
+move 32369,32186,7<br />
+move 32413,32171,7<br />
+waitX 1<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:{$_hpotid$}:{$_missstarthpot$}<br />
+fastExiva buy:{$_mpotid$}:{$_missstartmpot$}<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:buyStartPotFinish$<br />
+:buyStartHPot<br />
+fastExiva _missstarthpot = $numericalexp:{$_starthpot$}-{$_myhpot$}$<br />
+fastExiva _starthpotcost = $numericalexp:{$_missstarthpot$}*{$_hpotprice$}$<br />
+move 32346,32222,7<br />
+move 32344,32230,7<br />
+waitX 2<br />
+saymessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes	<br />
+waitX 2<br />
+sayInTrade withdraw $_starthpotcost$<br />
+waitX 2<br />
+sayInTrade yes	<br />
+#move to Potion Shop<br />
+move 32346,32221,7<br />
+move 32366,32214,7<br />
+move 32369,32186,7<br />
+move 32413,32171,7<br />
+waitX 1<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:{$_hpotid$}:{$_missstarthpot$}<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:buyStartPotFinish$<br />
+:buyStartMPot<br />
+fastExiva _missstartmpot = $numericalexp:{$_startmpot$}-{$_mympot$}$<br />
+fastExiva _startmpotcost = $numericalexp:{$_missstartmpot$}*{$_mpotprice$}$<br />
+move 32346,32222,7<br />
+move 32344,32230,7<br />
+waitX 2<br />
+saymessage hi<br />
+waitX 2<br />
+sayInTrade deposit all<br />
+waitX 2<br />
+sayInTrade yes	<br />
+waitX 2<br />
+sayInTrade withdraw $_startmpotcost$<br />
+waitX 2<br />
+sayInTrade yes	<br />
+#move to Potion Shop<br />
+move 32346,32221,7<br />
+move 32366,32214,7<br />
+move 32369,32186,7<br />
+move 32413,32171,7<br />
+waitX 1<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva buy:{$_mpotid$}:{$_missstartmpot$}<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:buyStartPotFinish$<br />
+:noBuyStartHMPot<br />
+IfTrue ($_myemptypot$#number&gt;#0) Goto $nlineoflabel:sellEmptyPotOnly$<br />
+gotoScriptLine $nlineoflabel:endCheckStartPotion$<br />
+:sellEmptyPotOnly<br />
+#move to Potion Shop<br />
+move 32346,32221,7<br />
+move 32366,32214,7<br />
+move 32369,32186,7<br />
+move 32413,32171,7<br />
+waitX 1<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:{$_emptypotid$}:{$_myemptypot$}<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:endCheckStartPotion$<br />
+:buyStartPotFinish<br />
+IfTrue ($_myemptypot$#number&gt;#0) Goto $nlineoflabel:sellEmptyPot$<br />
+gotoScriptLine $nlineoflabel:endCheckStartPotion$<br />
+:sellEmptyPot<br />
+sayMessage exiva &gt; 05 00 A2 67 00 00 40<br />
+waitX 1<br />
+sayInTrade hi<br />
+waitX 1<br />
+sayInTrade trade<br />
+waitX 1<br />
+fastExiva sell:{$_emptypotid$}:{$_myemptypot$}<br />
+waitX 1<br />
+sayInTrade bye<br />
+gotoScriptLine $nlineoflabel:endCheckStartPotion$<br />
+:endCheckStartPotion<br />
+<br />
+<br />
+# Check Start Cap<br />
+fastExiva _mycap = $numericalexp:{$mycap$}/100$<br />
+IfTrue ($_startcap$#number=#x) Goto $nlineoflabel:endCheckStartCap$<br />
+IfTrue ($_mycap$#number&gt;=#$_startcap$) Goto $nlineoflabel:endCheckStartCap$<br />
+IfTrue ($_mycap$#number&lt;#$_startcap$) Goto $nlineoflabel:End$<br />
+:endCheckStartCap<br />
+<br />
+<br />
+<br />
+#:start<br />
+#:walkToCave<br />
+#:Hunt<br />
+#:HuntStatus<br />
+#:CloseConnection<br />
+<br />
+<br />
+<br />
+:End</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hishsion</div><div class="date">06-14-2016, 19:47</div></div><div class="posttext">Hey dude im interested in your scripts.</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

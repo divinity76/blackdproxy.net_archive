@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="move, setmeleekill, setloot, saymessage, exiva, carlin, waitx, ghoul, setpriority, snowman, skeleton, cloth, 32222,31863,8, pieces, rotten, snacks, $mycap$number, iftrue, $hex-tibiastrdeposit, $hex-tibiastrhi$, $hex-tibiastrbye$, 32221,31778,8, 32221,31780,7, 32218,31767,8, 32216,31804,7, 32218,31835,7, gotoscriptline, 32223,31860,8, 32222,31859,7, 32222,31854,7, 32219,31766,7, 32229,31765,7, 32334,31778,8, putlootondepot, 32332,31782,8, 32331,31782,7, $hex-tibiastryes$, 32333,31781,8, 32332,31780,7, 32257,31777,7, 32285,31789,7, 32319,31790,7, 32327,31785,7, all$, place, depot, http://blackdtools.com/cavebotimages/script19.gif, west, south, started" />
+	<meta name="description" content="it will go trough carlin ghostland and walk over there... it will deposit money and leave loot on depot. 
+Place where it should be started: south west of carlin:  
+ 
+http://blackdtools.net/cavebotimages/script19.gif 
+ 
+ 
+# Script Made by Snowman 
+setFriendly 
+setBot OldLootMode=1 
+setMeleeKill skeleton warrior" />
+	
+	<title> 19. Carlin Ghostlands - by Snowman [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-82.html">Cavebot - New scripts (safer)</a> &gt;  19. Carlin Ghostlands - by Snowman</div>
+<hr />
+<div class="pda"><a href="t-54385.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?54385-19-Carlin-Ghostlands-by-Snowman">19. Carlin Ghostlands - by Snowman</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">02-18-2011, 21:05</div></div><div class="posttext">it will go trough carlin ghostland and walk over there... it will deposit money and leave loot on depot.<br />
+Place where it should be started: south west of carlin: <br />
+<br />
+http://blackdtools.net/cavebotimages/script19.gif<br />
+<br />
+<br />
+<br />
+# Script Made by Snowman<br />
+setFriendly<br />
+setBot OldLootMode=1<br />
+setMeleeKill skeleton warrior<br />
+setMeleeKill poison spider<br />
+setMeleeKill bat<br />
+setMeleeKill ghoul<br />
+setMeleeKill slime<br />
+setMeleeKill rat<br />
+setMeleeKill cave rat<br />
+setMeleeKill scorpion<br />
+setMeleeKill skeleton<br />
+setPriority scorpion:+2<br />
+setPriority ghoul:+1<br />
+setLootOn<br />
+#life ring<br />
+setLoot EC 0B<br />
+#bat wing<br />
+setLoot 06 17<br />
+#brown piece of cloth<br />
+setLoot 19 17<br />
+#gold<br />
+setLoot D7 0B<br />
+#pelvis bone<br />
+setLoot D9 2C<br />
+#ghoul snacks<br />
+setLoot CB 2C<br />
+#rotten pieces of cloth<br />
+setLoot 33 28<br />
+move 32222,31863,8<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:carlin$<br />
+move 32218,31873,8<br />
+move 32218,31872,9<br />
+move 32233,31869,9<br />
+move 32234,31868,10<br />
+move 32236,31867,11<br />
+move 32234,31857,11<br />
+move 32235,31852,10<br />
+move 32236,31858,11<br />
+move 32235,31868,11<br />
+move 32236,31870,10<br />
+move 32234,31869,9<br />
+move 32219,31874,9<br />
+IfTrue ($mycap$#number&lt;=#5000) Goto $nlineoflabel:carlin$<br />
+move 32222,31889,9<br />
+move 32234,31889,9<br />
+move 32237,31889,10<br />
+move 32242,31898,10<br />
+move 32238,31909,10<br />
+move 32235,31909,11<br />
+move 32244,31923,11<br />
+move 32229,31934,11<br />
+move 32214,31922,11<br />
+move 32216,31910,11<br />
+move 32220,31933,11<br />
+move 32244,31928,11<br />
+move 32234,31910,11<br />
+move 32239,31909,10<br />
+move 32245,31896,10<br />
+move 32261,31896,10<br />
+move 32276,31907,10<br />
+move 32281,31907,11<br />
+move 32293,31907,11<br />
+move 32279,31908,11<br />
+move 32274,31908,10<br />
+move 32253,31895,10<br />
+move 32236,31890,10<br />
+move 32235,31890,9<br />
+move 32222,31889,9<br />
+move 32217,31874,9<br />
+move 32216,31874,8<br />
+move 32221,31867,8<br />
+gotoScriptLine 0<br />
+:carlin<br />
+move 32222,31861,8<br />
+move 32223,31861,7<br />
+move 32216,31833,7<br />
+move 32216,31811,7<br />
+move 32215,31790,7<br />
+move 32220,31780,7<br />
+sayMessage exiva &gt; 51 02<br />
+move 32221,31779,8<br />
+move 32219,31768,8<br />
+move 32218,31768,7<br />
+move 32242,31769,7<br />
+move 32267,31782,7<br />
+move 32290,31789,7<br />
+move 32322,31789,7<br />
+move 32327,31782,7<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:hi$<br />
+waitX 2<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:deposit all$<br />
+waitX 1<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:yes$<br />
+waitX 1<br />
+sayMessage exiva &gt; 96 04 $hex-tibiastr:bye$<br />
+move 32331,31782,7<br />
+move 32332,31782,8<br />
+move 32334,31778,8<br />
+putLootOnDepot<br />
+move 32333,31781,8<br />
+move 32332,31780,7<br />
+move 32327,31785,7<br />
+move 32319,31790,7<br />
+move 32285,31789,7<br />
+move 32257,31777,7<br />
+move 32229,31765,7<br />
+move 32219,31766,7<br />
+sayMessage exiva &gt; 51 02<br />
+move 32218,31767,8<br />
+move 32221,31778,8<br />
+move 32221,31780,7<br />
+move 32216,31804,7<br />
+move 32218,31835,7<br />
+move 32222,31854,7<br />
+move 32222,31859,7<br />
+move 32223,31860,8<br />
+gotoScriptLine 0</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

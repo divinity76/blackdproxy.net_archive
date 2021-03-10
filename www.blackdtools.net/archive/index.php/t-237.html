@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="keywords" content="message, priv, channel, event, special, counsellor, sends, talk, channels, whisper, talks, rare, tutor, common, making, yells, monster, chats, chat, chat,rl, monster1, tibia, unknown, monster2, mode, gamechat,guildchat,trade, messsage, selected, check, trigger, sources, select, applies, private, persons, yell, creating, default, messages" />
+	<meta name="description" content="When you are making a new event you must select what channels are able to trigger that new event (at least 1 should be selected) 
+What you check only applies for the new event you are making! 
+  
+Say: common talk in default (#s) 
+Whisper: whisper talk (#w) 
+Yell: yells (#y) 
+Priv msg: someone private message you with *yourname* message 
+Channel: common persons channel messages (gamechat,guildchat,trade chat,rl chat, priv chats, etc) 
+Counsellor message: a counsellor talks in a channel" />
+	
+	<title> Creating a new event: Message sources [Archive]  - Blackdtools Tibia Forum</title>
+	<link rel="stylesheet" type="text/css" href="../archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="../index.php%3Fpda=1.html">Blackdtools Tibia Forum</a> &gt; <a href="f-9.html">Blackd Proxy</a> &gt; <a href="f-22.html">Blackd Proxy tutorials</a> &gt; <a href="f-30.html">8. Events</a> &gt;  Creating a new event: Message sources</div>
+<hr />
+<div class="pda"><a href="t-237.html%3Flogin=1.html" rel="nofollow">Log in</a></div>
+<p class="largefont">View Full Version : <a href="https://www.blackdtools.net/showthread.php?237-Creating-a-new-event-Message-sources">Creating a new event: Message sources</a></p>
+<hr />
+<div class="floatcontainer"></div><br />
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-05-2006, 12:07</div></div><div class="posttext">When you are making a new event you must select what channels are able to trigger that new event (at least 1 should be selected)<br />
+What you check only applies for the new event you are making!<br />
+ <br />
+Say: common talk in default (#s)<br />
+Whisper: whisper talk (#w)<br />
+Yell: yells (#y)<br />
+Priv msg: someone private message you with *yourname* message<br />
+Channel: common persons channel messages (gamechat,guildchat,trade chat,rl chat, priv chats, etc)<br />
+Counsellor message: a counsellor talks in a channel<br />
+Counsellor priv msg: a counsellor sends you a special priv messsage<br />
+GM to channel: GM talks in a channel<br />
+GM priv msg: GM sends you a special priv message<br />
+rare gm msg: GM uses a special rare talk mode.<br />
+Tutor msg: tutor sends a special message<br />
+Monster1: a monster says something<br />
+Monster2: a monster yells something<br />
+<br />
+The Unknown channels are channels ID that Tibia seems to don't be using.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Doom321</div><div class="date">09-05-2006, 20:01</div></div><div class="posttext">If someone send a private message then i cant reply in the private message window.. just in Default window</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">09-05-2006, 20:37</div></div><div class="posttext">that is wrong. You can type this as action:<br />
+*$lastsender$* what happen?<br />
+ <br />
+and it will send the message &quot;what happen?&quot; to the last person that messaged you.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eniro</div><div class="date">10-29-2006, 16:44</div></div><div class="posttext">Hello, Just wanned to learn how to make it work in the guild channel or private channel.<br />
+<br />
+<br />
+I tried to enter *$&quot;MyNickinTibia's channel$* but that didint worked cause then it looked for a player with that name :s<br />
+<br />
+15:27 Blackd Proxy sent msg to &lt; channel&gt; :  Hi! (test)     (No person with this name exists etc~)<br />
+<br />
+<br />
+What do I type to get it to talk in a channel?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Forge</div><div class="date">11-21-2006, 00:38</div></div><div class="posttext">Which channel is it for raid msgs and similiar?<br />
+I tested all possible I think it is but noone seems to work.<br />
+<br />
+Also which channel is it for those Using... that comes when you press a hotkey?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">blackd</div><div class="date">12-22-2006, 22:42</div></div><div class="posttext">to speak in channels it is a bit more complex.<br />
+You need to use exiva &gt;<br />
+and you need to know ...<br />
+ <br />
+channel 04 00 = game chat<br />
+channel 05 00 = guild chat<br />
+ <br />
+There is a tutorial on the usage of exiva &gt;<br />
+where you can find an example of speaking in channels through this command.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">duk_</div><div class="date">02-07-2007, 01:47</div></div><div class="posttext">21:42 You lose 4 hitpoints due to an attack by a rotworm.<br />
+<br />
+<br />
+which channel is this? :S<br />
+<br />
+<br />
+<br />
+i want to set, for example,<br />
+if last &quot;server msg [dunno which msg it is]&quot; contains tarantula, trigger the command &quot;exiva kill tarantula&quot;<br />
+or something like this;s</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tobbes</div><div class="date">02-24-2007, 18:53</div></div><div class="posttext">can't just someone load a event script on the forum? i want one ;p</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">freeboy</div><div class="date">04-03-2008, 17:48</div></div><div class="posttext">I need an event that when to arrive the 40 mana potion whistles the alarm!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Blue Fox</div><div class="date">07-08-2008, 07:36</div></div><div class="posttext">I was all day making myself a lvl 8 noob char to sell my items while I hunt.<br />
+Since I purchased blackd about 4 days ago I still dont understand much.<br />
+ So if I wanted to make my noob char sell how should I do it to make him talk in Trade channel and yell in default?<br />
+oh and alarm me when i get a PM<br />
+<br />
+Edit: so far all i got was the following:<br />
+<br />
+exiva &gt; 96 05 05 00 $hex-tibiastr:<br />
+<br />
+but about that i just dont know were to paste it nor how to work it... I tried putting it on Events also on the &quot;?&quot; Screen and all I get were errors with the packets. If there is someone out there who can help me a PM would be more than great.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Eggi_leggi</div><div class="date">08-31-2008, 05:08</div></div><div class="posttext">:confused:Is it possible to make an event so that when a GM talks in publicor broadcasting on OT that when &quot;Automatic functions have been paused for this client - restore with exiva play&quot; apears an event will auto say &quot;exiva play&quot;?:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Idlewild</div><div class="date">09-02-2008, 02:59</div></div><div class="posttext">What about the new NPC channel?<br />
+Having a problem with alot of scripts because the bot still speaks in default, thanks!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">ale_rami</div><div class="date">01-10-2009, 00:21</div></div><div class="posttext">is it possible to fake a attack? for example<br />
+<br />
+you lose 23 hitpoints due to an attack by blackd user.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">rdgz</div><div class="date">05-16-2016, 18:11</div></div><div class="posttext">Priv msg is not working. It only trigger if the message is say</div></div><hr />
+
+
+<div id="copyright">Powered by vBulletin&reg; Version 4.2.5 Copyright &copy; 2021 vBulletin Solutions Inc. All rights reserved.</div>
+</div>
+</body>
+</html>
